@@ -1,0 +1,627 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using DevExpress.Data;
+using DevExpress.Utils;
+using DevExpress.Utils.Menu;
+using DevExpress.XtraBars;
+using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Container;
+using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraLayout;
+using DevExpress.XtraLayout.Utils;
+using DevExpress.XtraTab;
+using Microsoft.VisualBasic;
+using NoriSDK;
+using Padding = System.Windows.Forms.Padding;
+
+namespace NORI
+{
+    partial class frmEntregaMercancia
+    {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && components != null)
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntregaMercancia));
+            this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.bbiGuardar = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiGuardarCerrar = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiGuardarNuevo = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiEliminar = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiRecargar = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiBuscar = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiPrimero = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiAnterior = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiUltimo = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiSiguiente = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiNuevo = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiImprimir = new DevExpress.XtraBars.BarSubItem();
+            this.bbiNuevoSocio = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiCopiar = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItemMapaRelaciones = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiPDF = new DevExpress.XtraBars.BarSubItem();
+            this.bbiCorreoPDF = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiCancelar = new DevExpress.XtraBars.BarStaticItem();
+            this.bbiCerrar = new DevExpress.XtraBars.BarStaticItem();
+            this.bbiPagar = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiGuardarImprimir = new DevExpress.XtraBars.BarButtonItem();
+            this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPageGeneral = new DevExpress.XtraTab.XtraTabPage();
+            this.lblNoDocumento = new DevExpress.XtraEditors.LabelControl();
+            this.lblNumeroDocumento = new DevExpress.XtraEditors.LabelControl();
+            this.lblSocio = new DevExpress.XtraEditors.LabelControl();
+            this.lblReferencia = new DevExpress.XtraEditors.LabelControl();
+            this.txtReferencia = new DevExpress.XtraEditors.TextEdit();
+            this.lblIdentificadorExterno = new DevExpress.XtraEditors.LabelControl();
+            this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtArticulo = new DevExpress.XtraEditors.TextEdit();
+            this.txtNumeroDocumento = new DevExpress.XtraEditors.TextEdit();
+            this.txtComentario = new DevExpress.XtraEditors.MemoEdit();
+            this.lblComentario = new DevExpress.XtraEditors.LabelControl();
+            this.cbVendedores = new DevExpress.XtraEditors.LookUpEdit();
+            this.lblVendedores = new DevExpress.XtraEditors.HyperlinkLabelControl();
+            this.gcPartidas = new DevExpress.XtraGrid.GridControl();
+            this.gvPartidas = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumnArticuloID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnCantidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnUnidadMedida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cbUnidadesMedida = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.gridColumnCantidadEmpaque = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnTipoEmpaque = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cbTiposEmpaques = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.gridColumnTipoTara = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnCantidadPaquete = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnArticulo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnCodigoBarras = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnAlmacen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cbAlmacenes = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.gridColumnComentario = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridColumnCantidadPendiente = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)this.mainRibbonControl).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.gridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.layoutControl1).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)this.xtraTabControl1).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.xtraTabPageGeneral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)this.txtReferencia.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.separatorControl1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.txtArticulo.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.txtNumeroDocumento.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.txtComentario.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.cbVendedores.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.gcPartidas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.gvPartidas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.cbUnidadesMedida).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.cbTiposEmpaques).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.cbAlmacenes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.layoutControlGroup1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.layoutControlItem1).BeginInit();
+            base.SuspendLayout();
+            this.mainRibbonControl.ExpandCollapseItem.Id = 0;
+            this.mainRibbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[23]
+            {
+            this.mainRibbonControl.ExpandCollapseItem,
+            this.mainRibbonControl.SearchEditItem,
+            this.bbiGuardar,
+            this.bbiGuardarCerrar,
+            this.bbiGuardarNuevo,
+            this.bbiEliminar,
+            this.bbiRecargar,
+            this.bbiBuscar,
+            this.bbiPrimero,
+            this.bbiAnterior,
+            this.bbiUltimo,
+            this.bbiSiguiente,
+            this.bbiNuevo,
+            this.bbiImprimir,
+            this.bbiNuevoSocio,
+            this.bbiCopiar,
+            this.barButtonItemMapaRelaciones,
+            this.bbiPDF,
+            this.bbiCorreoPDF,
+            this.bbiCancelar,
+            this.bbiCerrar,
+            this.bbiPagar,
+            this.bbiGuardarImprimir
+            });
+            this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
+            this.mainRibbonControl.Margin = new System.Windows.Forms.Padding(4);
+            this.mainRibbonControl.MaxItemId = 16;
+            this.mainRibbonControl.Name = "mainRibbonControl";
+            this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[1] { this.mainRibbonPage });
+            this.mainRibbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
+            this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
+            this.mainRibbonControl.Size = new System.Drawing.Size(1278, 131);
+            this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
+            this.bbiGuardar.Caption = "Guardar";
+            this.bbiGuardar.Id = 2;
+            this.bbiGuardar.ImageOptions.ImageUri.Uri = "Save";
+            this.bbiGuardar.Name = "bbiGuardar";
+            this.bbiGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(bbiGuardar_ItemClick);
+            this.bbiGuardarCerrar.Caption = "Guardar y cerrar documento base";
+            this.bbiGuardarCerrar.Id = 3;
+            this.bbiGuardarCerrar.ImageOptions.ImageUri.Uri = "SaveAndClose";
+            this.bbiGuardarCerrar.Name = "bbiGuardarCerrar";
+            this.bbiGuardarCerrar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(bbiGuardarCerrar_ItemClick);
+            this.bbiGuardarNuevo.Caption = "Guardar y nuevo";
+            this.bbiGuardarNuevo.Id = 4;
+            this.bbiGuardarNuevo.ImageOptions.ImageUri.Uri = "SaveAndNew";
+            this.bbiGuardarNuevo.Name = "bbiGuardarNuevo";
+            this.bbiEliminar.Caption = "Eliminar";
+            this.bbiEliminar.Id = 6;
+            this.bbiEliminar.ImageOptions.ImageUri.Uri = "Delete";
+            this.bbiEliminar.Name = "bbiEliminar";
+            this.bbiRecargar.Caption = "Recargar";
+            this.bbiRecargar.Id = 1;
+            this.bbiRecargar.ImageOptions.ImageUri.Uri = "Refresh";
+            this.bbiRecargar.Name = "bbiRecargar";
+            this.bbiBuscar.Caption = "Buscar";
+            this.bbiBuscar.Id = 4;
+            this.bbiBuscar.ImageOptions.ImageUri.Uri = "Find";
+            this.bbiBuscar.Name = "bbiBuscar";
+            this.bbiBuscar.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            this.bbiPrimero.Caption = "Primero";
+            this.bbiPrimero.Id = 5;
+            this.bbiPrimero.ImageOptions.ImageUri.Uri = "First";
+            this.bbiPrimero.Name = "bbiPrimero";
+            this.bbiPrimero.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            this.bbiAnterior.Caption = "Anterior";
+            this.bbiAnterior.Id = 6;
+            this.bbiAnterior.ImageOptions.ImageUri.Uri = "Prev";
+            this.bbiAnterior.Name = "bbiAnterior";
+            this.bbiAnterior.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            this.bbiUltimo.Caption = "Último";
+            this.bbiUltimo.Id = 7;
+            this.bbiUltimo.ImageOptions.ImageUri.Uri = "Last";
+            this.bbiUltimo.Name = "bbiUltimo";
+            this.bbiUltimo.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            this.bbiSiguiente.Caption = "Siguiente";
+            this.bbiSiguiente.Id = 8;
+            this.bbiSiguiente.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.bbiSiguiente.ImageOptions.ImageUri.Uri = "Next";
+            this.bbiSiguiente.Name = "bbiSiguiente";
+            this.bbiSiguiente.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            this.bbiNuevo.Caption = "Nuevo";
+            this.bbiNuevo.Id = 1;
+            this.bbiNuevo.ImageOptions.ImageUri.Uri = "AddItem";
+            this.bbiNuevo.Name = "bbiNuevo";
+            this.bbiImprimir.Caption = "Imprimir";
+            this.bbiImprimir.Id = 4;
+            this.bbiImprimir.ImageOptions.ImageUri.Uri = "Print";
+            this.bbiImprimir.Name = "bbiImprimir";
+            this.bbiNuevoSocio.Caption = "Nuevo socio";
+            this.bbiNuevoSocio.Id = 5;
+            this.bbiNuevoSocio.ImageOptions.ImageUri.Uri = "Add";
+            this.bbiNuevoSocio.Name = "bbiNuevoSocio";
+            this.bbiCopiar.Caption = "Copiar";
+            this.bbiCopiar.Id = 7;
+            this.bbiCopiar.ImageOptions.ImageUri.Uri = "Replace";
+            this.bbiCopiar.Name = "bbiCopiar";
+            this.barButtonItemMapaRelaciones.Caption = "Mapa de relaciones";
+            this.barButtonItemMapaRelaciones.Id = 8;
+            this.barButtonItemMapaRelaciones.ImageOptions.ImageUri.Uri = "SendToBack";
+            this.barButtonItemMapaRelaciones.Name = "barButtonItemMapaRelaciones";
+            this.bbiPDF.Caption = "PDF";
+            this.bbiPDF.Id = 10;
+            this.bbiPDF.ImageOptions.ImageUri.Uri = "ExportToPDF";
+            this.bbiPDF.Name = "bbiPDF";
+            this.bbiCorreoPDF.Caption = "Enviar";
+            this.bbiCorreoPDF.Id = 11;
+            this.bbiCorreoPDF.ImageOptions.ImageUri.Uri = "SendPDF";
+            this.bbiCorreoPDF.Name = "bbiCorreoPDF";
+            this.bbiCancelar.Caption = "Cancelar";
+            this.bbiCancelar.Id = 12;
+            this.bbiCancelar.ImageOptions.ImageUri.Uri = "Cancel";
+            this.bbiCancelar.Name = "bbiCancelar";
+            this.bbiCerrar.Caption = "Cerrar";
+            this.bbiCerrar.Id = 13;
+            this.bbiCerrar.ImageOptions.ImageUri.Uri = "Close";
+            this.bbiCerrar.Name = "bbiCerrar";
+            this.bbiPagar.Caption = "Pagar";
+            this.bbiPagar.Id = 14;
+            this.bbiPagar.ImageOptions.ImageUri.Uri = "Currency";
+            this.bbiPagar.Name = "bbiPagar";
+            this.bbiGuardarImprimir.Caption = "Guardar e imprimir";
+            this.bbiGuardarImprimir.Id = 15;
+            this.bbiGuardarImprimir.ImageOptions.ImageUri.Uri = "SaveAndNew";
+            this.bbiGuardarImprimir.Name = "bbiGuardarImprimir";
+            this.bbiGuardarImprimir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(bbiGuardarImprimir_ItemClick);
+            this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[1] { this.mainRibbonPageGroup });
+            this.mainRibbonPage.MergeOrder = 0;
+            this.mainRibbonPage.Name = "mainRibbonPage";
+            this.mainRibbonPage.Text = "ARCHIVO";
+            this.mainRibbonPageGroup.AllowTextClipping = false;
+            this.mainRibbonPageGroup.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.mainRibbonPageGroup.ItemLinks.Add(this.bbiGuardar);
+            this.mainRibbonPageGroup.ItemLinks.Add(this.bbiGuardarCerrar);
+            this.mainRibbonPageGroup.ItemLinks.Add(this.bbiGuardarImprimir);
+            this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
+            this.mainRibbonPageGroup.Text = "Opciones";
+            this.gridView1.Name = "gridView1";
+            this.layoutControl1.Controls.Add(this.xtraTabControl1);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 131);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(428, 309, 250, 350);
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(1278, 785);
+            this.layoutControl1.TabIndex = 59;
+            this.layoutControl1.Text = "layoutControl1";
+            this.xtraTabControl1.Location = new System.Drawing.Point(12, 12);
+            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPageGeneral;
+            this.xtraTabControl1.Size = new System.Drawing.Size(1254, 761);
+            this.xtraTabControl1.TabIndex = 4;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[1] { this.xtraTabPageGeneral });
+            this.xtraTabPageGeneral.Controls.Add(this.lblNoDocumento);
+            this.xtraTabPageGeneral.Controls.Add(this.lblNumeroDocumento);
+            this.xtraTabPageGeneral.Controls.Add(this.lblSocio);
+            this.xtraTabPageGeneral.Controls.Add(this.lblReferencia);
+            this.xtraTabPageGeneral.Controls.Add(this.txtReferencia);
+            this.xtraTabPageGeneral.Controls.Add(this.lblIdentificadorExterno);
+            this.xtraTabPageGeneral.Controls.Add(this.separatorControl1);
+            this.xtraTabPageGeneral.Controls.Add(this.pictureBox1);
+            this.xtraTabPageGeneral.Controls.Add(this.txtArticulo);
+            this.xtraTabPageGeneral.Controls.Add(this.txtNumeroDocumento);
+            this.xtraTabPageGeneral.Controls.Add(this.txtComentario);
+            this.xtraTabPageGeneral.Controls.Add(this.lblComentario);
+            this.xtraTabPageGeneral.Controls.Add(this.cbVendedores);
+            this.xtraTabPageGeneral.Controls.Add(this.lblVendedores);
+            this.xtraTabPageGeneral.Controls.Add(this.gcPartidas);
+            this.xtraTabPageGeneral.Margin = new System.Windows.Forms.Padding(4);
+            this.xtraTabPageGeneral.Name = "xtraTabPageGeneral";
+            this.xtraTabPageGeneral.Size = new System.Drawing.Size(1252, 725);
+            this.xtraTabPageGeneral.Text = "General";
+            this.lblNoDocumento.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25f, System.Drawing.FontStyle.Bold);
+            this.lblNoDocumento.Appearance.ForeColor = System.Drawing.Color.DimGray;
+            this.lblNoDocumento.Appearance.Options.UseFont = true;
+            this.lblNoDocumento.Appearance.Options.UseForeColor = true;
+            this.lblNoDocumento.Location = new System.Drawing.Point(16, 10);
+            this.lblNoDocumento.Margin = new System.Windows.Forms.Padding(4);
+            this.lblNoDocumento.Name = "lblNoDocumento";
+            this.lblNoDocumento.Size = new System.Drawing.Size(150, 21);
+            this.lblNoDocumento.TabIndex = 124;
+            this.lblNoDocumento.Text = "N° de documento";
+            this.lblNumeroDocumento.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            this.lblNumeroDocumento.Location = new System.Drawing.Point(772, 23);
+            this.lblNumeroDocumento.Margin = new System.Windows.Forms.Padding(4);
+            this.lblNumeroDocumento.Name = "lblNumeroDocumento";
+            this.lblNumeroDocumento.Size = new System.Drawing.Size(125, 19);
+            this.lblNumeroDocumento.TabIndex = 123;
+            this.lblNumeroDocumento.Text = "N° de documento";
+            this.lblSocio.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25f, System.Drawing.FontStyle.Bold);
+            this.lblSocio.Appearance.Options.UseFont = true;
+            this.lblSocio.Location = new System.Drawing.Point(16, 35);
+            this.lblSocio.Margin = new System.Windows.Forms.Padding(4);
+            this.lblSocio.Name = "lblSocio";
+            this.lblSocio.Size = new System.Drawing.Size(155, 21);
+            this.lblSocio.TabIndex = 122;
+            this.lblSocio.Text = "Socio de negocios";
+            this.lblReferencia.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            this.lblReferencia.Location = new System.Drawing.Point(16, 630);
+            this.lblReferencia.Margin = new System.Windows.Forms.Padding(4);
+            this.lblReferencia.Name = "lblReferencia";
+            this.lblReferencia.Size = new System.Drawing.Size(73, 19);
+            this.lblReferencia.TabIndex = 121;
+            this.lblReferencia.Text = "Referencia";
+            this.txtReferencia.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            this.txtReferencia.Location = new System.Drawing.Point(168, 626);
+            this.txtReferencia.Margin = new System.Windows.Forms.Padding(4);
+            this.txtReferencia.Name = "txtReferencia";
+            this.txtReferencia.Properties.MaxLength = 100;
+            this.txtReferencia.Size = new System.Drawing.Size(297, 28);
+            this.txtReferencia.TabIndex = 0;
+            this.txtReferencia.TabStop = false;
+            this.lblIdentificadorExterno.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            this.lblIdentificadorExterno.Location = new System.Drawing.Point(16, 674);
+            this.lblIdentificadorExterno.Margin = new System.Windows.Forms.Padding(4);
+            this.lblIdentificadorExterno.Name = "lblIdentificadorExterno";
+            this.lblIdentificadorExterno.Size = new System.Drawing.Size(9, 19);
+            this.lblIdentificadorExterno.TabIndex = 119;
+            this.lblIdentificadorExterno.Text = "0";
+            this.separatorControl1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            this.separatorControl1.Location = new System.Drawing.Point(16, 51);
+            this.separatorControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.separatorControl1.Name = "separatorControl1";
+            this.separatorControl1.Padding = new System.Windows.Forms.Padding(14, 13, 14, 13);
+            this.separatorControl1.Size = new System.Drawing.Size(1204, 26);
+            this.separatorControl1.TabIndex = 112;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            //this.pictureBox1.Image = Nori.Properties.Resources.barcode;
+            this.pictureBox1.Location = new System.Drawing.Point(16, 75);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 108;
+            this.pictureBox1.TabStop = false;
+            this.txtArticulo.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            this.txtArticulo.Location = new System.Drawing.Point(62, 77);
+            this.txtArticulo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtArticulo.Name = "txtArticulo";
+            this.txtArticulo.Size = new System.Drawing.Size(1160, 28);
+            this.txtArticulo.TabIndex = 1;
+            this.txtArticulo.KeyDown += new System.Windows.Forms.KeyEventHandler(txtArticulo_KeyDown);
+            this.txtArticulo.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(txtArticulo_PreviewKeyDown);
+            this.txtNumeroDocumento.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            this.txtNumeroDocumento.Location = new System.Drawing.Point(924, 19);
+            this.txtNumeroDocumento.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNumeroDocumento.Name = "txtNumeroDocumento";
+            this.txtNumeroDocumento.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtNumeroDocumento.Size = new System.Drawing.Size(297, 28);
+            this.txtNumeroDocumento.TabIndex = 0;
+            this.txtNumeroDocumento.TabStop = false;
+            this.txtNumeroDocumento.EditValueChanged += new System.EventHandler(txtNumeroDocumento_EditValueChanged);
+            this.txtNumeroDocumento.KeyDown += new System.Windows.Forms.KeyEventHandler(txtNumeroDocumento_KeyDown);
+            this.txtComentario.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            this.txtComentario.Location = new System.Drawing.Point(924, 589);
+            this.txtComentario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtComentario.MenuManager = this.mainRibbonControl;
+            this.txtComentario.Name = "txtComentario";
+            this.txtComentario.Size = new System.Drawing.Size(297, 104);
+            this.txtComentario.TabIndex = 0;
+            this.txtComentario.TabStop = false;
+            this.lblComentario.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            this.lblComentario.Location = new System.Drawing.Point(772, 593);
+            this.lblComentario.Margin = new System.Windows.Forms.Padding(4);
+            this.lblComentario.Name = "lblComentario";
+            this.lblComentario.Size = new System.Drawing.Size(82, 19);
+            this.lblComentario.TabIndex = 84;
+            this.lblComentario.Text = "Comentario";
+            this.cbVendedores.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            this.cbVendedores.Location = new System.Drawing.Point(168, 589);
+            this.cbVendedores.Margin = new System.Windows.Forms.Padding(4);
+            this.cbVendedores.MenuManager = this.mainRibbonControl;
+            this.cbVendedores.Name = "cbVendedores";
+            this.cbVendedores.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[1]
+            {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)
+            });
+            this.cbVendedores.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[2]
+            {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre")
+            });
+            this.cbVendedores.Size = new System.Drawing.Size(297, 28);
+            this.cbVendedores.TabIndex = 0;
+            this.cbVendedores.TabStop = false;
+            this.lblVendedores.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            this.lblVendedores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblVendedores.Location = new System.Drawing.Point(16, 591);
+            this.lblVendedores.Margin = new System.Windows.Forms.Padding(4);
+            this.lblVendedores.Name = "lblVendedores";
+            this.lblVendedores.Size = new System.Drawing.Size(68, 19);
+            this.lblVendedores.TabIndex = 82;
+            this.lblVendedores.Text = "Vendedor";
+            this.gcPartidas.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            this.gcPartidas.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gcPartidas.Location = new System.Drawing.Point(16, 118);
+            this.gcPartidas.MainView = this.gvPartidas;
+            this.gcPartidas.Margin = new System.Windows.Forms.Padding(4);
+            this.gcPartidas.Name = "gcPartidas";
+            this.gcPartidas.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[3] { this.cbAlmacenes, this.cbTiposEmpaques, this.cbUnidadesMedida });
+            this.gcPartidas.Size = new System.Drawing.Size(1204, 462);
+            this.gcPartidas.TabIndex = 1;
+            this.gcPartidas.TabStop = false;
+            this.gcPartidas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[1] { this.gvPartidas });
+            this.gvPartidas.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.gvPartidas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[12]
+            {
+            this.gridColumnArticuloID, this.gridColumnCantidad, this.gridColumnCantidadPendiente, this.gridColumnUnidadMedida, this.gridColumnCantidadEmpaque, this.gridColumnTipoEmpaque, this.gridColumnTipoTara, this.gridColumnCantidadPaquete, this.gridColumnArticulo, this.gridColumnCodigoBarras,
+            this.gridColumnAlmacen, this.gridColumnComentario
+            });
+            this.gvPartidas.DetailHeight = 512;
+            this.gvPartidas.FixedLineWidth = 3;
+            this.gvPartidas.GridControl = this.gcPartidas;
+            this.gvPartidas.Name = "gvPartidas";
+            this.gvPartidas.OptionsCustomization.AllowColumnMoving = false;
+            this.gvPartidas.OptionsCustomization.AllowFilter = false;
+            this.gvPartidas.OptionsCustomization.AllowGroup = false;
+            this.gvPartidas.OptionsCustomization.AllowQuickHideColumns = false;
+            this.gvPartidas.OptionsCustomization.AllowSort = false;
+            this.gvPartidas.OptionsView.ShowGroupPanel = false;
+            this.gvPartidas.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(gvPartidas_RowStyle);
+            this.gvPartidas.ShowingEditor += new System.ComponentModel.CancelEventHandler(gvPartidas_ShowingEditor);
+            this.gvPartidas.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(gvPartidas_CellValueChanged);
+            this.gvPartidas.KeyDown += new System.Windows.Forms.KeyEventHandler(gvPartidas_KeyDown);
+            this.gridColumnArticuloID.Caption = "Artículo ID";
+            this.gridColumnArticuloID.FieldName = "articulo_id";
+            this.gridColumnArticuloID.MinWidth = 30;
+            this.gridColumnArticuloID.Name = "gridColumnArticuloID";
+            this.gridColumnArticuloID.Width = 112;
+            this.gridColumnCantidad.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25f, System.Drawing.FontStyle.Bold);
+            this.gridColumnCantidad.AppearanceCell.Options.UseFont = true;
+            this.gridColumnCantidad.Caption = "Cantidad";
+            this.gridColumnCantidad.FieldName = "cantidad";
+            this.gridColumnCantidad.MaxWidth = 195;
+            this.gridColumnCantidad.MinWidth = 45;
+            this.gridColumnCantidad.Name = "gridColumnCantidad";
+            this.gridColumnCantidad.OptionsColumn.FixedWidth = true;
+            this.gridColumnCantidad.Visible = true;
+            this.gridColumnCantidad.VisibleIndex = 0;
+            this.gridColumnCantidad.Width = 90;
+            this.gridColumnUnidadMedida.Caption = "UdM";
+            this.gridColumnUnidadMedida.ColumnEdit = this.cbUnidadesMedida;
+            this.gridColumnUnidadMedida.FieldName = "unidad_medida_id";
+            this.gridColumnUnidadMedida.MaxWidth = 120;
+            this.gridColumnUnidadMedida.MinWidth = 30;
+            this.gridColumnUnidadMedida.Name = "gridColumnUnidadMedida";
+            this.gridColumnUnidadMedida.OptionsColumn.AllowEdit = false;
+            this.gridColumnUnidadMedida.Width = 120;
+            this.cbUnidadesMedida.AutoHeight = false;
+            this.cbUnidadesMedida.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[1]
+            {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)
+            });
+            this.cbUnidadesMedida.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[1]
+            {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre")
+            });
+            this.cbUnidadesMedida.Name = "cbUnidadesMedida";
+            this.gridColumnCantidadEmpaque.Caption = "C/E";
+            this.gridColumnCantidadEmpaque.DisplayFormat.FormatString = "n2";
+            this.gridColumnCantidadEmpaque.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumnCantidadEmpaque.FieldName = "cantidad_empaque";
+            this.gridColumnCantidadEmpaque.MinWidth = 30;
+            this.gridColumnCantidadEmpaque.Name = "gridColumnCantidadEmpaque";
+            this.gridColumnCantidadEmpaque.Width = 52;
+            this.gridColumnTipoEmpaque.Caption = "Tipo empaque";
+            this.gridColumnTipoEmpaque.ColumnEdit = this.cbTiposEmpaques;
+            this.gridColumnTipoEmpaque.FieldName = "tipo_empaque_id";
+            this.gridColumnTipoEmpaque.MinWidth = 30;
+            this.gridColumnTipoEmpaque.Name = "gridColumnTipoEmpaque";
+            this.gridColumnTipoEmpaque.Width = 132;
+            this.cbTiposEmpaques.AutoHeight = false;
+            this.cbTiposEmpaques.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[1]
+            {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)
+            });
+            this.cbTiposEmpaques.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[1]
+            {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre")
+            });
+            this.cbTiposEmpaques.Name = "cbTiposEmpaques";
+            this.gridColumnTipoTara.Caption = "Tara";
+            this.gridColumnTipoTara.ColumnEdit = this.cbTiposEmpaques;
+            this.gridColumnTipoTara.FieldName = "tipo_tara_id";
+            this.gridColumnTipoTara.MinWidth = 30;
+            this.gridColumnTipoTara.Name = "gridColumnTipoTara";
+            this.gridColumnTipoTara.Width = 132;
+            this.gridColumnCantidadPaquete.Caption = "Cant/Paq";
+            this.gridColumnCantidadPaquete.FieldName = "cantidad_paquete";
+            this.gridColumnCantidadPaquete.MaxWidth = 90;
+            this.gridColumnCantidadPaquete.MinWidth = 52;
+            this.gridColumnCantidadPaquete.Name = "gridColumnCantidadPaquete";
+            this.gridColumnCantidadPaquete.OptionsColumn.AllowEdit = false;
+            this.gridColumnCantidadPaquete.Width = 70;
+            this.gridColumnArticulo.AppearanceCell.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.gridColumnArticulo.AppearanceCell.Options.UseFont = true;
+            this.gridColumnArticulo.Caption = "Artículo";
+            this.gridColumnArticulo.FieldName = "nombre";
+            this.gridColumnArticulo.MinWidth = 150;
+            this.gridColumnArticulo.Name = "gridColumnArticulo";
+            this.gridColumnArticulo.OptionsColumn.AllowEdit = false;
+            this.gridColumnArticulo.Visible = true;
+            this.gridColumnArticulo.VisibleIndex = 2;
+            this.gridColumnArticulo.Width = 204;
+            this.gridColumnCodigoBarras.Caption = "Código de barras";
+            this.gridColumnCodigoBarras.FieldName = "codigo_barras";
+            this.gridColumnCodigoBarras.MinWidth = 120;
+            this.gridColumnCodigoBarras.Name = "gridColumnCodigoBarras";
+            this.gridColumnCodigoBarras.OptionsColumn.AllowEdit = false;
+            this.gridColumnCodigoBarras.Width = 127;
+            this.gridColumnAlmacen.Caption = "Almacén";
+            this.gridColumnAlmacen.ColumnEdit = this.cbAlmacenes;
+            this.gridColumnAlmacen.FieldName = "almacen_id";
+            this.gridColumnAlmacen.MinWidth = 30;
+            this.gridColumnAlmacen.Name = "gridColumnAlmacen";
+            this.gridColumnAlmacen.OptionsColumn.AllowEdit = false;
+            this.gridColumnAlmacen.Visible = true;
+            this.gridColumnAlmacen.VisibleIndex = 3;
+            this.gridColumnAlmacen.Width = 81;
+            this.cbAlmacenes.AutoHeight = false;
+            this.cbAlmacenes.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[1]
+            {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)
+            });
+            this.cbAlmacenes.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[2]
+            {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 60, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)
+            });
+            this.cbAlmacenes.Name = "cbAlmacenes";
+            this.gridColumnComentario.Caption = "Comentario";
+            this.gridColumnComentario.FieldName = "comentario";
+            this.gridColumnComentario.MinWidth = 30;
+            this.gridColumnComentario.Name = "gridColumnComentario";
+            this.gridColumnComentario.Visible = true;
+            this.gridColumnComentario.VisibleIndex = 4;
+            this.gridColumnComentario.Width = 108;
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[1] { this.layoutControlItem1 });
+            this.layoutControlGroup1.Name = "Root";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1278, 785);
+            this.layoutControlGroup1.TextVisible = false;
+            this.layoutControlItem1.Control = this.xtraTabControl1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(1258, 765);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            this.gridColumnCantidadPendiente.Caption = "Cantidad pendiente";
+            this.gridColumnCantidadPendiente.FieldName = "cantidad_pendiente";
+            this.gridColumnCantidadPendiente.MinWidth = 30;
+            this.gridColumnCantidadPendiente.Name = "gridColumnCantidadPendiente";
+            this.gridColumnCantidadPendiente.Visible = true;
+            this.gridColumnCantidadPendiente.VisibleIndex = 1;
+            this.gridColumnCantidadPendiente.Width = 112;
+            base.AutoScaleDimensions = new System.Drawing.SizeF(9f, 19f);
+            base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            base.ClientSize = new System.Drawing.Size(1278, 916);
+            base.Controls.Add(this.layoutControl1);
+            base.Controls.Add(this.mainRibbonControl);
+            base.IconOptions.Icon = (System.Drawing.Icon)resources.GetObject("frmEntregaMercancia.IconOptions.Icon");
+            base.Margin = new System.Windows.Forms.Padding(4);
+            base.Name = "frmEntregaMercancia";
+            this.Ribbon = this.mainRibbonControl;
+            base.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Entrega de mercancía";
+            base.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)this.mainRibbonControl).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.gridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.layoutControl1).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)this.xtraTabControl1).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.xtraTabPageGeneral.ResumeLayout(false);
+            this.xtraTabPageGeneral.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)this.txtReferencia.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.separatorControl1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.txtArticulo.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.txtNumeroDocumento.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.txtComentario.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.cbVendedores.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.gcPartidas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.gvPartidas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.cbUnidadesMedida).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.cbTiposEmpaques).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.cbAlmacenes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.layoutControlGroup1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.layoutControlItem1).EndInit();
+            base.ResumeLayout(false);
+            base.PerformLayout();
+        }
+    }
+}

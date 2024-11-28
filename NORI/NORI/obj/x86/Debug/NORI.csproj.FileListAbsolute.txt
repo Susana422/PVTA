@@ -1,0 +1,4 @@
+C:\Users\Programador\source\repos\NORI\NORI\obj\x86\Debug\NORI.csproj.AssemblyReference.cache
+C:\Users\Programador\source\repos\NORI\NORI\obj\x86\Debug\NORI.Properties.Resources.resources
+C:\Users\Programador\source\repos\NORI\NORI\obj\x86\Debug\NORI.csproj.GenerateResource.cache
+C:\Users\Programador\source\repos\NORI\NORI\obj\x86\Debug\NORI.exe.licenses

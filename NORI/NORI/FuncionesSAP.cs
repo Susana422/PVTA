@@ -1,0 +1,66 @@
+﻿using NoriSAPB1SDK;
+using NoriSDK;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace NORI
+{
+
+    public static class FuncionesSAP
+    {
+        public static DataTable ObtenerExistencias(string sku)
+        {
+            try
+            {
+                return DBSAP.EjecutarQuery($"SELECT ItemCode SKU, WhsCode Almacén, OnHand Stock FROM OITW WHERE ItemCode = '{sku}' AND OnHand > 0");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + NoriSAP.ObtenerUltimoError().Message);
+                return new DataTable();
+            }
+        }
+
+        public static decimal ObtenerStock(string sku, string almacen)
+        {
+            try
+            {
+                decimal num = DBSAP.EjecutarEscalarDecimal($"SELECT OnHand FROM OITW WHERE ItemCode = '{sku}' AND WhsCode = '{almacen}'");
+                if (num == 0m && Articulo.Articulos().Any((Articulo x) => x.sku == sku && !x.almacenable))
+                {
+                    num = 100m;
+                }
+                return num;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + NoriSAP.ObtenerUltimoError().Message);
+                return 0m;
+            }
+        }
+
+        public static bool StockNegativo(decimal cantidad, string sku, string unidad_medida, string almacen)
+        {
+            try
+            {
+                decimal num = DBSAP.EjecutarEscalarDecimal(string.Format("SELECT OnHand / (SELECT BaseQty FROM UGP1 WHERE UgpEntry = (SELECT UgpEntry FROM OITM WHERE ItemCode = '{0}') AND UomEntry = '{1}') FROM OITW WHERE ItemCode = '{0}' AND WhsCode = '{2}'", sku, unidad_medida, almacen));
+                if (num <= 0m && Articulo.Articulos().Any((Articulo x) => x.sku == sku && !x.almacenable))
+                {
+                    num = 100m;
+                }
+                return (num < cantidad) ? true : false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + NoriSAP.ObtenerUltimoError().Message);
+                return false;
+            }
+        }
+    }
+
+}

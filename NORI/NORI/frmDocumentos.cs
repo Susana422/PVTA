@@ -1385,7 +1385,7 @@ namespace NORI
                         txtSelloCFD.Text = documento_electronico.sello_CFD;
                         if (documento_electronico.estado.Equals('E') && documento.generar_documento_electronico)
                         {
-                            MessageBox.Show(documento_electronico.mensaje, Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show("Error no fue posible timbrar la factura: " + documento_electronico.mensaje, Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
                         return;
                     }
@@ -2883,7 +2883,7 @@ namespace NORI
             {
                 do
                 {
-                    if (!(await Task.Run(() => documento.AgregarPartidaExcel(q,0,Decimal.Parse(cantidad)))))
+                    if (!(await Task.Run(() => documento.AgregarPartidaExcel(q,0,Double.Parse(cantidad)))))
                     {
                         continue;
                     }

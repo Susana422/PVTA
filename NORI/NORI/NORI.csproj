@@ -74,7 +74,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography">
-      <HintPath>..\..\..\..\Desktop\BouncyCastle.Cryptography.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\NORICFDI\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Dashboard.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -146,31 +146,23 @@
       <HintPath>..\..\..\..\..\..\Program Files\DevExpress 24.1\Components\Bin\Framework\DevExpress.XtraRichEdit.v24.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraWizard.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DPFPCtlXTypeLibNET">
-      <HintPath>..\..\..\..\Desktop\PRODUCTIVO\x64\DPFPCtlXTypeLibNET.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
     <Reference Include="DPFPCtlXWrapperNET">
-      <HintPath>..\..\..\..\Desktop\PRODUCTIVO\x64\DPFPCtlXWrapperNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\DPFPCtlXWrapperNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPDevNET">
-      <HintPath>..\..\..\..\Desktop\PRODUCTIVO\x64\DPFPDevNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\DPFPDevNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPEngNET">
-      <HintPath>..\..\..\..\Desktop\PRODUCTIVO\x64\DPFPEngNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\DPFPEngNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPGuiNET">
-      <HintPath>..\..\..\..\Desktop\PRODUCTIVO\x64\DPFPGuiNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\DPFPGuiNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPShrNET">
-      <HintPath>..\..\..\..\Desktop\PRODUCTIVO\x64\DPFPShrNET.dll</HintPath>
-    </Reference>
-    <Reference Include="DPFPShrXTypeLibNET">
-      <HintPath>..\..\..\..\Desktop\PRODUCTIVO\x64\DPFPShrXTypeLibNET.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\Desktop\DPFPShrNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPVerNET">
-      <HintPath>..\..\..\..\Desktop\PRODUCTIVO\x64\DPFPVerNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\DPFPVerNET.dll</HintPath>
     </Reference>
     <Reference Include="EPPlus, Version=7.5.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.7.5.1\lib\net462\EPPlus.dll</HintPath>
@@ -181,19 +173,15 @@
     <Reference Include="EPPlus.System.Drawing, Version=7.5.0.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.System.Drawing.7.5.0\lib\net462\EPPlus.System.Drawing.dll</HintPath>
     </Reference>
-    <Reference Include="Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\Ionic.Zip.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.3.0.1\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="NetsuiteLibrary">
-      <HintPath>..\..\..\..\Desktop\PRODUCTIVO\x64\NetsuiteLibrary.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\NetsuiteLibrary.dll</HintPath>
     </Reference>
     <Reference Include="NetsuiteLibrary.XmlSerializers">
-      <HintPath>..\..\..\..\Desktop\PRODUCTIVO\x64\NetsuiteLibrary.XmlSerializers.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\NetsuiteLibrary.XmlSerializers.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -201,22 +189,20 @@
     <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.2\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
     </Reference>
-    <Reference Include="NoriCFDI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="NoriCFDI, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\NoriCFDI.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\NoriCFDI.dll</HintPath>
     </Reference>
-    <Reference Include="NoriSAPB1SDK, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\NoriSAPB1SDK.dll</HintPath>
+    <Reference Include="NoriSAPB1SDK">
+      <HintPath>..\..\..\..\..\..\Desktop\NoriSAPB1SDK.dll</HintPath>
     </Reference>
-    <Reference Include="NoriSDK, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\NoriSDK.dll</HintPath>
+    <Reference Include="NoriSDK">
+      <HintPath>..\..\..\..\..\..\Desktop\NoriSDK.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="Sap.Data.Hana.v4.5">
-      <HintPath>..\..\..\..\Desktop\PRODUCTIVO\x64\Sap.Data.Hana.v4.5.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\Sap.Data.Hana.v4.5.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">

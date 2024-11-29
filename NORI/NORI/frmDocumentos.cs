@@ -2877,6 +2877,26 @@ namespace NORI
             // Llamar al manejador de evento manualmente
             gvPartidas_CellValueChanged(gvPartidas, e);
         }
+        private void AgregarärtidaExcelA(string q, string cantidad) {
+            try
+            {
+                bool data = documento.AgregarPartidaExcel(q, 0, Double.Parse(cantidad));
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al entrar aqui: " + ex.Message);
+            }
+            finally
+            {
+                if (documento.partidas.Count > 0)
+                {
+                    gvPartidas.FocusedColumn = gvPartidas.Columns["cantidad"];
+                    gvPartidas.ShowEditor();
+                }
+                txtArticulo.Enabled = true;
+            }
+        }
         private async void AgregarPartidaExcel(string q,string cantidad)
         {
             try
@@ -4222,13 +4242,22 @@ namespace NORI
 
         private void btnDescuentosEspeciales_Click(object sender, EventArgs e)
         {
-            Funciones.Cargando("Obteniendo descuentos especiales", "Por favor espere...");
-            documento.ObtenerDescuentosEspeciales(documento.socio_id, documento.lista_precio_id, forzar: true);
-            CalcularExcel();
-            Funciones.DescartarCargando();
+            GridView gridView = gcPartidas.MainView as GridView;
+            int rowCount = gridView.DataRowCount;
+            if (rowCount != 0)
+            {
+                Funciones.Cargando("Obteniendo descuentos especiales", "Por favor espere...");
+                documento.ObtenerDescuentosEspeciales(documento.socio_id, documento.lista_precio_id, forzar: true);
+                CalcularExcel();
+                Funciones.DescartarCargando();
+            }
+            else {
+                MessageBox.Show("No es posible agregar un descuento, no hay ninguna fila");
+            }
+         
         }
 
-        private async void btnCargaArticulos_Click(object sender, EventArgs e)
+        private void btnCargaArticulos_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
@@ -4253,8 +4282,7 @@ namespace NORI
                     SplashScreenManager.ShowForm(Form.ActiveForm, typeof(DemoWaitForm), true, true, false);
                     SplashScreenManager.Default.SetWaitFormCaption("Por favor espere");
                     SplashScreenManager.Default.SetWaitFormDescription("Sincronizando Excel...");
-                    await Task.Run(() =>
-                    {
+                 
                         DataExcel dataExcel = new DataExcel();
                         DataTable dt = dataExcel.LeerExcelEnDataTable(file);
 
@@ -4265,16 +4293,17 @@ namespace NORI
                             string articulo = fila["Articulo"].ToString();
                             string cantidad = fila["Cantidad"].ToString();
 
-                            // Asegurarte de que las actualizaciones del GridControl se hagan en el hilo principal
-                            this.Invoke(new Action(() =>
-                            {
-                                AgregarPartidaExcel(articulo, cantidad);
-                                gcPartidas.EndUpdate();
-                            }));
+
+                        //// Asegurarte de que las actualizaciones del GridControl se hagan en el hilo principal
+                        //this.Invoke(new Action(() =>
+                        //{
+                        AgregarärtidaExcelA(articulo, cantidad);
+                            //    gcPartidas.EndUpdate();
+                            //}));
 
                             contador++;
                         }
-                    });
+                    CalcularExcel();
 
                 }
                 catch (Exception ex)

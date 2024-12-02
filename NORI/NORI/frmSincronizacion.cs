@@ -95,11 +95,11 @@ namespace NORI
                 }
                 else
                 {
-                    if (MessageBox.Show("¿Desea iniciar la sincronización en modo de solo bajada?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("¿Desea iniciar la sincronización en modo de solo bajada?", ((Control)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         solo_bajada = true;
                     }
-                    if (!solo_bajada && MessageBox.Show("¿Desea iniciar la sincronización en modo de solo subida?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (!solo_bajada && MessageBox.Show("¿Desea iniciar la sincronización en modo de solo subida?", ((Control)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         solo_subida = true;
                     }
@@ -124,8 +124,9 @@ namespace NORI
                     MessageBox.Show("Imposible inicializar la sincronización, resvise su conexión y/o la configuración de las sucursales");
                 }
             }
-            catch (Exception ex2)
+            catch (Exception ex3)
             {
+                Exception ex2 = ex3;
                 Exception ex = ex2;
                 MessageBox.Show("Ocurrió un problema al iniciar la sincronización. " + ex.Message);
             }
@@ -165,31 +166,31 @@ namespace NORI
                             {
                                 string mensaje = (solo_bajada ? " - BAJADA - " : "");
                                 mensaje = (solo_subida ? " - SUBIDA - " : mensaje);
-                                SafeInvoke((Control)(object)this, delegate
+                                SafeInvoke(this, delegate
                                 {
-                                    ((Control)(object)this).Text = $"Sincronización ({sucursal.nombre}){mensaje}";
+                                    ((Control)this).Text = "Sincronización (" + sucursal.nombre + ")" + mensaje;
                                 });
                                 if (solo_subida)
                                 {
                                     sucursal.solo_subida = true;
-                                    goto IL_01a1;
+                                    goto IL_0205;
                                 }
                                 if (!solo_bajada || !sucursal.solo_subida)
                                 {
-                                    goto IL_01a1;
+                                    goto IL_0205;
                                 }
                             }
                             else
                             {
-                                lbLogs.Items.Add($"No se pudo conectar al servidor {sucursal.servidor}");
+                                lbLogs.Items.Add("No se pudo conectar al servidor " + sucursal.servidor);
                             }
                         }
                         else
                         {
-                            lbLogs.Items.Add($"No se pudo conectar al servidor {sucursal.servidor}");
+                            lbLogs.Items.Add("No se pudo conectar al servidor " + sucursal.servidor);
                         }
                         goto end_IL_002e;
-                    IL_01a1:
+                    IL_0205:
                         lbLogs.Items.Add(NoriSAP.Sincronizar(sucursal));
                     end_IL_002e:;
                     }
@@ -249,7 +250,7 @@ namespace NORI
                     {
                         timer.Stop();
                         timer.Enabled = false;
-                        ((Form)this).Close();
+                        Close();
                     }
                     else
                     {
@@ -285,7 +286,7 @@ namespace NORI
                 }
                 NoriSAP = null;
                 bw.Dispose();
-                ((Component)this).Dispose();
+                Dispose();
                 GC.Collect();
                 if (!Program.Nori.UsuarioAutenticado.VendedorForaneo())
                 {
@@ -302,7 +303,7 @@ namespace NORI
         {
             try
             {
-                if (Program.Nori.Configuracion.sap && MessageBox.Show("Desea iniciar la sincronización", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (Program.Nori.Configuracion.sap && MessageBox.Show("Desea iniciar la sincronización", ((Control)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     InicializarSAP();
                 }
@@ -331,7 +332,7 @@ namespace NORI
             {
                 string text = Interaction.InputBox("Ingresa la tabla del registro que deseas descargar.", "Agregar bajada", "OINV");
                 string text2 = Interaction.InputBox("Ingresa el registro que deseas descargar.", "Agregar bajada");
-                if (text.Length > 0 && text2.Length > 0 && MessageBox.Show($"¿Esta seguro de agregar el registro {text2} de la tabla {text}?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (text.Length > 0 && text2.Length > 0 && MessageBox.Show("¿Esta seguro de agregar el registro " + text2 + " de la tabla " + text + "?", ((Control)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Sincronizacion.Manual manual = new Sincronizacion.Manual();
                     manual.tabla = text;
@@ -357,7 +358,7 @@ namespace NORI
             try
             {
                 string text = Interaction.InputBox("Ingresa ID del registro que deseas eliminar de la sincronización", "Eliminar registro");
-                if (text.Length <= 0 || MessageBox.Show($"¿Esta seguro de eliminar el registro {text}?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) != DialogResult.Yes)
+                if (text.Length <= 0 || MessageBox.Show("¿Esta seguro de eliminar el registro " + text + "?", ((Control)this).Text, MessageBoxButtons.YesNo) != DialogResult.Yes)
                 {
                     return;
                 }
@@ -390,7 +391,7 @@ namespace NORI
             {
                 string text = Interaction.InputBox("Ingresa la tabla del registro que deseas cargar.", "Agregar subida", "documentos");
                 string text2 = Interaction.InputBox("Ingresa el ID del registro que deseas cargar.", "Agregar subida");
-                if (text.Length > 0 && text2.Length > 0 && MessageBox.Show($"¿Esta seguro de agregar el registro {text2} de la tabla {text}?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (text.Length > 0 && text2.Length > 0 && MessageBox.Show("¿Esta seguro de agregar el registro " + text2 + " de la tabla " + text + "?", ((Control)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Sincronizacion sincronizacion = new Sincronizacion();
                     sincronizacion.tabla = text;
@@ -410,6 +411,5 @@ namespace NORI
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }

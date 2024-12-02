@@ -707,6 +707,7 @@ namespace NORI
             this.accordionControlElementListaPartidas.Name = "accordionControlElementListaPartidas";
             this.accordionControlElementListaPartidas.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementListaPartidas.Text = "Lista partidas";
+            this.accordionControlElementListaPartidas.Visible = false;
             this.accordionControlElementListaPartidas.Click += new System.EventHandler(this.accordionControlElementListaPartidas_Click);
             // 
             // accordionControlElementExtras

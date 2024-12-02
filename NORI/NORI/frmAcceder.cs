@@ -83,10 +83,12 @@ namespace NORI
                 CargarConexiones();
                 if (conexiones.Count != 0)
                 {
-                    ((RepositoryItemLookUpEditBase)cbConexiones.Properties).DataSource = conexiones;
+                    var conexionesLista = conexiones.Cast<ConnectionStringSettings>().ToList();
+                    var conexionesSinPrimerItem = conexionesLista.Skip(1).ToList();
+                    ((RepositoryItemLookUpEditBase)cbConexiones.Properties).DataSource = conexionesSinPrimerItem;
                     ((RepositoryItemLookUpEditBase)cbConexiones.Properties).ValueMember = "Name";
                     ((RepositoryItemLookUpEditBase)cbConexiones.Properties).DisplayMember = "Name";
-                    ((BaseEdit)cbConexiones).EditValue = conexiones[0].Name;
+                    ((BaseEdit)cbConexiones).EditValue = conexionesSinPrimerItem[0].Name;
                 }
             }
             catch

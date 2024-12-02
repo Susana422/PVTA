@@ -20,6 +20,7 @@ using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraLayout;
 using DevExpress.XtraLayout.Utils;
+using NoriSAPB1SDK;
 using NoriSDK;
 
 namespace NORI
@@ -104,14 +105,14 @@ namespace NORI
         {
             InitializeComponent();
             this.MetodoDinamico();
-            ((BaseEdit)deDesde).EditValue = DateTime.Now;
-            ((BaseEdit)deHasta).EditValue = DateTime.Now;
+            deDesde.EditValue = DateTime.Now;
+            deHasta.EditValue = DateTime.Now;
             CargarListas();
             if (Program.Nori.Empresa.rfc == "DDI061212TX1")
             {
-                ((Control)(object)btnImprimir).Visible = false;
-                ((Control)(object)btnFacturar).Visible = false;
-                ((Control)(object)btnEntregar).Visible = false;
+                ((Control)btnImprimir).Visible = false;
+                ((Control)btnFacturar).Visible = false;
+                ((Control)btnEntregar).Visible = false;
             }
         }
 
@@ -126,21 +127,21 @@ namespace NORI
                 vendedores.AddRange((from x in Vendedor.Vendedores()
                                      where x.activo == true
                                      select x).ToList());
-                ((RepositoryItemLookUpEditBase)cbVendedores.Properties).DataSource = vendedores;
-                ((RepositoryItemLookUpEditBase)cbVendedores.Properties).ValueMember = "id";
-                ((RepositoryItemLookUpEditBase)cbVendedores.Properties).DisplayMember = "nombre";
-                ((RepositoryItemLookUpEditBase)cbClases.Properties).DataSource = clases;
-                ((RepositoryItemLookUpEditBase)cbClases.Properties).ValueMember = "clase";
-                ((RepositoryItemLookUpEditBase)cbClases.Properties).DisplayMember = "nombre";
+                cbVendedores.Properties.DataSource = vendedores;
+                cbVendedores.Properties.ValueMember = "id";
+                cbVendedores.Properties.DisplayMember = "nombre";
+                cbClases.Properties.DataSource = clases;
+                cbClases.Properties.ValueMember = "clase";
+                cbClases.Properties.DisplayMember = "nombre";
                 List<Documento.Estado> list = Documento.Estado.Estados();
                 list.Add(new Documento.Estado
                 {
                     estado = '*',
                     nombre = "Todos"
                 });
-                ((RepositoryItemLookUpEditBase)cbEstados.Properties).DataSource = list;
-                ((RepositoryItemLookUpEditBase)cbEstados.Properties).ValueMember = "estado";
-                ((RepositoryItemLookUpEditBase)cbEstados.Properties).DisplayMember = "nombre";
+                cbEstados.Properties.DataSource = list;
+                cbEstados.Properties.ValueMember = "estado";
+                cbEstados.Properties.DisplayMember = "nombre";
                 var list2 = (from x in Socio.Socios()
                              where x.activo == true
                              select new { x.id, x.codigo, x.nombre }).ToList();
@@ -150,13 +151,13 @@ namespace NORI
                     codigo = "NA",
                     nombre = "Todos"
                 });
-                ((RepositoryItemLookUpEditBase)cbSocios.Properties).DataSource = list2;
-                ((RepositoryItemLookUpEditBase)cbSocios.Properties).ValueMember = "id";
-                ((RepositoryItemLookUpEditBase)cbSocios.Properties).DisplayMember = "nombre";
-                ((BaseEdit)cbClases).EditValue = "PE";
-                ((BaseEdit)cbEstados).EditValue = 'A';
-                ((BaseEdit)cbVendedores).EditValue = 0;
-                ((BaseEdit)cbSocios).EditValue = 0;
+                cbSocios.Properties.DataSource = list2;
+                cbSocios.Properties.ValueMember = "id";
+                cbSocios.Properties.DisplayMember = "nombre";
+                cbClases.EditValue = "PE";
+                cbEstados.EditValue = 'A';
+                cbVendedores.EditValue = 0;
+                cbSocios.EditValue = 0;
             }
             catch
             {
@@ -169,21 +170,31 @@ namespace NORI
             {
                 string text = ((Program.Nori.Configuracion.seleccionar_sucursal && Program.Nori.UsuarioAutenticado.rol != 'A') ? $"AND documentos.serie_id in (select id from series where almacen_id = {Program.Nori.UsuarioAutenticado.almacen_id})" : string.Empty);
                 string text2 = (cbWeb.Checked ? "AND documentos.web = 1" : string.Empty);
+                var xx= cbVendedores.EditValue;
                 string text3 = string.Empty;
-               // string text3 = (((int)((BaseEdit)cbVendedores).EditValue == 0) ? string.Empty : $"AND documentos.vendedor_id = {(int)((BaseEdit)cbVendedores).EditValue}");
+                if (cbVendedores.EditValue != null) {
+                   text3 = (((int)cbVendedores.EditValue == 0) ? string.Empty : $"AND documentos.vendedor_id = {(int)cbVendedores.EditValue}");
+                }
+
                 string text4 = string.Empty;
                 try
                 {
-                    //text4 = (((int)((BaseEdit)cbSocios).EditValue == 0) ? string.Empty : string.Format("AND (documentos.socio_id = {0} OR socios.socio_eventual_id = {0})", (int)((BaseEdit)cbSocios).EditValue));
+                    if (cbSocios.EditValue != null) {
+                        text4 = (((int)cbSocios.EditValue == 0) ? string.Empty : string.Format("AND (documentos.socio_id = {0} OR socios.socio_eventual_id = {0})", (int)cbSocios.EditValue));
+                    }
+                   
                 }
                 catch
                 {
                 }
                 string empty = string.Empty;
-                char c = (char)((BaseEdit)cbEstados).EditValue;
+                char c = 'A';
+                if (cbEstados.EditValue != null) {
+                    c = (char)cbEstados.EditValue;
+                }
                 char c2 = c;
-                empty = ((c2 != '*') ? $"AND documentos.estado = '{((BaseEdit)cbEstados).EditValue}'" : string.Empty);
-                string query = string.Format("SELECT documentos.id ID, series.nombre Serie, numero_documento 'N° Documento', fecha_documento Fecha, cast(documentos.fecha_creacion as time) Hora, socios.codigo 'Codigo SN', socios.nombre Nombre, total Total, (select sum(peso) from partidas where partidas.documento_id = documentos.id) as Peso ,condiciones_pago.nombre CondicionPago, metodos_pago.codigo MetodoPago, vendedores.nombre Vendedor, referencia Referencia, impreso Impreso, documentos.foraneo Foraneo, documentos.fecha_actualizacion 'Fecha actualización' FROM documentos INNER JOIN socios ON documentos.socio_id = socios.id LEFT JOIN vendedores ON documentos.vendedor_id = vendedores.id LEFT JOIN condiciones_pago ON condiciones_pago.id = documentos.condicion_pago_id LEFT JOIN metodos_pago ON metodos_pago.id = documentos.metodo_pago_id  LEFT JOIN series ON series.id = documentos.serie_id WHERE documentos.clase = '{0}' AND fecha_documento BETWEEN '{1}' AND '{2}' {3} {4} {5} {6} {7}", ((BaseEdit)cbClases).EditValue, ((DateTime)((BaseEdit)deDesde).EditValue).ToString("yyyyMMdd"), ((DateTime)((BaseEdit)deHasta).EditValue).ToString("yyyyMMdd"), empty, text3, text4, text2, text);
+                empty = ((c2 != '*') ? $"AND documentos.estado = '{cbEstados.EditValue}'" : string.Empty);
+                string query = string.Format("SELECT documentos.id ID, series.nombre Serie, numero_documento 'N° Documento', fecha_documento Fecha, cast(documentos.fecha_creacion as time) Hora, socios.codigo 'Codigo SN', socios.nombre Nombre, total Total, (select sum(peso) from partidas where partidas.documento_id = documentos.id) as Peso ,condiciones_pago.nombre CondicionPago, metodos_pago.codigo MetodoPago, vendedores.nombre Vendedor, referencia Referencia, impreso Impreso, documentos.foraneo Foraneo, documentos.fecha_actualizacion 'Fecha actualización' FROM documentos INNER JOIN socios ON documentos.socio_id = socios.id LEFT JOIN vendedores ON documentos.vendedor_id = vendedores.id LEFT JOIN condiciones_pago ON condiciones_pago.id = documentos.condicion_pago_id LEFT JOIN metodos_pago ON metodos_pago.id = documentos.metodo_pago_id  LEFT JOIN series ON series.id = documentos.serie_id WHERE documentos.clase = '{0}' AND fecha_documento BETWEEN '{1}' AND '{2}' {3} {4} {5} {6} {7}", cbClases.EditValue, ((DateTime)deDesde.EditValue).ToString("yyyyMMdd"), ((DateTime)deHasta.EditValue).ToString("yyyyMMdd"), empty, text3, text4, text2, text);
                 gcDocumentos.DataSource = Utilidades.EjecutarQuery(query);
             }
             catch
@@ -195,7 +206,7 @@ namespace NORI
         {
             try
             {
-                if (MessageBox.Show("¿Estas seguro(a) que deseas imprimir los documentos seleccionados?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) != DialogResult.Yes)
+                if (MessageBox.Show("¿Estas seguro(a) que deseas imprimir los documentos seleccionados?", ((Control)this).Text, MessageBoxButtons.YesNo) != DialogResult.Yes)
                 {
                     return;
                 }
@@ -203,11 +214,11 @@ namespace NORI
                 Informe informe = (from x in Informe.Informes()
                                    where x.tipo == (string)((BaseEdit)cbClases).EditValue && x.activo == true && x.predeterminado == true
                                    select x).First();
-                for (int i = 0; i < ((ColumnView)gvDocumentos).SelectedRowsCount; i++)
+                for (int i = 0; i < gvDocumentos.SelectedRowsCount; i++)
                 {
-                    if (((ColumnView)gvDocumentos).GetSelectedRows()[i] >= 0)
+                    if (gvDocumentos.GetSelectedRows()[i] >= 0)
                     {
-                        list.Add(((ColumnView)gvDocumentos).GetDataRow(((ColumnView)gvDocumentos).GetSelectedRows()[i]));
+                        list.Add(gvDocumentos.GetDataRow(gvDocumentos.GetSelectedRows()[i]));
                     }
                 }
                 for (int j = 0; j < list.Count; j++)
@@ -218,7 +229,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message, ((Control)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -226,28 +237,28 @@ namespace NORI
         {
             try
             {
-                if (MessageBox.Show("¿Estas seguro(a) que deseas abrir los documentos seleccionados?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) != DialogResult.Yes)
+                if (MessageBox.Show("¿Estas seguro(a) que deseas abrir los documentos seleccionados?", ((Control)this).Text, MessageBoxButtons.YesNo) != DialogResult.Yes)
                 {
                     return;
                 }
                 List<DataRow> list = new List<DataRow>();
-                for (int i = 0; i < ((ColumnView)gvDocumentos).SelectedRowsCount; i++)
+                for (int i = 0; i < gvDocumentos.SelectedRowsCount; i++)
                 {
-                    if (((ColumnView)gvDocumentos).GetSelectedRows()[i] >= 0)
+                    if (gvDocumentos.GetSelectedRows()[i] >= 0)
                     {
-                        list.Add(((ColumnView)gvDocumentos).GetDataRow(((ColumnView)gvDocumentos).GetSelectedRows()[i]));
+                        list.Add(gvDocumentos.GetDataRow(gvDocumentos.GetSelectedRows()[i]));
                     }
                 }
                 for (int j = 0; j < list.Count; j++)
                 {
                     DataRow dataRow = list[j];
-                    frmDocumentos frmDocumentos2 = new frmDocumentos((string)((BaseEdit)cbClases).EditValue, (int)dataRow["ID"]);
-                    ((Form)(object)frmDocumentos2).ShowDialog();
+                    frmDocumentos frmDocumentos2 = new frmDocumentos((string)cbClases.EditValue, (int)dataRow["ID"]);
+                    ((Form)frmDocumentos2).ShowDialog();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message, ((Control)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -255,16 +266,16 @@ namespace NORI
         {
             try
             {
-                if (!((BaseEdit)cbClases).EditValue.Equals("PE"))
+                if (!cbClases.EditValue.Equals("PE"))
                 {
                     return;
                 }
                 List<DataRow> list = new List<DataRow>();
-                for (int i = 0; i < ((ColumnView)gvDocumentos).SelectedRowsCount; i++)
+                for (int i = 0; i < gvDocumentos.SelectedRowsCount; i++)
                 {
-                    if (((ColumnView)gvDocumentos).GetSelectedRows()[i] >= 0)
+                    if (gvDocumentos.GetSelectedRows()[i] >= 0)
                     {
-                        list.Add(((ColumnView)gvDocumentos).GetDataRow(((ColumnView)gvDocumentos).GetSelectedRows()[i]));
+                        list.Add(gvDocumentos.GetDataRow(gvDocumentos.GetSelectedRows()[i]));
                     }
                 }
                 for (int j = 0; j < list.Count; j++)
@@ -273,13 +284,13 @@ namespace NORI
                     frmDocumentos frmDocumentos2 = new frmDocumentos("EN");
                     Documento documento = Documento.Obtener((int)dataRow["ID"]);
                     frmDocumentos2.documento.CopiarDe(documento, "EN");
-                    if (frmDocumentos2.documento.clase.Equals("EN") && MessageBox.Show("¿Desea realizar una entrega de mercancías diferencial?", ((Control)(object)this).Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    if (frmDocumentos2.documento.clase.Equals("EN") && MessageBox.Show("¿Desea realizar una entrega de mercancías diferencial?", ((Control)this).Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                     {
                         frmDocumentos2.documento.partidas.ForEach(delegate (Documento.Partida x)
                         {
                             x.cantidad = 0m;
                         });
-                        if (Program.Nori.UsuarioAutenticado.almacen_id != 0 && MessageBox.Show("¿Cargar solo partidas del almacén predeterminado para este usuario?", ((Control)(object)this).Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                        if (Program.Nori.UsuarioAutenticado.almacen_id != 0 && MessageBox.Show("¿Cargar solo partidas del almacén predeterminado para este usuario?", ((Control)this).Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                         {
                             frmDocumentos2.documento.partidas.RemoveAll((Documento.Partida x) => x.almacen_id != Program.Nori.UsuarioAutenticado.almacen_id);
                         }
@@ -296,12 +307,12 @@ namespace NORI
                     {
                     }
                     frmDocumentos2.Cargar(nuevo: true);
-                    ((Control)(object)frmDocumentos2).Show();
+                    ((Control)frmDocumentos2).Show();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message, ((Control)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -309,17 +320,17 @@ namespace NORI
         {
             try
             {
-                if (!((BaseEdit)cbClases).EditValue.Equals("EN") || ((BaseEdit)cbSocios).EditValue.Equals("0") || MessageBox.Show("¿Estas seguro(a) que deseas facturar los documentos seleccionados?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) != DialogResult.Yes)
+                if (!cbClases.EditValue.Equals("EN") || cbSocios.EditValue.Equals("0") || MessageBox.Show("¿Estas seguro(a) que deseas facturar los documentos seleccionados?", ((Control)this).Text, MessageBoxButtons.YesNo) != DialogResult.Yes)
                 {
                     return;
                 }
                 List<DataRow> list = new List<DataRow>();
                 List<int> ids = new List<int>();
-                for (int i = 0; i < ((ColumnView)gvDocumentos).SelectedRowsCount; i++)
+                for (int i = 0; i < gvDocumentos.SelectedRowsCount; i++)
                 {
-                    if (((ColumnView)gvDocumentos).GetSelectedRows()[i] >= 0)
+                    if (gvDocumentos.GetSelectedRows()[i] >= 0)
                     {
-                        list.Add(((ColumnView)gvDocumentos).GetDataRow(((ColumnView)gvDocumentos).GetSelectedRows()[i]));
+                        list.Add(gvDocumentos.GetDataRow(gvDocumentos.GetSelectedRows()[i]));
                     }
                 }
                 for (int j = 0; j < list.Count; j++)
@@ -365,7 +376,7 @@ namespace NORI
                 documento.socio_id = ((num != 0) ? num : socio_id);
                 if (documento.socio_id == Program.Nori.UsuarioAutenticado.socio_id)
                 {
-                    documento.comentario = $"Factura global del día: {DateTime.Today.ToShortDateString()}";
+                    documento.comentario = "Factura global del día: " + DateTime.Today.ToShortDateString();
                 }
                 try
                 {
@@ -383,15 +394,16 @@ namespace NORI
                 frmDocumentos frmDocumentos2 = new frmDocumentos("FA");
                 frmDocumentos2.documento.CopiarDe(documento, "FA");
                 Documento documento2 = frmDocumentos2.documento;
-                decimal descuento2 = (frmDocumentos2.documento.porcentaje_descuento = default(decimal));
+                decimal num3 = (frmDocumentos2.documento.porcentaje_descuento = default(decimal));
+                decimal descuento2 = num3;
                 documento2.descuento = descuento2;
                 frmDocumentos2.documento.CalcularTotal();
                 frmDocumentos2.Cargar(nuevo: true);
-                ((Form)(object)frmDocumentos2).ShowDialog();
+                ((Form)frmDocumentos2).ShowDialog();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message, ((Control)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -440,7 +452,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message, ((Control)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -454,7 +466,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message, ((Control)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -488,7 +500,7 @@ namespace NORI
             CargarDocumentos();
         }
 
-      
+
     }
 
 }

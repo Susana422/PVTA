@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using DevExpress.Utils;
 using DevExpress.Utils.Menu;
@@ -121,11 +122,14 @@ namespace NORI
         private void Cargar()
         {
             CargarConexiones();
+            var conexionesLista = conexiones.Cast<ConnectionStringSettings>().ToList();
+            var conexionesSinPrimerItem = conexionesLista.Skip(1).ToList();
             if (conexiones.Count != 0)
             {
-                ((RepositoryItemLookUpEditBase)cbConexiones.Properties).DataSource = conexiones;
+                ((RepositoryItemLookUpEditBase)cbConexiones.Properties).DataSource = conexionesSinPrimerItem;
                 ((RepositoryItemLookUpEditBase)cbConexiones.Properties).ValueMember = "Name";
                 ((RepositoryItemLookUpEditBase)cbConexiones.Properties).DisplayMember = "Name";
+                ((BaseEdit)cbConexiones).EditValue = conexionesSinPrimerItem[0].Name;
             }
         }
 

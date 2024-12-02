@@ -172,20 +172,20 @@ namespace NORI
             this.dockPanelMenuPrincipal.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.dockPanelMenuPrincipal.FloatSize = new System.Drawing.Size(218, 200);
             this.dockPanelMenuPrincipal.ID = new System.Guid("40a367a0-a383-4b5c-ab0b-4a5cc56ae345");
-            this.dockPanelMenuPrincipal.Location = new System.Drawing.Point(0, 78);
+            this.dockPanelMenuPrincipal.Location = new System.Drawing.Point(0, 105);
             this.dockPanelMenuPrincipal.Name = "dockPanelMenuPrincipal";
             this.dockPanelMenuPrincipal.Options.ShowCloseButton = false;
             this.dockPanelMenuPrincipal.OriginalSize = new System.Drawing.Size(324, 200);
-            this.dockPanelMenuPrincipal.Size = new System.Drawing.Size(324, 609);
+            this.dockPanelMenuPrincipal.Size = new System.Drawing.Size(324, 667);
             this.dockPanelMenuPrincipal.Text = "Menú principal";
             // 
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.accordionControl1);
             this.dockPanel1_Container.Controls.Add(this.lblEmpresa);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 30);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 31);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(315, 575);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(317, 633);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // accordionControl1
@@ -204,9 +204,9 @@ namespace NORI
             this.accordionControlElementInventario,
             this.accordionControlElementInformes,
             this.accordionControlElementExtras});
-            this.accordionControl1.Location = new System.Drawing.Point(3, 26);
+            this.accordionControl1.Location = new System.Drawing.Point(3, 29);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.Size = new System.Drawing.Size(239, 401);
+            this.accordionControl1.Size = new System.Drawing.Size(241, 512);
             this.accordionControl1.TabIndex = 0;
             // 
             // accordionControlElementUsuario
@@ -698,6 +698,7 @@ namespace NORI
             // 
             this.accordionControlElementInformes.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElementListaPartidas});
+            this.accordionControlElementInformes.Expanded = true;
             this.accordionControlElementInformes.Name = "accordionControlElementInformes";
             this.accordionControlElementInformes.Text = "Informes";
             // 
@@ -717,6 +718,7 @@ namespace NORI
             this.accordionControlElementExtras.Expanded = true;
             this.accordionControlElementExtras.Name = "accordionControlElementExtras";
             this.accordionControlElementExtras.Text = "Extras";
+            this.accordionControlElementExtras.Visible = false;
             // 
             // accordionControlElementListaPedidosWeb
             // 
@@ -757,7 +759,7 @@ namespace NORI
             this.lblEmpresa.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblEmpresa.Location = new System.Drawing.Point(9, 0);
             this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(236, 20);
+            this.lblEmpresa.Size = new System.Drawing.Size(238, 23);
             this.lblEmpresa.TabIndex = 4;
             this.lblEmpresa.Text = "CM internacional";
             // 
@@ -765,7 +767,7 @@ namespace NORI
             // 
             this.ribbonControl1.ApplicationButtonText = "CERRAR SESIÓN";
             this.ribbonControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
-            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(23, 24, 23, 24);
+            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(23, 27, 23, 27);
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -790,7 +792,7 @@ namespace NORI
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemToggleSwitch1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
-            this.ribbonControl1.Size = new System.Drawing.Size(994, 78);
+            this.ribbonControl1.Size = new System.Drawing.Size(994, 105);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.ApplicationButtonClick += new System.EventHandler(this.ribbonControl1_ApplicationButtonClick);
             // 
@@ -932,10 +934,10 @@ namespace NORI
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barHeaderItemEstacion);
             this.ribbonStatusBar1.ItemLinks.Add(this.barEditItemAutorizaciones);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 687);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 772);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(994, 23);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(994, 33);
             // 
             // documentManager1
             // 
@@ -986,18 +988,18 @@ namespace NORI
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::componentResourceManager.Resources.logodiesel;
-            this.pictureBox1.Location = new System.Drawing.Point(732, 537);
+            this.pictureBox1.Location = new System.Drawing.Point(732, 609);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(234, 124);
+            this.pictureBox1.Size = new System.Drawing.Size(234, 141);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
             // frmPrincipal
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(994, 710);
+            this.ClientSize = new System.Drawing.Size(994, 805);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dockPanelMenuPrincipal);
             this.Controls.Add(this.ribbonStatusBar1);

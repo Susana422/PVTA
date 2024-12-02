@@ -47,9 +47,8 @@ namespace NORI
 
         private void InitializeComponent()
         {
-
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator2 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
+            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator1 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiGuardar = new DevExpress.XtraBars.BarButtonItem();
             this.bbiGuardarCerrar = new DevExpress.XtraBars.BarButtonItem();
@@ -375,7 +374,8 @@ namespace NORI
             // 
             // mainRibbonControl
             // 
-            this.mainRibbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35);
+            this.mainRibbonControl.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
+            this.mainRibbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 40, 35, 40);
             this.mainRibbonControl.ExpandCollapseItem.Id = 0;
             this.mainRibbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.mainRibbonControl.ExpandCollapseItem,
@@ -418,7 +418,7 @@ namespace NORI
             this.ribbonPageHerramientas});
             this.mainRibbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.mainRibbonControl.Size = new System.Drawing.Size(1003, 101);
+            this.mainRibbonControl.Size = new System.Drawing.Size(1003, 82);
             this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bbiGuardar
@@ -725,21 +725,21 @@ namespace NORI
             // 
             this.layoutControl1.Controls.Add(this.xtraTabControl1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 101);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 82);
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1003, 627);
+            this.layoutControl1.Size = new System.Drawing.Size(1003, 743);
             this.layoutControl1.TabIndex = 59;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // xtraTabControl1
             // 
-            this.xtraTabControl1.Location = new System.Drawing.Point(12, 12);
+            this.xtraTabControl1.Location = new System.Drawing.Point(6, 7);
             this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPageGeneral;
-            this.xtraTabControl1.Size = new System.Drawing.Size(979, 603);
+            this.xtraTabControl1.Size = new System.Drawing.Size(991, 729);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageGeneral,
@@ -814,25 +814,25 @@ namespace NORI
             this.xtraTabPageGeneral.Controls.Add(this.gcPartidas);
             this.xtraTabPageGeneral.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.xtraTabPageGeneral.Name = "xtraTabPageGeneral";
-            this.xtraTabPageGeneral.Size = new System.Drawing.Size(977, 578);
+            this.xtraTabPageGeneral.Size = new System.Drawing.Size(989, 704);
             this.xtraTabPageGeneral.Text = "General";
             // 
             // btnCargaArticulos
             // 
-            this.btnCargaArticulos.Location = new System.Drawing.Point(545, 134);
+            this.btnCargaArticulos.Location = new System.Drawing.Point(545, 152);
             this.btnCargaArticulos.Margin = new System.Windows.Forms.Padding(2);
             this.btnCargaArticulos.Name = "btnCargaArticulos";
-            this.btnCargaArticulos.Size = new System.Drawing.Size(166, 27);
+            this.btnCargaArticulos.Size = new System.Drawing.Size(166, 31);
             this.btnCargaArticulos.TabIndex = 166;
             this.btnCargaArticulos.Text = "Subir Articulos";
             this.btnCargaArticulos.Click += new System.EventHandler(this.btnCargaArticulos_Click);
             // 
             // btnDescuentosEspeciales
             // 
-            this.btnDescuentosEspeciales.Location = new System.Drawing.Point(332, 134);
+            this.btnDescuentosEspeciales.Location = new System.Drawing.Point(332, 152);
             this.btnDescuentosEspeciales.Margin = new System.Windows.Forms.Padding(2);
             this.btnDescuentosEspeciales.Name = "btnDescuentosEspeciales";
-            this.btnDescuentosEspeciales.Size = new System.Drawing.Size(209, 27);
+            this.btnDescuentosEspeciales.Size = new System.Drawing.Size(209, 31);
             this.btnDescuentosEspeciales.TabIndex = 165;
             this.btnDescuentosEspeciales.Text = "Aplicar descuentos especiales";
             this.btnDescuentosEspeciales.Click += new System.EventHandler(this.btnDescuentosEspeciales_Click);
@@ -840,7 +840,7 @@ namespace NORI
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 177);
+            this.pictureBox1.Location = new System.Drawing.Point(13, 201);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
@@ -852,7 +852,7 @@ namespace NORI
             // 
             this.txtArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtArticulo.Location = new System.Drawing.Point(48, 179);
+            this.txtArticulo.Location = new System.Drawing.Point(48, 203);
             this.txtArticulo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtArticulo.Name = "txtArticulo";
             this.txtArticulo.Size = new System.Drawing.Size(916, 24);
@@ -863,7 +863,7 @@ namespace NORI
             // txtFechaVigencia
             // 
             this.txtFechaVigencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFechaVigencia.Location = new System.Drawing.Point(840, 135);
+            this.txtFechaVigencia.Location = new System.Drawing.Point(840, 153);
             this.txtFechaVigencia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtFechaVigencia.Name = "txtFechaVigencia";
             this.txtFechaVigencia.Properties.DisplayFormat.FormatString = "d";
@@ -879,10 +879,10 @@ namespace NORI
             // lblFechaVigencia
             // 
             this.lblFechaVigencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFechaVigencia.Location = new System.Drawing.Point(750, 138);
+            this.lblFechaVigencia.Location = new System.Drawing.Point(739, 156);
             this.lblFechaVigencia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblFechaVigencia.Name = "lblFechaVigencia";
-            this.lblFechaVigencia.Size = new System.Drawing.Size(78, 15);
+            this.lblFechaVigencia.Size = new System.Drawing.Size(93, 17);
             this.lblFechaVigencia.TabIndex = 163;
             this.lblFechaVigencia.Text = "Fecha vigencia";
             // 
@@ -892,7 +892,7 @@ namespace NORI
             this.lblWeb.AutoSize = true;
             this.lblWeb.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblWeb.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblWeb.Location = new System.Drawing.Point(465, 108);
+            this.lblWeb.Location = new System.Drawing.Point(465, 122);
             this.lblWeb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWeb.Name = "lblWeb";
             this.lblWeb.Size = new System.Drawing.Size(32, 13);
@@ -906,7 +906,7 @@ namespace NORI
             this.lblEnviado.AutoSize = true;
             this.lblEnviado.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblEnviado.ForeColor = System.Drawing.Color.Orange;
-            this.lblEnviado.Location = new System.Drawing.Point(617, 21);
+            this.lblEnviado.Location = new System.Drawing.Point(617, 24);
             this.lblEnviado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEnviado.Name = "lblEnviado";
             this.lblEnviado.Size = new System.Drawing.Size(51, 13);
@@ -916,19 +916,19 @@ namespace NORI
             // 
             // lblAlmacenDestino
             // 
-            this.lblAlmacenDestino.Location = new System.Drawing.Point(451, 76);
+            this.lblAlmacenDestino.Location = new System.Drawing.Point(428, 90);
             this.lblAlmacenDestino.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblAlmacenDestino.Name = "lblAlmacenDestino";
-            this.lblAlmacenDestino.Size = new System.Drawing.Size(89, 15);
+            this.lblAlmacenDestino.Size = new System.Drawing.Size(101, 17);
             this.lblAlmacenDestino.TabIndex = 160;
             this.lblAlmacenDestino.Text = "Almacén destino";
             // 
             // lblAlmacenOrigen
             // 
-            this.lblAlmacenOrigen.Location = new System.Drawing.Point(456, 46);
+            this.lblAlmacenOrigen.Location = new System.Drawing.Point(429, 54);
             this.lblAlmacenOrigen.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblAlmacenOrigen.Name = "lblAlmacenOrigen";
-            this.lblAlmacenOrigen.Size = new System.Drawing.Size(84, 15);
+            this.lblAlmacenOrigen.Size = new System.Drawing.Size(95, 17);
             this.lblAlmacenOrigen.TabIndex = 159;
             this.lblAlmacenOrigen.Text = "Almacén origen";
             // 
@@ -936,7 +936,7 @@ namespace NORI
             // 
             this.lblClase.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClase.Appearance.Options.UseFont = true;
-            this.lblClase.Location = new System.Drawing.Point(285, 12);
+            this.lblClase.Location = new System.Drawing.Point(285, 14);
             this.lblClase.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblClase.Name = "lblClase";
             this.lblClase.Size = new System.Drawing.Size(51, 23);
@@ -946,7 +946,7 @@ namespace NORI
             // cbAlmacenDestino
             // 
             this.cbAlmacenDestino.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbAlmacenDestino.Location = new System.Drawing.Point(547, 73);
+            this.cbAlmacenDestino.Location = new System.Drawing.Point(532, 82);
             this.cbAlmacenDestino.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbAlmacenDestino.MenuManager = this.mainRibbonControl;
             this.cbAlmacenDestino.Name = "cbAlmacenDestino";
@@ -964,7 +964,7 @@ namespace NORI
             // cbAlmacenOrigen
             // 
             this.cbAlmacenOrigen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbAlmacenOrigen.Location = new System.Drawing.Point(547, 43);
+            this.cbAlmacenOrigen.Location = new System.Drawing.Point(532, 51);
             this.cbAlmacenOrigen.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbAlmacenOrigen.MenuManager = this.mainRibbonControl;
             this.cbAlmacenOrigen.Name = "cbAlmacenOrigen";
@@ -982,10 +982,10 @@ namespace NORI
             // lblUtilidad
             // 
             this.lblUtilidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblUtilidad.Location = new System.Drawing.Point(373, 502);
+            this.lblUtilidad.Location = new System.Drawing.Point(373, 601);
             this.lblUtilidad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblUtilidad.Name = "lblUtilidad";
-            this.lblUtilidad.Size = new System.Drawing.Size(41, 15);
+            this.lblUtilidad.Size = new System.Drawing.Size(46, 17);
             this.lblUtilidad.TabIndex = 154;
             this.lblUtilidad.Text = "Utilidad";
             // 
@@ -993,7 +993,7 @@ namespace NORI
             // 
             this.deFechaVencimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.deFechaVencimiento.EditValue = null;
-            this.deFechaVencimiento.Location = new System.Drawing.Point(840, 75);
+            this.deFechaVencimiento.Location = new System.Drawing.Point(840, 85);
             this.deFechaVencimiento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.deFechaVencimiento.MenuManager = this.mainRibbonControl;
             this.deFechaVencimiento.Name = "deFechaVencimiento";
@@ -1006,7 +1006,7 @@ namespace NORI
             // 
             // cbMonederos
             // 
-            this.cbMonederos.Location = new System.Drawing.Point(132, 135);
+            this.cbMonederos.Location = new System.Drawing.Point(132, 153);
             this.cbMonederos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbMonederos.MenuManager = this.mainRibbonControl;
             this.cbMonederos.Name = "cbMonederos";
@@ -1022,10 +1022,10 @@ namespace NORI
             // lblMonederos
             // 
             this.lblMonederos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblMonederos.Location = new System.Drawing.Point(14, 137);
+            this.lblMonederos.Location = new System.Drawing.Point(14, 155);
             this.lblMonederos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblMonederos.Name = "lblMonederos";
-            this.lblMonederos.Size = new System.Drawing.Size(55, 15);
+            this.lblMonederos.Size = new System.Drawing.Size(62, 17);
             this.lblMonederos.TabIndex = 152;
             this.lblMonederos.Text = "Monedero";
             // 
@@ -1033,7 +1033,7 @@ namespace NORI
             // 
             this.deFechaContabilizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.deFechaContabilizacion.EditValue = null;
-            this.deFechaContabilizacion.Location = new System.Drawing.Point(840, 45);
+            this.deFechaContabilizacion.Location = new System.Drawing.Point(840, 51);
             this.deFechaContabilizacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.deFechaContabilizacion.MenuManager = this.mainRibbonControl;
             this.deFechaContabilizacion.Name = "deFechaContabilizacion";
@@ -1046,30 +1046,30 @@ namespace NORI
             // 
             // cbCOD
             // 
-            this.cbCOD.Location = new System.Drawing.Point(238, 75);
+            this.cbCOD.Location = new System.Drawing.Point(238, 85);
             this.cbCOD.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbCOD.MenuManager = this.mainRibbonControl;
             this.cbCOD.Name = "cbCOD";
             this.cbCOD.Properties.Caption = "COD";
-            this.cbCOD.Size = new System.Drawing.Size(88, 20);
+            this.cbCOD.Size = new System.Drawing.Size(88, 21);
             this.cbCOD.TabIndex = 126;
             this.cbCOD.TabStop = false;
             // 
             // cbAnticipo
             // 
-            this.cbAnticipo.Location = new System.Drawing.Point(332, 75);
+            this.cbAnticipo.Location = new System.Drawing.Point(332, 85);
             this.cbAnticipo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbAnticipo.MenuManager = this.mainRibbonControl;
             this.cbAnticipo.Name = "cbAnticipo";
             this.cbAnticipo.Properties.Caption = "Anticipo";
-            this.cbAnticipo.Size = new System.Drawing.Size(88, 20);
+            this.cbAnticipo.Size = new System.Drawing.Size(88, 21);
             this.cbAnticipo.TabIndex = 125;
             this.cbAnticipo.TabStop = false;
             // 
             // txtNumeroDocumentoExterno
             // 
             this.txtNumeroDocumentoExterno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtNumeroDocumentoExterno.Location = new System.Drawing.Point(13, 513);
+            this.txtNumeroDocumentoExterno.Location = new System.Drawing.Point(13, 613);
             this.txtNumeroDocumentoExterno.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNumeroDocumentoExterno.Name = "txtNumeroDocumentoExterno";
             this.txtNumeroDocumentoExterno.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -1083,37 +1083,37 @@ namespace NORI
             // lblArticulos
             // 
             this.lblArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblArticulos.Location = new System.Drawing.Point(373, 522);
+            this.lblArticulos.Location = new System.Drawing.Point(373, 624);
             this.lblArticulos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblArticulos.Name = "lblArticulos";
-            this.lblArticulos.Size = new System.Drawing.Size(56, 15);
+            this.lblArticulos.Size = new System.Drawing.Size(62, 17);
             this.lblArticulos.TabIndex = 0;
             this.lblArticulos.Text = "Artículos 0";
             // 
             // lblPartidas
             // 
             this.lblPartidas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblPartidas.Location = new System.Drawing.Point(373, 543);
+            this.lblPartidas.Location = new System.Drawing.Point(373, 647);
             this.lblPartidas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblPartidas.Name = "lblPartidas";
-            this.lblPartidas.Size = new System.Drawing.Size(51, 15);
+            this.lblPartidas.Size = new System.Drawing.Size(58, 17);
             this.lblPartidas.TabIndex = 0;
             this.lblPartidas.Text = "Partidas 0";
             // 
             // lblReferencia
             // 
             this.lblReferencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblReferencia.Location = new System.Drawing.Point(13, 450);
+            this.lblReferencia.Location = new System.Drawing.Point(13, 542);
             this.lblReferencia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblReferencia.Name = "lblReferencia";
-            this.lblReferencia.Size = new System.Drawing.Size(55, 15);
+            this.lblReferencia.Size = new System.Drawing.Size(65, 17);
             this.lblReferencia.TabIndex = 121;
             this.lblReferencia.Text = "Referencia";
             // 
             // txtReferencia
             // 
             this.txtReferencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtReferencia.Location = new System.Drawing.Point(131, 447);
+            this.txtReferencia.Location = new System.Drawing.Point(131, 539);
             this.txtReferencia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.Properties.MaxLength = 100;
@@ -1124,42 +1124,42 @@ namespace NORI
             // 
             // cbReserva
             // 
-            this.cbReserva.Location = new System.Drawing.Point(238, 75);
+            this.cbReserva.Location = new System.Drawing.Point(238, 85);
             this.cbReserva.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbReserva.MenuManager = this.mainRibbonControl;
             this.cbReserva.Name = "cbReserva";
             this.cbReserva.Properties.Caption = "Reserva";
-            this.cbReserva.Size = new System.Drawing.Size(88, 20);
+            this.cbReserva.Size = new System.Drawing.Size(88, 21);
             this.cbReserva.TabIndex = 0;
             this.cbReserva.TabStop = false;
             // 
             // lblIdentificadorExterno
             // 
             this.lblIdentificadorExterno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblIdentificadorExterno.Location = new System.Drawing.Point(13, 543);
+            this.lblIdentificadorExterno.Location = new System.Drawing.Point(13, 647);
             this.lblIdentificadorExterno.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblIdentificadorExterno.Name = "lblIdentificadorExterno";
-            this.lblIdentificadorExterno.Size = new System.Drawing.Size(6, 15);
+            this.lblIdentificadorExterno.Size = new System.Drawing.Size(7, 17);
             this.lblIdentificadorExterno.TabIndex = 119;
             this.lblIdentificadorExterno.Text = "0";
             // 
             // lblCodigoSN
             // 
             this.lblCodigoSN.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCodigoSN.Location = new System.Drawing.Point(13, 18);
+            this.lblCodigoSN.Location = new System.Drawing.Point(13, 20);
             this.lblCodigoSN.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblCodigoSN.Name = "lblCodigoSN";
-            this.lblCodigoSN.Size = new System.Drawing.Size(57, 15);
+            this.lblCodigoSN.Size = new System.Drawing.Size(63, 17);
             this.lblCodigoSN.TabIndex = 118;
             this.lblCodigoSN.Text = "Código SN";
             this.lblCodigoSN.Click += new System.EventHandler(this.lblCodigoSN_Click);
             // 
             // lblID
             // 
-            this.lblID.Location = new System.Drawing.Point(237, 18);
+            this.lblID.Location = new System.Drawing.Point(237, 20);
             this.lblID.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(6, 15);
+            this.lblID.Size = new System.Drawing.Size(7, 17);
             this.lblID.TabIndex = 117;
             this.lblID.Text = "0";
             // 
@@ -1169,7 +1169,7 @@ namespace NORI
             this.lblImpreso.AutoSize = true;
             this.lblImpreso.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblImpreso.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblImpreso.Location = new System.Drawing.Point(547, 20);
+            this.lblImpreso.Location = new System.Drawing.Point(547, 23);
             this.lblImpreso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblImpreso.Name = "lblImpreso";
             this.lblImpreso.Size = new System.Drawing.Size(55, 13);
@@ -1183,7 +1183,7 @@ namespace NORI
             this.lblCancelado.AutoSize = true;
             this.lblCancelado.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblCancelado.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblCancelado.Location = new System.Drawing.Point(465, 20);
+            this.lblCancelado.Location = new System.Drawing.Point(465, 23);
             this.lblCancelado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCancelado.Name = "lblCancelado";
             this.lblCancelado.Size = new System.Drawing.Size(65, 13);
@@ -1193,7 +1193,7 @@ namespace NORI
             // 
             // txtTipoCambio
             // 
-            this.txtTipoCambio.Location = new System.Drawing.Point(332, 105);
+            this.txtTipoCambio.Location = new System.Drawing.Point(332, 119);
             this.txtTipoCambio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTipoCambio.Name = "txtTipoCambio";
             this.txtTipoCambio.Size = new System.Drawing.Size(112, 24);
@@ -1206,16 +1206,16 @@ namespace NORI
             // 
             this.separatorControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl1.Location = new System.Drawing.Point(13, 159);
+            this.separatorControl1.Location = new System.Drawing.Point(13, 180);
             this.separatorControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.separatorControl1.Name = "separatorControl1";
-            this.separatorControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.separatorControl1.Size = new System.Drawing.Size(951, 22);
+            this.separatorControl1.Padding = new System.Windows.Forms.Padding(10, 11, 10, 11);
+            this.separatorControl1.Size = new System.Drawing.Size(951, 25);
             this.separatorControl1.TabIndex = 112;
             // 
             // cbMonedas
             // 
-            this.cbMonedas.Location = new System.Drawing.Point(131, 105);
+            this.cbMonedas.Location = new System.Drawing.Point(131, 119);
             this.cbMonedas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbMonedas.MenuManager = this.mainRibbonControl;
             this.cbMonedas.Name = "cbMonedas";
@@ -1233,10 +1233,10 @@ namespace NORI
             // lblMonedas
             // 
             this.lblMonedas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblMonedas.Location = new System.Drawing.Point(13, 106);
+            this.lblMonedas.Location = new System.Drawing.Point(13, 120);
             this.lblMonedas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblMonedas.Name = "lblMonedas";
-            this.lblMonedas.Size = new System.Drawing.Size(44, 15);
+            this.lblMonedas.Size = new System.Drawing.Size(50, 17);
             this.lblMonedas.TabIndex = 111;
             this.lblMonedas.Text = "Moneda";
             this.lblMonedas.Click += new System.EventHandler(this.lblMonedas_Click);
@@ -1245,10 +1245,10 @@ namespace NORI
             // 
             this.lblDescuento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDescuento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblDescuento.Location = new System.Drawing.Point(686, 450);
+            this.lblDescuento.Location = new System.Drawing.Point(686, 542);
             this.lblDescuento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblDescuento.Name = "lblDescuento";
-            this.lblDescuento.Size = new System.Drawing.Size(56, 15);
+            this.lblDescuento.Size = new System.Drawing.Size(65, 17);
             this.lblDescuento.TabIndex = 109;
             this.lblDescuento.Text = "Descuento";
             this.lblDescuento.Click += new System.EventHandler(this.lblDescuento_Click);
@@ -1256,7 +1256,7 @@ namespace NORI
             // txtPorcentajeDescuento
             // 
             this.txtPorcentajeDescuento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPorcentajeDescuento.Location = new System.Drawing.Point(806, 447);
+            this.txtPorcentajeDescuento.Location = new System.Drawing.Point(806, 539);
             this.txtPorcentajeDescuento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtPorcentajeDescuento.MenuManager = this.mainRibbonControl;
             this.txtPorcentajeDescuento.Name = "txtPorcentajeDescuento";
@@ -1269,7 +1269,7 @@ namespace NORI
             // 
             // txtFechaCreacion
             // 
-            this.txtFechaCreacion.Location = new System.Drawing.Point(132, 75);
+            this.txtFechaCreacion.Location = new System.Drawing.Point(132, 85);
             this.txtFechaCreacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtFechaCreacion.Name = "txtFechaCreacion";
             this.txtFechaCreacion.Properties.DisplayFormat.FormatString = "d";
@@ -1283,17 +1283,17 @@ namespace NORI
             // 
             // lblFechaCreacion
             // 
-            this.lblFechaCreacion.Location = new System.Drawing.Point(13, 78);
+            this.lblFechaCreacion.Location = new System.Drawing.Point(13, 88);
             this.lblFechaCreacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblFechaCreacion.Name = "lblFechaCreacion";
-            this.lblFechaCreacion.Size = new System.Drawing.Size(79, 15);
+            this.lblFechaCreacion.Size = new System.Drawing.Size(94, 17);
             this.lblFechaCreacion.TabIndex = 105;
             this.lblFechaCreacion.Text = "Fecha creación";
             // 
             // cbSeries
             // 
             this.cbSeries.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbSeries.Location = new System.Drawing.Point(742, 15);
+            this.cbSeries.Location = new System.Drawing.Point(742, 17);
             this.cbSeries.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbSeries.MenuManager = this.mainRibbonControl;
             this.cbSeries.Name = "cbSeries";
@@ -1309,17 +1309,17 @@ namespace NORI
             // lblNumeroDocumento
             // 
             this.lblNumeroDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNumeroDocumento.Location = new System.Drawing.Point(696, 18);
+            this.lblNumeroDocumento.Location = new System.Drawing.Point(696, 20);
             this.lblNumeroDocumento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblNumeroDocumento.Name = "lblNumeroDocumento";
-            this.lblNumeroDocumento.Size = new System.Drawing.Size(14, 15);
+            this.lblNumeroDocumento.Size = new System.Drawing.Size(14, 17);
             this.lblNumeroDocumento.TabIndex = 103;
             this.lblNumeroDocumento.Text = "N°";
             // 
             // txtNumeroDocumento
             // 
             this.txtNumeroDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNumeroDocumento.Location = new System.Drawing.Point(840, 15);
+            this.txtNumeroDocumento.Location = new System.Drawing.Point(840, 17);
             this.txtNumeroDocumento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNumeroDocumento.Name = "txtNumeroDocumento";
             this.txtNumeroDocumento.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1331,7 +1331,7 @@ namespace NORI
             // txtFechaDocumento
             // 
             this.txtFechaDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFechaDocumento.Location = new System.Drawing.Point(840, 105);
+            this.txtFechaDocumento.Location = new System.Drawing.Point(840, 119);
             this.txtFechaDocumento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtFechaDocumento.Name = "txtFechaDocumento";
             this.txtFechaDocumento.Properties.DisplayFormat.FormatString = "d";
@@ -1347,20 +1347,20 @@ namespace NORI
             // lblFechaDocumento
             // 
             this.lblFechaDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFechaDocumento.Location = new System.Drawing.Point(734, 108);
+            this.lblFechaDocumento.Location = new System.Drawing.Point(722, 122);
             this.lblFechaDocumento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblFechaDocumento.Name = "lblFechaDocumento";
-            this.lblFechaDocumento.Size = new System.Drawing.Size(96, 15);
+            this.lblFechaDocumento.Size = new System.Drawing.Size(110, 17);
             this.lblFechaDocumento.TabIndex = 93;
             this.lblFechaDocumento.Text = "Fecha documento";
             // 
             // lblFechaVencimiento
             // 
             this.lblFechaVencimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFechaVencimiento.Location = new System.Drawing.Point(729, 78);
+            this.lblFechaVencimiento.Location = new System.Drawing.Point(717, 89);
             this.lblFechaVencimiento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblFechaVencimiento.Name = "lblFechaVencimiento";
-            this.lblFechaVencimiento.Size = new System.Drawing.Size(100, 15);
+            this.lblFechaVencimiento.Size = new System.Drawing.Size(116, 17);
             this.lblFechaVencimiento.TabIndex = 91;
             this.lblFechaVencimiento.Text = "Fecha vencimiento";
             this.lblFechaVencimiento.DoubleClick += new System.EventHandler(this.lblFechaVencimiento_DoubleClick);
@@ -1368,38 +1368,38 @@ namespace NORI
             // lblFechaContabilizacion
             // 
             this.lblFechaContabilizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFechaContabilizacion.Location = new System.Drawing.Point(715, 48);
+            this.lblFechaContabilizacion.Location = new System.Drawing.Point(701, 58);
             this.lblFechaContabilizacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblFechaContabilizacion.Name = "lblFechaContabilizacion";
-            this.lblFechaContabilizacion.Size = new System.Drawing.Size(114, 15);
+            this.lblFechaContabilizacion.Size = new System.Drawing.Size(132, 17);
             this.lblFechaContabilizacion.TabIndex = 89;
             this.lblFechaContabilizacion.Text = "Fecha contabilización";
             // 
             // txtComentario
             // 
             this.txtComentario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtComentario.Location = new System.Drawing.Point(131, 477);
+            this.txtComentario.Location = new System.Drawing.Point(131, 573);
             this.txtComentario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtComentario.MenuManager = this.mainRibbonControl;
             this.txtComentario.Name = "txtComentario";
-            this.txtComentario.Size = new System.Drawing.Size(231, 82);
+            this.txtComentario.Size = new System.Drawing.Size(231, 93);
             this.txtComentario.TabIndex = 0;
             this.txtComentario.TabStop = false;
             // 
             // lblComentario
             // 
             this.lblComentario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblComentario.Location = new System.Drawing.Point(13, 480);
+            this.lblComentario.Location = new System.Drawing.Point(13, 576);
             this.lblComentario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblComentario.Name = "lblComentario";
-            this.lblComentario.Size = new System.Drawing.Size(63, 15);
+            this.lblComentario.Size = new System.Drawing.Size(71, 17);
             this.lblComentario.TabIndex = 84;
             this.lblComentario.Text = "Comentario";
             // 
             // cbVendedores
             // 
             this.cbVendedores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbVendedores.Location = new System.Drawing.Point(131, 417);
+            this.cbVendedores.Location = new System.Drawing.Point(131, 505);
             this.cbVendedores.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbVendedores.MenuManager = this.mainRibbonControl;
             this.cbVendedores.Name = "cbVendedores";
@@ -1416,27 +1416,27 @@ namespace NORI
             // 
             this.lblVendedores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblVendedores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblVendedores.Location = new System.Drawing.Point(13, 420);
+            this.lblVendedores.Location = new System.Drawing.Point(13, 508);
             this.lblVendedores.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblVendedores.Name = "lblVendedores";
-            this.lblVendedores.Size = new System.Drawing.Size(51, 15);
+            this.lblVendedores.Size = new System.Drawing.Size(61, 17);
             this.lblVendedores.TabIndex = 82;
             this.lblVendedores.Text = "Vendedor";
             // 
             // lblImporteAplicado
             // 
             this.lblImporteAplicado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblImporteAplicado.Location = new System.Drawing.Point(686, 540);
+            this.lblImporteAplicado.Location = new System.Drawing.Point(686, 644);
             this.lblImporteAplicado.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblImporteAplicado.Name = "lblImporteAplicado";
-            this.lblImporteAplicado.Size = new System.Drawing.Size(90, 15);
+            this.lblImporteAplicado.Size = new System.Drawing.Size(104, 17);
             this.lblImporteAplicado.TabIndex = 80;
             this.lblImporteAplicado.Text = "Importe aplicado";
             // 
             // txtImporteAplicado
             // 
             this.txtImporteAplicado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtImporteAplicado.Location = new System.Drawing.Point(806, 535);
+            this.txtImporteAplicado.Location = new System.Drawing.Point(806, 638);
             this.txtImporteAplicado.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtImporteAplicado.MenuManager = this.mainRibbonControl;
             this.txtImporteAplicado.Name = "txtImporteAplicado";
@@ -1454,17 +1454,17 @@ namespace NORI
             // lblTotal
             // 
             this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTotal.Location = new System.Drawing.Point(686, 510);
+            this.lblTotal.Location = new System.Drawing.Point(686, 610);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(110, 15);
+            this.lblTotal.Size = new System.Drawing.Size(124, 17);
             this.lblTotal.TabIndex = 78;
             this.lblTotal.Text = "Total del documento";
             // 
             // txtTotal
             // 
             this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotal.Location = new System.Drawing.Point(806, 505);
+            this.txtTotal.Location = new System.Drawing.Point(806, 604);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTotal.MenuManager = this.mainRibbonControl;
             this.txtTotal.Name = "txtTotal";
@@ -1477,14 +1477,14 @@ namespace NORI
             this.txtTotal.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtTotal.Properties.ReadOnly = true;
             this.txtTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtTotal.Size = new System.Drawing.Size(158, 22);
+            this.txtTotal.Size = new System.Drawing.Size(158, 20);
             this.txtTotal.TabIndex = 0;
             this.txtTotal.TabStop = false;
             // 
             // txtDescuento
             // 
             this.txtDescuento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescuento.Location = new System.Drawing.Point(870, 447);
+            this.txtDescuento.Location = new System.Drawing.Point(870, 539);
             this.txtDescuento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDescuento.MenuManager = this.mainRibbonControl;
             this.txtDescuento.Name = "txtDescuento";
@@ -1502,17 +1502,17 @@ namespace NORI
             // lblImpuesto
             // 
             this.lblImpuesto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblImpuesto.Location = new System.Drawing.Point(686, 480);
+            this.lblImpuesto.Location = new System.Drawing.Point(686, 576);
             this.lblImpuesto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblImpuesto.Name = "lblImpuesto";
-            this.lblImpuesto.Size = new System.Drawing.Size(50, 15);
+            this.lblImpuesto.Size = new System.Drawing.Size(55, 17);
             this.lblImpuesto.TabIndex = 74;
             this.lblImpuesto.Text = "Impuesto";
             // 
             // txtImpuesto
             // 
             this.txtImpuesto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtImpuesto.Location = new System.Drawing.Point(806, 477);
+            this.txtImpuesto.Location = new System.Drawing.Point(806, 573);
             this.txtImpuesto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtImpuesto.MenuManager = this.mainRibbonControl;
             this.txtImpuesto.Name = "txtImpuesto";
@@ -1530,17 +1530,17 @@ namespace NORI
             // lblSubTotal
             // 
             this.lblSubTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSubTotal.Location = new System.Drawing.Point(686, 420);
+            this.lblSubTotal.Location = new System.Drawing.Point(686, 508);
             this.lblSubTotal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblSubTotal.Name = "lblSubTotal";
-            this.lblSubTotal.Size = new System.Drawing.Size(46, 15);
+            this.lblSubTotal.Size = new System.Drawing.Size(51, 17);
             this.lblSubTotal.TabIndex = 72;
             this.lblSubTotal.Text = "SubTotal";
             // 
             // txtSubTotal
             // 
             this.txtSubTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSubTotal.Location = new System.Drawing.Point(806, 415);
+            this.txtSubTotal.Location = new System.Drawing.Point(806, 502);
             this.txtSubTotal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtSubTotal.MenuManager = this.mainRibbonControl;
             this.txtSubTotal.Name = "txtSubTotal";
@@ -1559,7 +1559,7 @@ namespace NORI
             // 
             // txtCodigoSN
             // 
-            this.txtCodigoSN.Location = new System.Drawing.Point(132, 15);
+            this.txtCodigoSN.Location = new System.Drawing.Point(132, 17);
             this.txtCodigoSN.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCodigoSN.Name = "txtCodigoSN";
             this.txtCodigoSN.Size = new System.Drawing.Size(98, 24);
@@ -1571,7 +1571,7 @@ namespace NORI
             // 
             this.lblSocio.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblSocio.Appearance.Options.UseFont = true;
-            this.lblSocio.Location = new System.Drawing.Point(13, 48);
+            this.lblSocio.Location = new System.Drawing.Point(13, 54);
             this.lblSocio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblSocio.Name = "lblSocio";
             this.lblSocio.Size = new System.Drawing.Size(216, 13);
@@ -1584,7 +1584,7 @@ namespace NORI
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcPartidas.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.gcPartidas.Location = new System.Drawing.Point(13, 223);
+            this.gcPartidas.Location = new System.Drawing.Point(13, 253);
             this.gcPartidas.MainView = this.gvPartidas;
             this.gcPartidas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gcPartidas.Name = "gcPartidas";
@@ -1596,7 +1596,7 @@ namespace NORI
             this.repositoryItemCalcEdit1,
             this.cbUnidadesMedida,
             this.cbAlmacenesDestino});
-            this.gcPartidas.Size = new System.Drawing.Size(951, 185);
+            this.gcPartidas.Size = new System.Drawing.Size(951, 242);
             this.gcPartidas.TabIndex = 1;
             this.gcPartidas.TabStop = false;
             this.gcPartidas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1635,7 +1635,7 @@ namespace NORI
             this.gridColumnComentario,
             this.gridColumnDescuentoEspecial,
             this.gridColumnNumeroPedimento});
-            this.gvPartidas.DetailHeight = 404;
+            this.gvPartidas.DetailHeight = 458;
             this.gvPartidas.GridControl = this.gcPartidas;
             this.gvPartidas.Name = "gvPartidas";
             this.gvPartidas.OptionsCustomization.AllowSort = false;
@@ -2127,16 +2127,16 @@ namespace NORI
             this.xtraTabPageLogistica.Controls.Add(this.lblDireccionFacturacion);
             this.xtraTabPageLogistica.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.xtraTabPageLogistica.Name = "xtraTabPageLogistica";
-            this.xtraTabPageLogistica.Size = new System.Drawing.Size(977, 578);
+            this.xtraTabPageLogistica.Size = new System.Drawing.Size(989, 672);
             this.xtraTabPageLogistica.Text = "Logística";
             // 
             // btnEditarDireccionOrigen
             // 
             this.btnEditarDireccionOrigen.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnEditarDireccionOrigen.Location = new System.Drawing.Point(394, 343);
+            this.btnEditarDireccionOrigen.Location = new System.Drawing.Point(394, 389);
             this.btnEditarDireccionOrigen.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEditarDireccionOrigen.Name = "btnEditarDireccionOrigen";
-            this.btnEditarDireccionOrigen.Size = new System.Drawing.Size(28, 23);
+            this.btnEditarDireccionOrigen.Size = new System.Drawing.Size(28, 26);
             this.btnEditarDireccionOrigen.TabIndex = 173;
             this.btnEditarDireccionOrigen.TabStop = false;
             this.btnEditarDireccionOrigen.Click += new System.EventHandler(this.btnEditarDireccionOrigen_Click);
@@ -2144,28 +2144,28 @@ namespace NORI
             // btnAgregarDireccionOrigen
             // 
             this.btnAgregarDireccionOrigen.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnAgregarDireccionOrigen.Location = new System.Drawing.Point(394, 312);
+            this.btnAgregarDireccionOrigen.Location = new System.Drawing.Point(394, 354);
             this.btnAgregarDireccionOrigen.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAgregarDireccionOrigen.Name = "btnAgregarDireccionOrigen";
-            this.btnAgregarDireccionOrigen.Size = new System.Drawing.Size(28, 23);
+            this.btnAgregarDireccionOrigen.Size = new System.Drawing.Size(28, 26);
             this.btnAgregarDireccionOrigen.TabIndex = 169;
             this.btnAgregarDireccionOrigen.TabStop = false;
             this.btnAgregarDireccionOrigen.Click += new System.EventHandler(this.btnAgregarDireccionOrigen_Click);
             // 
             // txtDireccionOrigen
             // 
-            this.txtDireccionOrigen.Location = new System.Drawing.Point(132, 342);
+            this.txtDireccionOrigen.Location = new System.Drawing.Point(132, 388);
             this.txtDireccionOrigen.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDireccionOrigen.MenuManager = this.mainRibbonControl;
             this.txtDireccionOrigen.Name = "txtDireccionOrigen";
             this.txtDireccionOrigen.Properties.ReadOnly = true;
-            this.txtDireccionOrigen.Size = new System.Drawing.Size(255, 76);
+            this.txtDireccionOrigen.Size = new System.Drawing.Size(255, 86);
             this.txtDireccionOrigen.TabIndex = 170;
             this.txtDireccionOrigen.TabStop = false;
             // 
             // cbDireccionesOrigen
             // 
-            this.cbDireccionesOrigen.Location = new System.Drawing.Point(132, 312);
+            this.cbDireccionesOrigen.Location = new System.Drawing.Point(132, 354);
             this.cbDireccionesOrigen.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbDireccionesOrigen.MenuManager = this.mainRibbonControl;
             this.cbDireccionesOrigen.Name = "cbDireccionesOrigen";
@@ -2180,20 +2180,20 @@ namespace NORI
             // 
             // lblDireccionOrigen
             // 
-            this.lblDireccionOrigen.Location = new System.Drawing.Point(13, 315);
+            this.lblDireccionOrigen.Location = new System.Drawing.Point(13, 357);
             this.lblDireccionOrigen.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblDireccionOrigen.Name = "lblDireccionOrigen";
-            this.lblDireccionOrigen.Size = new System.Drawing.Size(87, 15);
+            this.lblDireccionOrigen.Size = new System.Drawing.Size(99, 17);
             this.lblDireccionOrigen.TabIndex = 172;
             this.lblDireccionOrigen.Text = "Dirección origen";
             // 
             // btnEditarDireccionFacturacion
             // 
             this.btnEditarDireccionFacturacion.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnEditarDireccionFacturacion.Location = new System.Drawing.Point(394, 46);
+            this.btnEditarDireccionFacturacion.Location = new System.Drawing.Point(394, 52);
             this.btnEditarDireccionFacturacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEditarDireccionFacturacion.Name = "btnEditarDireccionFacturacion";
-            this.btnEditarDireccionFacturacion.Size = new System.Drawing.Size(28, 23);
+            this.btnEditarDireccionFacturacion.Size = new System.Drawing.Size(28, 26);
             this.btnEditarDireccionFacturacion.TabIndex = 168;
             this.btnEditarDireccionFacturacion.TabStop = false;
             this.btnEditarDireccionFacturacion.Click += new System.EventHandler(this.btnEditarDireccionFacturacion_Click);
@@ -2201,26 +2201,26 @@ namespace NORI
             // btnEditarDireccionEnvio
             // 
             this.btnEditarDireccionEnvio.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnEditarDireccionEnvio.Location = new System.Drawing.Point(394, 194);
+            this.btnEditarDireccionEnvio.Location = new System.Drawing.Point(394, 220);
             this.btnEditarDireccionEnvio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEditarDireccionEnvio.Name = "btnEditarDireccionEnvio";
-            this.btnEditarDireccionEnvio.Size = new System.Drawing.Size(28, 23);
+            this.btnEditarDireccionEnvio.Size = new System.Drawing.Size(28, 26);
             this.btnEditarDireccionEnvio.TabIndex = 167;
             this.btnEditarDireccionEnvio.TabStop = false;
             this.btnEditarDireccionEnvio.Click += new System.EventHandler(this.btnEditarDireccionEnvio_Click);
             // 
             // lblDistancia
             // 
-            this.lblDistancia.Location = new System.Drawing.Point(15, 428);
+            this.lblDistancia.Location = new System.Drawing.Point(15, 485);
             this.lblDistancia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblDistancia.Name = "lblDistancia";
-            this.lblDistancia.Size = new System.Drawing.Size(77, 15);
+            this.lblDistancia.Size = new System.Drawing.Size(86, 17);
             this.lblDistancia.TabIndex = 166;
             this.lblDistancia.Text = "Distancia (Km)";
             // 
             // txtDistancia
             // 
-            this.txtDistancia.Location = new System.Drawing.Point(132, 425);
+            this.txtDistancia.Location = new System.Drawing.Point(132, 482);
             this.txtDistancia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDistancia.Name = "txtDistancia";
             this.txtDistancia.Properties.MaxLength = 18;
@@ -2229,7 +2229,7 @@ namespace NORI
             // 
             // cbRemolques
             // 
-            this.cbRemolques.Location = new System.Drawing.Point(593, 103);
+            this.cbRemolques.Location = new System.Drawing.Point(593, 117);
             this.cbRemolques.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbRemolques.MenuManager = this.mainRibbonControl;
             this.cbRemolques.Name = "cbRemolques";
@@ -2244,20 +2244,20 @@ namespace NORI
             // lblRemolque
             // 
             this.lblRemolque.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblRemolque.Location = new System.Drawing.Point(474, 104);
+            this.lblRemolque.Location = new System.Drawing.Point(474, 118);
             this.lblRemolque.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblRemolque.Name = "lblRemolque";
-            this.lblRemolque.Size = new System.Drawing.Size(54, 15);
+            this.lblRemolque.Size = new System.Drawing.Size(60, 17);
             this.lblRemolque.TabIndex = 164;
             this.lblRemolque.Text = "Remolque";
             this.lblRemolque.Click += new System.EventHandler(this.lblRemolque_Click);
             // 
             // btnGenerarTransferenciaStock
             // 
-            this.btnGenerarTransferenciaStock.Location = new System.Drawing.Point(474, 451);
+            this.btnGenerarTransferenciaStock.Location = new System.Drawing.Point(474, 511);
             this.btnGenerarTransferenciaStock.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnGenerarTransferenciaStock.Name = "btnGenerarTransferenciaStock";
-            this.btnGenerarTransferenciaStock.Size = new System.Drawing.Size(374, 27);
+            this.btnGenerarTransferenciaStock.Size = new System.Drawing.Size(374, 31);
             this.btnGenerarTransferenciaStock.TabIndex = 162;
             this.btnGenerarTransferenciaStock.Text = "Generar transferencia de stock desde una previa";
             this.btnGenerarTransferenciaStock.UseVisualStyleBackColor = true;
@@ -2266,17 +2266,17 @@ namespace NORI
             // bcID
             // 
             this.bcID.AutoModule = true;
-            this.bcID.Location = new System.Drawing.Point(593, 343);
+            this.bcID.Location = new System.Drawing.Point(593, 389);
             this.bcID.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.bcID.Name = "bcID";
             this.bcID.Padding = new System.Windows.Forms.Padding(12, 2, 12, 0);
-            this.bcID.Size = new System.Drawing.Size(255, 69);
-            this.bcID.Symbology = code128Generator2;
+            this.bcID.Size = new System.Drawing.Size(255, 78);
+            this.bcID.Symbology = code128Generator1;
             this.bcID.TabIndex = 147;
             // 
             // cbRutas
             // 
-            this.cbRutas.Location = new System.Drawing.Point(593, 134);
+            this.cbRutas.Location = new System.Drawing.Point(593, 152);
             this.cbRutas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbRutas.MenuManager = this.mainRibbonControl;
             this.cbRutas.Name = "cbRutas";
@@ -2291,10 +2291,10 @@ namespace NORI
             // lblRuta
             // 
             this.lblRuta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblRuta.Location = new System.Drawing.Point(474, 134);
+            this.lblRuta.Location = new System.Drawing.Point(474, 152);
             this.lblRuta.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblRuta.Name = "lblRuta";
-            this.lblRuta.Size = new System.Drawing.Size(24, 15);
+            this.lblRuta.Size = new System.Drawing.Size(27, 17);
             this.lblRuta.TabIndex = 146;
             this.lblRuta.Text = "Ruta";
             this.lblRuta.Click += new System.EventHandler(this.lblRuta_Click);
@@ -2303,16 +2303,16 @@ namespace NORI
             // 
             this.gcSeguimiento.Controls.Add(this.cbEstadoSeguimiento);
             this.gcSeguimiento.Controls.Add(this.cbSeguimiento);
-            this.gcSeguimiento.Location = new System.Drawing.Point(474, 261);
+            this.gcSeguimiento.Location = new System.Drawing.Point(474, 296);
             this.gcSeguimiento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gcSeguimiento.Name = "gcSeguimiento";
-            this.gcSeguimiento.Size = new System.Drawing.Size(374, 72);
+            this.gcSeguimiento.Size = new System.Drawing.Size(374, 82);
             this.gcSeguimiento.TabIndex = 144;
             this.gcSeguimiento.Text = "Seguimiento";
             // 
             // cbEstadoSeguimiento
             // 
-            this.cbEstadoSeguimiento.Location = new System.Drawing.Point(127, 35);
+            this.cbEstadoSeguimiento.Location = new System.Drawing.Point(127, 40);
             this.cbEstadoSeguimiento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbEstadoSeguimiento.MenuManager = this.mainRibbonControl;
             this.cbEstadoSeguimiento.Name = "cbEstadoSeguimiento";
@@ -2331,17 +2331,17 @@ namespace NORI
             // 
             // cbSeguimiento
             // 
-            this.cbSeguimiento.Location = new System.Drawing.Point(15, 35);
+            this.cbSeguimiento.Location = new System.Drawing.Point(15, 40);
             this.cbSeguimiento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbSeguimiento.MenuManager = this.mainRibbonControl;
             this.cbSeguimiento.Name = "cbSeguimiento";
             this.cbSeguimiento.Properties.Caption = "Seguimiento";
-            this.cbSeguimiento.Size = new System.Drawing.Size(105, 20);
+            this.cbSeguimiento.Size = new System.Drawing.Size(105, 21);
             this.cbSeguimiento.TabIndex = 0;
             // 
             // cbCausalidades
             // 
-            this.cbCausalidades.Location = new System.Drawing.Point(593, 193);
+            this.cbCausalidades.Location = new System.Drawing.Point(593, 219);
             this.cbCausalidades.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbCausalidades.MenuManager = this.mainRibbonControl;
             this.cbCausalidades.Name = "cbCausalidades";
@@ -2356,17 +2356,17 @@ namespace NORI
             // lblCausalidades
             // 
             this.lblCausalidades.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCausalidades.Location = new System.Drawing.Point(474, 194);
+            this.lblCausalidades.Location = new System.Drawing.Point(474, 220);
             this.lblCausalidades.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblCausalidades.Name = "lblCausalidades";
-            this.lblCausalidades.Size = new System.Drawing.Size(58, 15);
+            this.lblCausalidades.Size = new System.Drawing.Size(67, 17);
             this.lblCausalidades.TabIndex = 143;
             this.lblCausalidades.Text = "Causalidad";
             this.lblCausalidades.Click += new System.EventHandler(this.lblCausalidades_Click);
             // 
             // cbSupervisores
             // 
-            this.cbSupervisores.Location = new System.Drawing.Point(593, 163);
+            this.cbSupervisores.Location = new System.Drawing.Point(593, 185);
             this.cbSupervisores.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbSupervisores.MenuManager = this.mainRibbonControl;
             this.cbSupervisores.Name = "cbSupervisores";
@@ -2381,27 +2381,27 @@ namespace NORI
             // lblSupervisores
             // 
             this.lblSupervisores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSupervisores.Location = new System.Drawing.Point(474, 164);
+            this.lblSupervisores.Location = new System.Drawing.Point(474, 186);
             this.lblSupervisores.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblSupervisores.Name = "lblSupervisores";
-            this.lblSupervisores.Size = new System.Drawing.Size(55, 15);
+            this.lblSupervisores.Size = new System.Drawing.Size(63, 17);
             this.lblSupervisores.TabIndex = 140;
             this.lblSupervisores.Text = "Supervisor";
             this.lblSupervisores.Click += new System.EventHandler(this.lblSupervisores_Click);
             // 
             // cbForaneo
             // 
-            this.cbForaneo.Location = new System.Drawing.Point(858, 134);
+            this.cbForaneo.Location = new System.Drawing.Point(858, 152);
             this.cbForaneo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbForaneo.MenuManager = this.mainRibbonControl;
             this.cbForaneo.Name = "cbForaneo";
             this.cbForaneo.Properties.Caption = "Foráneo";
-            this.cbForaneo.Size = new System.Drawing.Size(70, 20);
+            this.cbForaneo.Size = new System.Drawing.Size(70, 21);
             this.cbForaneo.TabIndex = 8;
             // 
             // cbVehiculos
             // 
-            this.cbVehiculos.Location = new System.Drawing.Point(593, 74);
+            this.cbVehiculos.Location = new System.Drawing.Point(593, 84);
             this.cbVehiculos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbVehiculos.MenuManager = this.mainRibbonControl;
             this.cbVehiculos.Name = "cbVehiculos";
@@ -2416,17 +2416,17 @@ namespace NORI
             // lblVehiculo
             // 
             this.lblVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblVehiculo.Location = new System.Drawing.Point(474, 75);
+            this.lblVehiculo.Location = new System.Drawing.Point(474, 85);
             this.lblVehiculo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblVehiculo.Name = "lblVehiculo";
-            this.lblVehiculo.Size = new System.Drawing.Size(46, 15);
+            this.lblVehiculo.Size = new System.Drawing.Size(53, 17);
             this.lblVehiculo.TabIndex = 135;
             this.lblVehiculo.Text = "Vehículo";
             this.lblVehiculo.Click += new System.EventHandler(this.lblVehiculo_Click);
             // 
             // cbChoferes
             // 
-            this.cbChoferes.Location = new System.Drawing.Point(593, 44);
+            this.cbChoferes.Location = new System.Drawing.Point(593, 50);
             this.cbChoferes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbChoferes.MenuManager = this.mainRibbonControl;
             this.cbChoferes.Name = "cbChoferes";
@@ -2441,10 +2441,10 @@ namespace NORI
             // lblChofer
             // 
             this.lblChofer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblChofer.Location = new System.Drawing.Point(474, 45);
+            this.lblChofer.Location = new System.Drawing.Point(474, 51);
             this.lblChofer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblChofer.Name = "lblChofer";
-            this.lblChofer.Size = new System.Drawing.Size(36, 15);
+            this.lblChofer.Size = new System.Drawing.Size(41, 17);
             this.lblChofer.TabIndex = 133;
             this.lblChofer.Text = "Chofer";
             this.lblChofer.Click += new System.EventHandler(this.lblChofer_Click);
@@ -2452,10 +2452,10 @@ namespace NORI
             // btnSolicitarEtiquetas
             // 
             this.btnSolicitarEtiquetas.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnSolicitarEtiquetas.Location = new System.Drawing.Point(708, 223);
+            this.btnSolicitarEtiquetas.Location = new System.Drawing.Point(708, 253);
             this.btnSolicitarEtiquetas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSolicitarEtiquetas.Name = "btnSolicitarEtiquetas";
-            this.btnSolicitarEtiquetas.Size = new System.Drawing.Size(140, 23);
+            this.btnSolicitarEtiquetas.Size = new System.Drawing.Size(140, 26);
             this.btnSolicitarEtiquetas.TabIndex = 10;
             this.btnSolicitarEtiquetas.Text = "Solicitar etiquetas";
             this.btnSolicitarEtiquetas.Click += new System.EventHandler(this.btnSolicitarEtiquetas_Click);
@@ -2463,10 +2463,10 @@ namespace NORI
             // lblActualizacion
             // 
             this.lblActualizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblActualizacion.Location = new System.Drawing.Point(13, 534);
+            this.lblActualizacion.Location = new System.Drawing.Point(13, 605);
             this.lblActualizacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblActualizacion.Name = "lblActualizacion";
-            this.lblActualizacion.Size = new System.Drawing.Size(71, 15);
+            this.lblActualizacion.Size = new System.Drawing.Size(82, 17);
             this.lblActualizacion.TabIndex = 130;
             this.lblActualizacion.Text = "Actualización";
             // 
@@ -2474,17 +2474,17 @@ namespace NORI
             // 
             this.lblSincronizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSincronizacion.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSincronizacion.Location = new System.Drawing.Point(202, 534);
+            this.lblSincronizacion.Location = new System.Drawing.Point(202, 605);
             this.lblSincronizacion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSincronizacion.Name = "lblSincronizacion";
             this.lblSincronizacion.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblSincronizacion.Size = new System.Drawing.Size(756, 15);
+            this.lblSincronizacion.Size = new System.Drawing.Size(756, 17);
             this.lblSincronizacion.TabIndex = 129;
             this.lblSincronizacion.Text = "Sincronización";
             // 
             // cbPersonasContacto
             // 
-            this.cbPersonasContacto.Location = new System.Drawing.Point(132, 453);
+            this.cbPersonasContacto.Location = new System.Drawing.Point(132, 513);
             this.cbPersonasContacto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbPersonasContacto.MenuManager = this.mainRibbonControl;
             this.cbPersonasContacto.Name = "cbPersonasContacto";
@@ -2498,16 +2498,16 @@ namespace NORI
             // 
             // lblPersonasContacto
             // 
-            this.lblPersonasContacto.Location = new System.Drawing.Point(13, 457);
+            this.lblPersonasContacto.Location = new System.Drawing.Point(13, 518);
             this.lblPersonasContacto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblPersonasContacto.Name = "lblPersonasContacto";
-            this.lblPersonasContacto.Size = new System.Drawing.Size(108, 15);
+            this.lblPersonasContacto.Size = new System.Drawing.Size(126, 17);
             this.lblPersonasContacto.TabIndex = 128;
             this.lblPersonasContacto.Text = "Persona de contacto";
             // 
             // cbClasesExpedicion
             // 
-            this.cbClasesExpedicion.Location = new System.Drawing.Point(593, 14);
+            this.cbClasesExpedicion.Location = new System.Drawing.Point(593, 16);
             this.cbClasesExpedicion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbClasesExpedicion.MenuManager = this.mainRibbonControl;
             this.cbClasesExpedicion.Name = "cbClasesExpedicion";
@@ -2522,30 +2522,30 @@ namespace NORI
             // lblClaseExpedicion
             // 
             this.lblClaseExpedicion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblClaseExpedicion.Location = new System.Drawing.Point(474, 15);
+            this.lblClaseExpedicion.Location = new System.Drawing.Point(474, 17);
             this.lblClaseExpedicion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblClaseExpedicion.Name = "lblClaseExpedicion";
-            this.lblClaseExpedicion.Size = new System.Drawing.Size(89, 15);
+            this.lblClaseExpedicion.Size = new System.Drawing.Size(103, 17);
             this.lblClaseExpedicion.TabIndex = 126;
             this.lblClaseExpedicion.Text = "Clase expedición";
             // 
             // lblCreacion
             // 
             this.lblCreacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblCreacion.Location = new System.Drawing.Point(14, 512);
+            this.lblCreacion.Location = new System.Drawing.Point(14, 580);
             this.lblCreacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblCreacion.Name = "lblCreacion";
-            this.lblCreacion.Size = new System.Drawing.Size(47, 15);
+            this.lblCreacion.Size = new System.Drawing.Size(55, 17);
             this.lblCreacion.TabIndex = 124;
             this.lblCreacion.Text = "Creación";
             // 
             // btnDireccionFacturacion
             // 
             this.btnDireccionFacturacion.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnDireccionFacturacion.Location = new System.Drawing.Point(394, 15);
+            this.btnDireccionFacturacion.Location = new System.Drawing.Point(394, 17);
             this.btnDireccionFacturacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDireccionFacturacion.Name = "btnDireccionFacturacion";
-            this.btnDireccionFacturacion.Size = new System.Drawing.Size(28, 23);
+            this.btnDireccionFacturacion.Size = new System.Drawing.Size(28, 26);
             this.btnDireccionFacturacion.TabIndex = 0;
             this.btnDireccionFacturacion.TabStop = false;
             this.btnDireccionFacturacion.Click += new System.EventHandler(this.btnDireccionFacturacion_Click);
@@ -2553,39 +2553,39 @@ namespace NORI
             // btnAgregarDireccionEnvio
             // 
             this.btnAgregarDireccionEnvio.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnAgregarDireccionEnvio.Location = new System.Drawing.Point(394, 163);
+            this.btnAgregarDireccionEnvio.Location = new System.Drawing.Point(394, 185);
             this.btnAgregarDireccionEnvio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAgregarDireccionEnvio.Name = "btnAgregarDireccionEnvio";
-            this.btnAgregarDireccionEnvio.Size = new System.Drawing.Size(28, 23);
+            this.btnAgregarDireccionEnvio.Size = new System.Drawing.Size(28, 26);
             this.btnAgregarDireccionEnvio.TabIndex = 0;
             this.btnAgregarDireccionEnvio.TabStop = false;
             this.btnAgregarDireccionEnvio.Click += new System.EventHandler(this.btnAgregarDireccionEnvio_Click);
             // 
             // txtDireccionEnvio
             // 
-            this.txtDireccionEnvio.Location = new System.Drawing.Point(132, 193);
+            this.txtDireccionEnvio.Location = new System.Drawing.Point(132, 219);
             this.txtDireccionEnvio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDireccionEnvio.MenuManager = this.mainRibbonControl;
             this.txtDireccionEnvio.Name = "txtDireccionEnvio";
             this.txtDireccionEnvio.Properties.ReadOnly = true;
-            this.txtDireccionEnvio.Size = new System.Drawing.Size(255, 111);
+            this.txtDireccionEnvio.Size = new System.Drawing.Size(255, 126);
             this.txtDireccionEnvio.TabIndex = 0;
             this.txtDireccionEnvio.TabStop = false;
             // 
             // txtDireccionFacturacion
             // 
-            this.txtDireccionFacturacion.Location = new System.Drawing.Point(132, 45);
+            this.txtDireccionFacturacion.Location = new System.Drawing.Point(132, 51);
             this.txtDireccionFacturacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDireccionFacturacion.MenuManager = this.mainRibbonControl;
             this.txtDireccionFacturacion.Name = "txtDireccionFacturacion";
             this.txtDireccionFacturacion.Properties.ReadOnly = true;
-            this.txtDireccionFacturacion.Size = new System.Drawing.Size(255, 111);
+            this.txtDireccionFacturacion.Size = new System.Drawing.Size(255, 126);
             this.txtDireccionFacturacion.TabIndex = 0;
             this.txtDireccionFacturacion.TabStop = false;
             // 
             // cbDireccionesEnvio
             // 
-            this.cbDireccionesEnvio.Location = new System.Drawing.Point(132, 163);
+            this.cbDireccionesEnvio.Location = new System.Drawing.Point(132, 185);
             this.cbDireccionesEnvio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbDireccionesEnvio.MenuManager = this.mainRibbonControl;
             this.cbDireccionesEnvio.Name = "cbDireccionesEnvio";
@@ -2600,16 +2600,16 @@ namespace NORI
             // 
             // lblDireccionEnvio
             // 
-            this.lblDireccionEnvio.Location = new System.Drawing.Point(13, 166);
+            this.lblDireccionEnvio.Location = new System.Drawing.Point(13, 188);
             this.lblDireccionEnvio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblDireccionEnvio.Name = "lblDireccionEnvio";
-            this.lblDireccionEnvio.Size = new System.Drawing.Size(82, 15);
+            this.lblDireccionEnvio.Size = new System.Drawing.Size(95, 17);
             this.lblDireccionEnvio.TabIndex = 78;
             this.lblDireccionEnvio.Text = "Dirección envío";
             // 
             // cbDireccionesFacturacion
             // 
-            this.cbDireccionesFacturacion.Location = new System.Drawing.Point(132, 15);
+            this.cbDireccionesFacturacion.Location = new System.Drawing.Point(132, 17);
             this.cbDireccionesFacturacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbDireccionesFacturacion.MenuManager = this.mainRibbonControl;
             this.cbDireccionesFacturacion.Name = "cbDireccionesFacturacion";
@@ -2624,10 +2624,10 @@ namespace NORI
             // 
             // lblDireccionFacturacion
             // 
-            this.lblDireccionFacturacion.Location = new System.Drawing.Point(13, 18);
+            this.lblDireccionFacturacion.Location = new System.Drawing.Point(13, 20);
             this.lblDireccionFacturacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblDireccionFacturacion.Name = "lblDireccionFacturacion";
-            this.lblDireccionFacturacion.Size = new System.Drawing.Size(113, 15);
+            this.lblDireccionFacturacion.Size = new System.Drawing.Size(131, 17);
             this.lblDireccionFacturacion.TabIndex = 77;
             this.lblDireccionFacturacion.Text = "Dirección facturación";
             // 
@@ -2651,12 +2651,12 @@ namespace NORI
             this.xtraTabPageFinanzas.Controls.Add(this.lblCondicionesPago);
             this.xtraTabPageFinanzas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.xtraTabPageFinanzas.Name = "xtraTabPageFinanzas";
-            this.xtraTabPageFinanzas.Size = new System.Drawing.Size(977, 578);
+            this.xtraTabPageFinanzas.Size = new System.Drawing.Size(989, 672);
             this.xtraTabPageFinanzas.Text = "Finanzas";
             // 
             // cbProyectos
             // 
-            this.cbProyectos.Location = new System.Drawing.Point(132, 74);
+            this.cbProyectos.Location = new System.Drawing.Point(132, 84);
             this.cbProyectos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbProyectos.MenuManager = this.mainRibbonControl;
             this.cbProyectos.Name = "cbProyectos";
@@ -2671,19 +2671,19 @@ namespace NORI
             // lblProyectos
             // 
             this.lblProyectos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblProyectos.Location = new System.Drawing.Point(13, 76);
+            this.lblProyectos.Location = new System.Drawing.Point(13, 86);
             this.lblProyectos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblProyectos.Name = "lblProyectos";
-            this.lblProyectos.Size = new System.Drawing.Size(47, 15);
+            this.lblProyectos.Size = new System.Drawing.Size(54, 17);
             this.lblProyectos.TabIndex = 147;
             this.lblProyectos.Text = "Proyecto";
             // 
             // btnAnticipos
             // 
-            this.btnAnticipos.Location = new System.Drawing.Point(132, 225);
+            this.btnAnticipos.Location = new System.Drawing.Point(132, 255);
             this.btnAnticipos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAnticipos.Name = "btnAnticipos";
-            this.btnAnticipos.Size = new System.Drawing.Size(255, 27);
+            this.btnAnticipos.Size = new System.Drawing.Size(255, 31);
             this.btnAnticipos.TabIndex = 145;
             this.btnAnticipos.TabStop = false;
             this.btnAnticipos.Text = "Aplicar anticipo";
@@ -2691,7 +2691,7 @@ namespace NORI
             // 
             // cbCanales
             // 
-            this.cbCanales.Location = new System.Drawing.Point(132, 102);
+            this.cbCanales.Location = new System.Drawing.Point(132, 116);
             this.cbCanales.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbCanales.MenuManager = this.mainRibbonControl;
             this.cbCanales.Name = "cbCanales";
@@ -2706,30 +2706,30 @@ namespace NORI
             // lblCanal
             // 
             this.lblCanal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCanal.Location = new System.Drawing.Point(13, 103);
+            this.lblCanal.Location = new System.Drawing.Point(13, 117);
             this.lblCanal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblCanal.Name = "lblCanal";
-            this.lblCanal.Size = new System.Drawing.Size(30, 15);
+            this.lblCanal.Size = new System.Drawing.Size(35, 17);
             this.lblCanal.TabIndex = 144;
             this.lblCanal.Text = "Canal";
             this.lblCanal.Click += new System.EventHandler(this.lblCanal_Click);
             // 
             // lbReferencias
             // 
-            this.lbReferencias.Location = new System.Drawing.Point(132, 258);
+            this.lbReferencias.Location = new System.Drawing.Point(132, 292);
             this.lbReferencias.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lbReferencias.Name = "lbReferencias";
-            this.lbReferencias.Size = new System.Drawing.Size(255, 128);
+            this.lbReferencias.Size = new System.Drawing.Size(255, 145);
             this.lbReferencias.TabIndex = 88;
             this.lbReferencias.Visible = false;
             this.lbReferencias.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lbReferencias_KeyDown);
             // 
             // btnReferencias
             // 
-            this.btnReferencias.Location = new System.Drawing.Point(274, 192);
+            this.btnReferencias.Location = new System.Drawing.Point(274, 218);
             this.btnReferencias.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnReferencias.Name = "btnReferencias";
-            this.btnReferencias.Size = new System.Drawing.Size(113, 27);
+            this.btnReferencias.Size = new System.Drawing.Size(113, 31);
             this.btnReferencias.TabIndex = 0;
             this.btnReferencias.TabStop = false;
             this.btnReferencias.Text = "Referencias";
@@ -2737,26 +2737,26 @@ namespace NORI
             // 
             // btnGenerarPuntos
             // 
-            this.btnGenerarPuntos.Location = new System.Drawing.Point(132, 192);
+            this.btnGenerarPuntos.Location = new System.Drawing.Point(132, 218);
             this.btnGenerarPuntos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnGenerarPuntos.Name = "btnGenerarPuntos";
-            this.btnGenerarPuntos.Size = new System.Drawing.Size(135, 27);
+            this.btnGenerarPuntos.Size = new System.Drawing.Size(135, 31);
             this.btnGenerarPuntos.TabIndex = 87;
             this.btnGenerarPuntos.Text = "Generar puntos";
             this.btnGenerarPuntos.Click += new System.EventHandler(this.btnGenerarPuntos_Click);
             // 
             // lblOrdenCompra
             // 
-            this.lblOrdenCompra.Location = new System.Drawing.Point(15, 165);
+            this.lblOrdenCompra.Location = new System.Drawing.Point(15, 187);
             this.lblOrdenCompra.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblOrdenCompra.Name = "lblOrdenCompra";
-            this.lblOrdenCompra.Size = new System.Drawing.Size(93, 15);
+            this.lblOrdenCompra.Size = new System.Drawing.Size(106, 17);
             this.lblOrdenCompra.TabIndex = 86;
             this.lblOrdenCompra.Text = "Orden de compra";
             // 
             // txtOrdenCompra
             // 
-            this.txtOrdenCompra.Location = new System.Drawing.Point(132, 162);
+            this.txtOrdenCompra.Location = new System.Drawing.Point(132, 184);
             this.txtOrdenCompra.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtOrdenCompra.Name = "txtOrdenCompra";
             this.txtOrdenCompra.Properties.MaxLength = 15;
@@ -2765,16 +2765,16 @@ namespace NORI
             // 
             // lblCuentaPago
             // 
-            this.lblCuentaPago.Location = new System.Drawing.Point(15, 135);
+            this.lblCuentaPago.Location = new System.Drawing.Point(15, 153);
             this.lblCuentaPago.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblCuentaPago.Name = "lblCuentaPago";
-            this.lblCuentaPago.Size = new System.Drawing.Size(84, 15);
+            this.lblCuentaPago.Size = new System.Drawing.Size(98, 17);
             this.lblCuentaPago.TabIndex = 84;
             this.lblCuentaPago.Text = "Cuenta de pago";
             // 
             // txtCuentaPago
             // 
-            this.txtCuentaPago.Location = new System.Drawing.Point(132, 132);
+            this.txtCuentaPago.Location = new System.Drawing.Point(132, 150);
             this.txtCuentaPago.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCuentaPago.Name = "txtCuentaPago";
             this.txtCuentaPago.Properties.MaxLength = 18;
@@ -2783,7 +2783,7 @@ namespace NORI
             // 
             // cbMetodosPago
             // 
-            this.cbMetodosPago.Location = new System.Drawing.Point(132, 45);
+            this.cbMetodosPago.Location = new System.Drawing.Point(132, 51);
             this.cbMetodosPago.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbMetodosPago.MenuManager = this.mainRibbonControl;
             this.cbMetodosPago.Name = "cbMetodosPago";
@@ -2798,16 +2798,16 @@ namespace NORI
             // lblMetodosPago
             // 
             this.lblMetodosPago.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblMetodosPago.Location = new System.Drawing.Point(13, 48);
+            this.lblMetodosPago.Location = new System.Drawing.Point(13, 54);
             this.lblMetodosPago.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblMetodosPago.Name = "lblMetodosPago";
-            this.lblMetodosPago.Size = new System.Drawing.Size(88, 15);
+            this.lblMetodosPago.Size = new System.Drawing.Size(102, 17);
             this.lblMetodosPago.TabIndex = 82;
             this.lblMetodosPago.Text = "Método de pago";
             // 
             // cbCondicionesPago
             // 
-            this.cbCondicionesPago.Location = new System.Drawing.Point(132, 15);
+            this.cbCondicionesPago.Location = new System.Drawing.Point(132, 17);
             this.cbCondicionesPago.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbCondicionesPago.MenuManager = this.mainRibbonControl;
             this.cbCondicionesPago.Name = "cbCondicionesPago";
@@ -2823,10 +2823,10 @@ namespace NORI
             // lblCondicionesPago
             // 
             this.lblCondicionesPago.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCondicionesPago.Location = new System.Drawing.Point(13, 18);
+            this.lblCondicionesPago.Location = new System.Drawing.Point(13, 20);
             this.lblCondicionesPago.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblCondicionesPago.Name = "lblCondicionesPago";
-            this.lblCondicionesPago.Size = new System.Drawing.Size(112, 15);
+            this.lblCondicionesPago.Size = new System.Drawing.Size(128, 17);
             this.lblCondicionesPago.TabIndex = 81;
             this.lblCondicionesPago.Text = "Condiciones de pago";
             // 
@@ -2859,26 +2859,26 @@ namespace NORI
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.cbGenerarDocumentoElectronico);
             this.xtraTabPageDocumentoElectronico.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.xtraTabPageDocumentoElectronico.Name = "xtraTabPageDocumentoElectronico";
-            this.xtraTabPageDocumentoElectronico.Size = new System.Drawing.Size(977, 578);
+            this.xtraTabPageDocumentoElectronico.Size = new System.Drawing.Size(989, 672);
             this.xtraTabPageDocumentoElectronico.Text = "Documento electrónico";
             // 
             // cbGlobal
             // 
-            this.cbGlobal.Location = new System.Drawing.Point(562, 48);
+            this.cbGlobal.Location = new System.Drawing.Point(562, 54);
             this.cbGlobal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbGlobal.MenuManager = this.mainRibbonControl;
             this.cbGlobal.Name = "cbGlobal";
             this.cbGlobal.Properties.Caption = "Factura global";
-            this.cbGlobal.Size = new System.Drawing.Size(153, 20);
+            this.cbGlobal.Size = new System.Drawing.Size(153, 21);
             this.cbGlobal.TabIndex = 109;
             // 
             // btnGenerarSustitucion
             // 
             this.btnGenerarSustitucion.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnGenerarSustitucion.Location = new System.Drawing.Point(13, 527);
+            this.btnGenerarSustitucion.Location = new System.Drawing.Point(13, 597);
             this.btnGenerarSustitucion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnGenerarSustitucion.Name = "btnGenerarSustitucion";
-            this.btnGenerarSustitucion.Size = new System.Drawing.Size(313, 27);
+            this.btnGenerarSustitucion.Size = new System.Drawing.Size(313, 31);
             this.btnGenerarSustitucion.TabIndex = 108;
             this.btnGenerarSustitucion.TabStop = false;
             this.btnGenerarSustitucion.Text = "Generar sustitución";
@@ -2887,10 +2887,10 @@ namespace NORI
             // btnEliminarDE
             // 
             this.btnEliminarDE.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnEliminarDE.Location = new System.Drawing.Point(383, 527);
+            this.btnEliminarDE.Location = new System.Drawing.Point(383, 597);
             this.btnEliminarDE.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEliminarDE.Name = "btnEliminarDE";
-            this.btnEliminarDE.Size = new System.Drawing.Size(159, 27);
+            this.btnEliminarDE.Size = new System.Drawing.Size(159, 31);
             this.btnEliminarDE.TabIndex = 107;
             this.btnEliminarDE.TabStop = false;
             this.btnEliminarDE.Text = "Elimar registro";
@@ -2900,20 +2900,20 @@ namespace NORI
             // 
             this.lblRFC.Appearance.ForeColor = System.Drawing.Color.DimGray;
             this.lblRFC.Appearance.Options.UseForeColor = true;
-            this.lblRFC.Location = new System.Drawing.Point(349, 23);
+            this.lblRFC.Location = new System.Drawing.Point(349, 26);
             this.lblRFC.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblRFC.Name = "lblRFC";
-            this.lblRFC.Size = new System.Drawing.Size(21, 15);
+            this.lblRFC.Size = new System.Drawing.Size(22, 17);
             this.lblRFC.TabIndex = 106;
             this.lblRFC.Text = "RFC";
             // 
             // btnGenerarRFCGenerico
             // 
             this.btnGenerarRFCGenerico.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnGenerarRFCGenerico.Location = new System.Drawing.Point(146, 458);
+            this.btnGenerarRFCGenerico.Location = new System.Drawing.Point(146, 519);
             this.btnGenerarRFCGenerico.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnGenerarRFCGenerico.Name = "btnGenerarRFCGenerico";
-            this.btnGenerarRFCGenerico.Size = new System.Drawing.Size(180, 27);
+            this.btnGenerarRFCGenerico.Size = new System.Drawing.Size(180, 31);
             this.btnGenerarRFCGenerico.TabIndex = 105;
             this.btnGenerarRFCGenerico.TabStop = false;
             this.btnGenerarRFCGenerico.Text = "Generar con RFC genérico";
@@ -2922,30 +2922,30 @@ namespace NORI
             // lblCancelacionMasiva
             // 
             this.lblCancelacionMasiva.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCancelacionMasiva.Location = new System.Drawing.Point(433, 492);
+            this.lblCancelacionMasiva.Location = new System.Drawing.Point(433, 558);
             this.lblCancelacionMasiva.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblCancelacionMasiva.Name = "lblCancelacionMasiva";
-            this.lblCancelacionMasiva.Size = new System.Drawing.Size(105, 15);
+            this.lblCancelacionMasiva.Size = new System.Drawing.Size(123, 17);
             this.lblCancelacionMasiva.TabIndex = 104;
             this.lblCancelacionMasiva.Text = "Cancelación masiva";
             this.lblCancelacionMasiva.Click += new System.EventHandler(this.lblCancelacionMasiva_Click);
             // 
             // lblUUIDErrorCancelacion
             // 
-            this.lblUUIDErrorCancelacion.Location = new System.Drawing.Point(562, 320);
+            this.lblUUIDErrorCancelacion.Location = new System.Drawing.Point(562, 363);
             this.lblUUIDErrorCancelacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblUUIDErrorCancelacion.Name = "lblUUIDErrorCancelacion";
-            this.lblUUIDErrorCancelacion.Size = new System.Drawing.Size(142, 15);
+            this.lblUUIDErrorCancelacion.Size = new System.Drawing.Size(162, 17);
             this.lblUUIDErrorCancelacion.TabIndex = 103;
             this.lblUUIDErrorCancelacion.Text = "UUIDs con error al cancelar";
             this.lblUUIDErrorCancelacion.Visible = false;
             // 
             // lblUUIDPorCancelar
             // 
-            this.lblUUIDPorCancelar.Location = new System.Drawing.Point(562, 112);
+            this.lblUUIDPorCancelar.Location = new System.Drawing.Point(562, 127);
             this.lblUUIDPorCancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblUUIDPorCancelar.Name = "lblUUIDPorCancelar";
-            this.lblUUIDPorCancelar.Size = new System.Drawing.Size(100, 15);
+            this.lblUUIDPorCancelar.Size = new System.Drawing.Size(114, 17);
             this.lblUUIDPorCancelar.TabIndex = 102;
             this.lblUUIDPorCancelar.Text = "UUIDs por cancelar";
             this.lblUUIDPorCancelar.Visible = false;
@@ -2953,10 +2953,10 @@ namespace NORI
             // txtUUIDErrorCancelacion
             // 
             this.txtUUIDErrorCancelacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUUIDErrorCancelacion.Location = new System.Drawing.Point(562, 342);
+            this.txtUUIDErrorCancelacion.Location = new System.Drawing.Point(562, 388);
             this.txtUUIDErrorCancelacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtUUIDErrorCancelacion.Name = "txtUUIDErrorCancelacion";
-            this.txtUUIDErrorCancelacion.Size = new System.Drawing.Size(383, 109);
+            this.txtUUIDErrorCancelacion.Size = new System.Drawing.Size(383, 123);
             this.txtUUIDErrorCancelacion.TabIndex = 101;
             this.txtUUIDErrorCancelacion.Text = "";
             this.txtUUIDErrorCancelacion.Visible = false;
@@ -2964,20 +2964,20 @@ namespace NORI
             // txtUUIDPorCancelar
             // 
             this.txtUUIDPorCancelar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUUIDPorCancelar.Location = new System.Drawing.Point(562, 135);
+            this.txtUUIDPorCancelar.Location = new System.Drawing.Point(562, 153);
             this.txtUUIDPorCancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtUUIDPorCancelar.Name = "txtUUIDPorCancelar";
-            this.txtUUIDPorCancelar.Size = new System.Drawing.Size(383, 176);
+            this.txtUUIDPorCancelar.Size = new System.Drawing.Size(383, 199);
             this.txtUUIDPorCancelar.TabIndex = 100;
             this.txtUUIDPorCancelar.Text = "";
             this.txtUUIDPorCancelar.Visible = false;
             // 
             // btnCancelacionMasiva
             // 
-            this.btnCancelacionMasiva.Location = new System.Drawing.Point(794, 458);
+            this.btnCancelacionMasiva.Location = new System.Drawing.Point(794, 519);
             this.btnCancelacionMasiva.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCancelacionMasiva.Name = "btnCancelacionMasiva";
-            this.btnCancelacionMasiva.Size = new System.Drawing.Size(152, 27);
+            this.btnCancelacionMasiva.Size = new System.Drawing.Size(152, 31);
             this.btnCancelacionMasiva.TabIndex = 99;
             this.btnCancelacionMasiva.Text = "Cancelación masiva";
             this.btnCancelacionMasiva.UseVisualStyleBackColor = true;
@@ -2987,10 +2987,10 @@ namespace NORI
             // btnEstadoCFDI
             // 
             this.btnEstadoCFDI.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnEstadoCFDI.Location = new System.Drawing.Point(383, 458);
+            this.btnEstadoCFDI.Location = new System.Drawing.Point(383, 519);
             this.btnEstadoCFDI.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEstadoCFDI.Name = "btnEstadoCFDI";
-            this.btnEstadoCFDI.Size = new System.Drawing.Size(43, 27);
+            this.btnEstadoCFDI.Size = new System.Drawing.Size(43, 31);
             this.btnEstadoCFDI.TabIndex = 0;
             this.btnEstadoCFDI.TabStop = false;
             this.btnEstadoCFDI.Click += new System.EventHandler(this.btnEstadoCFDI_Click);
@@ -2998,10 +2998,10 @@ namespace NORI
             // lblImportarFolioFiscal
             // 
             this.lblImportarFolioFiscal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblImportarFolioFiscal.Location = new System.Drawing.Point(13, 492);
+            this.lblImportarFolioFiscal.Location = new System.Drawing.Point(13, 558);
             this.lblImportarFolioFiscal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblImportarFolioFiscal.Name = "lblImportarFolioFiscal";
-            this.lblImportarFolioFiscal.Size = new System.Drawing.Size(103, 15);
+            this.lblImportarFolioFiscal.Size = new System.Drawing.Size(114, 17);
             this.lblImportarFolioFiscal.TabIndex = 97;
             this.lblImportarFolioFiscal.Text = "Importar folio fiscal";
             this.lblImportarFolioFiscal.Click += new System.EventHandler(this.lblImportarFolioFiscal_Click);
@@ -3009,10 +3009,10 @@ namespace NORI
             // btnCancelar
             // 
             this.btnCancelar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(433, 458);
+            this.btnCancelar.Location = new System.Drawing.Point(433, 519);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(108, 27);
+            this.btnCancelar.Size = new System.Drawing.Size(108, 31);
             this.btnCancelar.TabIndex = 0;
             this.btnCancelar.TabStop = false;
             this.btnCancelar.Text = "Cancelar";
@@ -3020,7 +3020,7 @@ namespace NORI
             // 
             // cbUsoPrincipal
             // 
-            this.cbUsoPrincipal.Location = new System.Drawing.Point(130, 48);
+            this.cbUsoPrincipal.Location = new System.Drawing.Point(130, 54);
             this.cbUsoPrincipal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbUsoPrincipal.MenuManager = this.mainRibbonControl;
             this.cbUsoPrincipal.Name = "cbUsoPrincipal";
@@ -3034,20 +3034,20 @@ namespace NORI
             // 
             // lblUsoPrincipal
             // 
-            this.lblUsoPrincipal.Location = new System.Drawing.Point(13, 52);
+            this.lblUsoPrincipal.Location = new System.Drawing.Point(13, 59);
             this.lblUsoPrincipal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblUsoPrincipal.Name = "lblUsoPrincipal";
-            this.lblUsoPrincipal.Size = new System.Drawing.Size(69, 15);
+            this.lblUsoPrincipal.Size = new System.Drawing.Size(76, 17);
             this.lblUsoPrincipal.TabIndex = 96;
             this.lblUsoPrincipal.Text = "Uso principal";
             // 
             // btnActualizar
             // 
             this.btnActualizar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnActualizar.Location = new System.Drawing.Point(332, 458);
+            this.btnActualizar.Location = new System.Drawing.Point(332, 519);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(43, 27);
+            this.btnActualizar.Size = new System.Drawing.Size(43, 31);
             this.btnActualizar.TabIndex = 0;
             this.btnActualizar.TabStop = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -3055,10 +3055,10 @@ namespace NORI
             // btnGenerar
             // 
             this.btnGenerar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnGenerar.Location = new System.Drawing.Point(13, 458);
+            this.btnGenerar.Location = new System.Drawing.Point(13, 519);
             this.btnGenerar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(126, 27);
+            this.btnGenerar.Size = new System.Drawing.Size(126, 31);
             this.btnGenerar.TabIndex = 0;
             this.btnGenerar.TabStop = false;
             this.btnGenerar.Text = "Generar";
@@ -3067,53 +3067,53 @@ namespace NORI
             // txtSelloCFD
             // 
             this.txtSelloCFD.Enabled = false;
-            this.txtSelloCFD.Location = new System.Drawing.Point(13, 340);
+            this.txtSelloCFD.Location = new System.Drawing.Point(13, 385);
             this.txtSelloCFD.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtSelloCFD.MenuManager = this.mainRibbonControl;
             this.txtSelloCFD.Name = "txtSelloCFD";
-            this.txtSelloCFD.Size = new System.Drawing.Size(528, 111);
+            this.txtSelloCFD.Size = new System.Drawing.Size(528, 126);
             this.txtSelloCFD.TabIndex = 3;
             // 
             // lblSelloCFD
             // 
-            this.lblSelloCFD.Location = new System.Drawing.Point(13, 318);
+            this.lblSelloCFD.Location = new System.Drawing.Point(13, 360);
             this.lblSelloCFD.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblSelloCFD.Name = "lblSelloCFD";
-            this.lblSelloCFD.Size = new System.Drawing.Size(50, 15);
+            this.lblSelloCFD.Size = new System.Drawing.Size(56, 17);
             this.lblSelloCFD.TabIndex = 94;
             this.lblSelloCFD.Text = "Sello CFD";
             // 
             // txtCadenaOriginal
             // 
             this.txtCadenaOriginal.Enabled = false;
-            this.txtCadenaOriginal.Location = new System.Drawing.Point(13, 134);
+            this.txtCadenaOriginal.Location = new System.Drawing.Point(13, 152);
             this.txtCadenaOriginal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCadenaOriginal.MenuManager = this.mainRibbonControl;
             this.txtCadenaOriginal.Name = "txtCadenaOriginal";
-            this.txtCadenaOriginal.Size = new System.Drawing.Size(528, 178);
+            this.txtCadenaOriginal.Size = new System.Drawing.Size(528, 202);
             this.txtCadenaOriginal.TabIndex = 2;
             // 
             // lblCadenaOriginal
             // 
-            this.lblCadenaOriginal.Location = new System.Drawing.Point(13, 112);
+            this.lblCadenaOriginal.Location = new System.Drawing.Point(13, 127);
             this.lblCadenaOriginal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblCadenaOriginal.Name = "lblCadenaOriginal";
-            this.lblCadenaOriginal.Size = new System.Drawing.Size(83, 15);
+            this.lblCadenaOriginal.Size = new System.Drawing.Size(95, 17);
             this.lblCadenaOriginal.TabIndex = 92;
             this.lblCadenaOriginal.Text = "Cadena original";
             // 
             // lblFolioFiscal
             // 
-            this.lblFolioFiscal.Location = new System.Drawing.Point(13, 82);
+            this.lblFolioFiscal.Location = new System.Drawing.Point(13, 93);
             this.lblFolioFiscal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lblFolioFiscal.Name = "lblFolioFiscal";
-            this.lblFolioFiscal.Size = new System.Drawing.Size(56, 15);
+            this.lblFolioFiscal.Size = new System.Drawing.Size(62, 17);
             this.lblFolioFiscal.TabIndex = 90;
             this.lblFolioFiscal.Text = "Folio fiscal";
             // 
             // txtFolioFiscal
             // 
-            this.txtFolioFiscal.Location = new System.Drawing.Point(130, 78);
+            this.txtFolioFiscal.Location = new System.Drawing.Point(130, 88);
             this.txtFolioFiscal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtFolioFiscal.Name = "txtFolioFiscal";
             this.txtFolioFiscal.Properties.ReadOnly = true;
@@ -3122,12 +3122,12 @@ namespace NORI
             // 
             // cbGenerarDocumentoElectronico
             // 
-            this.cbGenerarDocumentoElectronico.Location = new System.Drawing.Point(130, 20);
+            this.cbGenerarDocumentoElectronico.Location = new System.Drawing.Point(130, 23);
             this.cbGenerarDocumentoElectronico.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbGenerarDocumentoElectronico.MenuManager = this.mainRibbonControl;
             this.cbGenerarDocumentoElectronico.Name = "cbGenerarDocumentoElectronico";
             this.cbGenerarDocumentoElectronico.Properties.Caption = "Generar documento electrónico";
-            this.cbGenerarDocumentoElectronico.Size = new System.Drawing.Size(212, 20);
+            this.cbGenerarDocumentoElectronico.Size = new System.Drawing.Size(212, 21);
             this.cbGenerarDocumentoElectronico.TabIndex = 0;
             // 
             // xtraTabPageAnexos
@@ -3137,15 +3137,15 @@ namespace NORI
             this.xtraTabPageAnexos.Controls.Add(this.lbAnexos);
             this.xtraTabPageAnexos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.xtraTabPageAnexos.Name = "xtraTabPageAnexos";
-            this.xtraTabPageAnexos.Size = new System.Drawing.Size(977, 578);
+            this.xtraTabPageAnexos.Size = new System.Drawing.Size(989, 672);
             this.xtraTabPageAnexos.Text = "Anexos";
             // 
             // btnVisualizarAnexo
             // 
-            this.btnVisualizarAnexo.Location = new System.Drawing.Point(300, 247);
+            this.btnVisualizarAnexo.Location = new System.Drawing.Point(300, 280);
             this.btnVisualizarAnexo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnVisualizarAnexo.Name = "btnVisualizarAnexo";
-            this.btnVisualizarAnexo.Size = new System.Drawing.Size(113, 27);
+            this.btnVisualizarAnexo.Size = new System.Drawing.Size(113, 31);
             this.btnVisualizarAnexo.TabIndex = 91;
             this.btnVisualizarAnexo.TabStop = false;
             this.btnVisualizarAnexo.Text = "Visualizar";
@@ -3153,10 +3153,10 @@ namespace NORI
             // 
             // btnAnexos
             // 
-            this.btnAnexos.Location = new System.Drawing.Point(420, 247);
+            this.btnAnexos.Location = new System.Drawing.Point(420, 280);
             this.btnAnexos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAnexos.Name = "btnAnexos";
-            this.btnAnexos.Size = new System.Drawing.Size(113, 27);
+            this.btnAnexos.Size = new System.Drawing.Size(113, 31);
             this.btnAnexos.TabIndex = 90;
             this.btnAnexos.TabStop = false;
             this.btnAnexos.Text = "Anexos";
@@ -3164,10 +3164,10 @@ namespace NORI
             // 
             // lbAnexos
             // 
-            this.lbAnexos.Location = new System.Drawing.Point(13, 18);
+            this.lbAnexos.Location = new System.Drawing.Point(13, 20);
             this.lbAnexos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lbAnexos.Name = "lbAnexos";
-            this.lbAnexos.Size = new System.Drawing.Size(520, 222);
+            this.lbAnexos.Size = new System.Drawing.Size(520, 252);
             this.lbAnexos.TabIndex = 89;
             // 
             // layoutControlGroup1
@@ -3177,7 +3177,7 @@ namespace NORI
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1003, 627);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1003, 743);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -3185,7 +3185,7 @@ namespace NORI
             this.layoutControlItem1.Control = this.xtraTabControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(983, 607);
+            this.layoutControlItem1.Size = new System.Drawing.Size(993, 731);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -3195,9 +3195,9 @@ namespace NORI
             // 
             // frmDocumentos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1003, 728);
+            this.ClientSize = new System.Drawing.Size(1003, 825);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.mainRibbonControl);
             this.IconOptions.Image = global::componentResourceManager.Resources.logo;

@@ -33,13 +33,13 @@ namespace NORI
             {
                 components.Dispose();
             }
-            base.Dispose(disposing);
+            Dispose(disposing);
         }
 
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaPartidas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NORI.frmListaPartidas));
             this.tabFormDefaultManager1 = new DevExpress.XtraBars.TabFormDefaultManager();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -77,9 +77,9 @@ namespace NORI
             ((System.ComponentModel.ISupportInitialize)this.tabFormDefaultManager1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)this.ribbonControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)this.layoutControl1).BeginInit();
-            this.layoutControl1.SuspendLayout();
+            ((System.Windows.Forms.Control)this.layoutControl1).SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)this.layoutControl2).BeginInit();
-            this.layoutControl2.SuspendLayout();
+            ((System.Windows.Forms.Control)this.layoutControl2).SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)this.cbEstados.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)this.cbSocios.Properties).BeginInit();
@@ -108,29 +108,29 @@ namespace NORI
             this.tabFormDefaultManager1.DockControls.Add(this.barDockControlRight);
             this.tabFormDefaultManager1.DockingEnabled = false;
             this.tabFormDefaultManager1.Form = this;
-            this.barDockControlTop.CausesValidation = false;
+            ((System.Windows.Forms.Control)this.barDockControlTop).CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = null;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ((System.Windows.Forms.Control)this.barDockControlTop).Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.barDockControlTop.Size = new System.Drawing.Size(1185, 0);
-            this.barDockControlBottom.CausesValidation = false;
+            ((System.Windows.Forms.Control)this.barDockControlBottom).CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 870);
             this.barDockControlBottom.Manager = null;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ((System.Windows.Forms.Control)this.barDockControlBottom).Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.barDockControlBottom.Size = new System.Drawing.Size(1185, 0);
-            this.barDockControlLeft.CausesValidation = false;
+            ((System.Windows.Forms.Control)this.barDockControlLeft).CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = null;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ((System.Windows.Forms.Control)this.barDockControlLeft).Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 870);
-            this.barDockControlRight.CausesValidation = false;
+            ((System.Windows.Forms.Control)this.barDockControlRight).CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1185, 0);
             this.barDockControlRight.Manager = null;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ((System.Windows.Forms.Control)this.barDockControlRight).Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 870);
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[2]
@@ -138,33 +138,33 @@ namespace NORI
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem
             });
-            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ((System.Windows.Forms.Control)this.ribbonControl1).Location = new System.Drawing.Point(0, 0);
+            ((System.Windows.Forms.Control)this.ribbonControl1).Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ribbonControl1.MaxItemId = 1;
-            this.ribbonControl1.Name = "ribbonControl1";
+            ((System.Windows.Forms.Control)this.ribbonControl1).Name = "ribbonControl1";
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl1.Size = new System.Drawing.Size(1185, 86);
+            ((System.Windows.Forms.Control)this.ribbonControl1).Size = new System.Drawing.Size(1185, 86);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "ribbonPageGroup1";
-            this.layoutControl1.Controls.Add(this.layoutControl2);
-            this.layoutControl1.Controls.Add(this.gcDocumentos);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 86);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.layoutControl1.Name = "layoutControl1";
+            ((System.Windows.Forms.Control)this.layoutControl1).Controls.Add(this.layoutControl2);
+            ((System.Windows.Forms.Control)this.layoutControl1).Controls.Add(this.gcDocumentos);
+            ((System.Windows.Forms.Control)this.layoutControl1).Dock = System.Windows.Forms.DockStyle.Fill;
+            ((System.Windows.Forms.Control)this.layoutControl1).Location = new System.Drawing.Point(0, 86);
+            ((System.Windows.Forms.Control)this.layoutControl1).Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ((System.Windows.Forms.Control)this.layoutControl1).Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1185, 784);
-            this.layoutControl1.TabIndex = 6;
-            this.layoutControl1.Text = "layoutControl1";
-            this.layoutControl2.Controls.Add(this.panel1);
-            this.layoutControl2.Location = new System.Drawing.Point(18, 18);
-            this.layoutControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.layoutControl2.Name = "layoutControl2";
+            ((System.Windows.Forms.Control)this.layoutControl1).Size = new System.Drawing.Size(1185, 784);
+            ((System.Windows.Forms.Control)this.layoutControl1).TabIndex = 6;
+            ((System.Windows.Forms.Control)this.layoutControl1).Text = "layoutControl1";
+            ((System.Windows.Forms.Control)this.layoutControl2).Controls.Add(this.panel1);
+            ((System.Windows.Forms.Control)this.layoutControl2).Location = new System.Drawing.Point(18, 18);
+            ((System.Windows.Forms.Control)this.layoutControl2).Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ((System.Windows.Forms.Control)this.layoutControl2).Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(1149, 109);
-            this.layoutControl2.TabIndex = 0;
-            this.layoutControl2.Text = "layoutControl2";
+            ((System.Windows.Forms.Control)this.layoutControl2).Size = new System.Drawing.Size(1149, 109);
+            ((System.Windows.Forms.Control)this.layoutControl2).TabIndex = 0;
+            ((System.Windows.Forms.Control)this.layoutControl2).Text = "layoutControl2";
             this.panel1.Controls.Add(this.cbWeb);
             this.panel1.Controls.Add(this.btnFacturar);
             this.panel1.Controls.Add(this.btnEntregar);
@@ -182,47 +182,47 @@ namespace NORI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1113, 73);
             this.panel1.TabIndex = 4;
-            this.btnFacturar.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            this.btnFacturar.Location = new System.Drawing.Point(997, 36);
-            this.btnFacturar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnFacturar.Name = "btnFacturar";
-            this.btnFacturar.Size = new System.Drawing.Size(112, 34);
-            this.btnFacturar.TabIndex = 14;
-            this.btnFacturar.Text = "Facturar";
-            this.btnFacturar.Click += new System.EventHandler(btnFacturar_Click);
-            this.btnEntregar.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            this.btnEntregar.Location = new System.Drawing.Point(876, 36);
-            this.btnEntregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnEntregar.Name = "btnEntregar";
-            this.btnEntregar.Size = new System.Drawing.Size(112, 34);
-            this.btnEntregar.TabIndex = 13;
-            this.btnEntregar.Text = "Entregar";
-            this.btnEntregar.Click += new System.EventHandler(btnEntregar_Click);
-            this.btnAbrir.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            this.btnAbrir.Location = new System.Drawing.Point(754, 36);
-            this.btnAbrir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(112, 34);
-            this.btnAbrir.TabIndex = 12;
-            this.btnAbrir.Text = "Abrir";
-            this.btnAbrir.Click += new System.EventHandler(btnAbrir_Click);
-            this.btnImprimir.Location = new System.Drawing.Point(122, 38);
-            this.btnImprimir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(112, 34);
-            this.btnImprimir.TabIndex = 11;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.Click += new System.EventHandler(btnImprimir_Click);
-            this.btnCargar.Location = new System.Drawing.Point(0, 38);
-            this.btnCargar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(112, 34);
-            this.btnCargar.TabIndex = 10;
-            this.btnCargar.Text = "Cargar";
-            this.btnCargar.Click += new System.EventHandler(btnCargar_Click);
-            this.cbEstados.Location = new System.Drawing.Point(176, 0);
-            this.cbEstados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cbEstados.Name = "cbEstados";
+            ((System.Windows.Forms.Control)this.btnFacturar).Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            ((System.Windows.Forms.Control)this.btnFacturar).Location = new System.Drawing.Point(997, 36);
+            ((System.Windows.Forms.Control)this.btnFacturar).Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ((System.Windows.Forms.Control)this.btnFacturar).Name = "btnFacturar";
+            ((System.Windows.Forms.Control)this.btnFacturar).Size = new System.Drawing.Size(112, 34);
+            ((System.Windows.Forms.Control)this.btnFacturar).TabIndex = 14;
+            ((System.Windows.Forms.Control)this.btnFacturar).Text = "Facturar";
+            ((System.Windows.Forms.Control)this.btnFacturar).Click += new System.EventHandler(btnFacturar_Click);
+            ((System.Windows.Forms.Control)this.btnEntregar).Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            ((System.Windows.Forms.Control)this.btnEntregar).Location = new System.Drawing.Point(876, 36);
+            ((System.Windows.Forms.Control)this.btnEntregar).Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ((System.Windows.Forms.Control)this.btnEntregar).Name = "btnEntregar";
+            ((System.Windows.Forms.Control)this.btnEntregar).Size = new System.Drawing.Size(112, 34);
+            ((System.Windows.Forms.Control)this.btnEntregar).TabIndex = 13;
+            ((System.Windows.Forms.Control)this.btnEntregar).Text = "Entregar";
+            ((System.Windows.Forms.Control)this.btnEntregar).Click += new System.EventHandler(btnEntregar_Click);
+            ((System.Windows.Forms.Control)this.btnAbrir).Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            ((System.Windows.Forms.Control)this.btnAbrir).Location = new System.Drawing.Point(754, 36);
+            ((System.Windows.Forms.Control)this.btnAbrir).Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ((System.Windows.Forms.Control)this.btnAbrir).Name = "btnAbrir";
+            ((System.Windows.Forms.Control)this.btnAbrir).Size = new System.Drawing.Size(112, 34);
+            ((System.Windows.Forms.Control)this.btnAbrir).TabIndex = 12;
+            ((System.Windows.Forms.Control)this.btnAbrir).Text = "Abrir";
+            ((System.Windows.Forms.Control)this.btnAbrir).Click += new System.EventHandler(btnAbrir_Click);
+            ((System.Windows.Forms.Control)this.btnImprimir).Location = new System.Drawing.Point(122, 38);
+            ((System.Windows.Forms.Control)this.btnImprimir).Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ((System.Windows.Forms.Control)this.btnImprimir).Name = "btnImprimir";
+            ((System.Windows.Forms.Control)this.btnImprimir).Size = new System.Drawing.Size(112, 34);
+            ((System.Windows.Forms.Control)this.btnImprimir).TabIndex = 11;
+            ((System.Windows.Forms.Control)this.btnImprimir).Text = "Imprimir";
+            ((System.Windows.Forms.Control)this.btnImprimir).Click += new System.EventHandler(btnImprimir_Click);
+            ((System.Windows.Forms.Control)this.btnCargar).Location = new System.Drawing.Point(0, 38);
+            ((System.Windows.Forms.Control)this.btnCargar).Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ((System.Windows.Forms.Control)this.btnCargar).Name = "btnCargar";
+            ((System.Windows.Forms.Control)this.btnCargar).Size = new System.Drawing.Size(112, 34);
+            ((System.Windows.Forms.Control)this.btnCargar).TabIndex = 10;
+            ((System.Windows.Forms.Control)this.btnCargar).Text = "Cargar";
+            ((System.Windows.Forms.Control)this.btnCargar).Click += new System.EventHandler(btnCargar_Click);
+            ((System.Windows.Forms.Control)this.cbEstados).Location = new System.Drawing.Point(176, 0);
+            ((System.Windows.Forms.Control)this.cbEstados).Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ((System.Windows.Forms.Control)this.cbEstados).Name = "cbEstados";
             this.cbEstados.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[1]
             {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)
@@ -232,13 +232,13 @@ namespace NORI
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("estado", "Estado", 10, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre")
             });
-            this.cbEstados.Size = new System.Drawing.Size(128, 28);
-            this.cbEstados.TabIndex = 9;
+            ((System.Windows.Forms.Control)this.cbEstados).Size = new System.Drawing.Size(128, 28);
+            ((System.Windows.Forms.Control)this.cbEstados).TabIndex = 9;
             this.cbEstados.EditValueChanged += new System.EventHandler(cbClases_EditValueChanged);
-            this.cbSocios.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            this.cbSocios.Location = new System.Drawing.Point(312, 0);
-            this.cbSocios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cbSocios.Name = "cbSocios";
+            ((System.Windows.Forms.Control)this.cbSocios).Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            ((System.Windows.Forms.Control)this.cbSocios).Location = new System.Drawing.Point(312, 0);
+            ((System.Windows.Forms.Control)this.cbSocios).Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ((System.Windows.Forms.Control)this.cbSocios).Name = "cbSocios";
             this.cbSocios.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[1]
             {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)
@@ -249,15 +249,15 @@ namespace NORI
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre")
             });
-            this.cbSocios.Size = new System.Drawing.Size(294, 28);
-            this.cbSocios.TabIndex = 8;
+            ((System.Windows.Forms.Control)this.cbSocios).Size = new System.Drawing.Size(294, 28);
+            ((System.Windows.Forms.Control)this.cbSocios).TabIndex = 8;
             this.cbSocios.EditValueChanged += new System.EventHandler(cbClases_EditValueChanged);
-            this.deHasta.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            ((System.Windows.Forms.Control)this.deHasta).Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             this.deHasta.EditValue = new System.DateTime(2018, 3, 11, 22, 51, 26, 265);
-            this.deHasta.Location = new System.Drawing.Point(981, 0);
-            this.deHasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ((System.Windows.Forms.Control)this.deHasta).Location = new System.Drawing.Point(981, 0);
+            ((System.Windows.Forms.Control)this.deHasta).Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.deHasta.MenuManager = this.tabFormDefaultManager1;
-            this.deHasta.Name = "deHasta";
+            ((System.Windows.Forms.Control)this.deHasta).Name = "deHasta";
             this.deHasta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[1]
             {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)
@@ -266,15 +266,15 @@ namespace NORI
             {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)
             });
-            this.deHasta.Size = new System.Drawing.Size(128, 28);
-            this.deHasta.TabIndex = 7;
+            ((System.Windows.Forms.Control)this.deHasta).Size = new System.Drawing.Size(128, 28);
+            ((System.Windows.Forms.Control)this.deHasta).TabIndex = 7;
             this.deHasta.EditValueChanged += new System.EventHandler(cbClases_EditValueChanged);
-            this.deDesde.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            ((System.Windows.Forms.Control)this.deDesde).Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             this.deDesde.EditValue = new System.DateTime(2018, 3, 11, 22, 51, 2, 700);
-            this.deDesde.Location = new System.Drawing.Point(844, 0);
-            this.deDesde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ((System.Windows.Forms.Control)this.deDesde).Location = new System.Drawing.Point(844, 0);
+            ((System.Windows.Forms.Control)this.deDesde).Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.deDesde.MenuManager = this.tabFormDefaultManager1;
-            this.deDesde.Name = "deDesde";
+            ((System.Windows.Forms.Control)this.deDesde).Name = "deDesde";
             this.deDesde.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[1]
             {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)
@@ -283,12 +283,12 @@ namespace NORI
             {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)
             });
-            this.deDesde.Size = new System.Drawing.Size(128, 28);
-            this.deDesde.TabIndex = 6;
+            ((System.Windows.Forms.Control)this.deDesde).Size = new System.Drawing.Size(128, 28);
+            ((System.Windows.Forms.Control)this.deDesde).TabIndex = 6;
             this.deDesde.EditValueChanged += new System.EventHandler(cbClases_EditValueChanged);
-            this.cbClases.Location = new System.Drawing.Point(0, 0);
-            this.cbClases.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cbClases.Name = "cbClases";
+            ((System.Windows.Forms.Control)this.cbClases).Location = new System.Drawing.Point(0, 0);
+            ((System.Windows.Forms.Control)this.cbClases).Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ((System.Windows.Forms.Control)this.cbClases).Name = "cbClases";
             this.cbClases.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[1]
             {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)
@@ -298,13 +298,13 @@ namespace NORI
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tipo", "Tipo", 10, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre")
             });
-            this.cbClases.Size = new System.Drawing.Size(166, 28);
-            this.cbClases.TabIndex = 5;
+            ((System.Windows.Forms.Control)this.cbClases).Size = new System.Drawing.Size(166, 28);
+            ((System.Windows.Forms.Control)this.cbClases).TabIndex = 5;
             this.cbClases.EditValueChanged += new System.EventHandler(cbClases_EditValueChanged);
-            this.cbVendedores.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            this.cbVendedores.Location = new System.Drawing.Point(615, 0);
-            this.cbVendedores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cbVendedores.Name = "cbVendedores";
+            ((System.Windows.Forms.Control)this.cbVendedores).Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            ((System.Windows.Forms.Control)this.cbVendedores).Location = new System.Drawing.Point(615, 0);
+            ((System.Windows.Forms.Control)this.cbVendedores).Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ((System.Windows.Forms.Control)this.cbVendedores).Name = "cbVendedores";
             this.cbVendedores.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[1]
             {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)
@@ -314,8 +314,8 @@ namespace NORI
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre")
             });
-            this.cbVendedores.Size = new System.Drawing.Size(220, 28);
-            this.cbVendedores.TabIndex = 4;
+            ((System.Windows.Forms.Control)this.cbVendedores).Size = new System.Drawing.Size(220, 28);
+            ((System.Windows.Forms.Control)this.cbVendedores).TabIndex = 4;
             this.cbVendedores.EditValueChanged += new System.EventHandler(cbClases_EditValueChanged);
             this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup2.GroupBordersVisible = false;
@@ -330,16 +330,16 @@ namespace NORI
             this.layoutControlItem2.Text = "Filtros";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
-            this.gcDocumentos.ContextMenuStrip = this.contextMenu;
-            this.gcDocumentos.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.gcDocumentos.Location = new System.Drawing.Point(18, 133);
+            ((System.Windows.Forms.Control)this.gcDocumentos).ContextMenuStrip = this.contextMenu;
+            ((System.Windows.Forms.Control)this.gcDocumentos.EmbeddedNavigator).Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            ((System.Windows.Forms.Control)this.gcDocumentos).Location = new System.Drawing.Point(18, 133);
             this.gcDocumentos.MainView = this.gvDocumentos;
-            this.gcDocumentos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            ((System.Windows.Forms.Control)this.gcDocumentos).Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcDocumentos.MenuManager = this.tabFormDefaultManager1;
-            this.gcDocumentos.Name = "gcDocumentos";
+            ((System.Windows.Forms.Control)this.gcDocumentos).Name = "gcDocumentos";
             this.gcDocumentos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[2] { this.deFecha, this.cbMonedas });
-            this.gcDocumentos.Size = new System.Drawing.Size(1149, 633);
-            this.gcDocumentos.TabIndex = 4;
+            ((System.Windows.Forms.Control)this.gcDocumentos).Size = new System.Drawing.Size(1149, 633);
+            ((System.Windows.Forms.Control)this.gcDocumentos).TabIndex = 4;
             this.gcDocumentos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[1] { this.gvDocumentos });
             this.contextMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[2] { this.toolStripMenuItem1, this.toolStripMenuItem2 });
@@ -401,12 +401,12 @@ namespace NORI
             this.layoutControlItem3.Size = new System.Drawing.Size(1155, 115);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
-            this.cbWeb.Location = new System.Drawing.Point(241, 41);
+            ((System.Windows.Forms.Control)this.cbWeb).Location = new System.Drawing.Point(241, 41);
             this.cbWeb.MenuManager = this.tabFormDefaultManager1;
-            this.cbWeb.Name = "cbWeb";
+            ((System.Windows.Forms.Control)this.cbWeb).Name = "cbWeb";
             this.cbWeb.Properties.Caption = "Web";
-            this.cbWeb.Size = new System.Drawing.Size(112, 29);
-            this.cbWeb.TabIndex = 15;
+            ((System.Windows.Forms.Control)this.cbWeb).Size = new System.Drawing.Size(112, 29);
+            ((System.Windows.Forms.Control)this.cbWeb).TabIndex = 15;
             this.cbWeb.EditValueChanged += new System.EventHandler(cbWeb_EditValueChanged);
             base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             base.ClientSize = new System.Drawing.Size(1185, 870);
@@ -416,20 +416,19 @@ namespace NORI
             base.Controls.Add(this.barDockControlRight);
             base.Controls.Add(this.barDockControlBottom);
             base.Controls.Add(this.barDockControlTop);
-            base.IconOptions.Icon = (System.Drawing.Icon)resources.GetObject("frmListaPartidas.IconOptions.Icon");
             base.KeyPreview = true;
             base.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             base.Name = "frmListaPartidas";
             this.Ribbon = this.ribbonControl1;
             base.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Lista de partidas";
+            ((System.Windows.Forms.Control)this).Text = "Lista de partidas";
             base.KeyDown += new System.Windows.Forms.KeyEventHandler(frmListaPartidasAbiertas_KeyDown);
             ((System.ComponentModel.ISupportInitialize)this.tabFormDefaultManager1).EndInit();
             ((System.ComponentModel.ISupportInitialize)this.ribbonControl1).EndInit();
             ((System.ComponentModel.ISupportInitialize)this.layoutControl1).EndInit();
-            this.layoutControl1.ResumeLayout(false);
+            ((System.Windows.Forms.Control)this.layoutControl1).ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)this.layoutControl2).EndInit();
-            this.layoutControl2.ResumeLayout(false);
+            ((System.Windows.Forms.Control)this.layoutControl2).ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)this.cbEstados.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)this.cbSocios.Properties).EndInit();

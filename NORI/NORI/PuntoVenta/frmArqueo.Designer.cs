@@ -36,304 +36,353 @@ namespace NORI.PuntoVenta
 
         private void InitializeComponent()
         {
-            //IL_0012: Unknown result type (might be due to invalid IL or missing references)
-            //IL_001c: Expected O, but got Unknown
-            //IL_001d: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0027: Expected O, but got Unknown
-            //IL_0049: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0053: Expected O, but got Unknown
-            //IL_0054: Unknown result type (might be due to invalid IL or missing references)
-            //IL_005e: Expected O, but got Unknown
-            //IL_005f: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0069: Expected O, but got Unknown
-            //IL_006a: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0074: Expected O, but got Unknown
-            //IL_0075: Unknown result type (might be due to invalid IL or missing references)
-            //IL_007f: Expected O, but got Unknown
-            //IL_0080: Unknown result type (might be due to invalid IL or missing references)
-            //IL_008a: Expected O, but got Unknown
-            //IL_008b: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0095: Expected O, but got Unknown
-            //IL_0096: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00a0: Expected O, but got Unknown
-            //IL_00a1: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00ab: Expected O, but got Unknown
-            //IL_00ac: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00b6: Expected O, but got Unknown
-            //IL_00b7: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00c1: Expected O, but got Unknown
-            //IL_00c2: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00cc: Expected O, but got Unknown
-            //IL_00cd: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00d7: Expected O, but got Unknown
-            //IL_00ee: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00f8: Expected O, but got Unknown
-            //IL_00f9: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0103: Expected O, but got Unknown
-            //IL_07e6: Unknown result type (might be due to invalid IL or missing references)
-            //IL_07ec: Expected O, but got Unknown
-            //IL_0945: Unknown result type (might be due to invalid IL or missing references)
-            //IL_094f: Expected O, but got Unknown
-            //IL_0ae3: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0ae9: Expected O, but got Unknown
-            //IL_0b49: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0b4f: Expected O, but got Unknown
-            //IL_0b81: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0b87: Expected O, but got Unknown
-            //IL_0b95: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0b9b: Expected O, but got Unknown
-            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmArqueo));
-            ribbonControl1 = new RibbonControl();
-            layoutControl1 = new LayoutControl();
-            panel1 = new Panel();
-            btnREACA = new Button();
-            btnRERET = new Button();
-            gcAcumulados = new GridControl();
-            gvAcumulados = new GridView();
-            gridColumn5 = new GridColumn();
-            gridColumn6 = new GridColumn();
-            gcPartidas = new GridControl();
-            gvPartidas = new GridView();
-            gridColumn1 = new GridColumn();
-            gridColumn2 = new GridColumn();
-            gridColumn3 = new GridColumn();
-            cbConceptos = new LookUpEdit();
-            lblConceptos = new LabelControl();
-            txtCantidad = new TextEdit();
-            lblCantidad = new LabelControl();
-            btnCancelar = new Button();
-            btnRECCA = new Button();
-            layoutControlGroup1 = new LayoutControlGroup();
-            layoutControlItem1 = new LayoutControlItem();
-            ((ISupportInitialize)ribbonControl1).BeginInit();
-            ((ISupportInitialize)layoutControl1).BeginInit();
-            ((Control)(object)layoutControl1).SuspendLayout();
-            panel1.SuspendLayout();
-            ((ISupportInitialize)gcAcumulados).BeginInit();
-            ((ISupportInitialize)gvAcumulados).BeginInit();
-            ((ISupportInitialize)gcPartidas).BeginInit();
-            ((ISupportInitialize)gvPartidas).BeginInit();
-            ((ISupportInitialize)cbConceptos.Properties).BeginInit();
-            ((ISupportInitialize)txtCantidad.Properties).BeginInit();
-            ((ISupportInitialize)layoutControlGroup1).BeginInit();
-            ((ISupportInitialize)layoutControlItem1).BeginInit();
-            ((XtraForm)this).SuspendLayout();
-            ((BarItem)ribbonControl1.ExpandCollapseItem).Id = 0;
-            ((BarItems)ribbonControl1.Items).AddRange((BarItem[])(object)new BarItem[1] { (BarItem)ribbonControl1.ExpandCollapseItem });
-            ((Control)(object)ribbonControl1).Location = new Point(0, 0);
-            ribbonControl1.MaxItemId = 1;
-            ((Control)(object)ribbonControl1).Name = "ribbonControl1";
-            ribbonControl1.RibbonStyle = (RibbonControlStyle.OfficeUniversal);
-            ribbonControl1.ShowApplicationButton = (DefaultBoolean.False);
-            ((Control)(object)ribbonControl1).Size = new Size(785, 49);
-            ((Control)(object)layoutControl1).Controls.Add(panel1);
-            ((Control)(object)layoutControl1).Dock = DockStyle.Fill;
-            ((Control)(object)layoutControl1).Location = new Point(0, 49);
-            ((Control)(object)layoutControl1).Name = "layoutControl1";
-            layoutControl1.Root = layoutControlGroup1;
-            ((Control)(object)layoutControl1).Size = new Size(785, 427);
-            ((Control)(object)layoutControl1).TabIndex = 1;
-            ((Control)(object)layoutControl1).Text = "layoutControl1";
-            panel1.Controls.Add(btnREACA);
-            panel1.Controls.Add(btnRERET);
-            panel1.Controls.Add((Control)(object)gcAcumulados);
-            panel1.Controls.Add((Control)(object)gcPartidas);
-            panel1.Controls.Add((Control)(object)cbConceptos);
-            panel1.Controls.Add((Control)(object)lblConceptos);
-            panel1.Controls.Add((Control)(object)txtCantidad);
-            panel1.Controls.Add((Control)(object)lblCantidad);
-            panel1.Controls.Add(btnCancelar);
-            panel1.Controls.Add(btnRECCA);
-            panel1.Location = new Point(12, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(761, 403);
-            panel1.TabIndex = 0;
-            btnREACA.BackColor = Color.LightSlateGray;
-            btnREACA.FlatAppearance.BorderColor = Color.SlateGray;
-            btnREACA.FlatStyle = FlatStyle.Flat;
-            btnREACA.ForeColor = Color.White;
-            btnREACA.Location = new Point(516, 361);
-            btnREACA.Name = "btnREACA";
-            btnREACA.Size = new Size(117, 27);
-            btnREACA.TabIndex = 67;
-            btnREACA.Text = "Retiro fondo inicial";
-            btnREACA.UseVisualStyleBackColor = false;
-            btnREACA.Click += btnRetiroFondoInicial_Click;
-            btnRERET.BackColor = Color.FromArgb(248, 152, 33);
-            btnRERET.FlatAppearance.BorderColor = Color.FromArgb(247, 135, 0);
-            btnRERET.FlatStyle = FlatStyle.Flat;
-            btnRERET.ForeColor = Color.White;
-            btnRERET.Location = new Point(402, 361);
-            btnRERET.Name = "btnRERET";
-            btnRERET.Size = new Size(108, 27);
-            btnRERET.TabIndex = 65;
-            btnRERET.Text = "Retiro";
-            btnRERET.UseVisualStyleBackColor = false;
-            btnRERET.Click += btnRERET_Click;
-            ((Control)(object)gcAcumulados).Location = new Point(402, 13);
-            gcAcumulados.MainView = (BaseView)(object)gvAcumulados;
-            ((EditorContainer)gcAcumulados).MenuManager = (IDXMenuManager)(object)ribbonControl1;
-            ((Control)(object)gcAcumulados).Name = "gcAcumulados";
-            ((Control)(object)gcAcumulados).Size = new Size(345, 322);
-            ((Control)(object)gcAcumulados).TabIndex = 64;
-            gcAcumulados.ViewCollection.AddRange((BaseView[])(object)new BaseView[1] { (BaseView)gvAcumulados });
-            ((ColumnView)gvAcumulados).Columns.AddRange((GridColumn[])(object)new GridColumn[2] { gridColumn5, gridColumn6 });
-            ((BaseView)gvAcumulados).GridControl = gcAcumulados;
-            ((BaseView)gvAcumulados).Name = "gvAcumulados";
-            gvAcumulados.OptionsDetail.DetailMode = (DetailMode.Default);
-            gvAcumulados.OptionsView.ShowFooter = true;
-            gvAcumulados.OptionsView.ShowGroupPanel = false;
-            gridColumn5.Caption = "Concepto";
-            gridColumn5.FieldName = "concepto";
-            gridColumn5.MaxWidth = 200;
-            gridColumn5.MinWidth = 200;
-            gridColumn5.Name = "gridColumn5";
-            gridColumn5.OptionsColumn.AllowEdit = false;
-            gridColumn5.Visible = true;
-            gridColumn5.VisibleIndex = 0;
-            gridColumn5.Width = 200;
-            gridColumn6.Caption = "Total";
-            gridColumn6.DisplayFormat.FormatString = "c2";
-            gridColumn6.DisplayFormat.FormatType = (FormatType.Numeric);
-            gridColumn6.FieldName = "total";
-            gridColumn6.Name = "gridColumn6";
-            gridColumn6.OptionsColumn.AllowEdit = false;
-            ((GridSummaryItemCollection)gridColumn6.Summary).AddRange((GridSummaryItem[])(object)new GridSummaryItem[1] { (GridSummaryItem)new GridColumnSummaryItem((SummaryItemType.Sum), "total", "TOTAL={0:c2}") });
-            gridColumn6.Visible = true;
-            gridColumn6.VisibleIndex = 1;
-            gridColumn6.Width = 127;
-            ((Control)(object)gcPartidas).Location = new Point(14, 65);
-            gcPartidas.MainView = (BaseView)(object)gvPartidas;
-            ((EditorContainer)gcPartidas).MenuManager = (IDXMenuManager)(object)ribbonControl1;
-            ((Control)(object)gcPartidas).Name = "gcPartidas";
-            ((Control)(object)gcPartidas).Size = new Size(375, 270);
-            ((Control)(object)gcPartidas).TabIndex = 63;
-            gcPartidas.ViewCollection.AddRange((BaseView[])(object)new BaseView[1] { (BaseView)gvPartidas });
-            ((ColumnView)gvPartidas).Columns.AddRange((GridColumn[])(object)new GridColumn[3] { gridColumn1, gridColumn2, gridColumn3 });
-            ((BaseView)gvPartidas).GridControl = gcPartidas;
-            ((BaseView)gvPartidas).Name = "gvPartidas";
-            gvPartidas.OptionsDetail.DetailMode = (DetailMode.Default);
-            gvPartidas.OptionsView.ShowFooter = true;
-            gvPartidas.OptionsView.ShowGroupPanel = false;
-            ((ColumnView)gvPartidas).CellValueChanged += new CellValueChangedEventHandler(gvPartidas_CellValueChanged);
-            ((BaseView)gvPartidas).KeyDown += gvPartidas_KeyDown;
-            gridColumn1.Caption = "Cant";
-            gridColumn1.DisplayFormat.FormatType = (FormatType.Numeric);
-            gridColumn1.FieldName = "cantidad";
-            gridColumn1.MaxWidth = 50;
-            gridColumn1.Name = "gridColumn1";
-            gridColumn1.Visible = true;
-            gridColumn1.VisibleIndex = 0;
-            gridColumn1.Width = 50;
-            gridColumn2.Caption = "Factor";
-            gridColumn2.DisplayFormat.FormatString = "c2";
-            gridColumn2.DisplayFormat.FormatType = (FormatType.Numeric);
-            gridColumn2.FieldName = "factor";
-            gridColumn2.Name = "gridColumn2";
-            gridColumn2.Visible = true;
-            gridColumn2.VisibleIndex = 1;
-            gridColumn3.Caption = "Producto";
-            gridColumn3.DisplayFormat.FormatString = "c2";
-            gridColumn3.DisplayFormat.FormatType = (FormatType.Numeric);
-            gridColumn3.FieldName = "producto";
-            gridColumn3.Name = "gridColumn3";
-            gridColumn3.OptionsColumn.AllowEdit = false;
-            ((GridSummaryItemCollection)gridColumn3.Summary).AddRange((GridSummaryItem[])(object)new GridSummaryItem[1] { (GridSummaryItem)new GridColumnSummaryItem((SummaryItemType.Sum), "producto", "TOTAL={0:c2}") });
-            gridColumn3.Visible = true;
-            gridColumn3.VisibleIndex = 2;
-            ((Control)(object)cbConceptos).Location = new Point(116, 13);
-            ((Control)(object)cbConceptos).Name = "cbConceptos";
-            ((RepositoryItemButtonEdit)cbConceptos.Properties).Buttons.AddRange((EditorButton[])(object)new EditorButton[1]
-            {
-            new EditorButton((ButtonPredefines.Combo))
-            });
-            cbConceptos.Properties.Columns.AddRange((LookUpColumnInfo[])(object)new LookUpColumnInfo[2]
-            {
-            new LookUpColumnInfo("id", "ID", 20, (FormatType.None), "", false, (HorzAlignment.Default)),
-            new LookUpColumnInfo("nombre", 60, "Concepto")
-            });
-            ((Control)(object)cbConceptos).Size = new Size(273, 20);
-            ((Control)(object)cbConceptos).TabIndex = 0;
-            ((BaseEdit)cbConceptos).EditValueChanged += cbConceptos_EditValueChanged;
-            ((Control)(object)lblConceptos).Location = new Point(14, 16);
-            ((Control)(object)lblConceptos).Name = "lblConceptos";
-            ((Control)(object)lblConceptos).Size = new Size(46, 13);
-            ((Control)(object)lblConceptos).TabIndex = 61;
-            ((Control)(object)lblConceptos).Text = "Concepto";
-            ((Control)(object)txtCantidad).Location = new Point(116, 39);
-            ((Control)(object)txtCantidad).Name = "txtCantidad";
-            txtCantidad.Properties.MaxLength = 20;
-            ((Control)(object)txtCantidad).Size = new Size(273, 20);
-            ((Control)(object)txtCantidad).TabIndex = 1;
-            ((Control)(object)txtCantidad).KeyDown += txtImporte_KeyDown;
-            ((Control)(object)lblCantidad).Location = new Point(14, 42);
-            ((Control)(object)lblCantidad).Name = "lblCantidad";
-            ((Control)(object)lblCantidad).Size = new Size(43, 13);
-            ((Control)(object)lblCantidad).TabIndex = 60;
-            ((Control)(object)lblCantidad).Text = "Cantidad";
-            btnCancelar.BackColor = Color.WhiteSmoke;
-            btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.FlatAppearance.BorderColor = Color.WhiteSmoke;
-            btnCancelar.FlatStyle = FlatStyle.Flat;
-            btnCancelar.ForeColor = Color.FromArgb(64, 64, 64);
-            btnCancelar.Location = new Point(14, 361);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(108, 27);
-            btnCancelar.TabIndex = 3;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = false;
-            btnCancelar.Click += btnCancelar_Click;
-            btnRECCA.BackColor = Color.Firebrick;
-            btnRECCA.FlatAppearance.BorderColor = Color.Brown;
-            btnRECCA.FlatStyle = FlatStyle.Flat;
-            btnRECCA.ForeColor = Color.White;
-            btnRECCA.Location = new Point(639, 361);
-            btnRECCA.Name = "btnRECCA";
-            btnRECCA.Size = new Size(108, 27);
-            btnRECCA.TabIndex = 2;
-            btnRECCA.Text = "CORTE Z";
-            btnRECCA.UseVisualStyleBackColor = false;
-            btnRECCA.Click += btnRECCA_Click;
-            ((LayoutGroup)layoutControlGroup1).EnableIndentsWithoutBorders = (DefaultBoolean.True);
-            ((LayoutGroup)layoutControlGroup1).GroupBordersVisible = false;
-            ((BaseItemCollection)layoutControlGroup1.Items).AddRange((BaseLayoutItem[])(object)new BaseLayoutItem[1] { (BaseLayoutItem)layoutControlItem1 });
-            ((BaseLayoutItem)layoutControlGroup1).Location = new Point(0, 0);
-            ((BaseLayoutItem)layoutControlGroup1).Name = "layoutControlGroup1";
-            ((BaseLayoutItem)layoutControlGroup1).Size = new Size(785, 427);
-            ((BaseLayoutItem)layoutControlGroup1).TextVisible = false;
-            layoutControlItem1.Control = panel1;
-            ((BaseLayoutItem)layoutControlItem1).Location = new Point(0, 0);
-            ((BaseLayoutItem)layoutControlItem1).Name = "layoutControlItem1";
-            ((BaseLayoutItem)layoutControlItem1).Size = new Size(765, 407);
-            ((BaseLayoutItem)layoutControlItem1).TextSize = new Size(0, 0);
-            ((BaseLayoutItem)layoutControlItem1).TextVisible = false;
-            ((ContainerControl)this).AutoScaleDimensions = new SizeF(6f, 13f);
-            ((ContainerControl)this).AutoScaleMode = AutoScaleMode.Font;
-            ((Form)this).CancelButton = btnCancelar;
-            ((Form)this).ClientSize = new Size(785, 476);
-            ((Control)this).Controls.Add((Control)(object)layoutControl1);
-            ((Control)this).Controls.Add((Control)(object)ribbonControl1);
-            ((Form)this).FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            //((XtraForm)this).Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            ((Control)this).Name = "frmArqueo";
-            ((RibbonForm)this).Ribbon = ribbonControl1;
-            ((Form)this).StartPosition = FormStartPosition.CenterScreen;
-            ((Control)(object)this).Text = "Arqueo";
-            ((ISupportInitialize)ribbonControl1).EndInit();
-            ((ISupportInitialize)layoutControl1).EndInit();
-            ((Control)(object)layoutControl1).ResumeLayout(performLayout: false);
-            panel1.ResumeLayout(performLayout: false);
-            panel1.PerformLayout();
-            ((ISupportInitialize)gcAcumulados).EndInit();
-            ((ISupportInitialize)gvAcumulados).EndInit();
-            ((ISupportInitialize)gcPartidas).EndInit();
-            ((ISupportInitialize)gvPartidas).EndInit();
-            ((ISupportInitialize)cbConceptos.Properties).EndInit();
-            ((ISupportInitialize)txtCantidad.Properties).EndInit();
-            ((ISupportInitialize)layoutControlGroup1).EndInit();
-            ((ISupportInitialize)layoutControlItem1).EndInit();
-            ((XtraForm)this).ResumeLayout(false);
-            ((Control)this).PerformLayout();
+            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnREACA = new System.Windows.Forms.Button();
+            this.btnRERET = new System.Windows.Forms.Button();
+            this.gcAcumulados = new DevExpress.XtraGrid.GridControl();
+            this.gvAcumulados = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcPartidas = new DevExpress.XtraGrid.GridControl();
+            this.gvPartidas = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cbConceptos = new DevExpress.XtraEditors.LookUpEdit();
+            this.lblConceptos = new DevExpress.XtraEditors.LabelControl();
+            this.txtCantidad = new DevExpress.XtraEditors.TextEdit();
+            this.lblCantidad = new DevExpress.XtraEditors.LabelControl();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnRECCA = new System.Windows.Forms.Button();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcAcumulados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvAcumulados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPartidas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPartidas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbConceptos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCantidad.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // ribbonControl1
+            // 
+            this.ribbonControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
+            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 39, 35, 39);
+            this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl1.ExpandCollapseItem});
+            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ribbonControl1.MaxItemId = 1;
+            this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.OptionsMenuMinWidth = 385;
+            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
+            this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonControl1.Size = new System.Drawing.Size(916, 71);
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.panel1);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 71);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(916, 551);
+            this.layoutControl1.TabIndex = 1;
+            this.layoutControl1.Text = "layoutControl1";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnREACA);
+            this.panel1.Controls.Add(this.btnRERET);
+            this.panel1.Controls.Add(this.gcAcumulados);
+            this.panel1.Controls.Add(this.gcPartidas);
+            this.panel1.Controls.Add(this.cbConceptos);
+            this.panel1.Controls.Add(this.lblConceptos);
+            this.panel1.Controls.Add(this.txtCantidad);
+            this.panel1.Controls.Add(this.lblCantidad);
+            this.panel1.Controls.Add(this.btnCancelar);
+            this.panel1.Controls.Add(this.btnRECCA);
+            this.panel1.Location = new System.Drawing.Point(14, 16);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(888, 519);
+            this.panel1.TabIndex = 0;
+            // 
+            // btnREACA
+            // 
+            this.btnREACA.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnREACA.FlatAppearance.BorderColor = System.Drawing.Color.SlateGray;
+            this.btnREACA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnREACA.ForeColor = System.Drawing.Color.White;
+            this.btnREACA.Location = new System.Drawing.Point(602, 472);
+            this.btnREACA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnREACA.Name = "btnREACA";
+            this.btnREACA.Size = new System.Drawing.Size(136, 35);
+            this.btnREACA.TabIndex = 67;
+            this.btnREACA.Text = "Retiro fondo inicial";
+            this.btnREACA.UseVisualStyleBackColor = false;
+            // 
+            // btnRERET
+            // 
+            this.btnRERET.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(152)))), ((int)(((byte)(33)))));
+            this.btnRERET.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(0)))));
+            this.btnRERET.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRERET.ForeColor = System.Drawing.Color.White;
+            this.btnRERET.Location = new System.Drawing.Point(469, 472);
+            this.btnRERET.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRERET.Name = "btnRERET";
+            this.btnRERET.Size = new System.Drawing.Size(126, 35);
+            this.btnRERET.TabIndex = 65;
+            this.btnRERET.Text = "Retiro";
+            this.btnRERET.UseVisualStyleBackColor = false;
+            // 
+            // gcAcumulados
+            // 
+            this.gcAcumulados.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.gcAcumulados.Location = new System.Drawing.Point(469, 17);
+            this.gcAcumulados.MainView = this.gvAcumulados;
+            this.gcAcumulados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcAcumulados.MenuManager = this.ribbonControl1;
+            this.gcAcumulados.Name = "gcAcumulados";
+            this.gcAcumulados.Size = new System.Drawing.Size(402, 421);
+            this.gcAcumulados.TabIndex = 64;
+            this.gcAcumulados.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvAcumulados});
+            // 
+            // gvAcumulados
+            // 
+            this.gvAcumulados.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn5,
+            this.gridColumn6});
+            this.gvAcumulados.DetailHeight = 458;
+            this.gvAcumulados.GridControl = this.gcAcumulados;
+            this.gvAcumulados.Name = "gvAcumulados";
+            this.gvAcumulados.OptionsEditForm.PopupEditFormWidth = 933;
+            this.gvAcumulados.OptionsView.ShowFooter = true;
+            this.gvAcumulados.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Concepto";
+            this.gridColumn5.FieldName = "concepto";
+            this.gridColumn5.MaxWidth = 233;
+            this.gridColumn5.MinWidth = 233;
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 0;
+            this.gridColumn5.Width = 233;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Total";
+            this.gridColumn6.DisplayFormat.FormatString = "c2";
+            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn6.FieldName = "total";
+            this.gridColumn6.MinWidth = 23;
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "total", "TOTAL={0:c2}")});
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 1;
+            this.gridColumn6.Width = 148;
+            // 
+            // gcPartidas
+            // 
+            this.gcPartidas.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.gcPartidas.Location = new System.Drawing.Point(16, 85);
+            this.gcPartidas.MainView = this.gvPartidas;
+            this.gcPartidas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcPartidas.MenuManager = this.ribbonControl1;
+            this.gcPartidas.Name = "gcPartidas";
+            this.gcPartidas.Size = new System.Drawing.Size(438, 353);
+            this.gcPartidas.TabIndex = 63;
+            this.gcPartidas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvPartidas});
+            // 
+            // gvPartidas
+            // 
+            this.gvPartidas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3});
+            this.gvPartidas.DetailHeight = 458;
+            this.gvPartidas.GridControl = this.gcPartidas;
+            this.gvPartidas.Name = "gvPartidas";
+            this.gvPartidas.OptionsEditForm.PopupEditFormWidth = 933;
+            this.gvPartidas.OptionsView.ShowFooter = true;
+            this.gvPartidas.OptionsView.ShowGroupPanel = false;
+            this.gvPartidas.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvPartidas_CellValueChanged);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Cant";
+            this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn1.FieldName = "cantidad";
+            this.gridColumn1.MaxWidth = 58;
+            this.gridColumn1.MinWidth = 23;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 58;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Factor";
+            this.gridColumn2.DisplayFormat.FormatString = "c2";
+            this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn2.FieldName = "factor";
+            this.gridColumn2.MinWidth = 23;
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 87;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Producto";
+            this.gridColumn3.DisplayFormat.FormatString = "c2";
+            this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn3.FieldName = "producto";
+            this.gridColumn3.MinWidth = 23;
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "producto", "TOTAL={0:c2}")});
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 87;
+            // 
+            // cbConceptos
+            // 
+            this.cbConceptos.Location = new System.Drawing.Point(135, 17);
+            this.cbConceptos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbConceptos.Name = "cbConceptos";
+            this.cbConceptos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbConceptos.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 23, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Concepto", 70, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbConceptos.Size = new System.Drawing.Size(318, 26);
+            this.cbConceptos.TabIndex = 0;
+            // 
+            // lblConceptos
+            // 
+            this.lblConceptos.Location = new System.Drawing.Point(16, 21);
+            this.lblConceptos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblConceptos.Name = "lblConceptos";
+            this.lblConceptos.Size = new System.Drawing.Size(61, 17);
+            this.lblConceptos.TabIndex = 61;
+            this.lblConceptos.Text = "Concepto";
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(135, 51);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Properties.MaxLength = 20;
+            this.txtCantidad.Size = new System.Drawing.Size(318, 26);
+            this.txtCantidad.TabIndex = 1;
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.Location = new System.Drawing.Point(16, 55);
+            this.lblCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(56, 17);
+            this.lblCantidad.TabIndex = 60;
+            this.lblCantidad.Text = "Cantidad";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCancelar.Location = new System.Drawing.Point(16, 472);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(126, 35);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            // 
+            // btnRECCA
+            // 
+            this.btnRECCA.BackColor = System.Drawing.Color.Firebrick;
+            this.btnRECCA.FlatAppearance.BorderColor = System.Drawing.Color.Brown;
+            this.btnRECCA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRECCA.ForeColor = System.Drawing.Color.White;
+            this.btnRECCA.Location = new System.Drawing.Point(746, 472);
+            this.btnRECCA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRECCA.Name = "btnRECCA";
+            this.btnRECCA.Size = new System.Drawing.Size(126, 35);
+            this.btnRECCA.TabIndex = 2;
+            this.btnRECCA.Text = "CORTE Z";
+            this.btnRECCA.UseVisualStyleBackColor = false;
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1});
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(916, 551);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.panel1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(892, 525);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // frmArqueo
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
+            this.ClientSize = new System.Drawing.Size(916, 622);
+            this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.ribbonControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "frmArqueo";
+            this.Ribbon = this.ribbonControl1;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Arqueo";
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcAcumulados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvAcumulados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPartidas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPartidas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbConceptos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCantidad.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
     }
 }

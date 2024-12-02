@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|c:\\users\\programador\\documents\\github\\dtm\\pvta\\nori\\nori\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|solutionrelative:nori\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|c:\\users\\programador\\documents\\github\\dtm\\pvta\\nori\\nori\\frmdocumentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|solutionrelative:nori\\frmdocumentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|c:\\users\\programador\\documents\\github\\dtm\\pvta\\nori\\nori\\frmdocumentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|solutionrelative:nori\\frmdocumentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,13 +27,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmPrincipal.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmPrincipal.cs",
-              "RelativeDocumentMoniker": "NORI\\frmPrincipal.cs",
-              "ToolTip": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmPrincipal.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "NORI\\frmPrincipal.cs [Dise\u00F1o]*",
+              "Title": "frmDocumentos.cs",
+              "DocumentMoniker": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmDocumentos.cs",
+              "RelativeDocumentMoniker": "NORI\\frmDocumentos.cs",
+              "ToolTip": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmDocumentos.cs",
+              "RelativeToolTip": "NORI\\frmDocumentos.cs",
+              "ViewState": "AgIAANMLAAAAAAAAAAAQwO0LAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T17:24:26.14Z",
+              "WhenOpened": "2024-12-02T19:55:53.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmDocumentos.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmDocumentos.cs",
+              "RelativeDocumentMoniker": "NORI\\frmDocumentos.cs",
+              "ToolTip": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmDocumentos.cs [Dise\u00F1o]",
+              "RelativeToolTip": "NORI\\frmDocumentos.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T19:55:52.253Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

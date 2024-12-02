@@ -33,251 +33,276 @@ namespace NORI.PuntoVenta
 
         private void InitializeComponent()
         {
-            //IL_0012: Unknown result type (might be due to invalid IL or missing references)
-            //IL_001c: Expected O, but got Unknown
-            //IL_001d: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0027: Expected O, but got Unknown
-            //IL_0049: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0053: Expected O, but got Unknown
-            //IL_0054: Unknown result type (might be due to invalid IL or missing references)
-            //IL_005e: Expected O, but got Unknown
-            //IL_005f: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0069: Expected O, but got Unknown
-            //IL_006a: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0074: Expected O, but got Unknown
-            //IL_0075: Unknown result type (might be due to invalid IL or missing references)
-            //IL_007f: Expected O, but got Unknown
-            //IL_0080: Unknown result type (might be due to invalid IL or missing references)
-            //IL_008a: Expected O, but got Unknown
-            //IL_008b: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0095: Expected O, but got Unknown
-            //IL_0096: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00a0: Expected O, but got Unknown
-            //IL_00b7: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00c1: Expected O, but got Unknown
-            //IL_00c2: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00cc: Expected O, but got Unknown
-            //IL_0628: Unknown result type (might be due to invalid IL or missing references)
-            //IL_062e: Expected O, but got Unknown
-            //IL_0660: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0666: Expected O, but got Unknown
-            //IL_0672: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0678: Expected O, but got Unknown
-            //IL_070d: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0713: Expected O, but got Unknown
-            //IL_0745: Unknown result type (might be due to invalid IL or missing references)
-            //IL_074b: Expected O, but got Unknown
-            //IL_0757: Unknown result type (might be due to invalid IL or missing references)
-            //IL_075d: Expected O, but got Unknown
-            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmCanjes));
-            ribbonControl1 = new RibbonControl();
-            layoutControl1 = new LayoutControl();
-            panel1 = new Panel();
-            lblImporte = new Label();
-            lblImporte_ = new Label();
-            lblConceptoEgreso = new LabelControl();
-            lblConceptoIngreso = new LabelControl();
-            cbEgreso = new LookUpEdit();
-            cbIngreso = new LookUpEdit();
-            txtComentario = new MemoEdit();
-            lblComentario = new LabelControl();
-            txtCantidad = new TextEdit();
-            lblCantidad = new LabelControl();
-            btnCancelar = new Button();
-            btnAceptar = new Button();
-            layoutControlGroup1 = new LayoutControlGroup();
-            layoutControlItem1 = new LayoutControlItem();
-            ((ISupportInitialize)ribbonControl1).BeginInit();
-            ((ISupportInitialize)layoutControl1).BeginInit();
-            ((Control)(object)layoutControl1).SuspendLayout();
-            panel1.SuspendLayout();
-            ((ISupportInitialize)cbEgreso.Properties).BeginInit();
-            ((ISupportInitialize)cbIngreso.Properties).BeginInit();
-            ((ISupportInitialize)txtComentario.Properties).BeginInit();
-            ((ISupportInitialize)txtCantidad.Properties).BeginInit();
-            ((ISupportInitialize)layoutControlGroup1).BeginInit();
-            ((ISupportInitialize)layoutControlItem1).BeginInit();
-            ((XtraForm)this).SuspendLayout();
-            ((BarItem)ribbonControl1.ExpandCollapseItem).Id = 0;
-            ((BarItems)ribbonControl1.Items).AddRange((BarItem[])(object)new BarItem[1] { (BarItem)ribbonControl1.ExpandCollapseItem });
-            ((Control)(object)ribbonControl1).Location = new Point(0, 0);
-            ribbonControl1.MaxItemId = 1;
-            ((Control)(object)ribbonControl1).Name = "ribbonControl1";
-            ribbonControl1.RibbonStyle = (RibbonControlStyle.OfficeUniversal);
-            ribbonControl1.ShowApplicationButton = (DefaultBoolean.False);
-            ((Control)(object)ribbonControl1).Size = new Size(402, 54);
-            ((Control)(object)layoutControl1).Controls.Add(panel1);
-            ((Control)(object)layoutControl1).Dock = DockStyle.Fill;
-            ((Control)(object)layoutControl1).Location = new Point(0, 54);
-            ((Control)(object)layoutControl1).Name = "layoutControl1";
-            layoutControl1.Root = layoutControlGroup1;
-            ((Control)(object)layoutControl1).Size = new Size(402, 252);
-            ((Control)(object)layoutControl1).TabIndex = 1;
-            ((Control)(object)layoutControl1).Text = "layoutControl1";
-            panel1.Controls.Add(lblImporte);
-            panel1.Controls.Add(lblImporte_);
-            panel1.Controls.Add((Control)(object)lblConceptoEgreso);
-            panel1.Controls.Add((Control)(object)lblConceptoIngreso);
-            panel1.Controls.Add((Control)(object)cbEgreso);
-            panel1.Controls.Add((Control)(object)cbIngreso);
-            panel1.Controls.Add((Control)(object)txtComentario);
-            panel1.Controls.Add((Control)(object)lblComentario);
-            panel1.Controls.Add((Control)(object)txtCantidad);
-            panel1.Controls.Add((Control)(object)lblCantidad);
-            panel1.Controls.Add(btnCancelar);
-            panel1.Controls.Add(btnAceptar);
-            panel1.Location = new Point(12, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(378, 228);
-            panel1.TabIndex = 0;
-            lblImporte.AutoEllipsis = true;
-            lblImporte.Font = new Font("Tahoma", 14f, FontStyle.Bold);
-            lblImporte.ForeColor = Color.MidnightBlue;
-            lblImporte.Location = new Point(215, 158);
-            lblImporte.Name = "lblImporte";
-            lblImporte.RightToLeft = RightToLeft.Yes;
-            lblImporte.Size = new Size(153, 25);
-            lblImporte.TabIndex = 69;
-            lblImporte.Text = "0.00";
-            lblImporte_.AutoSize = true;
-            lblImporte_.Font = new Font("Tahoma", 8.25f, FontStyle.Bold);
-            lblImporte_.Location = new Point(154, 158);
-            lblImporte_.Name = "lblImporte_";
-            lblImporte_.Size = new Size(54, 13);
-            lblImporte_.TabIndex = 68;
-            lblImporte_.Text = "Importe";
-            ((Control)(object)lblConceptoEgreso).Location = new Point(12, 68);
-            ((Control)(object)lblConceptoEgreso).Name = "lblConceptoEgreso";
-            ((Control)(object)lblConceptoEgreso).Size = new Size(82, 13);
-            ((Control)(object)lblConceptoEgreso).TabIndex = 64;
-            ((Control)(object)lblConceptoEgreso).Text = "Concepto egreso";
-            ((Control)(object)lblConceptoIngreso).Location = new Point(12, 16);
-            ((Control)(object)lblConceptoIngreso).Name = "lblConceptoIngreso";
-            ((Control)(object)lblConceptoIngreso).Size = new Size(84, 13);
-            ((Control)(object)lblConceptoIngreso).TabIndex = 63;
-            ((Control)(object)lblConceptoIngreso).Text = "Concepto ingreso";
-            ((Control)(object)cbEgreso).Location = new Point(114, 65);
-            ((BaseEdit)cbEgreso).MenuManager = (IDXMenuManager)(object)ribbonControl1;
-            ((Control)(object)cbEgreso).Name = "cbEgreso";
-            ((RepositoryItemButtonEdit)cbEgreso.Properties).Buttons.AddRange((EditorButton[])(object)new EditorButton[1]
-            {
-            new EditorButton((ButtonPredefines.Combo))
-            });
-            cbEgreso.Properties.Columns.AddRange((LookUpColumnInfo[])(object)new LookUpColumnInfo[2]
-            {
-            new LookUpColumnInfo("id", "ID", 20, (FormatType.None), "", false, (HorzAlignment.Default)),
-            new LookUpColumnInfo("nombre", "Nombre")
-            });
-            ((Control)(object)cbEgreso).Size = new Size(250, 20);
-            ((Control)(object)cbEgreso).TabIndex = 2;
-            ((BaseEdit)cbEgreso).EditValueChanged += cbIngreso_EditValueChanged;
-            ((Control)(object)cbIngreso).Location = new Point(114, 13);
-            ((BaseEdit)cbIngreso).MenuManager = (IDXMenuManager)(object)ribbonControl1;
-            ((Control)(object)cbIngreso).Name = "cbIngreso";
-            ((RepositoryItemButtonEdit)cbIngreso.Properties).Buttons.AddRange((EditorButton[])(object)new EditorButton[1]
-            {
-            new EditorButton((ButtonPredefines.Combo))
-            });
-            cbIngreso.Properties.Columns.AddRange((LookUpColumnInfo[])(object)new LookUpColumnInfo[2]
-            {
-            new LookUpColumnInfo("id", "ID", 20, (FormatType.None), "", false, (HorzAlignment.Default)),
-            new LookUpColumnInfo("nombre", "Nombre")
-            });
-            ((Control)(object)cbIngreso).Size = new Size(250, 20);
-            ((Control)(object)cbIngreso).TabIndex = 0;
-            ((BaseEdit)cbIngreso).EditValueChanged += cbIngreso_EditValueChanged;
-            ((Control)(object)txtComentario).Location = new Point(114, 91);
-            ((BaseEdit)txtComentario).MenuManager = (IDXMenuManager)(object)ribbonControl1;
-            ((Control)(object)txtComentario).Name = "txtComentario";
-            ((Control)(object)txtComentario).Size = new Size(250, 54);
-            ((Control)(object)txtComentario).TabIndex = 3;
-            ((Control)(object)lblComentario).Location = new Point(12, 94);
-            ((Control)(object)lblComentario).Name = "lblComentario";
-            ((Control)(object)lblComentario).Size = new Size(55, 13);
-            ((Control)(object)lblComentario).TabIndex = 2;
-            ((Control)(object)lblComentario).Text = "Comentario";
-            ((BaseEdit)txtCantidad).EditValue = "1";
-            ((Control)(object)txtCantidad).Location = new Point(114, 39);
-            ((Control)(object)txtCantidad).Name = "txtCantidad";
-            ((RepositoryItem)txtCantidad.Properties).Appearance.Font = new Font("Tahoma", 8.25f, FontStyle.Bold);
-            ((RepositoryItem)txtCantidad.Properties).Appearance.Options.UseFont = true;
-            ((RepositoryItem)txtCantidad.Properties).DisplayFormat.FormatString = "c2";
-            txtCantidad.Properties.Mask.EditMask = "c2";
-            txtCantidad.Properties.Mask.MaskType = (MaskType.Numeric);
-            txtCantidad.Properties.MaxLength = 100;
-            ((Control)(object)txtCantidad).Size = new Size(250, 20);
-            ((Control)(object)txtCantidad).TabIndex = 1;
-            ((Control)(object)txtCantidad).TextChanged += txtCantidad_TextChanged;
-            ((Control)(object)lblCantidad).Location = new Point(12, 42);
-            ((Control)(object)lblCantidad).Name = "lblCantidad";
-            ((Control)(object)lblCantidad).Size = new Size(43, 13);
-            ((Control)(object)lblCantidad).TabIndex = 60;
-            ((Control)(object)lblCantidad).Text = "Cantidad";
-            btnCancelar.BackColor = Color.WhiteSmoke;
-            btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.FlatAppearance.BorderColor = Color.WhiteSmoke;
-            btnCancelar.FlatStyle = FlatStyle.Flat;
-            btnCancelar.ForeColor = Color.FromArgb(64, 64, 64);
-            btnCancelar.Location = new Point(12, 189);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(108, 27);
-            btnCancelar.TabIndex = 0;
-            btnCancelar.TabStop = false;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = false;
-            btnCancelar.Click += btnCancelar_Click;
-            btnAceptar.BackColor = Color.FromArgb(248, 152, 33);
-            btnAceptar.FlatAppearance.BorderColor = Color.FromArgb(247, 135, 0);
-            btnAceptar.FlatStyle = FlatStyle.Flat;
-            btnAceptar.ForeColor = Color.White;
-            btnAceptar.Location = new Point(256, 189);
-            btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new Size(108, 27);
-            btnAceptar.TabIndex = 0;
-            btnAceptar.TabStop = false;
-            btnAceptar.Text = "Aceptar";
-            btnAceptar.UseVisualStyleBackColor = false;
-            btnAceptar.Click += btnAceptar_Click;
-            ((LayoutGroup)layoutControlGroup1).EnableIndentsWithoutBorders = (DefaultBoolean.True);
-            ((LayoutGroup)layoutControlGroup1).GroupBordersVisible = false;
-            ((BaseItemCollection)layoutControlGroup1.Items).AddRange((BaseLayoutItem[])(object)new BaseLayoutItem[1] { (BaseLayoutItem)layoutControlItem1 });
-            ((BaseLayoutItem)layoutControlGroup1).Location = new Point(0, 0);
-            ((BaseLayoutItem)layoutControlGroup1).Name = "layoutControlGroup1";
-            ((BaseLayoutItem)layoutControlGroup1).Size = new Size(402, 252);
-            ((BaseLayoutItem)layoutControlGroup1).TextVisible = false;
-            layoutControlItem1.Control = panel1;
-            ((BaseLayoutItem)layoutControlItem1).Location = new Point(0, 0);
-            ((BaseLayoutItem)layoutControlItem1).Name = "layoutControlItem1";
-            ((BaseLayoutItem)layoutControlItem1).Size = new Size(382, 232);
-            ((BaseLayoutItem)layoutControlItem1).TextSize = new Size(0, 0);
-            ((BaseLayoutItem)layoutControlItem1).TextVisible = false;
-            ((Form)this).AcceptButton = btnAceptar;
-            ((ContainerControl)this).AutoScaleDimensions = new SizeF(6f, 13f);
-            ((ContainerControl)this).AutoScaleMode = AutoScaleMode.Font;
-            ((Form)this).CancelButton = btnCancelar;
-            ((Form)this).ClientSize = new Size(402, 306);
-            ((Control)this).Controls.Add((Control)(object)layoutControl1);
-            ((Control)this).Controls.Add((Control)(object)ribbonControl1);
-            ((Form)this).FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            //((XtraForm)this).Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            ((Form)this).KeyPreview = true;
-            ((Control)this).Name = "frmCanjes";
-            ((RibbonForm)this).Ribbon = ribbonControl1;
-            ((Form)this).StartPosition = FormStartPosition.CenterScreen;
-            ((Control)(object)this).Text = "Canje";
-            ((ISupportInitialize)ribbonControl1).EndInit();
-            ((ISupportInitialize)layoutControl1).EndInit();
-            ((Control)(object)layoutControl1).ResumeLayout(performLayout: false);
-            panel1.ResumeLayout(performLayout: false);
-            panel1.PerformLayout();
-            ((ISupportInitialize)cbEgreso.Properties).EndInit();
-            ((ISupportInitialize)cbIngreso.Properties).EndInit();
-            ((ISupportInitialize)txtComentario.Properties).EndInit();
-            ((ISupportInitialize)txtCantidad.Properties).EndInit();
-            ((ISupportInitialize)layoutControlGroup1).EndInit();
-            ((ISupportInitialize)layoutControlItem1).EndInit();
-            ((XtraForm)this).ResumeLayout(false);
-            ((Control)this).PerformLayout();
+            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblImporte = new System.Windows.Forms.Label();
+            this.lblImporte_ = new System.Windows.Forms.Label();
+            this.lblConceptoEgreso = new DevExpress.XtraEditors.LabelControl();
+            this.lblConceptoIngreso = new DevExpress.XtraEditors.LabelControl();
+            this.cbEgreso = new DevExpress.XtraEditors.LookUpEdit();
+            this.cbIngreso = new DevExpress.XtraEditors.LookUpEdit();
+            this.txtComentario = new DevExpress.XtraEditors.MemoEdit();
+            this.lblComentario = new DevExpress.XtraEditors.LabelControl();
+            this.txtCantidad = new DevExpress.XtraEditors.TextEdit();
+            this.lblCantidad = new DevExpress.XtraEditors.LabelControl();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbEgreso.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbIngreso.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtComentario.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCantidad.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // ribbonControl1
+            // 
+            this.ribbonControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
+            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 39, 35, 39);
+            this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl1.ExpandCollapseItem});
+            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ribbonControl1.MaxItemId = 1;
+            this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.OptionsMenuMinWidth = 385;
+            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
+            this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonControl1.Size = new System.Drawing.Size(469, 71);
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.panel1);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 71);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(469, 329);
+            this.layoutControl1.TabIndex = 1;
+            this.layoutControl1.Text = "layoutControl1";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblImporte);
+            this.panel1.Controls.Add(this.lblImporte_);
+            this.panel1.Controls.Add(this.lblConceptoEgreso);
+            this.panel1.Controls.Add(this.lblConceptoIngreso);
+            this.panel1.Controls.Add(this.cbEgreso);
+            this.panel1.Controls.Add(this.cbIngreso);
+            this.panel1.Controls.Add(this.txtComentario);
+            this.panel1.Controls.Add(this.lblComentario);
+            this.panel1.Controls.Add(this.txtCantidad);
+            this.panel1.Controls.Add(this.lblCantidad);
+            this.panel1.Controls.Add(this.btnCancelar);
+            this.panel1.Controls.Add(this.btnAceptar);
+            this.panel1.Location = new System.Drawing.Point(14, 16);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(441, 297);
+            this.panel1.TabIndex = 0;
+            // 
+            // lblImporte
+            // 
+            this.lblImporte.AutoEllipsis = true;
+            this.lblImporte.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
+            this.lblImporte.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.lblImporte.Location = new System.Drawing.Point(251, 207);
+            this.lblImporte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblImporte.Name = "lblImporte";
+            this.lblImporte.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblImporte.Size = new System.Drawing.Size(178, 33);
+            this.lblImporte.TabIndex = 69;
+            this.lblImporte.Text = "0.00";
+            // 
+            // lblImporte_
+            // 
+            this.lblImporte_.AutoSize = true;
+            this.lblImporte_.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblImporte_.Location = new System.Drawing.Point(180, 207);
+            this.lblImporte_.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblImporte_.Name = "lblImporte_";
+            this.lblImporte_.Size = new System.Drawing.Size(54, 13);
+            this.lblImporte_.TabIndex = 68;
+            this.lblImporte_.Text = "Importe";
+            // 
+            // lblConceptoEgreso
+            // 
+            this.lblConceptoEgreso.Location = new System.Drawing.Point(14, 89);
+            this.lblConceptoEgreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblConceptoEgreso.Name = "lblConceptoEgreso";
+            this.lblConceptoEgreso.Size = new System.Drawing.Size(105, 17);
+            this.lblConceptoEgreso.TabIndex = 64;
+            this.lblConceptoEgreso.Text = "Concepto egreso";
+            // 
+            // lblConceptoIngreso
+            // 
+            this.lblConceptoIngreso.Location = new System.Drawing.Point(14, 21);
+            this.lblConceptoIngreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblConceptoIngreso.Name = "lblConceptoIngreso";
+            this.lblConceptoIngreso.Size = new System.Drawing.Size(107, 17);
+            this.lblConceptoIngreso.TabIndex = 63;
+            this.lblConceptoIngreso.Text = "Concepto ingreso";
+            // 
+            // cbEgreso
+            // 
+            this.cbEgreso.Location = new System.Drawing.Point(133, 85);
+            this.cbEgreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbEgreso.MenuManager = this.ribbonControl1;
+            this.cbEgreso.Name = "cbEgreso";
+            this.cbEgreso.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbEgreso.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 23, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbEgreso.Size = new System.Drawing.Size(292, 26);
+            this.cbEgreso.TabIndex = 2;
+            // 
+            // cbIngreso
+            // 
+            this.cbIngreso.Location = new System.Drawing.Point(133, 17);
+            this.cbIngreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbIngreso.MenuManager = this.ribbonControl1;
+            this.cbIngreso.Name = "cbIngreso";
+            this.cbIngreso.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbIngreso.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 23, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbIngreso.Size = new System.Drawing.Size(292, 26);
+            this.cbIngreso.TabIndex = 0;
+            // 
+            // txtComentario
+            // 
+            this.txtComentario.Location = new System.Drawing.Point(133, 119);
+            this.txtComentario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtComentario.MenuManager = this.ribbonControl1;
+            this.txtComentario.Name = "txtComentario";
+            this.txtComentario.Size = new System.Drawing.Size(292, 71);
+            this.txtComentario.TabIndex = 3;
+            // 
+            // lblComentario
+            // 
+            this.lblComentario.Location = new System.Drawing.Point(14, 123);
+            this.lblComentario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblComentario.Name = "lblComentario";
+            this.lblComentario.Size = new System.Drawing.Size(71, 17);
+            this.lblComentario.TabIndex = 2;
+            this.lblComentario.Text = "Comentario";
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.EditValue = "1";
+            this.txtCantidad.Location = new System.Drawing.Point(133, 51);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtCantidad.Properties.Appearance.Options.UseFont = true;
+            this.txtCantidad.Properties.DisplayFormat.FormatString = "c2";
+            this.txtCantidad.Properties.Mask.EditMask = "c2";
+            this.txtCantidad.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtCantidad.Properties.MaxLength = 100;
+            this.txtCantidad.Size = new System.Drawing.Size(292, 22);
+            this.txtCantidad.TabIndex = 1;
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.Location = new System.Drawing.Point(14, 55);
+            this.lblCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(56, 17);
+            this.lblCantidad.TabIndex = 60;
+            this.lblCantidad.Text = "Cantidad";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCancelar.Location = new System.Drawing.Point(14, 247);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(126, 35);
+            this.btnCancelar.TabIndex = 0;
+            this.btnCancelar.TabStop = false;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(152)))), ((int)(((byte)(33)))));
+            this.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(135)))), ((int)(((byte)(0)))));
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.Location = new System.Drawing.Point(299, 247);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(126, 35);
+            this.btnAceptar.TabIndex = 0;
+            this.btnAceptar.TabStop = false;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1});
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(469, 329);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.panel1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(445, 303);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // frmCanjes
+            // 
+            this.AcceptButton = this.btnAceptar;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
+            this.ClientSize = new System.Drawing.Size(469, 400);
+            this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.ribbonControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "frmCanjes";
+            this.Ribbon = this.ribbonControl1;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Canje";
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbEgreso.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbIngreso.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtComentario.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCantidad.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
     }

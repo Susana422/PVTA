@@ -25,107 +25,122 @@ namespace NORI.Restaurante
 
         private void InitializeComponent()
         {
-            //IL_0012: Unknown result type (might be due to invalid IL or missing references)
-            //IL_001c: Expected O, but got Unknown
-            //IL_001d: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0027: Expected O, but got Unknown
-            //IL_0028: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0032: Expected O, but got Unknown
-            //IL_0033: Unknown result type (might be due to invalid IL or missing references)
-            //IL_003d: Expected O, but got Unknown
-            //IL_003e: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0048: Expected O, but got Unknown
-            //IL_0049: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0053: Expected O, but got Unknown
-            //IL_0054: Unknown result type (might be due to invalid IL or missing references)
-            //IL_005e: Expected O, but got Unknown
-            //IL_005f: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0069: Expected O, but got Unknown
-            //IL_01cd: Unknown result type (might be due to invalid IL or missing references)
-            //IL_01d7: Expected O, but got Unknown
-            //IL_022a: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0234: Expected O, but got Unknown
-            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmRestaurante));
-            ribbon = new RibbonControl();
-            bbiNuevo = new BarButtonItem();
-            bbiGuardar = new BarButtonItem();
-            lblEstacion = new BarStaticItem();
-            lblUsuario = new BarStaticItem();
-            ribbonPageMesas = new RibbonPage();
-            ribbonPageGroupMesasArchivo = new RibbonPageGroup();
-            ribbonStatusBar = new RibbonStatusBar();
-            panelMesas = new Panel();
-            ((ISupportInitialize)ribbon).BeginInit();
-            ((XtraForm)this).SuspendLayout();
-            ribbon.ApplicationButtonText = "SALIR";
-            ((BarItem)ribbon.ExpandCollapseItem).Id = 0;
-            ((BarItems)ribbon.Items).AddRange((BarItem[])(object)new BarItem[5]
-            {
-            (BarItem)ribbon.ExpandCollapseItem,
-            (BarItem)bbiNuevo,
-            (BarItem)bbiGuardar,
-            (BarItem)lblEstacion,
-            (BarItem)lblUsuario
-            });
-            ((Control)(object)ribbon).Location = new Point(0, 0);
-            ribbon.MaxItemId = 5;
-            ((Control)(object)ribbon).Name = "ribbon";
-            ribbon.Pages.AddRange((RibbonPage[])(object)new RibbonPage[1] { ribbonPageMesas });
-            ribbon.RibbonStyle = (RibbonControlStyle.OfficeUniversal);
-            ((Control)(object)ribbon).Size = new Size(829, 83);
-            ribbon.StatusBar = ribbonStatusBar;
-            ((BarItem)bbiNuevo).Caption = "Nuevo";
-            ((BarItem)bbiNuevo).Id = 1;
-            ((BarItem)bbiNuevo).ImageUri.Uri = "Add";
-            ((BarItem)bbiNuevo).Name = "bbiNuevo";
-            ((BarItem)bbiNuevo).ItemClick += new ItemClickEventHandler(bbiNuevo_ItemClick);
-            ((BarItem)bbiGuardar).Caption = "Guardar";
-            ((BarItem)bbiGuardar).Id = 2;
-            ((BarItem)bbiGuardar).ImageUri.Uri = "Save";
-            ((BarItem)bbiGuardar).Name = "bbiGuardar";
-            ((BarItem)bbiGuardar).ItemClick += new ItemClickEventHandler(bbiGuardar_ItemClick);
-            ((BarItem)lblEstacion).Caption = "Estación";
-            ((BarItem)lblEstacion).Id = 3;
-            ((BarItem)lblEstacion).Name = "lblEstacion";
-            lblEstacion.TextAlignment = StringAlignment.Near;
-            ((BarItem)lblUsuario).Caption = "Usuario";
-            ((BarItem)lblUsuario).Id = 4;
-            ((BarItem)lblUsuario).Name = "lblUsuario";
-            lblUsuario.TextAlignment = StringAlignment.Near;
-            ribbonPageMesas.Groups.AddRange((RibbonPageGroup[])(object)new RibbonPageGroup[1] { ribbonPageGroupMesasArchivo });
-            ribbonPageMesas.Name = "ribbonPageMesas";
-            ribbonPageMesas.Text = "MESAS";
-            ((BarItemLinkCollection)ribbonPageGroupMesasArchivo.ItemLinks).Add((BarItem)(object)bbiNuevo);
-            ((BarItemLinkCollection)ribbonPageGroupMesasArchivo.ItemLinks).Add((BarItem)(object)bbiGuardar);
-            ribbonPageGroupMesasArchivo.Name = "ribbonPageGroupMesasArchivo";
-            ribbonPageGroupMesasArchivo.Text = "Archivo";
-            ribbonStatusBar.ItemLinks.Add((BarItem)(object)lblEstacion);
-            ribbonStatusBar.ItemLinks.Add((BarItem)(object)lblUsuario, true);
-            ((Control)(object)ribbonStatusBar).Location = new Point(0, 504);
-            ((Control)(object)ribbonStatusBar).Name = "ribbonStatusBar";
-            ribbonStatusBar.Ribbon = ribbon;
-            ((Control)(object)ribbonStatusBar).Size = new Size(829, 21);
-            panelMesas.Dock = DockStyle.Fill;
-            panelMesas.Location = new Point(0, 83);
-            panelMesas.Name = "panelMesas";
-            panelMesas.Size = new Size(829, 421);
-            panelMesas.TabIndex = 2;
-            ((ContainerControl)this).AutoScaleDimensions = new SizeF(6f, 13f);
-            ((ContainerControl)this).AutoScaleMode = AutoScaleMode.Font;
-            ((Form)this).ClientSize = new Size(829, 525);
-            ((Control)this).Controls.Add(panelMesas);
-            ((Control)this).Controls.Add((Control)(object)ribbonStatusBar);
-            ((Control)this).Controls.Add((Control)(object)ribbon);
-            //((XtraForm)this).Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            ((Control)this).Name = "frmRestaurante";
-            ((RibbonForm)this).Ribbon = ribbon;
-            ((Form)this).StartPosition = FormStartPosition.CenterScreen;
-            ((RibbonForm)this).StatusBar = ribbonStatusBar;
-            ((Control)(object)this).Text = "Restaurante";
-            ((Form)this).WindowState = FormWindowState.Maximized;
-            ((ISupportInitialize)ribbon).EndInit();
-            ((XtraForm)this).ResumeLayout(false);
-            ((Control)this).PerformLayout();
+            this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.bbiNuevo = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiGuardar = new DevExpress.XtraBars.BarButtonItem();
+            this.lblEstacion = new DevExpress.XtraBars.BarStaticItem();
+            this.lblUsuario = new DevExpress.XtraBars.BarStaticItem();
+            this.ribbonPageMesas = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroupMesasArchivo = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.panelMesas = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // ribbon
+            // 
+            this.ribbon.ApplicationButtonText = "SALIR";
+            this.ribbon.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
+            this.ribbon.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 39, 35, 39);
+            this.ribbon.ExpandCollapseItem.Id = 0;
+            this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbon.ExpandCollapseItem,
+            this.bbiNuevo,
+            this.bbiGuardar,
+            this.lblEstacion,
+            this.lblUsuario});
+            this.ribbon.Location = new System.Drawing.Point(0, 0);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ribbon.MaxItemId = 5;
+            this.ribbon.Name = "ribbon";
+            this.ribbon.OptionsMenuMinWidth = 385;
+            this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPageMesas});
+            this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
+            this.ribbon.Size = new System.Drawing.Size(967, 105);
+            this.ribbon.StatusBar = this.ribbonStatusBar;
+            // 
+            // bbiNuevo
+            // 
+            this.bbiNuevo.Caption = "Nuevo";
+            this.bbiNuevo.Id = 1;
+            this.bbiNuevo.ImageOptions.ImageUri.Uri = "Add";
+            this.bbiNuevo.Name = "bbiNuevo";
+            this.bbiNuevo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiNuevo_ItemClick);
+            // 
+            // bbiGuardar
+            // 
+            this.bbiGuardar.Caption = "Guardar";
+            this.bbiGuardar.Id = 2;
+            this.bbiGuardar.ImageOptions.ImageUri.Uri = "Save";
+            this.bbiGuardar.Name = "bbiGuardar";
+            this.bbiGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiGuardar_ItemClick);
+            // 
+            // lblEstacion
+            // 
+            this.lblEstacion.Caption = "Estación";
+            this.lblEstacion.Id = 3;
+            this.lblEstacion.Name = "lblEstacion";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.Caption = "Usuario";
+            this.lblUsuario.Id = 4;
+            this.lblUsuario.Name = "lblUsuario";
+            // 
+            // ribbonPageMesas
+            // 
+            this.ribbonPageMesas.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroupMesasArchivo});
+            this.ribbonPageMesas.Name = "ribbonPageMesas";
+            this.ribbonPageMesas.Text = "MESAS";
+            // 
+            // ribbonPageGroupMesasArchivo
+            // 
+            this.ribbonPageGroupMesasArchivo.ItemLinks.Add(this.bbiNuevo);
+            this.ribbonPageGroupMesasArchivo.ItemLinks.Add(this.bbiGuardar);
+            this.ribbonPageGroupMesasArchivo.Name = "ribbonPageGroupMesasArchivo";
+            this.ribbonPageGroupMesasArchivo.Text = "Archivo";
+            // 
+            // ribbonStatusBar
+            // 
+            this.ribbonStatusBar.ItemLinks.Add(this.lblEstacion);
+            this.ribbonStatusBar.ItemLinks.Add(this.lblUsuario, true);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 654);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ribbonStatusBar.Name = "ribbonStatusBar";
+            this.ribbonStatusBar.Ribbon = this.ribbon;
+            this.ribbonStatusBar.Size = new System.Drawing.Size(967, 33);
+            // 
+            // panelMesas
+            // 
+            this.panelMesas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMesas.Location = new System.Drawing.Point(0, 105);
+            this.panelMesas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMesas.Name = "panelMesas";
+            this.panelMesas.Size = new System.Drawing.Size(967, 549);
+            this.panelMesas.TabIndex = 2;
+            // 
+            // frmRestaurante
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(967, 687);
+            this.Controls.Add(this.panelMesas);
+            this.Controls.Add(this.ribbonStatusBar);
+            this.Controls.Add(this.ribbon);
+            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "frmRestaurante";
+            this.Ribbon = this.ribbon;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StatusBar = this.ribbonStatusBar;
+            this.Text = "Restaurante";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
     }
 }

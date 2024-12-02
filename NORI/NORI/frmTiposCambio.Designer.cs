@@ -97,7 +97,7 @@ namespace NORI
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = null;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlTop.Size = new System.Drawing.Size(687, 0);
             // 
             // barDockControlBottom
@@ -106,7 +106,7 @@ namespace NORI
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 857);
             this.barDockControlBottom.Manager = null;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlBottom.Size = new System.Drawing.Size(687, 0);
             // 
             // barDockControlLeft
@@ -115,7 +115,7 @@ namespace NORI
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = null;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 857);
             // 
             // barDockControlRight
@@ -124,23 +124,24 @@ namespace NORI
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(687, 0);
             this.barDockControlRight.Manager = null;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 857);
             // 
             // ribbonControl1
             // 
+            this.ribbonControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
             this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 39, 35, 39);
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
             this.ribbonControl1.MaxItemId = 1;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 385;
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl1.Size = new System.Drawing.Size(687, 50);
+            this.ribbonControl1.Size = new System.Drawing.Size(687, 71);
             // 
             // ribbonPageGroup1
             // 
@@ -152,22 +153,22 @@ namespace NORI
             this.layoutControl1.Controls.Add(this.layoutControl2);
             this.layoutControl1.Controls.Add(this.gcTiposCambio);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 50);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 71);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(687, 807);
+            this.layoutControl1.Size = new System.Drawing.Size(687, 786);
             this.layoutControl1.TabIndex = 6;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // layoutControl2
             // 
             this.layoutControl2.Controls.Add(this.panel1);
-            this.layoutControl2.Location = new System.Drawing.Point(7, 8);
-            this.layoutControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.layoutControl2.Location = new System.Drawing.Point(12, 12);
+            this.layoutControl2.Margin = new System.Windows.Forms.Padding(4);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(673, 68);
+            this.layoutControl2.Size = new System.Drawing.Size(663, 64);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -175,31 +176,31 @@ namespace NORI
             // 
             this.panel1.Controls.Add(this.cbAño);
             this.panel1.Controls.Add(this.cbMes);
-            this.panel1.Location = new System.Drawing.Point(7, 8);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(659, 52);
+            this.panel1.Size = new System.Drawing.Size(639, 40);
             this.panel1.TabIndex = 4;
             // 
             // cbAño
             // 
             this.cbAño.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbAño.Location = new System.Drawing.Point(518, 3);
-            this.cbAño.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbAño.Location = new System.Drawing.Point(498, 3);
+            this.cbAño.Margin = new System.Windows.Forms.Padding(4);
             this.cbAño.MenuManager = this.tabFormDefaultManager1;
             this.cbAño.Name = "cbAño";
             this.cbAño.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbAño.Properties.Items.AddRange(new object[] {
             "2017"});
-            this.cbAño.Size = new System.Drawing.Size(140, 24);
+            this.cbAño.Size = new System.Drawing.Size(140, 26);
             this.cbAño.TabIndex = 1;
             // 
             // cbMes
             // 
             this.cbMes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbMes.Location = new System.Drawing.Point(323, 3);
-            this.cbMes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbMes.Location = new System.Drawing.Point(303, 3);
+            this.cbMes.Margin = new System.Windows.Forms.Padding(4);
             this.cbMes.MenuManager = this.tabFormDefaultManager1;
             this.cbMes.Name = "cbMes";
             this.cbMes.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -217,8 +218,9 @@ namespace NORI
             "Octubre",
             "Noviembre",
             "Diciembre"});
-            this.cbMes.Size = new System.Drawing.Size(186, 24);
+            this.cbMes.Size = new System.Drawing.Size(186, 26);
             this.cbMes.TabIndex = 0;
+            this.cbMes.SelectedIndexChanged += new System.EventHandler(this.cbMes_SelectedIndexChanged);
             // 
             // layoutControlGroup2
             // 
@@ -227,7 +229,7 @@ namespace NORI
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem2});
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(673, 68);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(663, 64);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem2
@@ -235,24 +237,24 @@ namespace NORI
             this.layoutControlItem2.Control = this.panel1;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(661, 54);
+            this.layoutControlItem2.Size = new System.Drawing.Size(643, 44);
             this.layoutControlItem2.Text = "Filtros";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // gcTiposCambio
             // 
-            this.gcTiposCambio.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.gcTiposCambio.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5);
             this.gcTiposCambio.EmbeddedNavigator.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.gcTiposCambio_EmbeddedNavigator_ButtonClick);
-            this.gcTiposCambio.Location = new System.Drawing.Point(7, 78);
+            this.gcTiposCambio.Location = new System.Drawing.Point(12, 80);
             this.gcTiposCambio.MainView = this.gvTiposCambio;
-            this.gcTiposCambio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcTiposCambio.Margin = new System.Windows.Forms.Padding(4);
             this.gcTiposCambio.MenuManager = this.tabFormDefaultManager1;
             this.gcTiposCambio.Name = "gcTiposCambio";
             this.gcTiposCambio.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.deFecha,
             this.cbMonedas});
-            this.gcTiposCambio.Size = new System.Drawing.Size(673, 721);
+            this.gcTiposCambio.Size = new System.Drawing.Size(663, 694);
             this.gcTiposCambio.TabIndex = 4;
             this.gcTiposCambio.UseEmbeddedNavigator = true;
             this.gcTiposCambio.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -351,15 +353,15 @@ namespace NORI
             this.layoutControlItem1,
             this.layoutControlItem3});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(687, 807);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(687, 786);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.gcTiposCambio;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 70);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 68);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(675, 723);
+            this.layoutControlItem1.Size = new System.Drawing.Size(667, 698);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -369,7 +371,7 @@ namespace NORI
             this.layoutControlItem3.Control = this.layoutControl2;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(675, 70);
+            this.layoutControlItem3.Size = new System.Drawing.Size(667, 68);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -385,7 +387,7 @@ namespace NORI
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.IconOptions.Image = global::componentResourceManager.Resources.logo;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmTiposCambio";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -36,352 +36,348 @@ namespace NORI.PuntoVenta
 
         private void InitializeComponent()
         {
-            //IL_0012: Unknown result type (might be due to invalid IL or missing references)
-            //IL_001c: Expected O, but got Unknown
-            //IL_001d: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0027: Expected O, but got Unknown
-            //IL_0028: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0032: Expected O, but got Unknown
-            //IL_0033: Unknown result type (might be due to invalid IL or missing references)
-            //IL_003d: Expected O, but got Unknown
-            //IL_003e: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0048: Expected O, but got Unknown
-            //IL_0049: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0053: Expected O, but got Unknown
-            //IL_0054: Unknown result type (might be due to invalid IL or missing references)
-            //IL_005e: Expected O, but got Unknown
-            //IL_005f: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0069: Expected O, but got Unknown
-            //IL_006a: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0074: Expected O, but got Unknown
-            //IL_0080: Unknown result type (might be due to invalid IL or missing references)
-            //IL_008a: Expected O, but got Unknown
-            //IL_008b: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0095: Expected O, but got Unknown
-            //IL_0096: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00a0: Expected O, but got Unknown
-            //IL_00a1: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00ab: Expected O, but got Unknown
-            //IL_00ac: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00b6: Expected O, but got Unknown
-            //IL_00b7: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00c1: Expected O, but got Unknown
-            //IL_00c2: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00cc: Expected O, but got Unknown
-            //IL_00cd: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00d7: Expected O, but got Unknown
-            //IL_00d8: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00e2: Expected O, but got Unknown
-            //IL_00e3: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00ed: Expected O, but got Unknown
-            //IL_00ee: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00f8: Expected O, but got Unknown
-            //IL_00f9: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0103: Expected O, but got Unknown
-            //IL_0104: Unknown result type (might be due to invalid IL or missing references)
-            //IL_010e: Expected O, but got Unknown
-            //IL_0702: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0708: Expected O, but got Unknown
-            //IL_072d: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0733: Expected O, but got Unknown
-            //IL_07fd: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0803: Expected O, but got Unknown
-            //IL_0828: Unknown result type (might be due to invalid IL or missing references)
-            //IL_082e: Expected O, but got Unknown
-            //IL_08ac: Unknown result type (might be due to invalid IL or missing references)
-            //IL_08b2: Expected O, but got Unknown
-            //IL_08da: Unknown result type (might be due to invalid IL or missing references)
-            //IL_08e0: Expected O, but got Unknown
-            //IL_08ee: Unknown result type (might be due to invalid IL or missing references)
-            //IL_08f4: Expected O, but got Unknown
-            //IL_0b7c: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0b82: Expected O, but got Unknown
-            //IL_0ba2: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0ba8: Expected O, but got Unknown
-            //IL_0be1: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0be7: Expected O, but got Unknown
-            //IL_0c14: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0c1a: Expected O, but got Unknown
-            //IL_0c26: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0c2c: Expected O, but got Unknown
-            //IL_0c38: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0c3e: Expected O, but got Unknown
-            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmCortesCaja));
-            tabFormDefaultManager1 = new TabFormDefaultManager();
-            barDockControlTop = new BarDockControl();
-            barDockControlBottom = new BarDockControl();
-            barDockControlLeft = new BarDockControl();
-            barDockControlRight = new BarDockControl();
-            ribbonControl1 = new RibbonControl();
-            ribbonPageGroup1 = new RibbonPageGroup();
-            layoutControl1 = new LayoutControl();
-            layoutControl2 = new LayoutControl();
-            panel1 = new Panel();
-            deHasta = new DateEdit();
-            deDesde = new DateEdit();
-            cbUsuarios = new LookUpEdit();
-            layoutControlGroup2 = new LayoutControlGroup();
-            layoutControlItem2 = new LayoutControlItem();
-            gcFlujo = new GridControl();
-            gvFlujo = new GridView();
-            deFecha = new RepositoryItemDateEdit();
-            cbMonedas = new RepositoryItemLookUpEdit();
-            layoutControlGroup1 = new LayoutControlGroup();
-            layoutControlItem1 = new LayoutControlItem();
-            layoutControlItem3 = new LayoutControlItem();
-            cbFlujo = new CheckEdit();
-            ((ISupportInitialize)tabFormDefaultManager1).BeginInit();
-            ((ISupportInitialize)ribbonControl1).BeginInit();
-            ((ISupportInitialize)layoutControl1).BeginInit();
-            ((Control)(object)layoutControl1).SuspendLayout();
-            ((ISupportInitialize)layoutControl2).BeginInit();
-            ((Control)(object)layoutControl2).SuspendLayout();
-            panel1.SuspendLayout();
-            ((ISupportInitialize)deHasta.Properties.CalendarTimeProperties).BeginInit();
-            ((ISupportInitialize)deHasta.Properties).BeginInit();
-            ((ISupportInitialize)deDesde.Properties.CalendarTimeProperties).BeginInit();
-            ((ISupportInitialize)deDesde.Properties).BeginInit();
-            ((ISupportInitialize)cbUsuarios.Properties).BeginInit();
-            ((ISupportInitialize)layoutControlGroup2).BeginInit();
-            ((ISupportInitialize)layoutControlItem2).BeginInit();
-            ((ISupportInitialize)gcFlujo).BeginInit();
-            ((ISupportInitialize)gvFlujo).BeginInit();
-            ((ISupportInitialize)deFecha).BeginInit();
-            ((ISupportInitialize)deFecha.CalendarTimeProperties).BeginInit();
-            ((ISupportInitialize)cbMonedas).BeginInit();
-            ((ISupportInitialize)layoutControlGroup1).BeginInit();
-            ((ISupportInitialize)layoutControlItem1).BeginInit();
-            ((ISupportInitialize)layoutControlItem3).BeginInit();
-            ((ISupportInitialize)cbFlujo.Properties).BeginInit();
-            ((XtraForm)this).SuspendLayout();
-            ((BarManager)tabFormDefaultManager1).DockControls.Add(barDockControlTop);
-            ((BarManager)tabFormDefaultManager1).DockControls.Add(barDockControlBottom);
-            ((BarManager)tabFormDefaultManager1).DockControls.Add(barDockControlLeft);
-            ((BarManager)tabFormDefaultManager1).DockControls.Add(barDockControlRight);
-            ((BarManager)tabFormDefaultManager1).Form = (Control)(object)this;
-            ((BarManager)tabFormDefaultManager1).MaxItemId = 0;
-            ((Control)(object)barDockControlTop).CausesValidation = false;
-            barDockControlTop.Dock = DockStyle.Top;
-            barDockControlTop.Location = new Point(0, 0);
-            barDockControlTop.Size = new Size(790, 0);
-            ((Control)(object)barDockControlBottom).CausesValidation = false;
-            barDockControlBottom.Dock = DockStyle.Bottom;
-            barDockControlBottom.Location = new Point(0, 595);
-            barDockControlBottom.Size = new Size(790, 0);
-            ((Control)(object)barDockControlLeft).CausesValidation = false;
-            barDockControlLeft.Dock = DockStyle.Left;
-            barDockControlLeft.Location = new Point(0, 0);
-            barDockControlLeft.Size = new Size(0, 595);
-            ((Control)(object)barDockControlRight).CausesValidation = false;
-            barDockControlRight.Dock = DockStyle.Right;
-            barDockControlRight.Location = new Point(790, 0);
-            barDockControlRight.Size = new Size(0, 595);
-            ((BarItem)ribbonControl1.ExpandCollapseItem).Id = 0;
-            ((BarItems)ribbonControl1.Items).AddRange((BarItem[])(object)new BarItem[1] { (BarItem)ribbonControl1.ExpandCollapseItem });
-            ((Control)(object)ribbonControl1).Location = new Point(0, 0);
-            ribbonControl1.MaxItemId = 1;
-            ((Control)(object)ribbonControl1).Name = "ribbonControl1";
-            ribbonControl1.RibbonStyle = (RibbonControlStyle.OfficeUniversal);
-            ribbonControl1.ShowApplicationButton = (DefaultBoolean.False);
-            ((Control)(object)ribbonControl1).Size = new Size(790, 49);
-            ribbonPageGroup1.Name = "ribbonPageGroup1";
-            ribbonPageGroup1.Text = "ribbonPageGroup1";
-            ((Control)(object)layoutControl1).Controls.Add((Control)(object)layoutControl2);
-            ((Control)(object)layoutControl1).Controls.Add((Control)(object)gcFlujo);
-            ((Control)(object)layoutControl1).Dock = DockStyle.Fill;
-            ((Control)(object)layoutControl1).Location = new Point(0, 49);
-            ((Control)(object)layoutControl1).Name = "layoutControl1";
-            layoutControl1.Root = layoutControlGroup1;
-            ((Control)(object)layoutControl1).Size = new Size(790, 546);
-            ((Control)(object)layoutControl1).TabIndex = 6;
-            ((Control)(object)layoutControl1).Text = "layoutControl1";
-            ((Control)(object)layoutControl2).Controls.Add(panel1);
-            ((Control)(object)layoutControl2).Location = new Point(12, 12);
-            ((Control)(object)layoutControl2).Name = "layoutControl2";
-            layoutControl2.Root = layoutControlGroup2;
-            ((Control)(object)layoutControl2).Size = new Size(766, 44);
-            ((Control)(object)layoutControl2).TabIndex = 0;
-            ((Control)(object)layoutControl2).Text = "layoutControl2";
-            panel1.Controls.Add((Control)(object)cbFlujo);
-            panel1.Controls.Add((Control)(object)deHasta);
-            panel1.Controls.Add((Control)(object)deDesde);
-            panel1.Controls.Add((Control)(object)cbUsuarios);
-            panel1.Location = new Point(12, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(742, 20);
-            panel1.TabIndex = 4;
-            ((Control)(object)deHasta).Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            ((BaseEdit)deHasta).EditValue = new DateTime(2018, 3, 11, 22, 51, 26, 265);
-            ((Control)(object)deHasta).Location = new Point(654, 0);
-            ((BaseEdit)deHasta).MenuManager = (IDXMenuManager)(object)tabFormDefaultManager1;
-            ((Control)(object)deHasta).Name = "deHasta";
-            ((RepositoryItemButtonEdit)deHasta.Properties).Buttons.AddRange((EditorButton[])(object)new EditorButton[1]
-            {
-            new EditorButton((ButtonPredefines.Combo))
-            });
-            ((RepositoryItemButtonEdit)deHasta.Properties.CalendarTimeProperties).Buttons.AddRange((EditorButton[])(object)new EditorButton[1]
-            {
-            new EditorButton((ButtonPredefines.Combo))
-            });
-            ((Control)(object)deHasta).Size = new Size(85, 20);
-            ((Control)(object)deHasta).TabIndex = 3;
-            ((BaseEdit)deHasta).EditValueChanged += cbUsuarios_EditValueChanged;
-            ((Control)(object)deDesde).Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            ((BaseEdit)deDesde).EditValue = new DateTime(2018, 3, 11, 22, 51, 2, 700);
-            ((Control)(object)deDesde).Location = new Point(563, 0);
-            ((BaseEdit)deDesde).MenuManager = (IDXMenuManager)(object)tabFormDefaultManager1;
-            ((Control)(object)deDesde).Name = "deDesde";
-            ((RepositoryItemButtonEdit)deDesde.Properties).Buttons.AddRange((EditorButton[])(object)new EditorButton[1]
-            {
-            new EditorButton((ButtonPredefines.Combo))
-            });
-            ((RepositoryItemButtonEdit)deDesde.Properties.CalendarTimeProperties).Buttons.AddRange((EditorButton[])(object)new EditorButton[1]
-            {
-            new EditorButton((ButtonPredefines.Combo))
-            });
-            ((Control)(object)deDesde).Size = new Size(85, 20);
-            ((Control)(object)deDesde).TabIndex = 2;
-            ((BaseEdit)deDesde).EditValueChanged += cbUsuarios_EditValueChanged;
-            ((Control)(object)cbUsuarios).Location = new Point(0, 0);
-            ((Control)(object)cbUsuarios).Name = "cbUsuarios";
-            ((RepositoryItemButtonEdit)cbUsuarios.Properties).Buttons.AddRange((EditorButton[])(object)new EditorButton[1]
-            {
-            new EditorButton((ButtonPredefines.Combo))
-            });
-            cbUsuarios.Properties.Columns.AddRange((LookUpColumnInfo[])(object)new LookUpColumnInfo[2]
-            {
-            new LookUpColumnInfo("usuario", "Usuario"),
-            new LookUpColumnInfo("nombre", 40, "Nombre")
-            });
-            ((Control)(object)cbUsuarios).Size = new Size(207, 20);
-            ((Control)(object)cbUsuarios).TabIndex = 0;
-            ((BaseEdit)cbUsuarios).EditValueChanged += cbUsuarios_EditValueChanged;
-            ((LayoutGroup)layoutControlGroup2).EnableIndentsWithoutBorders = (DefaultBoolean.True);
-            ((LayoutGroup)layoutControlGroup2).GroupBordersVisible = false;
-            ((BaseItemCollection)layoutControlGroup2.Items).AddRange((BaseLayoutItem[])(object)new BaseLayoutItem[1] { (BaseLayoutItem)layoutControlItem2 });
-            ((BaseLayoutItem)layoutControlGroup2).Location = new Point(0, 0);
-            ((BaseLayoutItem)layoutControlGroup2).Name = "layoutControlGroup2";
-            ((BaseLayoutItem)layoutControlGroup2).Size = new Size(766, 44);
-            ((BaseLayoutItem)layoutControlGroup2).TextVisible = false;
-            layoutControlItem2.Control = panel1;
-            ((BaseLayoutItem)layoutControlItem2).Location = new Point(0, 0);
-            ((BaseLayoutItem)layoutControlItem2).Name = "layoutControlItem2";
-            ((BaseLayoutItem)layoutControlItem2).Size = new Size(746, 24);
-            ((BaseLayoutItem)layoutControlItem2).Text = "Filtros";
-            ((BaseLayoutItem)layoutControlItem2).TextSize = new Size(0, 0);
-            ((BaseLayoutItem)layoutControlItem2).TextVisible = false;
-            ((Control)(object)gcFlujo).Location = new Point(12, 60);
-            gcFlujo.MainView = (BaseView)(object)gvFlujo;
-            ((EditorContainer)gcFlujo).MenuManager = (IDXMenuManager)(object)tabFormDefaultManager1;
-            ((Control)(object)gcFlujo).Name = "gcFlujo";
-            ((EditorContainer)gcFlujo).RepositoryItems.AddRange((RepositoryItem[])(object)new RepositoryItem[2]
-            {
-            (RepositoryItem)deFecha,
-            (RepositoryItem)cbMonedas
-            });
-            ((Control)(object)gcFlujo).Size = new Size(766, 474);
-            ((Control)(object)gcFlujo).TabIndex = 4;
-            gcFlujo.ViewCollection.AddRange((BaseView[])(object)new BaseView[1] { (BaseView)gvFlujo });
-            ((BaseView)gvFlujo).BorderStyle = (BorderStyles.NoBorder);
-            ((BaseView)gvFlujo).GridControl = gcFlujo;
-            ((BaseView)gvFlujo).Name = "gvFlujo";
-            gvFlujo.OptionsDetail.DetailMode = (DetailMode.Default);
-            //((ColumnViewOptionsSelection)gvFlujo.OptionsSelection).MultiSelect = true;
-            gvFlujo.OptionsSelection.MultiSelectMode = (GridMultiSelectMode.CheckBoxRowSelect);
-            ((RepositoryItem)deFecha).AutoHeight = false;
-            ((RepositoryItemButtonEdit)deFecha).Buttons.AddRange((EditorButton[])(object)new EditorButton[1]
-            {
-            new EditorButton((ButtonPredefines.Combo))
-            });
-            ((RepositoryItemButtonEdit)deFecha.CalendarTimeProperties).Buttons.AddRange((EditorButton[])(object)new EditorButton[1]
-            {
-            new EditorButton((ButtonPredefines.Combo))
-            });
-            ((RepositoryItem)deFecha).Name = "deFecha";
-            ((RepositoryItem)cbMonedas).AutoHeight = false;
-            ((RepositoryItemButtonEdit)cbMonedas).Buttons.AddRange((EditorButton[])(object)new EditorButton[1]
-            {
-            new EditorButton((ButtonPredefines.Combo))
-            });
-            cbMonedas.Columns.AddRange((LookUpColumnInfo[])(object)new LookUpColumnInfo[3]
-            {
-            new LookUpColumnInfo("id", "ID", 20, (FormatType.None), "", false, (HorzAlignment.Default)),
-            new LookUpColumnInfo("codigo", "Código"),
-            new LookUpColumnInfo("nombre", "Nombre")
-            });
-            ((RepositoryItem)cbMonedas).Name = "cbMonedas";
-            ((LayoutGroup)layoutControlGroup1).EnableIndentsWithoutBorders = (DefaultBoolean.True);
-            ((LayoutGroup)layoutControlGroup1).GroupBordersVisible = false;
-            ((BaseItemCollection)layoutControlGroup1.Items).AddRange((BaseLayoutItem[])(object)new BaseLayoutItem[2]
-            {
-            (BaseLayoutItem)layoutControlItem1,
-            (BaseLayoutItem)layoutControlItem3
-            });
-            ((BaseLayoutItem)layoutControlGroup1).Location = new Point(0, 0);
-            ((BaseLayoutItem)layoutControlGroup1).Name = "layoutControlGroup1";
-            ((BaseLayoutItem)layoutControlGroup1).Size = new Size(790, 546);
-            ((BaseLayoutItem)layoutControlGroup1).TextVisible = false;
-            layoutControlItem1.Control = (Control)(object)gcFlujo;
-            ((BaseLayoutItem)layoutControlItem1).Location = new Point(0, 48);
-            ((BaseLayoutItem)layoutControlItem1).Name = "layoutControlItem1";
-            ((BaseLayoutItem)layoutControlItem1).Size = new Size(770, 478);
-            ((BaseLayoutItem)layoutControlItem1).TextSize = new Size(0, 0);
-            ((BaseLayoutItem)layoutControlItem1).TextVisible = false;
-            ((BaseLayoutItem)layoutControlItem3).AllowHide = false;
-            layoutControlItem3.Control = (Control)(object)layoutControl2;
-            ((BaseLayoutItem)layoutControlItem3).Location = new Point(0, 0);
-            ((BaseLayoutItem)layoutControlItem3).Name = "layoutControlItem3";
-            ((BaseLayoutItem)layoutControlItem3).Size = new Size(770, 48);
-            ((BaseLayoutItem)layoutControlItem3).TextSize = new Size(0, 0);
-            ((BaseLayoutItem)layoutControlItem3).TextVisible = false;
-            ((Control)(object)cbFlujo).Location = new Point(213, 1);
-            ((BaseEdit)cbFlujo).MenuManager = (IDXMenuManager)(object)tabFormDefaultManager1;
-            ((Control)(object)cbFlujo).Name = "cbFlujo";
-            ((BaseRepositoryItemCheckEdit)cbFlujo.Properties).Caption = "Flujo";
-            ((Control)(object)cbFlujo).Size = new Size(137, 19);
-            ((Control)(object)cbFlujo).TabIndex = 1;
-            cbFlujo.CheckedChanged += cbUsuarios_EditValueChanged;
-            ((ContainerControl)this).AutoScaleDimensions = new SizeF(6f, 13f);
-            ((ContainerControl)this).AutoScaleMode = AutoScaleMode.Font;
-            ((Form)this).ClientSize = new Size(790, 595);
-            ((Control)this).Controls.Add((Control)(object)layoutControl1);
-            ((Control)this).Controls.Add((Control)(object)ribbonControl1);
-            ((Control)this).Controls.Add((Control)(object)barDockControlLeft);
-            ((Control)this).Controls.Add((Control)(object)barDockControlRight);
-            ((Control)this).Controls.Add((Control)(object)barDockControlBottom);
-            ((Control)this).Controls.Add((Control)(object)barDockControlTop);
-            //((XtraForm)this).Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            ((Form)this).KeyPreview = true;
-            ((Control)this).Name = "frmCortesCaja";
-            ((RibbonForm)this).Ribbon = ribbonControl1;
-            ((Form)this).StartPosition = FormStartPosition.CenterScreen;
-            ((Control)(object)this).Text = "Cortes de caja";
-            ((Control)this).KeyDown += frmCortesCaja_KeyDown;
-            ((ISupportInitialize)tabFormDefaultManager1).EndInit();
-            ((ISupportInitialize)ribbonControl1).EndInit();
-            ((ISupportInitialize)layoutControl1).EndInit();
-            ((Control)(object)layoutControl1).ResumeLayout(performLayout: false);
-            ((ISupportInitialize)layoutControl2).EndInit();
-            ((Control)(object)layoutControl2).ResumeLayout(performLayout: false);
-            panel1.ResumeLayout(performLayout: false);
-            ((ISupportInitialize)deHasta.Properties.CalendarTimeProperties).EndInit();
-            ((ISupportInitialize)deHasta.Properties).EndInit();
-            ((ISupportInitialize)deDesde.Properties.CalendarTimeProperties).EndInit();
-            ((ISupportInitialize)deDesde.Properties).EndInit();
-            ((ISupportInitialize)cbUsuarios.Properties).EndInit();
-            ((ISupportInitialize)layoutControlGroup2).EndInit();
-            ((ISupportInitialize)layoutControlItem2).EndInit();
-            ((ISupportInitialize)gcFlujo).EndInit();
-            ((ISupportInitialize)gvFlujo).EndInit();
-            ((ISupportInitialize)deFecha.CalendarTimeProperties).EndInit();
-            ((ISupportInitialize)deFecha).EndInit();
-            ((ISupportInitialize)cbMonedas).EndInit();
-            ((ISupportInitialize)layoutControlGroup1).EndInit();
-            ((ISupportInitialize)layoutControlItem1).EndInit();
-            ((ISupportInitialize)layoutControlItem3).EndInit();
-            ((ISupportInitialize)cbFlujo.Properties).EndInit();
-            ((XtraForm)this).ResumeLayout(false);
-            ((Control)this).PerformLayout();
+            this.tabFormDefaultManager1 = new DevExpress.XtraBars.TabFormDefaultManager();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cbFlujo = new DevExpress.XtraEditors.CheckEdit();
+            this.deHasta = new DevExpress.XtraEditors.DateEdit();
+            this.deDesde = new DevExpress.XtraEditors.DateEdit();
+            this.cbUsuarios = new DevExpress.XtraEditors.LookUpEdit();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gcFlujo = new DevExpress.XtraGrid.GridControl();
+            this.gvFlujo = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.deFecha = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.cbMonedas = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            ((System.ComponentModel.ISupportInitialize)(this.tabFormDefaultManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
+            this.layoutControl2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbFlujo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deHasta.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deHasta.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDesde.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDesde.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbUsuarios.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcFlujo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvFlujo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deFecha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deFecha.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbMonedas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // tabFormDefaultManager1
+            // 
+            this.tabFormDefaultManager1.DockControls.Add(this.barDockControlTop);
+            this.tabFormDefaultManager1.DockControls.Add(this.barDockControlBottom);
+            this.tabFormDefaultManager1.DockControls.Add(this.barDockControlLeft);
+            this.tabFormDefaultManager1.DockControls.Add(this.barDockControlRight);
+            this.tabFormDefaultManager1.DockingEnabled = false;
+            this.tabFormDefaultManager1.Form = this;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = null;
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(922, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 778);
+            this.barDockControlBottom.Manager = null;
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(922, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = null;
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 778);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(922, 0);
+            this.barDockControlRight.Manager = null;
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 778);
+            // 
+            // ribbonControl1
+            // 
+            this.ribbonControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
+            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 39, 35, 39);
+            this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl1.ExpandCollapseItem});
+            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ribbonControl1.MaxItemId = 1;
+            this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.OptionsMenuMinWidth = 385;
+            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
+            this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonControl1.Size = new System.Drawing.Size(922, 71);
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.layoutControl2);
+            this.layoutControl1.Controls.Add(this.gcFlujo);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 71);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(922, 707);
+            this.layoutControl1.TabIndex = 6;
+            this.layoutControl1.Text = "layoutControl1";
+            // 
+            // layoutControl2
+            // 
+            this.layoutControl2.Controls.Add(this.panel1);
+            this.layoutControl2.Location = new System.Drawing.Point(14, 16);
+            this.layoutControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.layoutControl2.Name = "layoutControl2";
+            this.layoutControl2.Root = this.layoutControlGroup2;
+            this.layoutControl2.Size = new System.Drawing.Size(894, 56);
+            this.layoutControl2.TabIndex = 0;
+            this.layoutControl2.Text = "layoutControl2";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.cbFlujo);
+            this.panel1.Controls.Add(this.deHasta);
+            this.panel1.Controls.Add(this.deDesde);
+            this.panel1.Controls.Add(this.cbUsuarios);
+            this.panel1.Location = new System.Drawing.Point(14, 16);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(866, 24);
+            this.panel1.TabIndex = 4;
+            // 
+            // cbFlujo
+            // 
+            this.cbFlujo.Location = new System.Drawing.Point(248, 1);
+            this.cbFlujo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbFlujo.MenuManager = this.tabFormDefaultManager1;
+            this.cbFlujo.Name = "cbFlujo";
+            this.cbFlujo.Properties.Caption = "Flujo";
+            this.cbFlujo.Size = new System.Drawing.Size(160, 21);
+            this.cbFlujo.TabIndex = 1;
+            // 
+            // deHasta
+            // 
+            this.deHasta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.deHasta.EditValue = new System.DateTime(2018, 3, 11, 22, 51, 26, 265);
+            this.deHasta.Location = new System.Drawing.Point(763, 0);
+            this.deHasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deHasta.MenuManager = this.tabFormDefaultManager1;
+            this.deHasta.Name = "deHasta";
+            this.deHasta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deHasta.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deHasta.Size = new System.Drawing.Size(99, 26);
+            this.deHasta.TabIndex = 3;
+            // 
+            // deDesde
+            // 
+            this.deDesde.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.deDesde.EditValue = new System.DateTime(2018, 3, 11, 22, 51, 2, 700);
+            this.deDesde.Location = new System.Drawing.Point(657, 0);
+            this.deDesde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deDesde.MenuManager = this.tabFormDefaultManager1;
+            this.deDesde.Name = "deDesde";
+            this.deDesde.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deDesde.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deDesde.Size = new System.Drawing.Size(99, 26);
+            this.deDesde.TabIndex = 2;
+            // 
+            // cbUsuarios
+            // 
+            this.cbUsuarios.Location = new System.Drawing.Point(0, 0);
+            this.cbUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbUsuarios.Name = "cbUsuarios";
+            this.cbUsuarios.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbUsuarios.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("usuario", "Usuario", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 47, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbUsuarios.Size = new System.Drawing.Size(241, 26);
+            this.cbUsuarios.TabIndex = 0;
+            // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup2.GroupBordersVisible = false;
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem2});
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(894, 56);
+            this.layoutControlGroup2.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.panel1;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(870, 30);
+            this.layoutControlItem2.Text = "Filtros";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // gcFlujo
+            // 
+            this.gcFlujo.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.gcFlujo.Location = new System.Drawing.Point(14, 78);
+            this.gcFlujo.MainView = this.gvFlujo;
+            this.gcFlujo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcFlujo.MenuManager = this.tabFormDefaultManager1;
+            this.gcFlujo.Name = "gcFlujo";
+            this.gcFlujo.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.deFecha,
+            this.cbMonedas});
+            this.gcFlujo.Size = new System.Drawing.Size(894, 613);
+            this.gcFlujo.TabIndex = 4;
+            this.gcFlujo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvFlujo});
+            // 
+            // gvFlujo
+            // 
+            this.gvFlujo.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.gvFlujo.DetailHeight = 458;
+            this.gvFlujo.GridControl = this.gcFlujo;
+            this.gvFlujo.Name = "gvFlujo";
+            this.gvFlujo.OptionsEditForm.PopupEditFormWidth = 933;
+            this.gvFlujo.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+            // 
+            // deFecha
+            // 
+            this.deFecha.AutoHeight = false;
+            this.deFecha.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deFecha.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deFecha.Name = "deFecha";
+            // 
+            // cbMonedas
+            // 
+            this.cbMonedas.AutoHeight = false;
+            this.cbMonedas.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbMonedas.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 23, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbMonedas.Name = "cbMonedas";
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem3});
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(922, 707);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.gcFlujo;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 62);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(898, 619);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.AllowHide = false;
+            this.layoutControlItem3.Control = this.layoutControl2;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(898, 62);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // frmCortesCaja
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(922, 778);
+            this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.ribbonControl1);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
+            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "frmCortesCaja";
+            this.Ribbon = this.ribbonControl1;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cortes de caja";
+            ((System.ComponentModel.ISupportInitialize)(this.tabFormDefaultManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
+            this.layoutControl2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbFlujo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deHasta.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deHasta.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDesde.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deDesde.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbUsuarios.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcFlujo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvFlujo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deFecha.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deFecha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbMonedas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
     }
 }

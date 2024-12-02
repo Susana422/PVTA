@@ -170,7 +170,7 @@ namespace NORI.PuntoVenta
             this.ribbonControl1.AllowKeyTips = false;
             this.ribbonControl1.ApplicationButtonText = "SALIR";
             this.ribbonControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
-            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(23, 24, 23, 24);
+            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(23, 27, 23, 27);
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -200,7 +200,7 @@ namespace NORI.PuntoVenta
             this.cbVendedorAdicional,
             this.repositoryItemLookUpEdit1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
-            this.ribbonControl1.Size = new System.Drawing.Size(1076, 78);
+            this.ribbonControl1.Size = new System.Drawing.Size(1076, 105);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.ApplicationButtonClick += new System.EventHandler(this.ribbonControl1_ApplicationButtonClick);
             // 
@@ -377,26 +377,26 @@ namespace NORI.PuntoVenta
             this.ribbonStatusBar1.ItemLinks.Add(this.lblArticulos, true);
             this.ribbonStatusBar1.ItemLinks.Add(this.lblCantidadEmpaque, true);
             this.ribbonStatusBar1.ItemLinks.Add(this.lblVendedorAdicional);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 668);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 750);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1076, 23);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1076, 33);
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.scPV);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 78);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 105);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1076, 590);
+            this.layoutControl1.Size = new System.Drawing.Size(1076, 645);
             this.layoutControl1.TabIndex = 2;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // scPV
             // 
             this.scPV.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.None;
-            this.scPV.Location = new System.Drawing.Point(5, 5);
+            this.scPV.Location = new System.Drawing.Point(12, 13);
             this.scPV.Name = "scPV";
             // 
             // scPV.Panel1
@@ -412,8 +412,8 @@ namespace NORI.PuntoVenta
             this.scPV.Panel2.Controls.Add(this.splitContainerControl2);
             this.scPV.Panel2.MinSize = 210;
             this.scPV.Panel2.Text = "Panel2";
-            this.scPV.Size = new System.Drawing.Size(1066, 580);
-            this.scPV.SplitterPosition = 800;
+            this.scPV.Size = new System.Drawing.Size(1052, 619);
+            this.scPV.SplitterPosition = 790;
             this.scPV.TabIndex = 4;
             this.scPV.Text = "splitContainerControl1";
             // 
@@ -449,17 +449,17 @@ namespace NORI.PuntoVenta
             // 
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl3);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(796, 576);
-            this.splitContainerControl1.SplitterPosition = 126;
+            this.splitContainerControl1.Size = new System.Drawing.Size(786, 615);
+            this.splitContainerControl1.SplitterPosition = 143;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
             // txtTipoCambio
             // 
             this.txtTipoCambio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTipoCambio.Location = new System.Drawing.Point(722, 102);
+            this.txtTipoCambio.Location = new System.Drawing.Point(712, 116);
             this.txtTipoCambio.Name = "txtTipoCambio";
-            this.txtTipoCambio.Size = new System.Drawing.Size(71, 22);
+            this.txtTipoCambio.Size = new System.Drawing.Size(71, 26);
             this.txtTipoCambio.TabIndex = 80;
             this.txtTipoCambio.TabStop = false;
             this.txtTipoCambio.EditValueChanged += new System.EventHandler(this.txtTipoCambio_EditValueChanged);
@@ -467,7 +467,7 @@ namespace NORI.PuntoVenta
             // cbMoneda
             // 
             this.cbMoneda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbMoneda.Location = new System.Drawing.Point(564, 102);
+            this.cbMoneda.Location = new System.Drawing.Point(554, 116);
             this.cbMoneda.Name = "cbMoneda";
             this.cbMoneda.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -475,14 +475,14 @@ namespace NORI.PuntoVenta
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 16, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbMoneda.Size = new System.Drawing.Size(152, 22);
+            this.cbMoneda.Size = new System.Drawing.Size(152, 26);
             this.cbMoneda.TabIndex = 81;
             this.cbMoneda.TabStop = false;
             this.cbMoneda.EditValueChanged += new System.EventHandler(this.cbMoneda_EditValueChanged);
             // 
             // cbPersonasContacto
             // 
-            this.cbPersonasContacto.Location = new System.Drawing.Point(137, 59);
+            this.cbPersonasContacto.Location = new System.Drawing.Point(137, 67);
             this.cbPersonasContacto.Name = "cbPersonasContacto";
             this.cbPersonasContacto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -490,15 +490,15 @@ namespace NORI.PuntoVenta
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 16, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre_persona", "Persona contacto", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbPersonasContacto.Size = new System.Drawing.Size(179, 22);
+            this.cbPersonasContacto.Size = new System.Drawing.Size(179, 26);
             this.cbPersonasContacto.TabIndex = 77;
             this.cbPersonasContacto.TabStop = false;
             // 
             // lblPersonasContacto
             // 
-            this.lblPersonasContacto.Location = new System.Drawing.Point(17, 62);
+            this.lblPersonasContacto.Location = new System.Drawing.Point(17, 70);
             this.lblPersonasContacto.Name = "lblPersonasContacto";
-            this.lblPersonasContacto.Size = new System.Drawing.Size(108, 15);
+            this.lblPersonasContacto.Size = new System.Drawing.Size(126, 17);
             this.lblPersonasContacto.TabIndex = 78;
             this.lblPersonasContacto.Text = "Persona de contacto";
             // 
@@ -506,16 +506,16 @@ namespace NORI.PuntoVenta
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 126);
+            this.splitter1.Size = new System.Drawing.Size(3, 143);
             this.splitter1.TabIndex = 21;
             this.splitter1.TabStop = false;
             // 
             // cbReserva
             // 
             this.cbReserva.AutoSize = true;
-            this.cbReserva.Location = new System.Drawing.Point(322, 13);
+            this.cbReserva.Location = new System.Drawing.Point(322, 15);
             this.cbReserva.Name = "cbReserva";
-            this.cbReserva.Size = new System.Drawing.Size(66, 19);
+            this.cbReserva.Size = new System.Drawing.Size(75, 21);
             this.cbReserva.TabIndex = 20;
             this.cbReserva.TabStop = false;
             this.cbReserva.Text = "Reserva";
@@ -526,9 +526,9 @@ namespace NORI.PuntoVenta
             // cbFactura
             // 
             this.cbFactura.AutoSize = true;
-            this.cbFactura.Location = new System.Drawing.Point(241, 13);
+            this.cbFactura.Location = new System.Drawing.Point(241, 15);
             this.cbFactura.Name = "cbFactura";
-            this.cbFactura.Size = new System.Drawing.Size(65, 19);
+            this.cbFactura.Size = new System.Drawing.Size(73, 21);
             this.cbFactura.TabIndex = 0;
             this.cbFactura.TabStop = false;
             this.cbFactura.Text = "Factura";
@@ -539,9 +539,9 @@ namespace NORI.PuntoVenta
             // 
             this.lblCondicionPago.Appearance.ForeColor = System.Drawing.Color.DimGray;
             this.lblCondicionPago.Appearance.Options.UseForeColor = true;
-            this.lblCondicionPago.Location = new System.Drawing.Point(322, 62);
+            this.lblCondicionPago.Location = new System.Drawing.Point(322, 70);
             this.lblCondicionPago.Name = "lblCondicionPago";
-            this.lblCondicionPago.Size = new System.Drawing.Size(101, 15);
+            this.lblCondicionPago.Size = new System.Drawing.Size(115, 17);
             this.lblCondicionPago.TabIndex = 19;
             this.lblCondicionPago.Text = "Condición de pago";
             // 
@@ -549,17 +549,17 @@ namespace NORI.PuntoVenta
             // 
             this.lblDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDireccion.ForeColor = System.Drawing.Color.DimGray;
-            this.lblDireccion.Location = new System.Drawing.Point(446, 14);
+            this.lblDireccion.Location = new System.Drawing.Point(436, 16);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblDireccion.Size = new System.Drawing.Size(334, 38);
+            this.lblDireccion.Size = new System.Drawing.Size(334, 43);
             this.lblDireccion.TabIndex = 0;
             this.lblDireccion.Text = "Dirección de facturación";
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 99);
+            this.pictureBox1.Location = new System.Drawing.Point(19, 112);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -570,10 +570,10 @@ namespace NORI.PuntoVenta
             // 
             this.txtArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtArticulo.Location = new System.Drawing.Point(54, 102);
+            this.txtArticulo.Location = new System.Drawing.Point(54, 116);
             this.txtArticulo.MenuManager = this.ribbonControl1;
             this.txtArticulo.Name = "txtArticulo";
-            this.txtArticulo.Size = new System.Drawing.Size(504, 22);
+            this.txtArticulo.Size = new System.Drawing.Size(494, 26);
             this.txtArticulo.TabIndex = 1;
             this.txtArticulo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtArticulo_KeyDown);
             this.txtArticulo.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtArticulo_PreviewKeyDown);
@@ -582,26 +582,26 @@ namespace NORI.PuntoVenta
             // 
             this.separatorControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl1.Location = new System.Drawing.Point(-2, 78);
+            this.separatorControl1.Location = new System.Drawing.Point(-2, 88);
             this.separatorControl1.Name = "separatorControl1";
-            this.separatorControl1.Padding = new System.Windows.Forms.Padding(11, 10, 11, 10);
-            this.separatorControl1.Size = new System.Drawing.Size(795, 21);
+            this.separatorControl1.Padding = new System.Windows.Forms.Padding(11, 11, 11, 11);
+            this.separatorControl1.Size = new System.Drawing.Size(785, 24);
             this.separatorControl1.TabIndex = 0;
             // 
             // lblCodigoSN
             // 
-            this.lblCodigoSN.Location = new System.Drawing.Point(19, 14);
+            this.lblCodigoSN.Location = new System.Drawing.Point(19, 16);
             this.lblCodigoSN.Name = "lblCodigoSN";
-            this.lblCodigoSN.Size = new System.Drawing.Size(57, 15);
+            this.lblCodigoSN.Size = new System.Drawing.Size(63, 17);
             this.lblCodigoSN.TabIndex = 17;
             this.lblCodigoSN.Text = "Código SN";
             // 
             // txtCodigoSN
             // 
-            this.txtCodigoSN.Location = new System.Drawing.Point(137, 10);
+            this.txtCodigoSN.Location = new System.Drawing.Point(137, 11);
             this.txtCodigoSN.MenuManager = this.ribbonControl1;
             this.txtCodigoSN.Name = "txtCodigoSN";
-            this.txtCodigoSN.Size = new System.Drawing.Size(98, 22);
+            this.txtCodigoSN.Size = new System.Drawing.Size(98, 26);
             this.txtCodigoSN.TabIndex = 0;
             this.txtCodigoSN.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigoSN_KeyDown);
             this.txtCodigoSN.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtCodigoSN_PreviewKeyDown);
@@ -610,7 +610,7 @@ namespace NORI.PuntoVenta
             // 
             this.lblSocio.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblSocio.Appearance.Options.UseFont = true;
-            this.lblSocio.Location = new System.Drawing.Point(19, 37);
+            this.lblSocio.Location = new System.Drawing.Point(19, 42);
             this.lblSocio.Name = "lblSocio";
             this.lblSocio.Size = new System.Drawing.Size(216, 13);
             this.lblSocio.TabIndex = 15;
@@ -620,10 +620,10 @@ namespace NORI.PuntoVenta
             // 
             this.lblEstadoCredito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEstadoCredito.ForeColor = System.Drawing.Color.DimGray;
-            this.lblEstadoCredito.Location = new System.Drawing.Point(335, 62);
+            this.lblEstadoCredito.Location = new System.Drawing.Point(325, 70);
             this.lblEstadoCredito.Name = "lblEstadoCredito";
             this.lblEstadoCredito.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblEstadoCredito.Size = new System.Drawing.Size(443, 20);
+            this.lblEstadoCredito.Size = new System.Drawing.Size(443, 23);
             this.lblEstadoCredito.TabIndex = 79;
             this.lblEstadoCredito.Text = "Estado de crédito";
             // 
@@ -642,7 +642,7 @@ namespace NORI.PuntoVenta
             // 
             this.splitContainerControl3.Panel2.Controls.Add(this.gcPartidas);
             this.splitContainerControl3.Panel2.Text = "Panel2";
-            this.splitContainerControl3.Size = new System.Drawing.Size(796, 442);
+            this.splitContainerControl3.Size = new System.Drawing.Size(786, 460);
             this.splitContainerControl3.SplitterPosition = 233;
             this.splitContainerControl3.TabIndex = 1;
             // 
@@ -658,7 +658,7 @@ namespace NORI.PuntoVenta
             this.tlp.Name = "tlp";
             this.tlp.RowCount = 1;
             this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp.Size = new System.Drawing.Size(233, 442);
+            this.tlp.Size = new System.Drawing.Size(233, 460);
             this.tlp.TabIndex = 2;
             // 
             // gcPartidas
@@ -673,7 +673,7 @@ namespace NORI.PuntoVenta
             this.cbTiposEmpaques,
             this.cbAlmacenes,
             this.cbUnidadesMedida});
-            this.gcPartidas.Size = new System.Drawing.Size(555, 442);
+            this.gcPartidas.Size = new System.Drawing.Size(541, 460);
             this.gcPartidas.TabIndex = 1;
             this.gcPartidas.TabStop = false;
             this.gcPartidas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -697,7 +697,7 @@ namespace NORI.PuntoVenta
             this.gridColumnDescuento,
             this.gridColumnSubTotal,
             this.gridColumnTotal});
-            this.gvPartidas.DetailHeight = 404;
+            this.gvPartidas.DetailHeight = 458;
             this.gvPartidas.FixedLineWidth = 3;
             this.gvPartidas.GridControl = this.gcPartidas;
             this.gvPartidas.Name = "gvPartidas";
@@ -947,8 +947,8 @@ namespace NORI.PuntoVenta
             this.splitContainerControl2.Panel2.Controls.Add(this.lblDescuento_);
             this.splitContainerControl2.Panel2.MinSize = 100;
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(254, 576);
-            this.splitContainerControl2.SplitterPosition = 433;
+            this.splitContainerControl2.Size = new System.Drawing.Size(246, 615);
+            this.splitContainerControl2.SplitterPosition = 463;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
             // 
@@ -958,9 +958,9 @@ namespace NORI.PuntoVenta
             this.lblArticuloComentarios.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblArticuloComentarios.Appearance.Options.UseFont = true;
             this.lblArticuloComentarios.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblArticuloComentarios.Location = new System.Drawing.Point(2, 394);
+            this.lblArticuloComentarios.Location = new System.Drawing.Point(2, 433);
             this.lblArticuloComentarios.Name = "lblArticuloComentarios";
-            this.lblArticuloComentarios.Size = new System.Drawing.Size(250, 13);
+            this.lblArticuloComentarios.Size = new System.Drawing.Size(242, 13);
             this.lblArticuloComentarios.TabIndex = 43;
             this.lblArticuloComentarios.Text = "Comentarios";
             // 
@@ -970,7 +970,7 @@ namespace NORI.PuntoVenta
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pbLogo.Location = new System.Drawing.Point(2, 1);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(250, 125);
+            this.pbLogo.Size = new System.Drawing.Size(242, 142);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 41;
             this.pbLogo.TabStop = false;
@@ -979,9 +979,9 @@ namespace NORI.PuntoVenta
             // 
             this.pbImagen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbImagen.Location = new System.Drawing.Point(2, 133);
+            this.pbImagen.Location = new System.Drawing.Point(2, 151);
             this.pbImagen.Name = "pbImagen";
-            this.pbImagen.Size = new System.Drawing.Size(250, 237);
+            this.pbImagen.Size = new System.Drawing.Size(242, 269);
             this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen.TabIndex = 40;
             this.pbImagen.TabStop = false;
@@ -990,9 +990,9 @@ namespace NORI.PuntoVenta
             // 
             this.btnAtras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAtras.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnAtras.Location = new System.Drawing.Point(3, 72);
+            this.btnAtras.Location = new System.Drawing.Point(3, 73);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(67, 58);
+            this.btnAtras.Size = new System.Drawing.Size(67, 66);
             this.btnAtras.TabIndex = 7;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
@@ -1003,10 +1003,10 @@ namespace NORI.PuntoVenta
             this.lblDescuento.AutoEllipsis = true;
             this.lblDescuento.Font = new System.Drawing.Font("Tahoma", 12F);
             this.lblDescuento.ForeColor = System.Drawing.Color.Gray;
-            this.lblDescuento.Location = new System.Drawing.Point(138, 33);
+            this.lblDescuento.Location = new System.Drawing.Point(138, 29);
             this.lblDescuento.Name = "lblDescuento";
             this.lblDescuento.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblDescuento.Size = new System.Drawing.Size(111, 25);
+            this.lblDescuento.Size = new System.Drawing.Size(103, 28);
             this.lblDescuento.TabIndex = 4;
             this.lblDescuento.Text = "0.00";
             // 
@@ -1016,10 +1016,10 @@ namespace NORI.PuntoVenta
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotal.AutoEllipsis = true;
             this.lblTotal.Font = new System.Drawing.Font("Tahoma", 22F, System.Drawing.FontStyle.Bold);
-            this.lblTotal.Location = new System.Drawing.Point(77, 87);
+            this.lblTotal.Location = new System.Drawing.Point(77, 90);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblTotal.Size = new System.Drawing.Size(174, 42);
+            this.lblTotal.Size = new System.Drawing.Size(166, 48);
             this.lblTotal.TabIndex = 3;
             this.lblTotal.Text = "0.00";
             // 
@@ -1041,9 +1041,9 @@ namespace NORI.PuntoVenta
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDescuento_.AutoSize = true;
             this.lblDescuento_.ForeColor = System.Drawing.Color.Gray;
-            this.lblDescuento_.Location = new System.Drawing.Point(73, 33);
+            this.lblDescuento_.Location = new System.Drawing.Point(73, 29);
             this.lblDescuento_.Name = "lblDescuento_";
-            this.lblDescuento_.Size = new System.Drawing.Size(63, 15);
+            this.lblDescuento_.Size = new System.Drawing.Size(73, 17);
             this.lblDescuento_.TabIndex = 0;
             this.lblDescuento_.Text = "Descuento";
             // 
@@ -1054,7 +1054,7 @@ namespace NORI.PuntoVenta
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1076, 590);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1076, 645);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -1062,19 +1062,20 @@ namespace NORI.PuntoVenta
             this.layoutControlItem1.Control = this.scPV;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1068, 582);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1056, 623);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // frmPuntoVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1076, 691);
+            this.ClientSize = new System.Drawing.Size(1076, 783);
             this.ControlBox = false;
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
+            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
             this.KeyPreview = true;
             this.Name = "frmPuntoVenta";
             this.Ribbon = this.ribbonControl1;

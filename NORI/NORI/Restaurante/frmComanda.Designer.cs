@@ -37,523 +37,632 @@ namespace NORI.Restaurante
 
         private void InitializeComponent()
         {
-            //IL_0012: Unknown result type (might be due to invalid IL or missing references)
-            //IL_001c: Expected O, but got Unknown
-            //IL_001d: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0027: Expected O, but got Unknown
-            //IL_0028: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0032: Expected O, but got Unknown
-            //IL_0033: Unknown result type (might be due to invalid IL or missing references)
-            //IL_003d: Expected O, but got Unknown
-            //IL_003e: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0048: Expected O, but got Unknown
-            //IL_0049: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0053: Expected O, but got Unknown
-            //IL_0054: Unknown result type (might be due to invalid IL or missing references)
-            //IL_005e: Expected O, but got Unknown
-            //IL_005f: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0069: Expected O, but got Unknown
-            //IL_006a: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0074: Expected O, but got Unknown
-            //IL_0075: Unknown result type (might be due to invalid IL or missing references)
-            //IL_007f: Expected O, but got Unknown
-            //IL_0080: Unknown result type (might be due to invalid IL or missing references)
-            //IL_008a: Expected O, but got Unknown
-            //IL_008b: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0095: Expected O, but got Unknown
-            //IL_0096: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00a0: Expected O, but got Unknown
-            //IL_00a1: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00ab: Expected O, but got Unknown
-            //IL_00ac: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00b6: Expected O, but got Unknown
-            //IL_00b7: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00c1: Expected O, but got Unknown
-            //IL_00c2: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00cc: Expected O, but got Unknown
-            //IL_00cd: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00d7: Expected O, but got Unknown
-            //IL_00d8: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00e2: Expected O, but got Unknown
-            //IL_00e3: Unknown result type (might be due to invalid IL or missing references)
-            //IL_00ed: Expected O, but got Unknown
-            //IL_00f9: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0103: Expected O, but got Unknown
-            //IL_010f: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0119: Expected O, but got Unknown
-            //IL_011a: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0124: Expected O, but got Unknown
-            //IL_0125: Unknown result type (might be due to invalid IL or missing references)
-            //IL_012f: Expected O, but got Unknown
-            //IL_0130: Unknown result type (might be due to invalid IL or missing references)
-            //IL_013a: Expected O, but got Unknown
-            //IL_013b: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0145: Expected O, but got Unknown
-            //IL_0146: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0150: Expected O, but got Unknown
-            //IL_0151: Unknown result type (might be due to invalid IL or missing references)
-            //IL_015b: Expected O, but got Unknown
-            //IL_015c: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0166: Expected O, but got Unknown
-            //IL_0167: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0171: Expected O, but got Unknown
-            //IL_0172: Unknown result type (might be due to invalid IL or missing references)
-            //IL_017c: Expected O, but got Unknown
-            //IL_017d: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0187: Expected O, but got Unknown
-            //IL_0188: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0192: Expected O, but got Unknown
-            //IL_0193: Unknown result type (might be due to invalid IL or missing references)
-            //IL_019d: Expected O, but got Unknown
-            //IL_019e: Unknown result type (might be due to invalid IL or missing references)
-            //IL_01a8: Expected O, but got Unknown
-            //IL_01bf: Unknown result type (might be due to invalid IL or missing references)
-            //IL_01c9: Expected O, but got Unknown
-            //IL_01ca: Unknown result type (might be due to invalid IL or missing references)
-            //IL_01d4: Expected O, but got Unknown
-            //IL_01d5: Unknown result type (might be due to invalid IL or missing references)
-            //IL_01df: Expected O, but got Unknown
-            //IL_0bde: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0be4: Expected O, but got Unknown
-            //IL_0c16: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0c1c: Expected O, but got Unknown
-            //IL_0c28: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0c2e: Expected O, but got Unknown
-            //IL_16b4: Unknown result type (might be due to invalid IL or missing references)
-            //IL_16ba: Expected O, but got Unknown
-            //IL_16e7: Unknown result type (might be due to invalid IL or missing references)
-            //IL_16ed: Expected O, but got Unknown
-            //IL_16f9: Unknown result type (might be due to invalid IL or missing references)
-            //IL_16ff: Expected O, but got Unknown
-            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(frmComanda));
-            mainRibbonControl = new RibbonControl();
-            bbiGuardar = new BarButtonItem();
-            bbiGuardarCerrar = new BarButtonItem();
-            bbiGuardarNuevo = new BarButtonItem();
-            bbiEliminar = new BarButtonItem();
-            bbiRestablecer = new BarButtonItem();
-            bbiBuscar = new BarButtonItem();
-            bbiPrimero = new BarButtonItem();
-            bbiAnterior = new BarButtonItem();
-            bbiUltimo = new BarButtonItem();
-            bbiSiguiente = new BarButtonItem();
-            bbiNuevo = new BarButtonItem();
-            bbiImprimir = new BarButtonItem();
-            mainRibbonPage = new RibbonPage();
-            mainRibbonPageGroup = new RibbonPageGroup();
-            layoutControl1 = new LayoutControl();
-            splitContainerControlComanda = new SplitContainerControl();
-            splitContainerControlArticulos = new SplitContainerControl();
-            lblVendedores = new LabelControl();
-            cbVendedores = new LookUpEdit();
-            pictureBox1 = new PictureBox();
-            txtArticulo = new TextEdit();
-            tlp = new TableLayoutPanel();
-            splitContainerControlPartidas = new SplitContainerControl();
-            gcPartidas = new GridControl();
-            gvPartidas = new GridView();
-            gridColumnCantidad = new GridColumn();
-            gridColumnSKU = new GridColumn();
-            gridColumnArticulo = new GridColumn();
-            gridColumnCodigoBarras = new GridColumn();
-            gridColumnPrecio = new GridColumn();
-            gridColumnPrecioNeto = new GridColumn();
-            gridColumnPorcentajeDescuento = new GridColumn();
-            gridColumnDescuento = new GridColumn();
-            gridColumnSubTotal = new GridColumn();
-            gridColumnTotal = new GridColumn();
-            cbMonedas = new RepositoryItemLookUpEdit();
-            lblTotal = new Label();
-            lblTotal_ = new Label();
-            layoutControlGroup1 = new LayoutControlGroup();
-            layoutControlItem1 = new LayoutControlItem();
-            btnAtras = new SimpleButton();
-            ((ISupportInitialize)mainRibbonControl).BeginInit();
-            ((ISupportInitialize)layoutControl1).BeginInit();
-            ((Control)(object)layoutControl1).SuspendLayout();
-            ((ISupportInitialize)splitContainerControlComanda).BeginInit();
-            ((Control)(object)splitContainerControlComanda).SuspendLayout();
-            ((ISupportInitialize)splitContainerControlArticulos).BeginInit();
-            ((Control)(object)splitContainerControlArticulos).SuspendLayout();
-            ((ISupportInitialize)cbVendedores.Properties).BeginInit();
-            ((ISupportInitialize)pictureBox1).BeginInit();
-            ((ISupportInitialize)txtArticulo.Properties).BeginInit();
-            ((ISupportInitialize)splitContainerControlPartidas).BeginInit();
-            ((Control)(object)splitContainerControlPartidas).SuspendLayout();
-            ((ISupportInitialize)gcPartidas).BeginInit();
-            ((ISupportInitialize)gvPartidas).BeginInit();
-            ((ISupportInitialize)cbMonedas).BeginInit();
-            ((ISupportInitialize)layoutControlGroup1).BeginInit();
-            ((ISupportInitialize)layoutControlItem1).BeginInit();
-            ((XtraForm)this).SuspendLayout();
-            ((BarItem)mainRibbonControl.ExpandCollapseItem).Id = 0;
-            ((BarItems)mainRibbonControl.Items).AddRange((BarItem[])(object)new BarItem[13]
-            {
-            (BarItem)mainRibbonControl.ExpandCollapseItem,
-            (BarItem)bbiGuardar,
-            (BarItem)bbiGuardarCerrar,
-            (BarItem)bbiGuardarNuevo,
-            (BarItem)bbiEliminar,
-            (BarItem)bbiRestablecer,
-            (BarItem)bbiBuscar,
-            (BarItem)bbiPrimero,
-            (BarItem)bbiAnterior,
-            (BarItem)bbiUltimo,
-            (BarItem)bbiSiguiente,
-            (BarItem)bbiNuevo,
-            (BarItem)bbiImprimir
-            });
-            ((Control)(object)mainRibbonControl).Location = new Point(0, 0);
-            mainRibbonControl.MaxItemId = 3;
-            ((Control)(object)mainRibbonControl).Name = "mainRibbonControl";
-            mainRibbonControl.Pages.AddRange((RibbonPage[])(object)new RibbonPage[1] { mainRibbonPage });
-            mainRibbonControl.RibbonStyle = (RibbonControlStyle.OfficeUniversal);
-            mainRibbonControl.ShowApplicationButton = (DefaultBoolean.False);
-            ((Control)(object)mainRibbonControl).Size = new Size(798, 83);
-            mainRibbonControl.ToolbarLocation = (RibbonQuickAccessToolbarLocation.Hidden);
-            ((BarItem)bbiGuardar).Caption = "Guardar";
-            ((BarItem)bbiGuardar).Id = 2;
-            ((BarItem)bbiGuardar).ImageUri.Uri = "Save";
-            ((BarItem)bbiGuardar).Name = "bbiGuardar";
-            ((BarItem)bbiGuardarCerrar).Caption = "Guardar y cerrar";
-            ((BarItem)bbiGuardarCerrar).Id = 3;
-            ((BarItem)bbiGuardarCerrar).ImageUri.Uri = "SaveAndClose";
-            ((BarItem)bbiGuardarCerrar).Name = "bbiGuardarCerrar";
-            ((BarItem)bbiGuardarCerrar).RibbonStyle = (RibbonItemStyles.Default);
-            ((BarItem)bbiGuardarNuevo).Caption = "Guardar y nuevo";
-            ((BarItem)bbiGuardarNuevo).Id = 4;
-            ((BarItem)bbiGuardarNuevo).ImageUri.Uri = "SaveAndNew";
-            ((BarItem)bbiGuardarNuevo).Name = "bbiGuardarNuevo";
-            ((BarItem)bbiEliminar).Caption = "Eliminar";
-            ((BarItem)bbiEliminar).Id = 6;
-            ((BarItem)bbiEliminar).ImageUri.Uri = "Delete";
-            ((BarItem)bbiEliminar).Name = "bbiEliminar";
-            ((BarItem)bbiRestablecer).Id = 1;
-            ((BarItem)bbiRestablecer).Name = "bbiRestablecer";
-            ((BarItem)bbiBuscar).Caption = "Buscar";
-            ((BarItem)bbiBuscar).Id = 4;
-            ((BarItem)bbiBuscar).ImageUri.Uri = "Find";
-            ((BarItem)bbiBuscar).Name = "bbiBuscar";
-            ((BarItem)bbiBuscar).RibbonStyle = (RibbonItemStyles.SmallWithoutText);
-            ((BarItem)bbiPrimero).Caption = "Primero";
-            ((BarItem)bbiPrimero).Id = 5;
-            ((BarItem)bbiPrimero).ImageUri.Uri = "First";
-            ((BarItem)bbiPrimero).Name = "bbiPrimero";
-            ((BarItem)bbiPrimero).RibbonStyle = (RibbonItemStyles.SmallWithoutText);
-            ((BarItem)bbiAnterior).Caption = "Anterior";
-            ((BarItem)bbiAnterior).Id = 6;
-            ((BarItem)bbiAnterior).ImageUri.Uri = "Prev";
-            ((BarItem)bbiAnterior).Name = "bbiAnterior";
-            ((BarItem)bbiAnterior).RibbonStyle = (RibbonItemStyles.SmallWithoutText);
-            ((BarItem)bbiUltimo).Caption = "Último";
-            ((BarItem)bbiUltimo).Id = 7;
-            ((BarItem)bbiUltimo).ImageUri.Uri = "Last";
-            ((BarItem)bbiUltimo).Name = "bbiUltimo";
-            ((BarItem)bbiUltimo).RibbonStyle = (RibbonItemStyles.SmallWithoutText);
-            ((BarItem)bbiSiguiente).AllowGlyphSkinning = (DefaultBoolean.False);
-            ((BarItem)bbiSiguiente).Caption = "Siguiente";
-            ((BarItem)bbiSiguiente).Id = 8;
-            ((BarItem)bbiSiguiente).ImageUri.Uri = "Next";
-            ((BarItem)bbiSiguiente).Name = "bbiSiguiente";
-            ((BarItem)bbiSiguiente).RibbonStyle = (RibbonItemStyles.SmallWithoutText);
-            ((BarItem)bbiNuevo).Caption = "Nuevo";
-            ((BarItem)bbiNuevo).Id = 1;
-            ((BarItem)bbiNuevo).ImageUri.Uri = "Add";
-            ((BarItem)bbiNuevo).Name = "bbiNuevo";
-            ((BarItem)bbiNuevo).RibbonStyle = (RibbonItemStyles.Large);
-            ((BarItem)bbiImprimir).Caption = "Imprimir";
-            ((BarItem)bbiImprimir).Id = 2;
-            ((BarItem)bbiImprimir).ImageUri.Uri = "Print";
-            ((BarItem)bbiImprimir).Name = "bbiImprimir";
-            mainRibbonPage.Groups.AddRange((RibbonPageGroup[])(object)new RibbonPageGroup[1] { mainRibbonPageGroup });
-            mainRibbonPage.MergeOrder = 0;
-            mainRibbonPage.Name = "mainRibbonPage";
-            mainRibbonPage.Text = "ARCHIVO";
-            mainRibbonPageGroup.AllowTextClipping = false;
-            ((BarItemLinkCollection)mainRibbonPageGroup.ItemLinks).Add((BarItem)(object)bbiGuardar);
-            ((BarItemLinkCollection)mainRibbonPageGroup.ItemLinks).Add((BarItem)(object)bbiGuardarCerrar);
-            ((BarItemLinkCollection)mainRibbonPageGroup.ItemLinks).Add((BarItem)(object)bbiImprimir);
-            mainRibbonPageGroup.Name = "mainRibbonPageGroup";
-            mainRibbonPageGroup.ShowCaptionButton = false;
-            mainRibbonPageGroup.Text = "Opciones";
-            ((Control)(object)layoutControl1).Controls.Add((Control)(object)splitContainerControlComanda);
-            ((Control)(object)layoutControl1).Dock = DockStyle.Fill;
-            ((Control)(object)layoutControl1).Location = new Point(0, 83);
-            ((Control)(object)layoutControl1).Name = "layoutControl1";
-            layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new Rectangle(92, 301, 250, 350);
-            layoutControl1.Root = layoutControlGroup1;
-            ((Control)(object)layoutControl1).Size = new Size(798, 516);
-            ((Control)(object)layoutControl1).TabIndex = 57;
-            ((Control)(object)layoutControl1).Text = "layoutControl1";
-            ((Control)(object)splitContainerControlComanda).Location = new Point(12, 12);
-            ((Control)(object)splitContainerControlComanda).Name = "splitContainerControlComanda";
-            ((Control)(object)splitContainerControlComanda.Panel1).Controls.Add((Control)(object)splitContainerControlArticulos);
-            ((Control)(object)splitContainerControlComanda.Panel1).Text = "Panel1";
-            ((Control)(object)splitContainerControlComanda.Panel2).Controls.Add((Control)(object)splitContainerControlPartidas);
-            ((Control)(object)splitContainerControlComanda.Panel2).Text = "Panel2";
-            ((Control)(object)splitContainerControlComanda).Size = new Size(774, 492);
-            splitContainerControlComanda.SplitterPosition = 373;
-            ((Control)(object)splitContainerControlComanda).TabIndex = 4;
-            ((Control)(object)splitContainerControlComanda).Text = "splitContainerControl1";
-            ((Control)(object)splitContainerControlArticulos).Dock = DockStyle.Fill;
-            splitContainerControlArticulos.Horizontal = false;
-            ((Control)(object)splitContainerControlArticulos).Location = new Point(0, 0);
-            ((Control)(object)splitContainerControlArticulos).Name = "splitContainerControlArticulos";
-            ((Control)(object)splitContainerControlArticulos.Panel1).Controls.Add((Control)(object)lblVendedores);
-            ((Control)(object)splitContainerControlArticulos.Panel1).Controls.Add((Control)(object)cbVendedores);
-            ((Control)(object)splitContainerControlArticulos.Panel1).Controls.Add(pictureBox1);
-            ((Control)(object)splitContainerControlArticulos.Panel1).Controls.Add((Control)(object)txtArticulo);
-            ((Control)(object)splitContainerControlArticulos.Panel1).Text = "Panel1";
-            ((ScrollableControl)(object)splitContainerControlArticulos.Panel2).AutoScroll = true;
-            ((Control)(object)splitContainerControlArticulos.Panel2).Controls.Add(tlp);
-            ((Control)(object)splitContainerControlArticulos.Panel2).Text = "Panel2";
-            ((Control)(object)splitContainerControlArticulos).Size = new Size(373, 492);
-            splitContainerControlArticulos.SplitterPosition = 56;
-            ((Control)(object)splitContainerControlArticulos).TabIndex = 0;
-            ((Control)(object)splitContainerControlArticulos).Text = "splitContainerControl2";
-            ((Control)(object)lblVendedores).Location = new Point(4, 35);
-            ((Control)(object)lblVendedores).Name = "lblVendedores";
-            ((Control)(object)lblVendedores).Size = new Size(35, 13);
-            ((Control)(object)lblVendedores).TabIndex = 85;
-            ((Control)(object)lblVendedores).Text = "Mesero";
-            ((Control)(object)cbVendedores).Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            ((Control)(object)cbVendedores).Location = new Point(106, 32);
-            ((BaseEdit)cbVendedores).MenuManager = (IDXMenuManager)(object)mainRibbonControl;
-            ((Control)(object)cbVendedores).Name = "cbVendedores";
-            ((RepositoryItemButtonEdit)cbVendedores.Properties).Buttons.AddRange((EditorButton[])(object)new EditorButton[1]
-            {
-            new EditorButton((ButtonPredefines.Combo))
-            });
-            cbVendedores.Properties.Columns.AddRange((LookUpColumnInfo[])(object)new LookUpColumnInfo[2]
-            {
-            new LookUpColumnInfo("id", "ID", 20,(FormatType.None), "", false, (HorzAlignment.Default)),
-            new LookUpColumnInfo("nombre", "Nombre")
-            });
-            ((Control)(object)cbVendedores).Size = new Size(262, 20);
-            ((Control)(object)cbVendedores).TabIndex = 83;
-            ((BaseEdit)cbVendedores).TabStop = false;
-            pictureBox1.BackColor = Color.Transparent;
-            //pictureBox1.Image = Resources.barcode;
-            pictureBox1.Location = new Point(4, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(24, 24);
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox1.TabIndex = 20;
-            pictureBox1.TabStop = false;
-            ((Control)(object)txtArticulo).Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            ((Control)(object)txtArticulo).Location = new Point(34, 6);
-            ((Control)(object)txtArticulo).Name = "txtArticulo";
-            ((Control)(object)txtArticulo).Size = new Size(334, 20);
-            ((Control)(object)txtArticulo).TabIndex = 19;
-            ((Control)(object)txtArticulo).KeyDown += txtArticulo_KeyDown;
-            tlp.AutoScroll = true;
-            tlp.ColumnCount = 3;
-            tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333f));
-            tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333f));
-            tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333f));
-            tlp.Dock = DockStyle.Fill;
-            tlp.Location = new Point(0, 0);
-            tlp.Name = "tlp";
-            tlp.RowCount = 1;
-            tlp.RowStyles.Add(new RowStyle(SizeType.Percent, 100f));
-            tlp.Size = new Size(373, 424);
-            tlp.TabIndex = 1;
-            ((Control)(object)splitContainerControlPartidas).Dock = DockStyle.Fill;
-            splitContainerControlPartidas.FixedPanel = (SplitFixedPanel.Panel2);
-            splitContainerControlPartidas.Horizontal = false;
-            ((Control)(object)splitContainerControlPartidas).Location = new Point(0, 0);
-            ((Control)(object)splitContainerControlPartidas).Name = "splitContainerControlPartidas";
-            ((Control)(object)splitContainerControlPartidas.Panel1).Controls.Add((Control)(object)gcPartidas);
-            ((Control)(object)splitContainerControlPartidas.Panel1).Text = "Panel1";
-            ((Control)(object)splitContainerControlPartidas.Panel2).Controls.Add((Control)(object)btnAtras);
-            ((Control)(object)splitContainerControlPartidas.Panel2).Controls.Add(lblTotal);
-            ((Control)(object)splitContainerControlPartidas.Panel2).Controls.Add(lblTotal_);
-            splitContainerControlPartidas.Panel2.MinSize = 55;
-            ((Control)(object)splitContainerControlPartidas.Panel2).Text = "Panel2";
-            ((Control)(object)splitContainerControlPartidas).Size = new Size(389, 492);
-            splitContainerControlPartidas.SplitterPosition = 55;
-            ((Control)(object)splitContainerControlPartidas).TabIndex = 0;
-            ((Control)(object)splitContainerControlPartidas).Text = "splitContainerControl1";
-            ((Control)(object)gcPartidas).Dock = DockStyle.Fill;
-            ((Control)(object)gcPartidas).Location = new Point(0, 0);
-            gcPartidas.MainView = (BaseView)(object)gvPartidas;
-            ((Control)(object)gcPartidas).Name = "gcPartidas";
-            ((EditorContainer)gcPartidas).RepositoryItems.AddRange((RepositoryItem[])(object)new RepositoryItem[1] { (RepositoryItem)cbMonedas });
-            ((Control)(object)gcPartidas).Size = new Size(389, 425);
-            ((Control)(object)gcPartidas).TabIndex = 3;
-            ((Control)(object)gcPartidas).TabStop = false;
-            gcPartidas.ViewCollection.AddRange((BaseView[])(object)new BaseView[1] { (BaseView)gvPartidas });
-            ((BaseView)gvPartidas).BorderStyle = (BorderStyles.NoBorder);
-            ((ColumnView)gvPartidas).Columns.AddRange((GridColumn[])(object)new GridColumn[10] { gridColumnCantidad, gridColumnSKU, gridColumnArticulo, gridColumnCodigoBarras, gridColumnPrecio, gridColumnPrecioNeto, gridColumnPorcentajeDescuento, gridColumnDescuento, gridColumnSubTotal, gridColumnTotal });
-            ((BaseView)gvPartidas).GridControl = gcPartidas;
-            ((BaseView)gvPartidas).Name = "gvPartidas";
-            gvPartidas.OptionsDetail.DetailMode = (DetailMode.Default);
-            gvPartidas.OptionsView.ShowFooter = true;
-            gvPartidas.OptionsView.ShowGroupPanel = false;
-            gridColumnCantidad.Caption = "Cant";
-            gridColumnCantidad.DisplayFormat.FormatType = (FormatType.Numeric);
-            gridColumnCantidad.FieldName = "cantidad";
-            gridColumnCantidad.MaxWidth = 40;
-            gridColumnCantidad.MinWidth = 40;
-            gridColumnCantidad.Name = "gridColumnCantidad";
-            gridColumnCantidad.OptionsColumn.FixedWidth = true;
-            gridColumnCantidad.Visible = true;
-            gridColumnCantidad.VisibleIndex = 0;
-            gridColumnCantidad.Width = 40;
-            gridColumnSKU.Caption = "SKU";
-            gridColumnSKU.FieldName = "sku";
-            gridColumnSKU.MaxWidth = 150;
-            gridColumnSKU.MinWidth = 60;
-            gridColumnSKU.Name = "gridColumnSKU";
-            gridColumnSKU.OptionsColumn.AllowEdit = false;
-            gridColumnSKU.Width = 63;
-            gridColumnArticulo.Caption = "Artículo";
-            gridColumnArticulo.FieldName = "nombre";
-            gridColumnArticulo.MinWidth = 100;
-            gridColumnArticulo.Name = "gridColumnArticulo";
-            gridColumnArticulo.OptionsColumn.AllowEdit = false;
-            gridColumnArticulo.Visible = true;
-            gridColumnArticulo.VisibleIndex = 1;
-            gridColumnArticulo.Width = 120;
-            gridColumnCodigoBarras.Caption = "Código de barras";
-            gridColumnCodigoBarras.FieldName = "codigo_barras";
-            gridColumnCodigoBarras.MaxWidth = 120;
-            gridColumnCodigoBarras.MinWidth = 80;
-            gridColumnCodigoBarras.Name = "gridColumnCodigoBarras";
-            gridColumnCodigoBarras.OptionsColumn.AllowEdit = false;
-            gridColumnCodigoBarras.Width = 97;
-            gridColumnPrecio.Caption = "Precio";
-            gridColumnPrecio.DisplayFormat.FormatString = "c2";
-            gridColumnPrecio.DisplayFormat.FormatType = (FormatType.Numeric);
-            gridColumnPrecio.FieldName = "gridColumnPrecio";
-            gridColumnPrecio.MinWidth = 60;
-            gridColumnPrecio.Name = "gridColumnPrecio";
-            gridColumnPrecio.OptionsColumn.AllowEdit = false;
-            gridColumnPrecio.UnboundExpression = "precio * tipo_cambio";
-            gridColumnPrecio.UnboundType = (UnboundColumnType.Decimal);
-            gridColumnPrecio.Width = 60;
-            gridColumnPrecioNeto.Caption = "PU. Neto";
-            gridColumnPrecioNeto.DisplayFormat.FormatString = "c2";
-            gridColumnPrecioNeto.DisplayFormat.FormatType = (FormatType.Numeric);
-            gridColumnPrecioNeto.FieldName = "gridColumnPrecioNeto";
-            gridColumnPrecioNeto.MinWidth = 60;
-            gridColumnPrecioNeto.Name = "gridColumnPrecioNeto";
-            gridColumnPrecioNeto.UnboundExpression = "(precio * tipo_cambio) + impuesto";
-            gridColumnPrecioNeto.UnboundType = (UnboundColumnType.Decimal);
-            gridColumnPrecioNeto.Visible = true;
-            gridColumnPrecioNeto.VisibleIndex = 2;
-            gridColumnPrecioNeto.Width = 60;
-            gridColumnPorcentajeDescuento.Caption = "% Dscto";
-            gridColumnPorcentajeDescuento.DisplayFormat.FormatString = "p2";
-            gridColumnPorcentajeDescuento.FieldName = "porcentaje_descuento";
-            gridColumnPorcentajeDescuento.MaxWidth = 50;
-            gridColumnPorcentajeDescuento.Name = "gridColumnPorcentajeDescuento";
-            gridColumnPorcentajeDescuento.OptionsColumn.FixedWidth = true;
-            gridColumnPorcentajeDescuento.Width = 50;
-            gridColumnDescuento.Caption = "Descuento";
-            gridColumnDescuento.DisplayFormat.FormatString = "c2";
-            gridColumnDescuento.DisplayFormat.FormatType = (FormatType.Numeric);
-            gridColumnDescuento.FieldName = "descuento";
-            gridColumnDescuento.MaxWidth = 120;
-            gridColumnDescuento.MinWidth = 60;
-            gridColumnDescuento.Name = "gridColumnDescuento";
-            gridColumnDescuento.OptionsColumn.AllowEdit = false;
-            gridColumnDescuento.Width = 60;
-            gridColumnSubTotal.Caption = "SubTotal";
-            gridColumnSubTotal.DisplayFormat.FormatString = "c2";
-            gridColumnSubTotal.DisplayFormat.FormatType = (FormatType.Numeric);
-            gridColumnSubTotal.FieldName = "subtotal";
-            gridColumnSubTotal.MinWidth = 60;
-            gridColumnSubTotal.Name = "gridColumnSubTotal";
-            gridColumnSubTotal.OptionsColumn.AllowEdit = false;
-            gridColumnSubTotal.Width = 60;
-            gridColumnTotal.Caption = "Total";
-            gridColumnTotal.DisplayFormat.FormatString = "c2";
-            gridColumnTotal.DisplayFormat.FormatType = (FormatType.Numeric);
-            gridColumnTotal.FieldName = "total";
-            gridColumnTotal.MinWidth = 60;
-            gridColumnTotal.Name = "gridColumnTotal";
-            gridColumnTotal.Visible = true;
-            gridColumnTotal.VisibleIndex = 3;
-            gridColumnTotal.Width = 60;
-            ((RepositoryItem)cbMonedas).AutoHeight = false;
-            ((RepositoryItemButtonEdit)cbMonedas).Buttons.AddRange((EditorButton[])(object)new EditorButton[1]
-            {
-            new EditorButton((ButtonPredefines.Combo))
-            });
-            cbMonedas.Columns.AddRange((LookUpColumnInfo[])(object)new LookUpColumnInfo[2]
-            {
-            new LookUpColumnInfo("id", "ID", 20, (FormatType.None), "", false, (HorzAlignment.Default)),
-            new LookUpColumnInfo("codigo", "Código")
-            });
-            ((RepositoryItem)cbMonedas).Name = "cbMonedas";
-            lblTotal.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            lblTotal.AutoEllipsis = true;
-            lblTotal.Font = new Font("Tahoma", 22f, FontStyle.Bold);
-            lblTotal.Location = new Point(231, 12);
-            lblTotal.Name = "lblTotal";
-            lblTotal.RightToLeft = RightToLeft.Yes;
-            lblTotal.Size = new Size(153, 36);
-            lblTotal.TabIndex = 5;
-            lblTotal.Text = "0.00";
-            lblTotal_.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            lblTotal_.AutoSize = true;
-            lblTotal_.Font = new Font("Tahoma", 8.25f, FontStyle.Bold);
-            lblTotal_.Location = new Point(185, 12);
-            lblTotal_.Name = "lblTotal_";
-            lblTotal_.Size = new Size(36, 13);
-            lblTotal_.TabIndex = 4;
-            lblTotal_.Text = "Total";
-            ((LayoutGroup)layoutControlGroup1).EnableIndentsWithoutBorders = (DefaultBoolean.True);
-            ((LayoutGroup)layoutControlGroup1).GroupBordersVisible = false;
-            ((BaseItemCollection)layoutControlGroup1.Items).AddRange((BaseLayoutItem[])(object)new BaseLayoutItem[1] { (BaseLayoutItem)layoutControlItem1 });
-            ((BaseLayoutItem)layoutControlGroup1).Location = new Point(0, 0);
-            ((BaseLayoutItem)layoutControlGroup1).Name = "Root";
-            ((BaseLayoutItem)layoutControlGroup1).Size = new Size(798, 516);
-            ((BaseLayoutItem)layoutControlGroup1).TextVisible = false;
-            layoutControlItem1.Control = (Control)(object)splitContainerControlComanda;
-            ((BaseLayoutItem)layoutControlItem1).Location = new Point(0, 0);
-            ((BaseLayoutItem)layoutControlItem1).Name = "layoutControlItem1";
-            ((BaseLayoutItem)layoutControlItem1).Size = new Size(778, 496);
-            ((BaseLayoutItem)layoutControlItem1).TextSize = new Size(0, 0);
-            ((BaseLayoutItem)layoutControlItem1).TextVisible = false;
-            //btnAtras.Image = (Image)componentResourceManager.GetObject("btnAtras.Image");
-            btnAtras.ImageLocation = (ImageLocation.MiddleCenter);
-            ((Control)(object)btnAtras).Location = new Point(2, 3);
-            ((Control)(object)btnAtras).Name = "btnAtras";
-            ((Control)(object)btnAtras).Size = new Size(80, 50);
-            ((Control)(object)btnAtras).TabIndex = 6;
-            ((Control)(object)btnAtras).Click += btnAtras_Click;
-            ((ContainerControl)this).AutoScaleDimensions = new SizeF(6f, 13f);
-            ((ContainerControl)this).AutoScaleMode = AutoScaleMode.Font;
-            ((Form)this).ClientSize = new Size(798, 599);
-            ((Control)this).Controls.Add((Control)(object)layoutControl1);
-            ((Control)this).Controls.Add((Control)(object)mainRibbonControl);
-            ((Form)this).FormBorderStyle = FormBorderStyle.FixedSingle;
-            //((XtraForm)this).Icon = (Icon)componentResourceManager.GetObject("$this.Icon");
-            ((Control)this).Name = "frmComanda";
-            ((RibbonForm)this).Ribbon = mainRibbonControl;
-            ((Form)this).StartPosition = FormStartPosition.CenterScreen;
-            ((Control)(object)this).Text = "Comanda";
-            ((ISupportInitialize)mainRibbonControl).EndInit();
-            ((ISupportInitialize)layoutControl1).EndInit();
-            ((Control)(object)layoutControl1).ResumeLayout(performLayout: false);
-            ((ISupportInitialize)splitContainerControlComanda).EndInit();
-            ((Control)(object)splitContainerControlComanda).ResumeLayout(performLayout: false);
-            ((ISupportInitialize)splitContainerControlArticulos).EndInit();
-            ((Control)(object)splitContainerControlArticulos).ResumeLayout(performLayout: false);
-            ((ISupportInitialize)cbVendedores.Properties).EndInit();
-            ((ISupportInitialize)pictureBox1).EndInit();
-            ((ISupportInitialize)txtArticulo.Properties).EndInit();
-            ((ISupportInitialize)splitContainerControlPartidas).EndInit();
-            ((Control)(object)splitContainerControlPartidas).ResumeLayout(performLayout: false);
-            ((ISupportInitialize)gcPartidas).EndInit();
-            ((ISupportInitialize)gvPartidas).EndInit();
-            ((ISupportInitialize)cbMonedas).EndInit();
-            ((ISupportInitialize)layoutControlGroup1).EndInit();
-            ((ISupportInitialize)layoutControlItem1).EndInit();
-            ((XtraForm)this).ResumeLayout(false);
-            ((Control)this).PerformLayout();
+            this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.bbiGuardar = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiGuardarCerrar = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiGuardarNuevo = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiEliminar = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiRestablecer = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiBuscar = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiPrimero = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiAnterior = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiUltimo = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiSiguiente = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiNuevo = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiImprimir = new DevExpress.XtraBars.BarButtonItem();
+            this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.splitContainerControlComanda = new DevExpress.XtraEditors.SplitContainerControl();
+            this.splitContainerControlArticulos = new DevExpress.XtraEditors.SplitContainerControl();
+            this.lblVendedores = new DevExpress.XtraEditors.LabelControl();
+            this.cbVendedores = new DevExpress.XtraEditors.LookUpEdit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtArticulo = new DevExpress.XtraEditors.TextEdit();
+            this.tlp = new System.Windows.Forms.TableLayoutPanel();
+            this.splitContainerControlPartidas = new DevExpress.XtraEditors.SplitContainerControl();
+            this.gcPartidas = new DevExpress.XtraGrid.GridControl();
+            this.gvPartidas = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumnCantidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnSKU = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnArticulo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnCodigoBarras = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnPrecio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnPrecioNeto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnPorcentajeDescuento = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnDescuento = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnSubTotal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnTotal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cbMonedas = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.btnAtras = new DevExpress.XtraEditors.SimpleButton();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblTotal_ = new System.Windows.Forms.Label();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlComanda)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlComanda.Panel1)).BeginInit();
+            this.splitContainerControlComanda.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlComanda.Panel2)).BeginInit();
+            this.splitContainerControlComanda.Panel2.SuspendLayout();
+            this.splitContainerControlComanda.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlArticulos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlArticulos.Panel1)).BeginInit();
+            this.splitContainerControlArticulos.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlArticulos.Panel2)).BeginInit();
+            this.splitContainerControlArticulos.Panel2.SuspendLayout();
+            this.splitContainerControlArticulos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbVendedores.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtArticulo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlPartidas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlPartidas.Panel1)).BeginInit();
+            this.splitContainerControlPartidas.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlPartidas.Panel2)).BeginInit();
+            this.splitContainerControlPartidas.Panel2.SuspendLayout();
+            this.splitContainerControlPartidas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcPartidas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPartidas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbMonedas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // mainRibbonControl
+            // 
+            this.mainRibbonControl.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
+            this.mainRibbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 39, 35, 39);
+            this.mainRibbonControl.ExpandCollapseItem.Id = 0;
+            this.mainRibbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.mainRibbonControl.ExpandCollapseItem,
+            this.bbiGuardar,
+            this.bbiGuardarCerrar,
+            this.bbiGuardarNuevo,
+            this.bbiEliminar,
+            this.bbiRestablecer,
+            this.bbiBuscar,
+            this.bbiPrimero,
+            this.bbiAnterior,
+            this.bbiUltimo,
+            this.bbiSiguiente,
+            this.bbiNuevo,
+            this.bbiImprimir});
+            this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
+            this.mainRibbonControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mainRibbonControl.MaxItemId = 3;
+            this.mainRibbonControl.Name = "mainRibbonControl";
+            this.mainRibbonControl.OptionsMenuMinWidth = 385;
+            this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.mainRibbonPage});
+            this.mainRibbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
+            this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
+            this.mainRibbonControl.Size = new System.Drawing.Size(931, 105);
+            this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
+            // 
+            // bbiGuardar
+            // 
+            this.bbiGuardar.Caption = "Guardar";
+            this.bbiGuardar.Id = 2;
+            this.bbiGuardar.ImageOptions.ImageUri.Uri = "Save";
+            this.bbiGuardar.Name = "bbiGuardar";
+            // 
+            // bbiGuardarCerrar
+            // 
+            this.bbiGuardarCerrar.Caption = "Guardar y cerrar";
+            this.bbiGuardarCerrar.Id = 3;
+            this.bbiGuardarCerrar.ImageOptions.ImageUri.Uri = "SaveAndClose";
+            this.bbiGuardarCerrar.Name = "bbiGuardarCerrar";
+            // 
+            // bbiGuardarNuevo
+            // 
+            this.bbiGuardarNuevo.Caption = "Guardar y nuevo";
+            this.bbiGuardarNuevo.Id = 4;
+            this.bbiGuardarNuevo.ImageOptions.ImageUri.Uri = "SaveAndNew";
+            this.bbiGuardarNuevo.Name = "bbiGuardarNuevo";
+            // 
+            // bbiEliminar
+            // 
+            this.bbiEliminar.Caption = "Eliminar";
+            this.bbiEliminar.Id = 6;
+            this.bbiEliminar.ImageOptions.ImageUri.Uri = "Delete";
+            this.bbiEliminar.Name = "bbiEliminar";
+            // 
+            // bbiRestablecer
+            // 
+            this.bbiRestablecer.Id = 1;
+            this.bbiRestablecer.Name = "bbiRestablecer";
+            // 
+            // bbiBuscar
+            // 
+            this.bbiBuscar.Caption = "Buscar";
+            this.bbiBuscar.Id = 4;
+            this.bbiBuscar.ImageOptions.ImageUri.Uri = "Find";
+            this.bbiBuscar.Name = "bbiBuscar";
+            this.bbiBuscar.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            // 
+            // bbiPrimero
+            // 
+            this.bbiPrimero.Caption = "Primero";
+            this.bbiPrimero.Id = 5;
+            this.bbiPrimero.ImageOptions.ImageUri.Uri = "First";
+            this.bbiPrimero.Name = "bbiPrimero";
+            this.bbiPrimero.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            // 
+            // bbiAnterior
+            // 
+            this.bbiAnterior.Caption = "Anterior";
+            this.bbiAnterior.Id = 6;
+            this.bbiAnterior.ImageOptions.ImageUri.Uri = "Prev";
+            this.bbiAnterior.Name = "bbiAnterior";
+            this.bbiAnterior.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            // 
+            // bbiUltimo
+            // 
+            this.bbiUltimo.Caption = "Último";
+            this.bbiUltimo.Id = 7;
+            this.bbiUltimo.ImageOptions.ImageUri.Uri = "Last";
+            this.bbiUltimo.Name = "bbiUltimo";
+            this.bbiUltimo.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            // 
+            // bbiSiguiente
+            // 
+            this.bbiSiguiente.Caption = "Siguiente";
+            this.bbiSiguiente.Id = 8;
+            this.bbiSiguiente.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.bbiSiguiente.ImageOptions.ImageUri.Uri = "Next";
+            this.bbiSiguiente.Name = "bbiSiguiente";
+            this.bbiSiguiente.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            // 
+            // bbiNuevo
+            // 
+            this.bbiNuevo.Caption = "Nuevo";
+            this.bbiNuevo.Id = 1;
+            this.bbiNuevo.ImageOptions.ImageUri.Uri = "Add";
+            this.bbiNuevo.Name = "bbiNuevo";
+            this.bbiNuevo.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // bbiImprimir
+            // 
+            this.bbiImprimir.Caption = "Imprimir";
+            this.bbiImprimir.Id = 2;
+            this.bbiImprimir.ImageOptions.ImageUri.Uri = "Print";
+            this.bbiImprimir.Name = "bbiImprimir";
+            // 
+            // mainRibbonPage
+            // 
+            this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.mainRibbonPageGroup});
+            this.mainRibbonPage.MergeOrder = 0;
+            this.mainRibbonPage.Name = "mainRibbonPage";
+            this.mainRibbonPage.Text = "ARCHIVO";
+            // 
+            // mainRibbonPageGroup
+            // 
+            this.mainRibbonPageGroup.AllowTextClipping = false;
+            this.mainRibbonPageGroup.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
+            this.mainRibbonPageGroup.ItemLinks.Add(this.bbiGuardar);
+            this.mainRibbonPageGroup.ItemLinks.Add(this.bbiGuardarCerrar);
+            this.mainRibbonPageGroup.ItemLinks.Add(this.bbiImprimir);
+            this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
+            this.mainRibbonPageGroup.Text = "Opciones";
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.splitContainerControlComanda);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 105);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(92, 301, 250, 350);
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(931, 678);
+            this.layoutControl1.TabIndex = 57;
+            this.layoutControl1.Text = "layoutControl1";
+            // 
+            // splitContainerControlComanda
+            // 
+            this.splitContainerControlComanda.Location = new System.Drawing.Point(14, 16);
+            this.splitContainerControlComanda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainerControlComanda.Name = "splitContainerControlComanda";
+            // 
+            // splitContainerControlComanda.Panel1
+            // 
+            this.splitContainerControlComanda.Panel1.Controls.Add(this.splitContainerControlArticulos);
+            this.splitContainerControlComanda.Panel1.Text = "Panel1";
+            // 
+            // splitContainerControlComanda.Panel2
+            // 
+            this.splitContainerControlComanda.Panel2.Controls.Add(this.splitContainerControlPartidas);
+            this.splitContainerControlComanda.Panel2.Text = "Panel2";
+            this.splitContainerControlComanda.Size = new System.Drawing.Size(903, 646);
+            this.splitContainerControlComanda.SplitterPosition = 435;
+            this.splitContainerControlComanda.TabIndex = 4;
+            this.splitContainerControlComanda.Text = "splitContainerControl1";
+            // 
+            // splitContainerControlArticulos
+            // 
+            this.splitContainerControlArticulos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControlArticulos.Horizontal = false;
+            this.splitContainerControlArticulos.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControlArticulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainerControlArticulos.Name = "splitContainerControlArticulos";
+            // 
+            // splitContainerControlArticulos.Panel1
+            // 
+            this.splitContainerControlArticulos.Panel1.Controls.Add(this.lblVendedores);
+            this.splitContainerControlArticulos.Panel1.Controls.Add(this.cbVendedores);
+            this.splitContainerControlArticulos.Panel1.Controls.Add(this.pictureBox1);
+            this.splitContainerControlArticulos.Panel1.Controls.Add(this.txtArticulo);
+            this.splitContainerControlArticulos.Panel1.Text = "Panel1";
+            // 
+            // splitContainerControlArticulos.Panel2
+            // 
+            this.splitContainerControlArticulos.Panel2.AutoScroll = true;
+            this.splitContainerControlArticulos.Panel2.Controls.Add(this.tlp);
+            this.splitContainerControlArticulos.Panel2.Text = "Panel2";
+            this.splitContainerControlArticulos.Size = new System.Drawing.Size(435, 646);
+            this.splitContainerControlArticulos.SplitterPosition = 73;
+            this.splitContainerControlArticulos.TabIndex = 0;
+            this.splitContainerControlArticulos.Text = "splitContainerControl2";
+            // 
+            // lblVendedores
+            // 
+            this.lblVendedores.Location = new System.Drawing.Point(5, 46);
+            this.lblVendedores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblVendedores.Name = "lblVendedores";
+            this.lblVendedores.Size = new System.Drawing.Size(44, 17);
+            this.lblVendedores.TabIndex = 85;
+            this.lblVendedores.Text = "Mesero";
+            // 
+            // cbVendedores
+            // 
+            this.cbVendedores.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbVendedores.Location = new System.Drawing.Point(124, 42);
+            this.cbVendedores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbVendedores.MenuManager = this.mainRibbonControl;
+            this.cbVendedores.Name = "cbVendedores";
+            this.cbVendedores.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbVendedores.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 23, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbVendedores.Size = new System.Drawing.Size(306, 26);
+            this.cbVendedores.TabIndex = 83;
+            this.cbVendedores.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(5, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtArticulo
+            // 
+            this.txtArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtArticulo.Location = new System.Drawing.Point(40, 8);
+            this.txtArticulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtArticulo.Name = "txtArticulo";
+            this.txtArticulo.Size = new System.Drawing.Size(390, 26);
+            this.txtArticulo.TabIndex = 19;
+            // 
+            // tlp
+            // 
+            this.tlp.AutoScroll = true;
+            this.tlp.ColumnCount = 3;
+            this.tlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp.Location = new System.Drawing.Point(0, 0);
+            this.tlp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlp.Name = "tlp";
+            this.tlp.RowCount = 1;
+            this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlp.Size = new System.Drawing.Size(435, 561);
+            this.tlp.TabIndex = 1;
+            // 
+            // splitContainerControlPartidas
+            // 
+            this.splitContainerControlPartidas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControlPartidas.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
+            this.splitContainerControlPartidas.Horizontal = false;
+            this.splitContainerControlPartidas.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControlPartidas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainerControlPartidas.Name = "splitContainerControlPartidas";
+            // 
+            // splitContainerControlPartidas.Panel1
+            // 
+            this.splitContainerControlPartidas.Panel1.Controls.Add(this.gcPartidas);
+            this.splitContainerControlPartidas.Panel1.Text = "Panel1";
+            // 
+            // splitContainerControlPartidas.Panel2
+            // 
+            this.splitContainerControlPartidas.Panel2.Controls.Add(this.btnAtras);
+            this.splitContainerControlPartidas.Panel2.Controls.Add(this.lblTotal);
+            this.splitContainerControlPartidas.Panel2.Controls.Add(this.lblTotal_);
+            this.splitContainerControlPartidas.Panel2.MinSize = 55;
+            this.splitContainerControlPartidas.Panel2.Text = "Panel2";
+            this.splitContainerControlPartidas.Size = new System.Drawing.Size(456, 646);
+            this.splitContainerControlPartidas.SplitterPosition = 72;
+            this.splitContainerControlPartidas.TabIndex = 0;
+            this.splitContainerControlPartidas.Text = "splitContainerControl1";
+            // 
+            // gcPartidas
+            // 
+            this.gcPartidas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcPartidas.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcPartidas.Location = new System.Drawing.Point(0, 0);
+            this.gcPartidas.MainView = this.gvPartidas;
+            this.gcPartidas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcPartidas.Name = "gcPartidas";
+            this.gcPartidas.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.cbMonedas});
+            this.gcPartidas.Size = new System.Drawing.Size(456, 562);
+            this.gcPartidas.TabIndex = 3;
+            this.gcPartidas.TabStop = false;
+            this.gcPartidas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvPartidas});
+            // 
+            // gvPartidas
+            // 
+            this.gvPartidas.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.gvPartidas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumnCantidad,
+            this.gridColumnSKU,
+            this.gridColumnArticulo,
+            this.gridColumnCodigoBarras,
+            this.gridColumnPrecio,
+            this.gridColumnPrecioNeto,
+            this.gridColumnPorcentajeDescuento,
+            this.gridColumnDescuento,
+            this.gridColumnSubTotal,
+            this.gridColumnTotal});
+            this.gvPartidas.DetailHeight = 458;
+            this.gvPartidas.GridControl = this.gcPartidas;
+            this.gvPartidas.Name = "gvPartidas";
+            this.gvPartidas.OptionsEditForm.PopupEditFormWidth = 933;
+            this.gvPartidas.OptionsView.ShowFooter = true;
+            this.gvPartidas.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumnCantidad
+            // 
+            this.gridColumnCantidad.Caption = "Cant";
+            this.gridColumnCantidad.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumnCantidad.FieldName = "cantidad";
+            this.gridColumnCantidad.MaxWidth = 47;
+            this.gridColumnCantidad.MinWidth = 47;
+            this.gridColumnCantidad.Name = "gridColumnCantidad";
+            this.gridColumnCantidad.OptionsColumn.FixedWidth = true;
+            this.gridColumnCantidad.Visible = true;
+            this.gridColumnCantidad.VisibleIndex = 0;
+            this.gridColumnCantidad.Width = 47;
+            // 
+            // gridColumnSKU
+            // 
+            this.gridColumnSKU.Caption = "SKU";
+            this.gridColumnSKU.FieldName = "sku";
+            this.gridColumnSKU.MaxWidth = 175;
+            this.gridColumnSKU.MinWidth = 70;
+            this.gridColumnSKU.Name = "gridColumnSKU";
+            this.gridColumnSKU.OptionsColumn.AllowEdit = false;
+            this.gridColumnSKU.Width = 73;
+            // 
+            // gridColumnArticulo
+            // 
+            this.gridColumnArticulo.Caption = "Artículo";
+            this.gridColumnArticulo.FieldName = "nombre";
+            this.gridColumnArticulo.MinWidth = 117;
+            this.gridColumnArticulo.Name = "gridColumnArticulo";
+            this.gridColumnArticulo.OptionsColumn.AllowEdit = false;
+            this.gridColumnArticulo.Visible = true;
+            this.gridColumnArticulo.VisibleIndex = 1;
+            this.gridColumnArticulo.Width = 140;
+            // 
+            // gridColumnCodigoBarras
+            // 
+            this.gridColumnCodigoBarras.Caption = "Código de barras";
+            this.gridColumnCodigoBarras.FieldName = "codigo_barras";
+            this.gridColumnCodigoBarras.MaxWidth = 140;
+            this.gridColumnCodigoBarras.MinWidth = 93;
+            this.gridColumnCodigoBarras.Name = "gridColumnCodigoBarras";
+            this.gridColumnCodigoBarras.OptionsColumn.AllowEdit = false;
+            this.gridColumnCodigoBarras.Width = 113;
+            // 
+            // gridColumnPrecio
+            // 
+            this.gridColumnPrecio.Caption = "Precio";
+            this.gridColumnPrecio.DisplayFormat.FormatString = "c2";
+            this.gridColumnPrecio.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumnPrecio.FieldName = "gridColumnPrecio";
+            this.gridColumnPrecio.MinWidth = 70;
+            this.gridColumnPrecio.Name = "gridColumnPrecio";
+            this.gridColumnPrecio.OptionsColumn.AllowEdit = false;
+            this.gridColumnPrecio.UnboundExpression = "precio * tipo_cambio";
+            this.gridColumnPrecio.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.gridColumnPrecio.Width = 70;
+            // 
+            // gridColumnPrecioNeto
+            // 
+            this.gridColumnPrecioNeto.Caption = "PU. Neto";
+            this.gridColumnPrecioNeto.DisplayFormat.FormatString = "c2";
+            this.gridColumnPrecioNeto.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumnPrecioNeto.FieldName = "gridColumnPrecioNeto";
+            this.gridColumnPrecioNeto.MinWidth = 70;
+            this.gridColumnPrecioNeto.Name = "gridColumnPrecioNeto";
+            this.gridColumnPrecioNeto.UnboundExpression = "(precio * tipo_cambio) + impuesto";
+            this.gridColumnPrecioNeto.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.gridColumnPrecioNeto.Visible = true;
+            this.gridColumnPrecioNeto.VisibleIndex = 2;
+            this.gridColumnPrecioNeto.Width = 70;
+            // 
+            // gridColumnPorcentajeDescuento
+            // 
+            this.gridColumnPorcentajeDescuento.Caption = "% Dscto";
+            this.gridColumnPorcentajeDescuento.DisplayFormat.FormatString = "p2";
+            this.gridColumnPorcentajeDescuento.FieldName = "porcentaje_descuento";
+            this.gridColumnPorcentajeDescuento.MaxWidth = 58;
+            this.gridColumnPorcentajeDescuento.MinWidth = 23;
+            this.gridColumnPorcentajeDescuento.Name = "gridColumnPorcentajeDescuento";
+            this.gridColumnPorcentajeDescuento.OptionsColumn.FixedWidth = true;
+            this.gridColumnPorcentajeDescuento.Width = 58;
+            // 
+            // gridColumnDescuento
+            // 
+            this.gridColumnDescuento.Caption = "Descuento";
+            this.gridColumnDescuento.DisplayFormat.FormatString = "c2";
+            this.gridColumnDescuento.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumnDescuento.FieldName = "descuento";
+            this.gridColumnDescuento.MaxWidth = 140;
+            this.gridColumnDescuento.MinWidth = 70;
+            this.gridColumnDescuento.Name = "gridColumnDescuento";
+            this.gridColumnDescuento.OptionsColumn.AllowEdit = false;
+            this.gridColumnDescuento.Width = 70;
+            // 
+            // gridColumnSubTotal
+            // 
+            this.gridColumnSubTotal.Caption = "SubTotal";
+            this.gridColumnSubTotal.DisplayFormat.FormatString = "c2";
+            this.gridColumnSubTotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumnSubTotal.FieldName = "subtotal";
+            this.gridColumnSubTotal.MinWidth = 70;
+            this.gridColumnSubTotal.Name = "gridColumnSubTotal";
+            this.gridColumnSubTotal.OptionsColumn.AllowEdit = false;
+            this.gridColumnSubTotal.Width = 70;
+            // 
+            // gridColumnTotal
+            // 
+            this.gridColumnTotal.Caption = "Total";
+            this.gridColumnTotal.DisplayFormat.FormatString = "c2";
+            this.gridColumnTotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumnTotal.FieldName = "total";
+            this.gridColumnTotal.MinWidth = 70;
+            this.gridColumnTotal.Name = "gridColumnTotal";
+            this.gridColumnTotal.Visible = true;
+            this.gridColumnTotal.VisibleIndex = 3;
+            this.gridColumnTotal.Width = 70;
+            // 
+            // cbMonedas
+            // 
+            this.cbMonedas.AutoHeight = false;
+            this.cbMonedas.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbMonedas.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 23, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbMonedas.Name = "cbMonedas";
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnAtras.Location = new System.Drawing.Point(2, 4);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(93, 65);
+            this.btnAtras.TabIndex = 6;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotal.AutoEllipsis = true;
+            this.lblTotal.Font = new System.Drawing.Font("Tahoma", 22F, System.Drawing.FontStyle.Bold);
+            this.lblTotal.Location = new System.Drawing.Point(270, 16);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblTotal.Size = new System.Drawing.Size(180, 47);
+            this.lblTotal.TabIndex = 5;
+            this.lblTotal.Text = "0.00";
+            // 
+            // lblTotal_
+            // 
+            this.lblTotal_.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotal_.AutoSize = true;
+            this.lblTotal_.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblTotal_.Location = new System.Drawing.Point(216, 16);
+            this.lblTotal_.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotal_.Name = "lblTotal_";
+            this.lblTotal_.Size = new System.Drawing.Size(36, 13);
+            this.lblTotal_.TabIndex = 4;
+            this.lblTotal_.Text = "Total";
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1});
+            this.layoutControlGroup1.Name = "Root";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(931, 678);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.splitContainerControlComanda;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(907, 652);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // frmComanda
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(931, 783);
+            this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.mainRibbonControl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "frmComanda";
+            this.Ribbon = this.mainRibbonControl;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Comanda";
+            ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlComanda.Panel1)).EndInit();
+            this.splitContainerControlComanda.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlComanda.Panel2)).EndInit();
+            this.splitContainerControlComanda.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlComanda)).EndInit();
+            this.splitContainerControlComanda.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlArticulos.Panel1)).EndInit();
+            this.splitContainerControlArticulos.Panel1.ResumeLayout(false);
+            this.splitContainerControlArticulos.Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlArticulos.Panel2)).EndInit();
+            this.splitContainerControlArticulos.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlArticulos)).EndInit();
+            this.splitContainerControlArticulos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbVendedores.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtArticulo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlPartidas.Panel1)).EndInit();
+            this.splitContainerControlPartidas.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlPartidas.Panel2)).EndInit();
+            this.splitContainerControlPartidas.Panel2.ResumeLayout(false);
+            this.splitContainerControlPartidas.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControlPartidas)).EndInit();
+            this.splitContainerControlPartidas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcPartidas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPartidas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbMonedas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
     }
 }

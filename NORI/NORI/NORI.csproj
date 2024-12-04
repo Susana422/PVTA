@@ -110,7 +110,10 @@
     </Reference>
     <Reference Include="DevExpress.XtraGrid.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files\DevExpress 24.1\Components\Bin\Framework\DevExpress.XtraGrid.v24.1.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\DevExpress 24.1\Components\Bin\Framework\DevExpress.XtraGrid.v24.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v24.1.resources">
+      <HintPath>..\..\..\..\..\..\Downloads\DevExpressDefaultTranslations_2024.1_es-MX\DevExpress.XtraGrid.v24.1.resources.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraLayout.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -655,6 +658,12 @@
     <Compile Include="frmResultadosBusqueda.Designer.cs">
       <DependentUpon>frmResultadosBusqueda.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmResultadosArticulosAlternativos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmResultadosArticulosAlternativos.Designer.cs">
+      <DependentUpon>frmResultadosArticulosAlternativos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmResultadosBusquedaArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1101,6 +1110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmResultadosBusqueda.resx">
       <DependentUpon>frmResultadosBusqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmResultadosArticulosAlternativos.resx">
+      <DependentUpon>frmResultadosArticulosAlternativos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmResultadosBusquedaArticulos.resx">
       <DependentUpon>frmResultadosBusquedaArticulos.cs</DependentUpon>

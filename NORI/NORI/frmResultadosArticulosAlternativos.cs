@@ -21,8 +21,7 @@ using NoriSDK;
 
 namespace NORI
 {
-
-    public partial class frmResultadosBusquedaArticulos : RibbonForm
+    public partial class frmResultadosArticulosAlternativos : RibbonForm
     {
         private IContainer components = null;
 
@@ -50,7 +49,7 @@ namespace NORI
 
         public List<int> filas { get; internal set; }
 
-        public frmResultadosBusquedaArticulos(object resultados, bool seleccion_multiple = false)
+        public frmResultadosArticulosAlternativos(object resultados, bool seleccion_multiple = false)
         {
             try
             {

@@ -240,6 +240,7 @@ namespace NORI
             // 
             this.accordionControlElementGestion.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElementDefiniciones});
+            this.accordionControlElementGestion.Expanded = true;
             this.accordionControlElementGestion.Name = "accordionControlElementGestion";
             this.accordionControlElementGestion.Text = "Gestión";
             // 
@@ -251,6 +252,7 @@ namespace NORI
             this.accordionControlElementFinanzas,
             this.accordionControlElementGestionSociosNegocios,
             this.accordionControlElementGestionInventario});
+            this.accordionControlElementDefiniciones.Expanded = true;
             this.accordionControlElementDefiniciones.Name = "accordionControlElementDefiniciones";
             this.accordionControlElementDefiniciones.Text = "Definiciones";
             // 

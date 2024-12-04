@@ -492,6 +492,7 @@ namespace NORI
                 gcInventario.DataSource = Utilidades.EjecutarQuery($"SELECT * FROM DatosInventario WHERE articulo_id = {articulo.id}");
                 gcUbicaciones.DataSource = Utilidades.EjecutarQuery($"SELECT * FROM ubicaciones_articulos WHERE articulo_id = {articulo.id}");
                 gcArticulosSociosCFDI.DataSource = Utilidades.EjecutarQuery($"SELECT * FROM articulos_socios_cfdi WHERE articulo_id = {articulo.id}");
+                dtgrvArticulosAlternativos.DataSource = Utilidades.EjecutarQuery($"SELECT alt_articulo FROM articulos_alternativos WHERE articulo = '{articulo.sku}'");
             }
             ((Control)(object)lblID).Text = articulo.id.ToString();
             ((BaseEdit)cbGruposArticulos).EditValue = articulo.grupo_articulo_id;
@@ -584,7 +585,10 @@ namespace NORI
             CargarGrupos();
             CargarImagenes();
             CargarWeb();
+
         }
+
+
 
         private void CargarPrecio()
         {

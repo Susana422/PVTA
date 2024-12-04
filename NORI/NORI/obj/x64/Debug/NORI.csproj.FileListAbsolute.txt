@@ -523,3 +523,5 @@ C:\Users\Programador\Documents\GitHub\DTM\PVTA\NORI\NORI\obj\x64\Debug\NORI.cspr
 C:\Users\Programador\Documents\GitHub\DTM\PVTA\NORI\NORI\obj\x64\Debug\NORI.csproj.Up2Date
 C:\Users\Programador\Documents\GitHub\DTM\PVTA\NORI\NORI\obj\x64\Debug\NORI.exe
 C:\Users\Programador\Documents\GitHub\DTM\PVTA\NORI\NORI\obj\x64\Debug\NORI.pdb
+C:\Users\Programador\Documents\GitHub\DTM\PVTA\NORI\NORI\obj\x64\Debug\NORI.frmResultadosArticulosAlternativos.resources
+C:\Users\Programador\Documents\GitHub\DTM\PVTA\NORI\NORI\bin\x64\Debug\DevExpress.XtraGrid.v24.1.resources.dll

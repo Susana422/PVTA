@@ -18,7 +18,7 @@ using NoriSDK;
 
 namespace NORI
 {
-    partial class frmResultadosBusquedaArticulos
+    partial class frmResultadosArticulosAlternativos
     {
         protected override void Dispose(bool disposing)
         {
@@ -159,7 +159,7 @@ namespace NORI
             this.pbImagen.TabIndex = 3;
             this.pbImagen.TabStop = false;
             // 
-            // frmResultadosBusquedaArticulos
+            // frmResultadosArticulosAlternativos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -170,12 +170,12 @@ namespace NORI
             this.IconOptions.Image = global::componentResourceManager.Resources.logo;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmResultadosBusquedaArticulos";
+            this.Name = "frmResultadosArticulosAlternativos";
             this.Ribbon = this.ribbonControl1;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar1;
-            this.Text = "Resultados de busqueda";
+            this.Text = "Articulos Alternativos ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmResultadosBusquedaArticulos_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();

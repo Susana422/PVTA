@@ -2961,6 +2961,56 @@ namespace NORI
                 txtArticulo.Enabled = true;
             }
         }
+        private void buscarArticulosAlternativos(string q)
+        {
+            try
+            {
+                string text = q;
+                decimal cantidad = 1m;
+                if (text.Contains("*"))
+                {
+                    cantidad = decimal.Parse(text.Split('*')[0]);
+                    text = text.Split('*')[1];
+                }
+                ConsultaPersonalizada consultaPersonalizada = ConsultaPersonalizada.Obtener("txtArticulo");
+                consultaPersonalizada.query = "SELECT articulos.id, sku as sku_articulo, articulos.nombre, (SELECT SUM(stock) FROM inventario WHERE articulo_id = articulos.id) stock, precios.precio, monedas.codigo as moneda FROM articulos JOIN precios ON precios.articulo_id = articulos.id JOIN monedas ON monedas.id = precios.moneda_id WHERE articulos.sku IN (SELECT alt_articulo FROM articulos_alternativos where articulo='{q}') AND precios.lista_precio_id = {lista_precio_id} AND venta = 1 AND articulos.activo = 1";
+                
+                //consultaPersonalizada.query = consultaPersonalizada.query.Replace("{q}", text.Replace(" ", "%"));
+                consultaPersonalizada.query = consultaPersonalizada.query.Replace("{q}", text);
+                consultaPersonalizada.query = consultaPersonalizada.query.Replace("{socio_id}", documento.socio_id.ToString());
+                consultaPersonalizada.query = consultaPersonalizada.query.Replace("{lista_precio_id}", documento.lista_precio_id.ToString());
+                consultaPersonalizada.query = consultaPersonalizada.query.Replace("{condicion_pago_id}", documento.condicion_pago_id.ToString());
+                consultaPersonalizada.query = consultaPersonalizada.query.Replace("{metodo_pago_id}", documento.metodo_pago_id.ToString());
+                consultaPersonalizada.query = consultaPersonalizada.query.Replace("{moneda_id}", documento.moneda_id.ToString());
+                DataTable articulos = consultaPersonalizada.Ejecutar();
+                if (articulos.Rows.Count > 0)
+                {
+
+                    frmResultadosArticulosAlternativos frmResultadosBusquedaArticulosAlt = new frmResultadosArticulosAlternativos(articulos, seleccion_multiple: true);
+                    DialogResult dialogResult = frmResultadosBusquedaArticulosAlt.ShowDialog();
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        Cursor = Cursors.WaitCursor;
+                        frmResultadosBusquedaArticulosAlt.filas.ForEach(delegate (int x)
+                        {
+                            AgregarPartida($"{cantidad}*{articulos.Rows[x][1].ToString()}");
+                        });
+                        Calcular();
+                        Cursor = Cursors.Default;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"No se encontraron resultados para {text}", Text);
+                }
+            }
+            catch (Exception ex2)
+            {
+                Exception ex = ex2;
+                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+        
+        }
         private async void AgregarPartida(string q)
         {
             try
@@ -2969,7 +3019,21 @@ namespace NORI
                 {
                     if (!(await Task.Run(() => documento.AgregarPartida(q))))
                     {
-                        continue;
+                        if (NoriSDK.Nori.ObtenerUltimoError().Message == "El artículo no se puede vender.") {
+                            DialogResult result = MessageBox.Show("El artículo que buscas no está disponible, pero te ofrecemos algunas alternativas.", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (result == DialogResult.Yes)
+                            {
+                                buscarArticulosAlternativos(q);
+                            }
+                            else {
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            continue;
+                        }
+
                     }
                     txtArticulo.Text = string.Empty;
                     try

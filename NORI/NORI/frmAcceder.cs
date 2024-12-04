@@ -83,12 +83,17 @@ namespace NORI
                 CargarConexiones();
                 if (conexiones.Count != 0)
                 {
-                    var conexionesLista = conexiones.Cast<ConnectionStringSettings>().ToList();
-                    var conexionesSinPrimerItem = conexionesLista.Skip(1).ToList();
-                    ((RepositoryItemLookUpEditBase)cbConexiones.Properties).DataSource = conexionesSinPrimerItem;
+                    //var conexionesLista = conexiones.Cast<ConnectionStringSettings>().ToList();
+                    //var conexionesSinPrimerItem = conexionesLista.Skip(1).ToList();
+                    ((RepositoryItemLookUpEditBase)cbConexiones.Properties).DataSource = conexiones;
                     ((RepositoryItemLookUpEditBase)cbConexiones.Properties).ValueMember = "Name";
                     ((RepositoryItemLookUpEditBase)cbConexiones.Properties).DisplayMember = "Name";
-                    ((BaseEdit)cbConexiones).EditValue = conexionesSinPrimerItem[0].Name;
+                    //((BaseEdit)cbConexiones).EditValue = conexiones;
+                    if (conexiones.Count > 0)
+                    {
+                        cbConexiones.EditValue = conexiones[0].Name;  // Establece el primer valor
+                    }
+
                 }
             }
             catch
@@ -204,7 +209,8 @@ namespace NORI
 
         private void cbConexiones_EditValueChanged(object sender, EventArgs e)
         {
-            Program.Nori.Conexion = new SqlConnectionStringBuilder(conexiones[((BaseEdit)cbConexiones).EditValue.ToString()].ConnectionString);
+            //string  xx = cbConexiones.EditValue.ToString();
+            Program.Nori.Conexion = new SqlConnectionStringBuilder(conexiones[cbConexiones.EditValue.ToString()].ConnectionString);
         }
 
         private void frmAcceder_Load(object sender, EventArgs e)

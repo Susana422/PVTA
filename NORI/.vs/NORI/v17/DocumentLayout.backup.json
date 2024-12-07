@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|c:\\users\\programador\\documents\\github\\dtm\\pvta\\nori\\nori\\frmdocumentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|solutionrelative:nori\\frmdocumentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|c:\\users\\programador\\documents\\github\\dtm\\pvta\\nori\\nori\\frmresultadosarticulosalternativos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|solutionrelative:nori\\frmresultadosarticulosalternativos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|c:\\users\\programador\\documents\\github\\dtm\\pvta\\nori\\nori\\frmdocumentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|solutionrelative:nori\\frmdocumentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,26 +23,13 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmDocumentos.cs",
+              "Title": "frmDocumentos.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmDocumentos.cs",
               "RelativeDocumentMoniker": "NORI\\frmDocumentos.cs",
-              "ToolTip": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmDocumentos.cs",
-              "RelativeToolTip": "NORI\\frmDocumentos.cs",
-              "ViewState": "AgIAAL8LAAAAAAAAAAAIwNILAAAdAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmDocumentos.cs [Dise\u00F1o]",
+              "RelativeToolTip": "NORI\\frmDocumentos.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T17:33:23.47Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmResultadosArticulosAlternativos.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmResultadosArticulosAlternativos.cs",
-              "RelativeDocumentMoniker": "NORI\\frmResultadosArticulosAlternativos.cs",
-              "ToolTip": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmResultadosArticulosAlternativos.cs [Dise\u00F1o]",
-              "RelativeToolTip": "NORI\\frmResultadosArticulosAlternativos.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T17:58:21.067Z",
+              "WhenOpened": "2024-12-07T16:35:39.776Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

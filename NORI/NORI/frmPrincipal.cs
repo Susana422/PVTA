@@ -431,6 +431,8 @@ namespace NORI
                 {
                     frmEscritorio escritorio = new frmEscritorio(Program.Nori.UsuarioAutenticado.escritorio);
                     AbrirFormulario((Form)(object)escritorio, dialog: false);
+                    
+
                 }
             }
             catch (Exception ex2)
@@ -643,8 +645,14 @@ namespace NORI
                 (((Control)(object)val).Parent as Form).StartPosition = FormStartPosition.CenterScreen;
                 ((Control)(object)val).Controls.Add(form);
                 ((Control)(object)val).Text = form.Text;
-                val.FloatSize = size;
-                val.Size = size;
+                //val.Options.ShowCloseButton = false;
+                //val.FloatSize = size;
+                //val.Size = size;
+                // Deshabilitar el botón de cierre
+                val.Options.ShowCloseButton = false;  // Oculta el botón de cierre
+                val.Options.FloatOnDblClick = false;  // Impide que el panel flote al hacer doble clic
+                pictureBox1.Visible = false;
+
                 if (!dialog)
                 {
                     val.DockedAsTabbedDocument = true;

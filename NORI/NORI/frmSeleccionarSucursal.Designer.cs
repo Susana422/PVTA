@@ -74,17 +74,17 @@ namespace NORI
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = null;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlTop.Size = new System.Drawing.Size(350, 0);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(5);
+            this.barDockControlTop.Size = new System.Drawing.Size(445, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 315);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 351);
             this.barDockControlBottom.Manager = null;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(350, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(5);
+            this.barDockControlBottom.Size = new System.Drawing.Size(445, 0);
             // 
             // barDockControlLeft
             // 
@@ -92,43 +92,43 @@ namespace NORI
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = null;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 315);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(5);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 351);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(350, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(445, 0);
             this.barDockControlRight.Manager = null;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 315);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(5);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 351);
             // 
             // ribbonControl1
             // 
             this.ribbonControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
-            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 39, 35, 39);
+            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(40, 39, 40, 39);
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5);
             this.ribbonControl1.MaxItemId = 2;
             this.ribbonControl1.Name = "ribbonControl1";
-            this.ribbonControl1.OptionsMenuMinWidth = 385;
+            this.ribbonControl1.OptionsMenuMinWidth = 440;
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl1.Size = new System.Drawing.Size(350, 50);
+            this.ribbonControl1.Size = new System.Drawing.Size(445, 71);
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.panel1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 50);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 71);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(5);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(350, 265);
+            this.layoutControl1.Size = new System.Drawing.Size(445, 280);
             this.layoutControl1.TabIndex = 6;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -139,31 +139,31 @@ namespace NORI
             this.panel1.Controls.Add(this.btnAceptar);
             this.panel1.Controls.Add(this.lblAcceder);
             this.panel1.Controls.Add(this.lblUsuario);
-            this.panel1.Location = new System.Drawing.Point(6, 6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(338, 253);
+            this.panel1.Size = new System.Drawing.Size(421, 256);
             this.panel1.TabIndex = 0;
             // 
             // cbAlmacenes
             // 
-            this.cbAlmacenes.Location = new System.Drawing.Point(16, 72);
-            this.cbAlmacenes.Margin = new System.Windows.Forms.Padding(4);
+            this.cbAlmacenes.Location = new System.Drawing.Point(18, 73);
+            this.cbAlmacenes.Margin = new System.Windows.Forms.Padding(5);
             this.cbAlmacenes.Name = "cbAlmacenes";
             this.cbAlmacenes.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbAlmacenes.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 23, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbAlmacenes.Size = new System.Drawing.Size(292, 24);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 26, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbAlmacenes.Size = new System.Drawing.Size(334, 26);
             this.cbAlmacenes.TabIndex = 10;
             // 
             // lblConexion
             // 
             this.lblConexion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblConexion.Location = new System.Drawing.Point(16, 44);
-            this.lblConexion.Margin = new System.Windows.Forms.Padding(4);
+            this.lblConexion.Location = new System.Drawing.Point(18, 44);
+            this.lblConexion.Margin = new System.Windows.Forms.Padding(5);
             this.lblConexion.Name = "lblConexion";
             this.lblConexion.Size = new System.Drawing.Size(0, 0);
             this.lblConexion.TabIndex = 9;
@@ -174,10 +174,10 @@ namespace NORI
             this.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(182, 162);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAceptar.Location = new System.Drawing.Point(208, 162);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(5);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(126, 35);
+            this.btnAceptar.Size = new System.Drawing.Size(144, 35);
             this.btnAceptar.TabIndex = 2;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -187,8 +187,8 @@ namespace NORI
             // 
             this.lblAcceder.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAcceder.Appearance.Options.UseFont = true;
-            this.lblAcceder.Location = new System.Drawing.Point(16, 7);
-            this.lblAcceder.Margin = new System.Windows.Forms.Padding(4);
+            this.lblAcceder.Location = new System.Drawing.Point(18, 7);
+            this.lblAcceder.Margin = new System.Windows.Forms.Padding(5);
             this.lblAcceder.Name = "lblAcceder";
             this.lblAcceder.Size = new System.Drawing.Size(164, 19);
             this.lblAcceder.TabIndex = 6;
@@ -196,10 +196,10 @@ namespace NORI
             // 
             // lblUsuario
             // 
-            this.lblUsuario.Location = new System.Drawing.Point(16, 47);
-            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.lblUsuario.Location = new System.Drawing.Point(18, 46);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(5);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(54, 17);
+            this.lblUsuario.Size = new System.Drawing.Size(55, 17);
             this.lblUsuario.TabIndex = 3;
             this.lblUsuario.Text = "Almacén";
             // 
@@ -210,7 +210,7 @@ namespace NORI
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(350, 265);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(445, 280);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -218,21 +218,21 @@ namespace NORI
             this.layoutControlItem1.Control = this.panel1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(340, 255);
+            this.layoutControlItem1.Size = new System.Drawing.Size(425, 260);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // defaultLookAndFeel1
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinMaskColor = System.Drawing.Color.Azure;
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2019 Colorful";
+            this.defaultLookAndFeel1.LookAndFeel.SkinMaskColor = System.Drawing.Color.Cyan;
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "WXI";
             // 
             // frmSeleccionarSucursal
             // 
             this.AcceptButton = this.btnAceptar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 315);
+            this.ClientSize = new System.Drawing.Size(445, 351);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -241,7 +241,7 @@ namespace NORI
             this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Image = global::componentResourceManager.Resources.logo;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.Name = "frmSeleccionarSucursal";
             this.Ribbon = this.ribbonControl1;

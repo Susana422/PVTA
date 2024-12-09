@@ -134,7 +134,7 @@ namespace NORI
                 {
                     if (Program.Nori.Configuracion.tema.Length > 0)
                     {
-                        defaultLookAndFeel1.LookAndFeel.SkinMaskColor = Color.FromArgb(Convert.ToInt32(Program.Nori.Configuracion.tema));
+                        //defaultLookAndFeel1.LookAndFeel.SkinMaskColor = Color.FromArgb(Convert.ToInt32(Program.Nori.Configuracion.tema));
                     }
                 }
                 catch

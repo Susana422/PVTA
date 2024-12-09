@@ -83,16 +83,16 @@ namespace NORI
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = null;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControlTop.Size = new System.Drawing.Size(350, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(383, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 363);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 398);
             this.barDockControlBottom.Manager = null;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControlBottom.Size = new System.Drawing.Size(350, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(383, 0);
             // 
             // barDockControlLeft
             // 
@@ -101,16 +101,16 @@ namespace NORI
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = null;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 363);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 398);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(350, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(383, 0);
             this.barDockControlRight.Manager = null;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 363);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 398);
             // 
             // layoutControl1
             // 
@@ -120,7 +120,7 @@ namespace NORI
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(5);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(350, 292);
+            this.layoutControl1.Size = new System.Drawing.Size(383, 327);
             this.layoutControl1.TabIndex = 6;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -138,7 +138,7 @@ namespace NORI
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(326, 268);
+            this.panel1.Size = new System.Drawing.Size(359, 303);
             this.panel1.TabIndex = 0;
             // 
             // cbConexiones
@@ -160,7 +160,7 @@ namespace NORI
             this.lblConexion.Location = new System.Drawing.Point(16, 39);
             this.lblConexion.Margin = new System.Windows.Forms.Padding(5);
             this.lblConexion.Name = "lblConexion";
-            this.lblConexion.Size = new System.Drawing.Size(56, 17);
+            this.lblConexion.Size = new System.Drawing.Size(58, 17);
             this.lblConexion.TabIndex = 9;
             this.lblConexion.Text = "Conexión";
             this.lblConexion.Click += new System.EventHandler(this.lblConexion_Click);
@@ -206,7 +206,7 @@ namespace NORI
             this.labelControl1.Location = new System.Drawing.Point(16, 143);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(5);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(69, 17);
+            this.labelControl1.Size = new System.Drawing.Size(70, 17);
             this.labelControl1.TabIndex = 5;
             this.labelControl1.Text = "Contraseña";
             // 
@@ -224,7 +224,7 @@ namespace NORI
             this.lblUsuario.Location = new System.Drawing.Point(16, 91);
             this.lblUsuario.Margin = new System.Windows.Forms.Padding(5);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(43, 17);
+            this.lblUsuario.Size = new System.Drawing.Size(46, 17);
             this.lblUsuario.TabIndex = 3;
             this.lblUsuario.Text = "Usuario";
             // 
@@ -235,7 +235,7 @@ namespace NORI
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(350, 292);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(383, 327);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -243,7 +243,7 @@ namespace NORI
             this.layoutControlItem1.Control = this.panel1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(330, 272);
+            this.layoutControlItem1.Size = new System.Drawing.Size(363, 307);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -268,7 +268,7 @@ namespace NORI
             this.ribbonControl1.OptionsMenuMinWidth = 385;
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office365;
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl1.Size = new System.Drawing.Size(350, 71);
+            this.ribbonControl1.Size = new System.Drawing.Size(383, 71);
             // 
             // frmAcceder
             // 
@@ -276,7 +276,7 @@ namespace NORI
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 363);
+            this.ClientSize = new System.Drawing.Size(383, 398);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.barDockControlLeft);

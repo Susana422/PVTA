@@ -129,7 +129,11 @@ namespace NORI
                 ((RepositoryItemLookUpEditBase)cbConexiones.Properties).DataSource = conexionesSinPrimerItem;
                 ((RepositoryItemLookUpEditBase)cbConexiones.Properties).ValueMember = "Name";
                 ((RepositoryItemLookUpEditBase)cbConexiones.Properties).DisplayMember = "Name";
-                ((BaseEdit)cbConexiones).EditValue = conexionesSinPrimerItem[0].Name;
+                // ((BaseEdit)cbConexiones).EditValue = conexionesSinPrimerItem[0].Name;
+                if (conexiones.Count > 0)
+                {
+                    cbConexiones.EditValue = conexiones[0].Name;  // Establece el primer valor
+                }
             }
         }
 

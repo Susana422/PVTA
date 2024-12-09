@@ -653,6 +653,7 @@ namespace NORI
             }
             if (!dialog)
             {
+                pictureBox1.Visible = false;
                 form.Show();
             }
             else if (!flag)

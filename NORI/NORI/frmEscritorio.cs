@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using DevExpress.DashboardWin;
@@ -15,10 +16,21 @@ namespace NORI
         public frmEscritorio(string escritorio)
         {
             InitializeComponent();
+            InitializeWebView2();
             this.MetodoDinamico();
-            dashboardViewer1.LoadDashboard(escritorio);
+            //dashboardViewer1.LoadDashboard(escritorio);
+        }
+        private async void InitializeWebView2()
+        {
+            // Inicializar WebView2
+
+            await webView21.EnsureCoreWebView2Async(null);
+
+            // Cargar la página de Zoho Analytics
+            webView21.Source = new Uri("https://analytics.zoho.com/open-view/2997752000000059897?ZOHO_CRITERIA=%22FACTURACION%22.%22idvendedor%22=15");
         }
 
-        
+
+
     }
 }

@@ -85,16 +85,16 @@ namespace NORI
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = null;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControlTop.Size = new System.Drawing.Size(638, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(632, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 566);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 563);
             this.barDockControlBottom.Manager = null;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControlBottom.Size = new System.Drawing.Size(638, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(632, 0);
             // 
             // barDockControlLeft
             // 
@@ -103,26 +103,26 @@ namespace NORI
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = null;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 566);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 563);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(638, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(632, 0);
             this.barDockControlRight.Manager = null;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 566);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 563);
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.panel1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 71);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 52);
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(5);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(638, 495);
+            this.layoutControl1.Size = new System.Drawing.Size(632, 511);
             this.layoutControl1.TabIndex = 6;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -138,10 +138,10 @@ namespace NORI
             this.panel1.Controls.Add(this.labelControl1);
             this.panel1.Controls.Add(this.txtContraseña);
             this.panel1.Controls.Add(this.lblUsuario);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(6, 6);
             this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(614, 471);
+            this.panel1.Size = new System.Drawing.Size(620, 499);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -163,7 +163,7 @@ namespace NORI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbConexiones.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "Nombre", 22, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbConexiones.Size = new System.Drawing.Size(468, 26);
+            this.cbConexiones.Size = new System.Drawing.Size(468, 24);
             this.cbConexiones.TabIndex = 98;
             this.cbConexiones.EditValueChanged += new System.EventHandler(this.cbConexiones_EditValueChanged);
             // 
@@ -186,7 +186,7 @@ namespace NORI
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(5);
             this.txtUsuario.MenuManager = this.tabFormDefaultManager1;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(468, 26);
+            this.txtUsuario.Size = new System.Drawing.Size(468, 24);
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsuario_KeyDown);
             // 
@@ -234,7 +234,7 @@ namespace NORI
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(5);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Properties.PasswordChar = '*';
-            this.txtContraseña.Size = new System.Drawing.Size(468, 26);
+            this.txtContraseña.Size = new System.Drawing.Size(468, 24);
             this.txtContraseña.TabIndex = 1;
             // 
             // lblUsuario
@@ -255,7 +255,7 @@ namespace NORI
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(638, 495);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(632, 511);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -263,14 +263,14 @@ namespace NORI
             this.layoutControlItem1.Control = this.panel1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(618, 475);
+            this.layoutControlItem1.Size = new System.Drawing.Size(622, 501);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinMaskColor = System.Drawing.Color.Cyan;
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "WXI";
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Glass Oceans";
             // 
             // ribbonControl1
             // 
@@ -288,7 +288,7 @@ namespace NORI
             this.ribbonControl1.OptionsMenuMinWidth = 385;
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office365;
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl1.Size = new System.Drawing.Size(638, 71);
+            this.ribbonControl1.Size = new System.Drawing.Size(632, 52);
             // 
             // frmAcceder
             // 
@@ -298,7 +298,7 @@ namespace NORI
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 566);
+            this.ClientSize = new System.Drawing.Size(632, 563);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.barDockControlLeft);

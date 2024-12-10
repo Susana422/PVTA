@@ -15,11 +15,22 @@ namespace NORI
     {
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
+            try
             {
                 components.Dispose();
+                if (disposing && components != null)
+                {
+                    components.Dispose();
+                }
+                // Dispose(disposing);
             }
-             this.Dispose(disposing);
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                base.Dispose(disposing);
+            }
         }
 
         private void InitializeComponent()
@@ -32,27 +43,28 @@ namespace NORI
             // 
             // ribbonControl1
             // 
-            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 39, 35, 39);
+            this.ribbonControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
+            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(40, 39, 40, 39);
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.ribbonControl1.MaxItemId = 1;
             this.ribbonControl1.Name = "ribbonControl1";
-            this.ribbonControl1.OptionsMenuMinWidth = 385;
+            this.ribbonControl1.OptionsMenuMinWidth = 440;
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl1.Size = new System.Drawing.Size(457, 50);
+            this.ribbonControl1.Size = new System.Drawing.Size(522, 50);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 397);
-            this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 396);
+            this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(457, 24);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(522, 25);
             // 
             // tv
             // 
@@ -60,22 +72,22 @@ namespace NORI
             this.tv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tv.LineColor = System.Drawing.Color.DarkGray;
             this.tv.Location = new System.Drawing.Point(0, 50);
-            this.tv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tv.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tv.Name = "tv";
             this.tv.ShowPlusMinus = false;
-            this.tv.Size = new System.Drawing.Size(457, 347);
+            this.tv.Size = new System.Drawing.Size(522, 346);
             this.tv.TabIndex = 2;
             // 
             // frmMapaRelaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 421);
+            this.ClientSize = new System.Drawing.Size(522, 421);
             this.Controls.Add(this.tv);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.IconOptions.Image = global::componentResourceManager.Resources.logo;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmMapaRelaciones";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

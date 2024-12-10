@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|c:\\users\\programador\\documents\\github\\dtm\\pvta\\nori\\nori\\frmconexiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|solutionrelative:nori\\frmconexiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|c:\\users\\programador\\documents\\github\\dtm\\pvta\\nori\\nori\\frmconexiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|solutionrelative:nori\\frmconexiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmConexiones.cs",
+              "DocumentMoniker": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmConexiones.cs",
+              "RelativeDocumentMoniker": "NORI\\frmConexiones.cs",
+              "ToolTip": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmConexiones.cs",
+              "RelativeToolTip": "NORI\\frmConexiones.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAAAHQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T23:13:01.647Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{9d5a74bd-a78d-4b6b-9e31-c8b9b9ee2715}"
@@ -124,92 +146,16 @@
               "Name": "ST:0:0:{488083d1-7a81-4fe2-82fa-d0589ccf7ff8}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{7fd6bc45-987c-4283-adda-77c66429cfb4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3f3117b2-944c-4a4d-a4d1-afac85ca5e26}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0a12b822-0fa2-4ef4-a493-5b6ad018a660}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eade1de4-f27e-4f79-a3f9-d287665bbdd7}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{22566f78-62ff-46c8-b2fc-7b049a786cb6}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{f27d795c-22e4-4270-b0bc-5a6502ee7501}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{57e94a9a-ebf3-4f5c-9243-68abf0bfdf60}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3fa48cd9-51f7-4eac-af23-0fb0ce6d91e6}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1f580677-fe56-4ae0-8357-c20f614ab418}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{7c5fbbf5-6aee-40d7-9a45-d24a04f0801e}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{31bc7056-a5ff-4c7f-8068-ca949b202412}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1fa84307-f579-4de9-81e7-7bdbd6d4f9f7}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{fcfcc486-bc9e-4d20-a482-a6048b9cf952}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eb265683-3951-415a-974b-679c8bf00adb}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d22c9c43-cb94-4604-9142-c72f8507100f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{44ee3866-7a1a-43a4-bbaa-3cb9c9008a70}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{a10e5277-97eb-455f-9ba5-7eca39b1998f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{fae6b0a4-6359-4456-bfe3-021a2217b17f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1ba2fd20-9143-4128-a6b8-dc59f2350b8e}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ceba002-e888-446b-8730-aa714b77052e}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{ec67c115-df87-453a-80a6-007c0cd34d39}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{c90738fd-59a9-4c19-b807-81216673a845}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmConexiones.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmConexiones.cs",
+              "RelativeDocumentMoniker": "NORI\\frmConexiones.cs",
+              "ToolTip": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmConexiones.cs [Dise\u00F1o]",
+              "RelativeToolTip": "NORI\\frmConexiones.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T23:14:18.197Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

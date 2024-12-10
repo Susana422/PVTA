@@ -1340,7 +1340,19 @@ namespace NORI
             Permisos();
         }
 
-      
+        private void lblMetodosPago_Click(object sender, EventArgs e)
+        {
+            frmMetodosPago frmPropietarios2 = new frmMetodosPago();
+            ((Form)(object)frmPropietarios2).ShowDialog();
+            CargarListas();
+        }
+
+        private void lblVendedores_Click(object sender, EventArgs e)
+        {
+            frmVendedores frmVendedores = new frmVendedores();
+            ((Form)(object)frmVendedores).ShowDialog();
+            CargarListas();
+        }
     }
 
 }

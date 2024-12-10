@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|c:\\users\\programador\\documents\\github\\dtm\\pvta\\nori\\nori\\frmconexiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|solutionrelative:nori\\frmconexiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|c:\\users\\programador\\documents\\github\\dtm\\pvta\\nori\\nori\\frmacceder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|solutionrelative:nori\\frmacceder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|c:\\users\\programador\\documents\\github\\dtm\\pvta\\nori\\nori\\frmconexiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|solutionrelative:nori\\frmconexiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|c:\\users\\programador\\documents\\github\\dtm\\pvta\\nori\\nori\\frmseleccionarsucursal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|NORI\\NORI.csproj|solutionrelative:nori\\frmseleccionarsucursal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,21 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 28,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmConexiones.cs",
-              "DocumentMoniker": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmConexiones.cs",
-              "RelativeDocumentMoniker": "NORI\\frmConexiones.cs",
-              "ToolTip": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmConexiones.cs",
-              "RelativeToolTip": "NORI\\frmConexiones.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAAAHQAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T23:13:01.647Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{9d5a74bd-a78d-4b6b-9e31-c8b9b9ee2715}"
@@ -147,14 +134,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmConexiones.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmConexiones.cs",
-              "RelativeDocumentMoniker": "NORI\\frmConexiones.cs",
-              "ToolTip": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmConexiones.cs [Dise\u00F1o]",
-              "RelativeToolTip": "NORI\\frmConexiones.cs [Dise\u00F1o]",
+              "DocumentIndex": 0,
+              "Title": "frmAcceder.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmAcceder.cs",
+              "RelativeDocumentMoniker": "NORI\\frmAcceder.cs",
+              "ToolTip": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmAcceder.cs [Dise\u00F1o]",
+              "RelativeToolTip": "NORI\\frmAcceder.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T23:14:18.197Z",
+              "WhenOpened": "2024-12-09T23:11:04.021Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmSeleccionarSucursal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmSeleccionarSucursal.cs",
+              "RelativeDocumentMoniker": "NORI\\frmSeleccionarSucursal.cs",
+              "ToolTip": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\NORI\\NORI\\frmSeleccionarSucursal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "NORI\\frmSeleccionarSucursal.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T23:06:45.507Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

@@ -134,6 +134,7 @@ namespace NORI
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.cbAlmacenes);
             this.panel1.Controls.Add(this.lblConexion);
             this.panel1.Controls.Add(this.btnAceptar);

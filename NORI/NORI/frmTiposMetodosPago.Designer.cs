@@ -69,7 +69,7 @@ namespace NORI
             this.cbMonedas = new DevExpress.XtraEditors.LookUpEdit();
             this.lblMonedas = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.cbMetodosPago = new DevExpress.XtraEditors.LookUpEdit();
-            this.hyperlinkLabelControl1 = new DevExpress.XtraEditors.HyperlinkLabelControl();
+            this.metdosPago = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
@@ -93,7 +93,8 @@ namespace NORI
             // 
             // mainRibbonControl
             // 
-            this.mainRibbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 39, 35, 39);
+            this.mainRibbonControl.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
+            this.mainRibbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(40, 39, 40, 39);
             this.mainRibbonControl.ExpandCollapseItem.Id = 0;
             this.mainRibbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.mainRibbonControl.ExpandCollapseItem,
@@ -110,16 +111,16 @@ namespace NORI
             this.bbiNuevo,
             this.bbiUsuarios});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbonControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mainRibbonControl.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.mainRibbonControl.MaxItemId = 3;
             this.mainRibbonControl.Name = "mainRibbonControl";
-            this.mainRibbonControl.OptionsMenuMinWidth = 385;
+            this.mainRibbonControl.OptionsMenuMinWidth = 440;
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.mainRibbonPage,
             this.ribbonPageHerramientas});
             this.mainRibbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.mainRibbonControl.Size = new System.Drawing.Size(668, 79);
+            this.mainRibbonControl.Size = new System.Drawing.Size(763, 106);
             this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bbiGuardar
@@ -267,57 +268,57 @@ namespace NORI
             // 
             // lblID
             // 
-            this.lblID.Location = new System.Drawing.Point(399, 21);
-            this.lblID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblID.Location = new System.Drawing.Point(456, 21);
+            this.lblID.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(7, 17);
+            this.lblID.Size = new System.Drawing.Size(9, 17);
             this.lblID.TabIndex = 47;
             this.lblID.Text = "0";
             // 
             // lblNombre
             // 
-            this.lblNombre.Location = new System.Drawing.Point(14, 89);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblNombre.Location = new System.Drawing.Point(16, 89);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(48, 17);
+            this.lblNombre.Size = new System.Drawing.Size(52, 17);
             this.lblNombre.TabIndex = 46;
             this.lblNombre.Text = "Nombre";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(133, 85);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Location = new System.Drawing.Point(152, 85);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtNombre.MenuManager = this.mainRibbonControl;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Properties.MaxLength = 100;
-            this.txtNombre.Size = new System.Drawing.Size(491, 24);
+            this.txtNombre.Size = new System.Drawing.Size(561, 26);
             this.txtNombre.TabIndex = 2;
             // 
             // cbActivo
             // 
-            this.cbActivo.Location = new System.Drawing.Point(14, 259);
-            this.cbActivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbActivo.Location = new System.Drawing.Point(16, 259);
+            this.cbActivo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbActivo.MenuManager = this.mainRibbonControl;
             this.cbActivo.Name = "cbActivo";
             this.cbActivo.Properties.Caption = "Activo";
-            this.cbActivo.Size = new System.Drawing.Size(140, 21);
+            this.cbActivo.Size = new System.Drawing.Size(160, 21);
             this.cbActivo.TabIndex = 10;
             // 
             // lblFechaActualizacion
             // 
-            this.lblFechaActualizacion.Location = new System.Drawing.Point(559, 263);
-            this.lblFechaActualizacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblFechaActualizacion.Location = new System.Drawing.Point(639, 263);
+            this.lblFechaActualizacion.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblFechaActualizacion.Name = "lblFechaActualizacion";
-            this.lblFechaActualizacion.Size = new System.Drawing.Size(66, 17);
+            this.lblFechaActualizacion.Size = new System.Drawing.Size(65, 17);
             this.lblFechaActualizacion.TabIndex = 51;
             this.lblFechaActualizacion.Text = "01/01/0001";
             // 
             // lblUltimaActualizacion
             // 
-            this.lblUltimaActualizacion.Location = new System.Drawing.Point(399, 263);
-            this.lblUltimaActualizacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblUltimaActualizacion.Location = new System.Drawing.Point(456, 263);
+            this.lblUltimaActualizacion.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblUltimaActualizacion.Name = "lblUltimaActualizacion";
-            this.lblUltimaActualizacion.Size = new System.Drawing.Size(123, 17);
+            this.lblUltimaActualizacion.Size = new System.Drawing.Size(128, 17);
             this.lblUltimaActualizacion.TabIndex = 50;
             this.lblUltimaActualizacion.Text = "Última Actualización";
             // 
@@ -338,33 +339,33 @@ namespace NORI
             this.panel1.Controls.Add(this.cbMonedas);
             this.panel1.Controls.Add(this.lblMonedas);
             this.panel1.Controls.Add(this.cbMetodosPago);
-            this.panel1.Controls.Add(this.hyperlinkLabelControl1);
+            this.panel1.Controls.Add(this.metdosPago);
             this.panel1.Controls.Add(this.lblFechaActualizacion);
             this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.lblUltimaActualizacion);
             this.panel1.Controls.Add(this.cbActivo);
             this.panel1.Controls.Add(this.lblNombre);
             this.panel1.Controls.Add(this.lblID);
-            this.panel1.Location = new System.Drawing.Point(8, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(9, 10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(650, 302);
+            this.panel1.Size = new System.Drawing.Size(743, 302);
             this.panel1.TabIndex = 53;
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(537, 153);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigo.Location = new System.Drawing.Point(614, 153);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtCodigo.MenuManager = this.mainRibbonControl;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Properties.MaxLength = 15;
-            this.txtCodigo.Size = new System.Drawing.Size(88, 24);
+            this.txtCodigo.Size = new System.Drawing.Size(101, 26);
             this.txtCodigo.TabIndex = 69;
             // 
             // lblCodigo
             // 
-            this.lblCodigo.Location = new System.Drawing.Point(537, 123);
-            this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblCodigo.Location = new System.Drawing.Point(614, 123);
+            this.lblCodigo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(44, 17);
             this.lblCodigo.TabIndex = 0;
@@ -372,41 +373,41 @@ namespace NORI
             // 
             // cbClases
             // 
-            this.cbClases.Location = new System.Drawing.Point(133, 154);
-            this.cbClases.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbClases.Location = new System.Drawing.Point(152, 154);
+            this.cbClases.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbClases.MenuManager = this.mainRibbonControl;
             this.cbClases.Name = "cbClases";
             this.cbClases.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbClases.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("clase", "Clase", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbClases.Size = new System.Drawing.Size(255, 24);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("clase", "Clase", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbClases.Size = new System.Drawing.Size(291, 26);
             this.cbClases.TabIndex = 4;
             // 
             // lblClase
             // 
-            this.lblClase.Location = new System.Drawing.Point(14, 157);
-            this.lblClase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblClase.Location = new System.Drawing.Point(16, 157);
+            this.lblClase.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblClase.Name = "lblClase";
-            this.lblClase.Size = new System.Drawing.Size(33, 17);
+            this.lblClase.Size = new System.Drawing.Size(31, 17);
             this.lblClase.TabIndex = 68;
             this.lblClase.Text = "Clase";
             // 
             // txtCuentaContable
             // 
-            this.txtCuentaContable.Location = new System.Drawing.Point(399, 153);
-            this.txtCuentaContable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCuentaContable.Location = new System.Drawing.Point(456, 153);
+            this.txtCuentaContable.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtCuentaContable.MenuManager = this.mainRibbonControl;
             this.txtCuentaContable.Name = "txtCuentaContable";
             this.txtCuentaContable.Properties.MaxLength = 15;
-            this.txtCuentaContable.Size = new System.Drawing.Size(131, 24);
+            this.txtCuentaContable.Size = new System.Drawing.Size(150, 26);
             this.txtCuentaContable.TabIndex = 5;
             // 
             // lblCuentaContable
             // 
-            this.lblCuentaContable.Location = new System.Drawing.Point(399, 124);
-            this.lblCuentaContable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblCuentaContable.Location = new System.Drawing.Point(456, 124);
+            this.lblCuentaContable.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblCuentaContable.Name = "lblCuentaContable";
             this.lblCuentaContable.Size = new System.Drawing.Size(102, 17);
             this.lblCuentaContable.TabIndex = 67;
@@ -414,127 +415,127 @@ namespace NORI
             // 
             // cbCambio
             // 
-            this.cbCambio.Location = new System.Drawing.Point(399, 226);
-            this.cbCambio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbCambio.Location = new System.Drawing.Point(456, 226);
+            this.cbCambio.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbCambio.MenuManager = this.mainRibbonControl;
             this.cbCambio.Name = "cbCambio";
             this.cbCambio.Properties.Caption = "Da cambio";
-            this.cbCambio.Size = new System.Drawing.Size(225, 21);
+            this.cbCambio.Size = new System.Drawing.Size(257, 21);
             this.cbCambio.TabIndex = 9;
             // 
             // cbDocumento
             // 
-            this.cbDocumento.Location = new System.Drawing.Point(133, 226);
-            this.cbDocumento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDocumento.Location = new System.Drawing.Point(152, 226);
+            this.cbDocumento.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbDocumento.MenuManager = this.mainRibbonControl;
             this.cbDocumento.Name = "cbDocumento";
             this.cbDocumento.Properties.Caption = "Documento";
-            this.cbDocumento.Size = new System.Drawing.Size(255, 21);
+            this.cbDocumento.Size = new System.Drawing.Size(291, 21);
             this.cbDocumento.TabIndex = 8;
             // 
             // cbCanjeable
             // 
-            this.cbCanjeable.Location = new System.Drawing.Point(133, 188);
-            this.cbCanjeable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbCanjeable.Location = new System.Drawing.Point(152, 188);
+            this.cbCanjeable.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbCanjeable.MenuManager = this.mainRibbonControl;
             this.cbCanjeable.Name = "cbCanjeable";
             this.cbCanjeable.Properties.Caption = "Canjeable";
-            this.cbCanjeable.Size = new System.Drawing.Size(255, 21);
+            this.cbCanjeable.Size = new System.Drawing.Size(291, 21);
             this.cbCanjeable.TabIndex = 6;
             // 
             // cbTiposCambio
             // 
-            this.cbTiposCambio.Location = new System.Drawing.Point(133, 120);
-            this.cbTiposCambio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbTiposCambio.Location = new System.Drawing.Point(152, 120);
+            this.cbTiposCambio.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbTiposCambio.MenuManager = this.mainRibbonControl;
             this.cbTiposCambio.Name = "cbTiposCambio";
             this.cbTiposCambio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbTiposCambio.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tipo", "Tipo", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbTiposCambio.Size = new System.Drawing.Size(255, 24);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tipo", "Tipo", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbTiposCambio.Size = new System.Drawing.Size(291, 26);
             this.cbTiposCambio.TabIndex = 3;
             // 
             // cbReferencia
             // 
-            this.cbReferencia.Location = new System.Drawing.Point(399, 188);
-            this.cbReferencia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbReferencia.Location = new System.Drawing.Point(456, 188);
+            this.cbReferencia.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbReferencia.MenuManager = this.mainRibbonControl;
             this.cbReferencia.Name = "cbReferencia";
             this.cbReferencia.Properties.Caption = "Solicitar referencia";
-            this.cbReferencia.Size = new System.Drawing.Size(225, 21);
+            this.cbReferencia.Size = new System.Drawing.Size(257, 21);
             this.cbReferencia.TabIndex = 7;
             // 
             // lblTipoCambio
             // 
-            this.lblTipoCambio.Location = new System.Drawing.Point(14, 123);
-            this.lblTipoCambio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblTipoCambio.Location = new System.Drawing.Point(16, 123);
+            this.lblTipoCambio.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblTipoCambio.Name = "lblTipoCambio";
-            this.lblTipoCambio.Size = new System.Drawing.Size(74, 17);
+            this.lblTipoCambio.Size = new System.Drawing.Size(80, 17);
             this.lblTipoCambio.TabIndex = 0;
             this.lblTipoCambio.Text = "Tipo Cambio";
             // 
             // cbMonedas
             // 
-            this.cbMonedas.Location = new System.Drawing.Point(133, 51);
-            this.cbMonedas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbMonedas.Location = new System.Drawing.Point(152, 51);
+            this.cbMonedas.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbMonedas.MenuManager = this.mainRibbonControl;
             this.cbMonedas.Name = "cbMonedas";
             this.cbMonedas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbMonedas.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 23, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbMonedas.Size = new System.Drawing.Size(255, 24);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 26, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbMonedas.Size = new System.Drawing.Size(291, 26);
             this.cbMonedas.TabIndex = 1;
             // 
             // lblMonedas
             // 
             this.lblMonedas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblMonedas.Location = new System.Drawing.Point(14, 55);
-            this.lblMonedas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblMonedas.Location = new System.Drawing.Point(16, 55);
+            this.lblMonedas.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblMonedas.Name = "lblMonedas";
-            this.lblMonedas.Size = new System.Drawing.Size(50, 17);
+            this.lblMonedas.Size = new System.Drawing.Size(51, 17);
             this.lblMonedas.TabIndex = 65;
             this.lblMonedas.Text = "Moneda";
             // 
             // cbMetodosPago
             // 
-            this.cbMetodosPago.Location = new System.Drawing.Point(133, 17);
-            this.cbMetodosPago.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbMetodosPago.Location = new System.Drawing.Point(152, 17);
+            this.cbMetodosPago.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbMetodosPago.MenuManager = this.mainRibbonControl;
             this.cbMetodosPago.Name = "cbMetodosPago";
             this.cbMetodosPago.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbMetodosPago.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 23, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbMetodosPago.Size = new System.Drawing.Size(255, 24);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 26, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbMetodosPago.Size = new System.Drawing.Size(291, 26);
             this.cbMetodosPago.TabIndex = 0;
             // 
-            // hyperlinkLabelControl1
+            // metdosPago
             // 
-            this.hyperlinkLabelControl1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.hyperlinkLabelControl1.Location = new System.Drawing.Point(14, 21);
-            this.hyperlinkLabelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.hyperlinkLabelControl1.Name = "hyperlinkLabelControl1";
-            this.hyperlinkLabelControl1.Size = new System.Drawing.Size(102, 17);
-            this.hyperlinkLabelControl1.TabIndex = 63;
-            this.hyperlinkLabelControl1.Text = "Método de pago";
+            this.metdosPago.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metdosPago.Location = new System.Drawing.Point(16, 21);
+            this.metdosPago.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.metdosPago.Name = "metdosPago";
+            this.metdosPago.Size = new System.Drawing.Size(103, 17);
+            this.metdosPago.TabIndex = 63;
+            this.metdosPago.Text = "Método de pago";
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.panel1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 79);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 106);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(92, 301, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(668, 350);
+            this.layoutControl1.Size = new System.Drawing.Size(763, 323);
             this.layoutControl1.TabIndex = 57;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -543,19 +544,19 @@ namespace NORI
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(668, 350);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(763, 323);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // frmTiposMetodosPago
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 429);
+            this.ClientSize = new System.Drawing.Size(763, 429);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.mainRibbonControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Image = global::componentResourceManager.Resources.logo;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.MaximizeBox = false;
             this.Name = "frmTiposMetodosPago";
             this.Ribbon = this.mainRibbonControl;

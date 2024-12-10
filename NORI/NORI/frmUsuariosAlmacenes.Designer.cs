@@ -52,24 +52,24 @@ namespace NORI
             this.panel1.Controls.Add(this.gc);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(778, 472);
+            this.panel1.Size = new System.Drawing.Size(681, 472);
             this.panel1.TabIndex = 0;
             // 
             // gc
             // 
             this.gc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gc.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.gc.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gc.EmbeddedNavigator.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.gc_EmbeddedNavigator_ButtonClick);
             this.gc.Location = new System.Drawing.Point(2, 2);
             this.gc.MainView = this.gv;
-            this.gc.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.gc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gc.Name = "gc";
             this.gc.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cbUsuarios,
             this.cbAlmacenes});
-            this.gc.Size = new System.Drawing.Size(774, 468);
+            this.gc.Size = new System.Drawing.Size(677, 468);
             this.gc.TabIndex = 0;
             this.gc.UseEmbeddedNavigator = true;
             this.gc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -87,27 +87,27 @@ namespace NORI
             this.gv.Name = "gv";
             this.gv.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
             this.gv.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
-            this.gv.OptionsEditForm.PopupEditFormWidth = 1066;
+            this.gv.OptionsEditForm.PopupEditFormWidth = 933;
             this.gv.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             // 
             // gridColumnID
             // 
             this.gridColumnID.Caption = "ID";
             this.gridColumnID.FieldName = "id";
-            this.gridColumnID.MinWidth = 26;
+            this.gridColumnID.MinWidth = 23;
             this.gridColumnID.Name = "gridColumnID";
-            this.gridColumnID.Width = 99;
+            this.gridColumnID.Width = 87;
             // 
             // gridColumnUsuarioID
             // 
             this.gridColumnUsuarioID.Caption = "Usuario";
             this.gridColumnUsuarioID.ColumnEdit = this.cbUsuarios;
             this.gridColumnUsuarioID.FieldName = "usuario_id";
-            this.gridColumnUsuarioID.MinWidth = 26;
+            this.gridColumnUsuarioID.MinWidth = 23;
             this.gridColumnUsuarioID.Name = "gridColumnUsuarioID";
             this.gridColumnUsuarioID.Visible = true;
             this.gridColumnUsuarioID.VisibleIndex = 0;
-            this.gridColumnUsuarioID.Width = 99;
+            this.gridColumnUsuarioID.Width = 87;
             // 
             // cbUsuarios
             // 
@@ -115,7 +115,7 @@ namespace NORI
             this.cbUsuarios.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbUsuarios.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("usuario", "Usuario", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("usuario", "Usuario", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cbUsuarios.Name = "cbUsuarios";
             // 
             // gridColumnAlmacenID
@@ -123,11 +123,11 @@ namespace NORI
             this.gridColumnAlmacenID.Caption = "Almacén";
             this.gridColumnAlmacenID.ColumnEdit = this.cbAlmacenes;
             this.gridColumnAlmacenID.FieldName = "almacen_id";
-            this.gridColumnAlmacenID.MinWidth = 26;
+            this.gridColumnAlmacenID.MinWidth = 23;
             this.gridColumnAlmacenID.Name = "gridColumnAlmacenID";
             this.gridColumnAlmacenID.Visible = true;
             this.gridColumnAlmacenID.VisibleIndex = 1;
-            this.gridColumnAlmacenID.Width = 99;
+            this.gridColumnAlmacenID.Width = 87;
             // 
             // cbAlmacenes
             // 
@@ -135,28 +135,28 @@ namespace NORI
             this.cbAlmacenes.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbAlmacenes.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Codigo", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 80, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Codigo", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 70, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cbAlmacenes.Name = "cbAlmacenes";
             // 
             // gridColumnFecha
             // 
             this.gridColumnFecha.Caption = "Fecha";
             this.gridColumnFecha.FieldName = "fecha_actualizacion";
-            this.gridColumnFecha.MinWidth = 26;
+            this.gridColumnFecha.MinWidth = 23;
             this.gridColumnFecha.Name = "gridColumnFecha";
             this.gridColumnFecha.Visible = true;
             this.gridColumnFecha.VisibleIndex = 2;
-            this.gridColumnFecha.Width = 99;
+            this.gridColumnFecha.Width = 87;
             // 
             // frmUsuariosAlmacenes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 472);
+            this.ClientSize = new System.Drawing.Size(681, 472);
             this.Controls.Add(this.panel1);
             this.IconOptions.Image = global::componentResourceManager.Resources.logo;
-            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmUsuariosAlmacenes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios - Almacenes";

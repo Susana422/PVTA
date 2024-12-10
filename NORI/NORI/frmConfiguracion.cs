@@ -585,71 +585,7 @@ namespace NORI
             Funciones.DescartarCargando();
         }
 
-        private void lblCondicionesPago_Click(object sender, EventArgs e)
-        {
-            frmCondicionesPago frmCondicionesPago2 = new frmCondicionesPago();
-            ((Form)(object)frmCondicionesPago2).ShowDialog();
-        }
-
-        private void lblDepartamentos_Click(object sender, EventArgs e)
-        {
-            frmDepartamentos frmDepartamentos2 = new frmDepartamentos();
-            ((Form)(object)frmDepartamentos2).ShowDialog();
-        }
-
-        private void lblFabricantes_Click(object sender, EventArgs e)
-        {
-            frmFabricantes frmFabricantes2 = new frmFabricantes();
-            ((Form)(object)frmFabricantes2).ShowDialog();
-        }
-
-        private void lblImpuesto_Click(object sender, EventArgs e)
-        {
-            frmImpuestos frmImpuestos2 = new frmImpuestos();
-            ((Form)(object)frmImpuestos2).ShowDialog();
-        }
-
-        private void lblListaPrecios_Click(object sender, EventArgs e)
-        {
-            frmListasPrecios frmListasPrecios2 = new frmListasPrecios();
-            ((Form)(object)frmListasPrecios2).ShowDialog();
-        }
-
-        private void lblMetodoPago_Click(object sender, EventArgs e)
-        {
-            frmMetodosPago frmMetodosPago2 = new frmMetodosPago();
-            ((Form)(object)frmMetodosPago2).ShowDialog();
-        }
-
-        private void lblMonedas_Click(object sender, EventArgs e)
-        {
-            frmMonedas frmMonedas2 = new frmMonedas();
-            ((Form)(object)frmMonedas2).ShowDialog();
-        }
-
-        private void lblZonas_Click(object sender, EventArgs e)
-        {
-            frmZonas frmZonas2 = new frmZonas();
-            ((Form)(object)frmZonas2).ShowDialog();
-        }
-
-        private void lblGrupoArticulos_Click(object sender, EventArgs e)
-        {
-            frmGruposArticulos frmGruposArticulos2= new frmGruposArticulos();
-            ((Form)(object)frmGruposArticulos2).ShowDialog();
-        }
-
-        private void lblCertificado_Click(object sender, EventArgs e)
-        {
-            frmCertificados frmCertificados2= new frmCertificados();
-            ((Form)(object)frmCertificados2).ShowDialog();
-        }
-
-        private void lblSucursales_Click_1(object sender, EventArgs e)
-        {
-            frmSucursales frmSucursales2= new frmSucursales();
-            ((Form)(object)frmSucursales2).ShowDialog();
-        }
+    
     }
 
 }

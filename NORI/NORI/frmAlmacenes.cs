@@ -433,11 +433,6 @@ namespace NORI
             }
         }
 
-        private void lblAlmacenes_Click(object sender, EventArgs e)
-        {
-            frmAlmacenes frmAlmacen = new frmAlmacenes((!cbUbicacion.EditValue.IsNullOrEmpty()) ? ((int)cbUbicacion.EditValue) : 0);
-            frmAlmacen.ShowDialog();
-        }
     }
 
 }

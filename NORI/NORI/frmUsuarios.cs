@@ -551,40 +551,5 @@ namespace NORI
             ((Control)(object)frmConceptosAutorizaciones2).Show();
         }
 
-        private void lblAlmacenes_Click(object sender, EventArgs e)
-        {
-            frmAlmacenes frmAlmacenes2 = new frmAlmacenes();
-            ((Form)(object)frmAlmacenes2).ShowDialog();
-        }
-
-        private void lblVendedores_Click(object sender, EventArgs e)
-        {
-            frmVendedores frmVendedores2 = new frmVendedores();
-            ((Form)(object)frmVendedores2).ShowDialog();
-        }
-
-        private void lblSocios_Click(object sender, EventArgs e)
-        {
-            frmSocios frmSocios2 = new frmSocios();
-            ((Form)(object)frmSocios2).ShowDialog();
-        }
-
-        private void lblEstado_Click(object sender, EventArgs e)
-        {
-            frmEstados frmEstados2 = new frmEstados();
-            ((Form)(object)frmEstados2).ShowDialog();
-        }
-
-        private void lblUbicaciones_Click_1(object sender, EventArgs e)
-        {
-            frmUbicaciones frmUbicaciones2 = new frmUbicaciones();
-            ((Form)(object)frmUbicaciones2).ShowDialog();
-        }
-
-        private void lblListaPrecioMinimo_Click(object sender, EventArgs e)
-        {
-            frmListasPrecios frmListasPrecios2 = new frmListasPrecios();
-            ((Form)(object)frmListasPrecios2).ShowDialog();
-        }
     }
 }

@@ -364,11 +364,7 @@ namespace NORI
             }
         }
 
-        private void lblTiposMetodosPago_Click(object sender, EventArgs e)
-        {
-            frmTiposMetodosPago frmTiposMetodosPago2= new frmTiposMetodosPago();
-            ((Form)(object)frmTiposMetodosPago2).ShowDialog();
-        }
+      
     }
 
 }

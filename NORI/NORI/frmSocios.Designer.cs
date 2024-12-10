@@ -290,7 +290,7 @@ namespace NORI
             // 
             this.mainRibbonControl.ApplicationButtonDropDownControl = this.backstageViewControl1;
             this.mainRibbonControl.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
-            this.mainRibbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(26, 27, 26, 27);
+            this.mainRibbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(23, 24, 23, 24);
             this.mainRibbonControl.ExpandCollapseItem.Id = 0;
             this.mainRibbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.mainRibbonControl.ExpandCollapseItem,
@@ -312,21 +312,21 @@ namespace NORI
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
             this.mainRibbonControl.MaxItemId = 8;
             this.mainRibbonControl.Name = "mainRibbonControl";
-            this.mainRibbonControl.OptionsMenuMinWidth = 294;
+            this.mainRibbonControl.OptionsMenuMinWidth = 257;
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.mainRibbonPage,
             this.ribbonPageHerramientas});
             this.mainRibbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.mainRibbonControl.Size = new System.Drawing.Size(1158, 106);
+            this.mainRibbonControl.Size = new System.Drawing.Size(1013, 101);
             this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // backstageViewControl1
             // 
-            this.backstageViewControl1.Location = new System.Drawing.Point(55, 162);
+            this.backstageViewControl1.Location = new System.Drawing.Point(48, 143);
             this.backstageViewControl1.Name = "backstageViewControl1";
             this.backstageViewControl1.OwnerControl = this.mainRibbonControl;
-            this.backstageViewControl1.Size = new System.Drawing.Size(640, 196);
+            this.backstageViewControl1.Size = new System.Drawing.Size(560, 173);
             this.backstageViewControl1.TabIndex = 2;
             this.backstageViewControl1.VisibleInDesignTime = true;
             // 
@@ -505,10 +505,10 @@ namespace NORI
             // 
             this.xtraTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.xtraTabControl1.Location = new System.Drawing.Point(12, 12);
+            this.xtraTabControl1.Location = new System.Drawing.Point(10, 10);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPageGeneral;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1134, 685);
+            this.xtraTabControl1.Size = new System.Drawing.Size(993, 598);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageGeneral,
@@ -580,518 +580,517 @@ namespace NORI
             this.xtraTabPageGeneral.Controls.Add(this.lblCodigo);
             this.xtraTabPageGeneral.Controls.Add(this.txtCodigo);
             this.xtraTabPageGeneral.Name = "xtraTabPageGeneral";
-            this.xtraTabPageGeneral.Size = new System.Drawing.Size(1132, 658);
+            this.xtraTabPageGeneral.Size = new System.Drawing.Size(991, 573);
             this.xtraTabPageGeneral.Text = "General";
             // 
             // cbVIP
             // 
-            this.cbVIP.Location = new System.Drawing.Point(334, 567);
+            this.cbVIP.Location = new System.Drawing.Point(292, 500);
             this.cbVIP.MenuManager = this.mainRibbonControl;
             this.cbVIP.Name = "cbVIP";
             this.cbVIP.Properties.Caption = "VIP";
-            this.cbVIP.Size = new System.Drawing.Size(115, 21);
+            this.cbVIP.Size = new System.Drawing.Size(101, 20);
             this.cbVIP.TabIndex = 97;
             // 
             // cbRegimenFiscal
             // 
-            this.cbRegimenFiscal.Location = new System.Drawing.Point(547, 390);
+            this.cbRegimenFiscal.Location = new System.Drawing.Point(479, 344);
             this.cbRegimenFiscal.MenuManager = this.mainRibbonControl;
             this.cbRegimenFiscal.Name = "cbRegimenFiscal";
             this.cbRegimenFiscal.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbRegimenFiscal.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("clave", "Clave", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbRegimenFiscal.Size = new System.Drawing.Size(240, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("clave", "Clave", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbRegimenFiscal.Size = new System.Drawing.Size(210, 24);
             this.cbRegimenFiscal.TabIndex = 96;
             this.cbRegimenFiscal.TabStop = false;
             // 
             // lblRegimenFiscal
             // 
-            this.lblRegimenFiscal.Location = new System.Drawing.Point(462, 393);
+            this.lblRegimenFiscal.Location = new System.Drawing.Point(404, 347);
             this.lblRegimenFiscal.Name = "lblRegimenFiscal";
-            this.lblRegimenFiscal.Size = new System.Drawing.Size(87, 17);
+            this.lblRegimenFiscal.Size = new System.Drawing.Size(77, 15);
             this.lblRegimenFiscal.TabIndex = 95;
             this.lblRegimenFiscal.Text = "Régimen fiscal";
             // 
             // cbPropietarios
             // 
-            this.cbPropietarios.Location = new System.Drawing.Point(158, 426);
+            this.cbPropietarios.Location = new System.Drawing.Point(138, 376);
             this.cbPropietarios.MenuManager = this.mainRibbonControl;
             this.cbPropietarios.Name = "cbPropietarios";
             this.cbPropietarios.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbPropietarios.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbPropietarios.Size = new System.Drawing.Size(291, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 16, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbPropietarios.Size = new System.Drawing.Size(255, 24);
             this.cbPropietarios.TabIndex = 13;
             // 
             // lblPropietarios
             // 
             this.lblPropietarios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblPropietarios.Location = new System.Drawing.Point(22, 432);
+            this.lblPropietarios.Location = new System.Drawing.Point(19, 381);
             this.lblPropietarios.Name = "lblPropietarios";
-            this.lblPropietarios.Size = new System.Drawing.Size(69, 17);
+            this.lblPropietarios.Size = new System.Drawing.Size(58, 15);
             this.lblPropietarios.TabIndex = 94;
             this.lblPropietarios.Text = "Propietario";
             this.lblPropietarios.Click += new System.EventHandler(this.lblPropietarios_Click);
             // 
             // cbAPI
             // 
-            this.cbAPI.Location = new System.Drawing.Point(158, 568);
+            this.cbAPI.Location = new System.Drawing.Point(138, 501);
             this.cbAPI.MenuManager = this.mainRibbonControl;
             this.cbAPI.Name = "cbAPI";
             this.cbAPI.Properties.Caption = "API";
-            this.cbAPI.Size = new System.Drawing.Size(115, 21);
+            this.cbAPI.Size = new System.Drawing.Size(101, 20);
             this.cbAPI.TabIndex = 92;
             // 
             // lblBalance
             // 
             this.lblBalance.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblBalance.Location = new System.Drawing.Point(462, 159);
+            this.lblBalance.Location = new System.Drawing.Point(404, 140);
             this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(49, 17);
+            this.lblBalance.Size = new System.Drawing.Size(41, 15);
             this.lblBalance.TabIndex = 91;
             this.lblBalance.Text = "Balance";
             this.lblBalance.Click += new System.EventHandler(this.lblBalance_Click);
             // 
             // cbMonedero
             // 
-            this.cbMonedero.Location = new System.Drawing.Point(547, 494);
+            this.cbMonedero.Location = new System.Drawing.Point(479, 436);
             this.cbMonedero.MenuManager = this.mainRibbonControl;
             this.cbMonedero.Name = "cbMonedero";
             this.cbMonedero.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbMonedero.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("folio", "Folio", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbMonedero.Size = new System.Drawing.Size(240, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("folio", "Folio", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbMonedero.Size = new System.Drawing.Size(210, 24);
             this.cbMonedero.TabIndex = 89;
             this.cbMonedero.TabStop = false;
             // 
             // lblMonedero
             // 
-            this.lblMonedero.Location = new System.Drawing.Point(462, 500);
+            this.lblMonedero.Location = new System.Drawing.Point(404, 441);
             this.lblMonedero.Name = "lblMonedero";
-            this.lblMonedero.Size = new System.Drawing.Size(63, 17);
+            this.lblMonedero.Size = new System.Drawing.Size(55, 15);
             this.lblMonedero.TabIndex = 90;
             this.lblMonedero.Text = "Monedero";
             // 
             // cbUsoPrincipal
             // 
-            this.cbUsoPrincipal.Location = new System.Drawing.Point(547, 358);
+            this.cbUsoPrincipal.Location = new System.Drawing.Point(479, 316);
             this.cbUsoPrincipal.MenuManager = this.mainRibbonControl;
             this.cbUsoPrincipal.Name = "cbUsoPrincipal";
             this.cbUsoPrincipal.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbUsoPrincipal.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("uso", "Uso", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbUsoPrincipal.Size = new System.Drawing.Size(240, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("uso", "Uso", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbUsoPrincipal.Size = new System.Drawing.Size(210, 24);
             this.cbUsoPrincipal.TabIndex = 88;
             this.cbUsoPrincipal.TabStop = false;
             // 
             // cbSocios
             // 
-            this.cbSocios.Location = new System.Drawing.Point(547, 460);
+            this.cbSocios.Location = new System.Drawing.Point(479, 406);
             this.cbSocios.MenuManager = this.mainRibbonControl;
             this.cbSocios.Name = "cbSocios";
             this.cbSocios.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbSocios.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbSocios.Size = new System.Drawing.Size(240, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 16, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbSocios.Size = new System.Drawing.Size(210, 24);
             this.cbSocios.TabIndex = 87;
             // 
             // cbEventual
             // 
-            this.cbEventual.Location = new System.Drawing.Point(547, 426);
+            this.cbEventual.Location = new System.Drawing.Point(479, 376);
             this.cbEventual.MenuManager = this.mainRibbonControl;
             this.cbEventual.Name = "cbEventual";
             this.cbEventual.Properties.Caption = "Eventual";
-            this.cbEventual.Size = new System.Drawing.Size(88, 21);
+            this.cbEventual.Size = new System.Drawing.Size(77, 20);
             this.cbEventual.TabIndex = 18;
             // 
             // lblUsoPrincipal
             // 
-            this.lblUsoPrincipal.Location = new System.Drawing.Point(462, 363);
+            this.lblUsoPrincipal.Location = new System.Drawing.Point(404, 320);
             this.lblUsoPrincipal.Name = "lblUsoPrincipal";
-            this.lblUsoPrincipal.Size = new System.Drawing.Size(78, 17);
+            this.lblUsoPrincipal.Size = new System.Drawing.Size(69, 15);
             this.lblUsoPrincipal.TabIndex = 86;
             this.lblUsoPrincipal.Text = "Uso principal";
             // 
             // cbVendedores
             // 
-            this.cbVendedores.Location = new System.Drawing.Point(158, 392);
+            this.cbVendedores.Location = new System.Drawing.Point(138, 346);
             this.cbVendedores.MenuManager = this.mainRibbonControl;
             this.cbVendedores.Name = "cbVendedores";
             this.cbVendedores.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbVendedores.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbVendedores.Size = new System.Drawing.Size(291, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 16, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbVendedores.Size = new System.Drawing.Size(255, 24);
             this.cbVendedores.TabIndex = 12;
             // 
             // lblVendedores
             // 
             this.lblVendedores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblVendedores.Location = new System.Drawing.Point(22, 398);
+            this.lblVendedores.Location = new System.Drawing.Point(19, 351);
             this.lblVendedores.Name = "lblVendedores";
-            this.lblVendedores.Size = new System.Drawing.Size(60, 17);
+            this.lblVendedores.Size = new System.Drawing.Size(51, 15);
             this.lblVendedores.TabIndex = 84;
             this.lblVendedores.Text = "Vendedor";
-            this.lblVendedores.Click += new System.EventHandler(this.lblVendedores_Click);
             // 
             // cbOrdenCompra
             // 
-            this.cbOrdenCompra.Location = new System.Drawing.Point(547, 325);
+            this.cbOrdenCompra.Location = new System.Drawing.Point(479, 287);
             this.cbOrdenCompra.MenuManager = this.mainRibbonControl;
             this.cbOrdenCompra.Name = "cbOrdenCompra";
             this.cbOrdenCompra.Properties.Caption = "Solicitar orden de compra";
-            this.cbOrdenCompra.Size = new System.Drawing.Size(240, 21);
+            this.cbOrdenCompra.Size = new System.Drawing.Size(210, 20);
             this.cbOrdenCompra.TabIndex = 16;
             // 
             // lblMultiplicador
             // 
-            this.lblMultiplicador.Location = new System.Drawing.Point(462, 295);
+            this.lblMultiplicador.Location = new System.Drawing.Point(404, 260);
             this.lblMultiplicador.Name = "lblMultiplicador";
-            this.lblMultiplicador.Size = new System.Drawing.Size(80, 17);
+            this.lblMultiplicador.Size = new System.Drawing.Size(71, 15);
             this.lblMultiplicador.TabIndex = 78;
             this.lblMultiplicador.Text = "Multiplicador";
             // 
             // txtMultiplicador
             // 
-            this.txtMultiplicador.Location = new System.Drawing.Point(547, 290);
+            this.txtMultiplicador.Location = new System.Drawing.Point(479, 256);
             this.txtMultiplicador.MenuManager = this.mainRibbonControl;
             this.txtMultiplicador.Name = "txtMultiplicador";
             this.txtMultiplicador.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtMultiplicador.Properties.Mask.EditMask = "n";
             this.txtMultiplicador.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtMultiplicador.Properties.NullValuePrompt = "CURP";
-            this.txtMultiplicador.Size = new System.Drawing.Size(240, 26);
+            this.txtMultiplicador.Size = new System.Drawing.Size(210, 24);
             this.txtMultiplicador.TabIndex = 15;
             // 
             // cbPersonasContacto
             // 
-            this.cbPersonasContacto.Location = new System.Drawing.Point(158, 188);
+            this.cbPersonasContacto.Location = new System.Drawing.Point(138, 166);
             this.cbPersonasContacto.MenuManager = this.mainRibbonControl;
             this.cbPersonasContacto.Name = "cbPersonasContacto";
             this.cbPersonasContacto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbPersonasContacto.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbPersonasContacto.Size = new System.Drawing.Size(291, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 16, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbPersonasContacto.Size = new System.Drawing.Size(255, 24);
             this.cbPersonasContacto.TabIndex = 0;
             this.cbPersonasContacto.TabStop = false;
             // 
             // lblPersonasContacto
             // 
-            this.lblPersonasContacto.Location = new System.Drawing.Point(22, 193);
+            this.lblPersonasContacto.Location = new System.Drawing.Point(19, 170);
             this.lblPersonasContacto.Name = "lblPersonasContacto";
-            this.lblPersonasContacto.Size = new System.Drawing.Size(126, 17);
+            this.lblPersonasContacto.Size = new System.Drawing.Size(108, 15);
             this.lblPersonasContacto.TabIndex = 76;
             this.lblPersonasContacto.Text = "Persona de contacto";
             // 
             // cbDireccionesEnvio
             // 
-            this.cbDireccionesEnvio.Location = new System.Drawing.Point(158, 494);
+            this.cbDireccionesEnvio.Location = new System.Drawing.Point(138, 436);
             this.cbDireccionesEnvio.MenuManager = this.mainRibbonControl;
             this.cbDireccionesEnvio.Name = "cbDireccionesEnvio";
             this.cbDireccionesEnvio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbDireccionesEnvio.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbDireccionesEnvio.Size = new System.Drawing.Size(291, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 16, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbDireccionesEnvio.Size = new System.Drawing.Size(255, 24);
             this.cbDireccionesEnvio.TabIndex = 0;
             this.cbDireccionesEnvio.TabStop = false;
             // 
             // lblDireccionEnvio
             // 
-            this.lblDireccionEnvio.Location = new System.Drawing.Point(22, 499);
+            this.lblDireccionEnvio.Location = new System.Drawing.Point(19, 440);
             this.lblDireccionEnvio.Name = "lblDireccionEnvio";
-            this.lblDireccionEnvio.Size = new System.Drawing.Size(33, 17);
+            this.lblDireccionEnvio.Size = new System.Drawing.Size(29, 15);
             this.lblDireccionEnvio.TabIndex = 74;
             this.lblDireccionEnvio.Text = "Envío";
             // 
             // cbDireccionesFacturacion
             // 
-            this.cbDireccionesFacturacion.Location = new System.Drawing.Point(158, 460);
+            this.cbDireccionesFacturacion.Location = new System.Drawing.Point(138, 406);
             this.cbDireccionesFacturacion.MenuManager = this.mainRibbonControl;
             this.cbDireccionesFacturacion.Name = "cbDireccionesFacturacion";
             this.cbDireccionesFacturacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbDireccionesFacturacion.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbDireccionesFacturacion.Size = new System.Drawing.Size(291, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 16, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbDireccionesFacturacion.Size = new System.Drawing.Size(255, 24);
             this.cbDireccionesFacturacion.TabIndex = 0;
             this.cbDireccionesFacturacion.TabStop = false;
             // 
             // lblDireccionFacturacion
             // 
-            this.lblDireccionFacturacion.Location = new System.Drawing.Point(22, 465);
+            this.lblDireccionFacturacion.Location = new System.Drawing.Point(19, 410);
             this.lblDireccionFacturacion.Name = "lblDireccionFacturacion";
-            this.lblDireccionFacturacion.Size = new System.Drawing.Size(73, 17);
+            this.lblDireccionFacturacion.Size = new System.Drawing.Size(62, 15);
             this.lblDireccionFacturacion.TabIndex = 72;
             this.lblDireccionFacturacion.Text = "Facturación";
             // 
             // txtBalance
             // 
             this.txtBalance.Enabled = false;
-            this.txtBalance.Location = new System.Drawing.Point(547, 154);
+            this.txtBalance.Location = new System.Drawing.Point(479, 136);
             this.txtBalance.MenuManager = this.mainRibbonControl;
             this.txtBalance.Name = "txtBalance";
             this.txtBalance.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtBalance.Properties.NullValuePrompt = "CURP";
-            this.txtBalance.Size = new System.Drawing.Size(240, 26);
+            this.txtBalance.Size = new System.Drawing.Size(210, 24);
             this.txtBalance.TabIndex = 0;
             this.txtBalance.TabStop = false;
             // 
             // lblCuenta
             // 
-            this.lblCuenta.Location = new System.Drawing.Point(462, 261);
+            this.lblCuenta.Location = new System.Drawing.Point(404, 230);
             this.lblCuenta.Name = "lblCuenta";
-            this.lblCuenta.Size = new System.Drawing.Size(45, 17);
+            this.lblCuenta.Size = new System.Drawing.Size(38, 15);
             this.lblCuenta.TabIndex = 68;
             this.lblCuenta.Text = "Cuenta";
             // 
             // txtCuenta
             // 
-            this.txtCuenta.Location = new System.Drawing.Point(547, 256);
+            this.txtCuenta.Location = new System.Drawing.Point(479, 226);
             this.txtCuenta.MenuManager = this.mainRibbonControl;
             this.txtCuenta.Name = "txtCuenta";
             this.txtCuenta.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtCuenta.Properties.MaxLength = 30;
-            this.txtCuenta.Size = new System.Drawing.Size(240, 26);
+            this.txtCuenta.Size = new System.Drawing.Size(210, 24);
             this.txtCuenta.TabIndex = 14;
             // 
             // lblCURP
             // 
-            this.lblCURP.Location = new System.Drawing.Point(462, 227);
+            this.lblCURP.Location = new System.Drawing.Point(404, 200);
             this.lblCURP.Name = "lblCURP";
-            this.lblCURP.Size = new System.Drawing.Size(37, 17);
+            this.lblCURP.Size = new System.Drawing.Size(30, 15);
             this.lblCURP.TabIndex = 66;
             this.lblCURP.Text = "CURP";
             // 
             // txtCURP
             // 
-            this.txtCURP.Location = new System.Drawing.Point(547, 222);
+            this.txtCURP.Location = new System.Drawing.Point(479, 196);
             this.txtCURP.MenuManager = this.mainRibbonControl;
             this.txtCURP.Name = "txtCURP";
             this.txtCURP.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtCURP.Properties.MaxLength = 18;
             this.txtCURP.Properties.NullValuePrompt = "CURP";
-            this.txtCURP.Size = new System.Drawing.Size(240, 26);
+            this.txtCURP.Size = new System.Drawing.Size(210, 24);
             this.txtCURP.TabIndex = 13;
             // 
             // lblSitioWeb
             // 
-            this.lblSitioWeb.Location = new System.Drawing.Point(22, 363);
+            this.lblSitioWeb.Location = new System.Drawing.Point(19, 320);
             this.lblSitioWeb.Name = "lblSitioWeb";
-            this.lblSitioWeb.Size = new System.Drawing.Size(55, 17);
+            this.lblSitioWeb.Size = new System.Drawing.Size(48, 15);
             this.lblSitioWeb.TabIndex = 64;
             this.lblSitioWeb.Text = "Sitio web";
             // 
             // txtSitioWeb
             // 
-            this.txtSitioWeb.Location = new System.Drawing.Point(158, 358);
+            this.txtSitioWeb.Location = new System.Drawing.Point(138, 316);
             this.txtSitioWeb.MenuManager = this.mainRibbonControl;
             this.txtSitioWeb.Name = "txtSitioWeb";
             this.txtSitioWeb.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtSitioWeb.Properties.MaxLength = 100;
             this.txtSitioWeb.Properties.NullValuePrompt = "Dirección del sitio web";
-            this.txtSitioWeb.Size = new System.Drawing.Size(291, 26);
+            this.txtSitioWeb.Size = new System.Drawing.Size(255, 24);
             this.txtSitioWeb.TabIndex = 11;
             // 
             // lblTelefono2
             // 
-            this.lblTelefono2.Location = new System.Drawing.Point(22, 261);
+            this.lblTelefono2.Location = new System.Drawing.Point(19, 230);
             this.lblTelefono2.Name = "lblTelefono2";
-            this.lblTelefono2.Size = new System.Drawing.Size(64, 17);
+            this.lblTelefono2.Size = new System.Drawing.Size(55, 15);
             this.lblTelefono2.TabIndex = 62;
             this.lblTelefono2.Text = "Teléfono 2";
             // 
             // txtTelefono2
             // 
-            this.txtTelefono2.Location = new System.Drawing.Point(158, 256);
+            this.txtTelefono2.Location = new System.Drawing.Point(138, 226);
             this.txtTelefono2.MenuManager = this.mainRibbonControl;
             this.txtTelefono2.Name = "txtTelefono2";
             this.txtTelefono2.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtTelefono2.Properties.MaxLength = 20;
             this.txtTelefono2.Properties.NullValuePrompt = "Teléfono adicional";
-            this.txtTelefono2.Size = new System.Drawing.Size(291, 26);
+            this.txtTelefono2.Size = new System.Drawing.Size(255, 24);
             this.txtTelefono2.TabIndex = 8;
             // 
             // lblCorreo
             // 
-            this.lblCorreo.Location = new System.Drawing.Point(22, 329);
+            this.lblCorreo.Location = new System.Drawing.Point(19, 290);
             this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(42, 17);
+            this.lblCorreo.Size = new System.Drawing.Size(36, 15);
             this.lblCorreo.TabIndex = 60;
             this.lblCorreo.Text = "Correo";
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(158, 324);
+            this.txtCorreo.Location = new System.Drawing.Point(138, 286);
             this.txtCorreo.MenuManager = this.mainRibbonControl;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtCorreo.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtCorreo.Properties.MaxLength = 100;
             this.txtCorreo.Properties.NullValuePrompt = "Dirección de correo electrónico";
-            this.txtCorreo.Size = new System.Drawing.Size(291, 26);
+            this.txtCorreo.Size = new System.Drawing.Size(255, 24);
             this.txtCorreo.TabIndex = 10;
             // 
             // lblTelefonoCelular
             // 
-            this.lblTelefonoCelular.Location = new System.Drawing.Point(22, 295);
+            this.lblTelefonoCelular.Location = new System.Drawing.Point(19, 260);
             this.lblTelefonoCelular.Name = "lblTelefonoCelular";
-            this.lblTelefonoCelular.Size = new System.Drawing.Size(97, 17);
+            this.lblTelefonoCelular.Size = new System.Drawing.Size(84, 15);
             this.lblTelefonoCelular.TabIndex = 58;
             this.lblTelefonoCelular.Text = "Teléfono celular";
             // 
             // txtTelefonoCelular
             // 
-            this.txtTelefonoCelular.Location = new System.Drawing.Point(158, 290);
+            this.txtTelefonoCelular.Location = new System.Drawing.Point(138, 256);
             this.txtTelefonoCelular.MenuManager = this.mainRibbonControl;
             this.txtTelefonoCelular.Name = "txtTelefonoCelular";
             this.txtTelefonoCelular.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtTelefonoCelular.Properties.MaxLength = 50;
             this.txtTelefonoCelular.Properties.NullValuePrompt = "Teléfono celular";
-            this.txtTelefonoCelular.Size = new System.Drawing.Size(291, 26);
+            this.txtTelefonoCelular.Size = new System.Drawing.Size(255, 24);
             this.txtTelefonoCelular.TabIndex = 9;
             // 
             // lblTelefono
             // 
-            this.lblTelefono.Location = new System.Drawing.Point(22, 227);
+            this.lblTelefono.Location = new System.Drawing.Point(19, 200);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(53, 17);
+            this.lblTelefono.Size = new System.Drawing.Size(46, 15);
             this.lblTelefono.TabIndex = 56;
             this.lblTelefono.Text = "Teléfono";
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(158, 222);
+            this.txtTelefono.Location = new System.Drawing.Point(138, 196);
             this.txtTelefono.MenuManager = this.mainRibbonControl;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtTelefono.Properties.MaxLength = 20;
             this.txtTelefono.Properties.NullValuePrompt = "Teléfono principal";
-            this.txtTelefono.Size = new System.Drawing.Size(291, 26);
+            this.txtTelefono.Size = new System.Drawing.Size(255, 24);
             this.txtTelefono.TabIndex = 7;
             // 
             // lblRFC
             // 
-            this.lblRFC.Location = new System.Drawing.Point(22, 159);
+            this.lblRFC.Location = new System.Drawing.Point(19, 140);
             this.lblRFC.Name = "lblRFC";
-            this.lblRFC.Size = new System.Drawing.Size(26, 17);
+            this.lblRFC.Size = new System.Drawing.Size(21, 15);
             this.lblRFC.TabIndex = 54;
             this.lblRFC.Text = "RFC";
             // 
             // txtRFC
             // 
-            this.txtRFC.Location = new System.Drawing.Point(158, 154);
+            this.txtRFC.Location = new System.Drawing.Point(138, 136);
             this.txtRFC.MenuManager = this.mainRibbonControl;
             this.txtRFC.Name = "txtRFC";
             this.txtRFC.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtRFC.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtRFC.Properties.MaxLength = 30;
             this.txtRFC.Properties.NullValuePrompt = "RFC";
-            this.txtRFC.Size = new System.Drawing.Size(291, 26);
+            this.txtRFC.Size = new System.Drawing.Size(255, 24);
             this.txtRFC.TabIndex = 6;
             // 
             // cbTipo
             // 
-            this.cbTipo.Location = new System.Drawing.Point(547, 17);
+            this.cbTipo.Location = new System.Drawing.Point(479, 15);
             this.cbTipo.MenuManager = this.mainRibbonControl;
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbTipo.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tipo", "Tipo", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbTipo.Size = new System.Drawing.Size(240, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tipo", "Tipo", 16, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbTipo.Size = new System.Drawing.Size(210, 24);
             this.cbTipo.TabIndex = 1;
             this.cbTipo.EditValueChanged += new System.EventHandler(this.cbTipo_EditValueChanged);
             // 
             // lblTipo
             // 
-            this.lblTipo.Location = new System.Drawing.Point(462, 23);
+            this.lblTipo.Location = new System.Drawing.Point(404, 20);
             this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(27, 17);
+            this.lblTipo.Size = new System.Drawing.Size(23, 15);
             this.lblTipo.TabIndex = 51;
             this.lblTipo.Text = "Tipo";
             // 
             // cbMonedas
             // 
-            this.cbMonedas.Location = new System.Drawing.Point(547, 120);
+            this.cbMonedas.Location = new System.Drawing.Point(479, 106);
             this.cbMonedas.MenuManager = this.mainRibbonControl;
             this.cbMonedas.Name = "cbMonedas";
             this.cbMonedas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbMonedas.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbMonedas.Size = new System.Drawing.Size(240, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 16, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbMonedas.Size = new System.Drawing.Size(210, 24);
             this.cbMonedas.TabIndex = 5;
             this.cbMonedas.TabStop = false;
             // 
             // lblMonedas
             // 
             this.lblMonedas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblMonedas.Location = new System.Drawing.Point(462, 125);
+            this.lblMonedas.Location = new System.Drawing.Point(404, 110);
             this.lblMonedas.Name = "lblMonedas";
-            this.lblMonedas.Size = new System.Drawing.Size(51, 17);
+            this.lblMonedas.Size = new System.Drawing.Size(44, 15);
             this.lblMonedas.TabIndex = 48;
             this.lblMonedas.Text = "Moneda";
             this.lblMonedas.Click += new System.EventHandler(this.lblMonedas_Click);
             // 
             // cbGruposSocios
             // 
-            this.cbGruposSocios.Location = new System.Drawing.Point(158, 120);
+            this.cbGruposSocios.Location = new System.Drawing.Point(138, 106);
             this.cbGruposSocios.MenuManager = this.mainRibbonControl;
             this.cbGruposSocios.Name = "cbGruposSocios";
             this.cbGruposSocios.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbGruposSocios.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tipo", "Tipo", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbGruposSocios.Size = new System.Drawing.Size(291, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 16, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tipo", "Tipo", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbGruposSocios.Size = new System.Drawing.Size(255, 24);
             this.cbGruposSocios.TabIndex = 4;
             // 
             // lblGrupoSocios
             // 
             this.lblGrupoSocios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblGrupoSocios.Location = new System.Drawing.Point(22, 125);
+            this.lblGrupoSocios.Location = new System.Drawing.Point(19, 110);
             this.lblGrupoSocios.Name = "lblGrupoSocios";
-            this.lblGrupoSocios.Size = new System.Drawing.Size(95, 17);
+            this.lblGrupoSocios.Size = new System.Drawing.Size(85, 15);
             this.lblGrupoSocios.TabIndex = 45;
             this.lblGrupoSocios.Text = "Grupo de socios";
             this.lblGrupoSocios.Click += new System.EventHandler(this.lblGrupoSocios_Click);
             // 
             // cbActivo
             // 
-            this.cbActivo.Location = new System.Drawing.Point(22, 568);
+            this.cbActivo.Location = new System.Drawing.Point(19, 501);
             this.cbActivo.MenuManager = this.mainRibbonControl;
             this.cbActivo.Name = "cbActivo";
             this.cbActivo.Properties.Caption = "Activo";
-            this.cbActivo.Size = new System.Drawing.Size(112, 21);
+            this.cbActivo.Size = new System.Drawing.Size(98, 20);
             this.cbActivo.TabIndex = 19;
             // 
             // btnImagen
             // 
             this.btnImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImagen.Location = new System.Drawing.Point(850, 275);
+            this.btnImagen.Location = new System.Drawing.Point(744, 243);
             this.btnImagen.Name = "btnImagen";
-            this.btnImagen.Size = new System.Drawing.Size(258, 35);
+            this.btnImagen.Size = new System.Drawing.Size(226, 31);
             this.btnImagen.TabIndex = 0;
             this.btnImagen.TabStop = false;
             this.btnImagen.Text = "Seleccionar imagen";
@@ -1100,27 +1099,27 @@ namespace NORI
             // lblID
             // 
             this.lblID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblID.Location = new System.Drawing.Point(1033, 551);
+            this.lblID.Location = new System.Drawing.Point(904, 486);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(9, 17);
+            this.lblID.Size = new System.Drawing.Size(6, 15);
             this.lblID.TabIndex = 42;
             this.lblID.Text = "0";
             // 
             // lblFechaActualizacion
             // 
             this.lblFechaActualizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFechaActualizacion.Location = new System.Drawing.Point(1033, 576);
+            this.lblFechaActualizacion.Location = new System.Drawing.Point(904, 508);
             this.lblFechaActualizacion.Name = "lblFechaActualizacion";
-            this.lblFechaActualizacion.Size = new System.Drawing.Size(65, 17);
+            this.lblFechaActualizacion.Size = new System.Drawing.Size(58, 15);
             this.lblFechaActualizacion.TabIndex = 41;
             this.lblFechaActualizacion.Text = "01/01/0001";
             // 
             // lblUltimaActualizacion
             // 
             this.lblUltimaActualizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblUltimaActualizacion.Location = new System.Drawing.Point(850, 576);
+            this.lblUltimaActualizacion.Location = new System.Drawing.Point(744, 508);
             this.lblUltimaActualizacion.Name = "lblUltimaActualizacion";
-            this.lblUltimaActualizacion.Size = new System.Drawing.Size(128, 17);
+            this.lblUltimaActualizacion.Size = new System.Drawing.Size(109, 15);
             this.lblUltimaActualizacion.TabIndex = 40;
             this.lblUltimaActualizacion.Text = "Última Actualización";
             // 
@@ -1128,70 +1127,70 @@ namespace NORI
             // 
             this.pbImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbImagen.BackColor = System.Drawing.Color.White;
-            this.pbImagen.Location = new System.Drawing.Point(850, 14);
+            this.pbImagen.Location = new System.Drawing.Point(744, 12);
             this.pbImagen.Name = "pbImagen";
-            this.pbImagen.Size = new System.Drawing.Size(258, 255);
+            this.pbImagen.Size = new System.Drawing.Size(226, 225);
             this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen.TabIndex = 39;
             this.pbImagen.TabStop = false;
             // 
             // lblNombreComercial
             // 
-            this.lblNombreComercial.Location = new System.Drawing.Point(22, 91);
+            this.lblNombreComercial.Location = new System.Drawing.Point(19, 80);
             this.lblNombreComercial.Name = "lblNombreComercial";
-            this.lblNombreComercial.Size = new System.Drawing.Size(115, 17);
+            this.lblNombreComercial.Size = new System.Drawing.Size(99, 15);
             this.lblNombreComercial.TabIndex = 5;
             this.lblNombreComercial.Text = "Nombre comercial";
             // 
             // txtNombreComercial
             // 
-            this.txtNombreComercial.Location = new System.Drawing.Point(158, 86);
+            this.txtNombreComercial.Location = new System.Drawing.Point(138, 76);
             this.txtNombreComercial.MenuManager = this.mainRibbonControl;
             this.txtNombreComercial.Name = "txtNombreComercial";
             this.txtNombreComercial.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtNombreComercial.Properties.MaxLength = 100;
             this.txtNombreComercial.Properties.NullValuePrompt = "Nombre comercial del socio";
-            this.txtNombreComercial.Size = new System.Drawing.Size(631, 26);
+            this.txtNombreComercial.Size = new System.Drawing.Size(552, 24);
             this.txtNombreComercial.TabIndex = 3;
             this.txtNombreComercial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSKU_KeyDown);
             // 
             // lblNombre
             // 
-            this.lblNombre.Location = new System.Drawing.Point(22, 57);
+            this.lblNombre.Location = new System.Drawing.Point(19, 50);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(52, 17);
+            this.lblNombre.Size = new System.Drawing.Size(44, 15);
             this.lblNombre.TabIndex = 3;
             this.lblNombre.Text = "Nombre";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(158, 52);
+            this.txtNombre.Location = new System.Drawing.Point(138, 46);
             this.txtNombre.MenuManager = this.mainRibbonControl;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtNombre.Properties.MaxLength = 254;
             this.txtNombre.Properties.NullValuePrompt = "Nombre del socio";
-            this.txtNombre.Size = new System.Drawing.Size(631, 26);
+            this.txtNombre.Size = new System.Drawing.Size(552, 24);
             this.txtNombre.TabIndex = 2;
             this.txtNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSKU_KeyDown);
             // 
             // lblCodigo
             // 
-            this.lblCodigo.Location = new System.Drawing.Point(22, 23);
+            this.lblCodigo.Location = new System.Drawing.Point(19, 20);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(44, 17);
+            this.lblCodigo.Size = new System.Drawing.Size(39, 15);
             this.lblCodigo.TabIndex = 1;
             this.lblCodigo.Text = "Código";
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(158, 18);
+            this.txtCodigo.Location = new System.Drawing.Point(138, 16);
             this.txtCodigo.MenuManager = this.mainRibbonControl;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtCodigo.Properties.MaxLength = 15;
             this.txtCodigo.Properties.NullValuePrompt = "Identificador del socio";
-            this.txtCodigo.Size = new System.Drawing.Size(291, 26);
+            this.txtCodigo.Size = new System.Drawing.Size(255, 24);
             this.txtCodigo.TabIndex = 0;
             this.txtCodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSKU_KeyDown);
             // 
@@ -1214,56 +1213,56 @@ namespace NORI
             this.xtraTabPageCondicionesPago.Controls.Add(this.lblLimiteCredito);
             this.xtraTabPageCondicionesPago.Controls.Add(this.txtLimiteCredito);
             this.xtraTabPageCondicionesPago.Name = "xtraTabPageCondicionesPago";
-            this.xtraTabPageCondicionesPago.Size = new System.Drawing.Size(1132, 658);
+            this.xtraTabPageCondicionesPago.Size = new System.Drawing.Size(991, 571);
             this.xtraTabPageCondicionesPago.Text = "Condiciones de pago";
             // 
             // lblDiasExtra
             // 
-            this.lblDiasExtra.Location = new System.Drawing.Point(22, 258);
+            this.lblDiasExtra.Location = new System.Drawing.Point(19, 228);
             this.lblDiasExtra.Name = "lblDiasExtra";
-            this.lblDiasExtra.Size = new System.Drawing.Size(61, 17);
+            this.lblDiasExtra.Size = new System.Drawing.Size(51, 15);
             this.lblDiasExtra.TabIndex = 82;
             this.lblDiasExtra.Text = "Dias extra";
             // 
             // txtDiasExtra
             // 
-            this.txtDiasExtra.Location = new System.Drawing.Point(158, 254);
+            this.txtDiasExtra.Location = new System.Drawing.Point(138, 224);
             this.txtDiasExtra.MenuManager = this.mainRibbonControl;
             this.txtDiasExtra.Name = "txtDiasExtra";
             this.txtDiasExtra.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtDiasExtra.Properties.MaxLength = 18;
-            this.txtDiasExtra.Size = new System.Drawing.Size(94, 26);
+            this.txtDiasExtra.Size = new System.Drawing.Size(82, 24);
             this.txtDiasExtra.TabIndex = 81;
             // 
             // lblCuentaPago
             // 
-            this.lblCuentaPago.Location = new System.Drawing.Point(22, 227);
+            this.lblCuentaPago.Location = new System.Drawing.Point(19, 200);
             this.lblCuentaPago.Name = "lblCuentaPago";
-            this.lblCuentaPago.Size = new System.Drawing.Size(100, 17);
+            this.lblCuentaPago.Size = new System.Drawing.Size(84, 15);
             this.lblCuentaPago.TabIndex = 80;
             this.lblCuentaPago.Text = "Cuenta de pago";
             // 
             // txtCuentaPago
             // 
-            this.txtCuentaPago.Location = new System.Drawing.Point(158, 222);
+            this.txtCuentaPago.Location = new System.Drawing.Point(138, 196);
             this.txtCuentaPago.MenuManager = this.mainRibbonControl;
             this.txtCuentaPago.Name = "txtCuentaPago";
             this.txtCuentaPago.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtCuentaPago.Properties.MaxLength = 18;
-            this.txtCuentaPago.Size = new System.Drawing.Size(291, 26);
+            this.txtCuentaPago.Size = new System.Drawing.Size(255, 24);
             this.txtCuentaPago.TabIndex = 6;
             // 
             // lblPorcentajeDescuento
             // 
-            this.lblPorcentajeDescuento.Location = new System.Drawing.Point(23, 125);
+            this.lblPorcentajeDescuento.Location = new System.Drawing.Point(20, 110);
             this.lblPorcentajeDescuento.Name = "lblPorcentajeDescuento";
-            this.lblPorcentajeDescuento.Size = new System.Drawing.Size(78, 17);
+            this.lblPorcentajeDescuento.Size = new System.Drawing.Size(69, 15);
             this.lblPorcentajeDescuento.TabIndex = 0;
             this.lblPorcentajeDescuento.Text = "% Descuento";
             // 
             // txtPorcentajeDescuento
             // 
-            this.txtPorcentajeDescuento.Location = new System.Drawing.Point(158, 120);
+            this.txtPorcentajeDescuento.Location = new System.Drawing.Point(138, 106);
             this.txtPorcentajeDescuento.MenuManager = this.mainRibbonControl;
             this.txtPorcentajeDescuento.Name = "txtPorcentajeDescuento";
             this.txtPorcentajeDescuento.Properties.DisplayFormat.FormatString = "P2";
@@ -1272,43 +1271,42 @@ namespace NORI
             this.txtPorcentajeDescuento.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.txtPorcentajeDescuento.Properties.Mask.EditMask = "P2";
             this.txtPorcentajeDescuento.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPorcentajeDescuento.Size = new System.Drawing.Size(291, 26);
+            this.txtPorcentajeDescuento.Size = new System.Drawing.Size(255, 24);
             this.txtPorcentajeDescuento.TabIndex = 3;
             // 
             // cbMetodosPago
             // 
-            this.cbMetodosPago.Location = new System.Drawing.Point(158, 188);
+            this.cbMetodosPago.Location = new System.Drawing.Point(138, 166);
             this.cbMetodosPago.MenuManager = this.mainRibbonControl;
             this.cbMetodosPago.Name = "cbMetodosPago";
             this.cbMetodosPago.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbMetodosPago.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbMetodosPago.Size = new System.Drawing.Size(291, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 16, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbMetodosPago.Size = new System.Drawing.Size(255, 24);
             this.cbMetodosPago.TabIndex = 5;
             // 
             // lblMetodosPago
             // 
             this.lblMetodosPago.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblMetodosPago.Location = new System.Drawing.Point(22, 193);
+            this.lblMetodosPago.Location = new System.Drawing.Point(19, 170);
             this.lblMetodosPago.Name = "lblMetodosPago";
-            this.lblMetodosPago.Size = new System.Drawing.Size(103, 17);
+            this.lblMetodosPago.Size = new System.Drawing.Size(88, 15);
             this.lblMetodosPago.TabIndex = 78;
             this.lblMetodosPago.Text = "Método de pago";
-            this.lblMetodosPago.Click += new System.EventHandler(this.lblMetodosPago_Click);
             // 
             // lblPorcentajeInteresRetraso
             // 
-            this.lblPorcentajeInteresRetraso.Location = new System.Drawing.Point(23, 57);
+            this.lblPorcentajeInteresRetraso.Location = new System.Drawing.Point(20, 50);
             this.lblPorcentajeInteresRetraso.Name = "lblPorcentajeInteresRetraso";
-            this.lblPorcentajeInteresRetraso.Size = new System.Drawing.Size(100, 17);
+            this.lblPorcentajeInteresRetraso.Size = new System.Drawing.Size(87, 15);
             this.lblPorcentajeInteresRetraso.TabIndex = 54;
             this.lblPorcentajeInteresRetraso.Text = "% Interes retraso";
             // 
             // txtPorcentajeInteresRetraso
             // 
-            this.txtPorcentajeInteresRetraso.Location = new System.Drawing.Point(158, 52);
+            this.txtPorcentajeInteresRetraso.Location = new System.Drawing.Point(138, 46);
             this.txtPorcentajeInteresRetraso.MenuManager = this.mainRibbonControl;
             this.txtPorcentajeInteresRetraso.Name = "txtPorcentajeInteresRetraso";
             this.txtPorcentajeInteresRetraso.Properties.DisplayFormat.FormatString = "P2";
@@ -1317,66 +1315,66 @@ namespace NORI
             this.txtPorcentajeInteresRetraso.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.txtPorcentajeInteresRetraso.Properties.Mask.EditMask = "P2";
             this.txtPorcentajeInteresRetraso.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPorcentajeInteresRetraso.Size = new System.Drawing.Size(291, 26);
+            this.txtPorcentajeInteresRetraso.Size = new System.Drawing.Size(255, 24);
             this.txtPorcentajeInteresRetraso.TabIndex = 1;
             // 
             // cbListaPrecios
             // 
-            this.cbListaPrecios.Location = new System.Drawing.Point(158, 86);
+            this.cbListaPrecios.Location = new System.Drawing.Point(138, 76);
             this.cbListaPrecios.MenuManager = this.mainRibbonControl;
             this.cbListaPrecios.Name = "cbListaPrecios";
             this.cbListaPrecios.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbListaPrecios.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbListaPrecios.Size = new System.Drawing.Size(291, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 16, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbListaPrecios.Size = new System.Drawing.Size(255, 24);
             this.cbListaPrecios.TabIndex = 2;
             // 
             // lblListaPrecios
             // 
             this.lblListaPrecios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblListaPrecios.Location = new System.Drawing.Point(23, 87);
+            this.lblListaPrecios.Location = new System.Drawing.Point(20, 77);
             this.lblListaPrecios.Name = "lblListaPrecios";
-            this.lblListaPrecios.Size = new System.Drawing.Size(92, 17);
+            this.lblListaPrecios.Size = new System.Drawing.Size(81, 15);
             this.lblListaPrecios.TabIndex = 52;
             this.lblListaPrecios.Text = "Lista de precios";
             this.lblListaPrecios.Click += new System.EventHandler(this.lblListaPrecios_Click);
             // 
             // cbCondicionesPago
             // 
-            this.cbCondicionesPago.Location = new System.Drawing.Point(158, 18);
+            this.cbCondicionesPago.Location = new System.Drawing.Point(138, 16);
             this.cbCondicionesPago.MenuManager = this.mainRibbonControl;
             this.cbCondicionesPago.Name = "cbCondicionesPago";
             this.cbCondicionesPago.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbCondicionesPago.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbCondicionesPago.Size = new System.Drawing.Size(291, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 16, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbCondicionesPago.Size = new System.Drawing.Size(255, 24);
             this.cbCondicionesPago.TabIndex = 0;
             // 
             // lblCondicionesPago
             // 
             this.lblCondicionesPago.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCondicionesPago.Location = new System.Drawing.Point(22, 23);
+            this.lblCondicionesPago.Location = new System.Drawing.Point(19, 20);
             this.lblCondicionesPago.Name = "lblCondicionesPago";
-            this.lblCondicionesPago.Size = new System.Drawing.Size(127, 17);
+            this.lblCondicionesPago.Size = new System.Drawing.Size(112, 15);
             this.lblCondicionesPago.TabIndex = 50;
             this.lblCondicionesPago.Text = "Condiciones de pago";
             this.lblCondicionesPago.Click += new System.EventHandler(this.lblCondicionesPago_Click);
             // 
             // lblLimiteCredito
             // 
-            this.lblLimiteCredito.Location = new System.Drawing.Point(23, 159);
+            this.lblLimiteCredito.Location = new System.Drawing.Point(20, 140);
             this.lblLimiteCredito.Name = "lblLimiteCredito";
-            this.lblLimiteCredito.Size = new System.Drawing.Size(104, 17);
+            this.lblLimiteCredito.Size = new System.Drawing.Size(89, 15);
             this.lblLimiteCredito.TabIndex = 49;
             this.lblLimiteCredito.Text = "Límite de crédito";
             // 
             // txtLimiteCredito
             // 
-            this.txtLimiteCredito.Location = new System.Drawing.Point(158, 154);
+            this.txtLimiteCredito.Location = new System.Drawing.Point(138, 136);
             this.txtLimiteCredito.MenuManager = this.mainRibbonControl;
             this.txtLimiteCredito.Name = "txtLimiteCredito";
             this.txtLimiteCredito.Properties.DisplayFormat.FormatString = "c2";
@@ -1385,14 +1383,14 @@ namespace NORI
             this.txtLimiteCredito.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.txtLimiteCredito.Properties.Mask.EditMask = "c2";
             this.txtLimiteCredito.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtLimiteCredito.Size = new System.Drawing.Size(291, 26);
+            this.txtLimiteCredito.Size = new System.Drawing.Size(255, 24);
             this.txtLimiteCredito.TabIndex = 4;
             // 
             // xtraTabPagePersonasContacto
             // 
             this.xtraTabPagePersonasContacto.Controls.Add(this.gcPersonasContacto);
             this.xtraTabPagePersonasContacto.Name = "xtraTabPagePersonasContacto";
-            this.xtraTabPagePersonasContacto.Size = new System.Drawing.Size(1132, 658);
+            this.xtraTabPagePersonasContacto.Size = new System.Drawing.Size(991, 571);
             this.xtraTabPagePersonasContacto.Text = "Personas de contacto";
             // 
             // gcPersonasContacto
@@ -1404,7 +1402,7 @@ namespace NORI
             this.gcPersonasContacto.Name = "gcPersonasContacto";
             this.gcPersonasContacto.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cbGenero});
-            this.gcPersonasContacto.Size = new System.Drawing.Size(1132, 658);
+            this.gcPersonasContacto.Size = new System.Drawing.Size(991, 571);
             this.gcPersonasContacto.TabIndex = 7;
             this.gcPersonasContacto.UseEmbeddedNavigator = true;
             this.gcPersonasContacto.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1427,12 +1425,12 @@ namespace NORI
             this.gridColumn25,
             this.gridColumn28,
             this.gridColumn27});
-            this.gvPersonasContacto.DetailHeight = 458;
+            this.gvPersonasContacto.DetailHeight = 404;
             this.gvPersonasContacto.FixedLineWidth = 3;
             this.gvPersonasContacto.GridControl = this.gcPersonasContacto;
             this.gvPersonasContacto.Name = "gvPersonasContacto";
             this.gvPersonasContacto.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
-            this.gvPersonasContacto.OptionsEditForm.PopupEditFormWidth = 711;
+            this.gvPersonasContacto.OptionsEditForm.PopupEditFormWidth = 622;
             this.gvPersonasContacto.OptionsNavigation.AutoFocusNewRow = true;
             this.gvPersonasContacto.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             // 
@@ -1440,21 +1438,21 @@ namespace NORI
             // 
             this.gridColumnID.Caption = "ID";
             this.gridColumnID.FieldName = "id";
-            this.gridColumnID.MinWidth = 26;
+            this.gridColumnID.MinWidth = 23;
             this.gridColumnID.Name = "gridColumnID";
-            this.gridColumnID.Width = 99;
+            this.gridColumnID.Width = 87;
             // 
             // gridColumn15
             // 
             this.gridColumn15.Caption = "Genero";
             this.gridColumn15.ColumnEdit = this.cbGenero;
             this.gridColumn15.FieldName = "genero";
-            this.gridColumn15.MaxWidth = 106;
-            this.gridColumn15.MinWidth = 26;
+            this.gridColumn15.MaxWidth = 93;
+            this.gridColumn15.MinWidth = 23;
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 0;
-            this.gridColumn15.Width = 106;
+            this.gridColumn15.Width = 93;
             // 
             // cbGenero
             // 
@@ -1462,127 +1460,127 @@ namespace NORI
             this.cbGenero.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbGenero.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("genero", "Genero", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("genero", "Genero", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cbGenero.Name = "cbGenero";
             // 
             // gridColumn16
             // 
             this.gridColumn16.Caption = "Socio ID";
             this.gridColumn16.FieldName = "socio_id";
-            this.gridColumn16.MinWidth = 26;
+            this.gridColumn16.MinWidth = 23;
             this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.Width = 99;
+            this.gridColumn16.Width = 87;
             // 
             // gridColumn18
             // 
             this.gridColumn18.Caption = "Título";
             this.gridColumn18.FieldName = "titulo";
-            this.gridColumn18.MaxWidth = 54;
-            this.gridColumn18.MinWidth = 26;
+            this.gridColumn18.MaxWidth = 47;
+            this.gridColumn18.MinWidth = 23;
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.Visible = true;
             this.gridColumn18.VisibleIndex = 1;
-            this.gridColumn18.Width = 54;
+            this.gridColumn18.Width = 47;
             // 
             // gridColumn17
             // 
             this.gridColumn17.Caption = "Nombre";
             this.gridColumn17.FieldName = "nombre_persona";
-            this.gridColumn17.MaxWidth = 200;
-            this.gridColumn17.MinWidth = 26;
+            this.gridColumn17.MaxWidth = 175;
+            this.gridColumn17.MinWidth = 23;
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.Visible = true;
             this.gridColumn17.VisibleIndex = 2;
-            this.gridColumn17.Width = 134;
+            this.gridColumn17.Width = 117;
             // 
             // gridColumn19
             // 
             this.gridColumn19.Caption = "Posición";
             this.gridColumn19.FieldName = "posicion";
-            this.gridColumn19.MaxWidth = 80;
-            this.gridColumn19.MinWidth = 26;
+            this.gridColumn19.MaxWidth = 70;
+            this.gridColumn19.MinWidth = 23;
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.Visible = true;
             this.gridColumn19.VisibleIndex = 3;
-            this.gridColumn19.Width = 72;
+            this.gridColumn19.Width = 63;
             // 
             // gridColumn20
             // 
             this.gridColumn20.Caption = "Dirección";
             this.gridColumn20.FieldName = "direccion";
-            this.gridColumn20.MinWidth = 26;
+            this.gridColumn20.MinWidth = 23;
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.Visible = true;
             this.gridColumn20.VisibleIndex = 4;
-            this.gridColumn20.Width = 129;
+            this.gridColumn20.Width = 113;
             // 
             // gridColumn21
             // 
             this.gridColumn21.Caption = "Teléfono";
             this.gridColumn21.FieldName = "telefono";
-            this.gridColumn21.MaxWidth = 66;
-            this.gridColumn21.MinWidth = 26;
+            this.gridColumn21.MaxWidth = 58;
+            this.gridColumn21.MinWidth = 23;
             this.gridColumn21.Name = "gridColumn21";
             this.gridColumn21.Visible = true;
             this.gridColumn21.VisibleIndex = 5;
-            this.gridColumn21.Width = 59;
+            this.gridColumn21.Width = 52;
             // 
             // gridColumn22
             // 
             this.gridColumn22.Caption = "Celular";
             this.gridColumn22.FieldName = "celular";
-            this.gridColumn22.MaxWidth = 66;
-            this.gridColumn22.MinWidth = 26;
+            this.gridColumn22.MaxWidth = 58;
+            this.gridColumn22.MinWidth = 23;
             this.gridColumn22.Name = "gridColumn22";
             this.gridColumn22.Visible = true;
             this.gridColumn22.VisibleIndex = 6;
-            this.gridColumn22.Width = 59;
+            this.gridColumn22.Width = 52;
             // 
             // gridColumn24
             // 
             this.gridColumn24.Caption = "Correo";
             this.gridColumn24.FieldName = "correo";
-            this.gridColumn24.MaxWidth = 134;
-            this.gridColumn24.MinWidth = 26;
+            this.gridColumn24.MaxWidth = 117;
+            this.gridColumn24.MinWidth = 23;
             this.gridColumn24.Name = "gridColumn24";
             this.gridColumn24.Visible = true;
             this.gridColumn24.VisibleIndex = 7;
-            this.gridColumn24.Width = 120;
+            this.gridColumn24.Width = 105;
             // 
             // gridColumn25
             // 
             this.gridColumn25.Caption = "Observaciones";
             this.gridColumn25.FieldName = "observaciones";
-            this.gridColumn25.MaxWidth = 266;
-            this.gridColumn25.MinWidth = 26;
+            this.gridColumn25.MaxWidth = 233;
+            this.gridColumn25.MinWidth = 23;
             this.gridColumn25.Name = "gridColumn25";
             this.gridColumn25.Visible = true;
             this.gridColumn25.VisibleIndex = 8;
-            this.gridColumn25.Width = 174;
+            this.gridColumn25.Width = 152;
             // 
             // gridColumn28
             // 
             this.gridColumn28.Caption = "Huella digital";
             this.gridColumn28.FieldName = "huella_digital";
-            this.gridColumn28.MaxWidth = 106;
-            this.gridColumn28.MinWidth = 26;
+            this.gridColumn28.MaxWidth = 93;
+            this.gridColumn28.MinWidth = 23;
             this.gridColumn28.Name = "gridColumn28";
             this.gridColumn28.OptionsColumn.AllowEdit = false;
             this.gridColumn28.Visible = true;
             this.gridColumn28.VisibleIndex = 9;
-            this.gridColumn28.Width = 97;
+            this.gridColumn28.Width = 85;
             // 
             // gridColumn27
             // 
             this.gridColumn27.Caption = "Activo";
             this.gridColumn27.FieldName = "activo";
-            this.gridColumn27.MaxWidth = 59;
-            this.gridColumn27.MinWidth = 26;
+            this.gridColumn27.MaxWidth = 52;
+            this.gridColumn27.MinWidth = 23;
             this.gridColumn27.Name = "gridColumn27";
             this.gridColumn27.Visible = true;
             this.gridColumn27.VisibleIndex = 10;
-            this.gridColumn27.Width = 57;
+            this.gridColumn27.Width = 50;
             // 
             // xtraTabPageDirecciones
             // 
@@ -1618,32 +1616,32 @@ namespace NORI
             this.xtraTabPageDirecciones.Controls.Add(this.lblNombreDireccion);
             this.xtraTabPageDirecciones.Controls.Add(this.txtNombreDireccion);
             this.xtraTabPageDirecciones.Name = "xtraTabPageDirecciones";
-            this.xtraTabPageDirecciones.Size = new System.Drawing.Size(1132, 658);
+            this.xtraTabPageDirecciones.Size = new System.Drawing.Size(991, 571);
             this.xtraTabPageDirecciones.Text = "Direcciones";
             // 
             // lblDistancia
             // 
-            this.lblDistancia.Location = new System.Drawing.Point(23, 360);
+            this.lblDistancia.Location = new System.Drawing.Point(20, 318);
             this.lblDistancia.Name = "lblDistancia";
-            this.lblDistancia.Size = new System.Drawing.Size(55, 17);
+            this.lblDistancia.Size = new System.Drawing.Size(48, 15);
             this.lblDistancia.TabIndex = 132;
             this.lblDistancia.Text = "Distancia";
             // 
             // txtDistancia
             // 
-            this.txtDistancia.Location = new System.Drawing.Point(158, 356);
+            this.txtDistancia.Location = new System.Drawing.Point(138, 314);
             this.txtDistancia.MenuManager = this.mainRibbonControl;
             this.txtDistancia.Name = "txtDistancia";
             this.txtDistancia.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtDistancia.Properties.MaxLength = 100;
-            this.txtDistancia.Size = new System.Drawing.Size(146, 26);
+            this.txtDistancia.Size = new System.Drawing.Size(128, 24);
             this.txtDistancia.TabIndex = 131;
             // 
             // lblDireccionID
             // 
-            this.lblDireccionID.Location = new System.Drawing.Point(457, 57);
+            this.lblDireccionID.Location = new System.Drawing.Point(400, 50);
             this.lblDireccionID.Name = "lblDireccionID";
-            this.lblDireccionID.Size = new System.Drawing.Size(9, 17);
+            this.lblDireccionID.Size = new System.Drawing.Size(6, 15);
             this.lblDireccionID.TabIndex = 130;
             this.lblDireccionID.Text = "0";
             // 
@@ -1651,9 +1649,9 @@ namespace NORI
             // 
             this.btnGuardarDireccion.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnGuardarDireccion.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnGuardarDireccion.Location = new System.Drawing.Point(498, 18);
+            this.btnGuardarDireccion.Location = new System.Drawing.Point(436, 16);
             this.btnGuardarDireccion.Name = "btnGuardarDireccion";
-            this.btnGuardarDireccion.Size = new System.Drawing.Size(106, 26);
+            this.btnGuardarDireccion.Size = new System.Drawing.Size(93, 23);
             this.btnGuardarDireccion.TabIndex = 129;
             this.btnGuardarDireccion.TabStop = false;
             this.btnGuardarDireccion.Text = "Guardar";
@@ -1661,24 +1659,24 @@ namespace NORI
             // 
             // cbImpuestos
             // 
-            this.cbImpuestos.Location = new System.Drawing.Point(158, 86);
+            this.cbImpuestos.Location = new System.Drawing.Point(138, 76);
             this.cbImpuestos.MenuManager = this.mainRibbonControl;
             this.cbImpuestos.Name = "cbImpuestos";
             this.cbImpuestos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbImpuestos.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbImpuestos.Size = new System.Drawing.Size(291, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 16, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbImpuestos.Size = new System.Drawing.Size(255, 24);
             this.cbImpuestos.TabIndex = 2;
             // 
             // lblImpuesto
             // 
             this.lblImpuesto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblImpuesto.Location = new System.Drawing.Point(22, 91);
+            this.lblImpuesto.Location = new System.Drawing.Point(19, 80);
             this.lblImpuesto.Name = "lblImpuesto";
-            this.lblImpuesto.Size = new System.Drawing.Size(56, 17);
+            this.lblImpuesto.Size = new System.Drawing.Size(50, 15);
             this.lblImpuesto.TabIndex = 128;
             this.lblImpuesto.Text = "Impuesto";
             // 
@@ -1686,7 +1684,7 @@ namespace NORI
             // 
             this.lblTipoDireccion.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblTipoDireccion.Appearance.Options.UseFont = true;
-            this.lblTipoDireccion.Location = new System.Drawing.Point(22, 57);
+            this.lblTipoDireccion.Location = new System.Drawing.Point(19, 50);
             this.lblTipoDireccion.Name = "lblTipoDireccion";
             this.lblTipoDireccion.Size = new System.Drawing.Size(24, 13);
             this.lblTipoDireccion.TabIndex = 126;
@@ -1694,22 +1692,22 @@ namespace NORI
             // 
             // cbTipoDireccion
             // 
-            this.cbTipoDireccion.Location = new System.Drawing.Point(158, 52);
+            this.cbTipoDireccion.Location = new System.Drawing.Point(138, 46);
             this.cbTipoDireccion.MenuManager = this.mainRibbonControl;
             this.cbTipoDireccion.Name = "cbTipoDireccion";
             this.cbTipoDireccion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbTipoDireccion.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbTipoDireccion.Size = new System.Drawing.Size(291, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbTipoDireccion.Size = new System.Drawing.Size(255, 24);
             this.cbTipoDireccion.TabIndex = 1;
             // 
             // btnNuevaDireccion
             // 
             this.btnNuevaDireccion.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnNuevaDireccion.Location = new System.Drawing.Point(457, 18);
+            this.btnNuevaDireccion.Location = new System.Drawing.Point(400, 16);
             this.btnNuevaDireccion.Name = "btnNuevaDireccion";
-            this.btnNuevaDireccion.Size = new System.Drawing.Size(32, 26);
+            this.btnNuevaDireccion.Size = new System.Drawing.Size(28, 23);
             this.btnNuevaDireccion.TabIndex = 122;
             this.btnNuevaDireccion.TabStop = false;
             this.btnNuevaDireccion.Text = "Nueva";
@@ -1717,23 +1715,23 @@ namespace NORI
             // 
             // cbDirecciones
             // 
-            this.cbDirecciones.Location = new System.Drawing.Point(158, 18);
+            this.cbDirecciones.Location = new System.Drawing.Point(138, 16);
             this.cbDirecciones.MenuManager = this.mainRibbonControl;
             this.cbDirecciones.Name = "cbDirecciones";
             this.cbDirecciones.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbDirecciones.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbDirecciones.Size = new System.Drawing.Size(291, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 16, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbDirecciones.Size = new System.Drawing.Size(255, 24);
             this.cbDirecciones.TabIndex = 0;
             this.cbDirecciones.EditValueChanged += new System.EventHandler(this.cbDirecciones_EditValueChanged);
             // 
             // lblDireccion
             // 
-            this.lblDireccion.Location = new System.Drawing.Point(22, 23);
+            this.lblDireccion.Location = new System.Drawing.Point(19, 20);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(56, 17);
+            this.lblDireccion.Size = new System.Drawing.Size(50, 15);
             this.lblDireccion.TabIndex = 124;
             this.lblDireccion.Text = "Dirección";
             // 
@@ -1741,7 +1739,7 @@ namespace NORI
             // 
             this.lblCP.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblCP.Appearance.Options.UseFont = true;
-            this.lblCP.Location = new System.Drawing.Point(22, 227);
+            this.lblCP.Location = new System.Drawing.Point(19, 200);
             this.lblCP.Name = "lblCP";
             this.lblCP.Size = new System.Drawing.Size(20, 13);
             this.lblCP.TabIndex = 121;
@@ -1749,21 +1747,21 @@ namespace NORI
             // 
             // txtCP
             // 
-            this.txtCP.Location = new System.Drawing.Point(158, 222);
+            this.txtCP.Location = new System.Drawing.Point(138, 196);
             this.txtCP.MenuManager = this.mainRibbonControl;
             this.txtCP.Name = "txtCP";
             this.txtCP.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtCP.Properties.Mask.EditMask = "00000";
             this.txtCP.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
             this.txtCP.Properties.MaxLength = 5;
-            this.txtCP.Size = new System.Drawing.Size(146, 26);
+            this.txtCP.Size = new System.Drawing.Size(128, 24);
             this.txtCP.TabIndex = 7;
             // 
             // lblCiudad
             // 
             this.lblCiudad.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblCiudad.Appearance.Options.UseFont = true;
-            this.lblCiudad.Location = new System.Drawing.Point(22, 261);
+            this.lblCiudad.Location = new System.Drawing.Point(19, 230);
             this.lblCiudad.Name = "lblCiudad";
             this.lblCiudad.Size = new System.Drawing.Size(38, 13);
             this.lblCiudad.TabIndex = 120;
@@ -1771,19 +1769,19 @@ namespace NORI
             // 
             // txtCiudad
             // 
-            this.txtCiudad.Location = new System.Drawing.Point(158, 256);
+            this.txtCiudad.Location = new System.Drawing.Point(138, 226);
             this.txtCiudad.MenuManager = this.mainRibbonControl;
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtCiudad.Properties.MaxLength = 100;
-            this.txtCiudad.Size = new System.Drawing.Size(446, 26);
+            this.txtCiudad.Size = new System.Drawing.Size(390, 24);
             this.txtCiudad.TabIndex = 9;
             // 
             // lblEstado
             // 
             this.lblEstado.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblEstado.Appearance.Options.UseFont = true;
-            this.lblEstado.Location = new System.Drawing.Point(322, 329);
+            this.lblEstado.Location = new System.Drawing.Point(282, 290);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(38, 13);
             this.lblEstado.TabIndex = 119;
@@ -1791,21 +1789,21 @@ namespace NORI
             // 
             // cbEstados
             // 
-            this.cbEstados.Location = new System.Drawing.Point(457, 324);
+            this.cbEstados.Location = new System.Drawing.Point(400, 286);
             this.cbEstados.MenuManager = this.mainRibbonControl;
             this.cbEstados.Name = "cbEstados";
             this.cbEstados.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbEstados.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbEstados.Size = new System.Drawing.Size(146, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbEstados.Size = new System.Drawing.Size(128, 24);
             this.cbEstados.TabIndex = 12;
             // 
             // lblPais
             // 
             this.lblPais.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblPais.Appearance.Options.UseFont = true;
-            this.lblPais.Location = new System.Drawing.Point(22, 329);
+            this.lblPais.Location = new System.Drawing.Point(19, 290);
             this.lblPais.Name = "lblPais";
             this.lblPais.Size = new System.Drawing.Size(23, 13);
             this.lblPais.TabIndex = 118;
@@ -1813,40 +1811,40 @@ namespace NORI
             // 
             // cbPaises
             // 
-            this.cbPaises.Location = new System.Drawing.Point(158, 324);
+            this.cbPaises.Location = new System.Drawing.Point(138, 286);
             this.cbPaises.MenuManager = this.mainRibbonControl;
             this.cbPaises.Name = "cbPaises";
             this.cbPaises.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbPaises.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbPaises.Size = new System.Drawing.Size(146, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbPaises.Size = new System.Drawing.Size(128, 24);
             this.cbPaises.TabIndex = 11;
             this.cbPaises.EditValueChanged += new System.EventHandler(this.cbPaises_EditValueChanged);
             // 
             // lblMunicipio
             // 
-            this.lblMunicipio.Location = new System.Drawing.Point(22, 295);
+            this.lblMunicipio.Location = new System.Drawing.Point(19, 260);
             this.lblMunicipio.Name = "lblMunicipio";
-            this.lblMunicipio.Size = new System.Drawing.Size(59, 17);
+            this.lblMunicipio.Size = new System.Drawing.Size(54, 15);
             this.lblMunicipio.TabIndex = 117;
             this.lblMunicipio.Text = "Municipio";
             // 
             // txtMunicipio
             // 
-            this.txtMunicipio.Location = new System.Drawing.Point(158, 290);
+            this.txtMunicipio.Location = new System.Drawing.Point(138, 256);
             this.txtMunicipio.MenuManager = this.mainRibbonControl;
             this.txtMunicipio.Name = "txtMunicipio";
             this.txtMunicipio.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtMunicipio.Properties.MaxLength = 100;
-            this.txtMunicipio.Size = new System.Drawing.Size(446, 26);
+            this.txtMunicipio.Size = new System.Drawing.Size(390, 24);
             this.txtMunicipio.TabIndex = 10;
             // 
             // lblColonia
             // 
             this.lblColonia.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblColonia.Appearance.Options.UseFont = true;
-            this.lblColonia.Location = new System.Drawing.Point(322, 227);
+            this.lblColonia.Location = new System.Drawing.Point(282, 200);
             this.lblColonia.Name = "lblColonia";
             this.lblColonia.Size = new System.Drawing.Size(41, 13);
             this.lblColonia.TabIndex = 116;
@@ -1854,37 +1852,37 @@ namespace NORI
             // 
             // txtColonia
             // 
-            this.txtColonia.Location = new System.Drawing.Point(457, 222);
+            this.txtColonia.Location = new System.Drawing.Point(400, 196);
             this.txtColonia.MenuManager = this.mainRibbonControl;
             this.txtColonia.Name = "txtColonia";
             this.txtColonia.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtColonia.Properties.MaxLength = 100;
-            this.txtColonia.Size = new System.Drawing.Size(146, 26);
+            this.txtColonia.Size = new System.Drawing.Size(128, 24);
             this.txtColonia.TabIndex = 8;
             // 
             // lblNumeroInterior
             // 
-            this.lblNumeroInterior.Location = new System.Drawing.Point(322, 193);
+            this.lblNumeroInterior.Location = new System.Drawing.Point(282, 170);
             this.lblNumeroInterior.Name = "lblNumeroInterior";
-            this.lblNumeroInterior.Size = new System.Drawing.Size(70, 17);
+            this.lblNumeroInterior.Size = new System.Drawing.Size(60, 15);
             this.lblNumeroInterior.TabIndex = 115;
             this.lblNumeroInterior.Text = "No. Interior";
             // 
             // txtNumeroInterior
             // 
-            this.txtNumeroInterior.Location = new System.Drawing.Point(457, 188);
+            this.txtNumeroInterior.Location = new System.Drawing.Point(400, 166);
             this.txtNumeroInterior.MenuManager = this.mainRibbonControl;
             this.txtNumeroInterior.Name = "txtNumeroInterior";
             this.txtNumeroInterior.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtNumeroInterior.Properties.MaxLength = 100;
-            this.txtNumeroInterior.Size = new System.Drawing.Size(146, 26);
+            this.txtNumeroInterior.Size = new System.Drawing.Size(128, 24);
             this.txtNumeroInterior.TabIndex = 6;
             // 
             // lblNumeroExterior
             // 
             this.lblNumeroExterior.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblNumeroExterior.Appearance.Options.UseFont = true;
-            this.lblNumeroExterior.Location = new System.Drawing.Point(22, 193);
+            this.lblNumeroExterior.Location = new System.Drawing.Point(19, 170);
             this.lblNumeroExterior.Name = "lblNumeroExterior";
             this.lblNumeroExterior.Size = new System.Drawing.Size(65, 13);
             this.lblNumeroExterior.TabIndex = 114;
@@ -1892,19 +1890,19 @@ namespace NORI
             // 
             // txtNumeroExterior
             // 
-            this.txtNumeroExterior.Location = new System.Drawing.Point(158, 188);
+            this.txtNumeroExterior.Location = new System.Drawing.Point(138, 166);
             this.txtNumeroExterior.MenuManager = this.mainRibbonControl;
             this.txtNumeroExterior.Name = "txtNumeroExterior";
             this.txtNumeroExterior.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtNumeroExterior.Properties.MaxLength = 100;
-            this.txtNumeroExterior.Size = new System.Drawing.Size(146, 26);
+            this.txtNumeroExterior.Size = new System.Drawing.Size(128, 24);
             this.txtNumeroExterior.TabIndex = 5;
             // 
             // lblCalle
             // 
             this.lblCalle.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblCalle.Appearance.Options.UseFont = true;
-            this.lblCalle.Location = new System.Drawing.Point(22, 159);
+            this.lblCalle.Location = new System.Drawing.Point(19, 140);
             this.lblCalle.Name = "lblCalle";
             this.lblCalle.Size = new System.Drawing.Size(27, 13);
             this.lblCalle.TabIndex = 113;
@@ -1912,19 +1910,19 @@ namespace NORI
             // 
             // txtCalle
             // 
-            this.txtCalle.Location = new System.Drawing.Point(158, 154);
+            this.txtCalle.Location = new System.Drawing.Point(138, 136);
             this.txtCalle.MenuManager = this.mainRibbonControl;
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtCalle.Properties.MaxLength = 100;
-            this.txtCalle.Size = new System.Drawing.Size(446, 26);
+            this.txtCalle.Size = new System.Drawing.Size(390, 24);
             this.txtCalle.TabIndex = 4;
             // 
             // lblNombreDireccion
             // 
             this.lblNombreDireccion.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblNombreDireccion.Appearance.Options.UseFont = true;
-            this.lblNombreDireccion.Location = new System.Drawing.Point(22, 125);
+            this.lblNombreDireccion.Location = new System.Drawing.Point(19, 110);
             this.lblNombreDireccion.Name = "lblNombreDireccion";
             this.lblNombreDireccion.Size = new System.Drawing.Size(44, 13);
             this.lblNombreDireccion.TabIndex = 112;
@@ -1932,13 +1930,13 @@ namespace NORI
             // 
             // txtNombreDireccion
             // 
-            this.txtNombreDireccion.Location = new System.Drawing.Point(158, 120);
+            this.txtNombreDireccion.Location = new System.Drawing.Point(138, 106);
             this.txtNombreDireccion.MenuManager = this.mainRibbonControl;
             this.txtNombreDireccion.Name = "txtNombreDireccion";
             this.txtNombreDireccion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtNombreDireccion.Properties.MaxLength = 100;
             this.txtNombreDireccion.Properties.NullValuePrompt = "Nombre de la dirección Ej. Trabajo";
-            this.txtNombreDireccion.Size = new System.Drawing.Size(446, 26);
+            this.txtNombreDireccion.Size = new System.Drawing.Size(390, 24);
             this.txtNombreDireccion.TabIndex = 3;
             // 
             // xtraTabPageLogistica
@@ -1953,98 +1951,98 @@ namespace NORI
             this.xtraTabPageLogistica.Controls.Add(this.txtLatitud);
             this.xtraTabPageLogistica.Controls.Add(this.txtLongitud);
             this.xtraTabPageLogistica.Name = "xtraTabPageLogistica";
-            this.xtraTabPageLogistica.Size = new System.Drawing.Size(1132, 658);
+            this.xtraTabPageLogistica.Size = new System.Drawing.Size(991, 571);
             this.xtraTabPageLogistica.Text = "Logística";
             // 
             // lblRuta
             // 
             this.lblRuta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblRuta.Location = new System.Drawing.Point(22, 125);
+            this.lblRuta.Location = new System.Drawing.Point(19, 110);
             this.lblRuta.Name = "lblRuta";
-            this.lblRuta.Size = new System.Drawing.Size(30, 17);
+            this.lblRuta.Size = new System.Drawing.Size(24, 15);
             this.lblRuta.TabIndex = 148;
             this.lblRuta.Text = "Ruta";
             this.lblRuta.Click += new System.EventHandler(this.lblRuta_Click);
             // 
             // cbRutas
             // 
-            this.cbRutas.Location = new System.Drawing.Point(98, 120);
+            this.cbRutas.Location = new System.Drawing.Point(86, 106);
             this.cbRutas.MenuManager = this.mainRibbonControl;
             this.cbRutas.Name = "cbRutas";
             this.cbRutas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbRutas.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Codigo", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbRutas.Size = new System.Drawing.Size(174, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Codigo", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbRutas.Size = new System.Drawing.Size(152, 24);
             this.cbRutas.TabIndex = 147;
             // 
             // txtOrdenRuta
             // 
-            this.txtOrdenRuta.Location = new System.Drawing.Point(281, 120);
+            this.txtOrdenRuta.Location = new System.Drawing.Point(246, 106);
             this.txtOrdenRuta.MenuManager = this.mainRibbonControl;
             this.txtOrdenRuta.Name = "txtOrdenRuta";
-            this.txtOrdenRuta.Size = new System.Drawing.Size(77, 26);
+            this.txtOrdenRuta.Size = new System.Drawing.Size(67, 24);
             this.txtOrdenRuta.TabIndex = 101;
             // 
             // lblLatitud
             // 
-            this.lblLatitud.Location = new System.Drawing.Point(22, 23);
+            this.lblLatitud.Location = new System.Drawing.Point(19, 20);
             this.lblLatitud.Name = "lblLatitud";
-            this.lblLatitud.Size = new System.Drawing.Size(45, 17);
+            this.lblLatitud.Size = new System.Drawing.Size(37, 15);
             this.lblLatitud.TabIndex = 94;
             this.lblLatitud.Text = "Latitud";
             // 
             // cbFrecuencia
             // 
-            this.cbFrecuencia.Location = new System.Drawing.Point(98, 86);
+            this.cbFrecuencia.Location = new System.Drawing.Point(86, 76);
             this.cbFrecuencia.MenuManager = this.mainRibbonControl;
             this.cbFrecuencia.Name = "cbFrecuencia";
             this.cbFrecuencia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbFrecuencia.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("frecuencia", "Frecuencia", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbFrecuencia.Size = new System.Drawing.Size(258, 26);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("frecuencia", "Frecuencia", 16, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 16, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbFrecuencia.Size = new System.Drawing.Size(226, 24);
             this.cbFrecuencia.TabIndex = 94;
             // 
             // lblLongitud
             // 
-            this.lblLongitud.Location = new System.Drawing.Point(22, 57);
+            this.lblLongitud.Location = new System.Drawing.Point(19, 50);
             this.lblLongitud.Name = "lblLongitud";
-            this.lblLongitud.Size = new System.Drawing.Size(56, 17);
+            this.lblLongitud.Size = new System.Drawing.Size(48, 15);
             this.lblLongitud.TabIndex = 95;
             this.lblLongitud.Text = "Longitud";
             // 
             // lblFrecuencia
             // 
-            this.lblFrecuencia.Location = new System.Drawing.Point(22, 91);
+            this.lblFrecuencia.Location = new System.Drawing.Point(19, 80);
             this.lblFrecuencia.Name = "lblFrecuencia";
-            this.lblFrecuencia.Size = new System.Drawing.Size(66, 17);
+            this.lblFrecuencia.Size = new System.Drawing.Size(57, 15);
             this.lblFrecuencia.TabIndex = 98;
             this.lblFrecuencia.Text = "Frecuencia";
             // 
             // txtLatitud
             // 
-            this.txtLatitud.Location = new System.Drawing.Point(98, 18);
+            this.txtLatitud.Location = new System.Drawing.Point(86, 16);
             this.txtLatitud.MenuManager = this.mainRibbonControl;
             this.txtLatitud.Name = "txtLatitud";
-            this.txtLatitud.Size = new System.Drawing.Size(258, 26);
+            this.txtLatitud.Size = new System.Drawing.Size(226, 24);
             this.txtLatitud.TabIndex = 96;
             // 
             // txtLongitud
             // 
-            this.txtLongitud.Location = new System.Drawing.Point(98, 52);
+            this.txtLongitud.Location = new System.Drawing.Point(86, 46);
             this.txtLongitud.MenuManager = this.mainRibbonControl;
             this.txtLongitud.Name = "txtLongitud";
-            this.txtLongitud.Size = new System.Drawing.Size(258, 26);
+            this.txtLongitud.Size = new System.Drawing.Size(226, 24);
             this.txtLongitud.TabIndex = 97;
             // 
             // xtraTabPagePropiedades
             // 
             this.xtraTabPagePropiedades.Controls.Add(this.cbPropiedades);
             this.xtraTabPagePropiedades.Name = "xtraTabPagePropiedades";
-            this.xtraTabPagePropiedades.Size = new System.Drawing.Size(1132, 658);
+            this.xtraTabPagePropiedades.Size = new System.Drawing.Size(991, 571);
             this.xtraTabPagePropiedades.Text = "Propiedades";
             // 
             // cbPropiedades
@@ -2053,7 +2051,7 @@ namespace NORI
             this.cbPropiedades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbPropiedades.Location = new System.Drawing.Point(0, 0);
             this.cbPropiedades.Name = "cbPropiedades";
-            this.cbPropiedades.Size = new System.Drawing.Size(1132, 658);
+            this.cbPropiedades.Size = new System.Drawing.Size(991, 571);
             this.cbPropiedades.TabIndex = 0;
             // 
             // layoutControlGroup1
@@ -2063,7 +2061,7 @@ namespace NORI
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1158, 709);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1013, 618);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -2071,7 +2069,7 @@ namespace NORI
             this.layoutControlItem1.Control = this.xtraTabControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1138, 689);
+            this.layoutControlItem1.Size = new System.Drawing.Size(997, 602);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -2080,20 +2078,20 @@ namespace NORI
             this.dataLayoutControl1.AllowCustomization = false;
             this.dataLayoutControl1.Controls.Add(this.xtraTabControl1);
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataLayoutControl1.Location = new System.Drawing.Point(0, 106);
+            this.dataLayoutControl1.Location = new System.Drawing.Point(0, 101);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
             this.dataLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(482, 356, 250, 350);
             this.dataLayoutControl1.Root = this.layoutControlGroup1;
-            this.dataLayoutControl1.Size = new System.Drawing.Size(1158, 709);
+            this.dataLayoutControl1.Size = new System.Drawing.Size(1013, 618);
             this.dataLayoutControl1.TabIndex = 0;
             // 
             // frmSocios
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(1158, 815);
+            this.ClientSize = new System.Drawing.Size(1013, 719);
             this.Controls.Add(this.dataLayoutControl1);
             this.Controls.Add(this.backstageViewControl1);
             this.Controls.Add(this.mainRibbonControl);

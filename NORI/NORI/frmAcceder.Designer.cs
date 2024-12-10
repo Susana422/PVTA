@@ -43,7 +43,6 @@ namespace NORI
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbConexiones = new DevExpress.XtraEditors.LookUpEdit();
             this.lblConexion = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.txtUsuario = new DevExpress.XtraEditors.TextEdit();
@@ -60,7 +59,6 @@ namespace NORI
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbConexiones.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContraseña.Properties)).BeginInit();
@@ -85,16 +83,27 @@ namespace NORI
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = null;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(5);
+<<<<<<< HEAD
             this.barDockControlTop.Size = new System.Drawing.Size(632, 0);
+=======
+            this.barDockControlTop.Size = new System.Drawing.Size(383, 0);
+>>>>>>> parent of 6763d69 (Cambio y link de la plataforma)
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+<<<<<<< HEAD
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 563);
             this.barDockControlBottom.Manager = null;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(5);
             this.barDockControlBottom.Size = new System.Drawing.Size(632, 0);
+=======
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 398);
+            this.barDockControlBottom.Manager = null;
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(5);
+            this.barDockControlBottom.Size = new System.Drawing.Size(383, 0);
+>>>>>>> parent of 6763d69 (Cambio y link de la plataforma)
             // 
             // barDockControlLeft
             // 
@@ -103,16 +112,27 @@ namespace NORI
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = null;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(5);
+<<<<<<< HEAD
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 563);
+=======
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 398);
+>>>>>>> parent of 6763d69 (Cambio y link de la plataforma)
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+<<<<<<< HEAD
             this.barDockControlRight.Location = new System.Drawing.Point(632, 0);
             this.barDockControlRight.Manager = null;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(5);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 563);
+=======
+            this.barDockControlRight.Location = new System.Drawing.Point(383, 0);
+            this.barDockControlRight.Manager = null;
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(5);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 398);
+>>>>>>> parent of 6763d69 (Cambio y link de la plataforma)
             // 
             // layoutControl1
             // 
@@ -122,14 +142,17 @@ namespace NORI
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(5);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
+<<<<<<< HEAD
             this.layoutControl1.Size = new System.Drawing.Size(632, 511);
+=======
+            this.layoutControl1.Size = new System.Drawing.Size(383, 327);
+>>>>>>> parent of 6763d69 (Cambio y link de la plataforma)
             this.layoutControl1.TabIndex = 6;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.cbConexiones);
             this.panel1.Controls.Add(this.lblConexion);
             this.panel1.Controls.Add(this.txtUsuario);
@@ -141,52 +164,52 @@ namespace NORI
             this.panel1.Location = new System.Drawing.Point(6, 6);
             this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
+<<<<<<< HEAD
             this.panel1.Size = new System.Drawing.Size(620, 499);
+=======
+            this.panel1.Size = new System.Drawing.Size(359, 303);
+>>>>>>> parent of 6763d69 (Cambio y link de la plataforma)
             this.panel1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::componentResourceManager.Resources.logodiesel;
-            this.pictureBox1.Location = new System.Drawing.Point(382, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 51);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 99;
-            this.pictureBox1.TabStop = false;
             // 
             // cbConexiones
             // 
-            this.cbConexiones.Location = new System.Drawing.Point(35, 129);
+            this.cbConexiones.Location = new System.Drawing.Point(16, 61);
             this.cbConexiones.Margin = new System.Windows.Forms.Padding(5);
             this.cbConexiones.Name = "cbConexiones";
             this.cbConexiones.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbConexiones.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "Nombre", 22, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+<<<<<<< HEAD
             this.cbConexiones.Size = new System.Drawing.Size(468, 24);
+=======
+            this.cbConexiones.Size = new System.Drawing.Size(292, 26);
+>>>>>>> parent of 6763d69 (Cambio y link de la plataforma)
             this.cbConexiones.TabIndex = 98;
             this.cbConexiones.EditValueChanged += new System.EventHandler(this.cbConexiones_EditValueChanged);
             // 
             // lblConexion
             // 
-            this.lblConexion.Appearance.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConexion.Appearance.Options.UseFont = true;
             this.lblConexion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblConexion.Location = new System.Drawing.Point(35, 96);
+            this.lblConexion.Location = new System.Drawing.Point(16, 39);
             this.lblConexion.Margin = new System.Windows.Forms.Padding(5);
             this.lblConexion.Name = "lblConexion";
-            this.lblConexion.Size = new System.Drawing.Size(59, 18);
+            this.lblConexion.Size = new System.Drawing.Size(58, 17);
             this.lblConexion.TabIndex = 9;
             this.lblConexion.Text = "Conexión";
             this.lblConexion.Click += new System.EventHandler(this.lblConexion_Click);
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(35, 192);
+            this.txtUsuario.Location = new System.Drawing.Point(16, 113);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(5);
             this.txtUsuario.MenuManager = this.tabFormDefaultManager1;
             this.txtUsuario.Name = "txtUsuario";
+<<<<<<< HEAD
             this.txtUsuario.Size = new System.Drawing.Size(468, 24);
+=======
+            this.txtUsuario.Size = new System.Drawing.Size(292, 26);
+>>>>>>> parent of 6763d69 (Cambio y link de la plataforma)
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsuario_KeyDown);
             // 
@@ -195,12 +218,11 @@ namespace NORI
             this.btnAcceder.BackColor = System.Drawing.Color.Teal;
             this.btnAcceder.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(59)))), ((int)(((byte)(129)))));
             this.btnAcceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAcceder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAcceder.ForeColor = System.Drawing.Color.White;
-            this.btnAcceder.Location = new System.Drawing.Point(44, 336);
+            this.btnAcceder.Location = new System.Drawing.Point(16, 203);
             this.btnAcceder.Margin = new System.Windows.Forms.Padding(5);
             this.btnAcceder.Name = "btnAcceder";
-            this.btnAcceder.Size = new System.Drawing.Size(525, 46);
+            this.btnAcceder.Size = new System.Drawing.Size(292, 31);
             this.btnAcceder.TabIndex = 2;
             this.btnAcceder.Text = "ACCEDER";
             this.btnAcceder.UseVisualStyleBackColor = false;
@@ -208,43 +230,43 @@ namespace NORI
             // 
             // lblAcceder
             // 
-            this.lblAcceder.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAcceder.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAcceder.Appearance.Options.UseFont = true;
-            this.lblAcceder.Location = new System.Drawing.Point(169, 79);
+            this.lblAcceder.Location = new System.Drawing.Point(94, 18);
             this.lblAcceder.Margin = new System.Windows.Forms.Padding(5);
             this.lblAcceder.Name = "lblAcceder";
-            this.lblAcceder.Size = new System.Drawing.Size(190, 29);
+            this.lblAcceder.Size = new System.Drawing.Size(128, 19);
             this.lblAcceder.TabIndex = 6;
             this.lblAcceder.Text = "Inicio de Sesión";
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(35, 228);
+            this.labelControl1.Location = new System.Drawing.Point(16, 143);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(5);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(74, 18);
+            this.labelControl1.Size = new System.Drawing.Size(70, 17);
             this.labelControl1.TabIndex = 5;
             this.labelControl1.Text = "Contraseña";
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(35, 255);
+            this.txtContraseña.Location = new System.Drawing.Point(16, 165);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(5);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Properties.PasswordChar = '*';
+<<<<<<< HEAD
             this.txtContraseña.Size = new System.Drawing.Size(468, 24);
+=======
+            this.txtContraseña.Size = new System.Drawing.Size(292, 26);
+>>>>>>> parent of 6763d69 (Cambio y link de la plataforma)
             this.txtContraseña.TabIndex = 1;
             // 
             // lblUsuario
             // 
-            this.lblUsuario.Appearance.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Appearance.Options.UseFont = true;
-            this.lblUsuario.Location = new System.Drawing.Point(35, 165);
+            this.lblUsuario.Location = new System.Drawing.Point(16, 91);
             this.lblUsuario.Margin = new System.Windows.Forms.Padding(5);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(49, 18);
+            this.lblUsuario.Size = new System.Drawing.Size(46, 17);
             this.lblUsuario.TabIndex = 3;
             this.lblUsuario.Text = "Usuario";
             // 
@@ -255,7 +277,11 @@ namespace NORI
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.layoutControlGroup1.Name = "Root";
+<<<<<<< HEAD
             this.layoutControlGroup1.Size = new System.Drawing.Size(632, 511);
+=======
+            this.layoutControlGroup1.Size = new System.Drawing.Size(383, 327);
+>>>>>>> parent of 6763d69 (Cambio y link de la plataforma)
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -263,7 +289,11 @@ namespace NORI
             this.layoutControlItem1.Control = this.panel1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
+<<<<<<< HEAD
             this.layoutControlItem1.Size = new System.Drawing.Size(622, 501);
+=======
+            this.layoutControlItem1.Size = new System.Drawing.Size(363, 307);
+>>>>>>> parent of 6763d69 (Cambio y link de la plataforma)
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -288,17 +318,23 @@ namespace NORI
             this.ribbonControl1.OptionsMenuMinWidth = 385;
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office365;
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
+<<<<<<< HEAD
             this.ribbonControl1.Size = new System.Drawing.Size(632, 52);
+=======
+            this.ribbonControl1.Size = new System.Drawing.Size(383, 71);
+>>>>>>> parent of 6763d69 (Cambio y link de la plataforma)
             // 
             // frmAcceder
             // 
             this.AcceptButton = this.btnAcceder;
-            this.Appearance.BackColor = System.Drawing.Color.White;
-            this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(632, 563);
+=======
+            this.ClientSize = new System.Drawing.Size(383, 398);
+>>>>>>> parent of 6763d69 (Cambio y link de la plataforma)
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -321,7 +357,6 @@ namespace NORI
             this.layoutControl1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbConexiones.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContraseña.Properties)).EndInit();
@@ -334,6 +369,5 @@ namespace NORI
         }
 
         private RibbonControl ribbonControl1;
-        private PictureBox pictureBox1;
     }
 }

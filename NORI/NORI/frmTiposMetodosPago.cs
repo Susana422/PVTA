@@ -72,7 +72,7 @@ namespace NORI
 
         private LookUpEdit cbMetodosPago;
 
-        private HyperlinkLabelControl hyperlinkLabelControl1;
+        private HyperlinkLabelControl metdosPago;
 
         private LookUpEdit cbMonedas;
 
@@ -416,3 +416,4 @@ namespace NORI
 
     }
 }
+    

@@ -127,21 +127,21 @@ namespace NORI
             this.dataLayoutControl1.AllowCustomization = false;
             this.dataLayoutControl1.Controls.Add(this.panel1);
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataLayoutControl1.Location = new System.Drawing.Point(0, 79);
-            this.dataLayoutControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataLayoutControl1.Location = new System.Drawing.Point(0, 106);
+            this.dataLayoutControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
             this.dataLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(482, 356, 250, 350);
             this.dataLayoutControl1.Root = this.layoutControlGroup1;
-            this.dataLayoutControl1.Size = new System.Drawing.Size(719, 543);
+            this.dataLayoutControl1.Size = new System.Drawing.Size(822, 516);
             this.dataLayoutControl1.TabIndex = 4;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.tabPane1);
-            this.panel1.Location = new System.Drawing.Point(7, 8);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(13, 12);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(705, 527);
+            this.panel1.Size = new System.Drawing.Size(796, 492);
             this.panel1.TabIndex = 54;
             // 
             // tabPane1
@@ -150,14 +150,14 @@ namespace NORI
             this.tabPane1.Controls.Add(this.tabNavigationPageDireccion);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPane1.Location = new System.Drawing.Point(0, 0);
-            this.tabPane1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPane1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPageGeneral,
             this.tabNavigationPageDireccion});
-            this.tabPane1.RegularSize = new System.Drawing.Size(705, 527);
+            this.tabPane1.RegularSize = new System.Drawing.Size(796, 492);
             this.tabPane1.SelectedPage = this.tabNavigationPageGeneral;
-            this.tabPane1.Size = new System.Drawing.Size(705, 527);
+            this.tabPane1.Size = new System.Drawing.Size(796, 492);
             this.tabPane1.TabIndex = 0;
             this.tabPane1.Text = "tabPane1";
             // 
@@ -190,46 +190,47 @@ namespace NORI
             this.tabNavigationPageGeneral.Controls.Add(this.lblNombreFiscal);
             this.tabNavigationPageGeneral.Controls.Add(this.lblFechaActualizacion);
             this.tabNavigationPageGeneral.Controls.Add(this.lblUltimaActualizacion);
-            this.tabNavigationPageGeneral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabNavigationPageGeneral.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tabNavigationPageGeneral.Name = "tabNavigationPageGeneral";
-            this.tabNavigationPageGeneral.Size = new System.Drawing.Size(705, 503);
+            this.tabNavigationPageGeneral.Size = new System.Drawing.Size(796, 456);
             // 
             // txtLugarExpedicion
             // 
-            this.txtLugarExpedicion.Location = new System.Drawing.Point(122, 205);
-            this.txtLugarExpedicion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLugarExpedicion.Location = new System.Drawing.Point(139, 205);
+            this.txtLugarExpedicion.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtLugarExpedicion.MenuManager = this.mainRibbonControl;
             this.txtLugarExpedicion.Name = "txtLugarExpedicion";
-            this.txtLugarExpedicion.Size = new System.Drawing.Size(140, 24);
+            this.txtLugarExpedicion.Size = new System.Drawing.Size(160, 26);
             this.txtLugarExpedicion.TabIndex = 104;
             // 
             // mainRibbonControl
             // 
             this.mainRibbonControl.ApplicationButtonDropDownControl = this.backstageViewControl1;
-            this.mainRibbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 39, 35, 39);
+            this.mainRibbonControl.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
+            this.mainRibbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(40, 39, 40, 39);
             this.mainRibbonControl.ExpandCollapseItem.Id = 0;
             this.mainRibbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.mainRibbonControl.ExpandCollapseItem,
             this.bbiGuardar});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbonControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mainRibbonControl.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.mainRibbonControl.MaxItemId = 1;
             this.mainRibbonControl.Name = "mainRibbonControl";
-            this.mainRibbonControl.OptionsMenuMinWidth = 385;
+            this.mainRibbonControl.OptionsMenuMinWidth = 440;
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.mainRibbonPage});
             this.mainRibbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.mainRibbonControl.Size = new System.Drawing.Size(719, 79);
+            this.mainRibbonControl.Size = new System.Drawing.Size(822, 106);
             this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // backstageViewControl1
             // 
-            this.backstageViewControl1.Location = new System.Drawing.Point(48, 162);
-            this.backstageViewControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.backstageViewControl1.Location = new System.Drawing.Point(55, 162);
+            this.backstageViewControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.backstageViewControl1.Name = "backstageViewControl1";
             this.backstageViewControl1.OwnerControl = this.mainRibbonControl;
-            this.backstageViewControl1.Size = new System.Drawing.Size(560, 196);
+            this.backstageViewControl1.Size = new System.Drawing.Size(640, 196);
             this.backstageViewControl1.TabIndex = 5;
             this.backstageViewControl1.VisibleInDesignTime = true;
             // 
@@ -259,17 +260,17 @@ namespace NORI
             // 
             // lblLugarExpedicion
             // 
-            this.lblLugarExpedicion.Location = new System.Drawing.Point(4, 211);
-            this.lblLugarExpedicion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblLugarExpedicion.Location = new System.Drawing.Point(5, 211);
+            this.lblLugarExpedicion.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblLugarExpedicion.Name = "lblLugarExpedicion";
-            this.lblLugarExpedicion.Size = new System.Drawing.Size(103, 17);
+            this.lblLugarExpedicion.Size = new System.Drawing.Size(106, 17);
             this.lblLugarExpedicion.TabIndex = 105;
             this.lblLugarExpedicion.Text = "Lugar expedición";
             // 
             // lblSitioWeb
             // 
-            this.lblSitioWeb.Location = new System.Drawing.Point(4, 344);
-            this.lblSitioWeb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblSitioWeb.Location = new System.Drawing.Point(5, 344);
+            this.lblSitioWeb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblSitioWeb.Name = "lblSitioWeb";
             this.lblSitioWeb.Size = new System.Drawing.Size(55, 17);
             this.lblSitioWeb.TabIndex = 87;
@@ -277,230 +278,231 @@ namespace NORI
             // 
             // txtSitioWeb
             // 
-            this.txtSitioWeb.Location = new System.Drawing.Point(122, 340);
-            this.txtSitioWeb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSitioWeb.Location = new System.Drawing.Point(139, 340);
+            this.txtSitioWeb.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtSitioWeb.MenuManager = this.mainRibbonControl;
             this.txtSitioWeb.Name = "txtSitioWeb";
             this.txtSitioWeb.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtSitioWeb.Properties.MaxLength = 254;
             this.txtSitioWeb.Properties.NullValuePrompt = "Dirección del sitio web";
-            this.txtSitioWeb.Size = new System.Drawing.Size(304, 24);
+            this.txtSitioWeb.Size = new System.Drawing.Size(347, 26);
             this.txtSitioWeb.TabIndex = 9;
             // 
             // lblCorreo
             // 
-            this.lblCorreo.Location = new System.Drawing.Point(4, 310);
-            this.lblCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblCorreo.Location = new System.Drawing.Point(5, 310);
+            this.lblCorreo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(41, 17);
+            this.lblCorreo.Size = new System.Drawing.Size(42, 17);
             this.lblCorreo.TabIndex = 86;
             this.lblCorreo.Text = "Correo";
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(122, 306);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCorreo.Location = new System.Drawing.Point(139, 306);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtCorreo.MenuManager = this.mainRibbonControl;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtCorreo.Properties.MaxLength = 100;
             this.txtCorreo.Properties.NullValuePrompt = "Dirección de correo electrónico";
-            this.txtCorreo.Size = new System.Drawing.Size(304, 24);
+            this.txtCorreo.Size = new System.Drawing.Size(347, 26);
             this.txtCorreo.TabIndex = 8;
             // 
             // txtTelefono2
             // 
-            this.txtTelefono2.Location = new System.Drawing.Point(122, 272);
-            this.txtTelefono2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefono2.Location = new System.Drawing.Point(139, 272);
+            this.txtTelefono2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtTelefono2.MenuManager = this.mainRibbonControl;
             this.txtTelefono2.Name = "txtTelefono2";
             this.txtTelefono2.Properties.MaxLength = 20;
-            this.txtTelefono2.Size = new System.Drawing.Size(304, 24);
+            this.txtTelefono2.Size = new System.Drawing.Size(347, 26);
             this.txtTelefono2.TabIndex = 7;
             // 
             // lblTelefono2
             // 
-            this.lblTelefono2.Location = new System.Drawing.Point(4, 276);
-            this.lblTelefono2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblTelefono2.Location = new System.Drawing.Point(5, 276);
+            this.lblTelefono2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblTelefono2.Name = "lblTelefono2";
-            this.lblTelefono2.Size = new System.Drawing.Size(61, 17);
+            this.lblTelefono2.Size = new System.Drawing.Size(64, 17);
             this.lblTelefono2.TabIndex = 83;
             this.lblTelefono2.Text = "Teléfono 2";
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(122, 238);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefono.Location = new System.Drawing.Point(139, 238);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtTelefono.MenuManager = this.mainRibbonControl;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Properties.MaxLength = 20;
-            this.txtTelefono.Size = new System.Drawing.Size(304, 24);
+            this.txtTelefono.Size = new System.Drawing.Size(347, 26);
             this.txtTelefono.TabIndex = 6;
             // 
             // lblTelefono
             // 
-            this.lblTelefono.Location = new System.Drawing.Point(4, 242);
-            this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblTelefono.Location = new System.Drawing.Point(5, 242);
+            this.lblTelefono.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(51, 17);
+            this.lblTelefono.Size = new System.Drawing.Size(53, 17);
             this.lblTelefono.TabIndex = 81;
             this.lblTelefono.Text = "Teléfono";
             // 
             // txtRegimenFiscal
             // 
-            this.txtRegimenFiscal.Location = new System.Drawing.Point(122, 174);
-            this.txtRegimenFiscal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRegimenFiscal.Location = new System.Drawing.Point(139, 174);
+            this.txtRegimenFiscal.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtRegimenFiscal.MenuManager = this.mainRibbonControl;
             this.txtRegimenFiscal.Name = "txtRegimenFiscal";
             this.txtRegimenFiscal.Properties.MaxLength = 254;
-            this.txtRegimenFiscal.Size = new System.Drawing.Size(304, 24);
+            this.txtRegimenFiscal.Size = new System.Drawing.Size(347, 26);
             this.txtRegimenFiscal.TabIndex = 5;
             // 
             // lblRegimenFiscal
             // 
-            this.lblRegimenFiscal.Location = new System.Drawing.Point(4, 178);
-            this.lblRegimenFiscal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblRegimenFiscal.Location = new System.Drawing.Point(5, 178);
+            this.lblRegimenFiscal.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblRegimenFiscal.Name = "lblRegimenFiscal";
-            this.lblRegimenFiscal.Size = new System.Drawing.Size(86, 17);
+            this.lblRegimenFiscal.Size = new System.Drawing.Size(87, 17);
             this.lblRegimenFiscal.TabIndex = 79;
             this.lblRegimenFiscal.Text = "Régimen fiscal";
             // 
             // cbTipo
             // 
-            this.cbTipo.Location = new System.Drawing.Point(121, 38);
-            this.cbTipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbTipo.Location = new System.Drawing.Point(138, 38);
+            this.cbTipo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cbTipo.MenuManager = this.mainRibbonControl;
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbTipo.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tipo", "Tipo", 23, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbTipo.Size = new System.Drawing.Size(304, 24);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tipo", "Tipo", 26, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbTipo.Size = new System.Drawing.Size(347, 26);
             this.cbTipo.TabIndex = 1;
             // 
             // lblTipo
             // 
             this.lblTipo.Location = new System.Drawing.Point(0, 42);
-            this.lblTipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblTipo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(75, 17);
+            this.lblTipo.Size = new System.Drawing.Size(79, 17);
             this.lblTipo.TabIndex = 77;
             this.lblTipo.Text = "Tipo persona";
             // 
             // btnImagen
             // 
             this.btnImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImagen.Location = new System.Drawing.Point(434, 194);
-            this.btnImagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImagen.Location = new System.Drawing.Point(498, 194);
+            this.btnImagen.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnImagen.Name = "btnImagen";
-            this.btnImagen.Size = new System.Drawing.Size(230, 35);
+            this.btnImagen.Size = new System.Drawing.Size(263, 35);
             this.btnImagen.TabIndex = 10;
             this.btnImagen.Text = "Seleccionar imagen";
+            this.btnImagen.Click += new System.EventHandler(this.btnImagen_Click);
             // 
             // pbImagen
             // 
             this.pbImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbImagen.BackColor = System.Drawing.Color.White;
-            this.pbImagen.Location = new System.Drawing.Point(434, 4);
-            this.pbImagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbImagen.Location = new System.Drawing.Point(498, 4);
+            this.pbImagen.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.pbImagen.Name = "pbImagen";
-            this.pbImagen.Size = new System.Drawing.Size(230, 182);
+            this.pbImagen.Size = new System.Drawing.Size(263, 182);
             this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen.TabIndex = 75;
             this.pbImagen.TabStop = false;
             // 
             // txtRFC
             // 
-            this.txtRFC.Location = new System.Drawing.Point(121, 4);
-            this.txtRFC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRFC.Location = new System.Drawing.Point(138, 4);
+            this.txtRFC.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtRFC.MenuManager = this.mainRibbonControl;
             this.txtRFC.Name = "txtRFC";
             this.txtRFC.Properties.MaxLength = 30;
-            this.txtRFC.Size = new System.Drawing.Size(304, 24);
+            this.txtRFC.Size = new System.Drawing.Size(347, 26);
             this.txtRFC.TabIndex = 0;
             // 
             // lblRFC
             // 
             this.lblRFC.Location = new System.Drawing.Point(2, 8);
-            this.lblRFC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblRFC.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblRFC.Name = "lblRFC";
-            this.lblRFC.Size = new System.Drawing.Size(22, 17);
+            this.lblRFC.Size = new System.Drawing.Size(26, 17);
             this.lblRFC.TabIndex = 73;
             this.lblRFC.Text = "RFC";
             // 
             // txtEslogan
             // 
-            this.txtEslogan.Location = new System.Drawing.Point(122, 140);
-            this.txtEslogan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEslogan.Location = new System.Drawing.Point(139, 140);
+            this.txtEslogan.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtEslogan.MenuManager = this.mainRibbonControl;
             this.txtEslogan.Name = "txtEslogan";
             this.txtEslogan.Properties.MaxLength = 254;
-            this.txtEslogan.Size = new System.Drawing.Size(304, 24);
+            this.txtEslogan.Size = new System.Drawing.Size(347, 26);
             this.txtEslogan.TabIndex = 4;
             // 
             // lblEslogan
             // 
-            this.lblEslogan.Location = new System.Drawing.Point(4, 144);
-            this.lblEslogan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblEslogan.Location = new System.Drawing.Point(5, 144);
+            this.lblEslogan.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblEslogan.Name = "lblEslogan";
-            this.lblEslogan.Size = new System.Drawing.Size(45, 17);
+            this.lblEslogan.Size = new System.Drawing.Size(47, 17);
             this.lblEslogan.TabIndex = 71;
             this.lblEslogan.Text = "Eslogan";
             // 
             // txtNombreComercial
             // 
-            this.txtNombreComercial.Location = new System.Drawing.Point(122, 106);
-            this.txtNombreComercial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreComercial.Location = new System.Drawing.Point(139, 106);
+            this.txtNombreComercial.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtNombreComercial.MenuManager = this.mainRibbonControl;
             this.txtNombreComercial.Name = "txtNombreComercial";
             this.txtNombreComercial.Properties.MaxLength = 100;
-            this.txtNombreComercial.Size = new System.Drawing.Size(304, 24);
+            this.txtNombreComercial.Size = new System.Drawing.Size(347, 26);
             this.txtNombreComercial.TabIndex = 3;
             // 
             // lblNombreComercial
             // 
-            this.lblNombreComercial.Location = new System.Drawing.Point(4, 110);
-            this.lblNombreComercial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblNombreComercial.Location = new System.Drawing.Point(5, 110);
+            this.lblNombreComercial.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblNombreComercial.Name = "lblNombreComercial";
-            this.lblNombreComercial.Size = new System.Drawing.Size(112, 17);
+            this.lblNombreComercial.Size = new System.Drawing.Size(115, 17);
             this.lblNombreComercial.TabIndex = 69;
             this.lblNombreComercial.Text = "Nombre comercial";
             // 
             // txtNombreFiscal
             // 
-            this.txtNombreFiscal.Location = new System.Drawing.Point(122, 72);
-            this.txtNombreFiscal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreFiscal.Location = new System.Drawing.Point(139, 72);
+            this.txtNombreFiscal.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtNombreFiscal.MenuManager = this.mainRibbonControl;
             this.txtNombreFiscal.Name = "txtNombreFiscal";
             this.txtNombreFiscal.Properties.MaxLength = 150;
-            this.txtNombreFiscal.Size = new System.Drawing.Size(304, 24);
+            this.txtNombreFiscal.Size = new System.Drawing.Size(347, 26);
             this.txtNombreFiscal.TabIndex = 2;
             // 
             // lblNombreFiscal
             // 
-            this.lblNombreFiscal.Location = new System.Drawing.Point(4, 76);
-            this.lblNombreFiscal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblNombreFiscal.Location = new System.Drawing.Point(5, 76);
+            this.lblNombreFiscal.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblNombreFiscal.Name = "lblNombreFiscal";
-            this.lblNombreFiscal.Size = new System.Drawing.Size(82, 17);
+            this.lblNombreFiscal.Size = new System.Drawing.Size(84, 17);
             this.lblNombreFiscal.TabIndex = 67;
             this.lblNombreFiscal.Text = "Nombre fiscal";
             // 
             // lblFechaActualizacion
             // 
-            this.lblFechaActualizacion.Location = new System.Drawing.Point(598, 408);
-            this.lblFechaActualizacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblFechaActualizacion.Location = new System.Drawing.Point(683, 408);
+            this.lblFechaActualizacion.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblFechaActualizacion.Name = "lblFechaActualizacion";
-            this.lblFechaActualizacion.Size = new System.Drawing.Size(66, 17);
+            this.lblFechaActualizacion.Size = new System.Drawing.Size(65, 17);
             this.lblFechaActualizacion.TabIndex = 65;
             this.lblFechaActualizacion.Text = "01/01/0001";
             // 
             // lblUltimaActualizacion
             // 
-            this.lblUltimaActualizacion.Location = new System.Drawing.Point(439, 408);
-            this.lblUltimaActualizacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblUltimaActualizacion.Location = new System.Drawing.Point(502, 408);
+            this.lblUltimaActualizacion.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblUltimaActualizacion.Name = "lblUltimaActualizacion";
-            this.lblUltimaActualizacion.Size = new System.Drawing.Size(123, 17);
+            this.lblUltimaActualizacion.Size = new System.Drawing.Size(128, 17);
             this.lblUltimaActualizacion.TabIndex = 64;
             this.lblUltimaActualizacion.Text = "Última Actualización";
             // 
@@ -525,83 +527,83 @@ namespace NORI
             this.tabNavigationPageDireccion.Controls.Add(this.lblNumeroExterior);
             this.tabNavigationPageDireccion.Controls.Add(this.txtCalle);
             this.tabNavigationPageDireccion.Controls.Add(this.lblCalle);
-            this.tabNavigationPageDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabNavigationPageDireccion.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tabNavigationPageDireccion.Name = "tabNavigationPageDireccion";
-            this.tabNavigationPageDireccion.Size = new System.Drawing.Size(691, 435);
+            this.tabNavigationPageDireccion.Size = new System.Drawing.Size(790, 435);
             // 
             // lblPais
             // 
             this.lblPais.Location = new System.Drawing.Point(2, 280);
-            this.lblPais.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblPais.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblPais.Name = "lblPais";
-            this.lblPais.Size = new System.Drawing.Size(23, 17);
+            this.lblPais.Size = new System.Drawing.Size(24, 17);
             this.lblPais.TabIndex = 109;
             this.lblPais.Text = "País";
             // 
             // txtPais
             // 
-            this.txtPais.Location = new System.Drawing.Point(121, 276);
-            this.txtPais.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPais.Location = new System.Drawing.Point(138, 276);
+            this.txtPais.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtPais.MenuManager = this.mainRibbonControl;
             this.txtPais.Name = "txtPais";
             this.txtPais.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtPais.Properties.NullValuePrompt = "Dirección del sitio web";
-            this.txtPais.Size = new System.Drawing.Size(491, 24);
+            this.txtPais.Size = new System.Drawing.Size(561, 26);
             this.txtPais.TabIndex = 8;
             // 
             // lblEstado
             // 
             this.lblEstado.Location = new System.Drawing.Point(2, 246);
-            this.lblEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblEstado.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(40, 17);
+            this.lblEstado.Size = new System.Drawing.Size(41, 17);
             this.lblEstado.TabIndex = 107;
             this.lblEstado.Text = "Estado";
             // 
             // txtEstado
             // 
-            this.txtEstado.Location = new System.Drawing.Point(121, 242);
-            this.txtEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEstado.Location = new System.Drawing.Point(138, 242);
+            this.txtEstado.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtEstado.MenuManager = this.mainRibbonControl;
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtEstado.Properties.NullValuePrompt = "Dirección del sitio web";
-            this.txtEstado.Size = new System.Drawing.Size(491, 24);
+            this.txtEstado.Size = new System.Drawing.Size(561, 26);
             this.txtEstado.TabIndex = 7;
             // 
             // lblMunicipio
             // 
             this.lblMunicipio.Location = new System.Drawing.Point(2, 212);
-            this.lblMunicipio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblMunicipio.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblMunicipio.Name = "lblMunicipio";
-            this.lblMunicipio.Size = new System.Drawing.Size(58, 17);
+            this.lblMunicipio.Size = new System.Drawing.Size(59, 17);
             this.lblMunicipio.TabIndex = 105;
             this.lblMunicipio.Text = "Municipio";
             // 
             // txtMunicipio
             // 
-            this.txtMunicipio.Location = new System.Drawing.Point(121, 208);
-            this.txtMunicipio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMunicipio.Location = new System.Drawing.Point(138, 208);
+            this.txtMunicipio.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtMunicipio.MenuManager = this.mainRibbonControl;
             this.txtMunicipio.Name = "txtMunicipio";
             this.txtMunicipio.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtMunicipio.Properties.NullValuePrompt = "Dirección del sitio web";
-            this.txtMunicipio.Size = new System.Drawing.Size(491, 24);
+            this.txtMunicipio.Size = new System.Drawing.Size(561, 26);
             this.txtMunicipio.TabIndex = 6;
             // 
             // txtCP
             // 
-            this.txtCP.Location = new System.Drawing.Point(121, 140);
-            this.txtCP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCP.Location = new System.Drawing.Point(138, 140);
+            this.txtCP.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtCP.MenuManager = this.mainRibbonControl;
             this.txtCP.Name = "txtCP";
-            this.txtCP.Size = new System.Drawing.Size(140, 24);
+            this.txtCP.Size = new System.Drawing.Size(160, 26);
             this.txtCP.TabIndex = 4;
             // 
             // lblCP
             // 
             this.lblCP.Location = new System.Drawing.Point(2, 144);
-            this.lblCP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblCP.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblCP.Name = "lblCP";
             this.lblCP.Size = new System.Drawing.Size(84, 17);
             this.lblCP.TabIndex = 103;
@@ -610,92 +612,92 @@ namespace NORI
             // lblCiudad
             // 
             this.lblCiudad.Location = new System.Drawing.Point(2, 178);
-            this.lblCiudad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblCiudad.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblCiudad.Name = "lblCiudad";
-            this.lblCiudad.Size = new System.Drawing.Size(43, 17);
+            this.lblCiudad.Size = new System.Drawing.Size(44, 17);
             this.lblCiudad.TabIndex = 101;
             this.lblCiudad.Text = "Ciudad";
             // 
             // txtCiudad
             // 
-            this.txtCiudad.Location = new System.Drawing.Point(121, 174);
-            this.txtCiudad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCiudad.Location = new System.Drawing.Point(138, 174);
+            this.txtCiudad.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtCiudad.MenuManager = this.mainRibbonControl;
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtCiudad.Properties.NullValuePrompt = "Dirección del sitio web";
-            this.txtCiudad.Size = new System.Drawing.Size(491, 24);
+            this.txtCiudad.Size = new System.Drawing.Size(561, 26);
             this.txtCiudad.TabIndex = 5;
             // 
             // txtColonia
             // 
-            this.txtColonia.Location = new System.Drawing.Point(121, 106);
-            this.txtColonia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtColonia.Location = new System.Drawing.Point(138, 106);
+            this.txtColonia.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtColonia.MenuManager = this.mainRibbonControl;
             this.txtColonia.Name = "txtColonia";
-            this.txtColonia.Size = new System.Drawing.Size(491, 24);
+            this.txtColonia.Size = new System.Drawing.Size(561, 26);
             this.txtColonia.TabIndex = 3;
             // 
             // lblColonia
             // 
             this.lblColonia.Location = new System.Drawing.Point(2, 110);
-            this.lblColonia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblColonia.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblColonia.Name = "lblColonia";
-            this.lblColonia.Size = new System.Drawing.Size(46, 17);
+            this.lblColonia.Size = new System.Drawing.Size(47, 17);
             this.lblColonia.TabIndex = 95;
             this.lblColonia.Text = "Colonia";
             // 
             // txtNumeroInterior
             // 
-            this.txtNumeroInterior.Location = new System.Drawing.Point(121, 72);
-            this.txtNumeroInterior.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNumeroInterior.Location = new System.Drawing.Point(138, 72);
+            this.txtNumeroInterior.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtNumeroInterior.MenuManager = this.mainRibbonControl;
             this.txtNumeroInterior.Name = "txtNumeroInterior";
-            this.txtNumeroInterior.Size = new System.Drawing.Size(140, 24);
+            this.txtNumeroInterior.Size = new System.Drawing.Size(160, 26);
             this.txtNumeroInterior.TabIndex = 2;
             // 
             // lblNumeroInterior
             // 
             this.lblNumeroInterior.Location = new System.Drawing.Point(2, 76);
-            this.lblNumeroInterior.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblNumeroInterior.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblNumeroInterior.Name = "lblNumeroInterior";
-            this.lblNumeroInterior.Size = new System.Drawing.Size(63, 17);
+            this.lblNumeroInterior.Size = new System.Drawing.Size(67, 17);
             this.lblNumeroInterior.TabIndex = 93;
             this.lblNumeroInterior.Text = "No Interior";
             // 
             // txtNumeroExterior
             // 
-            this.txtNumeroExterior.Location = new System.Drawing.Point(121, 38);
-            this.txtNumeroExterior.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNumeroExterior.Location = new System.Drawing.Point(138, 38);
+            this.txtNumeroExterior.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtNumeroExterior.MenuManager = this.mainRibbonControl;
             this.txtNumeroExterior.Name = "txtNumeroExterior";
-            this.txtNumeroExterior.Size = new System.Drawing.Size(140, 24);
+            this.txtNumeroExterior.Size = new System.Drawing.Size(160, 26);
             this.txtNumeroExterior.TabIndex = 1;
             // 
             // lblNumeroExterior
             // 
             this.lblNumeroExterior.Location = new System.Drawing.Point(2, 42);
-            this.lblNumeroExterior.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblNumeroExterior.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblNumeroExterior.Name = "lblNumeroExterior";
-            this.lblNumeroExterior.Size = new System.Drawing.Size(65, 17);
+            this.lblNumeroExterior.Size = new System.Drawing.Size(71, 17);
             this.lblNumeroExterior.TabIndex = 91;
             this.lblNumeroExterior.Text = "No Exterior";
             // 
             // txtCalle
             // 
-            this.txtCalle.Location = new System.Drawing.Point(121, 4);
-            this.txtCalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCalle.Location = new System.Drawing.Point(138, 4);
+            this.txtCalle.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtCalle.MenuManager = this.mainRibbonControl;
             this.txtCalle.Name = "txtCalle";
-            this.txtCalle.Size = new System.Drawing.Size(491, 24);
+            this.txtCalle.Size = new System.Drawing.Size(561, 26);
             this.txtCalle.TabIndex = 0;
             // 
             // lblCalle
             // 
             this.lblCalle.Location = new System.Drawing.Point(2, 8);
-            this.lblCalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblCalle.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblCalle.Name = "lblCalle";
-            this.lblCalle.Size = new System.Drawing.Size(31, 17);
+            this.lblCalle.Size = new System.Drawing.Size(30, 17);
             this.lblCalle.TabIndex = 89;
             this.lblCalle.Text = "Calle";
             // 
@@ -706,7 +708,7 @@ namespace NORI
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(719, 543);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(822, 516);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -714,22 +716,22 @@ namespace NORI
             this.layoutControlItem1.Control = this.panel1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(707, 529);
+            this.layoutControlItem1.Size = new System.Drawing.Size(800, 496);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // frmEmpresa
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 622);
+            this.ClientSize = new System.Drawing.Size(822, 622);
             this.Controls.Add(this.dataLayoutControl1);
             this.Controls.Add(this.backstageViewControl1);
             this.Controls.Add(this.mainRibbonControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Image = global::componentResourceManager.Resources.logo;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.MaximizeBox = false;
             this.Name = "frmEmpresa";
             this.Ribbon = this.mainRibbonControl;

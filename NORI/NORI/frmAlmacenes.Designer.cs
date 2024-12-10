@@ -95,7 +95,7 @@ namespace NORI
             // mainRibbonControl
             // 
             this.mainRibbonControl.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
-            this.mainRibbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35);
+            this.mainRibbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(40);
             this.mainRibbonControl.ExpandCollapseItem.Id = 0;
             this.mainRibbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.mainRibbonControl.ExpandCollapseItem,
@@ -112,16 +112,16 @@ namespace NORI
             this.bbiNuevo,
             this.bbiUsuarios});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbonControl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.mainRibbonControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.mainRibbonControl.MaxItemId = 3;
             this.mainRibbonControl.Name = "mainRibbonControl";
-            this.mainRibbonControl.OptionsMenuMinWidth = 385;
+            this.mainRibbonControl.OptionsMenuMinWidth = 440;
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.mainRibbonPage,
             this.ribbonPageHerramientas});
             this.mainRibbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.mainRibbonControl.Size = new System.Drawing.Size(887, 78);
+            this.mainRibbonControl.Size = new System.Drawing.Size(1014, 106);
             this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bbiGuardar
@@ -269,78 +269,78 @@ namespace NORI
             // 
             // lblID
             // 
-            this.lblID.Location = new System.Drawing.Point(399, 18);
-            this.lblID.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.lblID.Location = new System.Drawing.Point(456, 20);
+            this.lblID.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(6, 15);
+            this.lblID.Size = new System.Drawing.Size(9, 17);
             this.lblID.TabIndex = 47;
             this.lblID.Text = "0";
             // 
             // lblNombre
             // 
-            this.lblNombre.Location = new System.Drawing.Point(14, 48);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.lblNombre.Location = new System.Drawing.Point(16, 54);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 15);
+            this.lblNombre.Size = new System.Drawing.Size(52, 17);
             this.lblNombre.TabIndex = 46;
             this.lblNombre.Text = "Nombre";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(133, 45);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtNombre.Location = new System.Drawing.Point(152, 51);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtNombre.MenuManager = this.mainRibbonControl;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Properties.MaxLength = 100;
-            this.txtNombre.Size = new System.Drawing.Size(491, 22);
+            this.txtNombre.Size = new System.Drawing.Size(561, 26);
             this.txtNombre.TabIndex = 1;
             this.txtNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
             // 
             // lblCodigo
             // 
-            this.lblCodigo.Location = new System.Drawing.Point(14, 18);
-            this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.lblCodigo.Location = new System.Drawing.Point(16, 20);
+            this.lblCodigo.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(39, 15);
+            this.lblCodigo.Size = new System.Drawing.Size(44, 17);
             this.lblCodigo.TabIndex = 44;
             this.lblCodigo.Text = "Código";
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(133, 15);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCodigo.Location = new System.Drawing.Point(152, 17);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtCodigo.MenuManager = this.mainRibbonControl;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Properties.MaxLength = 8;
-            this.txtCodigo.Size = new System.Drawing.Size(255, 22);
+            this.txtCodigo.Size = new System.Drawing.Size(291, 26);
             this.txtCodigo.TabIndex = 0;
             this.txtCodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
             // 
             // cbActivo
             // 
-            this.cbActivo.Location = new System.Drawing.Point(14, 196);
-            this.cbActivo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cbActivo.Location = new System.Drawing.Point(16, 222);
+            this.cbActivo.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbActivo.MenuManager = this.mainRibbonControl;
             this.cbActivo.Name = "cbActivo";
             this.cbActivo.Properties.Caption = "Activo";
-            this.cbActivo.Size = new System.Drawing.Size(140, 19);
+            this.cbActivo.Size = new System.Drawing.Size(160, 21);
             this.cbActivo.TabIndex = 6;
             // 
             // lblFechaActualizacion
             // 
-            this.lblFechaActualizacion.Location = new System.Drawing.Point(559, 200);
-            this.lblFechaActualizacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.lblFechaActualizacion.Location = new System.Drawing.Point(639, 227);
+            this.lblFechaActualizacion.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblFechaActualizacion.Name = "lblFechaActualizacion";
-            this.lblFechaActualizacion.Size = new System.Drawing.Size(58, 15);
+            this.lblFechaActualizacion.Size = new System.Drawing.Size(65, 17);
             this.lblFechaActualizacion.TabIndex = 51;
             this.lblFechaActualizacion.Text = "01/01/0001";
             // 
             // lblUltimaActualizacion
             // 
-            this.lblUltimaActualizacion.Location = new System.Drawing.Point(399, 200);
-            this.lblUltimaActualizacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.lblUltimaActualizacion.Location = new System.Drawing.Point(456, 227);
+            this.lblUltimaActualizacion.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblUltimaActualizacion.Name = "lblUltimaActualizacion";
-            this.lblUltimaActualizacion.Size = new System.Drawing.Size(109, 15);
+            this.lblUltimaActualizacion.Size = new System.Drawing.Size(128, 17);
             this.lblUltimaActualizacion.TabIndex = 50;
             this.lblUltimaActualizacion.Text = "Última Actualización";
             // 
@@ -366,19 +366,19 @@ namespace NORI
             this.panel1.Controls.Add(this.cbActivo);
             this.panel1.Controls.Add(this.lblNombre);
             this.panel1.Controls.Add(this.lblID);
-            this.panel1.Location = new System.Drawing.Point(8, 9);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panel1.Location = new System.Drawing.Point(9, 10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(872, 226);
+            this.panel1.Size = new System.Drawing.Size(997, 256);
             this.panel1.TabIndex = 53;
             // 
             // btnImagen
             // 
             this.btnImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImagen.Location = new System.Drawing.Point(638, 186);
-            this.btnImagen.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnImagen.Location = new System.Drawing.Point(729, 211);
+            this.btnImagen.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnImagen.Name = "btnImagen";
-            this.btnImagen.Size = new System.Drawing.Size(230, 31);
+            this.btnImagen.Size = new System.Drawing.Size(263, 35);
             this.btnImagen.TabIndex = 76;
             this.btnImagen.Text = "Seleccionar imagen";
             this.btnImagen.Click += new System.EventHandler(this.btnImagen_Click);
@@ -387,122 +387,123 @@ namespace NORI
             // 
             this.pbImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbImagen.BackColor = System.Drawing.Color.White;
-            this.pbImagen.Location = new System.Drawing.Point(638, 18);
-            this.pbImagen.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pbImagen.Location = new System.Drawing.Point(729, 20);
+            this.pbImagen.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.pbImagen.Name = "pbImagen";
-            this.pbImagen.Size = new System.Drawing.Size(230, 160);
+            this.pbImagen.Size = new System.Drawing.Size(263, 181);
             this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen.TabIndex = 77;
             this.pbImagen.TabStop = false;
             // 
             // cbAlmacenes
             // 
-            this.cbAlmacenes.Location = new System.Drawing.Point(398, 136);
-            this.cbAlmacenes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cbAlmacenes.Location = new System.Drawing.Point(455, 154);
+            this.cbAlmacenes.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbAlmacenes.MenuManager = this.mainRibbonControl;
             this.cbAlmacenes.Name = "cbAlmacenes";
             this.cbAlmacenes.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbAlmacenes.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 23, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbAlmacenes.Size = new System.Drawing.Size(226, 22);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 26, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbAlmacenes.Size = new System.Drawing.Size(258, 26);
             this.cbAlmacenes.TabIndex = 66;
             // 
             // lblAlmacenes
             // 
             this.lblAlmacenes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblAlmacenes.Location = new System.Drawing.Point(398, 108);
-            this.lblAlmacenes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.lblAlmacenes.Location = new System.Drawing.Point(455, 122);
+            this.lblAlmacenes.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblAlmacenes.Name = "lblAlmacenes";
-            this.lblAlmacenes.Size = new System.Drawing.Size(47, 15);
+            this.lblAlmacenes.Size = new System.Drawing.Size(55, 17);
             this.lblAlmacenes.TabIndex = 67;
             this.lblAlmacenes.Text = "Almacén";
+            this.lblAlmacenes.Click += new System.EventHandler(this.lblAlmacenes_Click);
             // 
             // cbTransito
             // 
-            this.cbTransito.Location = new System.Drawing.Point(287, 135);
-            this.cbTransito.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cbTransito.Location = new System.Drawing.Point(328, 153);
+            this.cbTransito.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbTransito.MenuManager = this.mainRibbonControl;
             this.cbTransito.Name = "cbTransito";
             this.cbTransito.Properties.Caption = "Tránsito";
-            this.cbTransito.Size = new System.Drawing.Size(140, 19);
+            this.cbTransito.Size = new System.Drawing.Size(160, 21);
             this.cbTransito.TabIndex = 65;
             // 
             // lblUbicacion
             // 
             this.lblUbicacion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblUbicacion.Location = new System.Drawing.Point(10, 167);
-            this.lblUbicacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.lblUbicacion.Location = new System.Drawing.Point(11, 189);
+            this.lblUbicacion.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblUbicacion.Name = "lblUbicacion";
-            this.lblUbicacion.Size = new System.Drawing.Size(117, 15);
+            this.lblUbicacion.Size = new System.Drawing.Size(134, 17);
             this.lblUbicacion.TabIndex = 64;
             this.lblUbicacion.Text = "Ubicación por defecto";
             this.lblUbicacion.Click += new System.EventHandler(this.lblUbicacion_Click);
             // 
             // cbUbicacion
             // 
-            this.cbUbicacion.Location = new System.Drawing.Point(133, 164);
-            this.cbUbicacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cbUbicacion.Location = new System.Drawing.Point(152, 186);
+            this.cbUbicacion.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbUbicacion.MenuManager = this.mainRibbonControl;
             this.cbUbicacion.Name = "cbUbicacion";
             this.cbUbicacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbUbicacion.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 23, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ubicacion", "Ubicación", 23, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbUbicacion.Size = new System.Drawing.Size(255, 22);
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 26, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ubicacion", "Ubicación", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbUbicacion.Size = new System.Drawing.Size(291, 26);
             this.cbUbicacion.TabIndex = 5;
             // 
             // cbUbicaciones
             // 
-            this.cbUbicaciones.Location = new System.Drawing.Point(133, 135);
-            this.cbUbicaciones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cbUbicaciones.Location = new System.Drawing.Point(152, 153);
+            this.cbUbicaciones.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbUbicaciones.MenuManager = this.mainRibbonControl;
             this.cbUbicaciones.Name = "cbUbicaciones";
             this.cbUbicaciones.Properties.Caption = "Usar ubicaciones";
-            this.cbUbicaciones.Size = new System.Drawing.Size(140, 19);
+            this.cbUbicaciones.Size = new System.Drawing.Size(160, 21);
             this.cbUbicaciones.TabIndex = 4;
             // 
             // lblCuentaAjusteInventario
             // 
-            this.lblCuentaAjusteInventario.Location = new System.Drawing.Point(14, 108);
-            this.lblCuentaAjusteInventario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.lblCuentaAjusteInventario.Location = new System.Drawing.Point(16, 122);
+            this.lblCuentaAjusteInventario.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblCuentaAjusteInventario.Name = "lblCuentaAjusteInventario";
-            this.lblCuentaAjusteInventario.Size = new System.Drawing.Size(77, 15);
+            this.lblCuentaAjusteInventario.Size = new System.Drawing.Size(88, 17);
             this.lblCuentaAjusteInventario.TabIndex = 58;
             this.lblCuentaAjusteInventario.Text = "Cuenta ajustes";
             // 
             // txtNumeroCuentaAjusteInventario
             // 
-            this.txtNumeroCuentaAjusteInventario.Location = new System.Drawing.Point(133, 105);
-            this.txtNumeroCuentaAjusteInventario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtNumeroCuentaAjusteInventario.Location = new System.Drawing.Point(152, 119);
+            this.txtNumeroCuentaAjusteInventario.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtNumeroCuentaAjusteInventario.MenuManager = this.mainRibbonControl;
             this.txtNumeroCuentaAjusteInventario.Name = "txtNumeroCuentaAjusteInventario";
             this.txtNumeroCuentaAjusteInventario.Properties.MaxLength = 15;
             this.txtNumeroCuentaAjusteInventario.Properties.NullValuePrompt = "Cuenta ajustes de inventario";
-            this.txtNumeroCuentaAjusteInventario.Size = new System.Drawing.Size(255, 22);
+            this.txtNumeroCuentaAjusteInventario.Size = new System.Drawing.Size(291, 26);
             this.txtNumeroCuentaAjusteInventario.TabIndex = 3;
             // 
             // cbImpresoras
             // 
-            this.cbImpresoras.Location = new System.Drawing.Point(133, 75);
-            this.cbImpresoras.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cbImpresoras.Location = new System.Drawing.Point(152, 85);
+            this.cbImpresoras.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbImpresoras.MenuManager = this.mainRibbonControl;
             this.cbImpresoras.Name = "cbImpresoras";
             this.cbImpresoras.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbImpresoras.Size = new System.Drawing.Size(255, 22);
+            this.cbImpresoras.Size = new System.Drawing.Size(291, 26);
             this.cbImpresoras.TabIndex = 2;
             // 
             // lblImpresora
             // 
-            this.lblImpresora.Location = new System.Drawing.Point(14, 78);
-            this.lblImpresora.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.lblImpresora.Location = new System.Drawing.Point(16, 88);
+            this.lblImpresora.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblImpresora.Name = "lblImpresora";
-            this.lblImpresora.Size = new System.Drawing.Size(53, 15);
+            this.lblImpresora.Size = new System.Drawing.Size(61, 17);
             this.lblImpresora.TabIndex = 56;
             this.lblImpresora.Text = "Impresora";
             // 
@@ -510,12 +511,12 @@ namespace NORI
             // 
             this.layoutControl1.Controls.Add(this.panel1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 78);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 106);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(92, 301, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(887, 276);
+            this.layoutControl1.Size = new System.Drawing.Size(1014, 295);
             this.layoutControl1.TabIndex = 57;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -524,19 +525,19 @@ namespace NORI
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(887, 276);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1014, 295);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // frmAlmacenes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 354);
+            this.ClientSize = new System.Drawing.Size(1014, 401);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.mainRibbonControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Image = global::componentResourceManager.Resources.logo;
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.MaximizeBox = false;
             this.Name = "frmAlmacenes";
             this.Ribbon = this.mainRibbonControl;

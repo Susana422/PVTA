@@ -536,7 +536,7 @@ namespace NORI
         private void bbiPermisos_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmPermisos frmPermisos2 = new frmPermisos();
-            frmPermisos2.Show();
+            ((Control)(object)frmPermisos2).Show();
         }
 
         private void lblUbicaciones_Click(object sender, EventArgs e)

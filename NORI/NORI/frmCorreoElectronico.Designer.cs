@@ -17,21 +17,11 @@ namespace NORI
     {
         protected override void Dispose(bool disposing)
         {
-            try
+            if (disposing && components != null)
             {
-                if (disposing && components != null)
-                {
-                    components.Dispose();
-                }
-                // Dispose(disposing);
+                components.Dispose();
             }
-            catch (Exception ex)
-            {
-            }
-            finally
-            {
-                base.Dispose(disposing);
-            }
+           this.Dispose(disposing);
         }
 
         private void InitializeComponent()

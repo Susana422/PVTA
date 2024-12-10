@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using DevExpress.DashboardWin;
@@ -11,22 +10,11 @@ namespace NORI
     {
         protected override void Dispose(bool disposing)
         {
-            try
+            if (disposing && components != null)
             {
                 components.Dispose();
-                if (disposing && components != null)
-                {
-                    components.Dispose();
-                }
-                // Dispose(disposing);
             }
-            catch (Exception ex)
-            {
-            }
-            finally
-            {
-                base.Dispose(disposing);
-            }
+            this.Dispose(disposing);
         }
 
         private void InitializeComponent()

@@ -85,16 +85,16 @@ namespace NORI
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = null;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControlTop.Size = new System.Drawing.Size(632, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(626, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 563);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 560);
             this.barDockControlBottom.Manager = null;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControlBottom.Size = new System.Drawing.Size(632, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(626, 0);
             // 
             // barDockControlLeft
             // 
@@ -103,26 +103,26 @@ namespace NORI
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = null;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 563);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 560);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(632, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(626, 0);
             this.barDockControlRight.Manager = null;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(5);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 563);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 560);
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.panel1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 52);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 57);
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(5);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(632, 511);
+            this.layoutControl1.Size = new System.Drawing.Size(626, 503);
             this.layoutControl1.TabIndex = 6;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -138,10 +138,10 @@ namespace NORI
             this.panel1.Controls.Add(this.labelControl1);
             this.panel1.Controls.Add(this.txtContraseña);
             this.panel1.Controls.Add(this.lblUsuario);
-            this.panel1.Location = new System.Drawing.Point(6, 6);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(620, 499);
+            this.panel1.Size = new System.Drawing.Size(602, 479);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -192,15 +192,15 @@ namespace NORI
             // 
             // btnAcceder
             // 
-            this.btnAcceder.BackColor = System.Drawing.Color.Teal;
+            this.btnAcceder.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnAcceder.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(59)))), ((int)(((byte)(129)))));
             this.btnAcceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAcceder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAcceder.ForeColor = System.Drawing.Color.White;
-            this.btnAcceder.Location = new System.Drawing.Point(44, 336);
+            this.btnAcceder.Location = new System.Drawing.Point(35, 330);
             this.btnAcceder.Margin = new System.Windows.Forms.Padding(5);
             this.btnAcceder.Name = "btnAcceder";
-            this.btnAcceder.Size = new System.Drawing.Size(525, 46);
+            this.btnAcceder.Size = new System.Drawing.Size(545, 46);
             this.btnAcceder.TabIndex = 2;
             this.btnAcceder.Text = "ACCEDER";
             this.btnAcceder.UseVisualStyleBackColor = false;
@@ -255,7 +255,7 @@ namespace NORI
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(632, 511);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(626, 503);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -263,13 +263,12 @@ namespace NORI
             this.layoutControlItem1.Control = this.panel1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(622, 501);
+            this.layoutControlItem1.Size = new System.Drawing.Size(606, 483);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // defaultLookAndFeel1
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinMaskColor = System.Drawing.Color.Cyan;
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Glass Oceans";
             // 
             // ribbonControl1
@@ -288,7 +287,7 @@ namespace NORI
             this.ribbonControl1.OptionsMenuMinWidth = 385;
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office365;
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl1.Size = new System.Drawing.Size(632, 52);
+            this.ribbonControl1.Size = new System.Drawing.Size(626, 57);
             // 
             // frmAcceder
             // 
@@ -298,7 +297,7 @@ namespace NORI
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 563);
+            this.ClientSize = new System.Drawing.Size(626, 560);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.barDockControlLeft);

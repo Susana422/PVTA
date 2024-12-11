@@ -149,8 +149,9 @@ namespace NORI
                 {
                     if (Program.Nori.Configuracion.seleccionar_sucursal || Program.Nori.UsuarioAutenticado.seleccionar_sucursal)
                     {
-                        frmSeleccionarSucursal frmSeleccionarSucural2 = new frmSeleccionarSucursal();
-                        ((Form)(object)frmSeleccionarSucural2).ShowDialog();
+                        //frmSeleccionarSucursal frmSeleccionarSucural2 = new frmSeleccionarSucursal();
+                        //((Form)(object)frmSeleccionarSucural2).ShowDialog();
+                        Program.Nori.UsuarioAutenticado.almacen_id = 2;
                     }
                     frmPrincipal frmPrincipal2 = new frmPrincipal();
                     ((Control)(object)frmPrincipal2).Show();

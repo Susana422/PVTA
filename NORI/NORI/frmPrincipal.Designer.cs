@@ -88,7 +88,6 @@ namespace NORI
             this.accordionControlElementFacturas = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementNotasCredito = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementNotasDebito = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementPuntoVenta = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementSocios = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementPagos = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementInventario = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -125,8 +124,6 @@ namespace NORI
             this.bbiSucursales = new DevExpress.XtraBars.BarListItem();
             this.ribbonPageHerramientas = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupHerramientas = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroupSincronizacion = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroupOtros = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
@@ -172,20 +169,20 @@ namespace NORI
             this.dockPanelMenuPrincipal.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.dockPanelMenuPrincipal.FloatSize = new System.Drawing.Size(218, 200);
             this.dockPanelMenuPrincipal.ID = new System.Guid("40a367a0-a383-4b5c-ab0b-4a5cc56ae345");
-            this.dockPanelMenuPrincipal.Location = new System.Drawing.Point(0, 79);
+            this.dockPanelMenuPrincipal.Location = new System.Drawing.Point(0, 90);
             this.dockPanelMenuPrincipal.Name = "dockPanelMenuPrincipal";
             this.dockPanelMenuPrincipal.Options.ShowCloseButton = false;
             this.dockPanelMenuPrincipal.OriginalSize = new System.Drawing.Size(324, 200);
-            this.dockPanelMenuPrincipal.Size = new System.Drawing.Size(324, 701);
+            this.dockPanelMenuPrincipal.Size = new System.Drawing.Size(324, 686);
             this.dockPanelMenuPrincipal.Text = "Menú principal";
             // 
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.accordionControl1);
             this.dockPanel1_Container.Controls.Add(this.lblEmpresa);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 22);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 26);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(317, 676);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(315, 656);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // accordionControl1
@@ -198,7 +195,6 @@ namespace NORI
             this.accordionControlElementGestion,
             this.accordionControlElementCompras,
             this.accordionControlElementVentas,
-            this.accordionControlElementPuntoVenta,
             this.accordionControlElementSocios,
             this.accordionControlElementPagos,
             this.accordionControlElementInventario,
@@ -206,7 +202,7 @@ namespace NORI
             this.accordionControlElementExtras});
             this.accordionControl1.Location = new System.Drawing.Point(3, 29);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.Size = new System.Drawing.Size(275, 650);
+            this.accordionControl1.Size = new System.Drawing.Size(273, 630);
             this.accordionControl1.TabIndex = 0;
             // 
             // accordionControlElementUsuario
@@ -592,13 +588,6 @@ namespace NORI
             this.accordionControlElementNotasDebito.Text = "Notas de débito";
             this.accordionControlElementNotasDebito.Click += new System.EventHandler(this.accordionControlElementNotasDebito_Click);
             // 
-            // accordionControlElementPuntoVenta
-            // 
-            this.accordionControlElementPuntoVenta.Name = "accordionControlElementPuntoVenta";
-            this.accordionControlElementPuntoVenta.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementPuntoVenta.Text = "Punto de venta";
-            this.accordionControlElementPuntoVenta.Click += new System.EventHandler(this.accordionControlElementPuntoVenta_Click);
-            // 
             // accordionControlElementSocios
             // 
             this.accordionControlElementSocios.Name = "accordionControlElementSocios";
@@ -762,7 +751,7 @@ namespace NORI
             this.lblEmpresa.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.lblEmpresa.Location = new System.Drawing.Point(10, 0);
             this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(272, 23);
+            this.lblEmpresa.Size = new System.Drawing.Size(270, 23);
             this.lblEmpresa.TabIndex = 4;
             this.lblEmpresa.Text = "CM internacional";
             // 
@@ -795,7 +784,7 @@ namespace NORI
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemToggleSwitch1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
-            this.ribbonControl1.Size = new System.Drawing.Size(1136, 79);
+            this.ribbonControl1.Size = new System.Drawing.Size(1136, 90);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.ApplicationButtonClick += new System.EventHandler(this.ribbonControl1_ApplicationButtonClick);
             // 
@@ -903,9 +892,7 @@ namespace NORI
             // ribbonPageHerramientas
             // 
             this.ribbonPageHerramientas.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroupHerramientas,
-            this.ribbonPageGroupSincronizacion,
-            this.ribbonPageGroupOtros});
+            this.ribbonPageGroupHerramientas});
             this.ribbonPageHerramientas.Name = "ribbonPageHerramientas";
             this.ribbonPageHerramientas.Text = "HERRAMIENTAS";
             // 
@@ -913,34 +900,17 @@ namespace NORI
             // 
             this.ribbonPageGroupHerramientas.ItemLinks.Add(this.bbiConsultasPersonalizadas);
             this.ribbonPageGroupHerramientas.ItemLinks.Add(this.bbiDiseñadorInformes);
-            this.ribbonPageGroupHerramientas.ItemLinks.Add(this.bbiDiseñadorEscritorios);
-            this.ribbonPageGroupHerramientas.ItemLinks.Add(this.bbiEventosControles);
-            this.ribbonPageGroupHerramientas.ItemLinks.Add(this.bbiEtiquetas);
-            this.ribbonPageGroupHerramientas.ItemLinks.Add(this.bbiEntradasAbiertas);
             this.ribbonPageGroupHerramientas.Name = "ribbonPageGroupHerramientas";
             this.ribbonPageGroupHerramientas.Text = "Herramientas";
-            // 
-            // ribbonPageGroupSincronizacion
-            // 
-            this.ribbonPageGroupSincronizacion.ItemLinks.Add(this.bbiSincronizacion);
-            this.ribbonPageGroupSincronizacion.ItemLinks.Add(this.bbiTransmitirRecibir);
-            this.ribbonPageGroupSincronizacion.Name = "ribbonPageGroupSincronizacion";
-            this.ribbonPageGroupSincronizacion.Text = "Sincronización";
-            // 
-            // ribbonPageGroupOtros
-            // 
-            this.ribbonPageGroupOtros.ItemLinks.Add(this.bbiSucursales);
-            this.ribbonPageGroupOtros.Name = "ribbonPageGroupOtros";
-            this.ribbonPageGroupOtros.Text = "Otros";
             // 
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barHeaderItemEstacion);
             this.ribbonStatusBar1.ItemLinks.Add(this.barEditItemAutorizaciones);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 780);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 776);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1136, 25);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1136, 29);
             // 
             // documentManager1
             // 

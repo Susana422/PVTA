@@ -96,8 +96,6 @@ namespace NORI
 
         private AccordionControlElement accordionControlElementDevoluciones;
 
-        private AccordionControlElement accordionControlElementPuntoVenta;
-
         private AccordionControlElement accordionControlElementSocios;
 
         private AccordionControlElement accordionControlElementGestionInventario;
@@ -168,8 +166,6 @@ namespace NORI
 
         private AccordionControlElement accordionControlElementInformes;
 
-        private RibbonPageGroup ribbonPageGroupSincronizacion;
-
         private AccordionControlElement accordionControKioscoFacturacion;
 
         private AccordionControlElement accordionControlElement1;
@@ -221,8 +217,6 @@ namespace NORI
         private AccordionControlElement accordionControlElementAjusteSalida;
 
         private BarListItem bbiSucursales;
-
-        private RibbonPageGroup ribbonPageGroupOtros;
 
         private AccordionControlElement accordionControlElementAnticiposClientes;
 

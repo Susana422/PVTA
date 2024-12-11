@@ -223,11 +223,6 @@ namespace NORI
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // defaultLookAndFeel1
-            // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinMaskColor = System.Drawing.Color.Cyan;
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Glass Oceans";
-            // 
             // frmSeleccionarSucursal
             // 
             this.AcceptButton = this.btnAceptar;

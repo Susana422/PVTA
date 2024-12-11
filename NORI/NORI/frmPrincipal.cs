@@ -283,7 +283,7 @@ namespace NORI
                         ((AccordionControlElementBase)accordionControlElementDevoluciones).Visible = false;
                         ((AccordionControlElementBase)accordionControlElementNotasCredito).Visible = false;
                         ((AccordionControlElementBase)accordionControlElementNotasDebito).Visible = false;
-                        ((AccordionControlElementBase)accordionControlElementPuntoVenta).Visible = false;
+                        //((AccordionControlElementBase)accordionControlElementPuntoVenta).Visible = false;
                     }
                     break;
                 case 'L':
@@ -297,7 +297,7 @@ namespace NORI
                     ((AccordionControlElementBase)accordionControlElementFacturas).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementNotasCredito).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementNotasDebito).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementPuntoVenta).Visible = false;
+                   // ((AccordionControlElementBase)accordionControlElementPuntoVenta).Visible = false;
                     break;
                 case 'S':
                     ((AccordionControlElementBase)accordionControlElementGestionInventario).Visible = false;

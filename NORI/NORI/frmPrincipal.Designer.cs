@@ -906,7 +906,6 @@ namespace NORI
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barHeaderItemEstacion);
-            this.ribbonStatusBar1.ItemLinks.Add(this.barEditItemAutorizaciones);
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 776);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
@@ -983,7 +982,7 @@ namespace NORI
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar1;
-            this.Text = "Nori";
+            this.Text = "CM";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrincipal_FormClosed);

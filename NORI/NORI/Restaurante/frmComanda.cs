@@ -230,7 +230,7 @@ namespace NORI.Restaurante
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -300,7 +300,7 @@ namespace NORI.Restaurante
                         }
                         if (!documento.EstablecerSocio(socio))
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
+                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
                             return;
                         }
                         Calcular();
@@ -341,7 +341,7 @@ namespace NORI.Restaurante
                     break;
                 }
             }
-            while (MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message, ((Control)(object)this).Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
+            while (MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
             ((Control)(object)txtArticulo).Text = string.Empty;
             ((Control)(object)txtArticulo).Focus();
         }

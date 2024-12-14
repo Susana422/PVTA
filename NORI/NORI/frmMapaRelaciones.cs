@@ -177,7 +177,7 @@ namespace NORI
                         }
                         else
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
+                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
                         }
                     }
                 }
@@ -196,14 +196,14 @@ namespace NORI
                         }
                         else
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
+                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
             }
         }
 

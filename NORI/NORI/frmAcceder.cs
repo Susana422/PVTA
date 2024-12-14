@@ -63,11 +63,16 @@ namespace NORI
 
         private LookUpEdit cbConexiones;
 
+        private RibbonControl ribbonControl1;
+        private PictureBox pictureBox1;
+
         public frmAcceder()
         {
             InitializeComponent();
             this.MetodoDinamico();
             Cargar();
+            this.ribbonControl1.OptionsSearchMenu.SearchItemPosition = DevExpress.XtraBars.Ribbon.SearchItemPosition.None;
+            this.ribbonControl1.OptionsSearchMenu.UseCustomRibbonSearch = DevExpress.Utils.DefaultBoolean.False;
         }
 
         private void CargarConexiones()
@@ -105,7 +110,7 @@ namespace NORI
         {
             if (!Program.Nori.Conectar())
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message, Application.ProductName);
+                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), Application.ProductName);
                 return;
             }
             Usuario usuario = new Usuario();
@@ -164,7 +169,7 @@ namespace NORI
             {
                 ((Control)(object)txtContraseña).Text = string.Empty;
                 ((Control)(object)txtContraseña).Focus();
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message, ((Control)(object)this).Text);
+                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM").ToString().Replace("Nori","DTM"), ((Control)(object)this).Text);
             }
         }
 

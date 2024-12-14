@@ -112,7 +112,7 @@ namespace NORI
                 }
                 if (!conexion_sap && !solo_bajada)
                 {
-                    MessageBox.Show(NoriSAP.ObtenerUltimoError().Message);
+                    MessageBox.Show(NoriSAP.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
                 }
                 if (solo_bajada || conexion_sap)
                 {
@@ -128,7 +128,7 @@ namespace NORI
             {
                 Exception ex2 = ex3;
                 Exception ex = ex2;
-                MessageBox.Show("Ocurrió un problema al iniciar la sincronización. " + ex.Message);
+                MessageBox.Show("Ocurrió un problema al iniciar la sincronización. " + ex.Message.ToString().Replace("Nori","DTM"));
             }
         }
 
@@ -201,7 +201,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                lbLogs.Items.Add(ex.Message);
+                lbLogs.Items.Add(ex.Message.ToString().Replace("Nori","DTM"));
                 bw.RunWorkerAsync();
             }
         }
@@ -349,7 +349,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
             }
         }
 
@@ -381,7 +381,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
             }
         }
 
@@ -408,7 +408,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
             }
         }
     }

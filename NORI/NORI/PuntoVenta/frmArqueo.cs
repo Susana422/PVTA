@@ -153,7 +153,7 @@ namespace NORI.PuntoVenta
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -237,7 +237,7 @@ namespace NORI.PuntoVenta
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -313,12 +313,12 @@ namespace NORI.PuntoVenta
                 }
                 else
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
+                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
             }
         }
 
@@ -357,7 +357,7 @@ namespace NORI.PuntoVenta
                             }
                             else
                             {
-                                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
+                                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
                             }
                         }
                     }
@@ -373,7 +373,7 @@ namespace NORI.PuntoVenta
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al retirar el fondo inicial: " + ex.Message);
+                MessageBox.Show("Error al retirar el fondo inicial: " + ex.Message.ToString().Replace("Nori","DTM"));
             }
         }
 
@@ -440,7 +440,7 @@ namespace NORI.PuntoVenta
                     }
                     else
                     {
-                        MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
+                        MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
                     }
                 }
                 else

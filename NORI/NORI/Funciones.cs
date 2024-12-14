@@ -259,7 +259,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Message.ToString().Replace("Nori","DTM"));
                 return false;
             }
             finally
@@ -324,7 +324,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Impresión", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Impresión", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return false;
             }
             finally
@@ -396,7 +396,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Impresión", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Impresión", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return false;
             }
             finally
@@ -552,7 +552,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Timbrar documento", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Timbrar documento", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return false;
             }
             finally
@@ -572,7 +572,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Cancelar documento", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Cancelar documento", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return false;
             }
             finally
@@ -592,7 +592,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Cancelar documento", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Cancelar documento", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return "No fue posible cancelar el documento.";
             }
             finally
@@ -850,7 +850,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Timbrar pago", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Timbrar pago", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return false;
             }
             finally
@@ -870,7 +870,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                return ex.Message.ToString().Replace("Nori","DTM");
             }
             finally
             {
@@ -913,7 +913,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Facturar entregas", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Facturar entregas", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
             {
@@ -976,7 +976,7 @@ namespace NORI
             catch (Exception ex2)
             {
                 Exception ex = ex2;
-                MessageBox.Show(ex.Message, "Transmitir/Recibir", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Transmitir/Recibir", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
             {
@@ -1050,7 +1050,7 @@ namespace NORI
                 {
                     text2 = text2 + "\r\nLinea: " + compilerResults.Errors[i].Line + " - " + compilerResults.Errors[i].ErrorText;
                 }
-                MessageBox.Show(text2, "Compilador Nori", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(text2, "Compilador DTM", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return;
             }
             Assembly compiledAssembly = compilerResults.CompiledAssembly;
@@ -1066,7 +1066,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Compilador Nori", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Compilador DTM", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
 
@@ -1081,7 +1081,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
             }
         }
 

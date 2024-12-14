@@ -178,6 +178,7 @@ namespace NORI
             this.lblConexion.Size = new System.Drawing.Size(59, 18);
             this.lblConexion.TabIndex = 9;
             this.lblConexion.Text = "Conexión";
+            this.lblConexion.Visible = false;
             this.lblConexion.Click += new System.EventHandler(this.lblConexion_Click);
             // 
             // txtUsuario
@@ -334,7 +335,5 @@ namespace NORI
 
         }
 
-        private RibbonControl ribbonControl1;
-        private PictureBox pictureBox1;
     }
 }

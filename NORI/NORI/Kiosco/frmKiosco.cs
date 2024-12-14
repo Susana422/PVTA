@@ -138,7 +138,7 @@ namespace NORI.Kiosco
                         }
                         else
                         {
-                            MessageBox.Show("Ocurrió un error al tratar de hacer la factura: " + NoriSDK.Nori.ObtenerUltimoError().Message, ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            MessageBox.Show("Ocurrió un error al tratar de hacer la factura: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         }
                     }
                     else
@@ -153,7 +153,7 @@ namespace NORI.Kiosco
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
             {

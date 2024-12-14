@@ -232,7 +232,7 @@ public partial class frmSeleccionPaquetes : RibbonForm
         }
         catch (Exception ex)
         {
-            MessageBox.Show(ex.Message, ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
     }
 

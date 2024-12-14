@@ -84,7 +84,7 @@ namespace NORI
                 }
                 ((Control)(object)txtContraseña).Text = string.Empty;
                 ((Control)(object)txtContraseña).Focus();
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message, ((Control)(object)this).Text);
+                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text);
             }
         }
     }

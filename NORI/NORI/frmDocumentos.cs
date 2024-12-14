@@ -617,7 +617,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -658,7 +658,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -806,7 +806,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -818,7 +818,7 @@ namespace NORI
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message, Text);
+                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), Text);
             }
         }
 
@@ -838,7 +838,7 @@ namespace NORI
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message, Text);
+                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), Text);
             }
         }
 
@@ -853,7 +853,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
             {
@@ -911,7 +911,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
             {
@@ -987,7 +987,7 @@ namespace NORI
                     catch (Exception ex)
                     {
                         MessageBox.Show("Error al parametrizar el control: " + item.control);
-                        MessageBox.Show(ex.Message);
+                        MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
                     }
                 }
             }
@@ -1656,7 +1656,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrió un error al cargar la listas: " + ex.Message);
+                MessageBox.Show("Ocurrió un error al cargar la listas: " + ex.Message.ToString().Replace("Nori","DTM"));
             }
         }
 
@@ -1688,7 +1688,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
             }
         }
         private void Calcular()
@@ -1719,7 +1719,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
             }
         }
 
@@ -1811,13 +1811,13 @@ namespace NORI
                 }
                 else
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
+                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
                 }
                 Cursor = Cursors.Default;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -1842,7 +1842,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
             {
@@ -1949,7 +1949,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return false;
             }
         }
@@ -2079,7 +2079,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return false;
             }
             finally
@@ -2181,7 +2181,7 @@ namespace NORI
                                 return true;
                             }
                             else {
-                                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message,  Text,MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"),  Text,MessageBoxButtons.OK, MessageBoxIcon.Hand);
                                 return false;
                             }
                         }
@@ -2196,7 +2196,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message + " | Error: " + ex.Message, Text);
+                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM") + " | Error: " + ex.Message.ToString().Replace("Nori","DTM"), Text);
                 return false;
             }
         }
@@ -2212,7 +2212,7 @@ namespace NORI
                         SalesOrderHelper salesOrderHelper = new SalesOrderHelper();
                         if (!salesOrderHelper.CreateSalesOrder(documento))
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
                         }
                     }
                     else if (documento.clase.Equals("EN"))
@@ -2233,7 +2233,7 @@ namespace NORI
                         }
                         else
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
                         }
                     }
                     else if (documento.clase.Equals("NC"))
@@ -2257,7 +2257,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(string.Format("Ocurrió un error al sincronizar con NetSuite", ex.Message));
+                MessageBox.Show(string.Format("Ocurrió un error al sincronizar con NetSuite", ex.Message.ToString().Replace("Nori","DTM")));
                 return false;
             }
         }
@@ -2414,7 +2414,7 @@ namespace NORI
                             }
                             else
                             {
-                                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
+                                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
                             }
                             return;
                         }
@@ -2436,7 +2436,7 @@ namespace NORI
                         }
                         else
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
+                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
                         }
                     }
                     else if (documento.flujo.Count > 0)
@@ -2458,7 +2458,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
             }
         }
 
@@ -2492,7 +2492,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Documentos", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Documentos", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -2764,7 +2764,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
             {
@@ -2885,7 +2885,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al entrar aqui: " + ex.Message);
+                MessageBox.Show("Error al entrar aqui: " + ex.Message.ToString().Replace("Nori","DTM"));
             }
             finally
             {
@@ -2932,7 +2932,7 @@ namespace NORI
                         {
                             gvPartidas.MoveLast();
                         }
-                        if ((documento.clase.Equals("PE") || documento.clase.Equals("EN") || documento.clase.Equals("FA") || documento.clase.Equals("TS")) && !partida.VerificarExistencia() && Program.Nori.Configuracion.venta_articulo_stock_cero && MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message + " ¿Desea continuar agregando este artículo?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                        if ((documento.clase.Equals("PE") || documento.clase.Equals("EN") || documento.clase.Equals("FA") || documento.clase.Equals("TS")) && !partida.VerificarExistencia() && Program.Nori.Configuracion.venta_articulo_stock_cero && MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM") + " ¿Desea continuar agregando este artículo?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                         {
                             documento.partidas.Remove(partida);
                         }
@@ -2943,12 +2943,12 @@ namespace NORI
                     CalcularExcel();
                     break;
                 }
-                while (MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message, Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
+                while (MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
             }
             catch (Exception ex2)
             {
                 Exception ex = ex2;
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
             {
@@ -3007,7 +3007,7 @@ namespace NORI
             catch (Exception ex2)
             {
                 Exception ex = ex2;
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         
         }
@@ -3019,7 +3019,7 @@ namespace NORI
                 {
                     if (!(await Task.Run(() => documento.AgregarPartida(q))))
                     {
-                        if (NoriSDK.Nori.ObtenerUltimoError().Message == "El artículo no se puede vender.") {
+                        if (NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM") == "El artículo no se puede vender.") {
                             DialogResult result = MessageBox.Show("El artículo que buscas no está disponible, pero te ofrecemos algunas alternativas.", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (result == DialogResult.Yes)
                             {
@@ -3058,7 +3058,7 @@ namespace NORI
                         {
                             gvPartidas.MoveLast();
                         }
-                        if ((documento.clase.Equals("PE") || documento.clase.Equals("EN") || documento.clase.Equals("FA") || documento.clase.Equals("TS")) && !partida.VerificarExistencia() && Program.Nori.Configuracion.venta_articulo_stock_cero && MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message + " ¿Desea continuar agregando este artículo?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                        if ((documento.clase.Equals("PE") || documento.clase.Equals("EN") || documento.clase.Equals("FA") || documento.clase.Equals("TS")) && !partida.VerificarExistencia() && Program.Nori.Configuracion.venta_articulo_stock_cero && MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM") + " ¿Desea continuar agregando este artículo?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                         {
                             documento.partidas.Remove(partida);
                         }
@@ -3069,12 +3069,12 @@ namespace NORI
                     Calcular();
                     break;
                 }
-                while (MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message, Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
+                while (MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
             }
             catch (Exception ex2)
             {
                 Exception ex = ex2;
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
             {
@@ -3143,7 +3143,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -3271,7 +3271,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -3312,7 +3312,7 @@ namespace NORI
                 }
                 else
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
+                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
                 }
             }
             else
@@ -3368,7 +3368,7 @@ namespace NORI
                 }
                 else
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
+                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
                 }
             }
             else
@@ -3479,7 +3479,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -3516,7 +3516,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -3528,7 +3528,7 @@ namespace NORI
             }
             else
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -3581,7 +3581,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -3675,13 +3675,13 @@ namespace NORI
                     }
                     else
                     {
-                        MessageBox.Show($"Error al importar folio fiscal: {NoriSDK.Nori.ObtenerUltimoError().Message}", Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        MessageBox.Show($"Error al importar folio fiscal: {NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM")}", Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
             }
             finally
             {
@@ -3710,12 +3710,12 @@ namespace NORI
                 }
                 else
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
             }
         }
 
@@ -3738,7 +3738,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
             }
         }
 
@@ -3780,7 +3780,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
             }
         }
 
@@ -4066,7 +4066,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
             }
         }
 
@@ -4092,7 +4092,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -4142,7 +4142,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -4176,7 +4176,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -4201,7 +4201,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
             }
         }
 

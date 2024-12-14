@@ -21,7 +21,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + NoriSAP.ObtenerUltimoError().Message);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM") + NoriSAP.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
                 return new DataTable();
             }
         }
@@ -39,7 +39,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + NoriSAP.ObtenerUltimoError().Message);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM") + NoriSAP.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
                 return 0m;
             }
         }
@@ -57,7 +57,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + NoriSAP.ObtenerUltimoError().Message);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM") + NoriSAP.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
                 return false;
             }
         }

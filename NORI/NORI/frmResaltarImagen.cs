@@ -19,10 +19,11 @@ namespace NORI
         public frmResaltarImagen(Image image)
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
             pictureBoxZoom = new PictureBox();
             pictureBoxZoom.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxZoom.Image = image;
-            pictureBoxZoom.Location = new Point(120, 10); // Ubicación en el formulario
+           // pictureBoxZoom.Location = new Point(120, 10); // Ubicación en el formulario
             pictureBoxZoom.Size = new Size(image.Width, image.Height); // Tamaño inicial de la imagen
 
             // Agregar el PictureBox al formulario para que se muestre

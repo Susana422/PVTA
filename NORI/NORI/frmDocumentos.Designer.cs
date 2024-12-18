@@ -734,11 +734,11 @@ namespace NORI
             // 
             // xtraTabControl1
             // 
-            this.xtraTabControl1.Location = new System.Drawing.Point(13, 12);
+            this.xtraTabControl1.Location = new System.Drawing.Point(12, 12);
             this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPageGeneral;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1120, 711);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1122, 711);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageGeneral,
@@ -813,7 +813,7 @@ namespace NORI
             this.xtraTabPageGeneral.Controls.Add(this.gcPartidas);
             this.xtraTabPageGeneral.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageGeneral.Name = "xtraTabPageGeneral";
-            this.xtraTabPageGeneral.Size = new System.Drawing.Size(1114, 681);
+            this.xtraTabPageGeneral.Size = new System.Drawing.Size(1116, 681);
             this.xtraTabPageGeneral.Text = "General";
             // 
             // btnCargaArticulos
@@ -1208,7 +1208,7 @@ namespace NORI
             this.separatorControl1.Location = new System.Drawing.Point(15, 180);
             this.separatorControl1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.separatorControl1.Name = "separatorControl1";
-            this.separatorControl1.Padding = new System.Windows.Forms.Padding(11, 11, 11, 11);
+            this.separatorControl1.Padding = new System.Windows.Forms.Padding(11);
             this.separatorControl1.Size = new System.Drawing.Size(1087, 25);
             this.separatorControl1.TabIndex = 112;
             // 
@@ -1600,6 +1600,7 @@ namespace NORI
             this.gcPartidas.TabStop = false;
             this.gcPartidas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPartidas});
+            this.gcPartidas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gcPartidas_MouseDoubleClick);
             // 
             // gvPartidas
             // 
@@ -2126,7 +2127,7 @@ namespace NORI
             this.xtraTabPageLogistica.Controls.Add(this.lblDireccionFacturacion);
             this.xtraTabPageLogistica.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageLogistica.Name = "xtraTabPageLogistica";
-            this.xtraTabPageLogistica.Size = new System.Drawing.Size(1114, 689);
+            this.xtraTabPageLogistica.Size = new System.Drawing.Size(1116, 681);
             this.xtraTabPageLogistica.Text = "Logística";
             // 
             // btnEditarDireccionOrigen
@@ -2650,7 +2651,7 @@ namespace NORI
             this.xtraTabPageFinanzas.Controls.Add(this.lblCondicionesPago);
             this.xtraTabPageFinanzas.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageFinanzas.Name = "xtraTabPageFinanzas";
-            this.xtraTabPageFinanzas.Size = new System.Drawing.Size(1114, 689);
+            this.xtraTabPageFinanzas.Size = new System.Drawing.Size(1116, 681);
             this.xtraTabPageFinanzas.Text = "Finanzas";
             // 
             // cbProyectos
@@ -2858,7 +2859,7 @@ namespace NORI
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.cbGenerarDocumentoElectronico);
             this.xtraTabPageDocumentoElectronico.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageDocumentoElectronico.Name = "xtraTabPageDocumentoElectronico";
-            this.xtraTabPageDocumentoElectronico.Size = new System.Drawing.Size(1114, 689);
+            this.xtraTabPageDocumentoElectronico.Size = new System.Drawing.Size(1116, 681);
             this.xtraTabPageDocumentoElectronico.Text = "Documento electrónico";
             // 
             // cbGlobal
@@ -3136,7 +3137,7 @@ namespace NORI
             this.xtraTabPageAnexos.Controls.Add(this.lbAnexos);
             this.xtraTabPageAnexos.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageAnexos.Name = "xtraTabPageAnexos";
-            this.xtraTabPageAnexos.Size = new System.Drawing.Size(1114, 689);
+            this.xtraTabPageAnexos.Size = new System.Drawing.Size(1116, 681);
             this.xtraTabPageAnexos.Text = "Anexos";
             // 
             // btnVisualizarAnexo
@@ -3184,7 +3185,7 @@ namespace NORI
             this.layoutControlItem1.Control = this.xtraTabControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1124, 715);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1126, 715);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 

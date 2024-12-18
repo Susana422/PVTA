@@ -25,6 +25,7 @@ using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraLayout;
 using DevExpress.XtraLayout.Utils;
 using DevExpress.XtraPrinting.BarCode;
@@ -586,7 +587,17 @@ namespace NORI
             }
             Permisos();
         }
+      
 
+        private void Item1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            XtraMessageBox.Show("Opción 1 seleccionada");
+        }
+
+        private void Item2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            XtraMessageBox.Show("Opción 2 seleccionada");
+        }
         private void CargarInformes(string clase)
         {
             try
@@ -4381,6 +4392,49 @@ namespace NORI
 
             }
         }
+
+        private void gcPartidas_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                GridView gridView = gcPartidas.MainView as GridView;
+                if (gridView.FocusedRowHandle >= 0)
+                {
+                    GridHitInfo hitInfo = gridView.CalcHitInfo(e.Location);
+
+                    // Verificar si el clic fue sobre una celda (no en el encabezado de la columna)
+                    if (hitInfo.InRowCell)
+                    {
+                        // Obtener el nombre de la columna donde se hizo doble clic
+                        string columnName = hitInfo.Column.FieldName;
+
+                        // Verificar si la columna clickeada es la que deseas, por ejemplo "s"
+                        if (columnName == "sku")
+                        {
+                 
+                            // Obtener la fila seleccionada
+                            int selectedRowHandle = gridView.FocusedRowHandle;
+
+                            // Obtener los valores de las celdas en la fila seleccionada
+                            var cellValue = gridView.GetRowCellValue(selectedRowHandle, gridView.Columns["sku"]).ToString();
+
+                            if (cellValue == null || cellValue.Length <= 0)
+                            {
+                                return;
+                            }
+                            buscarArticulosAlternativos(cellValue);
+                        }
+
+                    }
+                }
+
+            }
+              catch (Exception ex)
+                {
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+        }
+     
     }
 
 }

@@ -1508,7 +1508,13 @@ namespace NORI
             }
         }
 
-      
+        private void pbImagen_DoubleClick(object sender, EventArgs e)
+        {
+            frmResaltarImagen formZoom = new frmResaltarImagen(pbImagen.Image);
+
+            // Mostrar el formulario de zoom
+            formZoom.Show();
+        }
     }
 
 }

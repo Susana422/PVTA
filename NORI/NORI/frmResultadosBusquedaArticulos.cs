@@ -40,8 +40,6 @@ namespace NORI
 
         private PictureBox pbImagen;
 
-        private LabelControl lblComentario;
-
         public int id { get; internal set; }
 
         public int fila { get; internal set; }
@@ -124,9 +122,10 @@ namespace NORI
                         {
                             DataRow dataRow = ((ColumnView)gvResultados).GetDataRow(((ColumnView)gvResultados).GetSelectedRows()[0]);
                             int num = int.Parse(dataRow[0].ToString());
-                            pbImagen.LoadImage(Articulo.ObtenerImagen(id));
-                            ((Control)(object)lblComentario).Text = Articulo.ObtenerComentario(id);
-                            ((Control)(object)lblNombre).Text = dataRow["nombre"].ToString();
+                            pbImagen.LoadImage(Articulo.ObtenerImagen(num));
+                            lblComentario.Visible = false;
+                            ((Control)(object)lblComentario).Text = Articulo.ObtenerComentario(num);
+                           ((Control)(object)lblNombre).Text = dataRow["nombre"].ToString();
                         }
                     }
                     catch
@@ -151,7 +150,11 @@ namespace NORI
         {
         }
 
-       
+        private void pbImagen_DoubleClick(object sender, EventArgs e)
+        {
+            frmResaltarImagen formZoom = new frmResaltarImagen(pbImagen.Image);
+            formZoom.Show();
+        }
     }
 
 }

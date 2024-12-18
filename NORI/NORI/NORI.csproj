@@ -927,6 +927,12 @@
     <Compile Include="PuntoVenta\frmPuntoVenta.Designer.cs">
       <DependentUpon>frmPuntoVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmResaltarImagen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmResaltarImagen.Designer.cs">
+      <DependentUpon>frmResaltarImagen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Restaurante\frmComanda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1245,6 +1251,9 @@
     </Compile>
     <EmbeddedResource Include="PuntoVenta\frmPuntoVenta.resx">
       <DependentUpon>frmPuntoVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmResaltarImagen.resx">
+      <DependentUpon>frmResaltarImagen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

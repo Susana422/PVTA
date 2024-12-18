@@ -18,6 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NoriSDK;
+using DevExpress.Utils.Win.Hook;
 
 namespace NORI
 {
@@ -115,25 +116,35 @@ namespace NORI
         {
             try
             {
-                ((Control)this).BeginInvoke((Delegate)(MethodInvoker)delegate
-                {
+                //((Control)this).BeginInvoke((Delegate)(MethodInvoker)delegate
+                //{
                     try
                     {
                         if (((BaseView)gvResultados).RowCount > 0)
                         {
                             DataRow dataRow = ((ColumnView)gvResultados).GetDataRow(((ColumnView)gvResultados).GetSelectedRows()[0]);
                             int num = int.Parse(dataRow[0].ToString());
-                            pbImagen.LoadImage(Articulo.ObtenerImagen(id));
+                            pbImagen.LoadImage(Articulo.ObtenerImagen(num));
                             ((Control)(object)lblComentario).Text = Articulo.ObtenerComentario(id);
                             ((Control)(object)lblNombre).Text = dataRow["nombre"].ToString();
                         }
                     }
-                    catch
+                    catch(Exception ex1)
                     {
+                    if (ex1.Message == "Índice fuera de los límites de la matriz.") 
+                    {
+                        DataRow dataRow = ((ColumnView)gvResultados).GetDataRow(0);
+                        int num = int.Parse(dataRow[0].ToString());
+                        pbImagen.LoadImage(Articulo.ObtenerImagen(num));
+                        lblComentario.Visible=false;
+                        ((Control)(object)lblComentario).Text = Articulo.ObtenerComentario(num);
+                        ((Control)(object)lblNombre).Text = dataRow["nombre"].ToString();
                     }
-                });
+        
+                }
+               // });
             }
-            catch
+            catch (Exception ex)
             {
             }
         }
@@ -150,7 +161,13 @@ namespace NORI
         {
         }
 
-       
+        private void pbImagen_DoubleClick(object sender, EventArgs e)
+        {
+            frmResaltarImagen formZoom = new frmResaltarImagen(pbImagen.Image);
+
+            // Mostrar el formulario de zoom
+            formZoom.Show();
+        }
     }
 
 }

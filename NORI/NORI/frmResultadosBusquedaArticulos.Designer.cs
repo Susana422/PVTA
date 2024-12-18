@@ -50,7 +50,7 @@ namespace NORI
             // ribbonControl1
             // 
             this.ribbonControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
-            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(23, 27, 23, 27);
+            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(26, 27, 26, 27);
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem});
@@ -58,19 +58,19 @@ namespace NORI
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonControl1.MaxItemId = 1;
             this.ribbonControl1.Name = "ribbonControl1";
-            this.ribbonControl1.OptionsMenuMinWidth = 257;
+            this.ribbonControl1.OptionsMenuMinWidth = 294;
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl1.Size = new System.Drawing.Size(922, 71);
+            this.ribbonControl1.Size = new System.Drawing.Size(1054, 57);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 583);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 587);
             this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(922, 33);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1054, 29);
             // 
             // panelControl1
             // 
@@ -79,10 +79,10 @@ namespace NORI
             this.panelControl1.Controls.Add(this.lblNombre);
             this.panelControl1.Controls.Add(this.pbImagen);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 71);
+            this.panelControl1.Location = new System.Drawing.Point(0, 57);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(922, 512);
+            this.panelControl1.Size = new System.Drawing.Size(1054, 530);
             this.panelControl1.TabIndex = 2;
             // 
             // lblComentario
@@ -91,12 +91,13 @@ namespace NORI
             this.lblComentario.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblComentario.Appearance.Options.UseFont = true;
             this.lblComentario.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblComentario.Location = new System.Drawing.Point(672, 303);
+            this.lblComentario.Location = new System.Drawing.Point(768, 303);
             this.lblComentario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lblComentario.Name = "lblComentario";
-            this.lblComentario.Size = new System.Drawing.Size(245, 19);
+            this.lblComentario.Size = new System.Drawing.Size(280, 19);
             this.lblComentario.TabIndex = 5;
             this.lblComentario.Text = "Comentario";
+            this.lblComentario.Visible = false;
             this.lblComentario.Click += new System.EventHandler(this.labelControl1_Click);
             // 
             // gcResultados
@@ -110,7 +111,7 @@ namespace NORI
             this.gcResultados.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gcResultados.MenuManager = this.ribbonControl1;
             this.gcResultados.Name = "gcResultados";
-            this.gcResultados.Size = new System.Drawing.Size(663, 508);
+            this.gcResultados.Size = new System.Drawing.Size(758, 526);
             this.gcResultados.TabIndex = 2;
             this.gcResultados.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvResultados});
@@ -129,7 +130,7 @@ namespace NORI
             this.gvResultados.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.gvResultados.OptionsBehavior.Editable = false;
             this.gvResultados.OptionsCustomization.AllowSort = false;
-            this.gvResultados.OptionsEditForm.PopupEditFormWidth = 622;
+            this.gvResultados.OptionsEditForm.PopupEditFormWidth = 711;
             this.gvResultados.OptionsView.ShowAutoFilterRow = true;
             this.gvResultados.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvResultados_FocusedRowChanged);
             this.gvResultados.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gvResultados_KeyDown);
@@ -141,29 +142,30 @@ namespace NORI
             this.lblNombre.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Appearance.Options.UseFont = true;
             this.lblNombre.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lblNombre.Location = new System.Drawing.Point(672, 254);
+            this.lblNombre.Location = new System.Drawing.Point(768, 254);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(245, 19);
+            this.lblNombre.Size = new System.Drawing.Size(280, 19);
             this.lblNombre.TabIndex = 4;
             this.lblNombre.Text = "Nombre del artículo";
             // 
             // pbImagen
             // 
             this.pbImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbImagen.Location = new System.Drawing.Point(672, 4);
+            this.pbImagen.Location = new System.Drawing.Point(768, 4);
             this.pbImagen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbImagen.Name = "pbImagen";
-            this.pbImagen.Size = new System.Drawing.Size(245, 242);
+            this.pbImagen.Size = new System.Drawing.Size(280, 242);
             this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen.TabIndex = 3;
             this.pbImagen.TabStop = false;
+            this.pbImagen.DoubleClick += new System.EventHandler(this.pbImagen_DoubleClick);
             // 
             // frmResultadosBusquedaArticulos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(922, 616);
+            this.ClientSize = new System.Drawing.Size(1054, 616);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
@@ -188,5 +190,7 @@ namespace NORI
             this.PerformLayout();
 
         }
+
+        private LabelControl lblComentario;
     }
 }

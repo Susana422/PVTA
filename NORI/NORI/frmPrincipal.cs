@@ -1022,6 +1022,10 @@ namespace NORI
             ((Control)(object)frmListaPedidosWeb2).Show();
         }
 
-    
-}
+        private void accordionControlElement5_Click(object sender, EventArgs e)
+        {
+           frmReporteAnalisisVenta frmReporteAnalisisVenta= new frmReporteAnalisisVenta();
+            ((Control)(object)frmReporteAnalisisVenta).Show();
+        }
+    }
 }

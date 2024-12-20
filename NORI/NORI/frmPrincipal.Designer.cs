@@ -102,6 +102,7 @@ namespace NORI
             this.accordionControlElementInventarioFisico = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementInformes = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementListaPartidas = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementExtras = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementListaPedidosWeb = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementRestaurante = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -688,7 +689,8 @@ namespace NORI
             // accordionControlElementInformes
             // 
             this.accordionControlElementInformes.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElementListaPartidas});
+            this.accordionControlElementListaPartidas,
+            this.accordionControlElement5});
             this.accordionControlElementInformes.Expanded = true;
             this.accordionControlElementInformes.Name = "accordionControlElementInformes";
             this.accordionControlElementInformes.Text = "Informes";
@@ -700,6 +702,13 @@ namespace NORI
             this.accordionControlElementListaPartidas.Text = "Lista partidas";
             this.accordionControlElementListaPartidas.Visible = false;
             this.accordionControlElementListaPartidas.Click += new System.EventHandler(this.accordionControlElementListaPartidas_Click);
+            // 
+            // accordionControlElement5
+            // 
+            this.accordionControlElement5.Name = "accordionControlElement5";
+            this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement5.Text = "Analisis de Venta";
+            this.accordionControlElement5.Click += new System.EventHandler(this.accordionControlElement5_Click);
             // 
             // accordionControlElementExtras
             // 
@@ -1002,5 +1011,6 @@ namespace NORI
         }
 
         private PictureBox pictureBox1;
+        private AccordionControlElement accordionControlElement5;
     }
 }

@@ -24,6 +24,7 @@ using DevExpress.XtraSplashScreen;
 using DevExpress.XtraWaitForm;
 using NetsuiteLibrary;
 using NetsuiteLibrary.SuiteTalk_Helpers;
+using NORI.Reportes;
 using NoriCFDI;
 using NoriSAPB1SDK;
 using NoriSDK;
@@ -1024,7 +1025,7 @@ namespace NORI
 
         private void accordionControlElement5_Click(object sender, EventArgs e)
         {
-           frmReporteAnalisisVenta frmReporteAnalisisVenta= new frmReporteAnalisisVenta();
+           corteCaja frmReporteAnalisisVenta= new corteCaja();
             ((Control)(object)frmReporteAnalisisVenta).Show();
         }
     }

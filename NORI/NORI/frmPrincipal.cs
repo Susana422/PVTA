@@ -1025,8 +1025,10 @@ namespace NORI
 
         private void accordionControlElement5_Click(object sender, EventArgs e)
         {
-           corteCaja frmReporteAnalisisVenta= new corteCaja();
-            ((Control)(object)frmReporteAnalisisVenta).Show();
+            frmImagen frmImagen = new frmImagen();
+            frmImagen.Show();
+           //corteCaja frmReporteAnalisisVenta= new corteCaja();
+           // ((Control)(object)frmReporteAnalisisVenta).Show();
         }
     }
 }

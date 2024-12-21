@@ -117,6 +117,8 @@
     <Reference Include="DevExpress.ExpressApp.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.Win.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Office.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v24.1.Drawing, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.RichEdit.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
@@ -144,6 +146,7 @@
       <HintPath>..\..\..\..\..\..\Program Files\DevExpress 24.1\Components\Bin\Framework\DevExpress.XtraLayout.v24.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraNavBar.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPdfViewer.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files\DevExpress 24.1\Components\Bin\Framework\DevExpress.XtraPrinting.v24.1.dll</HintPath>
@@ -172,6 +175,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files\DevExpress 24.1\Components\Bin\Framework\DevExpress.XtraRichEdit.v24.1.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraWizard.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DPFPCtlXWrapperNET">
       <HintPath>..\..\..\..\..\..\Desktop\DPFPCtlXWrapperNET.dll</HintPath>
@@ -945,6 +949,18 @@
     <Compile Include="Reportes\corteCaja.Designer.cs">
       <DependentUpon>corteCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmImagen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmImagen.Designer.cs">
+      <DependentUpon>frmImagen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmVisualizadorReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmVisualizadorReportes.Designer.cs">
+      <DependentUpon>frmVisualizadorReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Restaurante\frmComanda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1269,6 +1285,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\corteCaja.resx">
       <DependentUpon>corteCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmImagen.resx">
+      <DependentUpon>frmImagen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmVisualizadorReportes.resx">
+      <DependentUpon>frmVisualizadorReportes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

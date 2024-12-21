@@ -28,7 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Location = new System.Drawing.Point(0, -1);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Size = new System.Drawing.Size(967, 733);
+            this.pictureEdit1.TabIndex = 0;
             // 
             // frmResaltarImagen
             // 
@@ -37,14 +47,18 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(969, 738);
+            this.Controls.Add(this.pictureEdit1);
             this.Name = "frmResaltarImagen";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ResaltarImagen";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
     }
 }

@@ -21,6 +21,7 @@ namespace NORI.Reportes
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            this.Hide();
             string AttachPDF = "C:\\Users\\Programador\\Desktop\\archivo.pdf";
             ReportDocument cryReportDocument = new ReportDocument();
             cryReportDocument.Load("C:\\Users\\Programador\\Music\\REPORTES\\CORTE CAJA.rpt");
@@ -29,6 +30,9 @@ namespace NORI.Reportes
             cryReportDocument.SetParameterValue("@FechaFin", "2024-12-21");
             cryReportDocument.ExportToDisk(ExportFormatType.PortableDocFormat, AttachPDF);
             cryReportDocument.Dispose();
+            this.Hide();
+            frmVisualizadorReportes frmVisual= new frmVisualizadorReportes(AttachPDF);
+            frmVisual.Show();
         }
     }
 }

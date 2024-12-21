@@ -47,5 +47,65 @@ namespace Settings {
                 this["RootDirectory"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Programador\\Music\\REPORTES\\")]
+        public string rutaReportes {
+            get {
+                return ((string)(this["rutaReportes"]));
+            }
+            set {
+                this["rutaReportes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string USERBD {
+            get {
+                return ((string)(this["USERBD"]));
+            }
+            set {
+                this["USERBD"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PASSBD {
+            get {
+                return ((string)(this["PASSBD"]));
+            }
+            set {
+                this["PASSBD"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SERVIDOR {
+            get {
+                return ((string)(this["SERVIDOR"]));
+            }
+            set {
+                this["SERVIDOR"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string BD {
+            get {
+                return ((string)(this["BD"]));
+            }
+            set {
+                this["BD"] = value;
+            }
+        }
     }
 }

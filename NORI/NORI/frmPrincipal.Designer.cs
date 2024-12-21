@@ -707,7 +707,7 @@ namespace NORI
             // 
             this.accordionControlElement5.Name = "accordionControlElement5";
             this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement5.Text = "Analisis de Venta";
+            this.accordionControlElement5.Text = "Corte de Caja";
             this.accordionControlElement5.Click += new System.EventHandler(this.accordionControlElement5_Click);
             // 
             // accordionControlElementExtras

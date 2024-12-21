@@ -8,5 +8,20 @@
     <Setting Name="RootDirectory" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="rutaReportes" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\Programador\Music\REPORTES\</Value>
+    </Setting>
+    <Setting Name="USERBD" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PASSBD" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SERVIDOR" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BD" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

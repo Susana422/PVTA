@@ -195,8 +195,6 @@ namespace NORI
 
         private AccordionControlElement accordionControlElementEntregaMercancia;
 
-        private AccordionControlElement accordionControlElementListaPartidas;
-
         private BarButtonItem bbiTransmitirRecibir;
 
         private AccordionControlElement accordionControlElementOperacionesStock;
@@ -1025,8 +1023,57 @@ namespace NORI
 
         private void accordionControlElement5_Click(object sender, EventArgs e)
         {
+            
             frmrepCorteCaja frmrepCorteCaja = new frmrepCorteCaja();
             ((Control)(object)frmrepCorteCaja).Show();
+        }
+
+        private void accFacturasDiarias_Click(object sender, EventArgs e)
+        {
+            frmrepFacturasDiarias frmrepFacturasDiarias = new frmrepFacturasDiarias();
+            ((Control)(object)frmrepFacturasDiarias).Show();
+        }
+
+        private void accPagosCredito_Click(object sender, EventArgs e)
+        {
+            frmrepPagosCredito frmrepPagosCredito = new frmrepPagosCredito();
+            ((Control)(object)frmrepPagosCredito).Show();
+        }
+
+        private void accNC_Click(object sender, EventArgs e)
+        {
+            frmrepNC frmrepNC= new frmrepNC();
+            ((Control)(object)frmrepNC).Show();
+        }
+
+        private void accordionControlElement10_Click(object sender, EventArgs e)
+        {
+            frmrepFacCanceladas frmrepFacCanceladas= new frmrepFacCanceladas();
+            ((Control)(object)frmrepFacCanceladas).Show();
+        }
+
+        private void accordionControlElement11_Click(object sender, EventArgs e)
+        {
+            frmrepPartidasAbiertas frmrepPartidasAbiertas= new frmrepPartidasAbiertas();
+            ((Control)(object)frmrepPartidasAbiertas).Show();
+        }
+
+        private void accordionControlElement12_Click(object sender, EventArgs e)
+        {
+            frmrepPagoComision frmrepPagoComision = new frmrepPagoComision();
+            ((Control)(object)frmrepPagoComision).Show();
+        }
+
+        private void accordionControlElement13_Click(object sender, EventArgs e)
+        {
+            frmrepVentas frmrepVentas= new frmrepVentas();
+            ((Control)(object)frmrepVentas).Show();
+        }
+
+        private void accMonitor_Click(object sender, EventArgs e)
+        {
+            frmMonitorElectronico frmMonitorElectronico = new frmMonitorElectronico();
+            ((Control)(object)frmMonitorElectronico).Show();
         }
     }
 }

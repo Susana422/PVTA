@@ -153,7 +153,7 @@
     </Reference>
     <Reference Include="DevExpress.XtraReports.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files\DevExpress 24.1\Components\Bin\Framework\DevExpress.XtraReports.v24.1.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\DevExpress 24.1\Components\Bin\Framework\DevExpress.XtraReports.v24.1.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraReports.v24.1.CodeCompletion, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -162,6 +162,10 @@
     <Reference Include="DevExpress.XtraReports.v24.1.Design, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files\DevExpress 24.1\Components\Bin\Framework\Design\DevExpress.XtraReports.v24.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v24.1.Design.Tool, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\DevExpress 24.1\Components\Bin\Framework\DevExpress.XtraReports.v24.1.Design.Tool.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.XtraReports.v24.1.Extensions, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -674,6 +678,12 @@
     <Compile Include="frmMonederos.Designer.cs">
       <DependentUpon>frmMonederos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMonitorElectronico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMonitorElectronico.Designer.cs">
+      <DependentUpon>frmMonitorElectronico.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmOrdenDescuentosEspeciales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -988,11 +998,47 @@
     <Compile Include="frmResaltarImagen.Designer.cs">
       <DependentUpon>frmResaltarImagen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\corteCaja.cs">
+    <Compile Include="Reportes\frmrepVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\corteCaja.Designer.cs">
-      <DependentUpon>corteCaja.cs</DependentUpon>
+    <Compile Include="Reportes\frmrepVentas.Designer.cs">
+      <DependentUpon>frmrepVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmrepPagoComision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmrepPagoComision.Designer.cs">
+      <DependentUpon>frmrepPagoComision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmrepPartidasAbiertas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmrepPartidasAbiertas.Designer.cs">
+      <DependentUpon>frmrepPartidasAbiertas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmrepFacCanceladas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmrepFacCanceladas.Designer.cs">
+      <DependentUpon>frmrepFacCanceladas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmrepNC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmrepNC.Designer.cs">
+      <DependentUpon>frmrepNC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmrepPagosCredito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmrepPagosCredito.Designer.cs">
+      <DependentUpon>frmrepPagosCredito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmrepFacturasDiarias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmrepFacturasDiarias.Designer.cs">
+      <DependentUpon>frmrepFacturasDiarias.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frmrepCorteCaja.cs">
       <SubType>Form</SubType>
@@ -1184,6 +1230,9 @@
     <EmbeddedResource Include="frmMonederos.resx">
       <DependentUpon>frmMonederos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMonitorElectronico.resx">
+      <DependentUpon>frmMonitorElectronico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPagos.resx">
       <DependentUpon>frmPagos.cs</DependentUpon>
     </EmbeddedResource>
@@ -1328,8 +1377,26 @@
     <EmbeddedResource Include="frmResaltarImagen.resx">
       <DependentUpon>frmResaltarImagen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\corteCaja.resx">
-      <DependentUpon>corteCaja.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\frmrepVentas.resx">
+      <DependentUpon>frmrepVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmrepPagoComision.resx">
+      <DependentUpon>frmrepPagoComision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmrepPartidasAbiertas.resx">
+      <DependentUpon>frmrepPartidasAbiertas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmrepFacCanceladas.resx">
+      <DependentUpon>frmrepFacCanceladas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmrepNC.resx">
+      <DependentUpon>frmrepNC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmrepPagosCredito.resx">
+      <DependentUpon>frmrepPagosCredito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmrepFacturasDiarias.resx">
+      <DependentUpon>frmrepFacturasDiarias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmrepCorteCaja.resx">
       <DependentUpon>frmrepCorteCaja.cs</DependentUpon>

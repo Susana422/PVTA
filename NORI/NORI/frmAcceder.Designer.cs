@@ -315,7 +315,7 @@ namespace NORI
             this.Name = "frmAcceder";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CM Internacional";
+            this.Text = "DTM Solutions";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAcceder_FormClosed);
             this.Load += new System.EventHandler(this.frmAcceder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabFormDefaultManager1)).EndInit();

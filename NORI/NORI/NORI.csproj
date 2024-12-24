@@ -91,9 +91,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BouncyCastle.Cryptography">
-      <HintPath>..\..\..\..\..\..\Desktop\NORICFDI\BouncyCastle.Cryptography.dll</HintPath>
-    </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <HintPath>..\packages\CrystalDecisions.CrystalReports.Engine.1.0.0\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
     </Reference>
@@ -138,9 +135,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\Program Files\DevExpress 24.1\Components\Bin\Framework\DevExpress.XtraGrid.v24.1.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraGrid.v24.1.resources">
-      <HintPath>..\..\..\..\..\..\Downloads\DevExpressDefaultTranslations_2024.1_es-MX\DevExpress.XtraGrid.v24.1.resources.dll</HintPath>
-    </Reference>
     <Reference Include="DevExpress.XtraLayout.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files\DevExpress 24.1\Components\Bin\Framework\DevExpress.XtraLayout.v24.1.dll</HintPath>
@@ -181,23 +175,31 @@
     </Reference>
     <Reference Include="DevExpress.XtraTreeList.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraWizard.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DPFPCtlXTypeLibNET">
+      <HintPath>..\..\..\..\..\..\Desktop\Librerias\DPFPCtlXTypeLibNET.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="DPFPCtlXWrapperNET">
-      <HintPath>..\..\..\..\..\..\Desktop\DPFPCtlXWrapperNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\Librerias\DPFPCtlXWrapperNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPDevNET">
-      <HintPath>..\..\..\..\..\..\Desktop\DPFPDevNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\Librerias\DPFPDevNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPEngNET">
-      <HintPath>..\..\..\..\..\..\Desktop\DPFPEngNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\Librerias\DPFPEngNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPGuiNET">
-      <HintPath>..\..\..\..\..\..\Desktop\DPFPGuiNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\Librerias\DPFPGuiNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPShrNET">
-      <HintPath>..\..\..\..\..\..\Desktop\DPFPShrNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\Librerias\DPFPShrNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPShrXTypeLibNET">
+      <HintPath>..\..\..\..\..\..\Desktop\Librerias\DPFPShrXTypeLibNET.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="DPFPVerNET">
-      <HintPath>..\..\..\..\..\..\Desktop\DPFPVerNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\Librerias\DPFPVerNET.dll</HintPath>
     </Reference>
     <Reference Include="EPPlus, Version=7.5.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.7.5.1\lib\net462\EPPlus.dll</HintPath>
@@ -243,10 +245,7 @@
       <HintPath>..\packages\Microsoft.Web.WebView2.1.0.2903.40\lib\net462\Microsoft.Web.WebView2.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="NetsuiteLibrary">
-      <HintPath>..\..\..\..\..\..\Desktop\NetsuiteLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="NetsuiteLibrary.XmlSerializers">
-      <HintPath>..\..\..\..\..\..\Desktop\NetsuiteLibrary.XmlSerializers.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\Librerias\NetsuiteLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -254,15 +253,14 @@
     <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.2\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
     </Reference>
-    <Reference Include="NoriCFDI, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Desktop\NoriCFDI.dll</HintPath>
+    <Reference Include="NoriCFDI">
+      <HintPath>..\..\..\..\..\..\Desktop\Librerias\NoriCFDI.dll</HintPath>
     </Reference>
     <Reference Include="NoriSAPB1SDK">
-      <HintPath>..\..\..\..\..\..\Desktop\NoriSAPB1SDK.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\Librerias\NoriSAPB1SDK.dll</HintPath>
     </Reference>
     <Reference Include="NoriSDK">
-      <HintPath>..\..\..\..\..\..\Desktop\NoriSDK.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Desktop\Librerias\NoriSDK.dll</HintPath>
     </Reference>
     <Reference Include="PdfSharp, Version=6.1.1.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
       <HintPath>..\packages\PDFsharp.6.1.1\lib\netstandard2.0\PdfSharp.dll</HintPath>
@@ -284,9 +282,6 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="Sap.Data.Hana.v4.5">
-      <HintPath>..\..\..\..\..\..\Desktop\Sap.Data.Hana.v4.5.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>

@@ -1677,7 +1677,8 @@ namespace NORI
             {
                 gcPartidas.DataSource = documento.partidas;
                 gcPartidas.RefreshDataSource();
-                documento.CalcularTotal(true);
+                //documento.CalcularTotal(true);
+                documento.CalcularTotal();
                 txtTipoCambio.Text = documento.tipo_cambio.ToString("n4");
                 txtSubTotal.Text = documento.subtotal.ToString("c2");
                 txtPorcentajeDescuento.Text = documento.porcentaje_descuento.ToString("n2");
@@ -2891,7 +2892,7 @@ namespace NORI
         private void AgregarärtidaExcelA(string q, string cantidad) {
             try
             {
-                bool data = documento.AgregarPartidaExcel(q, 0, Double.Parse(cantidad));
+                bool data = documento.AgregarPartidaExcel(q, 0, Decimal.Parse(cantidad));
 
             }
             catch (Exception ex)
@@ -2914,7 +2915,7 @@ namespace NORI
             {
                 do
                 {
-                    if (!(await Task.Run(() => documento.AgregarPartidaExcel(q,0,Double.Parse(cantidad)))))
+                    if (!(await Task.Run(() => documento.AgregarPartidaExcel(q,0,Decimal.Parse(cantidad)))))
                     {
                         continue;
                     }

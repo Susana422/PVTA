@@ -57,6 +57,7 @@
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 1;
             this.ribbon.Name = "ribbon";
+            this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.ribbon.Size = new System.Drawing.Size(1115, 57);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
@@ -115,7 +116,7 @@
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(156, 31);
             this.simpleButton1.TabIndex = 5;
-            this.simpleButton1.Text = "simpleButton1";
+            this.simpleButton1.Text = "Buscar";
             // 
             // labelControl1
             // 
@@ -165,10 +166,12 @@
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
             this.Name = "frmMonitorElectronico";
             this.Ribbon = this.ribbon;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "frmMonitorElectronico";
+            this.Text = "Monitor Electronico";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

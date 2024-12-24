@@ -238,7 +238,7 @@ namespace NORI
             barEditItemAutorizaciones.EditValue = Program.Nori.UsuarioAutenticado.suscribir_autorizaciones;
             ((AccordionControlElementBase)accordionControlElementUsuario).Text = Program.Nori.UsuarioAutenticado.nombre;
             ((BarItem)barHeaderItemEstacion).Caption = Program.Nori.Estacion.nombre + " | Conectado a: " + Program.Nori.Conexion.DataSource;
-            ((Control)(object)this).Text = Program.Nori.Empresa.nombre_fiscal;
+            ((Control)(object)this).Text = "DTM Solutions";//Program.Nori.Empresa.nombre_fiscal;
             ((Control)(object)lblEmpresa).Text = Program.Nori.Empresa.nombre_comercial;
             if (Program.Nori.Empresa.prueba)
             {

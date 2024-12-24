@@ -114,6 +114,8 @@ namespace NORI
             this.accordionControlElementRestaurante = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementRestauranteMesas = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControKioscoFacturacion = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accMonitor = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.lblEmpresa = new DevExpress.XtraEditors.LabelControl();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiSalir = new DevExpress.XtraBars.BarButtonItem();
@@ -141,8 +143,6 @@ namespace NORI
             this.timerAutorizaciones = new System.Windows.Forms.Timer(this.components);
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accMonitor = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanelMenuPrincipal.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
@@ -189,9 +189,9 @@ namespace NORI
             // 
             this.dockPanel1_Container.Controls.Add(this.accordionControl1);
             this.dockPanel1_Container.Controls.Add(this.lblEmpresa);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 26);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 27);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(315, 656);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(315, 655);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // accordionControl1
@@ -212,7 +212,7 @@ namespace NORI
             this.accordionControlElement5});
             this.accordionControl1.Location = new System.Drawing.Point(3, 29);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.Size = new System.Drawing.Size(273, 630);
+            this.accordionControl1.Size = new System.Drawing.Size(273, 629);
             this.accordionControl1.TabIndex = 0;
             // 
             // accordionControlElementUsuario
@@ -706,6 +706,7 @@ namespace NORI
             this.accordionControlElement11,
             this.accordionControlElement12,
             this.accordionControlElement13});
+            this.accordionControlElementInformes.Expanded = true;
             this.accordionControlElementInformes.Name = "accordionControlElementInformes";
             this.accordionControlElementInformes.Text = "Informes";
             // 
@@ -804,6 +805,21 @@ namespace NORI
             this.accordionControKioscoFacturacion.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControKioscoFacturacion.Text = "Kiosco";
             this.accordionControKioscoFacturacion.Click += new System.EventHandler(this.accordionControKioscoFacturacion_Click);
+            // 
+            // accordionControlElement5
+            // 
+            this.accordionControlElement5.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accMonitor});
+            this.accordionControlElement5.Expanded = true;
+            this.accordionControlElement5.Name = "accordionControlElement5";
+            this.accordionControlElement5.Text = "Extras";
+            // 
+            // accMonitor
+            // 
+            this.accMonitor.Name = "accMonitor";
+            this.accMonitor.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accMonitor.Text = "Monitor Electronico";
+            this.accMonitor.Click += new System.EventHandler(this.accMonitor_Click);
             // 
             // lblEmpresa
             // 
@@ -1029,21 +1045,6 @@ namespace NORI
             this.pictureBox1.Size = new System.Drawing.Size(267, 141);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
-            // 
-            // accordionControlElement5
-            // 
-            this.accordionControlElement5.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accMonitor});
-            this.accordionControlElement5.Expanded = true;
-            this.accordionControlElement5.Name = "accordionControlElement5";
-            this.accordionControlElement5.Text = "Extras";
-            // 
-            // accMonitor
-            // 
-            this.accMonitor.Name = "accMonitor";
-            this.accMonitor.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accMonitor.Text = "Monitor Electronico";
-            this.accMonitor.Click += new System.EventHandler(this.accMonitor_Click);
             // 
             // frmPrincipal
             // 

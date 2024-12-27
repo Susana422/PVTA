@@ -32,7 +32,7 @@ namespace NORI
           
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAcceder());
+            Application.Run(new frmHome());
         }
     }
 }

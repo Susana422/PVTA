@@ -40,6 +40,9 @@ namespace NORI
             {
                 ExchangeData(true);
                 List<NoriSDK.HuellaDigital> huellas = NoriSDK.HuellaDigital.ObtenerUser(usuario.id);
+                if (huellas.Count == 0) { 
+                    btnVerificar.Visible = false;
+                }
                 foreach (var x in huellas) 
                 {
                     DPFP.Template template = DeserializeTemplate(x.huella);
@@ -57,7 +60,6 @@ namespace NORI
                         else{
                             rol = 4 + rol; // Cambiar de mano derecha (0-4) a izquierda (5-9)
                         }
-         
                     }
                     else if (rol >= 5 && rol <= 9)
                     {
@@ -73,39 +75,6 @@ namespace NORI
             {
 
                 MessageBox.Show("No fue posible cargar su huella digital");
-            }
-        }
-        private void ActualizarUI()
-        {
-            Control[] fingerUIElements = new Control[Data.MaxEnrollFingerCount]; 
-
-            for (int i = 0; i < Data.MaxEnrollFingerCount; i++)
-            {
-                fingerUIElements[i] = this.Controls["FingerControl" + i];
-            }
-            for (int i = 0; i < Data.MaxEnrollFingerCount; i++)
-            {
-                try
-                {
-                    if ((EnrollmentControl.EnrolledFingerMask & (1 << i)) != 0)
-                    {
-                        if (fingerUIElements[i] != null)
-                        {
-                            fingerUIElements[i].BackColor = Color.Green;
-                        }
-                    }
-                    else
-                    {
-                        if (fingerUIElements[i] != null)
-                        {
-                            fingerUIElements[i].BackColor = Color.Gray;
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error al procesar el dedo {i}: {ex.Message}");
-                }
             }
         }
         public DPFP.Template DeserializeTemplate(string base64String)
@@ -163,12 +132,13 @@ namespace NORI
             if (huellaDigital.Agregar())
             {
                 MessageBox.Show("La huella digital fue guardada correctamente");
+                btnVerificar.Visible = true;
             }
             else {
                 MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
             }
         }
-        public void Eliminar(int id)
+        public void Eliminar(string id)
         {
             if (huellaDigital.Eliminar(id))
             {
@@ -182,21 +152,51 @@ namespace NORI
 
         public string SerializeTemplate(DPFP.Template template)
         {
-            using (var ms = new MemoryStream())
+            try
             {
-                template.Serialize(ms); 
-                byte[] templateBytes = ms.ToArray(); 
-                return Convert.ToBase64String(templateBytes); 
+                using (var ms = new MemoryStream())
+                {
+                    template.Serialize(ms);
+                    byte[] templateBytes = ms.ToArray();
+                    return Convert.ToBase64String(templateBytes);
+                }
             }
+            catch (Exception ex )
+            {
+                return string.Empty;
+            }
+           
         }
       
         public void EnrollmentControl_OnDelete(Object Control, int Finger, ref DPFP.Gui.EventHandlerStatus Status)
         {
             if (Data.IsEventHandlerSucceeds)
             {
-                Data.Templates[Finger - 1] = null;
-                ExchangeData(true);               
 
+                int rol = Finger ;
+                if (rol >= 0 && rol <= 4)
+                {
+
+                    if (rol == 4)
+                    {
+                        rol = 5 + rol;
+                    }
+                    else
+                    {
+                        rol = 4 + rol; // Cambiar de mano derecha (0-4) a izquierda (5-9)
+                    }
+                }
+                else if (rol >= 5 && rol <= 9)
+                {
+                    rol = 9 - (rol-1); // Cambiar de mano izquierda (5-9) a derecha (0-4)
+                }
+
+
+                string templateBytes = SerializeTemplate(Data.Templates[rol]);
+                Eliminar(templateBytes);
+                Data.Templates[Finger - 1] = null;
+                ExchangeData(true);
+              
                 ListEvents.Add(String.Format("OnDelete: finger {0}", Finger));
             }
             else

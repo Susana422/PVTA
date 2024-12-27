@@ -72,7 +72,7 @@
             this.VerificationControl.Active = true;
             this.VerificationControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.VerificationControl.Location = new System.Drawing.Point(61, 89);
-            this.VerificationControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.VerificationControl.Margin = new System.Windows.Forms.Padding(4);
             this.VerificationControl.Name = "VerificationControl";
             this.VerificationControl.ReaderSerialNumber = "00000000-0000-0000-0000-000000000000";
             this.VerificationControl.Size = new System.Drawing.Size(61, 75);

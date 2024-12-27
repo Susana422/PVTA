@@ -23,7 +23,7 @@ namespace NORI.HuellaDigital
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            this.Close();   
+            this.Hide();   
         }
         public void OnComplete(object Control, DPFP.FeatureSet FeatureSet, ref DPFP.Gui.EventHandlerStatus Status)
         {

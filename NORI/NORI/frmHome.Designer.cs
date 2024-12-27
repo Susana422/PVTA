@@ -1,4 +1,6 @@
-﻿namespace NORI
+﻿using System;
+
+namespace NORI
 {
     partial class frmHome
     {
@@ -13,11 +15,22 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            try
             {
                 components.Dispose();
+                if (disposing && components != null)
+                {
+                    components.Dispose();
+                }
+                // Dispose(disposing);
             }
-            base.Dispose(disposing);
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                base.Dispose(disposing);
+            }
         }
 
         #region Windows Form Designer generated code
@@ -147,6 +160,7 @@
             this.IconOptions.Image = global::componentResourceManager.Resources.logo;
             this.Name = "frmHome";
             this.Ribbon = this.ribbon;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "DTM Solutions";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();

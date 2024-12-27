@@ -165,6 +165,7 @@ namespace NORI
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "Nombre", 22, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cbConexiones.Size = new System.Drawing.Size(468, 24);
             this.cbConexiones.TabIndex = 98;
+            this.cbConexiones.Visible = false;
             this.cbConexiones.EditValueChanged += new System.EventHandler(this.cbConexiones_EditValueChanged);
             // 
             // lblConexion

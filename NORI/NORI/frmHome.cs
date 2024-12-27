@@ -11,11 +11,21 @@ using System.Windows.Forms;
 
 namespace NORI
 {
-    public partial class frmHuellaDigital : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmHome : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public frmHuellaDigital()
+        public frmHome()
         {
             InitializeComponent();
+        }
+
+        private void pcHuella_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pcCredenciales_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

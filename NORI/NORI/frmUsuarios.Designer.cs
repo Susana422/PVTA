@@ -134,12 +134,12 @@ namespace NORI
             this.dataLayoutControl1.AllowCustomization = false;
             this.dataLayoutControl1.Controls.Add(this.panel1);
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataLayoutControl1.Location = new System.Drawing.Point(0, 106);
+            this.dataLayoutControl1.Location = new System.Drawing.Point(0, 90);
             this.dataLayoutControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
             this.dataLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(482, 356, 250, 350);
             this.dataLayoutControl1.Root = this.layoutControlGroup1;
-            this.dataLayoutControl1.Size = new System.Drawing.Size(786, 536);
+            this.dataLayoutControl1.Size = new System.Drawing.Size(786, 552);
             this.dataLayoutControl1.TabIndex = 4;
             // 
             // panel1
@@ -187,10 +187,10 @@ namespace NORI
             this.panel1.Controls.Add(this.cbActivo);
             this.panel1.Controls.Add(this.lblNombre);
             this.panel1.Controls.Add(this.lblID);
-            this.panel1.Location = new System.Drawing.Point(13, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(760, 512);
+            this.panel1.Size = new System.Drawing.Size(762, 528);
             this.panel1.TabIndex = 54;
             // 
             // cbListaPrecios
@@ -204,7 +204,7 @@ namespace NORI
             this.cbListaPrecios.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbListaPrecios.Size = new System.Drawing.Size(179, 26);
+            this.cbListaPrecios.Size = new System.Drawing.Size(179, 24);
             this.cbListaPrecios.TabIndex = 93;
             // 
             // mainRibbonControl
@@ -238,7 +238,7 @@ namespace NORI
             this.ribbonPageHerramientas});
             this.mainRibbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.mainRibbonControl.Size = new System.Drawing.Size(786, 106);
+            this.mainRibbonControl.Size = new System.Drawing.Size(786, 90);
             this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // backstageViewControl1
@@ -435,7 +435,7 @@ namespace NORI
             this.txtCodigo.MenuManager = this.mainRibbonControl;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Properties.MaxLength = 20;
-            this.txtCodigo.Size = new System.Drawing.Size(178, 26);
+            this.txtCodigo.Size = new System.Drawing.Size(178, 24);
             this.txtCodigo.TabIndex = 90;
             this.txtCodigo.TabStop = false;
             // 
@@ -460,7 +460,7 @@ namespace NORI
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ubicacion", "Ubicacion", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbUbicaciones.Size = new System.Drawing.Size(178, 26);
+            this.cbUbicaciones.Size = new System.Drawing.Size(178, 24);
             this.cbUbicaciones.TabIndex = 3;
             // 
             // lblUbicaciones
@@ -480,7 +480,7 @@ namespace NORI
             this.txtDispositivo.MenuManager = this.mainRibbonControl;
             this.txtDispositivo.Name = "txtDispositivo";
             this.txtDispositivo.Properties.MaxLength = 155;
-            this.txtDispositivo.Size = new System.Drawing.Size(178, 26);
+            this.txtDispositivo.Size = new System.Drawing.Size(178, 24);
             this.txtDispositivo.TabIndex = 12;
             // 
             // lblDispositivo
@@ -503,7 +503,7 @@ namespace NORI
             this.cbSucursales.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbSucursales.Size = new System.Drawing.Size(178, 26);
+            this.cbSucursales.Size = new System.Drawing.Size(178, 24);
             this.cbSucursales.TabIndex = 0;
             this.cbSucursales.TabStop = false;
             // 
@@ -523,7 +523,7 @@ namespace NORI
             this.txtEscritorio.MenuManager = this.mainRibbonControl;
             this.txtEscritorio.Name = "txtEscritorio";
             this.txtEscritorio.Properties.MaxLength = 155;
-            this.txtEscritorio.Size = new System.Drawing.Size(258, 26);
+            this.txtEscritorio.Size = new System.Drawing.Size(258, 24);
             this.txtEscritorio.TabIndex = 11;
             // 
             // lblEscritorio
@@ -546,7 +546,7 @@ namespace NORI
             this.cbClasesExpedicion.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Codigo", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbClasesExpedicion.Size = new System.Drawing.Size(178, 26);
+            this.cbClasesExpedicion.Size = new System.Drawing.Size(178, 24);
             this.cbClasesExpedicion.TabIndex = 7;
             // 
             // lblClaseExpedicion
@@ -565,7 +565,7 @@ namespace NORI
             this.txtNormaReparto.MenuManager = this.mainRibbonControl;
             this.txtNormaReparto.Name = "txtNormaReparto";
             this.txtNormaReparto.Properties.MaxLength = 16;
-            this.txtNormaReparto.Size = new System.Drawing.Size(178, 26);
+            this.txtNormaReparto.Size = new System.Drawing.Size(178, 24);
             this.txtNormaReparto.TabIndex = 3;
             // 
             // lblNormaReparto
@@ -609,7 +609,7 @@ namespace NORI
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbEstados.Size = new System.Drawing.Size(258, 26);
+            this.cbEstados.Size = new System.Drawing.Size(258, 24);
             this.cbEstados.TabIndex = 6;
             // 
             // lblEstado
@@ -633,7 +633,7 @@ namespace NORI
             this.cbVendedores.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbVendedores.Size = new System.Drawing.Size(258, 26);
+            this.cbVendedores.Size = new System.Drawing.Size(258, 24);
             this.cbVendedores.TabIndex = 4;
             // 
             // lblVendedores
@@ -658,7 +658,7 @@ namespace NORI
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbSocios.Size = new System.Drawing.Size(258, 26);
+            this.cbSocios.Size = new System.Drawing.Size(258, 24);
             this.cbSocios.TabIndex = 5;
             // 
             // lblSocios
@@ -683,7 +683,7 @@ namespace NORI
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbAlmacenes.Size = new System.Drawing.Size(258, 26);
+            this.cbAlmacenes.Size = new System.Drawing.Size(258, 24);
             this.cbAlmacenes.TabIndex = 2;
             // 
             // lblAlmacenes
@@ -706,7 +706,7 @@ namespace NORI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbRoles.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Rol", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbRoles.Size = new System.Drawing.Size(258, 26);
+            this.cbRoles.Size = new System.Drawing.Size(258, 24);
             this.cbRoles.TabIndex = 1;
             // 
             // btnHuellaDigital
@@ -717,6 +717,7 @@ namespace NORI
             this.btnHuellaDigital.Size = new System.Drawing.Size(258, 30);
             this.btnHuellaDigital.TabIndex = 13;
             this.btnHuellaDigital.Text = "Huella digital";
+            this.btnHuellaDigital.Click += new System.EventHandler(this.btnHuellaDigital_Click_1);
             // 
             // cbMostrarContraseña
             // 
@@ -745,7 +746,7 @@ namespace NORI
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Properties.MaxLength = 254;
             this.txtContraseña.Properties.PasswordChar = '*';
-            this.txtContraseña.Size = new System.Drawing.Size(526, 26);
+            this.txtContraseña.Size = new System.Drawing.Size(526, 24);
             this.txtContraseña.TabIndex = 10;
             // 
             // lblContraseña
@@ -764,7 +765,7 @@ namespace NORI
             this.txtCorreo.MenuManager = this.mainRibbonControl;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Properties.MaxLength = 100;
-            this.txtCorreo.Size = new System.Drawing.Size(585, 26);
+            this.txtCorreo.Size = new System.Drawing.Size(585, 24);
             this.txtCorreo.TabIndex = 9;
             // 
             // lblCorreo
@@ -779,7 +780,7 @@ namespace NORI
             // lblFechaActualizacion
             // 
             this.lblFechaActualizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblFechaActualizacion.Location = new System.Drawing.Point(663, 477);
+            this.lblFechaActualizacion.Location = new System.Drawing.Point(663, 493);
             this.lblFechaActualizacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lblFechaActualizacion.Name = "lblFechaActualizacion";
             this.lblFechaActualizacion.Size = new System.Drawing.Size(65, 17);
@@ -793,13 +794,13 @@ namespace NORI
             this.txtNombre.MenuManager = this.mainRibbonControl;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Properties.MaxLength = 155;
-            this.txtNombre.Size = new System.Drawing.Size(585, 26);
+            this.txtNombre.Size = new System.Drawing.Size(585, 24);
             this.txtNombre.TabIndex = 8;
             // 
             // lblUltimaActualizacion
             // 
             this.lblUltimaActualizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblUltimaActualizacion.Location = new System.Drawing.Point(480, 477);
+            this.lblUltimaActualizacion.Location = new System.Drawing.Point(480, 493);
             this.lblUltimaActualizacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lblUltimaActualizacion.Name = "lblUltimaActualizacion";
             this.lblUltimaActualizacion.Size = new System.Drawing.Size(128, 17);
@@ -813,7 +814,7 @@ namespace NORI
             this.txtUsuario.MenuManager = this.mainRibbonControl;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Properties.MaxLength = 20;
-            this.txtUsuario.Size = new System.Drawing.Size(258, 26);
+            this.txtUsuario.Size = new System.Drawing.Size(258, 24);
             this.txtUsuario.TabIndex = 0;
             // 
             // lblUsuario
@@ -828,7 +829,7 @@ namespace NORI
             // cbActivo
             // 
             this.cbActivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbActivo.Location = new System.Drawing.Point(16, 474);
+            this.cbActivo.Location = new System.Drawing.Point(16, 490);
             this.cbActivo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbActivo.MenuManager = this.mainRibbonControl;
             this.cbActivo.Name = "cbActivo";
@@ -861,7 +862,7 @@ namespace NORI
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(786, 536);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(786, 552);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -869,7 +870,7 @@ namespace NORI
             this.layoutControlItem1.Control = this.panel1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(764, 516);
+            this.layoutControlItem1.Size = new System.Drawing.Size(766, 532);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 

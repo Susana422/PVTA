@@ -38,18 +38,18 @@ namespace NORI
             }
             if (Program.Nori.Estacion.lector_huella)
             {
-                HuellaDigital.frmHuellaDigitalVerificar frmHuellaDigitalVerificar = new HuellaDigital.frmHuellaDigitalVerificar();
-                frmHuellaDigitalVerificar.huella_digital = usuario.huella_digital;
-                ((Form)(object)frmHuellaDigitalVerificar).ShowInTaskbar = false;
-                ((Control)(object)frmHuellaDigitalVerificar).Width = 237;
-                ((Control)(object)frmHuellaDigitalVerificar).Text = "Autenticar";
-                ((Form)(object)frmHuellaDigitalVerificar).ControlBox = false;
-                ((Form)(object)frmHuellaDigitalVerificar).TopMost = true;
-                ((Form)(object)frmHuellaDigitalVerificar).ShowDialog();
-                if (((Form)(object)frmHuellaDigitalVerificar).DialogResult != DialogResult.OK)
-                {
-                    return false;
-                }
+                //HuellaDigital.frmHuellaDigitalVerificar frmHuellaDigitalVerificar = new HuellaDigital.frmHuellaDigitalVerificar();
+                //frmHuellaDigitalVerificar.huella_digital = usuario.huella_digital;
+                //((Form)(object)frmHuellaDigitalVerificar).ShowInTaskbar = false;
+                //((Control)(object)frmHuellaDigitalVerificar).Width = 237;
+                //((Control)(object)frmHuellaDigitalVerificar).Text = "Autenticar";
+                //((Form)(object)frmHuellaDigitalVerificar).ControlBox = false;
+                //((Form)(object)frmHuellaDigitalVerificar).TopMost = true;
+                //((Form)(object)frmHuellaDigitalVerificar).ShowDialog();
+                //if (((Form)(object)frmHuellaDigitalVerificar).DialogResult != DialogResult.OK)
+                //{
+                //    return false;
+                //}
             }
             else
             {
@@ -68,18 +68,18 @@ namespace NORI
         {
             if (Program.Nori.Estacion.lector_huella)
             {
-                HuellaDigital.frmHuellaDigitalVerificar frmHuellaDigitalVerificar = new HuellaDigital.frmHuellaDigitalVerificar();
-                frmHuellaDigitalVerificar.huella_digital = Program.Nori.UsuarioAutenticado.huella_digital;
-                ((Form)(object)frmHuellaDigitalVerificar).ShowInTaskbar = false;
-                ((Control)(object)frmHuellaDigitalVerificar).Width = 237;
-                ((Control)(object)frmHuellaDigitalVerificar).Text = "Desbloquear";
-                ((Form)(object)frmHuellaDigitalVerificar).ControlBox = false;
-                ((Form)(object)frmHuellaDigitalVerificar).TopMost = true;
-                ((Form)(object)frmHuellaDigitalVerificar).ShowDialog();
-                if (((Form)(object)frmHuellaDigitalVerificar).DialogResult != DialogResult.OK)
-                {
-                    Desbloquear();
-                }
+                //HuellaDigital.frmHuellaDigitalVerificar frmHuellaDigitalVerificar = new HuellaDigital.frmHuellaDigitalVerificar();
+                //frmHuellaDigitalVerificar.huella_digital = Program.Nori.UsuarioAutenticado.huella_digital;
+                //((Form)(object)frmHuellaDigitalVerificar).ShowInTaskbar = false;
+                //((Control)(object)frmHuellaDigitalVerificar).Width = 237;
+                //((Control)(object)frmHuellaDigitalVerificar).Text = "Desbloquear";
+                //((Form)(object)frmHuellaDigitalVerificar).ControlBox = false;
+                //((Form)(object)frmHuellaDigitalVerificar).TopMost = true;
+                //((Form)(object)frmHuellaDigitalVerificar).ShowDialog();
+                //if (((Form)(object)frmHuellaDigitalVerificar).DialogResult != DialogResult.OK)
+                //{
+                //    Desbloquear();
+                //}
             }
             else
             {

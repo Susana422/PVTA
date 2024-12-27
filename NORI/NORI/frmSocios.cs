@@ -1150,12 +1150,12 @@ namespace NORI
                     string text = (personaContacto.huella_digital.IsNullOrEmpty() ? "¿Desea agregar una huella digital?" : "¿Desea actualizar la huella digital existente?");
                     if (MessageBox.Show(text, ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        HuellaDigital.frmHuellaDigitalAgregar frmHuellaDigitalAgregar = new HuellaDigital.frmHuellaDigitalAgregar();
-                        DialogResult dialogResult = ((Form)(object)frmHuellaDigitalAgregar).ShowDialog();
-                        if (dialogResult == DialogResult.OK)
-                        {
-                            personaContacto.huella_digital = frmHuellaDigitalAgregar.huella_digital;
-                        }
+                        //HuellaDigital.frmHuellaDigitalAgregar frmHuellaDigitalAgregar = new HuellaDigital.frmHuellaDigitalAgregar();
+                        //DialogResult dialogResult = ((Form)(object)frmHuellaDigitalAgregar).ShowDialog();
+                        //if (dialogResult == DialogResult.OK)
+                        //{
+                        //    personaContacto.huella_digital = frmHuellaDigitalAgregar.huella_digital;
+                        //}
                     }
                 }
                 if (personaContacto.id != 0)

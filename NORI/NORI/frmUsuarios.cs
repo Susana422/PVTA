@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.Data;
+using DevExpress.Pdf.Native.BouncyCastle.Crypto;
 using DevExpress.Utils;
 using DevExpress.Utils.Menu;
 using DevExpress.XtraBars;
@@ -15,6 +16,7 @@ using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraLayout;
 using DevExpress.XtraLayout.Utils;
+using NORI.HuellaDigital.Class;
 using NoriSDK;
 
 namespace NORI
@@ -488,12 +490,12 @@ namespace NORI
         {
             if (Program.Nori.Estacion.lector_huella)
             {
-                HuellaDigital.frmHuellaDigitalAgregar frmHuellaDigitalAgregar = new HuellaDigital.frmHuellaDigitalAgregar();
-                DialogResult dialogResult = ((Form)(object)frmHuellaDigitalAgregar).ShowDialog();
-                if (dialogResult == DialogResult.OK)
-                {
-                    usuario.huella_digital = frmHuellaDigitalAgregar.huella_digital;
-                }
+                //HuellaDigital.frmHuellaDigitalAgregar frmHuellaDigitalAgregar = new HuellaDigital.frmHuellaDigitalAgregar();
+                //DialogResult dialogResult = ((Form)(object)frmHuellaDigitalAgregar).ShowDialog();
+                //if (dialogResult == DialogResult.OK)
+                //{
+                //    usuario.huella_digital = frmHuellaDigitalAgregar.huella_digital;
+                //}
             }
             else
             {
@@ -586,5 +588,25 @@ namespace NORI
             frmListasPrecios frmListasPrecios2 = new frmListasPrecios();
             ((Form)(object)frmListasPrecios2).ShowDialog();
         }
+
+        private void btnHuellaDigital_Click_1(object sender, EventArgs e)
+        {
+            if (usuario.id != 0)
+            {
+                Data = new AppData();
+                Data.OnChange += delegate { ExchangeData(false); };
+                frmRegistrarHuellaDigital frmRegistrarHuellaDigital = new frmRegistrarHuellaDigital(Data, usuario);
+                ((Form)(object)frmRegistrarHuellaDigital).ShowDialog();
+            }
+            else {
+                MessageBox.Show("Para verificar/registrar debe primero seleccionar un usuario");
+            }
+           
+        
+        }
+        private void ExchangeData(bool read)
+        {
+        }
+        private AppData Data;                 
     }
 }

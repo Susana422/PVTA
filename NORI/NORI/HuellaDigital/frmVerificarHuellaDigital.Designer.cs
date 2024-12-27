@@ -1,6 +1,6 @@
-﻿namespace NORI
+﻿namespace NORI.HuellaDigital
 {
-    partial class frmHuellaDigital
+    partial class frmVerificarHuellaDigital
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,9 @@
         {
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.VerificationControl = new DPFP.Gui.Verification.VerificationControl();
             this.label1 = new System.Windows.Forms.Label();
+            this.VerificationControl = new DPFP.Gui.Verification.VerificationControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,50 +48,63 @@
             this.ribbon.OptionsSearchMenu.SearchItemPosition = DevExpress.XtraBars.Ribbon.SearchItemPosition.None;
             this.ribbon.OptionsSearchMenu.UseCustomRibbonSearch = DevExpress.Utils.DefaultBoolean.False;
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office365;
-            this.ribbon.Size = new System.Drawing.Size(345, 57);
+            this.ribbon.Size = new System.Drawing.Size(430, 57);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 236);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 198);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(345, 29);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(430, 29);
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(129, 89);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(289, 99);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Para verificar su identidad, toque el lector de huellas digitales con el dedo reg" +
+    "istrado.";
             // 
             // VerificationControl
             // 
             this.VerificationControl.Active = true;
             this.VerificationControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.VerificationControl.Location = new System.Drawing.Point(144, 90);
-            this.VerificationControl.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.VerificationControl.Location = new System.Drawing.Point(61, 89);
+            this.VerificationControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.VerificationControl.Name = "VerificationControl";
             this.VerificationControl.ReaderSerialNumber = "00000000-0000-0000-0000-000000000000";
-            this.VerificationControl.Size = new System.Drawing.Size(43, 53);
-            this.VerificationControl.TabIndex = 9;
+            this.VerificationControl.Size = new System.Drawing.Size(61, 75);
+            this.VerificationControl.TabIndex = 8;
+            this.VerificationControl.OnComplete += new DPFP.Gui.Verification.VerificationControl._OnComplete(this.OnComplete);
             // 
-            // label1
+            // simpleButton1
             // 
-            this.label1.Location = new System.Drawing.Point(29, 168);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(289, 65);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Para verificar su identidad, toque el lector de huellas digitales con el dedo reg" +
-    "istrado.";
+            this.simpleButton1.Location = new System.Drawing.Point(292, 159);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(115, 29);
+            this.simpleButton1.TabIndex = 9;
+            this.simpleButton1.Text = "Cerrar";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // frmHuellaDigital
+            // frmVerificarHuellaDigital
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 265);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(430, 227);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.VerificationControl);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IconOptions.Image = global::componentResourceManager.Resources.logo;
-            this.Name = "frmHuellaDigital";
+            this.MaximizeBox = false;
+            this.Name = "frmVerificarHuellaDigital";
             this.Ribbon = this.ribbon;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "Huella Digital";
+            this.Text = "Verificar Huella Digital";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -101,7 +115,8 @@
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
-        private DPFP.Gui.Verification.VerificationControl VerificationControl;
         private System.Windows.Forms.Label label1;
+        private DPFP.Gui.Verification.VerificationControl VerificationControl;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

@@ -359,12 +359,12 @@ namespace NORI
         {
             if (Program.Nori.Estacion.lector_huella && MessageBox.Show("¿Desea agregar una huella digital?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                NORI.HuellaDigital.frmHuellaDigitalAgregar frmHuellaDigitalAgregar = new NORI.HuellaDigital.frmHuellaDigitalAgregar();
-                DialogResult dialogResult = ((Form)(object)frmHuellaDigitalAgregar).ShowDialog();
-                if (dialogResult == DialogResult.OK)
-                {
-                    persona_contacto.huella_digital = frmHuellaDigitalAgregar.huella_digital;
-                }
+               // NORI.HuellaDigital.frmHuellaDigitalAgregar frmHuellaDigitalAgregar = new NORI.HuellaDigital.frmHuellaDigitalAgregar();
+                //DialogResult dialogResult = ((Form)(object)frmHuellaDigitalAgregar).ShowDialog();
+                //if (dialogResult == DialogResult.OK)
+                //{
+                //    persona_contacto.huella_digital = frmHuellaDigitalAgregar.huella_digital;
+                //}
             }
         }
 

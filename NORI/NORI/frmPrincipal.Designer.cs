@@ -189,9 +189,9 @@ namespace NORI
             // 
             this.dockPanel1_Container.Controls.Add(this.accordionControl1);
             this.dockPanel1_Container.Controls.Add(this.lblEmpresa);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 27);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 26);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(315, 655);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(315, 656);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // accordionControl1
@@ -212,7 +212,7 @@ namespace NORI
             this.accordionControlElement5});
             this.accordionControl1.Location = new System.Drawing.Point(3, 29);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.Size = new System.Drawing.Size(273, 629);
+            this.accordionControl1.Size = new System.Drawing.Size(273, 630);
             this.accordionControl1.TabIndex = 0;
             // 
             // accordionControlElementUsuario
@@ -281,6 +281,7 @@ namespace NORI
             this.accordionControlElementZonas,
             this.accordionControlElementSeries,
             this.accordionControlElementGestionInformes});
+            this.accordionControlElementGeneral.Expanded = true;
             this.accordionControlElementGeneral.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text),
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Image),

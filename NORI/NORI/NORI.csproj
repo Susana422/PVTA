@@ -261,7 +261,7 @@
     </Reference>
     <Reference Include="NoriSDK, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Desktop\NoriSDK.dll</HintPath>
+      <HintPath>..\..\..\CONSOLA\NoriSDK\bin\x64\Debug\NoriSDK.dll</HintPath>
     </Reference>
     <Reference Include="PdfSharp, Version=6.1.1.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
       <HintPath>..\packages\PDFsharp.6.1.1\lib\netstandard2.0\PdfSharp.dll</HintPath>
@@ -1461,7 +1461,7 @@
     <None Include="Resources\images.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\121705489-use-la-huella-digital-para-desbloquear-la-mano-humana-del-teléfono-inteligente-moderno.jpg" />
+    <None Include="Resources\huella.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\inicio.jpg" />

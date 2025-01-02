@@ -14,6 +14,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NORI.HuellaDigital;
+using NORI.HuellaDigital.Class;
 
 namespace NORI
 {
@@ -29,8 +31,6 @@ namespace NORI
         private LayoutControlGroup layoutControlGroup1;
 
         private Panel panel1;
-
-        private Button btnCancelar;
 
         private Button btnAutenticar;
 
@@ -54,10 +54,7 @@ namespace NORI
             this.MetodoDinamico();
             this.DoubleBuffered = true;
         }
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            ((Form)this).DialogResult = DialogResult.Cancel;
-        }
+      
 
         private void frmAutenticar_Load(object sender, EventArgs e)
         {
@@ -79,6 +76,7 @@ namespace NORI
             {
                 if (usuario.ObtenerContraseña() == ((Control)(object)txtContraseña).Text)
                 {
+
                     ((Form)this).DialogResult = DialogResult.OK;
                     return;
                 }
@@ -87,5 +85,14 @@ namespace NORI
                 MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text);
             }
         }
+
+        private void labelControl2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Funciones.huella = true;
+            Funciones.Desbloquear();
+        }
+    
+
     }
 }

@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.DashboardCommon.Viewer;
@@ -228,8 +229,6 @@ namespace NORI
 
         private BarButtonItem barButtonItemMapaRelaciones;
 
-        private PictureBox pictureBox1;
-
         private TextEdit txtArticulo;
 
         private TextEdit txtPorcentajeDescuento;
@@ -277,8 +276,6 @@ namespace NORI
         private HyperlinkLabelControl lblCodigoSN;
 
         private GridColumn gridColumnCodigoBarras;
-
-        private LabelControl lblIdentificadorExterno;
 
         private CheckEdit cbReserva;
 
@@ -522,7 +519,7 @@ namespace NORI
 
 
         public Socio socio { get; set; } = new Socio();
-
+        private string mensaje = string.Empty;
 
         public frmDocumentos(string clase, int id = 0)
         {
@@ -586,8 +583,37 @@ namespace NORI
                 txtArticulo.Focus();
             }
             Permisos();
+            gvPartidas.ValidatingEditor += GvPartidas_ValidatingEditor;
         }
-      
+
+        private void GvPartidas_ValidatingEditor(object sender, BaseContainerValidateEditorEventArgs e)
+        {
+            // Verificar si estamos en la columna "Monto"
+            if (gvPartidas.FocusedColumn.FieldName == "cantidad")
+            {
+                // Convertir el valor del editor a decimal
+                decimal newValue;
+                if (decimal.TryParse(e.Value.ToString(), out newValue))
+                {
+                    // Verificar si el valor es negativo
+                    if (newValue < 0)
+                    {
+                        // Cancelar la edición si el valor es negativo
+                        e.Valid = false;
+
+                        // Mostrar mensaje de error
+                        MessageBox.Show("El valor no puede ser negativo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    // Si el valor no es válido, cancelar la edición
+                    e.Valid = false;
+                    MessageBox.Show("El valor ingresado no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
 
         private void Item1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -1078,8 +1104,32 @@ namespace NORI
             {
                 cbSeries.EditValue = documento.serie_id;
                 txtNumeroDocumento.Text = documento.numero_documento.ToString();
-                txtNumeroDocumentoExterno.Visible = ((documento.identificador_externo != 0) ? true : false);
                 txtNumeroDocumentoExterno.Text = documento.numero_documento_externo.ToString();
+                //btnStat.BackColor = ((documento.identificador_externo != 0) ? Color.Lime : Color.Red);
+                //btnStat.ForeColor = ((documento.identificador_externo != 0) ? Color.Lime : Color.Red);
+                if (documento.numero_documento !=0) {
+                    //mensaje = "";
+                    DataTable dataTable = Documento.estatusDocumento(documento.id);
+                    if (dataTable.Rows.Count > 0) {
+                        if (dataTable.Rows[0]["color"].ToString() == "amarillo")
+                        {
+                            btnStat.BackColor = Color.Yellow;
+                            btnStat.ForeColor = Color.Yellow;
+                        }
+                        if (dataTable.Rows[0]["color"].ToString() == "verde")
+                        {
+                            btnStat.BackColor = Color.Lime;
+                            btnStat.ForeColor = Color.Lime;
+                        }
+                        if (dataTable.Rows[0]["color"].ToString() == "rojo")
+                        {
+                            btnStat.BackColor = Color.Red;
+                            btnStat.ForeColor = Color.Red;
+                            mensaje = dataTable.Rows[0]["error"].ToString();
+                        }
+                    }
+                   
+                }
                 lbReferencias.Visible = false;
                 if (documento.socio_id != 0)
                 {
@@ -1225,7 +1275,7 @@ namespace NORI
                 DateEdit dateEdit = deFechaVencimiento;
                 enabled = (deFechaContabilizacion.Enabled = documento.id == 0);
                 dateEdit.Enabled = enabled;
-                lblIdentificadorExterno.Visible = ((documento.identificador_externo != 0) ? true : false);
+                //lblIdentificadorExterno.Visible = ((documento.identificador_externo != 0) ? true : false);
                 if (documento.clase.Equals("PE"))
                 {
                     cbCOD.Visible = true;
@@ -1249,7 +1299,7 @@ namespace NORI
                 BarCodeControl barCodeControl = bcID;
                 string text2 = (lblID.Text = documento.id.ToString());
                 barCodeControl.Text = text2;
-                lblIdentificadorExterno.Text = documento.identificador_externo.ToString();
+                //lblIdentificadorExterno.Text = documento.identificador_externo.ToString();
                 lblCancelado.Visible = documento.cancelado;
                 lblImpreso.Visible = documento.impreso;
                 lblEnviado.Visible = documento.enviado;
@@ -1707,6 +1757,7 @@ namespace NORI
         {
             try
             {
+
                 gcPartidas.DataSource = documento.partidas;
                 gcPartidas.RefreshDataSource();
                 documento.CalcularTotal();
@@ -3104,7 +3155,7 @@ namespace NORI
         {
             try
             {
-                if (e.KeyCode != Keys.Tab || txtArticulo.Text.Length <= 0)
+               if (e.KeyCode != Keys.Tab || txtArticulo.Text.Length <= 0)
                 {
                     return;
                 }
@@ -4435,7 +4486,26 @@ namespace NORI
                 MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
-     
+
+        private void btnStat_MouseHover(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            if (button != null)
+            {
+                if (button.BackColor == Color.Red)
+                {
+                    ToolTip info = new ToolTip
+                    {
+                        AutomaticDelay = 500,
+                        InitialDelay = 300, 
+                        ReshowDelay = 100    
+                    };
+                    info.SetToolTip(btnStat, mensaje);
+                }
+            }
+        }
+
+      
     }
 
 }

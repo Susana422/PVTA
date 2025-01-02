@@ -13,6 +13,9 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.ExpressApp.Utils;
+using DevExpress.ExpressApp.Win.Editors;
+using DevExpress.XtraCharts.Designer.Native;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Base;
@@ -23,6 +26,8 @@ using DevExpress.XtraReports.UI;
 using DevExpress.XtraSplashScreen;
 using DevExpress.XtraWaitForm;
 using NORI.API;
+using NORI.HuellaDigital;
+using NORI.HuellaDigital.Class;
 using NoriSDK;
 
 
@@ -30,6 +35,9 @@ namespace NORI
 {
     public static class Funciones
     {
+        public static bool huella = false;
+        public static bool cred = false;
+        public static  AppData Data;
         public static bool Autenticar(Usuario usuario = null)
         {
             if (usuario.IsNullOrEmpty())
@@ -64,9 +72,11 @@ namespace NORI
             return true;
         }
 
+
         public static void Desbloquear()
         {
-            if (Program.Nori.Estacion.lector_huella)
+           
+            if (huella == true)
             {
                 //HuellaDigital.frmHuellaDigitalVerificar frmHuellaDigitalVerificar = new HuellaDigital.frmHuellaDigitalVerificar();
                 //frmHuellaDigitalVerificar.huella_digital = Program.Nori.UsuarioAutenticado.huella_digital;
@@ -75,22 +85,37 @@ namespace NORI
                 //((Control)(object)frmHuellaDigitalVerificar).Text = "Desbloquear";
                 //((Form)(object)frmHuellaDigitalVerificar).ControlBox = false;
                 //((Form)(object)frmHuellaDigitalVerificar).TopMost = true;
-                //((Form)(object)frmHuellaDigitalVerificar).ShowDialog();
-                //if (((Form)(object)frmHuellaDigitalVerificar).DialogResult != DialogResult.OK)
-                //{
-                //    Desbloquear();
-                //}
+                //frmHuellaDigital
+                if (Data ==null) {
+                    Data = new AppData();
+                    Data.OnChange += delegate { ExchangeData(false); };
+                }
+                AutenticarHuellaDigital autenticarHuellaDigital = new AutenticarHuellaDigital(Data);
+                autenticarHuellaDigital.usuario = Program.Nori.UsuarioAutenticado;
+                ((Form)(object)autenticarHuellaDigital).ShowDialog();
+                if (((Form)(object)autenticarHuellaDigital).DialogResult == DialogResult.OK)
+                {
+                    Funciones.huella = false;
+                    Funciones.cred = false;
+                    Desbloquear();
+                   
+                }
             }
-            else
+            if(cred == true)
             {
                 frmAutenticar frmAutenticar2 = new frmAutenticar();
                 frmAutenticar2.usuario = Program.Nori.UsuarioAutenticado;
                 ((Form)(object)frmAutenticar2).ShowDialog();
-                if (((Form)(object)frmAutenticar2).DialogResult != DialogResult.OK)
+                if (((Form)(object)frmAutenticar2).DialogResult == DialogResult.OK)
                 {
+                    Funciones.huella = false;
+                    Funciones.cred = false;
                     Desbloquear();
                 }
             }
+        }
+        public static  void ExchangeData(bool read)
+        {
         }
 
         public static void CerrarSesion()

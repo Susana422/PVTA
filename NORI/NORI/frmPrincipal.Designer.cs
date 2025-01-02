@@ -81,7 +81,6 @@ namespace NORI
             this.accordionControlElementVentas = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementCotizaciones = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementPedidos = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementEntregas = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementEntregaMercancia = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementDevoluciones = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementAnticiposClientes = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -220,6 +219,7 @@ namespace NORI
             this.accordionControlElementUsuario.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElementCerrarSesion,
             this.accordionControlElementBloquear});
+            this.accordionControlElementUsuario.Expanded = true;
             this.accordionControlElementUsuario.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text),
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Image),
@@ -246,7 +246,6 @@ namespace NORI
             // 
             this.accordionControlElementGestion.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElementDefiniciones});
-            this.accordionControlElementGestion.Expanded = true;
             this.accordionControlElementGestion.Name = "accordionControlElementGestion";
             this.accordionControlElementGestion.Text = "Gestión";
             // 
@@ -526,13 +525,13 @@ namespace NORI
             this.accordionControlElementVentas.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElementCotizaciones,
             this.accordionControlElementPedidos,
-            this.accordionControlElementEntregas,
             this.accordionControlElementEntregaMercancia,
             this.accordionControlElementDevoluciones,
             this.accordionControlElementAnticiposClientes,
             this.accordionControlElementFacturas,
             this.accordionControlElementNotasCredito,
             this.accordionControlElementNotasDebito});
+            this.accordionControlElementVentas.Expanded = true;
             this.accordionControlElementVentas.Name = "accordionControlElementVentas";
             this.accordionControlElementVentas.Text = "Ventas";
             // 
@@ -549,13 +548,6 @@ namespace NORI
             this.accordionControlElementPedidos.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementPedidos.Text = "Pedidos";
             this.accordionControlElementPedidos.Click += new System.EventHandler(this.accordionControlElementPedidos_Click);
-            // 
-            // accordionControlElementEntregas
-            // 
-            this.accordionControlElementEntregas.Name = "accordionControlElementEntregas";
-            this.accordionControlElementEntregas.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementEntregas.Text = "Entregas";
-            this.accordionControlElementEntregas.Click += new System.EventHandler(this.accordionControlElementEntregas_Click);
             // 
             // accordionControlElementEntregaMercancia
             // 

@@ -91,8 +91,6 @@ namespace NORI
 
         private AccordionControlElement accordionControlElementPedidos;
 
-        private AccordionControlElement accordionControlElementEntregas;
-
         private AccordionControlElement accordionControlElementFacturas;
 
         private AccordionControlElement accordionControlElementDevoluciones;
@@ -258,7 +256,7 @@ namespace NORI
                     ((AccordionControlElementBase)accordionControlElementInventario).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementCompras).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementCotizaciones).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementEntregas).Visible = false;
+                    //((AccordionControlElementBase)accordionControlElementEntregas).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementPedidos).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementFacturas).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementDevoluciones).Visible = false;
@@ -276,7 +274,7 @@ namespace NORI
                     ((AccordionControlElementBase)accordionControlElementExtras).Visible = false;
                     if (Program.Nori.UsuarioAutenticado.VendedorForaneo())
                     {
-                        ((AccordionControlElementBase)accordionControlElementEntregas).Visible = false;
+                        //((AccordionControlElementBase)accordionControlElementEntregas).Visible = false;
                         ((AccordionControlElementBase)accordionControlElementEntregaMercancia).Visible = false;
                         ((AccordionControlElementBase)accordionControlElementFacturas).Visible = false;
                         ((AccordionControlElementBase)accordionControlElementDevoluciones).Visible = false;
@@ -464,6 +462,7 @@ namespace NORI
 
         private void accordionControlElementBloquear_Click(object sender, EventArgs e)
         {
+            Funciones.cred = true;
             Funciones.Desbloquear();
         }
 

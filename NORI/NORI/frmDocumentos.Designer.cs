@@ -89,9 +89,10 @@ namespace NORI
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageGeneral = new DevExpress.XtraTab.XtraTabPage();
+            this.btnStat = new System.Windows.Forms.Button();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnCargaArticulos = new DevExpress.XtraEditors.SimpleButton();
             this.btnDescuentosEspeciales = new DevExpress.XtraEditors.SimpleButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtArticulo = new DevExpress.XtraEditors.TextEdit();
             this.txtFechaVigencia = new DevExpress.XtraEditors.TextEdit();
             this.lblFechaVigencia = new DevExpress.XtraEditors.LabelControl();
@@ -115,7 +116,6 @@ namespace NORI
             this.lblReferencia = new DevExpress.XtraEditors.LabelControl();
             this.txtReferencia = new DevExpress.XtraEditors.TextEdit();
             this.cbReserva = new DevExpress.XtraEditors.CheckEdit();
-            this.lblIdentificadorExterno = new DevExpress.XtraEditors.LabelControl();
             this.lblCodigoSN = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.lblID = new DevExpress.XtraEditors.LabelControl();
             this.lblImpreso = new System.Windows.Forms.Label();
@@ -282,6 +282,8 @@ namespace NORI
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuDocumentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -290,7 +292,6 @@ namespace NORI
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPageGeneral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtArticulo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFechaVigencia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbAlmacenDestino.Properties)).BeginInit();
@@ -370,6 +371,7 @@ namespace NORI
             ((System.ComponentModel.ISupportInitialize)(this.lbAnexos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainRibbonControl
@@ -749,9 +751,10 @@ namespace NORI
             // 
             // xtraTabPageGeneral
             // 
+            this.xtraTabPageGeneral.Controls.Add(this.btnStat);
+            this.xtraTabPageGeneral.Controls.Add(this.labelControl1);
             this.xtraTabPageGeneral.Controls.Add(this.btnCargaArticulos);
             this.xtraTabPageGeneral.Controls.Add(this.btnDescuentosEspeciales);
-            this.xtraTabPageGeneral.Controls.Add(this.pictureBox1);
             this.xtraTabPageGeneral.Controls.Add(this.txtArticulo);
             this.xtraTabPageGeneral.Controls.Add(this.txtFechaVigencia);
             this.xtraTabPageGeneral.Controls.Add(this.lblFechaVigencia);
@@ -775,7 +778,6 @@ namespace NORI
             this.xtraTabPageGeneral.Controls.Add(this.lblReferencia);
             this.xtraTabPageGeneral.Controls.Add(this.txtReferencia);
             this.xtraTabPageGeneral.Controls.Add(this.cbReserva);
-            this.xtraTabPageGeneral.Controls.Add(this.lblIdentificadorExterno);
             this.xtraTabPageGeneral.Controls.Add(this.lblCodigoSN);
             this.xtraTabPageGeneral.Controls.Add(this.lblID);
             this.xtraTabPageGeneral.Controls.Add(this.lblImpreso);
@@ -816,6 +818,26 @@ namespace NORI
             this.xtraTabPageGeneral.Size = new System.Drawing.Size(1116, 681);
             this.xtraTabPageGeneral.Text = "General";
             // 
+            // btnStat
+            // 
+            this.btnStat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStat.Location = new System.Drawing.Point(1075, 8);
+            this.btnStat.Name = "btnStat";
+            this.btnStat.Size = new System.Drawing.Size(28, 29);
+            this.btnStat.TabIndex = 169;
+            this.btnStat.UseVisualStyleBackColor = true;
+            this.btnStat.MouseHover += new System.EventHandler(this.btnStat_MouseHover);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Location = new System.Drawing.Point(788, 19);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(162, 17);
+            this.labelControl1.TabIndex = 168;
+            this.labelControl1.Text = "N° de Documento en SAP";
+            // 
             // btnCargaArticulos
             // 
             this.btnCargaArticulos.Location = new System.Drawing.Point(623, 152);
@@ -836,22 +858,11 @@ namespace NORI
             this.btnDescuentosEspeciales.Text = "Aplicar descuentos especiales";
             this.btnDescuentosEspeciales.Click += new System.EventHandler(this.btnDescuentosEspeciales_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 201);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 108;
-            this.pictureBox1.TabStop = false;
-            // 
             // txtArticulo
             // 
             this.txtArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtArticulo.Location = new System.Drawing.Point(55, 203);
+            this.txtArticulo.Location = new System.Drawing.Point(55, 241);
             this.txtArticulo.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtArticulo.Name = "txtArticulo";
             this.txtArticulo.Size = new System.Drawing.Size(1047, 24);
@@ -862,7 +873,7 @@ namespace NORI
             // txtFechaVigencia
             // 
             this.txtFechaVigencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFechaVigencia.Location = new System.Drawing.Point(960, 153);
+            this.txtFechaVigencia.Location = new System.Drawing.Point(960, 180);
             this.txtFechaVigencia.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtFechaVigencia.Name = "txtFechaVigencia";
             this.txtFechaVigencia.Properties.DisplayFormat.FormatString = "d";
@@ -878,7 +889,7 @@ namespace NORI
             // lblFechaVigencia
             // 
             this.lblFechaVigencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFechaVigencia.Location = new System.Drawing.Point(845, 156);
+            this.lblFechaVigencia.Location = new System.Drawing.Point(844, 187);
             this.lblFechaVigencia.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblFechaVigencia.Name = "lblFechaVigencia";
             this.lblFechaVigencia.Size = new System.Drawing.Size(90, 17);
@@ -992,7 +1003,7 @@ namespace NORI
             // 
             this.deFechaVencimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.deFechaVencimiento.EditValue = null;
-            this.deFechaVencimiento.Location = new System.Drawing.Point(960, 85);
+            this.deFechaVencimiento.Location = new System.Drawing.Point(961, 116);
             this.deFechaVencimiento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.deFechaVencimiento.MenuManager = this.mainRibbonControl;
             this.deFechaVencimiento.Name = "deFechaVencimiento";
@@ -1032,7 +1043,7 @@ namespace NORI
             // 
             this.deFechaContabilizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.deFechaContabilizacion.EditValue = null;
-            this.deFechaContabilizacion.Location = new System.Drawing.Point(960, 51);
+            this.deFechaContabilizacion.Location = new System.Drawing.Point(960, 81);
             this.deFechaContabilizacion.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.deFechaContabilizacion.MenuManager = this.mainRibbonControl;
             this.deFechaContabilizacion.Name = "deFechaContabilizacion";
@@ -1067,8 +1078,9 @@ namespace NORI
             // 
             // txtNumeroDocumentoExterno
             // 
-            this.txtNumeroDocumentoExterno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtNumeroDocumentoExterno.Location = new System.Drawing.Point(15, 605);
+            this.txtNumeroDocumentoExterno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNumeroDocumentoExterno.Enabled = false;
+            this.txtNumeroDocumentoExterno.Location = new System.Drawing.Point(961, 12);
             this.txtNumeroDocumentoExterno.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtNumeroDocumentoExterno.Name = "txtNumeroDocumentoExterno";
             this.txtNumeroDocumentoExterno.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -1131,16 +1143,6 @@ namespace NORI
             this.cbReserva.Size = new System.Drawing.Size(101, 21);
             this.cbReserva.TabIndex = 0;
             this.cbReserva.TabStop = false;
-            // 
-            // lblIdentificadorExterno
-            // 
-            this.lblIdentificadorExterno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblIdentificadorExterno.Location = new System.Drawing.Point(15, 639);
-            this.lblIdentificadorExterno.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.lblIdentificadorExterno.Name = "lblIdentificadorExterno";
-            this.lblIdentificadorExterno.Size = new System.Drawing.Size(9, 17);
-            this.lblIdentificadorExterno.TabIndex = 119;
-            this.lblIdentificadorExterno.Text = "0";
             // 
             // lblCodigoSN
             // 
@@ -1205,7 +1207,7 @@ namespace NORI
             // 
             this.separatorControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl1.Location = new System.Drawing.Point(15, 180);
+            this.separatorControl1.Location = new System.Drawing.Point(16, 210);
             this.separatorControl1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.separatorControl1.Name = "separatorControl1";
             this.separatorControl1.Padding = new System.Windows.Forms.Padding(11);
@@ -1292,7 +1294,7 @@ namespace NORI
             // cbSeries
             // 
             this.cbSeries.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbSeries.Location = new System.Drawing.Point(848, 17);
+            this.cbSeries.Location = new System.Drawing.Point(846, 47);
             this.cbSeries.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbSeries.MenuManager = this.mainRibbonControl;
             this.cbSeries.Name = "cbSeries";
@@ -1308,7 +1310,7 @@ namespace NORI
             // lblNumeroDocumento
             // 
             this.lblNumeroDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNumeroDocumento.Location = new System.Drawing.Point(795, 20);
+            this.lblNumeroDocumento.Location = new System.Drawing.Point(818, 54);
             this.lblNumeroDocumento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblNumeroDocumento.Name = "lblNumeroDocumento";
             this.lblNumeroDocumento.Size = new System.Drawing.Size(17, 17);
@@ -1318,7 +1320,7 @@ namespace NORI
             // txtNumeroDocumento
             // 
             this.txtNumeroDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNumeroDocumento.Location = new System.Drawing.Point(960, 17);
+            this.txtNumeroDocumento.Location = new System.Drawing.Point(960, 47);
             this.txtNumeroDocumento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtNumeroDocumento.Name = "txtNumeroDocumento";
             this.txtNumeroDocumento.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1330,7 +1332,7 @@ namespace NORI
             // txtFechaDocumento
             // 
             this.txtFechaDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFechaDocumento.Location = new System.Drawing.Point(960, 119);
+            this.txtFechaDocumento.Location = new System.Drawing.Point(961, 148);
             this.txtFechaDocumento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtFechaDocumento.Name = "txtFechaDocumento";
             this.txtFechaDocumento.Properties.DisplayFormat.FormatString = "d";
@@ -1346,7 +1348,7 @@ namespace NORI
             // lblFechaDocumento
             // 
             this.lblFechaDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFechaDocumento.Location = new System.Drawing.Point(825, 122);
+            this.lblFechaDocumento.Location = new System.Drawing.Point(825, 158);
             this.lblFechaDocumento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblFechaDocumento.Name = "lblFechaDocumento";
             this.lblFechaDocumento.Size = new System.Drawing.Size(112, 17);
@@ -1356,7 +1358,7 @@ namespace NORI
             // lblFechaVencimiento
             // 
             this.lblFechaVencimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFechaVencimiento.Location = new System.Drawing.Point(819, 89);
+            this.lblFechaVencimiento.Location = new System.Drawing.Point(822, 123);
             this.lblFechaVencimiento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblFechaVencimiento.Name = "lblFechaVencimiento";
             this.lblFechaVencimiento.Size = new System.Drawing.Size(115, 17);
@@ -1367,7 +1369,7 @@ namespace NORI
             // lblFechaContabilizacion
             // 
             this.lblFechaContabilizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFechaContabilizacion.Location = new System.Drawing.Point(801, 58);
+            this.lblFechaContabilizacion.Location = new System.Drawing.Point(818, 87);
             this.lblFechaContabilizacion.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblFechaContabilizacion.Name = "lblFechaContabilizacion";
             this.lblFechaContabilizacion.Size = new System.Drawing.Size(132, 17);
@@ -1583,7 +1585,7 @@ namespace NORI
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcPartidas.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.gcPartidas.Location = new System.Drawing.Point(15, 253);
+            this.gcPartidas.Location = new System.Drawing.Point(16, 283);
             this.gcPartidas.MainView = this.gvPartidas;
             this.gcPartidas.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.gcPartidas.Name = "gcPartidas";
@@ -1595,7 +1597,7 @@ namespace NORI
             this.repositoryItemCalcEdit1,
             this.cbUnidadesMedida,
             this.cbAlmacenesDestino});
-            this.gcPartidas.Size = new System.Drawing.Size(1087, 234);
+            this.gcPartidas.Size = new System.Drawing.Size(1087, 195);
             this.gcPartidas.TabIndex = 1;
             this.gcPartidas.TabStop = false;
             this.gcPartidas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1701,7 +1703,7 @@ namespace NORI
             this.gridColumnPeso.Name = "gridColumnPeso";
             this.gridColumnPeso.Visible = true;
             this.gridColumnPeso.VisibleIndex = 2;
-            this.gridColumnPeso.Width = 26;
+            this.gridColumnPeso.Width = 29;
             // 
             // gridColumnStock
             // 
@@ -1803,7 +1805,7 @@ namespace NORI
             this.gridColumnCantidadPaquete.OptionsColumn.AllowEdit = false;
             this.gridColumnCantidadPaquete.Visible = true;
             this.gridColumnCantidadPaquete.VisibleIndex = 5;
-            this.gridColumnCantidadPaquete.Width = 48;
+            this.gridColumnCantidadPaquete.Width = 47;
             // 
             // gridColumnSKU
             // 
@@ -1865,7 +1867,7 @@ namespace NORI
             this.gridColumnListaPrecio.Name = "gridColumnListaPrecio";
             this.gridColumnListaPrecio.Visible = true;
             this.gridColumnListaPrecio.VisibleIndex = 10;
-            this.gridColumnListaPrecio.Width = 35;
+            this.gridColumnListaPrecio.Width = 34;
             // 
             // cbListasPrecios
             // 
@@ -1890,7 +1892,7 @@ namespace NORI
             this.gridColumnPrecio.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.gridColumnPrecio.Visible = true;
             this.gridColumnPrecio.VisibleIndex = 11;
-            this.gridColumnPrecio.Width = 26;
+            this.gridColumnPrecio.Width = 27;
             // 
             // gridColumnImpuesto
             // 
@@ -1987,7 +1989,7 @@ namespace NORI
             this.gridColumnAlmacen.Name = "gridColumnAlmacen";
             this.gridColumnAlmacen.Visible = true;
             this.gridColumnAlmacen.VisibleIndex = 18;
-            this.gridColumnAlmacen.Width = 26;
+            this.gridColumnAlmacen.Width = 27;
             // 
             // cbAlmacenes
             // 
@@ -2008,7 +2010,7 @@ namespace NORI
             this.gridColumnUbicacion.Name = "gridColumnUbicacion";
             this.gridColumnUbicacion.Visible = true;
             this.gridColumnUbicacion.VisibleIndex = 19;
-            this.gridColumnUbicacion.Width = 55;
+            this.gridColumnUbicacion.Width = 54;
             // 
             // cbUbicaciones
             // 
@@ -2029,7 +2031,7 @@ namespace NORI
             this.gridColumnAlmacenDestino.Name = "gridColumnAlmacenDestino";
             this.gridColumnAlmacenDestino.Visible = true;
             this.gridColumnAlmacenDestino.VisibleIndex = 20;
-            this.gridColumnAlmacenDestino.Width = 47;
+            this.gridColumnAlmacenDestino.Width = 44;
             // 
             // gridColumnUbicacionDestino
             // 
@@ -2040,7 +2042,7 @@ namespace NORI
             this.gridColumnUbicacionDestino.Name = "gridColumnUbicacionDestino";
             this.gridColumnUbicacionDestino.Visible = true;
             this.gridColumnUbicacionDestino.VisibleIndex = 21;
-            this.gridColumnUbicacionDestino.Width = 47;
+            this.gridColumnUbicacionDestino.Width = 44;
             // 
             // gridColumnComentario
             // 
@@ -3219,7 +3221,6 @@ namespace NORI
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPageGeneral.ResumeLayout(false);
             this.xtraTabPageGeneral.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtArticulo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFechaVigencia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbAlmacenDestino.Properties)).EndInit();
@@ -3302,6 +3303,7 @@ namespace NORI
             ((System.ComponentModel.ISupportInitialize)(this.lbAnexos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3309,5 +3311,9 @@ namespace NORI
 
         private SimpleButton btnCargaArticulos;
         private OpenFileDialog openFileDialog1;
+        private LabelControl labelControl1;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
+        private ToolTip toolTip1;
+        private Button btnStat;
     }
 }

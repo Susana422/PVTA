@@ -35,15 +35,16 @@ namespace NORI.Reportes
         {
             try
             {
-                string ruta = Settings.Settings.Default.rutaReportes.ToString() + "FACT DIARIAS.rpt";
+                string ruta = Settings.Settings.Default.rutaReportes.ToString() + "FACT DIARIAS1.rpt";
                 string fechaInicio = txtFechaInicio.Text;
                 string fechaFin = txtFechaFin.Text;
                 this.Hide();
                 string AttachPDF = addFileTemp();
-                if (AttachPDF !="") {
+                if (AttachPDF != "")
+                {
                     ReportDocument cryReportDocument = new ReportDocument();
                     cryReportDocument.Load(ruta);
-                    cryReportDocument.SetDatabaseLogon( USERSQL, PASSSQL, SERVER, BD);
+                    cryReportDocument.SetDatabaseLogon(USERSQL, PASSSQL, SERVER, BD);
                     cryReportDocument.SetParameterValue("@FechaInicio", fechaInicio);
                     cryReportDocument.SetParameterValue("@FechaFin", fechaFin);
                     cryReportDocument.ExportToDisk(ExportFormatType.PortableDocFormat, AttachPDF);
@@ -53,7 +54,7 @@ namespace NORI.Reportes
                     frmVisual.Show();
 
                 }
-         
+
             }
             catch (Exception ex)
             {

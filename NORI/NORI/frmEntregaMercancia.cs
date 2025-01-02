@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.Data;
@@ -93,10 +94,6 @@ namespace NORI
 
         private GridColumn gridColumnArticulo;
 
-        private LookUpEdit cbVendedores;
-
-        private HyperlinkLabelControl lblVendedores;
-
         private MemoEdit txtComentario;
 
         private LabelControl lblComentario;
@@ -117,8 +114,6 @@ namespace NORI
 
         private BarButtonItem barButtonItemMapaRelaciones;
 
-        private PictureBox pictureBox1;
-
         private TextEdit txtArticulo;
 
         private SeparatorControl separatorControl1;
@@ -133,13 +128,7 @@ namespace NORI
 
         private GridColumn gridColumnCodigoBarras;
 
-        private LabelControl lblIdentificadorExterno;
-
         private BarButtonItem bbiPagar;
-
-        private LabelControl lblReferencia;
-
-        private TextEdit txtReferencia;
 
         private GridColumn gridColumnCantidadPaquete;
 
@@ -154,8 +143,6 @@ namespace NORI
         private LabelControl lblNumeroDocumento;
 
         private GridColumn gridColumnArticuloID;
-
-        private LabelControl lblNoDocumento;
 
         private GridColumn gridColumnTipoTara;
 
@@ -187,7 +174,7 @@ namespace NORI
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), Text);
+                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
             }
         }
 
@@ -206,7 +193,7 @@ namespace NORI
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), Text);
+                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
             }
         }
 
@@ -249,12 +236,12 @@ namespace NORI
             {
                 socio = Socio.Obtener(documento.socio_id);
             }
-            lblIdentificadorExterno.Visible = ((documento.identificador_externo != 0) ? true : false);
-            lblIdentificadorExterno.Text = documento.identificador_externo.ToString();
-            lblNoDocumento.Text = documento.numero_documento.ToString();
+            //lblIdentificadorExterno.Visible = ((documento.identificador_externo != 0) ? true : false);
+            //lblIdentificadorExterno.Text = documento.identificador_externo.ToString();
+            //lblNoDocumento.Text = documento.numero_documento.ToString();
             lblSocio.Text = socio.nombre;
-            cbVendedores.EditValue = documento.vendedor_id;
-            txtReferencia.Text = documento.referencia;
+            //cbVendedores.EditValue = documento.vendedor_id;
+            //txtReferencia.Text = documento.referencia;
             txtComentario.Text = documento.comentario;
             partidas_pedido = documento.partidas;
             if (documento.partidas.Sum((Documento.Partida x) => x.documento_id) != 0)
@@ -280,10 +267,9 @@ namespace NORI
                 nombre = "-- Seleccionar --",
                 peso = 0m
             };
-            cbVendedores.Properties.DataSource = (from x in Vendedor.Vendedores()
-                                                  select new { x.id, x.nombre }).ToList();
-            cbVendedores.Properties.ValueMember = "id";
-            cbVendedores.Properties.DisplayMember = "nombre";
+            //cbVendedores.Properties.DataSource = (from x in Vendedor.Vendedores() select new { x.id, x.nombre }).ToList();
+            //cbVendedores.Properties.ValueMember = "id";
+            //cbVendedores.Properties.DisplayMember = "nombre";
             cbAlmacenes.DataSource = from x in Almacen.Almacenes()
                                      select new { x.id, x.codigo, x.nombre };
             cbAlmacenes.ValueMember = "id";
@@ -303,15 +289,15 @@ namespace NORI
         {
             gcPartidas.DataSource = documento.partidas;
             gcPartidas.RefreshDataSource();
-            documento.CalcularTotal();
+            documento.CalcularTotalEntrega();
         }
 
         private bool Llenar()
         {
             try
             {
-                documento.vendedor_id = (int)cbVendedores.EditValue;
-                documento.referencia = txtReferencia.Text;
+                //documento.vendedor_id = (int)cbVendedores.EditValue;
+                //documento.referencia = txtReferencia.Text;
                 documento.comentario = txtComentario.Text;
                 if (!documento.partidas.Any((Documento.Partida x) => x.cantidad > 0m))
                 {
@@ -321,7 +307,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return false;
             }
         }
@@ -386,32 +372,32 @@ namespace NORI
                                 break;
                         }
                     }
-                    if (flag && !documento.reserva)
-                    {
-                        Funciones.DescartarCargando();
-                        // Obtener el SKU del primer artículo con inventario negativo
-                        var skuNegativo = documento.partidas
-                            .Where(x => x.stock < x.cantidad)
-                            .Select(x => x.sku)
-                            .FirstOrDefault();
+                    //if (flag && !documento.reserva)
+                    //{
+                    //    Funciones.DescartarCargando();
+                    // Obtener el SKU del primer artículo con inventario negativo
+                    //    var skuNegativo = documento.partidas
+                    //        .Where(x => x.stock < x.cantidad)
+                    //        .Select(x => x.sku)
+                    ///        .FirstOrDefault();
 
-                        // Verificar si se encontró un SKU negativo y mostrar el mensaje
-                        if (skuNegativo != null)
-                        {
-                            MessageBox.Show($"La cantidad recae en un inventario negativo ({skuNegativo}).");
-                        }
-                        else
-                        {
-                            MessageBox.Show("No se encontraron partidas con inventario negativo.");
-                        }
-                        return false;
-                    }
+                    // Verificar si se encontró un SKU negativo y mostrar el mensaje
+                    //    if (skuNegativo != null)
+                    //    {
+                    //        MessageBox.Show($"La cantidad recae en un inventario negativo ({skuNegativo}).");
+                    //    }
+                    //    else
+                    //    {
+                    //        MessageBox.Show("No se encontraron partidas con inventario negativo.");
+                    //    }
+                    //    return false;
+                    //}
                 }
                 return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return false;
             }
             finally
@@ -426,25 +412,57 @@ namespace NORI
             {
                 if (MessageBox.Show("¿Desea guardar los cambios?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    if (Llenar())
+                    if (VerificarEntrega())
                     {
-                        if (documento.id != 0)
+                        if (Llenar())
                         {
-                            return documento.Actualizar(actualizar_partidas: true);
+                            if (documento.id != 0)
+                            {
+                                return documento.Actualizar(actualizar_partidas: true);
+                            }
+                            return documento.Agregar();
                         }
-                        return documento.Agregar();
                     }
+                    else {
+                        MessageBox.Show("La cantidad entregada no coincide con la del documento");
+
+                    }
+
                     return false;
                 }
                 return false;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM") + " | Error: " + ex.Message.ToString().Replace("Nori","DTM"), Text);
+                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM") + " | Error: " + ex.Message.ToString().Replace("Nori", "DTM"), Text);
                 return false;
             }
         }
+        private bool VerificarEntrega() 
+        {
+            bool sw = false;
+            try
+            {
+                var data = documento.partidas;
+                foreach (var row in data.ToList()) {
+                    if (row.cantidad == row.cantidad_pendiente)
+                    { 
+                        sw= true;
+                    }
+                    else{
+                        sw = false;
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM") + " | Error: " + ex.Message.ToString().Replace("Nori", "DTM"), Text);
+                return sw;
+            }
+            return sw;
+        }
         private void gvPartidas_CellValueChanged(object sender, CellValueChangedEventArgs e)
         {
             try
@@ -586,7 +604,7 @@ namespace NORI
             {
                 do
                 {
-                    if (!(await Task.Run(() => documento.AgregarPartida(q))))
+                    if (!(await Task.Run(() => documento.AgregarPartidaEntrega(q))))
                     {
                         continue;
                     }
@@ -706,11 +724,6 @@ namespace NORI
                 MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), Text);
             }
         }
-
-        private void txtNumeroDocumento_EditValueChanged(object sender, EventArgs e)
-        {
-        }
-
     }
 
 }

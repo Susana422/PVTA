@@ -12,16 +12,16 @@
       <Value Profile="(Default)">C:\Users\Programador\Music\REPORTES\</Value>
     </Setting>
     <Setting Name="USERBD" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">sa</Value>
     </Setting>
     <Setting Name="PASSBD" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">123</Value>
     </Setting>
     <Setting Name="SERVIDOR" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">DESKTOP-D5V63NE\SQLEXPRESS</Value>
     </Setting>
     <Setting Name="BD" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">NORICUAITITLAN</Value>
     </Setting>
   </Settings>
 </SettingsFile>

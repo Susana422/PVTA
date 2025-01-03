@@ -1,9 +1,7 @@
-﻿using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Windows.Forms;
-using DevExpress.DashboardWin;
+﻿using DevExpress.DashboardWin;
 using DevExpress.XtraEditors;
+using System;
+using System.ComponentModel;
 
 namespace NORI
 {

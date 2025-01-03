@@ -1,7 +1,5 @@
-﻿using System.ComponentModel;
-using System.Drawing;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
+using System.ComponentModel;
 
 namespace NORI
 {
@@ -17,7 +15,7 @@ namespace NORI
             this.MetodoDinamico();
         }
 
-    
+
     }
 
 }

@@ -1,19 +1,13 @@
-﻿using System;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
-using DevExpress.Utils;
-using DevExpress.Utils.Menu;
-using DevExpress.XtraBars;
+﻿using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Controls;
-using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraLayout;
-using DevExpress.XtraLayout.Utils;
 using NoriSDK;
+using System;
+using System.ComponentModel;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace NORI
 {
@@ -247,7 +241,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM").ToString().Replace("Nori","DTM"));
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM").ToString().Replace("Nori", "DTM"));
             }
         }
 
@@ -268,7 +262,7 @@ namespace NORI
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), Text);
+                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
                 return false;
             }
         }
@@ -281,7 +275,7 @@ namespace NORI
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), Text);
+                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
             }
         }
 
@@ -312,7 +306,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
             {
@@ -361,7 +355,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
             {

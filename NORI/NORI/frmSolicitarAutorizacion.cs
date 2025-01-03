@@ -1,21 +1,12 @@
-﻿using DevExpress.Utils;
-using DevExpress.XtraBars.Ribbon;
-using DevExpress.XtraBars;
-using DevExpress.XtraEditors.Controls;
+﻿using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
-using DevExpress.XtraLayout.Utils;
 using DevExpress.XtraLayout;
 using NoriSDK;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Windows;
+using System.Windows.Forms;
 
 namespace NORI
 {
@@ -142,7 +133,7 @@ namespace NORI
             }
         }
 
-    
+
     }
 
 }

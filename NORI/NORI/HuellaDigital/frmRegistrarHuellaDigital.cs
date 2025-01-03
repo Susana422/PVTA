@@ -1,18 +1,9 @@
-﻿using DevExpress.XtraBars;
-using NORI.HuellaDigital;
+﻿using NORI.HuellaDigital;
 using NORI.HuellaDigital.Class;
-using NORI.PuntoVenta;
 using NoriSDK;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NORI
@@ -24,10 +15,10 @@ namespace NORI
         private AppData Data;
         private Usuario usuario = new Usuario();
         private NoriSDK.HuellaDigital huellaDigital = new NoriSDK.HuellaDigital();
-        public frmRegistrarHuellaDigital(AppData data,Usuario user)
+        public frmRegistrarHuellaDigital(AppData data, Usuario user)
         {
             InitializeComponent();
-        
+
             usuario = user;
             Data = data;
             //ExchangeData(true);                                 
@@ -35,15 +26,17 @@ namespace NORI
             cargarHuellaDigital(user);
         }
 
-        public void cargarHuellaDigital(Usuario user) {
+        public void cargarHuellaDigital(Usuario user)
+        {
             try
             {
                 ExchangeData(true);
                 List<NoriSDK.HuellaDigital> huellas = NoriSDK.HuellaDigital.ObtenerUser(usuario.id);
-                if (huellas.Count == 0) { 
+                if (huellas.Count == 0)
+                {
                     btnVerificar.Visible = false;
                 }
-                foreach (var x in huellas) 
+                foreach (var x in huellas)
                 {
                     DPFP.Template template = DeserializeTemplate(x.huella);
                     // Ajusta el índice para manejar correctamente el mapeo de la mano
@@ -53,11 +46,13 @@ namespace NORI
                     // Si el dedo es de la mano derecha (0-4), lo asignamos a la mano izquierda (5-9)
                     if (rol >= 0 && rol <= 4)
                     {
-                      
-                        if (rol == 4) {
+
+                        if (rol == 4)
+                        {
                             rol = 5 + rol;
                         }
-                        else{
+                        else
+                        {
                             rol = 4 + rol; // Cambiar de mano derecha (0-4) a izquierda (5-9)
                         }
                     }
@@ -103,14 +98,15 @@ namespace NORI
             }
         }
 
-        public void Exc() {
+        public void Exc()
+        {
             Data.EnrolledFingersMask = 0;
             Data.MaxEnrollFingerCount = 10;
             Data.IsEventHandlerSucceeds = true;
             Data.Update();
         }
 
-      
+
         public void EnrollmentControl_OnEnroll(Object Control, int Finger, DPFP.Template Template, ref DPFP.Gui.EventHandlerStatus Status)
         {
             if (Data.IsEventHandlerSucceeds)
@@ -128,13 +124,15 @@ namespace NORI
             else
                 Status = DPFP.Gui.EventHandlerStatus.Failure;   // force a "failure" status
         }
-        public void Guardar() {
+        public void Guardar()
+        {
             if (huellaDigital.Agregar())
             {
                 MessageBox.Show("La huella digital fue guardada correctamente");
                 btnVerificar.Visible = true;
             }
-            else {
+            else
+            {
                 MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
             }
         }
@@ -161,19 +159,19 @@ namespace NORI
                     return Convert.ToBase64String(templateBytes);
                 }
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
                 return string.Empty;
             }
-           
+
         }
-      
+
         public void EnrollmentControl_OnDelete(Object Control, int Finger, ref DPFP.Gui.EventHandlerStatus Status)
         {
             if (Data.IsEventHandlerSucceeds)
             {
 
-                int rol = Finger ;
+                int rol = Finger;
                 if (rol >= 0 && rol <= 4)
                 {
 
@@ -188,7 +186,7 @@ namespace NORI
                 }
                 else if (rol >= 5 && rol <= 9)
                 {
-                    rol = 9 - (rol-1); // Cambiar de mano izquierda (5-9) a derecha (0-4)
+                    rol = 9 - (rol - 1); // Cambiar de mano izquierda (5-9) a derecha (0-4)
                 }
 
 
@@ -196,7 +194,7 @@ namespace NORI
                 Eliminar(templateBytes);
                 Data.Templates[Finger - 1] = null;
                 ExchangeData(true);
-              
+
                 ListEvents.Add(String.Format("OnDelete: finger {0}", Finger));
             }
             else
@@ -217,19 +215,21 @@ namespace NORI
         {
             try
             {
-                if (Finger !=0) {
+                if (Finger != 0)
+                {
                     ListEvents.Add(String.Format("OnReaderDisconnect: {0}, finger {1}", ReaderSerialNumber, Finger));
                 }
-                else {
+                else
+                {
                     MessageBox.Show("Verifique su lector de Huella Digital ya que se encuentra desconectado");
                 }
-         
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Verifique su lector de Huella Digital ya que se encuentra desconectado" +ex.Message);
+                MessageBox.Show("Verifique su lector de Huella Digital ya que se encuentra desconectado" + ex.Message);
             }
-          
+
         }
 
         private void EnrollmentControl_OnStartEnroll(object Control, string ReaderSerialNumber, int Finger)

@@ -1,4 +1,16 @@
-﻿using System;
+﻿using DevExpress.XtraBars;
+using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraLayout;
+using Microsoft.VisualBasic;
+using NetsuiteLibrary.SuiteTalk_Helpers;
+using NoriSDK;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,24 +18,6 @@ using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.Data;
-using DevExpress.Utils;
-using DevExpress.Utils.Menu;
-using DevExpress.XtraBars;
-using DevExpress.XtraBars.Ribbon;
-using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Container;
-using DevExpress.XtraEditors.Controls;
-using DevExpress.XtraEditors.Repository;
-using DevExpress.XtraGrid;
-using DevExpress.XtraGrid.Columns;
-using DevExpress.XtraGrid.Views.Base;
-using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraLayout;
-using DevExpress.XtraLayout.Utils;
-using Microsoft.VisualBasic;
-using NetsuiteLibrary.SuiteTalk_Helpers;
-using NoriSDK;
 
 namespace NORI.PuntoVenta
 {
@@ -375,7 +369,7 @@ namespace NORI.PuntoVenta
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"));
             }
         }
 
@@ -419,7 +413,7 @@ namespace NORI.PuntoVenta
             catch (Exception ex2)
             {
                 Exception ex = ex2;
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
             {
@@ -636,7 +630,7 @@ namespace NORI.PuntoVenta
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -668,7 +662,7 @@ namespace NORI.PuntoVenta
                         }
                         if (!documento.EstablecerSocio(socio))
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
+                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                             return;
                         }
                         Calcular();
@@ -776,7 +770,7 @@ namespace NORI.PuntoVenta
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Documentos", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), "Documentos", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -801,7 +795,7 @@ namespace NORI.PuntoVenta
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
             {
@@ -831,7 +825,7 @@ namespace NORI.PuntoVenta
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -869,7 +863,7 @@ namespace NORI.PuntoVenta
                         }
                         else
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
+                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                         }
                         return;
                     }
@@ -907,7 +901,7 @@ namespace NORI.PuntoVenta
                         }
                         else
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
+                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                         }
                         return;
                     }
@@ -927,7 +921,7 @@ namespace NORI.PuntoVenta
                         }
                         else
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
+                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                         }
                     }
                     Inicializar();
@@ -939,7 +933,7 @@ namespace NORI.PuntoVenta
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"));
             }
         }
 
@@ -954,7 +948,7 @@ namespace NORI.PuntoVenta
                         SalesOrderHelper salesOrderHelper = new SalesOrderHelper();
                         if (!salesOrderHelper.CreateSalesOrder(documento))
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
                         }
                     }
                     else if (documento.clase.Equals("EN"))
@@ -975,7 +969,7 @@ namespace NORI.PuntoVenta
                         }
                         else
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
                         }
                     }
                     else if (documento.clase.Equals("NC"))
@@ -999,7 +993,7 @@ namespace NORI.PuntoVenta
             }
             catch (Exception ex)
             {
-                MessageBox.Show(string.Format("Ocurrió un error al sincronizar con NSu", ex.Message.ToString().Replace("Nori","DTM")));
+                MessageBox.Show(string.Format("Ocurrió un error al sincronizar con NSu", ex.Message.ToString().Replace("Nori", "DTM")));
                 return false;
             }
         }
@@ -1086,7 +1080,7 @@ namespace NORI.PuntoVenta
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return false;
             }
             finally
@@ -1311,7 +1305,7 @@ namespace NORI.PuntoVenta
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -1423,7 +1417,7 @@ namespace NORI.PuntoVenta
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
+                        MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"));
                     }
                 }
                 if (e.Control && e.KeyCode == Keys.B)
@@ -1690,7 +1684,7 @@ namespace NORI.PuntoVenta
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
             {

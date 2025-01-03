@@ -1,17 +1,12 @@
-﻿using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Windows.Forms;
-using DevExpress.Utils;
-using DevExpress.XtraBars;
+﻿using DevExpress.XtraBars;
 using DevExpress.XtraBars.Docking;
 using DevExpress.XtraBars.Ribbon;
-using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.Repository;
-using DevExpress.XtraPrinting;
 using DevExpress.XtraPrinting.Preview;
-using DevExpress.XtraReports.Configuration;
 using DevExpress.XtraReports.UserDesigner;
+using System;
+using System.ComponentModel;
+using System.Windows.Forms;
 namespace NORI
 {
     public partial class frmDiseñadorInformes : Form
@@ -379,7 +374,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
     }

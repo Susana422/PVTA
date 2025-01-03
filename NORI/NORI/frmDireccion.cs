@@ -1,20 +1,14 @@
-﻿using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
-using DevExpress.Utils;
-using DevExpress.Utils.Menu;
-using DevExpress.XtraBars;
+﻿using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraDataLayout;
 using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Controls;
-using DevExpress.XtraEditors.Mask;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraLayout;
-using DevExpress.XtraLayout.Utils;
 using NoriSDK;
+using System;
+using System.ComponentModel;
+using System.Linq;
+using System.Windows.Forms;
 
 
 namespace NORI
@@ -110,7 +104,7 @@ namespace NORI
             }
             else
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
         }
 
@@ -160,7 +154,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"));
             }
         }
 
@@ -181,7 +175,7 @@ namespace NORI
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 return false;
             }
         }
@@ -201,6 +195,6 @@ namespace NORI
             Cargar();
         }
 
-     
+
     }
 }

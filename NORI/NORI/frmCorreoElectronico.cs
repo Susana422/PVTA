@@ -1,17 +1,15 @@
-﻿using DevExpress.XtraEditors.Controls;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.Repository;
-using DevExpress.XtraEditors;
 using NoriSDK;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Net.Mail;
 using System.Net;
+using System.Net.Mail;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NORI
@@ -143,7 +141,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return false;
             }
         }
@@ -188,7 +186,7 @@ namespace NORI
             ((Control)(object)txtMensaje).Text = correo_electronico.mensaje;
         }
 
-       
+
     }
 
 }

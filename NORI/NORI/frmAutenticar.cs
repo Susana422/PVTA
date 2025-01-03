@@ -1,21 +1,10 @@
-﻿using DevExpress.Utils;
-using DevExpress.XtraBars.Ribbon;
-using DevExpress.XtraBars;
+﻿using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
-using DevExpress.XtraLayout.Utils;
 using DevExpress.XtraLayout;
 using NoriSDK;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using NORI.HuellaDigital;
-using NORI.HuellaDigital.Class;
 
 namespace NORI
 {
@@ -54,7 +43,7 @@ namespace NORI
             this.MetodoDinamico();
             this.DoubleBuffered = true;
         }
-      
+
 
         private void frmAutenticar_Load(object sender, EventArgs e)
         {
@@ -82,7 +71,7 @@ namespace NORI
                 }
                 ((Control)(object)txtContraseña).Text = string.Empty;
                 ((Control)(object)txtContraseña).Focus();
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
         }
 
@@ -92,7 +81,7 @@ namespace NORI
             Funciones.huella = true;
             Funciones.Desbloquear();
         }
-    
+
 
     }
 }

@@ -72,33 +72,18 @@ namespace NORI
             this.accordionControlElementGruposArticulos = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementAlmacenes = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementFabricantes = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementCompras = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementCotizacionCompra = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementOrdenCompra = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementEntradaMercancias = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementEntradasMercancias = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementDevolucionMercancias = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementVentas = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementCotizaciones = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementPedidos = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementEntregaMercancia = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementDevoluciones = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementAnticiposClientes = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementFacturas = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementDevoluciones = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementNotasCredito = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementNotasDebito = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementSocios = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementPagos = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementInventario = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementArticulos = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementInventarioListasPrecios = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementListasPrecios = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementOperacionesStock = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementAjusteEntrada = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementAjusteSalida = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementSolicitudTraslado = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementTransferenciaStock = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementInventarioFisico = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementInformes = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accoCorteCaja = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accFacturasDiarias = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -108,11 +93,6 @@ namespace NORI
             this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement12 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement13 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementExtras = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementListaPedidosWeb = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementRestaurante = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementRestauranteMesas = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControKioscoFacturacion = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accMonitor = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.lblEmpresa = new DevExpress.XtraEditors.LabelControl();
@@ -130,6 +110,7 @@ namespace NORI
             this.bbiTransmitirRecibir = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDiseñadorEscritorios = new DevExpress.XtraBars.BarButtonItem();
             this.bbiSucursales = new DevExpress.XtraBars.BarListItem();
+            this.bbiParametrizacion = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageHerramientas = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupHerramientas = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -201,13 +182,11 @@ namespace NORI
             this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElementUsuario,
             this.accordionControlElementGestion,
-            this.accordionControlElementCompras,
             this.accordionControlElementVentas,
             this.accordionControlElementSocios,
             this.accordionControlElementPagos,
             this.accordionControlElementInventario,
             this.accordionControlElementInformes,
-            this.accordionControlElementExtras,
             this.accordionControlElement5});
             this.accordionControl1.Location = new System.Drawing.Point(3, 29);
             this.accordionControl1.Name = "accordionControl1";
@@ -474,61 +453,14 @@ namespace NORI
             this.accordionControlElementFabricantes.Text = "Fabricantes";
             this.accordionControlElementFabricantes.Click += new System.EventHandler(this.accordionControlElementFabricantes_Click);
             // 
-            // accordionControlElementCompras
-            // 
-            this.accordionControlElementCompras.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElementCotizacionCompra,
-            this.accordionControlElementOrdenCompra,
-            this.accordionControlElementEntradaMercancias,
-            this.accordionControlElementEntradasMercancias,
-            this.accordionControlElementDevolucionMercancias});
-            this.accordionControlElementCompras.Name = "accordionControlElementCompras";
-            this.accordionControlElementCompras.Text = "Compras";
-            // 
-            // accordionControlElementCotizacionCompra
-            // 
-            this.accordionControlElementCotizacionCompra.Name = "accordionControlElementCotizacionCompra";
-            this.accordionControlElementCotizacionCompra.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementCotizacionCompra.Text = "Cotización";
-            this.accordionControlElementCotizacionCompra.Click += new System.EventHandler(this.accordionControlElementCotizacionCompra_Click);
-            // 
-            // accordionControlElementOrdenCompra
-            // 
-            this.accordionControlElementOrdenCompra.Name = "accordionControlElementOrdenCompra";
-            this.accordionControlElementOrdenCompra.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementOrdenCompra.Text = "Orden de compra";
-            this.accordionControlElementOrdenCompra.Click += new System.EventHandler(this.accordionControlElementOrdenCompra_Click);
-            // 
-            // accordionControlElementEntradaMercancias
-            // 
-            this.accordionControlElementEntradaMercancias.Name = "accordionControlElementEntradaMercancias";
-            this.accordionControlElementEntradaMercancias.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementEntradaMercancias.Text = "Entrada mercancía";
-            this.accordionControlElementEntradaMercancias.Click += new System.EventHandler(this.accordionControlElementEntradaMercancias_Click);
-            // 
-            // accordionControlElementEntradasMercancias
-            // 
-            this.accordionControlElementEntradasMercancias.Name = "accordionControlElementEntradasMercancias";
-            this.accordionControlElementEntradasMercancias.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementEntradasMercancias.Text = "Entradas de mercancías";
-            this.accordionControlElementEntradasMercancias.Click += new System.EventHandler(this.accordionControlElementEntradasMercancias_Click);
-            // 
-            // accordionControlElementDevolucionMercancias
-            // 
-            this.accordionControlElementDevolucionMercancias.Name = "accordionControlElementDevolucionMercancias";
-            this.accordionControlElementDevolucionMercancias.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementDevolucionMercancias.Text = "Devoluciónes de mercancías";
-            this.accordionControlElementDevolucionMercancias.Click += new System.EventHandler(this.accordionControlElementDevolucionMercancias_Click);
-            // 
             // accordionControlElementVentas
             // 
             this.accordionControlElementVentas.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElementCotizaciones,
             this.accordionControlElementPedidos,
             this.accordionControlElementEntregaMercancia,
-            this.accordionControlElementDevoluciones,
-            this.accordionControlElementAnticiposClientes,
             this.accordionControlElementFacturas,
+            this.accordionControlElementDevoluciones,
             this.accordionControlElementNotasCredito,
             this.accordionControlElementNotasDebito});
             this.accordionControlElementVentas.Expanded = true;
@@ -546,7 +478,7 @@ namespace NORI
             // 
             this.accordionControlElementPedidos.Name = "accordionControlElementPedidos";
             this.accordionControlElementPedidos.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementPedidos.Text = "Pedidos";
+            this.accordionControlElementPedidos.Text = "Orden de Venta";
             this.accordionControlElementPedidos.Click += new System.EventHandler(this.accordionControlElementPedidos_Click);
             // 
             // accordionControlElementEntregaMercancia
@@ -556,26 +488,19 @@ namespace NORI
             this.accordionControlElementEntregaMercancia.Text = "Entrega de mercancía";
             this.accordionControlElementEntregaMercancia.Click += new System.EventHandler(this.accordionControlElementEntregaMercancia_Click);
             // 
-            // accordionControlElementDevoluciones
-            // 
-            this.accordionControlElementDevoluciones.Name = "accordionControlElementDevoluciones";
-            this.accordionControlElementDevoluciones.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementDevoluciones.Text = "Devoluciones";
-            this.accordionControlElementDevoluciones.Click += new System.EventHandler(this.accordionControlElementDevoluciones_Click);
-            // 
-            // accordionControlElementAnticiposClientes
-            // 
-            this.accordionControlElementAnticiposClientes.Name = "accordionControlElementAnticiposClientes";
-            this.accordionControlElementAnticiposClientes.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementAnticiposClientes.Text = "Anticipos";
-            this.accordionControlElementAnticiposClientes.Click += new System.EventHandler(this.accordionControlElementAnticiposClientes_Click);
-            // 
             // accordionControlElementFacturas
             // 
             this.accordionControlElementFacturas.Name = "accordionControlElementFacturas";
             this.accordionControlElementFacturas.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementFacturas.Text = "Facturas";
             this.accordionControlElementFacturas.Click += new System.EventHandler(this.accordionControlElementFacturas_Click);
+            // 
+            // accordionControlElementDevoluciones
+            // 
+            this.accordionControlElementDevoluciones.Name = "accordionControlElementDevoluciones";
+            this.accordionControlElementDevoluciones.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementDevoluciones.Text = "Devoluciones";
+            this.accordionControlElementDevoluciones.Click += new System.EventHandler(this.accordionControlElementDevoluciones_Click);
             // 
             // accordionControlElementNotasCredito
             // 
@@ -608,9 +533,8 @@ namespace NORI
             // accordionControlElementInventario
             // 
             this.accordionControlElementInventario.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElementArticulos,
-            this.accordionControlElementInventarioListasPrecios,
-            this.accordionControlElementOperacionesStock});
+            this.accordionControlElementArticulos});
+            this.accordionControlElementInventario.Expanded = true;
             this.accordionControlElementInventario.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text),
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Image),
@@ -626,67 +550,6 @@ namespace NORI
             this.accordionControlElementArticulos.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementArticulos.Text = "Artículos";
             this.accordionControlElementArticulos.Click += new System.EventHandler(this.accordionControlElementArticulos_Click);
-            // 
-            // accordionControlElementInventarioListasPrecios
-            // 
-            this.accordionControlElementInventarioListasPrecios.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElementListasPrecios});
-            this.accordionControlElementInventarioListasPrecios.Name = "accordionControlElementInventarioListasPrecios";
-            this.accordionControlElementInventarioListasPrecios.Text = "Listas de precios";
-            // 
-            // accordionControlElementListasPrecios
-            // 
-            this.accordionControlElementListasPrecios.Name = "accordionControlElementListasPrecios";
-            this.accordionControlElementListasPrecios.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementListasPrecios.Text = "Listas de precios";
-            this.accordionControlElementListasPrecios.Click += new System.EventHandler(this.accordionControlElementListasPrecios_Click);
-            // 
-            // accordionControlElementOperacionesStock
-            // 
-            this.accordionControlElementOperacionesStock.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElementAjusteEntrada,
-            this.accordionControlElementAjusteSalida,
-            this.accordionControlElementSolicitudTraslado,
-            this.accordionControlElementTransferenciaStock,
-            this.accordionControlElementInventarioFisico});
-            this.accordionControlElementOperacionesStock.Expanded = true;
-            this.accordionControlElementOperacionesStock.Name = "accordionControlElementOperacionesStock";
-            this.accordionControlElementOperacionesStock.Text = "Operaciones de stock";
-            // 
-            // accordionControlElementAjusteEntrada
-            // 
-            this.accordionControlElementAjusteEntrada.Name = "accordionControlElementAjusteEntrada";
-            this.accordionControlElementAjusteEntrada.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementAjusteEntrada.Text = "Ajuste de entrada";
-            this.accordionControlElementAjusteEntrada.Click += new System.EventHandler(this.accordionControlElementAjusteEntrada_Click);
-            // 
-            // accordionControlElementAjusteSalida
-            // 
-            this.accordionControlElementAjusteSalida.Name = "accordionControlElementAjusteSalida";
-            this.accordionControlElementAjusteSalida.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementAjusteSalida.Text = "Ajuste de salida";
-            this.accordionControlElementAjusteSalida.Click += new System.EventHandler(this.accordionControlElementAjusteSalida_Click);
-            // 
-            // accordionControlElementSolicitudTraslado
-            // 
-            this.accordionControlElementSolicitudTraslado.Name = "accordionControlElementSolicitudTraslado";
-            this.accordionControlElementSolicitudTraslado.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementSolicitudTraslado.Text = "Solicitud de traslado";
-            this.accordionControlElementSolicitudTraslado.Click += new System.EventHandler(this.accordionControlElementSolicitudTraslado_Click);
-            // 
-            // accordionControlElementTransferenciaStock
-            // 
-            this.accordionControlElementTransferenciaStock.Name = "accordionControlElementTransferenciaStock";
-            this.accordionControlElementTransferenciaStock.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementTransferenciaStock.Text = "Transferencia de stock";
-            this.accordionControlElementTransferenciaStock.Click += new System.EventHandler(this.accordionControlElementTransferenciaStock_Click);
-            // 
-            // accordionControlElementInventarioFisico
-            // 
-            this.accordionControlElementInventarioFisico.Name = "accordionControlElementInventarioFisico";
-            this.accordionControlElementInventarioFisico.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementInventarioFisico.Text = "Inventario físico";
-            this.accordionControlElementInventarioFisico.Click += new System.EventHandler(this.accordionControlElementInventarioFisico_Click);
             // 
             // accordionControlElementInformes
             // 
@@ -759,51 +622,10 @@ namespace NORI
             this.accordionControlElement13.Text = "Reporte de Ventas";
             this.accordionControlElement13.Click += new System.EventHandler(this.accordionControlElement13_Click);
             // 
-            // accordionControlElementExtras
-            // 
-            this.accordionControlElementExtras.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElementListaPedidosWeb,
-            this.accordionControlElementRestaurante,
-            this.accordionControKioscoFacturacion});
-            this.accordionControlElementExtras.Expanded = true;
-            this.accordionControlElementExtras.Name = "accordionControlElementExtras";
-            this.accordionControlElementExtras.Text = "Extras";
-            this.accordionControlElementExtras.Visible = false;
-            // 
-            // accordionControlElementListaPedidosWeb
-            // 
-            this.accordionControlElementListaPedidosWeb.Name = "accordionControlElementListaPedidosWeb";
-            this.accordionControlElementListaPedidosWeb.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementListaPedidosWeb.Text = "Lista de pedidos web";
-            this.accordionControlElementListaPedidosWeb.Click += new System.EventHandler(this.accordionControlElementListaPedidosWeb_Click);
-            // 
-            // accordionControlElementRestaurante
-            // 
-            this.accordionControlElementRestaurante.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElementRestauranteMesas});
-            this.accordionControlElementRestaurante.Name = "accordionControlElementRestaurante";
-            this.accordionControlElementRestaurante.Text = "Restaurante";
-            this.accordionControlElementRestaurante.Visible = false;
-            // 
-            // accordionControlElementRestauranteMesas
-            // 
-            this.accordionControlElementRestauranteMesas.Name = "accordionControlElementRestauranteMesas";
-            this.accordionControlElementRestauranteMesas.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementRestauranteMesas.Text = "Mesas";
-            this.accordionControlElementRestauranteMesas.Click += new System.EventHandler(this.accordionControlElementRestauranteMesas_Click);
-            // 
-            // accordionControKioscoFacturacion
-            // 
-            this.accordionControKioscoFacturacion.Name = "accordionControKioscoFacturacion";
-            this.accordionControKioscoFacturacion.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControKioscoFacturacion.Text = "Kiosco";
-            this.accordionControKioscoFacturacion.Click += new System.EventHandler(this.accordionControKioscoFacturacion_Click);
-            // 
             // accordionControlElement5
             // 
             this.accordionControlElement5.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accMonitor});
-            this.accordionControlElement5.Expanded = true;
             this.accordionControlElement5.Name = "accordionControlElement5";
             this.accordionControlElement5.Text = "Extras";
             // 
@@ -847,9 +669,10 @@ namespace NORI
             this.bbiEtiquetas,
             this.bbiTransmitirRecibir,
             this.bbiDiseñadorEscritorios,
-            this.bbiSucursales});
+            this.bbiSucursales,
+            this.bbiParametrizacion});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 7;
+            this.ribbonControl1.MaxItemId = 8;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 294;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -961,6 +784,13 @@ namespace NORI
             this.bbiSucursales.Id = 6;
             this.bbiSucursales.Name = "bbiSucursales";
             this.bbiSucursales.ListItemClick += new DevExpress.XtraBars.ListItemClickEventHandler(this.bbiSucursales_ListItemClick);
+            // 
+            // bbiParametrizacion
+            // 
+            this.bbiParametrizacion.Caption = "Parametrizaciones del Formulario";
+            this.bbiParametrizacion.Id = 7;
+            this.bbiParametrizacion.ImageOptions.Image = global::componentResourceManager.Resources.editar;
+            this.bbiParametrizacion.Name = "bbiParametrizacion";
             // 
             // ribbonPageHerramientas
             // 
@@ -1085,5 +915,6 @@ namespace NORI
         private AccordionControlElement accordionControlElement13;
         private AccordionControlElement accordionControlElement5;
         private AccordionControlElement accMonitor;
+        private BarButtonItem bbiParametrizacion;
     }
 }

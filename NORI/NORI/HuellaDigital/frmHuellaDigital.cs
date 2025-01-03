@@ -1,20 +1,9 @@
-﻿using DevExpress.Utils.Extensions;
-using DevExpress.XtraBars;
-using DevExpress.XtraEditors.Repository;
-using DPFP.Gui.Enrollment;
-using NORI.HuellaDigital.Class;
+﻿using NORI.HuellaDigital.Class;
 using NoriSDK;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NORI
@@ -35,7 +24,7 @@ namespace NORI
             ConfigurationManager.RefreshSection("connectionStrings");
             conexiones = ConfigurationManager.ConnectionStrings;
             Program.Nori.Conexion = new SqlConnectionStringBuilder(conexiones[0].ConnectionString);
-        
+
         }
 
 
@@ -73,21 +62,22 @@ namespace NORI
 
             }
 
-            if (!res.Verified) {
+            if (!res.Verified)
+            {
                 EventHandlerStatus = DPFP.Gui.EventHandlerStatus.Failure;
                 MessageBox.Show("La huella registrada no existe,intente nuevamente");
             }
-             
+
 
             Data.Update();
         }
-        public void searchUser(int id) 
+        public void searchUser(int id)
         {
 
             try
             {
                 Usuario usuario = new Usuario();
-                usuario= Usuario.Obtener(id);
+                usuario = Usuario.Obtener(id);
                 acceder(Program.Nori.Autenticar(usuario));
             }
             catch (Exception ex)

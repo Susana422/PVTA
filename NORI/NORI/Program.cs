@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-using DevExpress.LookAndFeel;
-using DevExpress.Skins;
-using DevExpress.UserSkins;
-using NoriCFDI;
+﻿using NoriCFDI;
 using NoriSAPB1SDK;
 using NoriSDK;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 
 namespace NORI
@@ -29,7 +26,7 @@ namespace NORI
         [STAThread]
         static void Main()
         {
-          
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmHome());

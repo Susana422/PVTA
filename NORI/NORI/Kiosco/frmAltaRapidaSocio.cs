@@ -1,13 +1,10 @@
-﻿using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
-using DevExpress.Utils;
-using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Controls;
+﻿using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Repository;
 using NoriSDK;
+using System;
+using System.ComponentModel;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace NORI.Kiosco
 {
@@ -272,7 +269,7 @@ namespace NORI.Kiosco
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 return false;
             }
         }
@@ -305,7 +302,7 @@ namespace NORI.Kiosco
                 }
                 else
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text);
+                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 }
             }
             else
@@ -319,6 +316,6 @@ namespace NORI.Kiosco
             ((Form)this).Close();
         }
 
-   
-}
+
+    }
 }

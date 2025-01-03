@@ -1,15 +1,10 @@
-﻿using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Windows.Forms;
-using DevExpress.Utils;
-using DevExpress.Utils.Menu;
-using DevExpress.XtraBars;
+﻿using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraLayout;
-using DevExpress.XtraLayout.Utils;
+using System;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace NORI
 {
@@ -72,9 +67,9 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
-        
+
+        }
     }
-}
 }

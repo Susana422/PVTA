@@ -1,23 +1,14 @@
-﻿using DevExpress.Utils.Menu;
-using DevExpress.Utils;
-using DevExpress.XtraBars.Ribbon;
-using DevExpress.XtraBars;
-using DevExpress.XtraEditors.Container;
-using DevExpress.XtraEditors.Controls;
+﻿using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraGrid;
+using NoriSDK;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using NoriSDK;
 
 namespace NORI
 {
@@ -106,7 +97,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message.ToString().Replace("Nori","DTM"));
+                Console.WriteLine(ex.Message.ToString().Replace("Nori", "DTM"));
             }
         }
 
@@ -125,7 +116,7 @@ namespace NORI
                             pbImagen.LoadImage(Articulo.ObtenerImagen(num));
                             lblComentario.Visible = false;
                             ((Control)(object)lblComentario).Text = Articulo.ObtenerComentario(num);
-                           ((Control)(object)lblNombre).Text = dataRow["nombre"].ToString();
+                            ((Control)(object)lblNombre).Text = dataRow["nombre"].ToString();
                         }
                     }
                     catch

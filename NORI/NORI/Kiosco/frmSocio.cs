@@ -1,14 +1,11 @@
-﻿using System;
+﻿using DevExpress.LookAndFeel;
+using DevExpress.XtraEditors;
+using NoriSDK;
+using System;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using DevExpress.LookAndFeel;
-using DevExpress.Utils;
-using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Repository;
-using NoriSDK;
 
 namespace NORI.Kiosco
 {
@@ -72,7 +69,7 @@ namespace NORI.Kiosco
             {
                 if (!documento.EstablecerSocio(socio))
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
+                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                     return;
                 }
                 socio.CopyProperties(socio_busqueda);
@@ -240,4 +237,4 @@ namespace NORI.Kiosco
             ((Form)this).DialogResult = DialogResult.OK;
         }
     }
-    }
+}

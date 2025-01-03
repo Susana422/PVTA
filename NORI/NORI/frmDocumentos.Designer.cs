@@ -48,7 +48,7 @@ namespace NORI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator1 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
+           // DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator1 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiGuardar = new DevExpress.XtraBars.BarButtonItem();
             this.bbiGuardarCerrar = new DevExpress.XtraBars.BarButtonItem();
@@ -89,6 +89,10 @@ namespace NORI
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageGeneral = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtFactVencidas = new DevExpress.XtraEditors.TextEdit();
+            this.txtCreditoDisponible = new DevExpress.XtraEditors.TextEdit();
             this.btnStat = new System.Windows.Forms.Button();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnCargaArticulos = new DevExpress.XtraEditors.SimpleButton();
@@ -292,6 +296,8 @@ namespace NORI
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPageGeneral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFactVencidas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreditoDisponible.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtArticulo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFechaVigencia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbAlmacenDestino.Properties)).BeginInit();
@@ -420,7 +426,7 @@ namespace NORI
             this.ribbonPageHerramientas});
             this.mainRibbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.mainRibbonControl.Size = new System.Drawing.Size(1146, 90);
+            this.mainRibbonControl.Size = new System.Drawing.Size(1198, 90);
             this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bbiGuardar
@@ -730,7 +736,7 @@ namespace NORI
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1146, 735);
+            this.layoutControl1.Size = new System.Drawing.Size(1198, 769);
             this.layoutControl1.TabIndex = 59;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -740,7 +746,7 @@ namespace NORI
             this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPageGeneral;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1122, 711);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1174, 745);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageGeneral,
@@ -751,6 +757,10 @@ namespace NORI
             // 
             // xtraTabPageGeneral
             // 
+            this.xtraTabPageGeneral.Controls.Add(this.labelControl3);
+            this.xtraTabPageGeneral.Controls.Add(this.labelControl2);
+            this.xtraTabPageGeneral.Controls.Add(this.txtFactVencidas);
+            this.xtraTabPageGeneral.Controls.Add(this.txtCreditoDisponible);
             this.xtraTabPageGeneral.Controls.Add(this.btnStat);
             this.xtraTabPageGeneral.Controls.Add(this.labelControl1);
             this.xtraTabPageGeneral.Controls.Add(this.btnCargaArticulos);
@@ -815,13 +825,51 @@ namespace NORI
             this.xtraTabPageGeneral.Controls.Add(this.gcPartidas);
             this.xtraTabPageGeneral.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageGeneral.Name = "xtraTabPageGeneral";
-            this.xtraTabPageGeneral.Size = new System.Drawing.Size(1116, 681);
+            this.xtraTabPageGeneral.Size = new System.Drawing.Size(1168, 715);
             this.xtraTabPageGeneral.Text = "General";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(18, 221);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(109, 17);
+            this.labelControl3.TabIndex = 173;
+            this.labelControl3.Text = "Facturas Vencidas";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(18, 187);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(111, 17);
+            this.labelControl2.TabIndex = 172;
+            this.labelControl2.Text = "Credito Disponible";
+            // 
+            // txtFactVencidas
+            // 
+            this.txtFactVencidas.Enabled = false;
+            this.txtFactVencidas.Location = new System.Drawing.Point(149, 214);
+            this.txtFactVencidas.MenuManager = this.mainRibbonControl;
+            this.txtFactVencidas.Name = "txtFactVencidas";
+            this.txtFactVencidas.Size = new System.Drawing.Size(223, 24);
+            this.txtFactVencidas.TabIndex = 171;
+            // 
+            // txtCreditoDisponible
+            // 
+            this.txtCreditoDisponible.Enabled = false;
+            this.txtCreditoDisponible.Location = new System.Drawing.Point(150, 184);
+            this.txtCreditoDisponible.MenuManager = this.mainRibbonControl;
+            this.txtCreditoDisponible.Name = "txtCreditoDisponible";
+            this.txtCreditoDisponible.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.txtCreditoDisponible.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtCreditoDisponible.Size = new System.Drawing.Size(222, 24);
+            this.txtCreditoDisponible.TabIndex = 170;
             // 
             // btnStat
             // 
             this.btnStat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnStat.Location = new System.Drawing.Point(1075, 8);
+            this.btnStat.Location = new System.Drawing.Point(1127, 8);
             this.btnStat.Name = "btnStat";
             this.btnStat.Size = new System.Drawing.Size(28, 29);
             this.btnStat.TabIndex = 169;
@@ -831,7 +879,7 @@ namespace NORI
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(788, 19);
+            this.labelControl1.Location = new System.Drawing.Point(840, 19);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(162, 17);
@@ -840,12 +888,12 @@ namespace NORI
             // 
             // btnCargaArticulos
             // 
-            this.btnCargaArticulos.Location = new System.Drawing.Point(623, 152);
+            this.btnCargaArticulos.Location = new System.Drawing.Point(382, 201);
             this.btnCargaArticulos.Margin = new System.Windows.Forms.Padding(2);
             this.btnCargaArticulos.Name = "btnCargaArticulos";
-            this.btnCargaArticulos.Size = new System.Drawing.Size(190, 31);
+            this.btnCargaArticulos.Size = new System.Drawing.Size(236, 31);
             this.btnCargaArticulos.TabIndex = 166;
-            this.btnCargaArticulos.Text = "Subir Articulos";
+            this.btnCargaArticulos.Text = "Subir Articulos XLSX";
             this.btnCargaArticulos.Click += new System.EventHandler(this.btnCargaArticulos_Click);
             // 
             // btnDescuentosEspeciales
@@ -862,10 +910,10 @@ namespace NORI
             // 
             this.txtArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtArticulo.Location = new System.Drawing.Point(55, 241);
+            this.txtArticulo.Location = new System.Drawing.Point(16, 285);
             this.txtArticulo.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtArticulo.Name = "txtArticulo";
-            this.txtArticulo.Size = new System.Drawing.Size(1047, 24);
+            this.txtArticulo.Size = new System.Drawing.Size(1138, 24);
             this.txtArticulo.TabIndex = 1;
             this.txtArticulo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtArticulo_KeyDown);
             this.txtArticulo.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtArticulo_PreviewKeyDown);
@@ -873,7 +921,7 @@ namespace NORI
             // txtFechaVigencia
             // 
             this.txtFechaVigencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFechaVigencia.Location = new System.Drawing.Point(960, 180);
+            this.txtFechaVigencia.Location = new System.Drawing.Point(1012, 180);
             this.txtFechaVigencia.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtFechaVigencia.Name = "txtFechaVigencia";
             this.txtFechaVigencia.Properties.DisplayFormat.FormatString = "d";
@@ -889,7 +937,7 @@ namespace NORI
             // lblFechaVigencia
             // 
             this.lblFechaVigencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFechaVigencia.Location = new System.Drawing.Point(844, 187);
+            this.lblFechaVigencia.Location = new System.Drawing.Point(896, 187);
             this.lblFechaVigencia.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblFechaVigencia.Name = "lblFechaVigencia";
             this.lblFechaVigencia.Size = new System.Drawing.Size(90, 17);
@@ -902,7 +950,7 @@ namespace NORI
             this.lblWeb.AutoSize = true;
             this.lblWeb.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblWeb.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblWeb.Location = new System.Drawing.Point(531, 122);
+            this.lblWeb.Location = new System.Drawing.Point(583, 122);
             this.lblWeb.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblWeb.Name = "lblWeb";
             this.lblWeb.Size = new System.Drawing.Size(32, 13);
@@ -916,7 +964,7 @@ namespace NORI
             this.lblEnviado.AutoSize = true;
             this.lblEnviado.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblEnviado.ForeColor = System.Drawing.Color.Orange;
-            this.lblEnviado.Location = new System.Drawing.Point(705, 24);
+            this.lblEnviado.Location = new System.Drawing.Point(757, 24);
             this.lblEnviado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblEnviado.Name = "lblEnviado";
             this.lblEnviado.Size = new System.Drawing.Size(51, 13);
@@ -956,7 +1004,7 @@ namespace NORI
             // cbAlmacenDestino
             // 
             this.cbAlmacenDestino.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbAlmacenDestino.Location = new System.Drawing.Point(608, 82);
+            this.cbAlmacenDestino.Location = new System.Drawing.Point(660, 82);
             this.cbAlmacenDestino.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbAlmacenDestino.MenuManager = this.mainRibbonControl;
             this.cbAlmacenDestino.Name = "cbAlmacenDestino";
@@ -974,7 +1022,7 @@ namespace NORI
             // cbAlmacenOrigen
             // 
             this.cbAlmacenOrigen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbAlmacenOrigen.Location = new System.Drawing.Point(608, 51);
+            this.cbAlmacenOrigen.Location = new System.Drawing.Point(660, 51);
             this.cbAlmacenOrigen.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbAlmacenOrigen.MenuManager = this.mainRibbonControl;
             this.cbAlmacenOrigen.Name = "cbAlmacenOrigen";
@@ -992,7 +1040,7 @@ namespace NORI
             // lblUtilidad
             // 
             this.lblUtilidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblUtilidad.Location = new System.Drawing.Point(426, 593);
+            this.lblUtilidad.Location = new System.Drawing.Point(426, 627);
             this.lblUtilidad.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblUtilidad.Name = "lblUtilidad";
             this.lblUtilidad.Size = new System.Drawing.Size(48, 17);
@@ -1003,7 +1051,7 @@ namespace NORI
             // 
             this.deFechaVencimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.deFechaVencimiento.EditValue = null;
-            this.deFechaVencimiento.Location = new System.Drawing.Point(961, 116);
+            this.deFechaVencimiento.Location = new System.Drawing.Point(1013, 116);
             this.deFechaVencimiento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.deFechaVencimiento.MenuManager = this.mainRibbonControl;
             this.deFechaVencimiento.Name = "deFechaVencimiento";
@@ -1043,7 +1091,7 @@ namespace NORI
             // 
             this.deFechaContabilizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.deFechaContabilizacion.EditValue = null;
-            this.deFechaContabilizacion.Location = new System.Drawing.Point(960, 81);
+            this.deFechaContabilizacion.Location = new System.Drawing.Point(1012, 81);
             this.deFechaContabilizacion.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.deFechaContabilizacion.MenuManager = this.mainRibbonControl;
             this.deFechaContabilizacion.Name = "deFechaContabilizacion";
@@ -1080,7 +1128,7 @@ namespace NORI
             // 
             this.txtNumeroDocumentoExterno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNumeroDocumentoExterno.Enabled = false;
-            this.txtNumeroDocumentoExterno.Location = new System.Drawing.Point(961, 12);
+            this.txtNumeroDocumentoExterno.Location = new System.Drawing.Point(1013, 12);
             this.txtNumeroDocumentoExterno.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtNumeroDocumentoExterno.Name = "txtNumeroDocumentoExterno";
             this.txtNumeroDocumentoExterno.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -1094,7 +1142,7 @@ namespace NORI
             // lblArticulos
             // 
             this.lblArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblArticulos.Location = new System.Drawing.Point(426, 616);
+            this.lblArticulos.Location = new System.Drawing.Point(426, 650);
             this.lblArticulos.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblArticulos.Name = "lblArticulos";
             this.lblArticulos.Size = new System.Drawing.Size(65, 17);
@@ -1104,7 +1152,7 @@ namespace NORI
             // lblPartidas
             // 
             this.lblPartidas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblPartidas.Location = new System.Drawing.Point(426, 639);
+            this.lblPartidas.Location = new System.Drawing.Point(426, 673);
             this.lblPartidas.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblPartidas.Name = "lblPartidas";
             this.lblPartidas.Size = new System.Drawing.Size(63, 17);
@@ -1114,7 +1162,7 @@ namespace NORI
             // lblReferencia
             // 
             this.lblReferencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblReferencia.Location = new System.Drawing.Point(15, 534);
+            this.lblReferencia.Location = new System.Drawing.Point(15, 568);
             this.lblReferencia.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblReferencia.Name = "lblReferencia";
             this.lblReferencia.Size = new System.Drawing.Size(64, 17);
@@ -1124,7 +1172,7 @@ namespace NORI
             // txtReferencia
             // 
             this.txtReferencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtReferencia.Location = new System.Drawing.Point(150, 531);
+            this.txtReferencia.Location = new System.Drawing.Point(150, 565);
             this.txtReferencia.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.Properties.MaxLength = 100;
@@ -1170,7 +1218,7 @@ namespace NORI
             this.lblImpreso.AutoSize = true;
             this.lblImpreso.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblImpreso.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblImpreso.Location = new System.Drawing.Point(625, 23);
+            this.lblImpreso.Location = new System.Drawing.Point(677, 23);
             this.lblImpreso.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblImpreso.Name = "lblImpreso";
             this.lblImpreso.Size = new System.Drawing.Size(55, 13);
@@ -1184,7 +1232,7 @@ namespace NORI
             this.lblCancelado.AutoSize = true;
             this.lblCancelado.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblCancelado.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblCancelado.Location = new System.Drawing.Point(531, 23);
+            this.lblCancelado.Location = new System.Drawing.Point(583, 23);
             this.lblCancelado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblCancelado.Name = "lblCancelado";
             this.lblCancelado.Size = new System.Drawing.Size(65, 13);
@@ -1207,11 +1255,11 @@ namespace NORI
             // 
             this.separatorControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl1.Location = new System.Drawing.Point(16, 210);
+            this.separatorControl1.Location = new System.Drawing.Point(24, 254);
             this.separatorControl1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.separatorControl1.Name = "separatorControl1";
             this.separatorControl1.Padding = new System.Windows.Forms.Padding(11);
-            this.separatorControl1.Size = new System.Drawing.Size(1087, 25);
+            this.separatorControl1.Size = new System.Drawing.Size(1139, 25);
             this.separatorControl1.TabIndex = 112;
             // 
             // cbMonedas
@@ -1246,7 +1294,7 @@ namespace NORI
             // 
             this.lblDescuento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDescuento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblDescuento.Location = new System.Drawing.Point(784, 534);
+            this.lblDescuento.Location = new System.Drawing.Point(836, 568);
             this.lblDescuento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblDescuento.Name = "lblDescuento";
             this.lblDescuento.Size = new System.Drawing.Size(63, 17);
@@ -1257,7 +1305,7 @@ namespace NORI
             // txtPorcentajeDescuento
             // 
             this.txtPorcentajeDescuento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPorcentajeDescuento.Location = new System.Drawing.Point(921, 531);
+            this.txtPorcentajeDescuento.Location = new System.Drawing.Point(973, 565);
             this.txtPorcentajeDescuento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtPorcentajeDescuento.MenuManager = this.mainRibbonControl;
             this.txtPorcentajeDescuento.Name = "txtPorcentajeDescuento";
@@ -1294,7 +1342,7 @@ namespace NORI
             // cbSeries
             // 
             this.cbSeries.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbSeries.Location = new System.Drawing.Point(846, 47);
+            this.cbSeries.Location = new System.Drawing.Point(898, 47);
             this.cbSeries.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbSeries.MenuManager = this.mainRibbonControl;
             this.cbSeries.Name = "cbSeries";
@@ -1310,7 +1358,7 @@ namespace NORI
             // lblNumeroDocumento
             // 
             this.lblNumeroDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNumeroDocumento.Location = new System.Drawing.Point(818, 54);
+            this.lblNumeroDocumento.Location = new System.Drawing.Point(870, 54);
             this.lblNumeroDocumento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblNumeroDocumento.Name = "lblNumeroDocumento";
             this.lblNumeroDocumento.Size = new System.Drawing.Size(17, 17);
@@ -1320,7 +1368,7 @@ namespace NORI
             // txtNumeroDocumento
             // 
             this.txtNumeroDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNumeroDocumento.Location = new System.Drawing.Point(960, 47);
+            this.txtNumeroDocumento.Location = new System.Drawing.Point(1012, 47);
             this.txtNumeroDocumento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtNumeroDocumento.Name = "txtNumeroDocumento";
             this.txtNumeroDocumento.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1332,7 +1380,7 @@ namespace NORI
             // txtFechaDocumento
             // 
             this.txtFechaDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFechaDocumento.Location = new System.Drawing.Point(961, 148);
+            this.txtFechaDocumento.Location = new System.Drawing.Point(1013, 148);
             this.txtFechaDocumento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtFechaDocumento.Name = "txtFechaDocumento";
             this.txtFechaDocumento.Properties.DisplayFormat.FormatString = "d";
@@ -1348,7 +1396,7 @@ namespace NORI
             // lblFechaDocumento
             // 
             this.lblFechaDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFechaDocumento.Location = new System.Drawing.Point(825, 158);
+            this.lblFechaDocumento.Location = new System.Drawing.Point(877, 158);
             this.lblFechaDocumento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblFechaDocumento.Name = "lblFechaDocumento";
             this.lblFechaDocumento.Size = new System.Drawing.Size(112, 17);
@@ -1358,7 +1406,7 @@ namespace NORI
             // lblFechaVencimiento
             // 
             this.lblFechaVencimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFechaVencimiento.Location = new System.Drawing.Point(822, 123);
+            this.lblFechaVencimiento.Location = new System.Drawing.Point(874, 123);
             this.lblFechaVencimiento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblFechaVencimiento.Name = "lblFechaVencimiento";
             this.lblFechaVencimiento.Size = new System.Drawing.Size(115, 17);
@@ -1369,7 +1417,7 @@ namespace NORI
             // lblFechaContabilizacion
             // 
             this.lblFechaContabilizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFechaContabilizacion.Location = new System.Drawing.Point(818, 87);
+            this.lblFechaContabilizacion.Location = new System.Drawing.Point(870, 87);
             this.lblFechaContabilizacion.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblFechaContabilizacion.Name = "lblFechaContabilizacion";
             this.lblFechaContabilizacion.Size = new System.Drawing.Size(132, 17);
@@ -1379,7 +1427,7 @@ namespace NORI
             // txtComentario
             // 
             this.txtComentario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtComentario.Location = new System.Drawing.Point(150, 565);
+            this.txtComentario.Location = new System.Drawing.Point(150, 599);
             this.txtComentario.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtComentario.MenuManager = this.mainRibbonControl;
             this.txtComentario.Name = "txtComentario";
@@ -1390,7 +1438,7 @@ namespace NORI
             // lblComentario
             // 
             this.lblComentario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblComentario.Location = new System.Drawing.Point(15, 568);
+            this.lblComentario.Location = new System.Drawing.Point(15, 602);
             this.lblComentario.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblComentario.Name = "lblComentario";
             this.lblComentario.Size = new System.Drawing.Size(74, 17);
@@ -1400,7 +1448,7 @@ namespace NORI
             // cbVendedores
             // 
             this.cbVendedores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbVendedores.Location = new System.Drawing.Point(150, 497);
+            this.cbVendedores.Location = new System.Drawing.Point(150, 531);
             this.cbVendedores.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbVendedores.MenuManager = this.mainRibbonControl;
             this.cbVendedores.Name = "cbVendedores";
@@ -1417,7 +1465,7 @@ namespace NORI
             // 
             this.lblVendedores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblVendedores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblVendedores.Location = new System.Drawing.Point(15, 500);
+            this.lblVendedores.Location = new System.Drawing.Point(15, 534);
             this.lblVendedores.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblVendedores.Name = "lblVendedores";
             this.lblVendedores.Size = new System.Drawing.Size(60, 17);
@@ -1427,7 +1475,7 @@ namespace NORI
             // lblImporteAplicado
             // 
             this.lblImporteAplicado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblImporteAplicado.Location = new System.Drawing.Point(784, 636);
+            this.lblImporteAplicado.Location = new System.Drawing.Point(836, 670);
             this.lblImporteAplicado.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblImporteAplicado.Name = "lblImporteAplicado";
             this.lblImporteAplicado.Size = new System.Drawing.Size(105, 17);
@@ -1437,7 +1485,7 @@ namespace NORI
             // txtImporteAplicado
             // 
             this.txtImporteAplicado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtImporteAplicado.Location = new System.Drawing.Point(921, 630);
+            this.txtImporteAplicado.Location = new System.Drawing.Point(973, 664);
             this.txtImporteAplicado.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtImporteAplicado.MenuManager = this.mainRibbonControl;
             this.txtImporteAplicado.Name = "txtImporteAplicado";
@@ -1455,7 +1503,7 @@ namespace NORI
             // lblTotal
             // 
             this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTotal.Location = new System.Drawing.Point(784, 602);
+            this.lblTotal.Location = new System.Drawing.Point(836, 636);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(129, 17);
@@ -1465,7 +1513,7 @@ namespace NORI
             // txtTotal
             // 
             this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotal.Location = new System.Drawing.Point(921, 596);
+            this.txtTotal.Location = new System.Drawing.Point(973, 630);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtTotal.MenuManager = this.mainRibbonControl;
             this.txtTotal.Name = "txtTotal";
@@ -1485,7 +1533,7 @@ namespace NORI
             // txtDescuento
             // 
             this.txtDescuento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescuento.Location = new System.Drawing.Point(994, 531);
+            this.txtDescuento.Location = new System.Drawing.Point(1046, 565);
             this.txtDescuento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtDescuento.MenuManager = this.mainRibbonControl;
             this.txtDescuento.Name = "txtDescuento";
@@ -1503,7 +1551,7 @@ namespace NORI
             // lblImpuesto
             // 
             this.lblImpuesto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblImpuesto.Location = new System.Drawing.Point(784, 568);
+            this.lblImpuesto.Location = new System.Drawing.Point(836, 602);
             this.lblImpuesto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblImpuesto.Name = "lblImpuesto";
             this.lblImpuesto.Size = new System.Drawing.Size(56, 17);
@@ -1513,7 +1561,7 @@ namespace NORI
             // txtImpuesto
             // 
             this.txtImpuesto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtImpuesto.Location = new System.Drawing.Point(921, 565);
+            this.txtImpuesto.Location = new System.Drawing.Point(973, 599);
             this.txtImpuesto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtImpuesto.MenuManager = this.mainRibbonControl;
             this.txtImpuesto.Name = "txtImpuesto";
@@ -1531,7 +1579,7 @@ namespace NORI
             // lblSubTotal
             // 
             this.lblSubTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSubTotal.Location = new System.Drawing.Point(784, 500);
+            this.lblSubTotal.Location = new System.Drawing.Point(836, 534);
             this.lblSubTotal.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblSubTotal.Name = "lblSubTotal";
             this.lblSubTotal.Size = new System.Drawing.Size(55, 17);
@@ -1541,7 +1589,7 @@ namespace NORI
             // txtSubTotal
             // 
             this.txtSubTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSubTotal.Location = new System.Drawing.Point(921, 494);
+            this.txtSubTotal.Location = new System.Drawing.Point(973, 528);
             this.txtSubTotal.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtSubTotal.MenuManager = this.mainRibbonControl;
             this.txtSubTotal.Name = "txtSubTotal";
@@ -1585,7 +1633,7 @@ namespace NORI
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcPartidas.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.gcPartidas.Location = new System.Drawing.Point(16, 283);
+            this.gcPartidas.Location = new System.Drawing.Point(16, 325);
             this.gcPartidas.MainView = this.gvPartidas;
             this.gcPartidas.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.gcPartidas.Name = "gcPartidas";
@@ -1597,7 +1645,7 @@ namespace NORI
             this.repositoryItemCalcEdit1,
             this.cbUnidadesMedida,
             this.cbAlmacenesDestino});
-            this.gcPartidas.Size = new System.Drawing.Size(1087, 195);
+            this.gcPartidas.Size = new System.Drawing.Size(1139, 187);
             this.gcPartidas.TabIndex = 1;
             this.gcPartidas.TabStop = false;
             this.gcPartidas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -2129,7 +2177,7 @@ namespace NORI
             this.xtraTabPageLogistica.Controls.Add(this.lblDireccionFacturacion);
             this.xtraTabPageLogistica.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageLogistica.Name = "xtraTabPageLogistica";
-            this.xtraTabPageLogistica.Size = new System.Drawing.Size(1116, 681);
+            this.xtraTabPageLogistica.Size = new System.Drawing.Size(1168, 715);
             this.xtraTabPageLogistica.Text = "Logística";
             // 
             // btnEditarDireccionOrigen
@@ -2273,7 +2321,7 @@ namespace NORI
             this.bcID.Name = "bcID";
             this.bcID.Padding = new System.Windows.Forms.Padding(14, 2, 14, 0);
             this.bcID.Size = new System.Drawing.Size(291, 78);
-            this.bcID.Symbology = code128Generator1;
+            //this.bcID.Symbology = code128Generator1;
             this.bcID.TabIndex = 147;
             // 
             // cbRutas
@@ -2653,7 +2701,7 @@ namespace NORI
             this.xtraTabPageFinanzas.Controls.Add(this.lblCondicionesPago);
             this.xtraTabPageFinanzas.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageFinanzas.Name = "xtraTabPageFinanzas";
-            this.xtraTabPageFinanzas.Size = new System.Drawing.Size(1116, 681);
+            this.xtraTabPageFinanzas.Size = new System.Drawing.Size(1168, 715);
             this.xtraTabPageFinanzas.Text = "Finanzas";
             // 
             // cbProyectos
@@ -2861,7 +2909,7 @@ namespace NORI
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.cbGenerarDocumentoElectronico);
             this.xtraTabPageDocumentoElectronico.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageDocumentoElectronico.Name = "xtraTabPageDocumentoElectronico";
-            this.xtraTabPageDocumentoElectronico.Size = new System.Drawing.Size(1116, 681);
+            this.xtraTabPageDocumentoElectronico.Size = new System.Drawing.Size(1168, 715);
             this.xtraTabPageDocumentoElectronico.Text = "Documento electrónico";
             // 
             // cbGlobal
@@ -3139,7 +3187,7 @@ namespace NORI
             this.xtraTabPageAnexos.Controls.Add(this.lbAnexos);
             this.xtraTabPageAnexos.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageAnexos.Name = "xtraTabPageAnexos";
-            this.xtraTabPageAnexos.Size = new System.Drawing.Size(1116, 681);
+            this.xtraTabPageAnexos.Size = new System.Drawing.Size(1168, 715);
             this.xtraTabPageAnexos.Text = "Anexos";
             // 
             // btnVisualizarAnexo
@@ -3179,7 +3227,7 @@ namespace NORI
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1146, 735);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1198, 769);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -3187,7 +3235,7 @@ namespace NORI
             this.layoutControlItem1.Control = this.xtraTabControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1126, 715);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1178, 749);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -3199,7 +3247,7 @@ namespace NORI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 825);
+            this.ClientSize = new System.Drawing.Size(1198, 859);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.mainRibbonControl);
             this.IconOptions.Image = global::componentResourceManager.Resources.logo;
@@ -3221,6 +3269,8 @@ namespace NORI
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPageGeneral.ResumeLayout(false);
             this.xtraTabPageGeneral.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFactVencidas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreditoDisponible.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtArticulo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFechaVigencia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbAlmacenDestino.Properties)).EndInit();
@@ -3315,5 +3365,9 @@ namespace NORI
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private ToolTip toolTip1;
         private Button btnStat;
+        private LabelControl labelControl3;
+        private LabelControl labelControl2;
+        private TextEdit txtFactVencidas;
+        private TextEdit txtCreditoDisponible;
     }
 }

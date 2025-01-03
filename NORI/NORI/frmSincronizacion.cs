@@ -1,23 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
-using DevExpress.Utils;
-using DevExpress.Utils.Menu;
-using DevExpress.XtraBars;
+﻿using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Container;
 using DevExpress.XtraGrid;
-using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraLayout;
-using DevExpress.XtraLayout.Utils;
 using Microsoft.VisualBasic;
 using NoriSAPB1SDK;
 using NoriSDK;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Windows.Forms;
 
 
 
@@ -112,7 +106,7 @@ namespace NORI
                 }
                 if (!conexion_sap && !solo_bajada)
                 {
-                    MessageBox.Show(NoriSAP.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
+                    MessageBox.Show(NoriSAP.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                 }
                 if (solo_bajada || conexion_sap)
                 {
@@ -128,7 +122,7 @@ namespace NORI
             {
                 Exception ex2 = ex3;
                 Exception ex = ex2;
-                MessageBox.Show("Ocurrió un problema al iniciar la sincronización. " + ex.Message.ToString().Replace("Nori","DTM"));
+                MessageBox.Show("Ocurrió un problema al iniciar la sincronización. " + ex.Message.ToString().Replace("Nori", "DTM"));
             }
         }
 
@@ -201,7 +195,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                lbLogs.Items.Add(ex.Message.ToString().Replace("Nori","DTM"));
+                lbLogs.Items.Add(ex.Message.ToString().Replace("Nori", "DTM"));
                 bw.RunWorkerAsync();
             }
         }
@@ -349,7 +343,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"));
             }
         }
 
@@ -381,7 +375,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"));
             }
         }
 
@@ -408,7 +402,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"));
             }
         }
     }

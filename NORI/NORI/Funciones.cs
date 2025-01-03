@@ -1,4 +1,17 @@
-﻿using System;
+﻿using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraPrinting;
+using DevExpress.XtraReports;
+using DevExpress.XtraReports.UI;
+using DevExpress.XtraSplashScreen;
+using DevExpress.XtraWaitForm;
+using NORI.API;
+using NORI.HuellaDigital;
+using NORI.HuellaDigital.Class;
+using NoriSDK;
+using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -13,23 +26,6 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.ExpressApp.Utils;
-using DevExpress.ExpressApp.Win.Editors;
-using DevExpress.XtraCharts.Designer.Native;
-using DevExpress.XtraGrid;
-using DevExpress.XtraGrid.Columns;
-using DevExpress.XtraGrid.Views.Base;
-using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraPrinting;
-using DevExpress.XtraReports;
-using DevExpress.XtraReports.UI;
-using DevExpress.XtraSplashScreen;
-using DevExpress.XtraWaitForm;
-using NORI.API;
-using NORI.HuellaDigital;
-using NORI.HuellaDigital.Class;
-using NoriSDK;
-
 
 namespace NORI
 {
@@ -37,7 +33,7 @@ namespace NORI
     {
         public static bool huella = false;
         public static bool cred = false;
-        public static  AppData Data;
+        public static AppData Data;
         public static bool Autenticar(Usuario usuario = null)
         {
             if (usuario.IsNullOrEmpty())
@@ -75,7 +71,7 @@ namespace NORI
 
         public static void Desbloquear()
         {
-           
+
             if (huella == true)
             {
                 //HuellaDigital.frmHuellaDigitalVerificar frmHuellaDigitalVerificar = new HuellaDigital.frmHuellaDigitalVerificar();
@@ -86,7 +82,8 @@ namespace NORI
                 //((Form)(object)frmHuellaDigitalVerificar).ControlBox = false;
                 //((Form)(object)frmHuellaDigitalVerificar).TopMost = true;
                 //frmHuellaDigital
-                if (Data ==null) {
+                if (Data == null)
+                {
                     Data = new AppData();
                     Data.OnChange += delegate { ExchangeData(false); };
                 }
@@ -98,10 +95,10 @@ namespace NORI
                     Funciones.huella = false;
                     Funciones.cred = false;
                     Desbloquear();
-                   
+
                 }
             }
-            if(cred == true)
+            if (cred == true)
             {
                 frmAutenticar frmAutenticar2 = new frmAutenticar();
                 frmAutenticar2.usuario = Program.Nori.UsuarioAutenticado;
@@ -114,7 +111,7 @@ namespace NORI
                 }
             }
         }
-        public static  void ExchangeData(bool read)
+        public static void ExchangeData(bool read)
         {
         }
 
@@ -284,7 +281,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message.ToString().Replace("Nori","DTM"));
+                Console.WriteLine(ex.Message.ToString().Replace("Nori", "DTM"));
                 return false;
             }
             finally
@@ -349,7 +346,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Impresión", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), "Impresión", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return false;
             }
             finally
@@ -421,7 +418,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Impresión", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), "Impresión", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return false;
             }
             finally
@@ -460,7 +457,7 @@ namespace NORI
                 }
                 return text;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return null;
             }
@@ -540,7 +537,8 @@ namespace NORI
 
         public static async Task<Image> CargarImagen(string ruta)
         {
-            if (ruta != null) {
+            if (ruta != null)
+            {
                 if (ruta.Length > 0)
                 {
                     try
@@ -557,7 +555,7 @@ namespace NORI
                     }
                 }
             }
-          
+
             return null;
         }
 
@@ -577,7 +575,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Timbrar documento", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), "Timbrar documento", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return false;
             }
             finally
@@ -597,7 +595,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Cancelar documento", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), "Cancelar documento", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return false;
             }
             finally
@@ -617,7 +615,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Cancelar documento", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), "Cancelar documento", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return "No fue posible cancelar el documento.";
             }
             finally
@@ -875,7 +873,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Timbrar pago", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), "Timbrar pago", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 return false;
             }
             finally
@@ -895,7 +893,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                return ex.Message.ToString().Replace("Nori","DTM");
+                return ex.Message.ToString().Replace("Nori", "DTM");
             }
             finally
             {
@@ -938,7 +936,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Facturar entregas", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), "Facturar entregas", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
             {
@@ -1001,7 +999,7 @@ namespace NORI
             catch (Exception ex2)
             {
                 Exception ex = ex2;
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Transmitir/Recibir", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), "Transmitir/Recibir", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
             {
@@ -1091,7 +1089,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), "Compilador DTM", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), "Compilador DTM", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
 
@@ -1106,7 +1104,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"));
             }
         }
 

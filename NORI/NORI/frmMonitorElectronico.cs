@@ -1,13 +1,5 @@
-﻿using DevExpress.XtraBars;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace NORI
 {
@@ -16,6 +8,17 @@ namespace NORI
         public frmMonitorElectronico()
         {
             InitializeComponent();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            DataTable dataTable = new DataTable();
+            gvMonitor.DataSource = dataTable;
+        }
+
+        private void dropDownButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

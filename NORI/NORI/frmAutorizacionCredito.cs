@@ -1,13 +1,10 @@
-﻿using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Windows.Forms;
-using DevExpress.Utils;
-using DevExpress.XtraBars;
-using DevExpress.XtraBars.Ribbon;
+﻿using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
 using Microsoft.VisualBasic;
 using NoriSDK;
+using System;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 
 namespace NORI
@@ -73,4 +70,4 @@ namespace NORI
             pbImagen.LoadImage(socio.imagen);
         }
     }
-    }
+}

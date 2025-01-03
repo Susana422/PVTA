@@ -1,24 +1,14 @@
-﻿using DevExpress.Utils.Menu;
-using DevExpress.Utils;
-using DevExpress.XtraBars.Ribbon;
-using DevExpress.XtraBars;
-using DevExpress.XtraEditors.Container;
-using DevExpress.XtraEditors.Controls;
+﻿using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraGrid;
+using NoriSDK;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using NoriSDK;
-using DevExpress.Utils.Win.Hook;
 
 namespace NORI
 {
@@ -108,7 +98,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message.ToString().Replace("Nori","DTM"));
+                Console.WriteLine(ex.Message.ToString().Replace("Nori", "DTM"));
             }
         }
 
@@ -118,31 +108,31 @@ namespace NORI
             {
                 //((Control)this).BeginInvoke((Delegate)(MethodInvoker)delegate
                 //{
-                    try
+                try
+                {
+                    if (((BaseView)gvResultados).RowCount > 0)
                     {
-                        if (((BaseView)gvResultados).RowCount > 0)
-                        {
-                            DataRow dataRow = ((ColumnView)gvResultados).GetDataRow(((ColumnView)gvResultados).GetSelectedRows()[0]);
-                            int num = int.Parse(dataRow[0].ToString());
-                            pbImagen.LoadImage(Articulo.ObtenerImagen(num));
-                            ((Control)(object)lblComentario).Text = Articulo.ObtenerComentario(id);
-                            ((Control)(object)lblNombre).Text = dataRow["nombre"].ToString();
-                        }
+                        DataRow dataRow = ((ColumnView)gvResultados).GetDataRow(((ColumnView)gvResultados).GetSelectedRows()[0]);
+                        int num = int.Parse(dataRow[0].ToString());
+                        pbImagen.LoadImage(Articulo.ObtenerImagen(num));
+                        ((Control)(object)lblComentario).Text = Articulo.ObtenerComentario(id);
+                        ((Control)(object)lblNombre).Text = dataRow["nombre"].ToString();
                     }
-                    catch(Exception ex1)
-                    {
-                    if (ex1.Message == "Índice fuera de los límites de la matriz.") 
+                }
+                catch (Exception ex1)
+                {
+                    if (ex1.Message == "Índice fuera de los límites de la matriz.")
                     {
                         DataRow dataRow = ((ColumnView)gvResultados).GetDataRow(0);
                         int num = int.Parse(dataRow[0].ToString());
                         pbImagen.LoadImage(Articulo.ObtenerImagen(num));
-                        lblComentario.Visible=false;
+                        lblComentario.Visible = false;
                         ((Control)(object)lblComentario).Text = Articulo.ObtenerComentario(num);
                         ((Control)(object)lblNombre).Text = dataRow["nombre"].ToString();
                     }
-        
+
                 }
-               // });
+                // });
             }
             catch (Exception ex)
             {

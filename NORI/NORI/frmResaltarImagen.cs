@@ -1,14 +1,6 @@
-﻿using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static NoriSDK.Articulo;
 
 namespace NORI
 {
@@ -29,9 +21,9 @@ namespace NORI
             }
             catch (Exception ex)
             {
-               MessageBox.Show("No es posible maximizar esta iamgen");
+                MessageBox.Show("No es posible maximizar esta iamgen");
             }
-         
+
         }
         private void SetUpEditors()
         {
@@ -39,7 +31,7 @@ namespace NORI
             {
 
                 pictureEdit1.Properties.ReadOnly = true;
-               // pictureEdit1.Properties.ShowMenu = false;
+                // pictureEdit1.Properties.ShowMenu = false;
                 pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Never;
                 pictureEdit1.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.True;
                 pictureEdit1.Properties.AllowScrollViaMouseDrag = true;
@@ -50,7 +42,7 @@ namespace NORI
             catch (Exception ex)
             {
             }
-        
+
 
         }
     }

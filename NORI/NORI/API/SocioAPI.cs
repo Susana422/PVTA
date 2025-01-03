@@ -1,8 +1,8 @@
-﻿using System;
+﻿using NoriSDK;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using NoriSDK;
 
 namespace NORI.API
 {

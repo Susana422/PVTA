@@ -1,25 +1,18 @@
-﻿using System;
+﻿using DevExpress.XtraBars;
+using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraLayout;
+using Microsoft.VisualBasic;
+using NoriSDK;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using DevExpress.Data;
-using DevExpress.Utils;
-using DevExpress.Utils.Menu;
-using DevExpress.XtraBars;
-using DevExpress.XtraBars.Ribbon;
-using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Container;
-using DevExpress.XtraEditors.Controls;
-using DevExpress.XtraEditors.Repository;
-using DevExpress.XtraGrid;
-using DevExpress.XtraGrid.Columns;
-using DevExpress.XtraGrid.Views.Base;
-using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraLayout;
-using DevExpress.XtraLayout.Utils;
-using Microsoft.VisualBasic;
-using NoriSDK;
 
 namespace NORI.Restaurante
 {
@@ -230,7 +223,7 @@ namespace NORI.Restaurante
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -300,7 +293,7 @@ namespace NORI.Restaurante
                         }
                         if (!documento.EstablecerSocio(socio))
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
+                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                             return;
                         }
                         Calcular();
@@ -341,7 +334,7 @@ namespace NORI.Restaurante
                     break;
                 }
             }
-            while (MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
+            while (MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
             ((Control)(object)txtArticulo).Text = string.Empty;
             ((Control)(object)txtArticulo).Focus();
         }
@@ -351,6 +344,6 @@ namespace NORI.Restaurante
             CargarGruposArticulos();
         }
 
-    
-}
+
+    }
 }

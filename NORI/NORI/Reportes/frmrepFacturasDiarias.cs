@@ -1,18 +1,7 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
-using DevExpress.DashboardCommon.DataProcessing;
-using DevExpress.Pdf;
-using DevExpress.XtraBars;
-using NoriSDK;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NORI.Reportes
@@ -23,8 +12,8 @@ namespace NORI.Reportes
         public static string SERVER = Settings.Settings.Default.SERVIDOR;
         public static string BD = Settings.Settings.Default.BD;
         public static string USERSQL = Settings.Settings.Default.USERBD;
-        public static string PASSSQL= Settings.Settings.Default.PASSBD;
-        
+        public static string PASSSQL = Settings.Settings.Default.PASSBD;
+
 
         public frmrepFacturasDiarias()
         {
@@ -60,9 +49,9 @@ namespace NORI.Reportes
             {
                 MessageBox.Show("No fue posible abrir este archivo");
             }
-       
+
         }
-        public string  addFileTemp() 
+        public string addFileTemp()
         {
             string ruta = string.Empty;
             try

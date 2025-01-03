@@ -1,18 +1,11 @@
-﻿using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Windows.Forms;
-using DevExpress.Utils;
-using DevExpress.Utils.Menu;
-using DevExpress.XtraBars;
-using DevExpress.XtraBars.Ribbon;
+﻿using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Mask;
-using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraLayout;
-using DevExpress.XtraLayout.Utils;
 using Microsoft.VisualBasic;
 using NoriSDK;
+using System;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 
 

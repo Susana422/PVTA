@@ -1,20 +1,14 @@
 ﻿using DevExpress.LookAndFeel;
-using DevExpress.Utils;
-using DevExpress.Utils.Menu;
 using DevExpress.XtraBars;
-using DevExpress.XtraBars.Controls;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraLayout;
-using DevExpress.XtraLayout.Utils;
 using NoriSDK;
 using System;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -110,7 +104,7 @@ namespace NORI
         {
             if (!Program.Nori.Conectar())
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), Application.ProductName);
+                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Application.ProductName);
                 return;
             }
             Usuario usuario = new Usuario();
@@ -169,7 +163,7 @@ namespace NORI
             {
                 ((Control)(object)txtContraseña).Text = string.Empty;
                 ((Control)(object)txtContraseña).Focus();
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM").ToString().Replace("Nori","DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM").ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
         }
 
@@ -224,8 +218,8 @@ namespace NORI
             ((Form)this).Activate();
         }
 
-        
-    
+
+
     }
 
 }

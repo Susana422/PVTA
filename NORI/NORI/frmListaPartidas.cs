@@ -1,27 +1,17 @@
-﻿using System;
+﻿using DevExpress.XtraBars;
+using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraLayout;
+using NoriSDK;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using DevExpress.Data;
-using DevExpress.Utils;
-using DevExpress.Utils.Menu;
-using DevExpress.XtraBars;
-using DevExpress.XtraBars.Controls;
-using DevExpress.XtraBars.Ribbon;
-using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Container;
-using DevExpress.XtraEditors.Controls;
-using DevExpress.XtraEditors.Repository;
-using DevExpress.XtraGrid;
-using DevExpress.XtraGrid.Views.Base;
-using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraLayout;
-using DevExpress.XtraLayout.Utils;
-using NoriSAPB1SDK;
-using NoriSDK;
 
 namespace NORI
 {
@@ -170,26 +160,29 @@ namespace NORI
             {
                 string text = ((Program.Nori.Configuracion.seleccionar_sucursal && Program.Nori.UsuarioAutenticado.rol != 'A') ? $"AND documentos.serie_id in (select id from series where almacen_id = {Program.Nori.UsuarioAutenticado.almacen_id})" : string.Empty);
                 string text2 = (cbWeb.Checked ? "AND documentos.web = 1" : string.Empty);
-                var xx= cbVendedores.EditValue;
+                var xx = cbVendedores.EditValue;
                 string text3 = string.Empty;
-                if (cbVendedores.EditValue != null) {
-                   text3 = (((int)cbVendedores.EditValue == 0) ? string.Empty : $"AND documentos.vendedor_id = {(int)cbVendedores.EditValue}");
+                if (cbVendedores.EditValue != null)
+                {
+                    text3 = (((int)cbVendedores.EditValue == 0) ? string.Empty : $"AND documentos.vendedor_id = {(int)cbVendedores.EditValue}");
                 }
 
                 string text4 = string.Empty;
                 try
                 {
-                    if (cbSocios.EditValue != null) {
+                    if (cbSocios.EditValue != null)
+                    {
                         text4 = (((int)cbSocios.EditValue == 0) ? string.Empty : string.Format("AND (documentos.socio_id = {0} OR socios.socio_eventual_id = {0})", (int)cbSocios.EditValue));
                     }
-                   
+
                 }
                 catch
                 {
                 }
                 string empty = string.Empty;
                 char c = 'A';
-                if (cbEstados.EditValue != null) {
+                if (cbEstados.EditValue != null)
+                {
                     c = (char)cbEstados.EditValue;
                 }
                 char c2 = c;
@@ -229,7 +222,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -258,7 +251,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -312,7 +305,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -403,7 +396,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -452,7 +445,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -466,7 +459,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 

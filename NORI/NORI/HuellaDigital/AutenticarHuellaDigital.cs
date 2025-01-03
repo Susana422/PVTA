@@ -1,17 +1,9 @@
-﻿using DevExpress.XtraBars;
-using NORI.HuellaDigital.Class;
+﻿using NORI.HuellaDigital.Class;
 using NoriSDK;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NORI.HuellaDigital
@@ -59,7 +51,7 @@ namespace NORI.HuellaDigital
             var huellas = NoriSDK.HuellaDigital.HuellaDigitales();
             foreach (var x in huellas)
             {
-                if (x.usuario_id == usuario.id) 
+                if (x.usuario_id == usuario.id)
                 {
                     DPFP.Template template = DeserializeTemplate(x.huella);
                     ver.Verify(FeatureSet, template, ref res);

@@ -1,13 +1,10 @@
-﻿using System;
+﻿using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraEditors;
+using NoriSDK;
+using System;
 using System.ComponentModel;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using DevExpress.Utils;
-using DevExpress.XtraBars.Ribbon;
-using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Repository;
-using NoriSDK;
 
 namespace NORI.Kiosco
 {
@@ -138,7 +135,7 @@ namespace NORI.Kiosco
                         }
                         else
                         {
-                            MessageBox.Show("Ocurrió un error al tratar de hacer la factura: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            MessageBox.Show("Ocurrió un error al tratar de hacer la factura: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         }
                     }
                     else
@@ -153,7 +150,7 @@ namespace NORI.Kiosco
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
             {
@@ -190,4 +187,4 @@ namespace NORI.Kiosco
             Funciones.AbrirTecladoTactil();
         }
     }
-    }
+}

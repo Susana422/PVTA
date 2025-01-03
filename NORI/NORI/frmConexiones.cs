@@ -1,19 +1,14 @@
-﻿using System;
+﻿using DevExpress.XtraBars;
+using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraLayout;
+using System;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using DevExpress.Utils;
-using DevExpress.Utils.Menu;
-using DevExpress.XtraBars;
-using DevExpress.XtraBars.Ribbon;
-using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Controls;
-using DevExpress.XtraEditors.Repository;
-using DevExpress.XtraLayout;
-using DevExpress.XtraLayout.Utils;
 
 namespace NORI
 {
@@ -111,7 +106,7 @@ namespace NORI
 
         private void CargarConexiones()
         {
-            conexiones =new ConnectionStringSettingsCollection();
+            conexiones = new ConnectionStringSettingsCollection();
             ConnectionStringSettings newConnection = new ConnectionStringSettings("LOCAL", "Data Source=DESKTOP-D5V63NE\\SQLEXPRESS;Initial Catalog=NORICUAITITLAN;Integrated Security=False;User ID=sa;Password=123", "System.Data.SqlClient");
 
             //// Agregarla a la colección
@@ -162,7 +157,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -196,7 +191,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -217,7 +212,7 @@ namespace NORI
             Inicializar();
         }
 
-    
+
     }
 
 }

@@ -30,7 +30,7 @@
         {
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gvMonitor = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
@@ -38,9 +38,8 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvMonitor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
@@ -68,20 +67,20 @@
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1115, 29);
             // 
-            // gridControl1
+            // gvMonitor
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 259);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.ribbon;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1091, 418);
-            this.gridControl1.TabIndex = 2;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvMonitor.Location = new System.Drawing.Point(12, 259);
+            this.gvMonitor.MainView = this.gridView1;
+            this.gvMonitor.MenuManager = this.ribbon;
+            this.gvMonitor.Name = "gvMonitor";
+            this.gvMonitor.Size = new System.Drawing.Size(1091, 418);
+            this.gvMonitor.TabIndex = 2;
+            this.gvMonitor.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.gvMonitor;
             this.gridView1.Name = "gridView1";
             // 
             // dateEdit1
@@ -117,6 +116,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(156, 31);
             this.simpleButton1.TabIndex = 5;
             this.simpleButton1.Text = "Buscar";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // labelControl1
             // 
@@ -142,28 +142,18 @@
             this.labelControl3.TabIndex = 9;
             this.labelControl3.Text = "Estatus";
             // 
-            // dropDownButton1
-            // 
-            this.dropDownButton1.Location = new System.Drawing.Point(736, 137);
-            this.dropDownButton1.MenuManager = this.ribbon;
-            this.dropDownButton1.Name = "dropDownButton1";
-            this.dropDownButton1.Size = new System.Drawing.Size(161, 26);
-            this.dropDownButton1.TabIndex = 10;
-            this.dropDownButton1.Text = "Todos los Estatus";
-            // 
             // frmMonitorElectronico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1115, 712);
-            this.Controls.Add(this.dropDownButton1);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.dateEdit2);
             this.Controls.Add(this.dateEdit1);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.gvMonitor);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IconOptions.Image = global::componentResourceManager.Resources.logo;
@@ -173,7 +163,7 @@
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Monitor Electronico";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvMonitor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
@@ -188,7 +178,7 @@
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl gvMonitor;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.DateEdit dateEdit1;
         private DevExpress.XtraEditors.DateEdit dateEdit2;
@@ -196,6 +186,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.DropDownButton dropDownButton1;
+        
     }
 }

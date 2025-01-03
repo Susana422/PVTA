@@ -1,11 +1,8 @@
 ﻿using NoriSAPB1SDK;
 using NoriSDK;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NORI
@@ -21,7 +18,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM") + NoriSAP.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM") + NoriSAP.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                 return new DataTable();
             }
         }
@@ -39,7 +36,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM") + NoriSAP.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM") + NoriSAP.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                 return 0m;
             }
         }
@@ -57,7 +54,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM") + NoriSAP.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"));
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM") + NoriSAP.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                 return false;
             }
         }

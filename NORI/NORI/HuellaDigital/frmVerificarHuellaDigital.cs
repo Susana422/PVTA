@@ -1,14 +1,5 @@
-﻿using DevExpress.XtraBars;
-using NORI.HuellaDigital.Class;
+﻿using NORI.HuellaDigital.Class;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace NORI.HuellaDigital
 {
@@ -23,7 +14,7 @@ namespace NORI.HuellaDigital
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            this.Hide();   
+            this.Hide();
         }
         public void OnComplete(object Control, DPFP.FeatureSet FeatureSet, ref DPFP.Gui.EventHandlerStatus Status)
         {

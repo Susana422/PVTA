@@ -1,22 +1,16 @@
-﻿using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.IO;
-using System.Windows.Forms;
-using DevExpress.Data;
-using DevExpress.Utils;
-using DevExpress.Utils.Menu;
-using DevExpress.XtraBars;
-using DevExpress.XtraBars.Docking2010.Base;
+﻿using DevExpress.XtraBars;
 using DevExpress.XtraBars.Navigation;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraDataLayout;
 using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraLayout;
-using DevExpress.XtraLayout.Utils;
 using NoriSDK;
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 
 namespace NORI
 {
@@ -217,7 +211,7 @@ namespace NORI
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 return false;
             }
         }
@@ -241,7 +235,7 @@ namespace NORI
             }
         }
 
-      
+
     }
 
 }

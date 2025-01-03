@@ -1,4 +1,19 @@
-﻿using System;
+﻿using DevExpress.XtraBars;
+using DevExpress.XtraBars.Docking;
+using DevExpress.XtraBars.Docking2010;
+using DevExpress.XtraBars.Docking2010.Views.Tabbed;
+using DevExpress.XtraBars.Navigation;
+using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraSplashScreen;
+using DevExpress.XtraWaitForm;
+using NetsuiteLibrary.SuiteTalk_Helpers;
+using NORI.Reportes;
+using NoriCFDI;
+using NoriSAPB1SDK;
+using NoriSDK;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -7,27 +22,6 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.Utils;
-using DevExpress.XtraBars;
-using DevExpress.XtraBars.Docking;
-using DevExpress.XtraBars.Docking2010;
-using DevExpress.XtraBars.Docking2010.Base;
-using DevExpress.XtraBars.Docking2010.Views;
-using DevExpress.XtraBars.Docking2010.Views.Tabbed;
-using DevExpress.XtraBars.Navigation;
-using DevExpress.XtraBars.Ribbon;
-using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Repository;
-using DevExpress.XtraReports.UI;
-using DevExpress.XtraRichEdit.Commands;
-using DevExpress.XtraSplashScreen;
-using DevExpress.XtraWaitForm;
-using NetsuiteLibrary;
-using NetsuiteLibrary.SuiteTalk_Helpers;
-using NORI.Reportes;
-using NoriCFDI;
-using NoriSAPB1SDK;
-using NoriSDK;
 
 namespace NORI
 {
@@ -103,10 +97,6 @@ namespace NORI
 
         private AccordionControlElement accordionControlElementAlmacenes;
 
-        private AccordionControlElement accordionControlElementInventarioListasPrecios;
-
-        private AccordionControlElement accordionControlElementListasPrecios;
-
         private AccordionControlElement accordionControlElementFabricantes;
 
         private AccordionControlElement accordionControlElementDepartamentos;
@@ -165,8 +155,6 @@ namespace NORI
 
         private AccordionControlElement accordionControlElementInformes;
 
-        private AccordionControlElement accordionControKioscoFacturacion;
-
         private AccordionControlElement accordionControlElement1;
 
         private BarButtonItem bbiEntradasAbiertas;
@@ -177,53 +165,19 @@ namespace NORI
 
         private BarButtonItem bbiEtiquetas;
 
-        private AccordionControlElement accordionControlElementRestaurante;
-
-        private AccordionControlElement accordionControlElementRestauranteMesas;
-
-        private AccordionControlElement accordionControlElementCompras;
-
-        private AccordionControlElement accordionControlElementEntradasMercancias;
-
-        private AccordionControlElement accordionControlElementExtras;
-
         private AccordionControlElement accordionControlElementPagos;
-
-        private AccordionControlElement accordionControlElementOrdenCompra;
 
         private AccordionControlElement accordionControlElementEntregaMercancia;
 
         private BarButtonItem bbiTransmitirRecibir;
 
-        private AccordionControlElement accordionControlElementOperacionesStock;
-
-        private AccordionControlElement accordionControlElementSolicitudTraslado;
-
-        private AccordionControlElement accordionControlElementTransferenciaStock;
-
-        private AccordionControlElement accordionControlElementCotizacionCompra;
-
         private BarButtonItem bbiDiseñadorEscritorios;
-
-        private AccordionControlElement accordionControlElementDevolucionMercancias;
 
         private AccordionControlElement accordionControlElementCierreDia;
 
-        private AccordionControlElement accordionControlElementAjusteEntrada;
-
-        private AccordionControlElement accordionControlElementAjusteSalida;
-
         private BarListItem bbiSucursales;
 
-        private AccordionControlElement accordionControlElementAnticiposClientes;
-
         private AccordionControlElement accordionControlElementActivosFijos;
-
-        private AccordionControlElement accordionControlElementInventarioFisico;
-
-        private AccordionControlElement accordionControlElementEntradaMercancias;
-
-        private AccordionControlElement accordionControlElementListaPedidosWeb;
 
         public frmPrincipal()
         {
@@ -246,7 +200,7 @@ namespace NORI
             }
             if (Program.Nori.UsuarioAutenticado.usuario == "admin")
             {
-                ((AccordionControlElementBase)accordionControlElementRestaurante).Visible = true;
+                //((AccordionControlElementBase)accordionControlElementRestaurante).Visible = true;
             }
             switch (Program.Nori.UsuarioAutenticado.rol)
             {
@@ -254,7 +208,7 @@ namespace NORI
                     ((AccordionControlElementBase)accordionControlElementGestion).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementGestionInventario).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementInventario).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementCompras).Visible = false;
+                    //((AccordionControlElementBase)accordionControlElementCompras).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementCotizaciones).Visible = false;
                     //((AccordionControlElementBase)accordionControlElementEntregas).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementPedidos).Visible = false;
@@ -263,15 +217,15 @@ namespace NORI
                     ((AccordionControlElementBase)accordionControlElementNotasCredito).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementNotasDebito).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementSocios).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementExtras).Visible = false;
+                    //((AccordionControlElementBase)accordionControlElementExtras).Visible = false;
                     ribbonPageHerramientas.Visible = false;
                     break;
                 case 'V':
                     ((AccordionControlElementBase)accordionControlElementGestion).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementInventarioListasPrecios).Visible = false;
+                    //((AccordionControlElementBase)accordionControlElementInventarioListasPrecios).Visible = false;
                     ribbonPageGroupHerramientas.Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementCompras).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementExtras).Visible = false;
+                    //((AccordionControlElementBase)accordionControlElementCompras).Visible = false;
+                    //((AccordionControlElementBase)accordionControlElementExtras).Visible = false;
                     if (Program.Nori.UsuarioAutenticado.VendedorForaneo())
                     {
                         //((AccordionControlElementBase)accordionControlElementEntregas).Visible = false;
@@ -285,29 +239,29 @@ namespace NORI
                     break;
                 case 'L':
                     ((AccordionControlElementBase)accordionControlElementGestion).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementInventarioListasPrecios).Visible = false;
+                    //((AccordionControlElementBase)accordionControlElementInventarioListasPrecios).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementPagos).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementMonedas).Visible = false;
                     ribbonPageGroupHerramientas.Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementCompras).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementExtras).Visible = false;
+                    //((AccordionControlElementBase)accordionControlElementCompras).Visible = false;
+                    //((AccordionControlElementBase)accordionControlElementExtras).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementFacturas).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementNotasCredito).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementNotasDebito).Visible = false;
-                   // ((AccordionControlElementBase)accordionControlElementPuntoVenta).Visible = false;
+                    // ((AccordionControlElementBase)accordionControlElementPuntoVenta).Visible = false;
                     break;
                 case 'S':
                     ((AccordionControlElementBase)accordionControlElementGestionInventario).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementInventarioListasPrecios).Visible = false;
+                    //((AccordionControlElementBase)accordionControlElementInventarioListasPrecios).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementGeneral).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementMonedas).Visible = false;
                     ribbonPageGroupHerramientas.Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementExtras).Visible = false;
+                    //((AccordionControlElementBase)accordionControlElementExtras).Visible = false;
                     break;
             }
             if (Program.Nori.Empresa.rfc == "DDI061212TX1")
             {
-                ((AccordionControlElementBase)accordionControlElementCompras).Visible = false;
+                //((AccordionControlElementBase)accordionControlElementCompras).Visible = false;
             }
             try
             {
@@ -395,7 +349,7 @@ namespace NORI
             catch (Exception ex2)
             {
                 Exception ex = ex2;
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"));
             }
         }
 
@@ -427,7 +381,7 @@ namespace NORI
             catch (Exception ex2)
             {
                 Exception ex = ex2;
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -938,7 +892,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"));
             }
         }
 
@@ -1022,7 +976,7 @@ namespace NORI
 
         private void accordionControlElement5_Click(object sender, EventArgs e)
         {
-            
+
             frmrepCorteCaja frmrepCorteCaja = new frmrepCorteCaja();
             ((Control)(object)frmrepCorteCaja).Show();
         }
@@ -1041,19 +995,19 @@ namespace NORI
 
         private void accNC_Click(object sender, EventArgs e)
         {
-            frmrepNC frmrepNC= new frmrepNC();
+            frmrepNC frmrepNC = new frmrepNC();
             ((Control)(object)frmrepNC).Show();
         }
 
         private void accordionControlElement10_Click(object sender, EventArgs e)
         {
-            frmrepFacCanceladas frmrepFacCanceladas= new frmrepFacCanceladas();
+            frmrepFacCanceladas frmrepFacCanceladas = new frmrepFacCanceladas();
             ((Control)(object)frmrepFacCanceladas).Show();
         }
 
         private void accordionControlElement11_Click(object sender, EventArgs e)
         {
-            frmrepPartidasAbiertas frmrepPartidasAbiertas= new frmrepPartidasAbiertas();
+            frmrepPartidasAbiertas frmrepPartidasAbiertas = new frmrepPartidasAbiertas();
             ((Control)(object)frmrepPartidasAbiertas).Show();
         }
 
@@ -1065,7 +1019,7 @@ namespace NORI
 
         private void accordionControlElement13_Click(object sender, EventArgs e)
         {
-            frmrepVentas frmrepVentas= new frmrepVentas();
+            frmrepVentas frmrepVentas = new frmrepVentas();
             ((Control)(object)frmrepVentas).Show();
         }
 

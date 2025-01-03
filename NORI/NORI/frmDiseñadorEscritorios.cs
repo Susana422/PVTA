@@ -1,19 +1,14 @@
-﻿using System.ComponentModel;
-using System.Drawing;
-using System.Windows.Forms;
-using DevExpress.DashboardWin;
+﻿using DevExpress.DashboardWin;
 using DevExpress.DashboardWin.Bars;
 using DevExpress.DashboardWin.Native;
-using DevExpress.Utils;
-using DevExpress.Utils.Drawing;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
-using DevExpress.XtraBars.Ribbon.Gallery;
-using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraRichEdit.Design;
 using DevExpress.XtraRichEdit.Forms.Design;
 using DevExpress.XtraRichEdit.UI;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 
 namespace NORI

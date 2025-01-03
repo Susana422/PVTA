@@ -1,30 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.Data;
-using DevExpress.Utils;
-using DevExpress.Utils.Menu;
-using DevExpress.XtraBars;
+﻿using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Container;
-using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraLayout;
-using DevExpress.XtraLayout.Utils;
 using DevExpress.XtraTab;
 using Microsoft.VisualBasic;
 using NoriSDK;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 
 
@@ -423,7 +416,8 @@ namespace NORI
                             return documento.Agregar();
                         }
                     }
-                    else {
+                    else
+                    {
                         MessageBox.Show("La cantidad entregada no coincide con la del documento");
 
                     }
@@ -438,18 +432,20 @@ namespace NORI
                 return false;
             }
         }
-        private bool VerificarEntrega() 
+        private bool VerificarEntrega()
         {
             bool sw = false;
             try
             {
                 var data = documento.partidas;
-                foreach (var row in data.ToList()) {
+                foreach (var row in data.ToList())
+                {
                     if (row.cantidad == row.cantidad_pendiente)
-                    { 
-                        sw= true;
+                    {
+                        sw = true;
                     }
-                    else{
+                    else
+                    {
                         sw = false;
                         break;
                     }
@@ -536,7 +532,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
             {
@@ -629,12 +625,12 @@ namespace NORI
                     Calcular();
                     break;
                 }
-                while (MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
+                while (MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
             }
             catch (Exception ex2)
             {
                 Exception ex = ex2;
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
             {
@@ -684,7 +680,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -721,7 +717,7 @@ namespace NORI
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), Text);
+                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
             }
         }
     }

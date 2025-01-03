@@ -1,22 +1,15 @@
-﻿using System;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
-using DevExpress.Data;
-using DevExpress.Utils;
-using DevExpress.Utils.Menu;
-using DevExpress.XtraBars;
+﻿using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraDataLayout;
 using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Controls;
-using DevExpress.XtraEditors.Mask;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraLayout;
-using DevExpress.XtraLayout.Utils;
 using NetsuiteLibrary.SuiteTalk_Helpers;
 using NoriSDK;
+using System;
+using System.ComponentModel;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace NORI
 {
@@ -150,7 +143,7 @@ namespace NORI
                 }
                 else
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text);
+                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 }
             }
             else
@@ -299,7 +292,7 @@ namespace NORI
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori","DTM"));
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"));
                 return false;
             }
         }
@@ -341,7 +334,7 @@ namespace NORI
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori","DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 return false;
             }
         }
@@ -359,7 +352,7 @@ namespace NORI
         {
             if (Program.Nori.Estacion.lector_huella && MessageBox.Show("¿Desea agregar una huella digital?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-               // NORI.HuellaDigital.frmHuellaDigitalAgregar frmHuellaDigitalAgregar = new NORI.HuellaDigital.frmHuellaDigitalAgregar();
+                // NORI.HuellaDigital.frmHuellaDigitalAgregar frmHuellaDigitalAgregar = new NORI.HuellaDigital.frmHuellaDigitalAgregar();
                 //DialogResult dialogResult = ((Form)(object)frmHuellaDigitalAgregar).ShowDialog();
                 //if (dialogResult == DialogResult.OK)
                 //{
@@ -377,7 +370,7 @@ namespace NORI
         {
         }
 
-   
+
     }
 
 }

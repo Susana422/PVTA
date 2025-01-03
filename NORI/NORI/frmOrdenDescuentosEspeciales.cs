@@ -1,18 +1,17 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Windows.Forms;
-using DevExpress.Utils.Behaviors;
+﻿using DevExpress.Utils.Behaviors;
 using DevExpress.Utils.DragDrop;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
-using DevExpress.XtraGrid.Extensions;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using NoriSDK;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace NORI
 {
@@ -138,4 +137,4 @@ namespace NORI
         }
 
     }
-    }
+}

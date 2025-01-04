@@ -1,8 +1,10 @@
-﻿using NORI.HuellaDigital.Class;
+﻿using DevExpress.XtraEditors;
+using NORI.HuellaDigital.Class;
 using NoriSDK;
 using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -17,7 +19,7 @@ namespace NORI
             InitializeComponent();
             Data = data;
             CargarConexiones();
-
+     
         }
         private void CargarConexiones()
         {

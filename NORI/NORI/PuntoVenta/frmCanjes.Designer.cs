@@ -282,7 +282,7 @@ namespace NORI.PuntoVenta
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmCanjes";

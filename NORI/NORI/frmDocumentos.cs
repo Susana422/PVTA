@@ -24,6 +24,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Media.TextFormatting;
 using DataTable = System.Data.DataTable;
 using Task = System.Threading.Tasks.Task;
 
@@ -316,8 +317,6 @@ namespace NORI
 
         private LabelControl lblPersonasContacto;
 
-        private SimpleButton btnGenerarPuntos;
-
         private SimpleButton btnReferencias;
 
         private SimpleButton btnCancelar;
@@ -382,10 +381,6 @@ namespace NORI
 
         private Button btnCancelacionMasiva;
 
-        private LookUpEdit cbMonederos;
-
-        private HyperlinkLabelControl lblMonederos;
-
         private DateEdit deFechaVencimiento;
 
         private RepositoryItemCalcEdit repositoryItemCalcEdit1;
@@ -436,15 +431,11 @@ namespace NORI
 
         private LabelControl lblRFC;
 
-        private SimpleButton btnAnticipos;
-
         private RepositoryItemLookUpEdit cbAlmacenesDestino;
 
         private GridColumn gridColumnNumeroPedimento;
 
         private HyperlinkLabelControl lblClase;
-
-        private BarCodeControl bcID;
 
         private SimpleButton btnGenerarSustitucion;
 
@@ -455,8 +446,6 @@ namespace NORI
         private LabelControl lblAlmacenDestino;
 
         private LabelControl lblAlmacenOrigen;
-
-        private Button btnGenerarTransferenciaStock;
 
         private LookUpEdit cbRemolques;
 
@@ -507,11 +496,13 @@ namespace NORI
 
         public Socio socio { get; set; } = new Socio();
         private string mensaje = string.Empty;
+        public bool Autorizar { get; set; } = false;
 
-        public frmDocumentos(string clase, int id = 0)
+        public frmDocumentos(string clase, int id = 0,bool autol =false)
         {
             InitializeComponent();
             this.MetodoDinamico();
+            this.Autorizar = autol;
             openFileDialog1.Filter = "Excel Worksheets|*.xls";
             EventoControl.SuscribirEventos(this);
             documento.clase = clase;
@@ -522,16 +513,29 @@ namespace NORI
             if (!documento.clase.Equals("FA") && !documento.clase.Equals("NC") && !documento.clase.Equals("EN") && !documento.clase.Equals("DV") && !documento.clase.Equals("EM"))
             {
                 bbiCancelar.Visibility = BarItemVisibility.Never;
+                txtFactVencidas.Visible = false;
+                txtCreditoDisponible.Visible = false;
+                lbMensajeC.Visible = false;
             }
             if (documento.clase.Equals("EN"))
             {
                 bbiCerrar.Visibility = BarItemVisibility.Never;
                 bbiCancelar.Visibility = BarItemVisibility.Always;
+                txtFactVencidas.Visible = false;
+                txtCreditoDisponible.Visible = false;
+                lbCredito.Visible = false;
+                lbFact.Visible = false;
+                lbMensajeC.Visible = false;
             }
             if (documento.clase.Equals("PE"))
             {
                 bbiCancelar.Visibility = ((!Program.Nori.Configuracion.netsuite) ? BarItemVisibility.Never : BarItemVisibility.Always);
                 bbiCerrar.Visibility = BarItemVisibility.Always;
+                txtFactVencidas.Visible = true;
+                txtCreditoDisponible.Visible = true;
+                lbCredito.Visible = true;
+                lbFact.Visible = true;
+                lbMensajeC.Visible = false;
             }
             if (documento.tipo.Equals('I') || documento.clase.Equals("PE") || documento.clase.Equals("CC") || documento.clase.Equals("EM"))
             {
@@ -554,7 +558,7 @@ namespace NORI
             CargarInformes(clase);
             if (documento.clase.Equals("AE") || documento.clase.Equals("AS") || documento.clase.Equals("IF"))
             {
-                lblCodigoSN.Visible = (txtCodigoSN.Visible = (lblSocio.Visible = (lblFechaCreacion.Visible = (txtFechaCreacion.Visible = (lblMonedas.Visible = (cbMonedas.Visible = (lblVendedores.Visible = (cbVendedores.Visible = (lblMonederos.Visible = (cbMonederos.Visible = false))))))))));
+                lblCodigoSN.Visible = (txtCodigoSN.Visible = (lblSocio.Visible = (lblFechaCreacion.Visible = (txtFechaCreacion.Visible = (lblMonedas.Visible = (cbMonedas.Visible = (lblVendedores.Visible = (cbVendedores.Visible))))))));
             }
             if (documento.clase.Equals("IF"))
             {
@@ -837,8 +841,21 @@ namespace NORI
         private void bbiGuardar_ItemClick(object sender, ItemClickEventArgs e)
         {
             int fact = Int32.Parse(txtFactVencidas.Text);
-            if (fact > 0)
+            if (fact > 2 && documento.clase =="PE")
             {
+                documento.condicion_pago_id = 19;
+                    if (Guardar())
+                    {
+                        RecargarDocumento();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
+                    }
+                
+              
+            }
+            else {
                 if (Guardar())
                 {
                     RecargarDocumento();
@@ -848,30 +865,57 @@ namespace NORI
                     MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
                 }
             }
-            else
-            {
-
-            }
-
+            
         }
 
         private void bbiGuardarCerrar_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (Guardar())
+            int fact = Int32.Parse(txtFactVencidas.Text);
+            if (fact > 2 && documento.clase == "PE")
             {
-                Close();
+                documento.condicion_pago_id = 19;
+                if (Guardar())
+                    {
+                        Close();
+                    }
+            }
+            else
+            {
+                if (Guardar())
+                {
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
+                }
             }
         }
 
         private void bbiGuardarNuevo_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (Guardar())
+            int fact = Int32.Parse(txtFactVencidas.Text);
+            if (fact > 2 && documento.clase == "PE")
             {
-                Nuevo();
+                documento.condicion_pago_id = 19;
+                if (Guardar())
+                {
+                    Nuevo();
+                }
+                else
+                {
+                    MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
+                }
             }
-            else
-            {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
+            else {
+                if (Guardar())
+                {
+                    Nuevo();
+                }
+                else
+                {
+                    MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
+                }
             }
         }
 
@@ -956,9 +1000,10 @@ namespace NORI
         {
             try
             {
-                return (cbSeries.EditValue.IsNullOrEmpty() || (int)cbSeries.EditValue == 0) ? (from x in Serie.Series()
-                                                                                               where x.clase == documento.clase && x.predeterminado == true
-                                                                                               select new { x.id }).First().id : ((int)cbSeries.EditValue);
+                int zse= (cbSeries.EditValue.IsNullOrEmpty() || (int)cbSeries.EditValue == 0) ? (from x in Serie.Series()
+                                                                                                 where x.clase == documento.clase && x.predeterminado == true
+                                                                                                 select new { x.id }).First().id : ((int)cbSeries.EditValue);
+                return zse;
             }
             catch
             {
@@ -1359,7 +1404,7 @@ namespace NORI
                 CargarAnexos();
                 cbAlmacenOrigen.EditValue = documento.almacen_id;
                 cbAlmacenDestino.EditValue = documento.almacen_destino_id;
-                cbMonederos.EditValue = documento.monedero_id;
+                //cbMonederos.EditValue = documento.monedero_id;
                 if (documento.usuario_creacion_id != 0)
                 {
                     var usuarioCreacion = (from x in Usuario.Usuarios()
@@ -1552,7 +1597,7 @@ namespace NORI
                     documento.monedero_id = (from x in Monedero.Monederos()
                                              where x.folio == folio_monedero
                                              select new { x.id }).First().id;
-                    cbMonederos.EditValue = documento.monedero_id;
+                    //cbMonederos.EditValue = documento.monedero_id;
                 }
             }
             catch
@@ -1712,9 +1757,9 @@ namespace NORI
                                                  select new { x.id, x.codigo, x.nombre }).ToList();
                 cbRutas.Properties.ValueMember = "id";
                 cbRutas.Properties.DisplayMember = "nombre";
-                cbMonederos.Properties.DataSource = Utilidades.EjecutarQuery("select monederos.id, socios.codigo, monederos.folio from monederos join socios on monederos.socio_id = socios.id where monederos.activo = 1");
-                cbMonederos.Properties.ValueMember = "id";
-                cbMonederos.Properties.DisplayMember = "folio";
+                //cbMonederos.Properties.DataSource = Utilidades.EjecutarQuery("select monederos.id, socios.codigo, monederos.folio from monederos join socios on monederos.socio_id = socios.id where monederos.activo = 1");
+                //cbMonederos.Properties.ValueMember = "id";
+                //cbMonederos.Properties.DisplayMember = "folio";
                 cbUsoPrincipal.Properties.DataSource = Documento.UsoCFDI.UsosCFDI();
                 cbUsoPrincipal.Properties.ValueMember = "uso";
                 cbUsoPrincipal.Properties.DisplayMember = "nombre";
@@ -1766,7 +1811,7 @@ namespace NORI
 
                 gcPartidas.DataSource = documento.partidas;
                 gcPartidas.RefreshDataSource();
-                documento.CalcularTotal();
+              documento.CalcularTotal();
                 txtTipoCambio.Text = documento.tipo_cambio.ToString("n4");
                 txtSubTotal.Text = documento.subtotal.ToString("c2");
                 txtPorcentajeDescuento.Text = documento.porcentaje_descuento.ToString("n2");
@@ -1782,7 +1827,7 @@ namespace NORI
                     decimal num = Math.Round((documento.partidas.Sum((Documento.Partida x) => x.precio * x.tipo_cambio) - documento.partidas.Sum((Documento.Partida x) => x.costo)) / documento.partidas.Sum((Documento.Partida x) => x.costo) * 100m, 2);
                     lblUtilidad.Text = $"Utilidad {num}%";
                 }
-                catch
+                catch (Exception ex)
                 {
                 }
             }
@@ -1843,6 +1888,10 @@ namespace NORI
                     DataTable data = documento.limiteCredito(socio.codigo);
                     if (data.Rows.Count > 0)
                     {
+                        if (Convert.ToDecimal(data.Rows[0]["fact_vencidas"]) > 2 && documento.clase =="PE")
+                        {
+                            lbMensajeC.Visible = true;
+                        }
                         txtCreditoDisponible.Text = Convert.ToDecimal(data.Rows[0]["credito disponible"]).ToString("0.##");
                         txtFactVencidas.Text = Convert.ToDecimal(data.Rows[0]["fact_vencidas"]).ToString("0.##");
                     }
@@ -1852,7 +1901,7 @@ namespace NORI
                     cbMetodosPago.EditValue = documento.metodo_pago_id;
                     txtCuentaPago.Text = documento.cuenta_pago;
                     cbCondicionesPago.EditValue = documento.condicion_pago_id;
-                    cbMonederos.EditValue = documento.monedero_id;
+                    //cbMonederos.EditValue = documento.monedero_id;
                     cbUsoPrincipal.EditValue = documento.uso_principal;
                     if (documento.clase.Equals("CO") || documento.clase.Equals("PE"))
                     {
@@ -1945,7 +1994,7 @@ namespace NORI
                 documento.proyecto_id = ((!cbProyectos.EditValue.IsNullOrEmpty()) ? ((int)cbProyectos.EditValue) : 0);
                 documento.cuenta_pago = txtCuentaPago.Text;
                 documento.vendedor_id = (int)cbVendedores.EditValue;
-                documento.monedero_id = ((!cbMonederos.EditValue.IsNullOrEmpty()) ? ((int)cbMonederos.EditValue) : 0);
+                //documento.monedero_id = ((!cbMonederos.EditValue.IsNullOrEmpty()) ? ((int)cbMonederos.EditValue) : 0);
                 documento.direccion_facturacion_id = (int)cbDireccionesFacturacion.EditValue;
                 documento.direccion_envio_id = (int)cbDireccionesEnvio.EditValue;
                 documento.direccion_origen_id = ((!cbDireccionesOrigen.EditValue.IsNullOrEmpty()) ? ((int)cbDireccionesOrigen.EditValue) : 0);
@@ -3400,20 +3449,21 @@ namespace NORI
             }
         }
 
-        private void bbiCancelar_ItemClick(object sender, ItemClickEventArgs e)
+        public void CancelarAnt()
         {
             if (documento.EsDocumentoElectronico())
             {
-                DocumentoElectronico documentoElectronico = documento.DocumentoElectronico();
-                if (Program.Nori.Configuracion.forzar_cancelacion_cfdi && documentoElectronico.folio_fiscal.Length > 0 && documentoElectronico.estado_cancelacion != "Cancelado" && MessageBox.Show("¿El documento aún no ha sido cancelado ante la autoridad, aún así desea cancelarlo?", "Cancelar CFDI", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                //DocumentoElectronico documentoElectronico = documento.DocumentoElectronico();
+                //if (Program.Nori.Configuracion.forzar_cancelacion_cfdi && documentoElectronico.folio_fiscal.Length > 0 && documentoElectronico.estado_cancelacion != "Cancelado" && MessageBox.Show("¿El documento aún no ha sido cancelado ante la autoridad, aún así desea cancelarlo?", "Cancelar CFDI", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                //{
+                //    MessageBox.Show("Para cancelar este documento primero cancela el documento electrónico asociado y revisa que el estado de la cancelación sea 'Cancelado'", "Cancelar documento", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //    return;
+                //}
+
+                if (MessageBox.Show("¿Estas seguro de cancelar este documento?", "Cancelar documento", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
                 {
-                    MessageBox.Show("Para cancelar este documento primero cancela el documento electrónico asociado y revisa que el estado de la cancelación sea 'Cancelado'", "Cancelar documento", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
-            }
-            if (MessageBox.Show("¿Estas seguro de cancelar este documento?", "Cancelar documento", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
-            {
-                return;
             }
             if (!documento.cancelado)
             {
@@ -3453,6 +3503,80 @@ namespace NORI
             else
             {
                 MessageBox.Show("Este documento ya ha sido cancelado.");
+            }
+        }
+        public void CancelarAnterior()
+        {
+            if (documento.EsDocumentoElectronico())
+            {
+                DocumentoElectronico documentoElectronico = documento.DocumentoElectronico();
+                if (Program.Nori.Configuracion.forzar_cancelacion_cfdi && documentoElectronico.folio_fiscal.Length > 0 && documentoElectronico.estado_cancelacion != "Cancelado" && MessageBox.Show("¿El documento aún no ha sido cancelado ante la autoridad, aún así desea cancelarlo?", "Cancelar CFDI", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                {
+                    MessageBox.Show("Para cancelar este documento primero cancela el documento electrónico asociado y revisa que el estado de la cancelación sea 'Cancelado'", "Cancelar documento", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+
+             if (MessageBox.Show("¿Estas seguro de cancelar este documento?", "Cancelar documento", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+             {
+                    return;
+             }
+            
+            if (!documento.cancelado)
+            {
+                if (!Permiso(cancelacion: true))
+                {
+                    return;
+                }
+                documento.comentario = Interaction.InputBox("Ingresa un comentario sobre la cancelación", "Cancelación documento", documento.comentario);
+                if (documento.Cancelar(agregar_sincronizacion: true))
+                {
+                    if (Program.Nori.Configuracion.netsuite)
+                    {
+                        if (documento.clase.Equals("FA"))
+                        {
+                            InvoiceHelper invoiceHelper = new InvoiceHelper();
+                            invoiceHelper.DeleteInvoice(documento.identificador_externo.ToString());
+                        }
+                        else if (documento.clase.Equals("EN"))
+                        {
+                            CashSaleHelper cashSaleHelper = new CashSaleHelper();
+                            cashSaleHelper.DeleteCashSale(documento.identificador_externo.ToString());
+                        }
+                        else if (documento.clase.Equals("PE"))
+                        {
+                            SalesOrderHelper salesOrderHelper = new SalesOrderHelper();
+                            salesOrderHelper.DeleteSalesOrder(documento.identificador_externo.ToString());
+                        }
+                    }
+                    RecargarDocumento();
+                    CancelarDocumentoElectronico();
+                }
+                else
+                {
+                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                }
+            }
+            else
+            {
+                MessageBox.Show("Este documento ya ha sido cancelado.");
+            }
+        }
+        private void bbiCancelar_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (documento.clase.Equals("FA"))
+            {
+                frmAutorizarVentaVencida frmAutorizarVentaVencida = new frmAutorizarVentaVencida();
+                frmAutorizarVentaVencida.Owner = this;
+                frmAutorizarVentaVencida.ShowDialog();
+                if (Autorizar == true)
+                {
+                    CancelarAnt();
+                }
+            }
+            else 
+            {
+                CancelarAnterior();
             }
         }
 

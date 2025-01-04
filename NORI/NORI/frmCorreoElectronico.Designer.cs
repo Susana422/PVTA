@@ -226,7 +226,7 @@ namespace NORI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(448, 540);
             this.Controls.Add(this.panel1);
-            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "frmCorreoElectronico";

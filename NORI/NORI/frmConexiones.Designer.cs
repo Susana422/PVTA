@@ -458,7 +458,7 @@ namespace NORI
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmConexiones";
             this.Ribbon = this.ribbonControl1;

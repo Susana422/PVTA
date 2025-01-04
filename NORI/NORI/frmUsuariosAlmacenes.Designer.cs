@@ -155,7 +155,7 @@ namespace NORI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 472);
             this.Controls.Add(this.panel1);
-            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmUsuariosAlmacenes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

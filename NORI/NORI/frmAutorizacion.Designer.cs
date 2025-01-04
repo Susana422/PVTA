@@ -57,7 +57,8 @@ namespace NORI
             // 
             // ribbonControl1
             // 
-            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(23, 27, 23, 27);
+            this.ribbonControl1.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
+            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(26, 27, 26, 27);
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem});
@@ -65,20 +66,20 @@ namespace NORI
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonControl1.MaxItemId = 1;
             this.ribbonControl1.Name = "ribbonControl1";
-            this.ribbonControl1.OptionsMenuMinWidth = 257;
+            this.ribbonControl1.OptionsMenuMinWidth = 294;
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl1.Size = new System.Drawing.Size(574, 50);
+            this.ribbonControl1.Size = new System.Drawing.Size(656, 57);
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.panelControl1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 50);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 57);
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(574, 328);
+            this.layoutControl1.Size = new System.Drawing.Size(656, 321);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -92,19 +93,19 @@ namespace NORI
             this.panelControl1.Controls.Add(this.lblReferencia);
             this.panelControl1.Controls.Add(this.btnAutorizar);
             this.panelControl1.Controls.Add(this.lblAutorizacion);
-            this.panelControl1.Location = new System.Drawing.Point(5, 5);
+            this.panelControl1.Location = new System.Drawing.Point(13, 12);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(564, 318);
+            this.panelControl1.Size = new System.Drawing.Size(630, 297);
             this.panelControl1.TabIndex = 4;
             // 
             // lblVerCaptura
             // 
             this.lblVerCaptura.AutoSize = true;
-            this.lblVerCaptura.Location = new System.Drawing.Point(17, 242);
+            this.lblVerCaptura.Location = new System.Drawing.Point(19, 242);
             this.lblVerCaptura.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVerCaptura.Name = "lblVerCaptura";
-            this.lblVerCaptura.Size = new System.Drawing.Size(80, 17);
+            this.lblVerCaptura.Size = new System.Drawing.Size(81, 17);
             this.lblVerCaptura.TabIndex = 21;
             this.lblVerCaptura.TabStop = true;
             this.lblVerCaptura.Text = "Ver captura";
@@ -112,20 +113,20 @@ namespace NORI
             // lblComentario
             // 
             this.lblComentario.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblComentario.Location = new System.Drawing.Point(16, 106);
+            this.lblComentario.Location = new System.Drawing.Point(18, 106);
             this.lblComentario.Name = "lblComentario";
-            this.lblComentario.Size = new System.Drawing.Size(511, 51);
+            this.lblComentario.Size = new System.Drawing.Size(584, 51);
             this.lblComentario.TabIndex = 20;
             this.lblComentario.Text = "Sin comentario";
             // 
             // txtComentario
             // 
-            this.txtComentario.Location = new System.Drawing.Point(20, 167);
+            this.txtComentario.Location = new System.Drawing.Point(23, 167);
             this.txtComentario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtComentario.MenuManager = this.ribbonControl1;
             this.txtComentario.Name = "txtComentario";
             this.txtComentario.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtComentario.Size = new System.Drawing.Size(507, 46);
+            this.txtComentario.Size = new System.Drawing.Size(579, 46);
             this.txtComentario.TabIndex = 1;
             // 
             // btnDenegar
@@ -135,10 +136,10 @@ namespace NORI
             this.btnDenegar.FlatAppearance.BorderColor = System.Drawing.Color.Brown;
             this.btnDenegar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDenegar.ForeColor = System.Drawing.Color.White;
-            this.btnDenegar.Location = new System.Drawing.Point(268, 225);
+            this.btnDenegar.Location = new System.Drawing.Point(306, 225);
             this.btnDenegar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDenegar.Name = "btnDenegar";
-            this.btnDenegar.Size = new System.Drawing.Size(126, 35);
+            this.btnDenegar.Size = new System.Drawing.Size(144, 35);
             this.btnDenegar.TabIndex = 0;
             this.btnDenegar.TabStop = false;
             this.btnDenegar.Text = "Denegar";
@@ -147,9 +148,9 @@ namespace NORI
             // lblReferencia
             // 
             this.lblReferencia.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblReferencia.Location = new System.Drawing.Point(16, 42);
+            this.lblReferencia.Location = new System.Drawing.Point(18, 42);
             this.lblReferencia.Name = "lblReferencia";
-            this.lblReferencia.Size = new System.Drawing.Size(511, 54);
+            this.lblReferencia.Size = new System.Drawing.Size(584, 54);
             this.lblReferencia.TabIndex = 16;
             this.lblReferencia.Text = "Referencia";
             // 
@@ -159,10 +160,10 @@ namespace NORI
             this.btnAutorizar.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.btnAutorizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAutorizar.ForeColor = System.Drawing.Color.White;
-            this.btnAutorizar.Location = new System.Drawing.Point(401, 225);
+            this.btnAutorizar.Location = new System.Drawing.Point(458, 225);
             this.btnAutorizar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAutorizar.Name = "btnAutorizar";
-            this.btnAutorizar.Size = new System.Drawing.Size(126, 35);
+            this.btnAutorizar.Size = new System.Drawing.Size(144, 35);
             this.btnAutorizar.TabIndex = 0;
             this.btnAutorizar.TabStop = false;
             this.btnAutorizar.Text = "Autorizar";
@@ -172,7 +173,7 @@ namespace NORI
             // 
             this.lblAutorizacion.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAutorizacion.Appearance.Options.UseFont = true;
-            this.lblAutorizacion.Location = new System.Drawing.Point(20, 6);
+            this.lblAutorizacion.Location = new System.Drawing.Point(23, 6);
             this.lblAutorizacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lblAutorizacion.Name = "lblAutorizacion";
             this.lblAutorizacion.Size = new System.Drawing.Size(103, 19);
@@ -186,7 +187,7 @@ namespace NORI
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(574, 328);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(656, 321);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -194,7 +195,7 @@ namespace NORI
             this.layoutControlItem1.Control = this.panelControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(566, 320);
+            this.layoutControlItem1.Size = new System.Drawing.Size(634, 301);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -206,14 +207,14 @@ namespace NORI
             // frmAutorizacion
             // 
             this.AcceptButton = this.btnAutorizar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnDenegar;
-            this.ClientSize = new System.Drawing.Size(574, 378);
+            this.ClientSize = new System.Drawing.Size(656, 378);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "frmAutorizacion";

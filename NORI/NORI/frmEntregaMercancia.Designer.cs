@@ -691,7 +691,7 @@ namespace NORI
             this.ClientSize = new System.Drawing.Size(1136, 820);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.mainRibbonControl);
-            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEntregaMercancia";
             this.Ribbon = this.mainRibbonControl;

@@ -38,6 +38,7 @@
             // 
             // ribbon
             // 
+            this.ribbon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ribbon.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
@@ -53,6 +54,7 @@
             // 
             // ribbonStatusBar
             // 
+            this.ribbonStatusBar.BackColor = System.Drawing.Color.White;
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 172);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
@@ -100,7 +102,7 @@
             this.Controls.Add(this.VerificationControl);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
-            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AutenticarHuellaDigital";

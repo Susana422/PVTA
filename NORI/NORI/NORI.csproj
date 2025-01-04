@@ -176,6 +176,12 @@
     </Reference>
     <Reference Include="DevExpress.XtraTreeList.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraWizard.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DocumentFormat.OpenXml, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.3.2.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.2.0\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="DPFPCtlXTypeLibNET">
       <HintPath>..\..\..\..\..\..\Desktop\Librerias\DPFPCtlXTypeLibNET.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -202,14 +208,8 @@
     <Reference Include="DPFPVerNET">
       <HintPath>..\..\..\..\..\..\Desktop\Librerias\DPFPVerNET.dll</HintPath>
     </Reference>
-    <Reference Include="EPPlus, Version=7.5.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPPlus.7.5.1\lib\net462\EPPlus.dll</HintPath>
-    </Reference>
-    <Reference Include="EPPlus.Interfaces, Version=7.5.0.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPPlus.Interfaces.7.5.0\lib\net462\EPPlus.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="EPPlus.System.Drawing, Version=7.5.0.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPPlus.System.Drawing.7.5.0\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    <Reference Include="EPPlus, Version=7.5.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.7.5.2\lib\net462\EPPlus.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -235,6 +235,10 @@
     <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.3.0.1\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <HintPath>..\packages\ExcelPackage.1.0.0\lib\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.2903.40, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.WebView2.1.0.2903.40\lib\net462\Microsoft.Web.WebView2.Core.dll</HintPath>
@@ -254,7 +258,8 @@
     <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.2\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
     </Reference>
-    <Reference Include="NoriCFDI">
+    <Reference Include="NoriCFDI, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Desktop\Librerias\NoriCFDI.dll</HintPath>
     </Reference>
     <Reference Include="NoriSAPB1SDK">
@@ -335,6 +340,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\ArticuloAPI.cs" />
@@ -342,6 +348,13 @@
     <Compile Include="API\Recibir.cs" />
     <Compile Include="API\SocioAPI.cs" />
     <Compile Include="API\Transmitir.cs" />
+    <Compile Include="AutVenta.cs" />
+    <Compile Include="frmAutorizarVentaVencida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAutorizarVentaVencida.Designer.cs">
+      <DependentUpon>frmAutorizarVentaVencida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Excel\DataExcel.cs" />
     <Compile Include="Extensiones.cs" />
     <Compile Include="frmAcceder.cs">
@@ -607,6 +620,12 @@
     </Compile>
     <Compile Include="frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal1.Designer.cs">
+      <DependentUpon>frmPrincipal1.cs</DependentUpon>
     </Compile>
     <Compile Include="HuellaDigital\AutenticarHuellaDigital.cs">
       <SubType>Form</SubType>
@@ -980,6 +999,11 @@
     <Compile Include="PrintRibbonControllerResources.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="PuntoVenta\frmArqueo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1113,6 +1137,9 @@
     <EmbeddedResource Include="frmAutorizacionCredito.resx">
       <DependentUpon>frmAutorizacionCredito.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAutorizarVentaVencida.resx">
+      <DependentUpon>frmAutorizarVentaVencida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBascula.resx">
       <DependentUpon>frmBascula.cs</DependentUpon>
     </EmbeddedResource>
@@ -1211,6 +1238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal1.resx">
+      <DependentUpon>frmPrincipal1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HuellaDigital\AutenticarHuellaDigital.resx">
       <DependentUpon>AutenticarHuellaDigital.cs</DependentUpon>
@@ -1392,15 +1422,10 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
       <CustomToolNamespace>componentResourceManager</CustomToolNamespace>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="PuntoVenta\frmPuntoVenta.resx">
       <DependentUpon>frmPuntoVenta.cs</DependentUpon>
     </EmbeddedResource>
@@ -1453,12 +1478,6 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logodiesel.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.8 %28x86 y x64%29</ProductName>
@@ -1471,19 +1490,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\images.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\huella.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\inicio.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logoDTM.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\editar.png" />
+    <None Include="Resources\logoDTMsl.ico" />
+    <None Include="Resources\login1.jpg" />
+    <None Include="Resources\huelladigital.jpg" />
+    <Content Include="Resources\icon.ico" />
+    <None Include="Resources\iconosol.ico" />
+    <Content Include="Resources\login.jpg" />
+    <None Include="Resources\logoDTM.ico" />
+    <Content Include="Resources\logoDTM.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets')" />

@@ -161,7 +161,7 @@
             this.Controls.Add(this.txtFechaInicio);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
-            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
             this.MaximizeBox = false;
             this.Name = "frmrepPagoComision";
             this.Ribbon = this.ribbon;

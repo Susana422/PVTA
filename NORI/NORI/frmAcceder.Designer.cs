@@ -43,9 +43,9 @@ namespace NORI
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbConexiones = new DevExpress.XtraEditors.LookUpEdit();
-            this.lblConexion = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.txtUsuario = new DevExpress.XtraEditors.TextEdit();
             this.btnAcceder = new System.Windows.Forms.Button();
             this.lblAcceder = new DevExpress.XtraEditors.LabelControl();
@@ -54,8 +54,8 @@ namespace NORI
             this.lblUsuario = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tabFormDefaultManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -129,9 +129,9 @@ namespace NORI
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.labelControl2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.cbConexiones);
-            this.panel1.Controls.Add(this.lblConexion);
             this.panel1.Controls.Add(this.txtUsuario);
             this.panel1.Controls.Add(this.btnAcceder);
             this.panel1.Controls.Add(this.lblAcceder);
@@ -144,19 +144,31 @@ namespace NORI
             this.panel1.Size = new System.Drawing.Size(602, 479);
             this.panel1.TabIndex = 0;
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(420, 377);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(5);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(83, 16);
+            this.labelControl2.TabIndex = 100;
+            this.labelControl2.Text = "Huella Digital";
+            this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::componentResourceManager.Resources.logoDTM;
-            this.pictureBox1.Location = new System.Drawing.Point(382, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(194, 14);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 51);
+            this.pictureBox1.Size = new System.Drawing.Size(153, 76);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 99;
             this.pictureBox1.TabStop = false;
             // 
             // cbConexiones
             // 
-            this.cbConexiones.Location = new System.Drawing.Point(35, 129);
+            this.cbConexiones.Location = new System.Drawing.Point(35, 98);
             this.cbConexiones.Margin = new System.Windows.Forms.Padding(5);
             this.cbConexiones.Name = "cbConexiones";
             this.cbConexiones.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -167,20 +179,6 @@ namespace NORI
             this.cbConexiones.TabIndex = 98;
             this.cbConexiones.Visible = false;
             this.cbConexiones.EditValueChanged += new System.EventHandler(this.cbConexiones_EditValueChanged);
-            // 
-            // lblConexion
-            // 
-            this.lblConexion.Appearance.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConexion.Appearance.Options.UseFont = true;
-            this.lblConexion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblConexion.Location = new System.Drawing.Point(35, 96);
-            this.lblConexion.Margin = new System.Windows.Forms.Padding(5);
-            this.lblConexion.Name = "lblConexion";
-            this.lblConexion.Size = new System.Drawing.Size(59, 18);
-            this.lblConexion.TabIndex = 9;
-            this.lblConexion.Text = "Conexión";
-            this.lblConexion.Visible = false;
-            this.lblConexion.Click += new System.EventHandler(this.lblConexion_Click);
             // 
             // txtUsuario
             // 
@@ -212,7 +210,7 @@ namespace NORI
             // 
             this.lblAcceder.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAcceder.Appearance.Options.UseFont = true;
-            this.lblAcceder.Location = new System.Drawing.Point(169, 79);
+            this.lblAcceder.Location = new System.Drawing.Point(157, 132);
             this.lblAcceder.Margin = new System.Windows.Forms.Padding(5);
             this.lblAcceder.Name = "lblAcceder";
             this.lblAcceder.Size = new System.Drawing.Size(190, 29);
@@ -232,7 +230,7 @@ namespace NORI
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(35, 255);
+            this.txtContraseña.Location = new System.Drawing.Point(35, 256);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(5);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Properties.PasswordChar = '*';
@@ -269,10 +267,6 @@ namespace NORI
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // defaultLookAndFeel1
-            // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Glass Oceans";
-            // 
             // ribbonControl1
             // 
             this.ribbonControl1.BackColor = System.Drawing.Color.Gray;
@@ -293,6 +287,10 @@ namespace NORI
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl1.Size = new System.Drawing.Size(626, 57);
             // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Glass Oceans";
+            // 
             // frmAcceder
             // 
             this.AcceptButton = this.btnAcceder;
@@ -310,13 +308,13 @@ namespace NORI
             this.Controls.Add(this.barDockControlTop);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmAcceder.IconOptions.Image")));
+            this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.Name = "frmAcceder";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DTM Solutions";
+            this.Text = "DTM SOLUTIONS POS";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAcceder_FormClosed);
             this.Load += new System.EventHandler(this.frmAcceder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabFormDefaultManager1)).EndInit();
@@ -336,5 +334,8 @@ namespace NORI
 
         }
 
+        private LookUpEdit cbConexiones;
+        private DefaultLookAndFeel defaultLookAndFeel1;
+        private LabelControl labelControl2;
     }
 }

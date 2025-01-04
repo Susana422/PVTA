@@ -129,7 +129,7 @@ namespace NORI.Restaurante
             this.Controls.Add(this.panelMesas);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
-            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmRestaurante";
             this.Ribbon = this.ribbon;

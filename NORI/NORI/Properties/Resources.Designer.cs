@@ -73,9 +73,9 @@ namespace componentResourceManager {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap huella {
+        internal static System.Drawing.Bitmap huelladigital {
             get {
-                object obj = ResourceManager.GetObject("huella", resourceCulture);
+                object obj = ResourceManager.GetObject("huelladigital", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace componentResourceManager {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap images {
+        internal static System.Drawing.Bitmap iconosol {
             get {
-                object obj = ResourceManager.GetObject("images", resourceCulture);
+                object obj = ResourceManager.GetObject("iconosol", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace componentResourceManager {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap inicio {
+        internal static System.Drawing.Bitmap login {
             get {
-                object obj = ResourceManager.GetObject("inicio", resourceCulture);
+                object obj = ResourceManager.GetObject("login", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +136,26 @@ namespace componentResourceManager {
         internal static System.Drawing.Bitmap logoDTM {
             get {
                 object obj = ResourceManager.GetObject("logoDTM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoDTM1 {
+            get {
+                object obj = ResourceManager.GetObject("logoDTM1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoDTMsl {
+            get {
+                object obj = ResourceManager.GetObject("logoDTMsl", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

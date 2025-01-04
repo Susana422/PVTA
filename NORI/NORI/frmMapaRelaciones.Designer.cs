@@ -86,7 +86,7 @@ namespace NORI
             this.Controls.Add(this.tv);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
-            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmMapaRelaciones";
             this.Ribbon = this.ribbonControl1;

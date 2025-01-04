@@ -68,7 +68,7 @@ namespace NORI
             this.ClientSize = new System.Drawing.Size(915, 734);
             this.Controls.Add(this.webView21);
             this.Controls.Add(this.dashboardViewer1);
-            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEscritorio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

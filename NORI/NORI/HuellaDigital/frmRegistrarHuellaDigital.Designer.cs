@@ -97,7 +97,7 @@
             this.Controls.Add(this.EnrollmentControl);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
-            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
             this.MaximizeBox = false;
             this.Name = "frmRegistrarHuellaDigital";
             this.Ribbon = this.ribbon;

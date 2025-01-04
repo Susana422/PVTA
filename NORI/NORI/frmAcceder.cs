@@ -51,12 +51,6 @@ namespace NORI
 
         private TextEdit txtUsuario;
 
-        private DefaultLookAndFeel defaultLookAndFeel1;
-
-        private HyperlinkLabelControl lblConexion;
-
-        private LookUpEdit cbConexiones;
-
         private RibbonControl ribbonControl1;
         private PictureBox pictureBox1;
 
@@ -218,8 +212,12 @@ namespace NORI
             ((Form)this).Activate();
         }
 
-
-
+        private void labelControl2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmHome frmHome = new frmHome();
+            frmHome.ShowDialog();
+        }
     }
 
 }

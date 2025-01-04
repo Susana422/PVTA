@@ -1,4 +1,6 @@
-﻿namespace NORI
+﻿using System.Drawing;
+
+namespace NORI
 {
     partial class frmHuellaDigital
     {
@@ -72,6 +74,7 @@
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(113, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(245, 65);
@@ -82,7 +85,10 @@
             // 
             // btnRegresar
             // 
+            this.btnRegresar.Appearance.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnRegresar.Appearance.Options.UseBackColor = true;
             this.btnRegresar.Location = new System.Drawing.Point(235, 132);
+            this.btnRegresar.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(123, 29);
             this.btnRegresar.TabIndex = 11;
@@ -99,7 +105,7 @@
             this.Controls.Add(this.VerificationControl);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
-            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
             this.MaximizeBox = false;
             this.Name = "frmHuellaDigital";
             this.Ribbon = this.ribbon;

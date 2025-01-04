@@ -37,7 +37,7 @@ namespace NORI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(681, 472);
             this.Controls.Add(this.panel1);
-            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmModulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

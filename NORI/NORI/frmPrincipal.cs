@@ -87,8 +87,6 @@ namespace NORI
 
         private AccordionControlElement accordionControlElementFacturas;
 
-        private AccordionControlElement accordionControlElementDevoluciones;
-
         private AccordionControlElement accordionControlElementSocios;
 
         private AccordionControlElement accordionControlElementGestionInventario;
@@ -104,8 +102,6 @@ namespace NORI
         private AccordionControlElement accordionControlElementVendedores;
 
         private BarHeaderItem barHeaderItemEstacion;
-
-        private AccordionControlElement accordionControlElementEstaciones;
 
         private AccordionControlElement accordionControlElementZonas;
 
@@ -151,8 +147,6 @@ namespace NORI
 
         private AccordionControlElement accordionControlElementNotasDebito;
 
-        private AccordionControlElement accordionControlElementGestionInformes;
-
         private AccordionControlElement accordionControlElementInformes;
 
         private AccordionControlElement accordionControlElement1;
@@ -176,8 +170,6 @@ namespace NORI
         private AccordionControlElement accordionControlElementCierreDia;
 
         private BarListItem bbiSucursales;
-
-        private AccordionControlElement accordionControlElementActivosFijos;
 
         public frmPrincipal()
         {
@@ -213,7 +205,7 @@ namespace NORI
                     //((AccordionControlElementBase)accordionControlElementEntregas).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementPedidos).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementFacturas).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementDevoluciones).Visible = false;
+                    //((AccordionControlElementBase)accordionControlElementDevoluciones).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementNotasCredito).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementNotasDebito).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementSocios).Visible = false;
@@ -231,7 +223,7 @@ namespace NORI
                         //((AccordionControlElementBase)accordionControlElementEntregas).Visible = false;
                         ((AccordionControlElementBase)accordionControlElementEntregaMercancia).Visible = false;
                         ((AccordionControlElementBase)accordionControlElementFacturas).Visible = false;
-                        ((AccordionControlElementBase)accordionControlElementDevoluciones).Visible = false;
+                        //((AccordionControlElementBase)accordionControlElementDevoluciones).Visible = false;
                         ((AccordionControlElementBase)accordionControlElementNotasCredito).Visible = false;
                         ((AccordionControlElementBase)accordionControlElementNotasDebito).Visible = false;
                         //((AccordionControlElementBase)accordionControlElementPuntoVenta).Visible = false;
@@ -265,35 +257,35 @@ namespace NORI
             }
             try
             {
-                List<Informe> source = (from x in Informe.Informes()
-                                        where x.activo == true && (x.tipo == "US" || x.tipo == "SI")
-                                        orderby x.nombre
-                                        select x).ToList();
-                foreach (Informe.Tipo tipo in from x in Informe.Tipo.Tipos()
-                                              where x.tipo == "US" || x.tipo == "SI"
-                                              select x)
-                {
-                    if (!Program.Nori.UsuarioAutenticado.rol.Equals('A') && tipo.tipo == "SI")
-                    {
-                        continue;
-                    }
-                    AccordionControlElement val = new AccordionControlElement();
-                    val.Style = (ElementStyle)0;
-                    ((AccordionControlElementBase)val).Text = tipo.nombre;
-                    ((Collection<AccordionControlElement>)(object)accordionControlElementInformes.Elements).Add(val);
-                    foreach (Informe informe in source.Where((Informe x) => x.tipo == tipo.tipo))
-                    {
-                        AccordionControlElement val2 = new AccordionControlElement();
-                        val2.Style = (ElementStyle)1;
-                        ((AccordionControlElementBase)val2).Name = informe.informe;
-                        ((AccordionControlElementBase)val2).Text = informe.nombre;
-                        ((AccordionControlElementBase)val2).Click += delegate
-                        {
-                            Funciones.PrevisualizarInforme(informe.informe);
-                        };
-                        ((Collection<AccordionControlElement>)(object)val.Elements).Add(val2);
-                    }
-                }
+                //List<Informe> source = (from x in Informe.Informes()
+                //                        where x.activo == true && (x.tipo == "US" || x.tipo == "SI")
+                //                        orderby x.nombre
+                //                        select x).ToList();
+                //foreach (Informe.Tipo tipo in from x in Informe.Tipo.Tipos()
+                //                              where x.tipo == "US" || x.tipo == "SI"
+                //                              select x)
+                //{
+                //    if (!Program.Nori.UsuarioAutenticado.rol.Equals('A') && tipo.tipo == "SI")
+                //    {
+                //        continue;
+                //    }
+                //    AccordionControlElement val = new AccordionControlElement();
+                //    val.Style = (ElementStyle)0;
+                //    ((AccordionControlElementBase)val).Text = tipo.nombre;
+                //    ((Collection<AccordionControlElement>)(object)accordionControlElementInformes.Elements).Add(val);
+                //    foreach (Informe informe in source.Where((Informe x) => x.tipo == tipo.tipo))
+                //    {
+                //        AccordionControlElement val2 = new AccordionControlElement();
+                //        val2.Style = (ElementStyle)1;
+                //        ((AccordionControlElementBase)val2).Name = informe.informe;
+                //        ((AccordionControlElementBase)val2).Text = informe.nombre;
+                //        ((AccordionControlElementBase)val2).Click += delegate
+                //        {
+                //            Funciones.PrevisualizarInforme(informe.informe);
+                //        };
+                //        ((Collection<AccordionControlElement>)(object)val.Elements).Add(val2);
+                //    }
+                //}
             }
             catch
             {
@@ -358,8 +350,7 @@ namespace NORI
             try
             {
                 Control ctrl = (Control)(object)this;
-                this.Controls.Add(pictureBox1);
-                pictureBox1.BringToFront();
+              
                 //ctrl.SetImage(await Funciones.CargarImagen(Program.Nori.Empresa.logotipo));
                 if (Program.Nori.Configuracion.sap)
                 {
@@ -599,7 +590,6 @@ namespace NORI
             }
             if (!dialog)
             {
-                pictureBox1.Visible = false;
                 form.Show();
             }
             else if (!flag)

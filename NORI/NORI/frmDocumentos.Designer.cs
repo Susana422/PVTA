@@ -48,7 +48,8 @@ namespace NORI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-           // DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator1 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
+            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator1 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDocumentos));
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiGuardar = new DevExpress.XtraBars.BarButtonItem();
             this.bbiGuardarCerrar = new DevExpress.XtraBars.BarButtonItem();
@@ -89,8 +90,9 @@ namespace NORI
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageGeneral = new DevExpress.XtraTab.XtraTabPage();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.lbMensajeC = new DevExpress.XtraEditors.LabelControl();
+            this.lbFact = new DevExpress.XtraEditors.LabelControl();
+            this.lbCredito = new DevExpress.XtraEditors.LabelControl();
             this.txtFactVencidas = new DevExpress.XtraEditors.TextEdit();
             this.txtCreditoDisponible = new DevExpress.XtraEditors.TextEdit();
             this.btnStat = new System.Windows.Forms.Button();
@@ -109,8 +111,6 @@ namespace NORI
             this.cbAlmacenOrigen = new DevExpress.XtraEditors.LookUpEdit();
             this.lblUtilidad = new DevExpress.XtraEditors.LabelControl();
             this.deFechaVencimiento = new DevExpress.XtraEditors.DateEdit();
-            this.cbMonederos = new DevExpress.XtraEditors.LookUpEdit();
-            this.lblMonederos = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.deFechaContabilizacion = new DevExpress.XtraEditors.DateEdit();
             this.cbCOD = new DevExpress.XtraEditors.CheckEdit();
             this.cbAnticipo = new DevExpress.XtraEditors.CheckEdit();
@@ -204,7 +204,6 @@ namespace NORI
             this.txtDistancia = new DevExpress.XtraEditors.TextEdit();
             this.cbRemolques = new DevExpress.XtraEditors.LookUpEdit();
             this.lblRemolque = new DevExpress.XtraEditors.HyperlinkLabelControl();
-            this.btnGenerarTransferenciaStock = new System.Windows.Forms.Button();
             this.bcID = new DevExpress.XtraEditors.BarCodeControl();
             this.cbRutas = new DevExpress.XtraEditors.LookUpEdit();
             this.lblRuta = new DevExpress.XtraEditors.HyperlinkLabelControl();
@@ -239,12 +238,10 @@ namespace NORI
             this.xtraTabPageFinanzas = new DevExpress.XtraTab.XtraTabPage();
             this.cbProyectos = new DevExpress.XtraEditors.LookUpEdit();
             this.lblProyectos = new DevExpress.XtraEditors.HyperlinkLabelControl();
-            this.btnAnticipos = new DevExpress.XtraEditors.SimpleButton();
             this.cbCanales = new DevExpress.XtraEditors.LookUpEdit();
             this.lblCanal = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.lbReferencias = new DevExpress.XtraEditors.ListBoxControl();
             this.btnReferencias = new DevExpress.XtraEditors.SimpleButton();
-            this.btnGenerarPuntos = new DevExpress.XtraEditors.SimpleButton();
             this.lblOrdenCompra = new DevExpress.XtraEditors.LabelControl();
             this.txtOrdenCompra = new DevExpress.XtraEditors.TextEdit();
             this.lblCuentaPago = new DevExpress.XtraEditors.LabelControl();
@@ -304,7 +301,6 @@ namespace NORI
             ((System.ComponentModel.ISupportInitialize)(this.cbAlmacenOrigen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaVencimiento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbMonederos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaContabilizacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaContabilizacion.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbCOD.Properties)).BeginInit();
@@ -757,8 +753,9 @@ namespace NORI
             // 
             // xtraTabPageGeneral
             // 
-            this.xtraTabPageGeneral.Controls.Add(this.labelControl3);
-            this.xtraTabPageGeneral.Controls.Add(this.labelControl2);
+            this.xtraTabPageGeneral.Controls.Add(this.lbMensajeC);
+            this.xtraTabPageGeneral.Controls.Add(this.lbFact);
+            this.xtraTabPageGeneral.Controls.Add(this.lbCredito);
             this.xtraTabPageGeneral.Controls.Add(this.txtFactVencidas);
             this.xtraTabPageGeneral.Controls.Add(this.txtCreditoDisponible);
             this.xtraTabPageGeneral.Controls.Add(this.btnStat);
@@ -777,8 +774,6 @@ namespace NORI
             this.xtraTabPageGeneral.Controls.Add(this.cbAlmacenOrigen);
             this.xtraTabPageGeneral.Controls.Add(this.lblUtilidad);
             this.xtraTabPageGeneral.Controls.Add(this.deFechaVencimiento);
-            this.xtraTabPageGeneral.Controls.Add(this.cbMonederos);
-            this.xtraTabPageGeneral.Controls.Add(this.lblMonederos);
             this.xtraTabPageGeneral.Controls.Add(this.deFechaContabilizacion);
             this.xtraTabPageGeneral.Controls.Add(this.cbCOD);
             this.xtraTabPageGeneral.Controls.Add(this.cbAnticipo);
@@ -828,23 +823,39 @@ namespace NORI
             this.xtraTabPageGeneral.Size = new System.Drawing.Size(1168, 715);
             this.xtraTabPageGeneral.Text = "General";
             // 
-            // labelControl3
+            // lbMensajeC
             // 
-            this.labelControl3.Location = new System.Drawing.Point(18, 221);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(109, 17);
-            this.labelControl3.TabIndex = 173;
-            this.labelControl3.Text = "Facturas Vencidas";
+            this.lbMensajeC.Appearance.Font = new System.Drawing.Font("Berlin Sans FB Demi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMensajeC.Appearance.ForeColor = System.Drawing.Color.IndianRed;
+            this.lbMensajeC.Appearance.Options.UseFont = true;
+            this.lbMensajeC.Appearance.Options.UseForeColor = true;
+            this.lbMensajeC.Location = new System.Drawing.Point(42, 244);
+            this.lbMensajeC.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.lbMensajeC.Name = "lbMensajeC";
+            this.lbMensajeC.Size = new System.Drawing.Size(492, 18);
+            this.lbMensajeC.TabIndex = 174;
+            this.lbMensajeC.Text = "La Venta debera ser de Contado tiene Facturas pendientes por Pagar";
+            this.lbMensajeC.Visible = false;
             // 
-            // labelControl2
+            // lbFact
             // 
-            this.labelControl2.Location = new System.Drawing.Point(18, 187);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(111, 17);
-            this.labelControl2.TabIndex = 172;
-            this.labelControl2.Text = "Credito Disponible";
+            this.lbFact.Location = new System.Drawing.Point(18, 221);
+            this.lbFact.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.lbFact.Name = "lbFact";
+            this.lbFact.Size = new System.Drawing.Size(109, 17);
+            this.lbFact.TabIndex = 173;
+            this.lbFact.Text = "Facturas Vencidas";
+            this.lbFact.Visible = false;
+            // 
+            // lbCredito
+            // 
+            this.lbCredito.Location = new System.Drawing.Point(18, 187);
+            this.lbCredito.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.lbCredito.Name = "lbCredito";
+            this.lbCredito.Size = new System.Drawing.Size(111, 17);
+            this.lbCredito.TabIndex = 172;
+            this.lbCredito.Text = "Credito Disponible";
+            this.lbCredito.Visible = false;
             // 
             // txtFactVencidas
             // 
@@ -854,6 +865,7 @@ namespace NORI
             this.txtFactVencidas.Name = "txtFactVencidas";
             this.txtFactVencidas.Size = new System.Drawing.Size(223, 24);
             this.txtFactVencidas.TabIndex = 171;
+            this.txtFactVencidas.Visible = false;
             // 
             // txtCreditoDisponible
             // 
@@ -865,6 +877,7 @@ namespace NORI
             this.txtCreditoDisponible.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtCreditoDisponible.Size = new System.Drawing.Size(222, 24);
             this.txtCreditoDisponible.TabIndex = 170;
+            this.txtCreditoDisponible.Visible = false;
             // 
             // btnStat
             // 
@@ -1062,31 +1075,6 @@ namespace NORI
             this.deFechaVencimiento.Size = new System.Drawing.Size(142, 24);
             this.deFechaVencimiento.TabIndex = 153;
             // 
-            // cbMonederos
-            // 
-            this.cbMonederos.Location = new System.Drawing.Point(151, 153);
-            this.cbMonederos.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.cbMonederos.MenuManager = this.mainRibbonControl;
-            this.cbMonederos.Name = "cbMonederos";
-            this.cbMonederos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbMonederos.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código SN", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("folio", "Folio", 54, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbMonederos.Size = new System.Drawing.Size(222, 24);
-            this.cbMonederos.TabIndex = 151;
-            this.cbMonederos.TabStop = false;
-            // 
-            // lblMonederos
-            // 
-            this.lblMonederos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblMonederos.Location = new System.Drawing.Point(16, 155);
-            this.lblMonederos.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.lblMonederos.Name = "lblMonederos";
-            this.lblMonederos.Size = new System.Drawing.Size(63, 17);
-            this.lblMonederos.TabIndex = 152;
-            this.lblMonederos.Text = "Monedero";
-            // 
             // deFechaContabilizacion
             // 
             this.deFechaContabilizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1255,11 +1243,11 @@ namespace NORI
             // 
             this.separatorControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.separatorControl1.Location = new System.Drawing.Point(24, 254);
+            this.separatorControl1.Location = new System.Drawing.Point(18, 263);
             this.separatorControl1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.separatorControl1.Name = "separatorControl1";
             this.separatorControl1.Padding = new System.Windows.Forms.Padding(11);
-            this.separatorControl1.Size = new System.Drawing.Size(1139, 25);
+            this.separatorControl1.Size = new System.Drawing.Size(1137, 25);
             this.separatorControl1.TabIndex = 112;
             // 
             // cbMonedas
@@ -2145,7 +2133,6 @@ namespace NORI
             this.xtraTabPageLogistica.Controls.Add(this.txtDistancia);
             this.xtraTabPageLogistica.Controls.Add(this.cbRemolques);
             this.xtraTabPageLogistica.Controls.Add(this.lblRemolque);
-            this.xtraTabPageLogistica.Controls.Add(this.btnGenerarTransferenciaStock);
             this.xtraTabPageLogistica.Controls.Add(this.bcID);
             this.xtraTabPageLogistica.Controls.Add(this.cbRutas);
             this.xtraTabPageLogistica.Controls.Add(this.lblRuta);
@@ -2302,17 +2289,6 @@ namespace NORI
             this.lblRemolque.Text = "Remolque";
             this.lblRemolque.Click += new System.EventHandler(this.lblRemolque_Click);
             // 
-            // btnGenerarTransferenciaStock
-            // 
-            this.btnGenerarTransferenciaStock.Location = new System.Drawing.Point(542, 511);
-            this.btnGenerarTransferenciaStock.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnGenerarTransferenciaStock.Name = "btnGenerarTransferenciaStock";
-            this.btnGenerarTransferenciaStock.Size = new System.Drawing.Size(427, 31);
-            this.btnGenerarTransferenciaStock.TabIndex = 162;
-            this.btnGenerarTransferenciaStock.Text = "Generar transferencia de stock desde una previa";
-            this.btnGenerarTransferenciaStock.UseVisualStyleBackColor = true;
-            this.btnGenerarTransferenciaStock.Click += new System.EventHandler(this.btnGenerarTransferenciaStock_Click);
-            // 
             // bcID
             // 
             this.bcID.AutoModule = true;
@@ -2321,7 +2297,7 @@ namespace NORI
             this.bcID.Name = "bcID";
             this.bcID.Padding = new System.Windows.Forms.Padding(14, 2, 14, 0);
             this.bcID.Size = new System.Drawing.Size(291, 78);
-            //this.bcID.Symbology = code128Generator1;
+            this.bcID.Symbology = code128Generator1;
             this.bcID.TabIndex = 147;
             // 
             // cbRutas
@@ -2685,12 +2661,10 @@ namespace NORI
             // 
             this.xtraTabPageFinanzas.Controls.Add(this.cbProyectos);
             this.xtraTabPageFinanzas.Controls.Add(this.lblProyectos);
-            this.xtraTabPageFinanzas.Controls.Add(this.btnAnticipos);
             this.xtraTabPageFinanzas.Controls.Add(this.cbCanales);
             this.xtraTabPageFinanzas.Controls.Add(this.lblCanal);
             this.xtraTabPageFinanzas.Controls.Add(this.lbReferencias);
             this.xtraTabPageFinanzas.Controls.Add(this.btnReferencias);
-            this.xtraTabPageFinanzas.Controls.Add(this.btnGenerarPuntos);
             this.xtraTabPageFinanzas.Controls.Add(this.lblOrdenCompra);
             this.xtraTabPageFinanzas.Controls.Add(this.txtOrdenCompra);
             this.xtraTabPageFinanzas.Controls.Add(this.lblCuentaPago);
@@ -2728,17 +2702,6 @@ namespace NORI
             this.lblProyectos.TabIndex = 147;
             this.lblProyectos.Text = "Proyecto";
             // 
-            // btnAnticipos
-            // 
-            this.btnAnticipos.Location = new System.Drawing.Point(151, 255);
-            this.btnAnticipos.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnAnticipos.Name = "btnAnticipos";
-            this.btnAnticipos.Size = new System.Drawing.Size(291, 31);
-            this.btnAnticipos.TabIndex = 145;
-            this.btnAnticipos.TabStop = false;
-            this.btnAnticipos.Text = "Aplicar anticipo";
-            this.btnAnticipos.Click += new System.EventHandler(this.btnAnticipos_Click);
-            // 
             // cbCanales
             // 
             this.cbCanales.Location = new System.Drawing.Point(151, 116);
@@ -2766,7 +2729,7 @@ namespace NORI
             // 
             // lbReferencias
             // 
-            this.lbReferencias.Location = new System.Drawing.Point(151, 292);
+            this.lbReferencias.Location = new System.Drawing.Point(151, 255);
             this.lbReferencias.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lbReferencias.Name = "lbReferencias";
             this.lbReferencias.Size = new System.Drawing.Size(291, 145);
@@ -2776,24 +2739,14 @@ namespace NORI
             // 
             // btnReferencias
             // 
-            this.btnReferencias.Location = new System.Drawing.Point(313, 218);
+            this.btnReferencias.Location = new System.Drawing.Point(151, 218);
             this.btnReferencias.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnReferencias.Name = "btnReferencias";
-            this.btnReferencias.Size = new System.Drawing.Size(129, 31);
+            this.btnReferencias.Size = new System.Drawing.Size(291, 31);
             this.btnReferencias.TabIndex = 0;
             this.btnReferencias.TabStop = false;
             this.btnReferencias.Text = "Referencias";
             this.btnReferencias.Click += new System.EventHandler(this.btnReferencias_Click);
-            // 
-            // btnGenerarPuntos
-            // 
-            this.btnGenerarPuntos.Location = new System.Drawing.Point(151, 218);
-            this.btnGenerarPuntos.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnGenerarPuntos.Name = "btnGenerarPuntos";
-            this.btnGenerarPuntos.Size = new System.Drawing.Size(154, 31);
-            this.btnGenerarPuntos.TabIndex = 87;
-            this.btnGenerarPuntos.Text = "Generar puntos";
-            this.btnGenerarPuntos.Click += new System.EventHandler(this.btnGenerarPuntos_Click);
             // 
             // lblOrdenCompra
             // 
@@ -3250,7 +3203,7 @@ namespace NORI
             this.ClientSize = new System.Drawing.Size(1198, 859);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.mainRibbonControl);
-            this.IconOptions.Image = global::componentResourceManager.Resources.logo;
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmDocumentos.IconOptions.Image")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "frmDocumentos";
@@ -3277,7 +3230,6 @@ namespace NORI
             ((System.ComponentModel.ISupportInitialize)(this.cbAlmacenOrigen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaVencimiento.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaVencimiento.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbMonederos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaContabilizacion.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaContabilizacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbCOD.Properties)).EndInit();
@@ -3365,9 +3317,11 @@ namespace NORI
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private ToolTip toolTip1;
         private Button btnStat;
-        private LabelControl labelControl3;
-        private LabelControl labelControl2;
+        private LabelControl lbFact;
+        private LabelControl lbCredito;
         private TextEdit txtFactVencidas;
         private TextEdit txtCreditoDisponible;
+        private BarCodeControl bcID;
+        private LabelControl lbMensajeC;
     }
 }

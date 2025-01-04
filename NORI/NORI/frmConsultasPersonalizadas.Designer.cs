@@ -35,7 +35,6 @@ namespace NORI
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultasPersonalizadas));
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiGuardar = new DevExpress.XtraBars.BarButtonItem();
             this.bbiGuardarCerrar = new DevExpress.XtraBars.BarButtonItem();
@@ -72,24 +71,28 @@ namespace NORI
             this.lblID = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            ((System.ComponentModel.ISupportInitialize)this.mainRibbonControl).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.gridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.layoutControl1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.txtContexto.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.gcResultados).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.gvResultados).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.txtQuery.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.separatorControl1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.txtNombre.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.cbActivo.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.layoutControlGroup1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.layoutControlItem1).BeginInit();
-            base.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtContexto.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcResultados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvResultados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQuery.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbActivo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // mainRibbonControl
+            // 
+            this.mainRibbonControl.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
+            this.mainRibbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(40, 39, 40, 39);
             this.mainRibbonControl.ExpandCollapseItem.Id = 0;
-            this.mainRibbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[12]
-            {
+            this.mainRibbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.mainRibbonControl.ExpandCollapseItem,
             this.bbiGuardar,
             this.bbiGuardarCerrar,
@@ -101,104 +104,159 @@ namespace NORI
             this.bbiAnterior,
             this.bbiUltimo,
             this.bbiSiguiente,
-            this.bbiNuevo
-            });
+            this.bbiNuevo});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
+            this.mainRibbonControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mainRibbonControl.MaxItemId = 3;
             this.mainRibbonControl.Name = "mainRibbonControl";
-            this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[1] { this.mainRibbonPage });
+            this.mainRibbonControl.OptionsMenuMinWidth = 440;
+            this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.mainRibbonPage});
             this.mainRibbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.mainRibbonControl.Size = new System.Drawing.Size(573, 79);
+            this.mainRibbonControl.Size = new System.Drawing.Size(764, 90);
             this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
+            // 
+            // bbiGuardar
+            // 
             this.bbiGuardar.Caption = "Guardar";
             this.bbiGuardar.Id = 2;
-            this.bbiGuardar.ImageUri.Uri = "Save";
+            this.bbiGuardar.ImageOptions.ImageUri.Uri = "Save";
             this.bbiGuardar.Name = "bbiGuardar";
-            this.bbiGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(bbiGuardar_ItemClick);
+            this.bbiGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiGuardar_ItemClick);
+            // 
+            // bbiGuardarCerrar
+            // 
             this.bbiGuardarCerrar.Caption = "Guardar y cerrar";
             this.bbiGuardarCerrar.Id = 3;
-            this.bbiGuardarCerrar.ImageUri.Uri = "SaveAndClose";
+            this.bbiGuardarCerrar.ImageOptions.ImageUri.Uri = "SaveAndClose";
             this.bbiGuardarCerrar.Name = "bbiGuardarCerrar";
-            this.bbiGuardarCerrar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(bbiGuardarCerrar_ItemClick);
+            this.bbiGuardarCerrar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiGuardarCerrar_ItemClick);
+            // 
+            // bbiGuardarNuevo
+            // 
             this.bbiGuardarNuevo.Caption = "Guardar y nuevo";
             this.bbiGuardarNuevo.Id = 4;
-            this.bbiGuardarNuevo.ImageUri.Uri = "SaveAndNew";
+            this.bbiGuardarNuevo.ImageOptions.ImageUri.Uri = "SaveAndNew";
             this.bbiGuardarNuevo.Name = "bbiGuardarNuevo";
-            this.bbiGuardarNuevo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(bbiGuardarNuevo_ItemClick);
+            this.bbiGuardarNuevo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiGuardarNuevo_ItemClick);
+            // 
+            // bbiEliminar
+            // 
             this.bbiEliminar.Caption = "Eliminar";
             this.bbiEliminar.Id = 6;
-            this.bbiEliminar.ImageUri.Uri = "Delete";
+            this.bbiEliminar.ImageOptions.ImageUri.Uri = "Delete";
             this.bbiEliminar.Name = "bbiEliminar";
+            // 
+            // bbiRestablecer
+            // 
             this.bbiRestablecer.Id = 1;
             this.bbiRestablecer.Name = "bbiRestablecer";
+            // 
+            // bbiBuscar
+            // 
             this.bbiBuscar.Caption = "Buscar";
             this.bbiBuscar.Id = 4;
-            this.bbiBuscar.ImageUri.Uri = "Find";
+            this.bbiBuscar.ImageOptions.ImageUri.Uri = "Find";
             this.bbiBuscar.Name = "bbiBuscar";
             this.bbiBuscar.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
-            this.bbiBuscar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(bbiBuscar_ItemClick);
+            this.bbiBuscar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiBuscar_ItemClick);
+            // 
+            // bbiPrimero
+            // 
             this.bbiPrimero.Caption = "Primero";
             this.bbiPrimero.Id = 5;
-            this.bbiPrimero.ImageUri.Uri = "First";
+            this.bbiPrimero.ImageOptions.ImageUri.Uri = "First";
             this.bbiPrimero.Name = "bbiPrimero";
             this.bbiPrimero.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
-            this.bbiPrimero.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(bbiPrimero_ItemClick);
+            this.bbiPrimero.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPrimero_ItemClick);
+            // 
+            // bbiAnterior
+            // 
             this.bbiAnterior.Caption = "Anterior";
             this.bbiAnterior.Id = 6;
-            this.bbiAnterior.ImageUri.Uri = "Prev";
+            this.bbiAnterior.ImageOptions.ImageUri.Uri = "Prev";
             this.bbiAnterior.Name = "bbiAnterior";
             this.bbiAnterior.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
-            this.bbiAnterior.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(bbiAnterior_ItemClick);
+            this.bbiAnterior.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiAnterior_ItemClick);
+            // 
+            // bbiUltimo
+            // 
             this.bbiUltimo.Caption = "Último";
             this.bbiUltimo.Id = 7;
-            this.bbiUltimo.ImageUri.Uri = "Last";
+            this.bbiUltimo.ImageOptions.ImageUri.Uri = "Last";
             this.bbiUltimo.Name = "bbiUltimo";
             this.bbiUltimo.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
-            this.bbiUltimo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(bbiUltimo_ItemClick);
-            this.bbiSiguiente.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.bbiUltimo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiUltimo_ItemClick);
+            // 
+            // bbiSiguiente
+            // 
             this.bbiSiguiente.Caption = "Siguiente";
             this.bbiSiguiente.Id = 8;
-            this.bbiSiguiente.ImageUri.Uri = "Next";
+            this.bbiSiguiente.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.bbiSiguiente.ImageOptions.ImageUri.Uri = "Next";
             this.bbiSiguiente.Name = "bbiSiguiente";
             this.bbiSiguiente.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
-            this.bbiSiguiente.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(bbiSiguiente_ItemClick);
+            this.bbiSiguiente.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSiguiente_ItemClick);
+            // 
+            // bbiNuevo
+            // 
             this.bbiNuevo.Caption = "Nuevo";
             this.bbiNuevo.Id = 1;
-            this.bbiNuevo.ImageUri.Uri = "Add";
+            this.bbiNuevo.ImageOptions.ImageUri.Uri = "Add";
             this.bbiNuevo.Name = "bbiNuevo";
-            this.bbiNuevo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(bbiNuevo_ItemClick);
-            this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[2] { this.mainRibbonPageGroup, this.searchRibbonPageGroup });
+            this.bbiNuevo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiNuevo_ItemClick);
+            // 
+            // mainRibbonPage
+            // 
+            this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.mainRibbonPageGroup,
+            this.searchRibbonPageGroup});
             this.mainRibbonPage.MergeOrder = 0;
             this.mainRibbonPage.Name = "mainRibbonPage";
             this.mainRibbonPage.Text = "ARCHIVO";
+            // 
+            // mainRibbonPageGroup
+            // 
             this.mainRibbonPageGroup.AllowTextClipping = false;
+            this.mainRibbonPageGroup.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiNuevo);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiGuardar);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiGuardarCerrar);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiGuardarNuevo);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
-            this.mainRibbonPageGroup.ShowCaptionButton = false;
             this.mainRibbonPageGroup.Text = "Opciones";
+            // 
+            // searchRibbonPageGroup
+            // 
             this.searchRibbonPageGroup.AllowTextClipping = false;
+            this.searchRibbonPageGroup.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.searchRibbonPageGroup.ItemLinks.Add(this.bbiBuscar);
             this.searchRibbonPageGroup.ItemLinks.Add(this.bbiPrimero);
             this.searchRibbonPageGroup.ItemLinks.Add(this.bbiAnterior);
             this.searchRibbonPageGroup.ItemLinks.Add(this.bbiSiguiente);
             this.searchRibbonPageGroup.ItemLinks.Add(this.bbiUltimo);
             this.searchRibbonPageGroup.Name = "searchRibbonPageGroup";
-            this.searchRibbonPageGroup.ShowCaptionButton = false;
             this.searchRibbonPageGroup.Text = "Navegación";
+            // 
+            // gridView1
+            // 
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            // 
+            // layoutControl1
+            // 
             this.layoutControl1.Controls.Add(this.panel1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 79);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 90);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(573, 447);
+            this.layoutControl1.Size = new System.Drawing.Size(764, 598);
             this.layoutControl1.TabIndex = 59;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // panel1
+            // 
             this.panel1.Controls.Add(this.txtContexto);
             this.panel1.Controls.Add(this.lblContexto);
             this.panel1.Controls.Add(this.btnPDF);
@@ -214,154 +272,234 @@ namespace NORI
             this.panel1.Controls.Add(this.cbActivo);
             this.panel1.Controls.Add(this.lblNombre);
             this.panel1.Controls.Add(this.lblID);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(16, 16);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(549, 423);
+            this.panel1.Size = new System.Drawing.Size(732, 566);
             this.panel1.TabIndex = 54;
-            this.txtContexto.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            this.txtContexto.Location = new System.Drawing.Point(433, 13);
+            // 
+            // txtContexto
+            // 
+            this.txtContexto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContexto.Location = new System.Drawing.Point(577, 17);
+            this.txtContexto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtContexto.MenuManager = this.mainRibbonControl;
             this.txtContexto.Name = "txtContexto";
             this.txtContexto.Properties.MaxLength = 254;
-            this.txtContexto.Size = new System.Drawing.Size(102, 20);
+            this.txtContexto.Size = new System.Drawing.Size(136, 24);
             this.txtContexto.TabIndex = 1;
-            this.lblContexto.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            this.lblContexto.Location = new System.Drawing.Point(331, 16);
+            // 
+            // lblContexto
+            // 
+            this.lblContexto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblContexto.Location = new System.Drawing.Point(441, 21);
+            this.lblContexto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblContexto.Name = "lblContexto";
-            this.lblContexto.Size = new System.Drawing.Size(45, 13);
+            this.lblContexto.Size = new System.Drawing.Size(57, 17);
             this.lblContexto.TabIndex = 60;
             this.lblContexto.Text = "Contexto";
-            this.btnPDF.Image = (System.Drawing.Image)resources.GetObject("btnPDF.Image");
-            this.btnPDF.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnPDF.Location = new System.Drawing.Point(8, 122);
+            // 
+            // btnPDF
+            // 
+            this.btnPDF.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnPDF.Location = new System.Drawing.Point(11, 160);
+            this.btnPDF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPDF.Name = "btnPDF";
-            this.btnPDF.Size = new System.Drawing.Size(96, 23);
+            this.btnPDF.Size = new System.Drawing.Size(128, 30);
             this.btnPDF.TabIndex = 0;
             this.btnPDF.TabStop = false;
             this.btnPDF.Text = "Exportar PDF";
-            this.btnPDF.Click += new System.EventHandler(btnPDF_Click);
-            this.btnXSLX.Image = (System.Drawing.Image)resources.GetObject("btnXSLX.Image");
-            this.btnXSLX.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnXSLX.Location = new System.Drawing.Point(8, 92);
+            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
+            // 
+            // btnXSLX
+            // 
+            this.btnXSLX.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnXSLX.Location = new System.Drawing.Point(11, 120);
+            this.btnXSLX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnXSLX.Name = "btnXSLX";
-            this.btnXSLX.Size = new System.Drawing.Size(96, 23);
+            this.btnXSLX.Size = new System.Drawing.Size(128, 30);
             this.btnXSLX.TabIndex = 0;
             this.btnXSLX.TabStop = false;
             this.btnXSLX.Text = "Exportar XSLX";
-            this.btnXSLX.Click += new System.EventHandler(btnXSLX_Click);
-            this.btnEjecutar.Image = (System.Drawing.Image)resources.GetObject("btnEjecutar.Image");
-            this.btnEjecutar.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnEjecutar.Location = new System.Drawing.Point(8, 63);
+            this.btnXSLX.Click += new System.EventHandler(this.btnXSLX_Click);
+            // 
+            // btnEjecutar
+            // 
+            this.btnEjecutar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnEjecutar.Location = new System.Drawing.Point(11, 82);
+            this.btnEjecutar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEjecutar.Name = "btnEjecutar";
-            this.btnEjecutar.Size = new System.Drawing.Size(96, 23);
+            this.btnEjecutar.Size = new System.Drawing.Size(128, 30);
             this.btnEjecutar.TabIndex = 4;
             this.btnEjecutar.Text = "Ejecutar SQL";
-            this.btnEjecutar.Click += new System.EventHandler(btnEjecutar_Click);
-            this.gcResultados.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            this.gcResultados.Location = new System.Drawing.Point(8, 173);
+            this.btnEjecutar.Click += new System.EventHandler(this.btnEjecutar_Click);
+            // 
+            // gcResultados
+            // 
+            this.gcResultados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gcResultados.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.gcResultados.Location = new System.Drawing.Point(11, 226);
             this.gcResultados.MainView = this.gvResultados;
+            this.gcResultados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcResultados.Name = "gcResultados";
-            this.gcResultados.Size = new System.Drawing.Size(535, 203);
+            this.gcResultados.Size = new System.Drawing.Size(713, 278);
             this.gcResultados.TabIndex = 55;
-            this.gcResultados.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[1] { this.gvResultados });
+            this.gcResultados.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvResultados});
+            // 
+            // gvResultados
+            // 
             this.gvResultados.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.gvResultados.DetailHeight = 458;
             this.gvResultados.GridControl = this.gcResultados;
             this.gvResultados.Name = "gvResultados";
             this.gvResultados.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.gvResultados.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.gvResultados.OptionsBehavior.Editable = false;
-            this.gvResultados.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
-            this.lblQuery.Location = new System.Drawing.Point(12, 44);
+            this.gvResultados.OptionsEditForm.PopupEditFormWidth = 1067;
+            // 
+            // lblQuery
+            // 
+            this.lblQuery.Location = new System.Drawing.Point(16, 58);
+            this.lblQuery.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblQuery.Name = "lblQuery";
-            this.lblQuery.Size = new System.Drawing.Size(30, 13);
+            this.lblQuery.Size = new System.Drawing.Size(38, 17);
             this.lblQuery.TabIndex = 54;
             this.lblQuery.Text = "Query";
-            this.txtQuery.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            this.txtQuery.Location = new System.Drawing.Point(114, 42);
+            // 
+            // txtQuery
+            // 
+            this.txtQuery.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtQuery.Location = new System.Drawing.Point(152, 55);
+            this.txtQuery.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtQuery.MenuManager = this.mainRibbonControl;
             this.txtQuery.Name = "txtQuery";
-            this.txtQuery.Size = new System.Drawing.Size(421, 103);
+            this.txtQuery.Size = new System.Drawing.Size(561, 135);
             this.txtQuery.TabIndex = 2;
-            this.separatorControl1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            this.separatorControl1.Location = new System.Drawing.Point(5, 144);
+            // 
+            // separatorControl1
+            // 
+            this.separatorControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.separatorControl1.Location = new System.Drawing.Point(7, 188);
+            this.separatorControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.separatorControl1.Name = "separatorControl1";
-            this.separatorControl1.Size = new System.Drawing.Size(549, 23);
+            this.separatorControl1.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.separatorControl1.Size = new System.Drawing.Size(732, 30);
             this.separatorControl1.TabIndex = 52;
-            this.lblFechaActualizacion.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            this.lblFechaActualizacion.Location = new System.Drawing.Point(487, 403);
+            // 
+            // lblFechaActualizacion
+            // 
+            this.lblFechaActualizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFechaActualizacion.Location = new System.Drawing.Point(649, 540);
+            this.lblFechaActualizacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblFechaActualizacion.Name = "lblFechaActualizacion";
-            this.lblFechaActualizacion.Size = new System.Drawing.Size(56, 13);
+            this.lblFechaActualizacion.Size = new System.Drawing.Size(65, 17);
             this.lblFechaActualizacion.TabIndex = 51;
             this.lblFechaActualizacion.Text = "01/01/0001";
-            this.txtNombre.Location = new System.Drawing.Point(114, 13);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(152, 17);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.MenuManager = this.mainRibbonControl;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Properties.MaxLength = 254;
-            this.txtNombre.Size = new System.Drawing.Size(211, 20);
+            this.txtNombre.Size = new System.Drawing.Size(281, 24);
             this.txtNombre.TabIndex = 0;
-            this.lblUltimaActualizacion.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            this.lblUltimaActualizacion.Location = new System.Drawing.Point(350, 403);
+            // 
+            // lblUltimaActualizacion
+            // 
+            this.lblUltimaActualizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUltimaActualizacion.Location = new System.Drawing.Point(467, 540);
+            this.lblUltimaActualizacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblUltimaActualizacion.Name = "lblUltimaActualizacion";
-            this.lblUltimaActualizacion.Size = new System.Drawing.Size(94, 13);
+            this.lblUltimaActualizacion.Size = new System.Drawing.Size(128, 17);
             this.lblUltimaActualizacion.TabIndex = 50;
             this.lblUltimaActualizacion.Text = "Última Actualización";
-            this.cbActivo.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
-            this.cbActivo.Location = new System.Drawing.Point(8, 397);
+            // 
+            // cbActivo
+            // 
+            this.cbActivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbActivo.Location = new System.Drawing.Point(11, 532);
+            this.cbActivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbActivo.MenuManager = this.mainRibbonControl;
             this.cbActivo.Name = "cbActivo";
             this.cbActivo.Properties.Caption = "Activo";
-            this.cbActivo.Size = new System.Drawing.Size(120, 19);
+            this.cbActivo.Size = new System.Drawing.Size(160, 21);
             this.cbActivo.TabIndex = 3;
-            this.lblNombre.Location = new System.Drawing.Point(12, 16);
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.Location = new System.Drawing.Point(16, 21);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(37, 13);
+            this.lblNombre.Size = new System.Drawing.Size(52, 17);
             this.lblNombre.TabIndex = 46;
             this.lblNombre.Text = "Nombre";
-            this.lblID.Location = new System.Drawing.Point(487, 382);
+            // 
+            // lblID
+            // 
+            this.lblID.Location = new System.Drawing.Point(649, 500);
+            this.lblID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(6, 13);
+            this.lblID.Size = new System.Drawing.Size(9, 17);
             this.lblID.TabIndex = 47;
             this.lblID.Text = "0";
+            // 
+            // layoutControlGroup1
+            // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[1] { this.layoutControlItem1 });
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(573, 447);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(764, 598);
             this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
             this.layoutControlItem1.Control = this.panel1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(553, 427);
+            this.layoutControlItem1.Size = new System.Drawing.Size(738, 572);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            base.AutoScaleDimensions = new System.Drawing.SizeF(6f, 13f);
-            base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            base.ClientSize = new System.Drawing.Size(573, 526);
-            base.Controls.Add(this.layoutControl1);
-            base.Controls.Add(this.mainRibbonControl);
-            base.Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
-            base.Name = "frmConsultasPersonalizadas";
+            // 
+            // frmConsultasPersonalizadas
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(764, 688);
+            this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.mainRibbonControl);
+            this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "frmConsultasPersonalizadas";
             this.Ribbon = this.mainRibbonControl;
-            base.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultas Personalizadas";
-            ((System.ComponentModel.ISupportInitialize)this.mainRibbonControl).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.gridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.layoutControl1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)this.txtContexto.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.gcResultados).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.gvResultados).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.txtQuery.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.separatorControl1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.txtNombre.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.cbActivo.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.layoutControlGroup1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.layoutControlItem1).EndInit();
-            base.ResumeLayout(false);
-            base.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtContexto.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcResultados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvResultados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQuery.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbActivo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
     }
 }

@@ -49,7 +49,6 @@ namespace NORI
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator1 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDocumentos));
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiGuardar = new DevExpress.XtraBars.BarButtonItem();
             this.bbiGuardarCerrar = new DevExpress.XtraBars.BarButtonItem();
@@ -906,7 +905,7 @@ namespace NORI
             this.btnCargaArticulos.Name = "btnCargaArticulos";
             this.btnCargaArticulos.Size = new System.Drawing.Size(236, 31);
             this.btnCargaArticulos.TabIndex = 166;
-            this.btnCargaArticulos.Text = "Subir Articulos XLSX";
+            this.btnCargaArticulos.Text = "Subir Articulos con Excel";
             this.btnCargaArticulos.Click += new System.EventHandler(this.btnCargaArticulos_Click);
             // 
             // btnDescuentosEspeciales
@@ -3203,7 +3202,7 @@ namespace NORI
             this.ClientSize = new System.Drawing.Size(1198, 859);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.mainRibbonControl);
-            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmDocumentos.IconOptions.Image")));
+            this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "frmDocumentos";

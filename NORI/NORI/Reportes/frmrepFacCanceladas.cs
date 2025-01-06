@@ -1,5 +1,7 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
+using DevExpress.XtraSplashScreen;
+using DevExpress.XtraWaitForm;
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -24,9 +26,12 @@ namespace NORI.Reportes
         {
             try
             {
+                SplashScreenManager.ShowForm(Form.ActiveForm, typeof(DemoWaitForm), true, true, false);
+                SplashScreenManager.Default.SetWaitFormCaption("Por favor espere");
+                SplashScreenManager.Default.SetWaitFormDescription("Sincronizando información para el reporte...");
                 string ruta = Settings.Settings.Default.rutaReportes.ToString() + "FACT CANCELADAS.rpt";
-                string fechaInicio = txtFechaInicio.Text;
-                string fechaFin = txtFechaFin.Text;
+                string fechaInicio = DateTime.Parse(txtFechaInicio.Text).ToString("yyyy-MM-dd");
+                string fechaFin = DateTime.Parse(txtFechaFin.Text).ToString("yyyy-MM-dd");
                 this.Hide();
                 string AttachPDF = addFileTemp();
                 if (AttachPDF != "")
@@ -34,6 +39,7 @@ namespace NORI.Reportes
                     ReportDocument cryReportDocument = new ReportDocument();
                     cryReportDocument.Load(ruta);
                     cryReportDocument.SetDatabaseLogon(USERSQL, PASSSQL, SERVER, BD);
+                    cryReportDocument.Refresh();
                     cryReportDocument.SetParameterValue("@FechaInicio", fechaInicio);
                     cryReportDocument.SetParameterValue("@FechaFin", fechaFin);
                     cryReportDocument.ExportToDisk(ExportFormatType.PortableDocFormat, AttachPDF);

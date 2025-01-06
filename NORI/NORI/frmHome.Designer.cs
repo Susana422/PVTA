@@ -120,9 +120,9 @@ namespace NORI
             // pictureBox1
             // 
             this.pictureBox1.Image = global::componentResourceManager.Resources.logoDTM;
-            this.pictureBox1.Location = new System.Drawing.Point(163, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(185, 36);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(278, 106);
+            this.pictureBox1.Size = new System.Drawing.Size(223, 104);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 99;
             this.pictureBox1.TabStop = false;

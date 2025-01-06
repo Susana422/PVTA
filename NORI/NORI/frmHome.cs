@@ -9,8 +9,26 @@ namespace NORI
         public frmHome()
         {
             InitializeComponent();
+            cursorManita();
+          
         }
+        public void cursorManita() 
+        {
+            pictureBox2.MouseEnter += (sender, e) => {
+                this.Cursor = Cursors.Hand;
+            };
 
+            pictureBox2.MouseLeave += (sender, e) => {
+                this.Cursor = Cursors.Default;  // Restablecer al cursor por defecto
+            };
+            pictureBox3.MouseEnter += (sender, e) => {
+                this.Cursor = Cursors.Hand;
+            };
+
+            pictureBox3.MouseLeave += (sender, e) => {
+                this.Cursor = Cursors.Default;  // Restablecer al cursor por defecto
+            };
+        }
         private void pcHuella_Click(object sender, EventArgs e)
         {
             this.Hide();

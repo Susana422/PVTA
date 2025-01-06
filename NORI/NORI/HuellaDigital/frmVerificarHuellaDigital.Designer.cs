@@ -32,7 +32,7 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.label1 = new System.Windows.Forms.Label();
             this.VerificationControl = new DPFP.Gui.Verification.VerificationControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCerrar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,21 +79,21 @@
             this.VerificationControl.TabIndex = 8;
             this.VerificationControl.OnComplete += new DPFP.Gui.Verification.VerificationControl._OnComplete(this.OnComplete);
             // 
-            // simpleButton1
+            // btnCerrar
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(292, 159);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(115, 29);
-            this.simpleButton1.TabIndex = 9;
-            this.simpleButton1.Text = "Cerrar";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.btnCerrar.Location = new System.Drawing.Point(292, 159);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(115, 29);
+            this.btnCerrar.TabIndex = 9;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // frmVerificarHuellaDigital
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 227);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.VerificationControl);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ribbonStatusBar);
@@ -117,6 +117,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private System.Windows.Forms.Label label1;
         private DPFP.Gui.Verification.VerificationControl VerificationControl;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnCerrar;
     }
 }

@@ -24,8 +24,13 @@ namespace NORI
             //ExchangeData(true);                                 
             Data.OnChange += delegate { ExchangeData(false); };
             cargarHuellaDigital(user);
+            cursorManita();
         }
-
+        public void cursorManita()
+        {
+            btnVerificar.MouseEnter += (sender, e) => { this.Cursor = Cursors.Hand; };
+            btnVerificar.MouseLeave += (sender, e) => { this.Cursor = Cursors.Default; };
+        }
         public void cargarHuellaDigital(Usuario user)
         {
             try

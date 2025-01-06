@@ -43,7 +43,7 @@ namespace NORI
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.lbEnalceHuella = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbConexiones = new DevExpress.XtraEditors.LookUpEdit();
             this.txtUsuario = new DevExpress.XtraEditors.TextEdit();
@@ -129,7 +129,7 @@ namespace NORI
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.labelControl2);
+            this.panel1.Controls.Add(this.lbEnalceHuella);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.cbConexiones);
             this.panel1.Controls.Add(this.txtUsuario);
@@ -144,17 +144,17 @@ namespace NORI
             this.panel1.Size = new System.Drawing.Size(602, 479);
             this.panel1.TabIndex = 0;
             // 
-            // labelControl2
+            // lbEnalceHuella
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(420, 377);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(5);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(83, 16);
-            this.labelControl2.TabIndex = 100;
-            this.labelControl2.Text = "Huella Digital";
-            this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
+            this.lbEnalceHuella.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEnalceHuella.Appearance.Options.UseFont = true;
+            this.lbEnalceHuella.Location = new System.Drawing.Point(420, 377);
+            this.lbEnalceHuella.Margin = new System.Windows.Forms.Padding(5);
+            this.lbEnalceHuella.Name = "lbEnalceHuella";
+            this.lbEnalceHuella.Size = new System.Drawing.Size(83, 16);
+            this.lbEnalceHuella.TabIndex = 100;
+            this.lbEnalceHuella.Text = "Huella Digital";
+            this.lbEnalceHuella.Click += new System.EventHandler(this.labelControl2_Click);
             // 
             // pictureBox1
             // 
@@ -336,6 +336,6 @@ namespace NORI
 
         private LookUpEdit cbConexiones;
         private DefaultLookAndFeel defaultLookAndFeel1;
-        private LabelControl labelControl2;
+        private LabelControl lbEnalceHuella;
     }
 }

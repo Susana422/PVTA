@@ -86,10 +86,10 @@ namespace NORI
             this.accFacturasDiarias = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accPagosCredito = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accNC = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement10 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement12 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement13 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accFactCanceladas = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accPartidasAbiertas = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accComisiones = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accReportesVentas = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accMonitor = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.lblEmpresa = new DevExpress.XtraEditors.LabelControl();
@@ -164,9 +164,9 @@ namespace NORI
             // 
             this.dockPanel1_Container.Controls.Add(this.accordionControl1);
             this.dockPanel1_Container.Controls.Add(this.lblEmpresa);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 27);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 26);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(315, 655);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(315, 656);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // accordionControl1
@@ -185,7 +185,7 @@ namespace NORI
             this.accordionControlElement5});
             this.accordionControl1.Location = new System.Drawing.Point(3, 29);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.Size = new System.Drawing.Size(273, 629);
+            this.accordionControl1.Size = new System.Drawing.Size(273, 630);
             this.accordionControl1.TabIndex = 0;
             // 
             // accordionControlElementUsuario
@@ -259,6 +259,7 @@ namespace NORI
             this.accordionControlElementVendedores,
             this.accordionControlElementZonas,
             this.accordionControlElementSeries});
+            this.accordionControlElementGeneral.Expanded = true;
             this.accordionControlElementGeneral.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text),
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Image),
@@ -336,6 +337,7 @@ namespace NORI
             this.accordionControlElementImpuestos,
             this.accordionControlElementMonedas,
             this.accordionControlElementTipoCambio});
+            this.accordionControlElementFinanzas.Expanded = true;
             this.accordionControlElementFinanzas.Name = "accordionControlElementFinanzas";
             this.accordionControlElementFinanzas.Text = "Finanzas";
             // 
@@ -375,6 +377,7 @@ namespace NORI
             this.accordionControlElementMetodosPago,
             this.accordionControlElementPaises,
             this.accordionControlElementEstados});
+            this.accordionControlElementGestionSociosNegocios.Expanded = true;
             this.accordionControlElementGestionSociosNegocios.Name = "accordionControlElementGestionSociosNegocios";
             this.accordionControlElementGestionSociosNegocios.Text = "Socios de negocios";
             // 
@@ -438,6 +441,7 @@ namespace NORI
             this.accordionControlElementGruposArticulos,
             this.accordionControlElementAlmacenes,
             this.accordionControlElementFabricantes});
+            this.accordionControlElementGestionInventario.Expanded = true;
             this.accordionControlElementGestionInventario.Name = "accordionControlElementGestionInventario";
             this.accordionControlElementGestionInventario.Text = "Inventario";
             // 
@@ -583,10 +587,10 @@ namespace NORI
             this.accFacturasDiarias,
             this.accPagosCredito,
             this.accNC,
-            this.accordionControlElement10,
-            this.accordionControlElement11,
-            this.accordionControlElement12,
-            this.accordionControlElement13});
+            this.accFactCanceladas,
+            this.accPartidasAbiertas,
+            this.accComisiones,
+            this.accReportesVentas});
             this.accordionControlElementInformes.Expanded = true;
             this.accordionControlElementInformes.Name = "accordionControlElementInformes";
             this.accordionControlElementInformes.Text = "Informes";
@@ -627,41 +631,41 @@ namespace NORI
             this.accNC.Text = "Notas de Credito";
             this.accNC.Click += new System.EventHandler(this.accNC_Click);
             // 
-            // accordionControlElement10
+            // accFactCanceladas
             // 
-            this.accordionControlElement10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement10.ImageOptions.Image")));
-            this.accordionControlElement10.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
-            this.accordionControlElement10.Name = "accordionControlElement10";
-            this.accordionControlElement10.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement10.Text = "Facturas Canceladas";
-            this.accordionControlElement10.Click += new System.EventHandler(this.accordionControlElement10_Click);
+            this.accFactCanceladas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement10.ImageOptions.Image")));
+            this.accFactCanceladas.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
+            this.accFactCanceladas.Name = "accFactCanceladas";
+            this.accFactCanceladas.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accFactCanceladas.Text = "Facturas Canceladas";
+            this.accFactCanceladas.Click += new System.EventHandler(this.accordionControlElement10_Click);
             // 
-            // accordionControlElement11
+            // accPartidasAbiertas
             // 
-            this.accordionControlElement11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement11.ImageOptions.Image")));
-            this.accordionControlElement11.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
-            this.accordionControlElement11.Name = "accordionControlElement11";
-            this.accordionControlElement11.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement11.Text = "Partidas Abiertas";
-            this.accordionControlElement11.Click += new System.EventHandler(this.accordionControlElement11_Click);
+            this.accPartidasAbiertas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement11.ImageOptions.Image")));
+            this.accPartidasAbiertas.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
+            this.accPartidasAbiertas.Name = "accPartidasAbiertas";
+            this.accPartidasAbiertas.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accPartidasAbiertas.Text = "Partidas Abiertas";
+            this.accPartidasAbiertas.Click += new System.EventHandler(this.accordionControlElement11_Click);
             // 
-            // accordionControlElement12
+            // accComisiones
             // 
-            this.accordionControlElement12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement12.ImageOptions.Image")));
-            this.accordionControlElement12.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
-            this.accordionControlElement12.Name = "accordionControlElement12";
-            this.accordionControlElement12.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement12.Text = "Pago de Comisiones";
-            this.accordionControlElement12.Click += new System.EventHandler(this.accordionControlElement12_Click);
+            this.accComisiones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement12.ImageOptions.Image")));
+            this.accComisiones.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
+            this.accComisiones.Name = "accComisiones";
+            this.accComisiones.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accComisiones.Text = "Pago de Comisiones";
+            this.accComisiones.Click += new System.EventHandler(this.accordionControlElement12_Click);
             // 
-            // accordionControlElement13
+            // accReportesVentas
             // 
-            this.accordionControlElement13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement13.ImageOptions.Image")));
-            this.accordionControlElement13.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
-            this.accordionControlElement13.Name = "accordionControlElement13";
-            this.accordionControlElement13.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement13.Text = "Reporte de Ventas";
-            this.accordionControlElement13.Click += new System.EventHandler(this.accordionControlElement13_Click);
+            this.accReportesVentas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement13.ImageOptions.Image")));
+            this.accReportesVentas.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
+            this.accReportesVentas.Name = "accReportesVentas";
+            this.accReportesVentas.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accReportesVentas.Text = "Reporte de Ventas";
+            this.accReportesVentas.Click += new System.EventHandler(this.accordionControlElement13_Click);
             // 
             // accordionControlElement5
             // 
@@ -938,10 +942,10 @@ namespace NORI
         private AccordionControlElement accFacturasDiarias;
         private AccordionControlElement accPagosCredito;
         private AccordionControlElement accNC;
-        private AccordionControlElement accordionControlElement10;
-        private AccordionControlElement accordionControlElement11;
-        private AccordionControlElement accordionControlElement12;
-        private AccordionControlElement accordionControlElement13;
+        private AccordionControlElement accFactCanceladas;
+        private AccordionControlElement accPartidasAbiertas;
+        private AccordionControlElement accComisiones;
+        private AccordionControlElement accReportesVentas;
         private AccordionControlElement accordionControlElement5;
         private AccordionControlElement accMonitor;
         private BarButtonItem bbiParametrizacion;

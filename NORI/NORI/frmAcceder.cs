@@ -61,8 +61,16 @@ namespace NORI
             Cargar();
             this.ribbonControl1.OptionsSearchMenu.SearchItemPosition = DevExpress.XtraBars.Ribbon.SearchItemPosition.None;
             this.ribbonControl1.OptionsSearchMenu.UseCustomRibbonSearch = DevExpress.Utils.DefaultBoolean.False;
+            cursorManita();
         }
+        public void cursorManita()
+        {
+            btnAcceder.MouseEnter += (sender, e) => { this.Cursor = Cursors.Hand;};
+            btnAcceder.MouseLeave += (sender, e) => { this.Cursor = Cursors.Default; };
 
+            lbEnalceHuella.MouseEnter += (sender, e) => { this.Cursor = Cursors.Hand; };
+            lbEnalceHuella.MouseLeave += (sender, e) => { this.Cursor = Cursors.Default; };
+        }
         private void CargarConexiones()
         {
             ConfigurationManager.RefreshSection("connectionStrings");

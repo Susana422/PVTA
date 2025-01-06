@@ -19,7 +19,13 @@ namespace NORI
             InitializeComponent();
             Data = data;
             CargarConexiones();
+            cursorManita();
      
+        }
+        public void cursorManita()
+        {
+            btnRegresar.MouseEnter += (sender, e) => { this.Cursor = Cursors.Hand; };
+            btnRegresar.MouseLeave += (sender, e) => { this.Cursor = Cursors.Default; };
         }
         private void CargarConexiones()
         {

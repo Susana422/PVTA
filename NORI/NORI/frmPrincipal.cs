@@ -22,6 +22,10 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static NoriSDK.DescuentoEspecial;
+using static NoriSDK.Documento;
+using static NoriSDK.Impuesto.Linea;
+using static NoriSDK.MetodoPago.Tipo;
 
 namespace NORI
 {
@@ -170,7 +174,7 @@ namespace NORI
         private AccordionControlElement accordionControlElementCierreDia;
 
         private BarListItem bbiSucursales;
-
+        private bool isHandCursor = false;
         public frmPrincipal()
         {
             //IL_05a7: Unknown result type (might be due to invalid IL or missing references)
@@ -182,7 +186,7 @@ namespace NORI
             barEditItemAutorizaciones.EditValue = Program.Nori.UsuarioAutenticado.suscribir_autorizaciones;
             ((AccordionControlElementBase)accordionControlElementUsuario).Text = Program.Nori.UsuarioAutenticado.nombre;
             ((BarItem)barHeaderItemEstacion).Caption = Program.Nori.Estacion.nombre + " | Conectado a: " + Program.Nori.Conexion.DataSource;
-            ((Control)(object)this).Text = "DTM Solutions";//Program.Nori.Empresa.nombre_fiscal;
+            ((Control)(object)this).Text = "DTM SOLUTIONS POS";//Program.Nori.Empresa.nombre_fiscal;
             ((Control)(object)lblEmpresa).Text = Program.Nori.Empresa.nombre_comercial;
             if (Program.Nori.Empresa.prueba)
             {
@@ -304,7 +308,38 @@ namespace NORI
             {
             }
             CargarAsync();
+            cursorManita();
         }
+        public void cursorManita()
+        {
+            // Evento para manejar el paso del ratón sobre los elementos del AccordionControl
+            // Evento MouseMove en el AccordionControl
+            accordionControl1.MouseMove += (sender, e) =>
+            {
+                var hitInfo = accordionControl1.CalcHitInfo(e.Location);
+
+                // Verificar si el ratón está sobre un elemento del acordeón
+                if (hitInfo.IsInElement)
+                {
+                    // Solo cambiar a la manita si no está ya en esa posición
+                    if (!isHandCursor)
+                    {
+                        this.Cursor = Cursors.Hand;
+                        isHandCursor = true;  // Actualizar el estado del cursor
+                    }
+                }
+                else
+                {
+                    // Restaurar al cursor por defecto si no está sobre un elemento
+                    if (isHandCursor)
+                    {
+                        this.Cursor = Cursors.Default;
+                        isHandCursor = false;  // Restaurar el estado del cursor
+                    }
+                }
+            };
+        }
+
 
         private async void CargarModuloFacturacion()
         {

@@ -1,5 +1,6 @@
 ﻿using NORI.HuellaDigital.Class;
 using System;
+using System.Windows.Forms;
 
 namespace NORI.HuellaDigital
 {
@@ -9,9 +10,14 @@ namespace NORI.HuellaDigital
         {
             InitializeComponent();
             Data = data;
+            cursorManita();
 
         }
-
+        public void cursorManita()
+        {
+            btnCerrar.MouseEnter += (sender, e) => { this.Cursor = Cursors.Hand; };
+            btnCerrar.MouseLeave += (sender, e) => { this.Cursor = Cursors.Default; };
+        }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             this.Hide();

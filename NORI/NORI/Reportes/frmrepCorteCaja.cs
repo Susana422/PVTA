@@ -2,7 +2,9 @@
 using CrystalDecisions.Shared;
 using DevExpress.XtraSplashScreen;
 using DevExpress.XtraWaitForm;
+using NoriSDK;
 using System;
+using System.Data;
 using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
@@ -21,6 +23,8 @@ namespace NORI.Reportes
         public frmrepCorteCaja()
         {
             InitializeComponent();
+            txtFechaInicio.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            txtFechaFin.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -34,21 +38,25 @@ namespace NORI.Reportes
                 string fechaInicio = DateTime.Parse(txtFechaInicio.Text).ToString("yyyy-MM-dd");
                 string fechaFin = DateTime.Parse(txtFechaFin.Text).ToString("yyyy-MM-dd");
                 this.Hide();
-                string AttachPDF = addFileTemp();
-                if (AttachPDF != "")
+                if (verificarResultados(fechaInicio, fechaFin).Rows.Count > 0)
                 {
-                    ReportDocument cryReportDocument = new ReportDocument();
-                    cryReportDocument.Load(ruta);
-                    cryReportDocument.SetDatabaseLogon(USERSQL, PASSSQL, SERVER, BD);
-                    cryReportDocument.Refresh();
-                    cryReportDocument.SetParameterValue("@FechaInicio", fechaInicio);
-                    cryReportDocument.SetParameterValue("@FechaFin", fechaFin);
-                    cryReportDocument.ExportToDisk(ExportFormatType.PortableDocFormat, AttachPDF);
-                    cryReportDocument.Dispose();
-                    this.Hide();
-                    frmVisualizadorReportes frmVisual = new frmVisualizadorReportes(AttachPDF);
-                    frmVisual.Show();
 
+                    string AttachPDF = addFileTemp();
+                    if (AttachPDF != "")
+                    {
+                        ReportDocument cryReportDocument = new ReportDocument();
+                        cryReportDocument.Load(ruta);
+                        cryReportDocument.SetDatabaseLogon(USERSQL, PASSSQL, SERVER, BD);
+                        cryReportDocument.Refresh();
+                        cryReportDocument.SetParameterValue("@FechaInicio", fechaInicio);
+                        cryReportDocument.SetParameterValue("@FechaFin", fechaFin);
+                        cryReportDocument.ExportToDisk(ExportFormatType.PortableDocFormat, AttachPDF);
+                        cryReportDocument.Dispose();
+                        this.Hide();
+                        frmVisualizadorReportes frmVisual = new frmVisualizadorReportes(AttachPDF);
+                        frmVisual.Show();
+
+                    }
                 }
 
             }
@@ -61,6 +69,26 @@ namespace NORI.Reportes
                 SplashScreenManager.CloseForm(false);
             }
 
+        }
+        public DataTable verificarResultados(string fechaInicio,string fechaFin)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                DB dB = new DB();
+                string query = "EXEC [dbo].[SP_CORTECAJA] '"+ fechaInicio + "','"+ fechaFin + "'";
+                dt = dB.ExecuteQuery(query);
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("No se encontro ningun resultado,favor de verificar nuevamente");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrrido un error al verificar el reporte");
+                return dt;
+            }
+            return dt;
         }
         public string addFileTemp()
         {

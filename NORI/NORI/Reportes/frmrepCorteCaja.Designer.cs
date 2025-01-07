@@ -67,7 +67,7 @@
             // 
             // txtFechaInicio
             // 
-            this.txtFechaInicio.EditValue = new System.DateTime(2024, 12, 21, 13, 32, 49, 0);
+            this.txtFechaInicio.EditValue = new System.DateTime(2025, 1, 8, 9, 33, 31, 0);
             this.txtFechaInicio.Location = new System.Drawing.Point(27, 84);
             this.txtFechaInicio.Name = "txtFechaInicio";
             this.txtFechaInicio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {

@@ -2,7 +2,9 @@
 using CrystalDecisions.Shared;
 using DevExpress.XtraSplashScreen;
 using DevExpress.XtraWaitForm;
+using NoriSDK;
 using System;
+using System.Data;
 using System.IO;
 using System.Windows.Forms;
 
@@ -61,6 +63,26 @@ namespace NORI.Reportes
             }
 
         }
+        public DataTable verificarResultados(string fechaInicio, string fechaFin)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                DB dB = new DB();
+                string query = "EXEC [dbo].[SP_INFCOMISIONCOBRANZA] '" + fechaInicio + "','" + fechaFin + "'";
+                dt = dB.ExecuteQuery(query);
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("No se encontro ningun resultado,favor de verificar nuevamente");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrrido un error al verificar el reporte");
+                return dt;
+            }
+            return dt;
+        }
         public string addFileTemp()
         {
             string ruta = string.Empty;
@@ -91,6 +113,11 @@ namespace NORI.Reportes
             PdfSharp.Pdf.PdfDocument document = new PdfSharp.Pdf.PdfDocument();
             document.AddPage();
             document.Save(filePath);
+        }
+
+        private void frmrepPagoComision_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

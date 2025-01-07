@@ -134,6 +134,7 @@
             this.labelControl2.Size = new System.Drawing.Size(65, 18);
             this.labelControl2.TabIndex = 15;
             this.labelControl2.Text = "Vendedor";
+            this.labelControl2.Visible = false;
             // 
             // dateEdit1
             // 
@@ -146,6 +147,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit1.Size = new System.Drawing.Size(213, 24);
             this.dateEdit1.TabIndex = 16;
+            this.dateEdit1.Visible = false;
             // 
             // frmrepPagoComision
             // 
@@ -168,6 +170,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Pago de Comisiones";
+            this.Load += new System.EventHandler(this.frmrepPagoComision_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFechaInicio.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFechaInicio.Properties)).EndInit();

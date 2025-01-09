@@ -586,6 +586,7 @@ namespace NORI
             this.btnLiberarSesion.TabIndex = 0;
             this.btnLiberarSesion.TabStop = false;
             this.btnLiberarSesion.Text = "Liberar sesión";
+            this.btnLiberarSesion.Click += new System.EventHandler(this.btnLiberarSesion_Click);
             // 
             // cbSuscribirAutorizaciones
             // 
@@ -728,6 +729,7 @@ namespace NORI
             this.cbMostrarContraseña.Size = new System.Drawing.Size(50, 26);
             this.cbMostrarContraseña.TabIndex = 0;
             this.cbMostrarContraseña.TabStop = false;
+            this.cbMostrarContraseña.Click += new System.EventHandler(this.cbMostrarContraseña_CheckedChanged);
             // 
             // lblListaPrecios
             // 

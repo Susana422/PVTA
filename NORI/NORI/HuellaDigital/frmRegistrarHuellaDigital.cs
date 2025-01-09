@@ -21,10 +21,11 @@ namespace NORI
 
             usuario = user;
             Data = data;
-            //ExchangeData(true);                                 
-            Data.OnChange += delegate { ExchangeData(false); };
+            ExchangeData(true);
             cargarHuellaDigital(user);
-            cursorManita();
+            Data.OnChange += delegate { ExchangeData(false); };
+           // 
+           // cursorManita();
         }
         public void cursorManita()
         {
@@ -40,6 +41,7 @@ namespace NORI
                 if (huellas.Count == 0)
                 {
                     btnVerificar.Visible = false;
+                    return;
                 }
                 foreach (var x in huellas)
                 {
@@ -239,8 +241,17 @@ namespace NORI
 
         private void EnrollmentControl_OnStartEnroll(object Control, string ReaderSerialNumber, int Finger)
         {
-            string dedo = ObtenerNombreDedo(Finger);
-            ListEvents.Add(String.Format("OnStartEnroll: {0}, finger {1}", ReaderSerialNumber, Finger));
+            try
+            {
+                string dedo = ObtenerNombreDedo(Finger);
+                ListEvents.Add(String.Format("OnStartEnroll: {0}, finger {1}", ReaderSerialNumber, Finger));
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+         
         }
         private string ObtenerNombreDedo(int finger)
         {

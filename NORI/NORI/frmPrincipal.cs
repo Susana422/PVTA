@@ -101,13 +101,9 @@ namespace NORI
 
         private AccordionControlElement accordionControlElementFabricantes;
 
-        private AccordionControlElement accordionControlElementDepartamentos;
-
         private AccordionControlElement accordionControlElementVendedores;
 
         private BarHeaderItem barHeaderItemEstacion;
-
-        private AccordionControlElement accordionControlElementZonas;
 
         private AccordionControlElement accordionControlElementGestionSociosNegocios;
 

@@ -51,9 +51,7 @@ namespace NORI
             this.accordionControlElementEmpresa = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementConfiguracion = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementUsuarios = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementDepartamentos = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementVendedores = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementZonas = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementSeries = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementFinanzas = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementImpuestos = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -119,6 +117,8 @@ namespace NORI
             this.bwAutorizaciones = new System.ComponentModel.BackgroundWorker();
             this.timerAutorizaciones = new System.Windows.Forms.Timer(this.components);
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementZonas = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementDepartamentos = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanelMenuPrincipal.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
@@ -255,9 +255,7 @@ namespace NORI
             this.accordionControlElementEmpresa,
             this.accordionControlElementConfiguracion,
             this.accordionControlElementUsuarios,
-            this.accordionControlElementDepartamentos,
             this.accordionControlElementVendedores,
-            this.accordionControlElementZonas,
             this.accordionControlElementSeries});
             this.accordionControlElementGeneral.Expanded = true;
             this.accordionControlElementGeneral.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
@@ -295,15 +293,6 @@ namespace NORI
             this.accordionControlElementUsuarios.Text = "Usuarios";
             this.accordionControlElementUsuarios.Click += new System.EventHandler(this.accordionControlElementUsuarios_Click);
             // 
-            // accordionControlElementDepartamentos
-            // 
-            this.accordionControlElementDepartamentos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementDepartamentos.ImageOptions.Image")));
-            this.accordionControlElementDepartamentos.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
-            this.accordionControlElementDepartamentos.Name = "accordionControlElementDepartamentos";
-            this.accordionControlElementDepartamentos.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementDepartamentos.Text = "Departamentos";
-            this.accordionControlElementDepartamentos.Click += new System.EventHandler(this.accordionControlElementDepartamentos_Click);
-            // 
             // accordionControlElementVendedores
             // 
             this.accordionControlElementVendedores.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementVendedores.ImageOptions.Image")));
@@ -312,15 +301,6 @@ namespace NORI
             this.accordionControlElementVendedores.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementVendedores.Text = "Vendedores";
             this.accordionControlElementVendedores.Click += new System.EventHandler(this.accordionControlElementVendedores_Click);
-            // 
-            // accordionControlElementZonas
-            // 
-            this.accordionControlElementZonas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementZonas.ImageOptions.Image")));
-            this.accordionControlElementZonas.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
-            this.accordionControlElementZonas.Name = "accordionControlElementZonas";
-            this.accordionControlElementZonas.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElementZonas.Text = "Zonas";
-            this.accordionControlElementZonas.Click += new System.EventHandler(this.accordionControlElementZonas_Click);
             // 
             // accordionControlElementSeries
             // 
@@ -633,7 +613,7 @@ namespace NORI
             // 
             // accFactCanceladas
             // 
-            this.accFactCanceladas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement10.ImageOptions.Image")));
+            this.accFactCanceladas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accFactCanceladas.ImageOptions.Image")));
             this.accFactCanceladas.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
             this.accFactCanceladas.Name = "accFactCanceladas";
             this.accFactCanceladas.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -642,7 +622,7 @@ namespace NORI
             // 
             // accPartidasAbiertas
             // 
-            this.accPartidasAbiertas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement11.ImageOptions.Image")));
+            this.accPartidasAbiertas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accPartidasAbiertas.ImageOptions.Image")));
             this.accPartidasAbiertas.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
             this.accPartidasAbiertas.Name = "accPartidasAbiertas";
             this.accPartidasAbiertas.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -651,7 +631,7 @@ namespace NORI
             // 
             // accComisiones
             // 
-            this.accComisiones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement12.ImageOptions.Image")));
+            this.accComisiones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accComisiones.ImageOptions.Image")));
             this.accComisiones.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
             this.accComisiones.Name = "accComisiones";
             this.accComisiones.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -660,7 +640,7 @@ namespace NORI
             // 
             // accReportesVentas
             // 
-            this.accReportesVentas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement13.ImageOptions.Image")));
+            this.accReportesVentas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accReportesVentas.ImageOptions.Image")));
             this.accReportesVentas.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
             this.accReportesVentas.Name = "accReportesVentas";
             this.accReportesVentas.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -906,6 +886,24 @@ namespace NORI
             this.accordionControlElement1.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement1.Text = "Element1";
             // 
+            // accordionControlElementZonas
+            // 
+            this.accordionControlElementZonas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementZonas.ImageOptions.Image")));
+            this.accordionControlElementZonas.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
+            this.accordionControlElementZonas.Name = "accordionControlElementZonas";
+            this.accordionControlElementZonas.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementZonas.Text = "Zonas";
+            this.accordionControlElementZonas.Click += new System.EventHandler(this.accordionControlElementZonas_Click);
+            // 
+            // accordionControlElementDepartamentos
+            // 
+            this.accordionControlElementDepartamentos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementDepartamentos.ImageOptions.Image")));
+            this.accordionControlElementDepartamentos.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
+            this.accordionControlElementDepartamentos.Name = "accordionControlElementDepartamentos";
+            this.accordionControlElementDepartamentos.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementDepartamentos.Text = "Departamentos";
+            this.accordionControlElementDepartamentos.Click += new System.EventHandler(this.accordionControlElementDepartamentos_Click);
+            // 
             // frmPrincipal
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -949,5 +947,7 @@ namespace NORI
         private AccordionControlElement accordionControlElement5;
         private AccordionControlElement accMonitor;
         private BarButtonItem bbiParametrizacion;
+        private AccordionControlElement accordionControlElementZonas;
+        private AccordionControlElement accordionControlElementDepartamentos;
     }
 }

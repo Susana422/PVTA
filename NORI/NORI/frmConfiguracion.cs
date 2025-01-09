@@ -41,252 +41,6 @@ namespace NORI
 
         private LayoutControlItem layoutControlItem1;
 
-        private TabPane tabPane1;
-
-        private TabNavigationPage tabNavigationPageGeneral;
-
-        private TabNavigationPage tabNavigationPageDirectorios;
-
-        private TabNavigationPage tabNavigationPageSAP;
-
-        private LabelControl lblFechaActualizacion;
-
-        private LabelControl lblUltimaActualizacion;
-
-        private TextEdit txtDirectorioHuellas;
-
-        private LabelControl lblDirectorioHuellas;
-
-        private TextEdit txtDirectorioXML;
-
-        private LabelControl lblDirectorioXML;
-
-        private TextEdit txtDirectorioImagenes;
-
-        private LabelControl lblDirectorioImagenes;
-
-        private TextEdit txtDirectorioDocumentos;
-
-        private LabelControl lblDirectorioDocumentos;
-
-        private CheckEdit cbSAP;
-
-        private LabelControl lblSAP;
-
-        private GroupBox gbSAP;
-
-        private TextEdit txtServidor;
-
-        private LabelControl lblServidor;
-
-        private LabelControl lblTipoServidorBD;
-
-        private ComboBoxEdit cbTipoServidorBD;
-
-        private TextEdit txtBD;
-
-        private LabelControl lblBD;
-
-        private TextEdit txtContraseñaBD;
-
-        private LabelControl lblContraseñaBD;
-
-        private TextEdit txtServidorLicencias;
-
-        private LabelControl lblServidorLicencias;
-
-        private TextEdit txtContraseña;
-
-        private LabelControl lblContraseña;
-
-        private TextEdit txtUsuario;
-
-        private LabelControl lblUsuario;
-
-        private CheckEdit cbConfiable;
-
-        private TextEdit txtUsuarioBD;
-
-        private LabelControl lblUsuarioBD;
-
-        private TabNavigationPage tabNavigationPagePredeterminados;
-
-        private HyperlinkLabelControl lblFabricantes;
-
-        private LookUpEdit cbFabricantes;
-
-        private LookUpEdit cbMonedas;
-
-        private HyperlinkLabelControl lblMonedas;
-
-        private LookUpEdit cbListasPrecios;
-
-        private HyperlinkLabelControl lblListaPrecios;
-
-        private LookUpEdit cbGruposArticulos;
-
-        private HyperlinkLabelControl lblGrupoArticulos;
-
-        private LookUpEdit cbMetodosPago;
-
-        private HyperlinkLabelControl lblMetodoPago;
-
-        private LookUpEdit cbCondicionesPago;
-
-        private HyperlinkLabelControl lblCondicionesPago;
-
-        private LookUpEdit cbZonas;
-
-        private HyperlinkLabelControl lblZonas;
-
-        private LookUpEdit cbDepartamentos;
-
-        private HyperlinkLabelControl lblDepartamentos;
-
-        private LookUpEdit cbImpuestos;
-
-        private HyperlinkLabelControl lblImpuesto;
-
-        private CheckEdit cbFormularioPanel;
-
-        private CheckEdit cbVentaArticuloPrecioCero;
-
-        private TextEdit txtDirectorioInformes;
-
-        private LabelControl lblDirectorioInformes;
-
-        private LabelControl labelControl1;
-
-        private LookUpEdit cbTiposMetodosPago;
-
-        private LabelControl lblHoraSicronizacionGeneral;
-
-        private TimeEdit teHoraSincronizacionGenerales;
-
-        private CheckEdit cbGenerarDocumentoElectronicoAutomaticamente;
-
-        private TabNavigationPage tabNavigationPageTimbrado;
-
-        private SimpleButton btnCertificados;
-
-        private CheckEdit cbTimbradoModoPrueba;
-
-        private TextEdit txtTimbradoContraseña;
-
-        private TextEdit txtTimbradoUsuario;
-
-        private LookUpEdit cbCertificados;
-
-        private HyperlinkLabelControl lblCertificado;
-
-        private LabelControl lblTimbradoContraseña;
-
-        private LabelControl lblTimbradoUsuario;
-
-        private HyperlinkLabelControl lblSucursales;
-
-        private GroupControl gcOpciones;
-
-        private CheckEdit cbGenerarAjusteInventario;
-
-        private TextEdit txtNumeroCuentaAjusteInventario;
-
-        private TextEdit txtAPIURL;
-
-        private LabelControl lblAPIURL;
-
-        private TextEdit txtSAPAPIURL;
-
-        private LabelControl lblSAPAPIURL;
-
-        private ColorEdit ceTema;
-
-        private LabelControl lblTema;
-
-        private CheckEdit cbDocumentoBorrador;
-
-        private CheckEdit cbFacturarEntregas;
-
-        private CheckEdit cbVentaArticuloStockCero;
-
-        private CheckEdit cbAgruparPartidas;
-
-        private CheckEdit cbVendedorSegunUsuario;
-
-        private CheckEdit cbInventarioSAP;
-
-        private ComboBoxEdit cbPAC;
-
-        private LabelControl lblPAC;
-
-        private CheckEdit cbDocumentosModoNuevo;
-
-        private CheckEdit cbVendedorSegunEstacion;
-
-        private TextEdit txtDirectorioAnexos;
-
-        private LabelControl lblDirectorioAnexos;
-
-        private CheckEdit cbVentaArticuloMenorCosto;
-
-        private Label lblDiaSemana;
-
-        private ComboBoxEdit cbDiasSemana;
-
-        private CheckEdit cbListaPrecioSegunUsuario;
-
-        private CheckEdit cbPedimentos;
-
-        private CheckEdit cbSeleccionarSucursal;
-
-        private CheckEdit cbFacturaSinEntregas;
-
-        private CheckEdit cbGenerarTimbradoSinDescuento;
-
-        private LabelControl lblFuenteDatos;
-
-        private TextEdit txtFuenteDatos;
-
-        private TabNavigationPage tabNavigationPageNetSuite;
-
-        private CheckEdit cbNetSuite;
-
-        private GroupBox gbNetSuite;
-
-        private LabelControl labelControl2;
-
-        private TextEdit txtNetSuiteClienteLlave;
-
-        private LabelControl labelControl5;
-
-        private TextEdit txtNetSuiteTokenSecreto;
-
-        private LabelControl labelControl7;
-
-        private TextEdit txtNetSuiteClienteSecreto;
-
-        private LabelControl labelControl8;
-
-        private TextEdit txtNetSuiteTokenId;
-
-        private LabelControl labelControl9;
-
-        private LabelControl labelControl10;
-
-        private TextEdit txtNetSuiteCuentaId;
-
-        private LabelControl labelControl12;
-
-        private LabelControl labelControl13;
-
-        private TabNavigationPage tabNavigationPageWeb;
-
-        private TextEdit txtNetSuiteApiURL;
-
-        private LabelControl labelControl3;
-
-        private SimpleButton btnProbarConexion;
-
         public frmConfiguracion()
         {
             InitializeComponent();
@@ -314,19 +68,10 @@ namespace NORI
             cbVendedorSegunUsuario.Checked = configuracion.vendedor_segun_usuario;
             cbListaPrecioSegunUsuario.Checked = configuracion.lista_precio_segun_usuario;
             cbGenerarDocumentoElectronicoAutomaticamente.Checked = configuracion.generar_documento_electronico_automaticamente;
-            cbFacturaSinEntregas.Checked = configuracion.factura_sin_entregas;
             cbVendedorSegunEstacion.Checked = configuracion.vendedor_segun_estacion;
             cbDocumentosModoNuevo.Checked = configuracion.documentos_modo_nuevo;
-            cbSeleccionarSucursal.Checked = configuracion.seleccionar_sucursal;
-            ((BaseEdit)cbTiposMetodosPago).EditValue = configuracion.tipo_metodo_pago_monedero_id;
-            ((Control)(object)txtAPIURL).Text = configuracion.api_url;
-            try
-            {
-                ceTema.Color = Color.FromArgb(Convert.ToInt32(configuracion.tema));
-            }
-            catch
-            {
-            }
+            
+         
             cbPAC.SelectedIndex = configuracion.pac;
             ((BaseEdit)txtTimbradoUsuario).EditValue = configuracion.timbrado_usuario;
             ((BaseEdit)txtTimbradoContraseña).EditValue = configuracion.timbrado_contraseña;
@@ -337,7 +82,6 @@ namespace NORI
             ((Control)(object)txtDirectorioDocumentos).Text = configuracion.directorio_documentos;
             ((Control)(object)txtDirectorioImagenes).Text = configuracion.directorio_imagenes;
             ((Control)(object)txtDirectorioXML).Text = configuracion.directorio_xml;
-            ((Control)(object)txtDirectorioHuellas).Text = configuracion.directorio_huellas;
             ((Control)(object)txtDirectorioAnexos).Text = configuracion.directorio_anexos;
             cbDiasSemana.SelectedIndex = configuracion.dia_semana;
             GroupBox groupBox = gbSAP;
@@ -418,10 +162,6 @@ namespace NORI
             ((RepositoryItemLookUpEditBase)cbCertificados.Properties).ValueMember = "id";
             ((RepositoryItemLookUpEditBase)cbCertificados.Properties).DisplayMember = "nombre";
             ((BaseEdit)cbCertificados).EditValue = configuracion.certificado_id;
-            ((RepositoryItemLookUpEditBase)cbTiposMetodosPago.Properties).DataSource = Utilidades.Busqueda("tipos_metodos_pago", objeto, parametros);
-            ((RepositoryItemLookUpEditBase)cbTiposMetodosPago.Properties).ValueMember = "id";
-            ((RepositoryItemLookUpEditBase)cbTiposMetodosPago.Properties).DisplayMember = "nombre";
-            ((BaseEdit)cbTiposMetodosPago).EditValue = configuracion.tipo_metodo_pago_monedero_id;
             ((RepositoryItemLookUpEditBase)cbListasPrecios.Properties).DataSource = Utilidades.Busqueda("listas_precios", objeto, parametros);
             ((RepositoryItemLookUpEditBase)cbListasPrecios.Properties).ValueMember = "id";
             ((RepositoryItemLookUpEditBase)cbListasPrecios.Properties).DisplayMember = "nombre";
@@ -445,11 +185,7 @@ namespace NORI
             configuracion.vendedor_segun_estacion = cbVendedorSegunEstacion.Checked;
             configuracion.documentos_modo_nuevo = cbDocumentosModoNuevo.Checked;
             configuracion.generar_documento_electronico_automaticamente = cbGenerarDocumentoElectronicoAutomaticamente.Checked;
-            configuracion.factura_sin_entregas = cbFacturaSinEntregas.Checked;
-            configuracion.seleccionar_sucursal = cbSeleccionarSucursal.Checked;
-            configuracion.tipo_metodo_pago_monedero_id = ((!((BaseEdit)cbTiposMetodosPago).EditValue.IsNullOrEmpty()) ? ((int)((BaseEdit)cbTiposMetodosPago).EditValue) : 0);
-            configuracion.api_url = ((Control)(object)txtAPIURL).Text;
-            configuracion.tema = ceTema.Color.ToArgb().ToString();
+
             configuracion.certificado_id = ((!((BaseEdit)cbCertificados).EditValue.IsNullOrEmpty()) ? ((int)((BaseEdit)cbCertificados).EditValue) : 0);
             configuracion.pedimentos = cbPedimentos.Checked;
             if (configuracion.certificado_id != 0)
@@ -464,7 +200,6 @@ namespace NORI
             configuracion.directorio_documentos = ((Control)(object)txtDirectorioDocumentos).Text;
             configuracion.directorio_imagenes = ((Control)(object)txtDirectorioImagenes).Text;
             configuracion.directorio_xml = ((Control)(object)txtDirectorioXML).Text;
-            configuracion.directorio_huellas = ((Control)(object)txtDirectorioHuellas).Text;
             configuracion.directorio_anexos = ((Control)(object)txtDirectorioAnexos).Text;
             configuracion.dia_semana = cbDiasSemana.SelectedIndex;
             configuracion.sap = cbSAP.Checked;

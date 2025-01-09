@@ -19,7 +19,7 @@ namespace NORI
             InitializeComponent();
             Data = data;
             CargarConexiones();
-            cursorManita();
+            //cursorManita();
      
         }
         public void cursorManita()
@@ -86,6 +86,7 @@ namespace NORI
             {
                 Usuario usuario = new Usuario();
                 usuario = Usuario.Obtener(id);
+                usuario.huella_digital = "1";
                 acceder(Program.Nori.Autenticar(usuario));
             }
             catch (Exception ex)

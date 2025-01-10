@@ -103,7 +103,9 @@ namespace NORI.PuntoVenta
             ((RepositoryItemLookUpEditBase)cbConceptos.Properties).DataSource = tipos;
             ((RepositoryItemLookUpEditBase)cbConceptos.Properties).ValueMember = "id";
             ((RepositoryItemLookUpEditBase)cbConceptos.Properties).DisplayMember = "nombre";
-            cbConceptos.ItemIndex = 0;
+            cbConceptos.EditValue = 1;
+            cbConceptos.Refresh();
+
             foreach (MetodoPago.Tipo tipo in tipos)
             {
                 Acumulado acumulado = new Acumulado();

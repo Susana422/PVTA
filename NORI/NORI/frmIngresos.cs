@@ -63,7 +63,7 @@ namespace NORI
                     text = "Depósito";
                 }
                 autorizacion.referencia = $"{text} de caja al usuario {Program.Nori.UsuarioAutenticado.usuario} en la estación {Program.Nori.Estacion.nombre} por la cantidad de {((Control)(object)txtCantidad).Text}";
-                autorizacion.comentario = Interaction.InputBox("Comentario ingreso (Opcional)");
+                autorizacion.comentario = txtComentario.Text; // Interaction.InputBox("Comentario ingreso (Opcional)", "Comentario de ingreso", "", -1, -1);
                 autorizacion.Agregar();
                 if (!autorizacion.autorizado)
                 {
@@ -90,6 +90,10 @@ namespace NORI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+            finally 
+            { 
+            this.Hide();
             }
         }
 

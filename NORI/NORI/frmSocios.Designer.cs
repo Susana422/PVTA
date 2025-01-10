@@ -318,7 +318,7 @@ namespace NORI
             this.ribbonPageHerramientas});
             this.mainRibbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.mainRibbonControl.Size = new System.Drawing.Size(1158, 106);
+            this.mainRibbonControl.Size = new System.Drawing.Size(1158, 90);
             this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // backstageViewControl1
@@ -496,7 +496,6 @@ namespace NORI
             // ribbonPageGroupHerramientas
             // 
             this.ribbonPageGroupHerramientas.ItemLinks.Add(this.bbiDocumentosVencidos);
-            this.ribbonPageGroupHerramientas.ItemLinks.Add(this.bbiMonedero);
             this.ribbonPageGroupHerramientas.ItemLinks.Add(this.bbiParametrizacionesFormulario);
             this.ribbonPageGroupHerramientas.Name = "ribbonPageGroupHerramientas";
             this.ribbonPageGroupHerramientas.Text = "Herramientas";
@@ -508,7 +507,7 @@ namespace NORI
             this.xtraTabControl1.Location = new System.Drawing.Point(12, 12);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPageGeneral;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1134, 685);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1134, 701);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageGeneral,
@@ -580,7 +579,7 @@ namespace NORI
             this.xtraTabPageGeneral.Controls.Add(this.lblCodigo);
             this.xtraTabPageGeneral.Controls.Add(this.txtCodigo);
             this.xtraTabPageGeneral.Name = "xtraTabPageGeneral";
-            this.xtraTabPageGeneral.Size = new System.Drawing.Size(1132, 658);
+            this.xtraTabPageGeneral.Size = new System.Drawing.Size(1128, 671);
             this.xtraTabPageGeneral.Text = "General";
             // 
             // cbVIP
@@ -602,7 +601,7 @@ namespace NORI
             this.cbRegimenFiscal.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("clave", "Clave", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbRegimenFiscal.Size = new System.Drawing.Size(240, 26);
+            this.cbRegimenFiscal.Size = new System.Drawing.Size(240, 24);
             this.cbRegimenFiscal.TabIndex = 96;
             this.cbRegimenFiscal.TabStop = false;
             // 
@@ -624,7 +623,7 @@ namespace NORI
             this.cbPropietarios.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbPropietarios.Size = new System.Drawing.Size(291, 26);
+            this.cbPropietarios.Size = new System.Drawing.Size(291, 24);
             this.cbPropietarios.TabIndex = 13;
             // 
             // lblPropietarios
@@ -665,7 +664,7 @@ namespace NORI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbMonedero.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("folio", "Folio", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbMonedero.Size = new System.Drawing.Size(240, 26);
+            this.cbMonedero.Size = new System.Drawing.Size(240, 24);
             this.cbMonedero.TabIndex = 89;
             this.cbMonedero.TabStop = false;
             // 
@@ -687,7 +686,7 @@ namespace NORI
             this.cbUsoPrincipal.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("uso", "Uso", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbUsoPrincipal.Size = new System.Drawing.Size(240, 26);
+            this.cbUsoPrincipal.Size = new System.Drawing.Size(240, 24);
             this.cbUsoPrincipal.TabIndex = 88;
             this.cbUsoPrincipal.TabStop = false;
             // 
@@ -702,7 +701,7 @@ namespace NORI
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbSocios.Size = new System.Drawing.Size(240, 26);
+            this.cbSocios.Size = new System.Drawing.Size(240, 24);
             this.cbSocios.TabIndex = 87;
             // 
             // cbEventual
@@ -732,7 +731,7 @@ namespace NORI
             this.cbVendedores.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbVendedores.Size = new System.Drawing.Size(291, 26);
+            this.cbVendedores.Size = new System.Drawing.Size(291, 24);
             this.cbVendedores.TabIndex = 12;
             // 
             // lblVendedores
@@ -771,7 +770,7 @@ namespace NORI
             this.txtMultiplicador.Properties.Mask.EditMask = "n";
             this.txtMultiplicador.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtMultiplicador.Properties.NullValuePrompt = "CURP";
-            this.txtMultiplicador.Size = new System.Drawing.Size(240, 26);
+            this.txtMultiplicador.Size = new System.Drawing.Size(240, 24);
             this.txtMultiplicador.TabIndex = 15;
             // 
             // cbPersonasContacto
@@ -784,7 +783,7 @@ namespace NORI
             this.cbPersonasContacto.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbPersonasContacto.Size = new System.Drawing.Size(291, 26);
+            this.cbPersonasContacto.Size = new System.Drawing.Size(291, 24);
             this.cbPersonasContacto.TabIndex = 0;
             this.cbPersonasContacto.TabStop = false;
             // 
@@ -806,7 +805,7 @@ namespace NORI
             this.cbDireccionesEnvio.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbDireccionesEnvio.Size = new System.Drawing.Size(291, 26);
+            this.cbDireccionesEnvio.Size = new System.Drawing.Size(291, 24);
             this.cbDireccionesEnvio.TabIndex = 0;
             this.cbDireccionesEnvio.TabStop = false;
             // 
@@ -828,7 +827,7 @@ namespace NORI
             this.cbDireccionesFacturacion.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbDireccionesFacturacion.Size = new System.Drawing.Size(291, 26);
+            this.cbDireccionesFacturacion.Size = new System.Drawing.Size(291, 24);
             this.cbDireccionesFacturacion.TabIndex = 0;
             this.cbDireccionesFacturacion.TabStop = false;
             // 
@@ -848,7 +847,7 @@ namespace NORI
             this.txtBalance.Name = "txtBalance";
             this.txtBalance.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtBalance.Properties.NullValuePrompt = "CURP";
-            this.txtBalance.Size = new System.Drawing.Size(240, 26);
+            this.txtBalance.Size = new System.Drawing.Size(240, 24);
             this.txtBalance.TabIndex = 0;
             this.txtBalance.TabStop = false;
             // 
@@ -867,7 +866,7 @@ namespace NORI
             this.txtCuenta.Name = "txtCuenta";
             this.txtCuenta.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtCuenta.Properties.MaxLength = 30;
-            this.txtCuenta.Size = new System.Drawing.Size(240, 26);
+            this.txtCuenta.Size = new System.Drawing.Size(240, 24);
             this.txtCuenta.TabIndex = 14;
             // 
             // lblCURP
@@ -886,7 +885,7 @@ namespace NORI
             this.txtCURP.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtCURP.Properties.MaxLength = 18;
             this.txtCURP.Properties.NullValuePrompt = "CURP";
-            this.txtCURP.Size = new System.Drawing.Size(240, 26);
+            this.txtCURP.Size = new System.Drawing.Size(240, 24);
             this.txtCURP.TabIndex = 13;
             // 
             // lblSitioWeb
@@ -905,7 +904,7 @@ namespace NORI
             this.txtSitioWeb.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtSitioWeb.Properties.MaxLength = 100;
             this.txtSitioWeb.Properties.NullValuePrompt = "Dirección del sitio web";
-            this.txtSitioWeb.Size = new System.Drawing.Size(291, 26);
+            this.txtSitioWeb.Size = new System.Drawing.Size(291, 24);
             this.txtSitioWeb.TabIndex = 11;
             // 
             // lblTelefono2
@@ -924,7 +923,7 @@ namespace NORI
             this.txtTelefono2.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtTelefono2.Properties.MaxLength = 20;
             this.txtTelefono2.Properties.NullValuePrompt = "Teléfono adicional";
-            this.txtTelefono2.Size = new System.Drawing.Size(291, 26);
+            this.txtTelefono2.Size = new System.Drawing.Size(291, 24);
             this.txtTelefono2.TabIndex = 8;
             // 
             // lblCorreo
@@ -944,7 +943,7 @@ namespace NORI
             this.txtCorreo.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtCorreo.Properties.MaxLength = 100;
             this.txtCorreo.Properties.NullValuePrompt = "Dirección de correo electrónico";
-            this.txtCorreo.Size = new System.Drawing.Size(291, 26);
+            this.txtCorreo.Size = new System.Drawing.Size(291, 24);
             this.txtCorreo.TabIndex = 10;
             // 
             // lblTelefonoCelular
@@ -963,7 +962,7 @@ namespace NORI
             this.txtTelefonoCelular.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtTelefonoCelular.Properties.MaxLength = 50;
             this.txtTelefonoCelular.Properties.NullValuePrompt = "Teléfono celular";
-            this.txtTelefonoCelular.Size = new System.Drawing.Size(291, 26);
+            this.txtTelefonoCelular.Size = new System.Drawing.Size(291, 24);
             this.txtTelefonoCelular.TabIndex = 9;
             // 
             // lblTelefono
@@ -982,7 +981,7 @@ namespace NORI
             this.txtTelefono.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtTelefono.Properties.MaxLength = 20;
             this.txtTelefono.Properties.NullValuePrompt = "Teléfono principal";
-            this.txtTelefono.Size = new System.Drawing.Size(291, 26);
+            this.txtTelefono.Size = new System.Drawing.Size(291, 24);
             this.txtTelefono.TabIndex = 7;
             // 
             // lblRFC
@@ -1002,7 +1001,7 @@ namespace NORI
             this.txtRFC.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtRFC.Properties.MaxLength = 30;
             this.txtRFC.Properties.NullValuePrompt = "RFC";
-            this.txtRFC.Size = new System.Drawing.Size(291, 26);
+            this.txtRFC.Size = new System.Drawing.Size(291, 24);
             this.txtRFC.TabIndex = 6;
             // 
             // cbTipo
@@ -1015,7 +1014,7 @@ namespace NORI
             this.cbTipo.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tipo", "Tipo", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbTipo.Size = new System.Drawing.Size(240, 26);
+            this.cbTipo.Size = new System.Drawing.Size(240, 24);
             this.cbTipo.TabIndex = 1;
             this.cbTipo.EditValueChanged += new System.EventHandler(this.cbTipo_EditValueChanged);
             // 
@@ -1038,7 +1037,7 @@ namespace NORI
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbMonedas.Size = new System.Drawing.Size(240, 26);
+            this.cbMonedas.Size = new System.Drawing.Size(240, 24);
             this.cbMonedas.TabIndex = 5;
             this.cbMonedas.TabStop = false;
             // 
@@ -1064,7 +1063,7 @@ namespace NORI
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tipo", "Tipo", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbGruposSocios.Size = new System.Drawing.Size(291, 26);
+            this.cbGruposSocios.Size = new System.Drawing.Size(291, 24);
             this.cbGruposSocios.TabIndex = 4;
             // 
             // lblGrupoSocios
@@ -1151,7 +1150,7 @@ namespace NORI
             this.txtNombreComercial.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtNombreComercial.Properties.MaxLength = 100;
             this.txtNombreComercial.Properties.NullValuePrompt = "Nombre comercial del socio";
-            this.txtNombreComercial.Size = new System.Drawing.Size(631, 26);
+            this.txtNombreComercial.Size = new System.Drawing.Size(631, 24);
             this.txtNombreComercial.TabIndex = 3;
             this.txtNombreComercial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSKU_KeyDown);
             // 
@@ -1171,7 +1170,7 @@ namespace NORI
             this.txtNombre.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtNombre.Properties.MaxLength = 254;
             this.txtNombre.Properties.NullValuePrompt = "Nombre del socio";
-            this.txtNombre.Size = new System.Drawing.Size(631, 26);
+            this.txtNombre.Size = new System.Drawing.Size(631, 24);
             this.txtNombre.TabIndex = 2;
             this.txtNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSKU_KeyDown);
             // 
@@ -1191,7 +1190,7 @@ namespace NORI
             this.txtCodigo.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtCodigo.Properties.MaxLength = 15;
             this.txtCodigo.Properties.NullValuePrompt = "Identificador del socio";
-            this.txtCodigo.Size = new System.Drawing.Size(291, 26);
+            this.txtCodigo.Size = new System.Drawing.Size(291, 24);
             this.txtCodigo.TabIndex = 0;
             this.txtCodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSKU_KeyDown);
             // 
@@ -1214,7 +1213,7 @@ namespace NORI
             this.xtraTabPageCondicionesPago.Controls.Add(this.lblLimiteCredito);
             this.xtraTabPageCondicionesPago.Controls.Add(this.txtLimiteCredito);
             this.xtraTabPageCondicionesPago.Name = "xtraTabPageCondicionesPago";
-            this.xtraTabPageCondicionesPago.Size = new System.Drawing.Size(1132, 658);
+            this.xtraTabPageCondicionesPago.Size = new System.Drawing.Size(1128, 671);
             this.xtraTabPageCondicionesPago.Text = "Condiciones de pago";
             // 
             // lblDiasExtra
@@ -1232,7 +1231,7 @@ namespace NORI
             this.txtDiasExtra.Name = "txtDiasExtra";
             this.txtDiasExtra.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtDiasExtra.Properties.MaxLength = 18;
-            this.txtDiasExtra.Size = new System.Drawing.Size(94, 26);
+            this.txtDiasExtra.Size = new System.Drawing.Size(94, 24);
             this.txtDiasExtra.TabIndex = 81;
             // 
             // lblCuentaPago
@@ -1250,7 +1249,7 @@ namespace NORI
             this.txtCuentaPago.Name = "txtCuentaPago";
             this.txtCuentaPago.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtCuentaPago.Properties.MaxLength = 18;
-            this.txtCuentaPago.Size = new System.Drawing.Size(291, 26);
+            this.txtCuentaPago.Size = new System.Drawing.Size(291, 24);
             this.txtCuentaPago.TabIndex = 6;
             // 
             // lblPorcentajeDescuento
@@ -1272,7 +1271,7 @@ namespace NORI
             this.txtPorcentajeDescuento.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.txtPorcentajeDescuento.Properties.Mask.EditMask = "P2";
             this.txtPorcentajeDescuento.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPorcentajeDescuento.Size = new System.Drawing.Size(291, 26);
+            this.txtPorcentajeDescuento.Size = new System.Drawing.Size(291, 24);
             this.txtPorcentajeDescuento.TabIndex = 3;
             // 
             // cbMetodosPago
@@ -1285,7 +1284,7 @@ namespace NORI
             this.cbMetodosPago.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbMetodosPago.Size = new System.Drawing.Size(291, 26);
+            this.cbMetodosPago.Size = new System.Drawing.Size(291, 24);
             this.cbMetodosPago.TabIndex = 5;
             // 
             // lblMetodosPago
@@ -1317,7 +1316,7 @@ namespace NORI
             this.txtPorcentajeInteresRetraso.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.txtPorcentajeInteresRetraso.Properties.Mask.EditMask = "P2";
             this.txtPorcentajeInteresRetraso.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPorcentajeInteresRetraso.Size = new System.Drawing.Size(291, 26);
+            this.txtPorcentajeInteresRetraso.Size = new System.Drawing.Size(291, 24);
             this.txtPorcentajeInteresRetraso.TabIndex = 1;
             // 
             // cbListaPrecios
@@ -1330,7 +1329,7 @@ namespace NORI
             this.cbListaPrecios.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbListaPrecios.Size = new System.Drawing.Size(291, 26);
+            this.cbListaPrecios.Size = new System.Drawing.Size(291, 24);
             this.cbListaPrecios.TabIndex = 2;
             // 
             // lblListaPrecios
@@ -1353,7 +1352,7 @@ namespace NORI
             this.cbCondicionesPago.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbCondicionesPago.Size = new System.Drawing.Size(291, 26);
+            this.cbCondicionesPago.Size = new System.Drawing.Size(291, 24);
             this.cbCondicionesPago.TabIndex = 0;
             // 
             // lblCondicionesPago
@@ -1385,14 +1384,14 @@ namespace NORI
             this.txtLimiteCredito.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.txtLimiteCredito.Properties.Mask.EditMask = "c2";
             this.txtLimiteCredito.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtLimiteCredito.Size = new System.Drawing.Size(291, 26);
+            this.txtLimiteCredito.Size = new System.Drawing.Size(291, 24);
             this.txtLimiteCredito.TabIndex = 4;
             // 
             // xtraTabPagePersonasContacto
             // 
             this.xtraTabPagePersonasContacto.Controls.Add(this.gcPersonasContacto);
             this.xtraTabPagePersonasContacto.Name = "xtraTabPagePersonasContacto";
-            this.xtraTabPagePersonasContacto.Size = new System.Drawing.Size(1132, 658);
+            this.xtraTabPagePersonasContacto.Size = new System.Drawing.Size(1128, 671);
             this.xtraTabPagePersonasContacto.Text = "Personas de contacto";
             // 
             // gcPersonasContacto
@@ -1404,7 +1403,7 @@ namespace NORI
             this.gcPersonasContacto.Name = "gcPersonasContacto";
             this.gcPersonasContacto.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cbGenero});
-            this.gcPersonasContacto.Size = new System.Drawing.Size(1132, 658);
+            this.gcPersonasContacto.Size = new System.Drawing.Size(1128, 671);
             this.gcPersonasContacto.TabIndex = 7;
             this.gcPersonasContacto.UseEmbeddedNavigator = true;
             this.gcPersonasContacto.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1618,7 +1617,7 @@ namespace NORI
             this.xtraTabPageDirecciones.Controls.Add(this.lblNombreDireccion);
             this.xtraTabPageDirecciones.Controls.Add(this.txtNombreDireccion);
             this.xtraTabPageDirecciones.Name = "xtraTabPageDirecciones";
-            this.xtraTabPageDirecciones.Size = new System.Drawing.Size(1132, 658);
+            this.xtraTabPageDirecciones.Size = new System.Drawing.Size(1128, 671);
             this.xtraTabPageDirecciones.Text = "Direcciones";
             // 
             // lblDistancia
@@ -1636,7 +1635,7 @@ namespace NORI
             this.txtDistancia.Name = "txtDistancia";
             this.txtDistancia.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtDistancia.Properties.MaxLength = 100;
-            this.txtDistancia.Size = new System.Drawing.Size(146, 26);
+            this.txtDistancia.Size = new System.Drawing.Size(146, 24);
             this.txtDistancia.TabIndex = 131;
             // 
             // lblDireccionID
@@ -1651,7 +1650,7 @@ namespace NORI
             // 
             this.btnGuardarDireccion.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnGuardarDireccion.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnGuardarDireccion.Location = new System.Drawing.Point(498, 18);
+            this.btnGuardarDireccion.Location = new System.Drawing.Point(546, 18);
             this.btnGuardarDireccion.Name = "btnGuardarDireccion";
             this.btnGuardarDireccion.Size = new System.Drawing.Size(106, 26);
             this.btnGuardarDireccion.TabIndex = 129;
@@ -1670,7 +1669,7 @@ namespace NORI
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbImpuestos.Size = new System.Drawing.Size(291, 26);
+            this.cbImpuestos.Size = new System.Drawing.Size(291, 24);
             this.cbImpuestos.TabIndex = 2;
             // 
             // lblImpuesto
@@ -1701,7 +1700,7 @@ namespace NORI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbTipoDireccion.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbTipoDireccion.Size = new System.Drawing.Size(291, 26);
+            this.cbTipoDireccion.Size = new System.Drawing.Size(291, 24);
             this.cbTipoDireccion.TabIndex = 1;
             // 
             // btnNuevaDireccion
@@ -1709,7 +1708,7 @@ namespace NORI
             this.btnNuevaDireccion.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnNuevaDireccion.Location = new System.Drawing.Point(457, 18);
             this.btnNuevaDireccion.Name = "btnNuevaDireccion";
-            this.btnNuevaDireccion.Size = new System.Drawing.Size(32, 26);
+            this.btnNuevaDireccion.Size = new System.Drawing.Size(70, 26);
             this.btnNuevaDireccion.TabIndex = 122;
             this.btnNuevaDireccion.TabStop = false;
             this.btnNuevaDireccion.Text = "Nueva";
@@ -1725,7 +1724,7 @@ namespace NORI
             this.cbDirecciones.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbDirecciones.Size = new System.Drawing.Size(291, 26);
+            this.cbDirecciones.Size = new System.Drawing.Size(291, 24);
             this.cbDirecciones.TabIndex = 0;
             this.cbDirecciones.EditValueChanged += new System.EventHandler(this.cbDirecciones_EditValueChanged);
             // 
@@ -1756,7 +1755,7 @@ namespace NORI
             this.txtCP.Properties.Mask.EditMask = "00000";
             this.txtCP.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
             this.txtCP.Properties.MaxLength = 5;
-            this.txtCP.Size = new System.Drawing.Size(146, 26);
+            this.txtCP.Size = new System.Drawing.Size(146, 24);
             this.txtCP.TabIndex = 7;
             // 
             // lblCiudad
@@ -1776,7 +1775,7 @@ namespace NORI
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtCiudad.Properties.MaxLength = 100;
-            this.txtCiudad.Size = new System.Drawing.Size(446, 26);
+            this.txtCiudad.Size = new System.Drawing.Size(446, 24);
             this.txtCiudad.TabIndex = 9;
             // 
             // lblEstado
@@ -1798,7 +1797,7 @@ namespace NORI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbEstados.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbEstados.Size = new System.Drawing.Size(146, 26);
+            this.cbEstados.Size = new System.Drawing.Size(146, 24);
             this.cbEstados.TabIndex = 12;
             // 
             // lblPais
@@ -1820,7 +1819,7 @@ namespace NORI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbPaises.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbPaises.Size = new System.Drawing.Size(146, 26);
+            this.cbPaises.Size = new System.Drawing.Size(146, 24);
             this.cbPaises.TabIndex = 11;
             this.cbPaises.EditValueChanged += new System.EventHandler(this.cbPaises_EditValueChanged);
             // 
@@ -1839,7 +1838,7 @@ namespace NORI
             this.txtMunicipio.Name = "txtMunicipio";
             this.txtMunicipio.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtMunicipio.Properties.MaxLength = 100;
-            this.txtMunicipio.Size = new System.Drawing.Size(446, 26);
+            this.txtMunicipio.Size = new System.Drawing.Size(446, 24);
             this.txtMunicipio.TabIndex = 10;
             // 
             // lblColonia
@@ -1859,7 +1858,7 @@ namespace NORI
             this.txtColonia.Name = "txtColonia";
             this.txtColonia.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtColonia.Properties.MaxLength = 100;
-            this.txtColonia.Size = new System.Drawing.Size(146, 26);
+            this.txtColonia.Size = new System.Drawing.Size(146, 24);
             this.txtColonia.TabIndex = 8;
             // 
             // lblNumeroInterior
@@ -1877,7 +1876,7 @@ namespace NORI
             this.txtNumeroInterior.Name = "txtNumeroInterior";
             this.txtNumeroInterior.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtNumeroInterior.Properties.MaxLength = 100;
-            this.txtNumeroInterior.Size = new System.Drawing.Size(146, 26);
+            this.txtNumeroInterior.Size = new System.Drawing.Size(146, 24);
             this.txtNumeroInterior.TabIndex = 6;
             // 
             // lblNumeroExterior
@@ -1897,7 +1896,7 @@ namespace NORI
             this.txtNumeroExterior.Name = "txtNumeroExterior";
             this.txtNumeroExterior.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtNumeroExterior.Properties.MaxLength = 100;
-            this.txtNumeroExterior.Size = new System.Drawing.Size(146, 26);
+            this.txtNumeroExterior.Size = new System.Drawing.Size(146, 24);
             this.txtNumeroExterior.TabIndex = 5;
             // 
             // lblCalle
@@ -1917,7 +1916,7 @@ namespace NORI
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtCalle.Properties.MaxLength = 100;
-            this.txtCalle.Size = new System.Drawing.Size(446, 26);
+            this.txtCalle.Size = new System.Drawing.Size(446, 24);
             this.txtCalle.TabIndex = 4;
             // 
             // lblNombreDireccion
@@ -1938,7 +1937,7 @@ namespace NORI
             this.txtNombreDireccion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtNombreDireccion.Properties.MaxLength = 100;
             this.txtNombreDireccion.Properties.NullValuePrompt = "Nombre de la dirección Ej. Trabajo";
-            this.txtNombreDireccion.Size = new System.Drawing.Size(446, 26);
+            this.txtNombreDireccion.Size = new System.Drawing.Size(446, 24);
             this.txtNombreDireccion.TabIndex = 3;
             // 
             // xtraTabPageLogistica
@@ -1953,7 +1952,7 @@ namespace NORI
             this.xtraTabPageLogistica.Controls.Add(this.txtLatitud);
             this.xtraTabPageLogistica.Controls.Add(this.txtLongitud);
             this.xtraTabPageLogistica.Name = "xtraTabPageLogistica";
-            this.xtraTabPageLogistica.Size = new System.Drawing.Size(1132, 658);
+            this.xtraTabPageLogistica.Size = new System.Drawing.Size(1128, 671);
             this.xtraTabPageLogistica.Text = "Logística";
             // 
             // lblRuta
@@ -1976,7 +1975,7 @@ namespace NORI
             this.cbRutas.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Codigo", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbRutas.Size = new System.Drawing.Size(174, 26);
+            this.cbRutas.Size = new System.Drawing.Size(174, 24);
             this.cbRutas.TabIndex = 147;
             // 
             // txtOrdenRuta
@@ -1984,7 +1983,7 @@ namespace NORI
             this.txtOrdenRuta.Location = new System.Drawing.Point(281, 120);
             this.txtOrdenRuta.MenuManager = this.mainRibbonControl;
             this.txtOrdenRuta.Name = "txtOrdenRuta";
-            this.txtOrdenRuta.Size = new System.Drawing.Size(77, 26);
+            this.txtOrdenRuta.Size = new System.Drawing.Size(77, 24);
             this.txtOrdenRuta.TabIndex = 101;
             // 
             // lblLatitud
@@ -2005,7 +2004,7 @@ namespace NORI
             this.cbFrecuencia.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("frecuencia", "Frecuencia", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbFrecuencia.Size = new System.Drawing.Size(258, 26);
+            this.cbFrecuencia.Size = new System.Drawing.Size(258, 24);
             this.cbFrecuencia.TabIndex = 94;
             // 
             // lblLongitud
@@ -2029,7 +2028,7 @@ namespace NORI
             this.txtLatitud.Location = new System.Drawing.Point(98, 18);
             this.txtLatitud.MenuManager = this.mainRibbonControl;
             this.txtLatitud.Name = "txtLatitud";
-            this.txtLatitud.Size = new System.Drawing.Size(258, 26);
+            this.txtLatitud.Size = new System.Drawing.Size(258, 24);
             this.txtLatitud.TabIndex = 96;
             // 
             // txtLongitud
@@ -2037,14 +2036,14 @@ namespace NORI
             this.txtLongitud.Location = new System.Drawing.Point(98, 52);
             this.txtLongitud.MenuManager = this.mainRibbonControl;
             this.txtLongitud.Name = "txtLongitud";
-            this.txtLongitud.Size = new System.Drawing.Size(258, 26);
+            this.txtLongitud.Size = new System.Drawing.Size(258, 24);
             this.txtLongitud.TabIndex = 97;
             // 
             // xtraTabPagePropiedades
             // 
             this.xtraTabPagePropiedades.Controls.Add(this.cbPropiedades);
             this.xtraTabPagePropiedades.Name = "xtraTabPagePropiedades";
-            this.xtraTabPagePropiedades.Size = new System.Drawing.Size(1132, 658);
+            this.xtraTabPagePropiedades.Size = new System.Drawing.Size(1128, 671);
             this.xtraTabPagePropiedades.Text = "Propiedades";
             // 
             // cbPropiedades
@@ -2053,7 +2052,7 @@ namespace NORI
             this.cbPropiedades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbPropiedades.Location = new System.Drawing.Point(0, 0);
             this.cbPropiedades.Name = "cbPropiedades";
-            this.cbPropiedades.Size = new System.Drawing.Size(1132, 658);
+            this.cbPropiedades.Size = new System.Drawing.Size(1128, 671);
             this.cbPropiedades.TabIndex = 0;
             // 
             // layoutControlGroup1
@@ -2063,7 +2062,7 @@ namespace NORI
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1158, 709);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1158, 725);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -2071,7 +2070,7 @@ namespace NORI
             this.layoutControlItem1.Control = this.xtraTabControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1138, 689);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1138, 705);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -2080,11 +2079,11 @@ namespace NORI
             this.dataLayoutControl1.AllowCustomization = false;
             this.dataLayoutControl1.Controls.Add(this.xtraTabControl1);
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataLayoutControl1.Location = new System.Drawing.Point(0, 106);
+            this.dataLayoutControl1.Location = new System.Drawing.Point(0, 90);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
             this.dataLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(482, 356, 250, 350);
             this.dataLayoutControl1.Root = this.layoutControlGroup1;
-            this.dataLayoutControl1.Size = new System.Drawing.Size(1158, 709);
+            this.dataLayoutControl1.Size = new System.Drawing.Size(1158, 725);
             this.dataLayoutControl1.TabIndex = 0;
             // 
             // frmSocios

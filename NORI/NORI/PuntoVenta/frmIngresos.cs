@@ -27,10 +27,6 @@ namespace NORI.PuntoVenta
 
         private LayoutControlItem layoutControlItem1;
 
-        private Button btnCancelar;
-
-        private Button btnAceptar;
-
         private TextEdit txtCantidad;
 
         private LabelControl lblCantidad;

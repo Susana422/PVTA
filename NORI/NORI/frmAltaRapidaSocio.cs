@@ -109,8 +109,6 @@ namespace NORI
 
         private TextEdit txtCP;
 
-        private SimpleButton btnHuellaDigital;
-
         private CheckEdit cbEventual;
 
         private LookUpEdit cbSocios;

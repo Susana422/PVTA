@@ -61,27 +61,28 @@ namespace NORI
             // mainRibbonControl
             // 
             this.mainRibbonControl.ApplicationButtonDropDownControl = this.backstageViewControl1;
-            this.mainRibbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 39, 35, 39);
+            this.mainRibbonControl.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.Green;
+            this.mainRibbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(40, 39, 40, 39);
             this.mainRibbonControl.ExpandCollapseItem.Id = 0;
             this.mainRibbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.mainRibbonControl.ExpandCollapseItem});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbonControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mainRibbonControl.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.mainRibbonControl.MaxItemId = 3;
             this.mainRibbonControl.Name = "mainRibbonControl";
-            this.mainRibbonControl.OptionsMenuMinWidth = 385;
+            this.mainRibbonControl.OptionsMenuMinWidth = 440;
             this.mainRibbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.mainRibbonControl.Size = new System.Drawing.Size(354, 26);
+            this.mainRibbonControl.Size = new System.Drawing.Size(405, 30);
             this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // backstageViewControl1
             // 
-            this.backstageViewControl1.Location = new System.Drawing.Point(48, 162);
-            this.backstageViewControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.backstageViewControl1.Location = new System.Drawing.Point(55, 162);
+            this.backstageViewControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.backstageViewControl1.Name = "backstageViewControl1";
             this.backstageViewControl1.OwnerControl = this.mainRibbonControl;
-            this.backstageViewControl1.Size = new System.Drawing.Size(560, 196);
+            this.backstageViewControl1.Size = new System.Drawing.Size(640, 196);
             this.backstageViewControl1.TabIndex = 2;
             this.backstageViewControl1.VisibleInDesignTime = true;
             // 
@@ -92,7 +93,7 @@ namespace NORI
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(354, 148);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(405, 144);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -100,7 +101,7 @@ namespace NORI
             this.layoutControlItem1.Control = this.panelControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(342, 134);
+            this.layoutControlItem1.Size = new System.Drawing.Size(383, 124);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -111,53 +112,53 @@ namespace NORI
             this.panelControl1.Controls.Add(this.lblFechaFinal);
             this.panelControl1.Controls.Add(this.lblFechaInicial);
             this.panelControl1.Controls.Add(this.btnCierre);
-            this.panelControl1.Location = new System.Drawing.Point(7, 8);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelControl1.Location = new System.Drawing.Point(13, 12);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(340, 132);
+            this.panelControl1.Size = new System.Drawing.Size(379, 120);
             this.panelControl1.TabIndex = 4;
             // 
             // deFechaFinal
             // 
             this.deFechaFinal.EditValue = null;
-            this.deFechaFinal.Location = new System.Drawing.Point(178, 31);
-            this.deFechaFinal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deFechaFinal.Location = new System.Drawing.Point(203, 31);
+            this.deFechaFinal.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.deFechaFinal.MenuManager = this.mainRibbonControl;
             this.deFechaFinal.Name = "deFechaFinal";
             this.deFechaFinal.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deFechaFinal.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deFechaFinal.Size = new System.Drawing.Size(139, 24);
+            this.deFechaFinal.Size = new System.Drawing.Size(159, 24);
             this.deFechaFinal.TabIndex = 5;
             // 
             // deFechaInicial
             // 
             this.deFechaInicial.EditValue = null;
-            this.deFechaInicial.Location = new System.Drawing.Point(6, 31);
-            this.deFechaInicial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deFechaInicial.Location = new System.Drawing.Point(7, 31);
+            this.deFechaInicial.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.deFechaInicial.MenuManager = this.mainRibbonControl;
             this.deFechaInicial.Name = "deFechaInicial";
             this.deFechaInicial.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deFechaInicial.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deFechaInicial.Size = new System.Drawing.Size(139, 24);
+            this.deFechaInicial.Size = new System.Drawing.Size(159, 24);
             this.deFechaInicial.TabIndex = 4;
             // 
             // lblFechaFinal
             // 
-            this.lblFechaFinal.Location = new System.Drawing.Point(178, 7);
-            this.lblFechaFinal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblFechaFinal.Location = new System.Drawing.Point(203, 7);
+            this.lblFechaFinal.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblFechaFinal.Name = "lblFechaFinal";
-            this.lblFechaFinal.Size = new System.Drawing.Size(65, 17);
+            this.lblFechaFinal.Size = new System.Drawing.Size(67, 17);
             this.lblFechaFinal.TabIndex = 3;
             this.lblFechaFinal.Text = "Fecha final";
             // 
             // lblFechaInicial
             // 
-            this.lblFechaInicial.Location = new System.Drawing.Point(6, 7);
-            this.lblFechaInicial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblFechaInicial.Location = new System.Drawing.Point(7, 7);
+            this.lblFechaInicial.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.lblFechaInicial.Name = "lblFechaInicial";
             this.lblFechaInicial.Size = new System.Drawing.Size(75, 17);
             this.lblFechaInicial.TabIndex = 2;
@@ -166,39 +167,40 @@ namespace NORI
             // btnCierre
             // 
             this.btnCierre.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnCierre.Location = new System.Drawing.Point(6, 65);
-            this.btnCierre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCierre.Location = new System.Drawing.Point(7, 65);
+            this.btnCierre.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnCierre.Name = "btnCierre";
-            this.btnCierre.Size = new System.Drawing.Size(312, 30);
+            this.btnCierre.Size = new System.Drawing.Size(357, 30);
             this.btnCierre.TabIndex = 1;
             this.btnCierre.Text = "Realizar cierre";
+            this.btnCierre.Click += new System.EventHandler(this.btnCierre_Click);
             // 
             // dataLayoutControl1
             // 
             this.dataLayoutControl1.AllowCustomization = false;
             this.dataLayoutControl1.Controls.Add(this.panelControl1);
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataLayoutControl1.Location = new System.Drawing.Point(0, 26);
-            this.dataLayoutControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataLayoutControl1.Location = new System.Drawing.Point(0, 30);
+            this.dataLayoutControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
             this.dataLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(482, 356, 250, 350);
             this.dataLayoutControl1.Root = this.layoutControlGroup1;
-            this.dataLayoutControl1.Size = new System.Drawing.Size(354, 148);
+            this.dataLayoutControl1.Size = new System.Drawing.Size(405, 144);
             this.dataLayoutControl1.TabIndex = 0;
             // 
             // frmCierreDia
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(354, 174);
+            this.ClientSize = new System.Drawing.Size(405, 174);
             this.Controls.Add(this.dataLayoutControl1);
             this.Controls.Add(this.backstageViewControl1);
             this.Controls.Add(this.mainRibbonControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmCierreDia";

@@ -349,6 +349,12 @@
     <Compile Include="API\SocioAPI.cs" />
     <Compile Include="API\Transmitir.cs" />
     <Compile Include="AutVenta.cs" />
+    <Compile Include="frmAutorizarPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAutorizarPago.Designer.cs">
+      <DependentUpon>frmAutorizarPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAutorizarVentaVencida.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1137,6 +1143,9 @@
     <EmbeddedResource Include="frmAutorizacionCredito.resx">
       <DependentUpon>frmAutorizacionCredito.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAutorizarPago.resx">
+      <DependentUpon>frmAutorizarPago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAutorizarVentaVencida.resx">
       <DependentUpon>frmAutorizarVentaVencida.cs</DependentUpon>
     </EmbeddedResource>
@@ -1426,6 +1435,15 @@
       <CustomToolNamespace>componentResourceManager</CustomToolNamespace>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="PuntoVenta\frmArqueo.resx">
+      <DependentUpon>frmArqueo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PuntoVenta\frmCortesCaja.resx">
+      <DependentUpon>frmCortesCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PuntoVenta\frmIngresos.resx">
+      <DependentUpon>frmIngresos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PuntoVenta\frmPuntoVenta.resx">
       <DependentUpon>frmPuntoVenta.cs</DependentUpon>
     </EmbeddedResource>
@@ -1490,9 +1508,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\morefunctions_16x16.png" />
+    <None Include="Resources\math&amp;trig_16x16.png" />
+    <None Include="Resources\summary_32x32.png" />
+    <None Include="Resources\profile1.jpg" />
+    <None Include="Resources\profile.jpg" />
+    <None Include="Resources\profile.png" />
     <None Include="Resources\logoDTMsl.ico" />
     <None Include="Resources\login1.jpg" />
     <None Include="Resources\huelladigital.jpg" />
+    <None Include="Resources\autosum_16x16.png" />
     <Content Include="Resources\icon.ico" />
     <None Include="Resources\iconosol.ico" />
     <Content Include="Resources\login.jpg" />

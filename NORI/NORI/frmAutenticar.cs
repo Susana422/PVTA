@@ -82,6 +82,24 @@ namespace NORI
             Funciones.Desbloquear();
         }
 
+        private void btnAutenticar_Click(object sender, EventArgs e)
+        {
+            if (usuario.id == 0)
+            {
+                usuario = Usuario.Obtener(((Control)(object)txtUsuario).Text);
+            }
+            if (usuario.id != 0)
+            {
+                if (usuario.ObtenerContraseña() == ((Control)(object)txtContraseña).Text)
+                {
 
+                    ((Form)this).DialogResult = DialogResult.OK;
+                    return;
+                }
+                ((Control)(object)txtContraseña).Text = string.Empty;
+                ((Control)(object)txtContraseña).Focus();
+                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+            }
+        }
     }
 }

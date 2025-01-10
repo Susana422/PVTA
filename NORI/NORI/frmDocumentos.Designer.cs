@@ -127,8 +127,6 @@ namespace NORI
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.cbMonedas = new DevExpress.XtraEditors.LookUpEdit();
             this.lblMonedas = new DevExpress.XtraEditors.HyperlinkLabelControl();
-            this.lblDescuento = new DevExpress.XtraEditors.HyperlinkLabelControl();
-            this.txtPorcentajeDescuento = new DevExpress.XtraEditors.TextEdit();
             this.txtFechaCreacion = new DevExpress.XtraEditors.TextEdit();
             this.lblFechaCreacion = new DevExpress.XtraEditors.LabelControl();
             this.cbSeries = new DevExpress.XtraEditors.LookUpEdit();
@@ -146,7 +144,6 @@ namespace NORI
             this.txtImporteAplicado = new DevExpress.XtraEditors.TextEdit();
             this.lblTotal = new DevExpress.XtraEditors.LabelControl();
             this.txtTotal = new DevExpress.XtraEditors.TextEdit();
-            this.txtDescuento = new DevExpress.XtraEditors.TextEdit();
             this.lblImpuesto = new DevExpress.XtraEditors.LabelControl();
             this.txtImpuesto = new DevExpress.XtraEditors.TextEdit();
             this.lblSubTotal = new DevExpress.XtraEditors.LabelControl();
@@ -310,7 +307,6 @@ namespace NORI
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoCambio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMonedas.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPorcentajeDescuento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFechaCreacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbSeries.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroDocumento.Properties)).BeginInit();
@@ -319,7 +315,6 @@ namespace NORI
             ((System.ComponentModel.ISupportInitialize)(this.cbVendedores.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtImporteAplicado.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescuento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtImpuesto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSubTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoSN.Properties)).BeginInit();
@@ -790,8 +785,6 @@ namespace NORI
             this.xtraTabPageGeneral.Controls.Add(this.separatorControl1);
             this.xtraTabPageGeneral.Controls.Add(this.cbMonedas);
             this.xtraTabPageGeneral.Controls.Add(this.lblMonedas);
-            this.xtraTabPageGeneral.Controls.Add(this.lblDescuento);
-            this.xtraTabPageGeneral.Controls.Add(this.txtPorcentajeDescuento);
             this.xtraTabPageGeneral.Controls.Add(this.txtFechaCreacion);
             this.xtraTabPageGeneral.Controls.Add(this.lblFechaCreacion);
             this.xtraTabPageGeneral.Controls.Add(this.cbSeries);
@@ -809,7 +802,6 @@ namespace NORI
             this.xtraTabPageGeneral.Controls.Add(this.txtImporteAplicado);
             this.xtraTabPageGeneral.Controls.Add(this.lblTotal);
             this.xtraTabPageGeneral.Controls.Add(this.txtTotal);
-            this.xtraTabPageGeneral.Controls.Add(this.txtDescuento);
             this.xtraTabPageGeneral.Controls.Add(this.lblImpuesto);
             this.xtraTabPageGeneral.Controls.Add(this.txtImpuesto);
             this.xtraTabPageGeneral.Controls.Add(this.lblSubTotal);
@@ -1277,32 +1269,6 @@ namespace NORI
             this.lblMonedas.Text = "Moneda";
             this.lblMonedas.Click += new System.EventHandler(this.lblMonedas_Click);
             // 
-            // lblDescuento
-            // 
-            this.lblDescuento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDescuento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblDescuento.Location = new System.Drawing.Point(836, 568);
-            this.lblDescuento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.lblDescuento.Name = "lblDescuento";
-            this.lblDescuento.Size = new System.Drawing.Size(63, 17);
-            this.lblDescuento.TabIndex = 109;
-            this.lblDescuento.Text = "Descuento";
-            this.lblDescuento.Click += new System.EventHandler(this.lblDescuento_Click);
-            // 
-            // txtPorcentajeDescuento
-            // 
-            this.txtPorcentajeDescuento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPorcentajeDescuento.Location = new System.Drawing.Point(973, 565);
-            this.txtPorcentajeDescuento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.txtPorcentajeDescuento.MenuManager = this.mainRibbonControl;
-            this.txtPorcentajeDescuento.Name = "txtPorcentajeDescuento";
-            this.txtPorcentajeDescuento.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.txtPorcentajeDescuento.Properties.ReadOnly = true;
-            this.txtPorcentajeDescuento.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtPorcentajeDescuento.Size = new System.Drawing.Size(67, 24);
-            this.txtPorcentajeDescuento.TabIndex = 0;
-            this.txtPorcentajeDescuento.TabStop = false;
-            // 
             // txtFechaCreacion
             // 
             this.txtFechaCreacion.Location = new System.Drawing.Point(151, 85);
@@ -1462,7 +1428,7 @@ namespace NORI
             // lblImporteAplicado
             // 
             this.lblImporteAplicado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblImporteAplicado.Location = new System.Drawing.Point(836, 670);
+            this.lblImporteAplicado.Location = new System.Drawing.Point(834, 632);
             this.lblImporteAplicado.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblImporteAplicado.Name = "lblImporteAplicado";
             this.lblImporteAplicado.Size = new System.Drawing.Size(105, 17);
@@ -1472,7 +1438,7 @@ namespace NORI
             // txtImporteAplicado
             // 
             this.txtImporteAplicado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtImporteAplicado.Location = new System.Drawing.Point(973, 664);
+            this.txtImporteAplicado.Location = new System.Drawing.Point(973, 625);
             this.txtImporteAplicado.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtImporteAplicado.MenuManager = this.mainRibbonControl;
             this.txtImporteAplicado.Name = "txtImporteAplicado";
@@ -1490,7 +1456,7 @@ namespace NORI
             // lblTotal
             // 
             this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTotal.Location = new System.Drawing.Point(836, 636);
+            this.lblTotal.Location = new System.Drawing.Point(834, 600);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(129, 17);
@@ -1500,7 +1466,7 @@ namespace NORI
             // txtTotal
             // 
             this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotal.Location = new System.Drawing.Point(973, 630);
+            this.txtTotal.Location = new System.Drawing.Point(973, 599);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtTotal.MenuManager = this.mainRibbonControl;
             this.txtTotal.Name = "txtTotal";
@@ -1517,28 +1483,10 @@ namespace NORI
             this.txtTotal.TabIndex = 0;
             this.txtTotal.TabStop = false;
             // 
-            // txtDescuento
-            // 
-            this.txtDescuento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDescuento.Location = new System.Drawing.Point(1046, 565);
-            this.txtDescuento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.txtDescuento.MenuManager = this.mainRibbonControl;
-            this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.txtDescuento.Properties.DisplayFormat.FormatString = "c2";
-            this.txtDescuento.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtDescuento.Properties.EditFormat.FormatString = "c2";
-            this.txtDescuento.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtDescuento.Properties.ReadOnly = true;
-            this.txtDescuento.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtDescuento.Size = new System.Drawing.Size(106, 24);
-            this.txtDescuento.TabIndex = 75;
-            this.txtDescuento.TabStop = false;
-            // 
             // lblImpuesto
             // 
             this.lblImpuesto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblImpuesto.Location = new System.Drawing.Point(836, 602);
+            this.lblImpuesto.Location = new System.Drawing.Point(836, 557);
             this.lblImpuesto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblImpuesto.Name = "lblImpuesto";
             this.lblImpuesto.Size = new System.Drawing.Size(56, 17);
@@ -1548,7 +1496,7 @@ namespace NORI
             // txtImpuesto
             // 
             this.txtImpuesto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtImpuesto.Location = new System.Drawing.Point(973, 599);
+            this.txtImpuesto.Location = new System.Drawing.Point(973, 558);
             this.txtImpuesto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtImpuesto.MenuManager = this.mainRibbonControl;
             this.txtImpuesto.Name = "txtImpuesto";
@@ -3239,7 +3187,6 @@ namespace NORI
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoCambio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMonedas.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPorcentajeDescuento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFechaCreacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbSeries.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroDocumento.Properties)).EndInit();
@@ -3248,7 +3195,6 @@ namespace NORI
             ((System.ComponentModel.ISupportInitialize)(this.cbVendedores.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtImporteAplicado.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDescuento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtImpuesto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSubTotal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigoSN.Properties)).EndInit();

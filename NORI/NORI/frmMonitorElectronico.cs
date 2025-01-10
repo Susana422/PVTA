@@ -14,6 +14,8 @@ namespace NORI
         {
             InitializeComponent();
             cbEstatus.SelectedIndex = 0;
+            txtxFechaInicio.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            txtFechaFin.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
         }
 

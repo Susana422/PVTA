@@ -9,6 +9,7 @@ using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraSplashScreen;
 using DevExpress.XtraWaitForm;
 using NetsuiteLibrary.SuiteTalk_Helpers;
+using NORI.PuntoVenta;
 using NORI.Reportes;
 using NoriCFDI;
 using NoriSAPB1SDK;
@@ -145,8 +146,6 @@ namespace NORI
 
         private AccordionControlElement accordionControlElementNotasCredito;
 
-        private AccordionControlElement accordionControlElementNotasDebito;
-
         private AccordionControlElement accordionControlElementInformes;
 
         private AccordionControlElement accordionControlElement1;
@@ -180,10 +179,12 @@ namespace NORI
             InitializeComponent();
             this.MetodoDinamico();
             barEditItemAutorizaciones.EditValue = Program.Nori.UsuarioAutenticado.suscribir_autorizaciones;
-            ((AccordionControlElementBase)accordionControlElementUsuario).Text = Program.Nori.UsuarioAutenticado.nombre;
+            //((AccordionControlElementBase)accordionControlElementUsuario).Text = Program.Nori.UsuarioAutenticado.nombre;
             ((BarItem)barHeaderItemEstacion).Caption = Program.Nori.Estacion.nombre + " | Conectado a: " + Program.Nori.Conexion.DataSource;
             ((Control)(object)this).Text = "DTM SOLUTIONS POS";//Program.Nori.Empresa.nombre_fiscal;
             ((Control)(object)lblEmpresa).Text = Program.Nori.Empresa.nombre_comercial;
+            lbUsuario.Text=  Program.Nori.UsuarioAutenticado.nombre;
+            lbUsuario.Visible = true;
             if (Program.Nori.Empresa.prueba)
             {
                 ((Control)(object)this).Text += " - MODO DE PRUEBA";
@@ -194,61 +195,41 @@ namespace NORI
             {
                 //((AccordionControlElementBase)accordionControlElementRestaurante).Visible = true;
             }
+            
             switch (Program.Nori.UsuarioAutenticado.rol)
             {
                 case 'C':
-                    ((AccordionControlElementBase)accordionControlElementGestion).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementGestionInventario).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementInventario).Visible = false;
-                    //((AccordionControlElementBase)accordionControlElementCompras).Visible = false;
+
+                  ((AccordionControlElementBase)accordionControlElementGestion).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementCotizaciones).Visible = false;
-                    //((AccordionControlElementBase)accordionControlElementEntregas).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementPedidos).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementFacturas).Visible = false;
-                    //((AccordionControlElementBase)accordionControlElementDevoluciones).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementNotasCredito).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementNotasDebito).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementSocios).Visible = false;
-                    //((AccordionControlElementBase)accordionControlElementExtras).Visible = false;
+                    ((AccordionControlElementBase)accordionControlElementEntregaMercancia).Visible = false;
+                    //((AccordionControlElementBase)accordionControlElementNotasDebito).Visible = false;
+                    ((AccordionControlElementBase)accordionControlElementInventario).Visible = false;
+                    accordionControlElementInformes.Visible = false;
                     ribbonPageHerramientas.Visible = false;
                     break;
                 case 'V':
                     ((AccordionControlElementBase)accordionControlElementGestion).Visible = false;
-                    //((AccordionControlElementBase)accordionControlElementInventarioListasPrecios).Visible = false;
-                    ribbonPageGroupHerramientas.Visible = false;
-                    //((AccordionControlElementBase)accordionControlElementCompras).Visible = false;
-                    //((AccordionControlElementBase)accordionControlElementExtras).Visible = false;
-                    if (Program.Nori.UsuarioAutenticado.VendedorForaneo())
-                    {
-                        //((AccordionControlElementBase)accordionControlElementEntregas).Visible = false;
-                        ((AccordionControlElementBase)accordionControlElementEntregaMercancia).Visible = false;
-                        ((AccordionControlElementBase)accordionControlElementFacturas).Visible = false;
-                        //((AccordionControlElementBase)accordionControlElementDevoluciones).Visible = false;
-                        ((AccordionControlElementBase)accordionControlElementNotasCredito).Visible = false;
-                        ((AccordionControlElementBase)accordionControlElementNotasDebito).Visible = false;
-                        //((AccordionControlElementBase)accordionControlElementPuntoVenta).Visible = false;
-                    }
+                    ((AccordionControlElementBase)accordionControlElementEntregaMercancia).Visible = false;
+                   // ((AccordionControlElementBase)accordionControlElementNotasDebito).Visible = false;
+                    accordionControlElementPagos.Visible = false;
+                    accordionControlElementSocios.Visible = false;
+                    accordionControlElementNotasCredito.Visible = false;
+                    accordionControlElementInformes.Visible = false;
+                    ribbonPageHerramientas.Visible = false;
                     break;
                 case 'L':
                     ((AccordionControlElementBase)accordionControlElementGestion).Visible = false;
-                    //((AccordionControlElementBase)accordionControlElementInventarioListasPrecios).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementPagos).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementMonedas).Visible = false;
-                    ribbonPageGroupHerramientas.Visible = false;
-                    //((AccordionControlElementBase)accordionControlElementCompras).Visible = false;
-                    //((AccordionControlElementBase)accordionControlElementExtras).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementFacturas).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementNotasCredito).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementNotasDebito).Visible = false;
-                    // ((AccordionControlElementBase)accordionControlElementPuntoVenta).Visible = false;
+                    //((AccordionControlElementBase)accordionControlElementNotasDebito).Visible = false;
+                    accordionControlElementPagos.Visible = false;
+                    accordionControlElementSocios.Visible = false;
+                    accordionControlElementFacturas.Visible = false;
+                    accordionControlElementNotasCredito.Visible = false;
+                    accordionControlElementInformes.Visible = false;
+                    ribbonPageHerramientas.Visible = false;
                     break;
                 case 'S':
-                    ((AccordionControlElementBase)accordionControlElementGestionInventario).Visible = false;
-                    //((AccordionControlElementBase)accordionControlElementInventarioListasPrecios).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementGeneral).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementMonedas).Visible = false;
-                    ribbonPageGroupHerramientas.Visible = false;
-                    //((AccordionControlElementBase)accordionControlElementExtras).Visible = false;
+                   
                     break;
             }
             if (Program.Nori.Empresa.rfc == "DDI061212TX1")
@@ -1048,6 +1029,24 @@ namespace NORI
         {
             frmMonitorElectronico frmMonitorElectronico = new frmMonitorElectronico();
             ((Control)(object)frmMonitorElectronico).Show();
+        }
+
+        private void accordionControlElementArqueo_Click(object sender, EventArgs e)
+        {
+            frmArqueo frmArqueo = new frmArqueo();
+            ((Control)(object)frmArqueo).Show();
+        }
+
+        private void accordionControlElementApertura_Click(object sender, EventArgs e)
+        {
+            frmIngresos frmIngresos = new frmIngresos("INACA");
+            frmIngresos.Show();
+        }
+
+        private void accordionControlElementCortes_Click(object sender, EventArgs e)
+        {
+            frmCortesCaja frmCortes = new frmCortesCaja();
+            frmCortes.ShowDialog();
         }
     }
 }

@@ -123,8 +123,6 @@ namespace NORI
 
         private TextEdit txtImpuesto;
 
-        private TextEdit txtDescuento;
-
         private LabelControl lblTotal;
 
         private TextEdit txtTotal;
@@ -218,10 +216,6 @@ namespace NORI
         private BarButtonItem barButtonItemMapaRelaciones;
 
         private TextEdit txtArticulo;
-
-        private TextEdit txtPorcentajeDescuento;
-
-        private HyperlinkLabelControl lblDescuento;
 
         private LookUpEdit cbMonedas;
 
@@ -840,7 +834,15 @@ namespace NORI
 
         private void bbiGuardar_ItemClick(object sender, ItemClickEventArgs e)
         {
-            int fact = Int32.Parse(txtFactVencidas.Text);
+            int fact = 0;
+            try
+            {
+                 fact = Int32.Parse(txtFactVencidas.Text);
+            }
+            catch (Exception ex )
+            {
+            }
+          
             if (fact > 2 && documento.clase =="PE")
             {
                 documento.condicion_pago_id = 19;
@@ -1032,13 +1034,13 @@ namespace NORI
                         bbiParametrizaciones.Enabled = true;
                         break;
                     case 'C':
-                        searchRibbonPageGroup.Visible = false;
+                        //searchRibbonPageGroup.Visible = false;
                         break;
                 }
-                if (!ParametrizacionFormulario.Parametrizaciones().Any((ParametrizacionFormulario x) => x.usuario_id == Program.Nori.UsuarioAutenticado.id || ((int?)x.rol == (int?)Program.Nori.UsuarioAutenticado.rol && x.formulario == Name && x.objeto == documento.clase)))
-                {
-                    return;
-                }
+                //if (!ParametrizacionFormulario.Parametrizaciones().Any((ParametrizacionFormulario x) => x.usuario_id == Program.Nori.UsuarioAutenticado.id || ((int?)x.rol == (int?)Program.Nori.UsuarioAutenticado.rol && x.formulario == Name && x.objeto == documento.clase)))
+                //{
+                //    return;
+                //}
                 List<ParametrizacionFormulario> list = ParametrizacionFormulario.Obtener(base.Name, documento.clase);
                 foreach (ParametrizacionFormulario item in list)
                 {
@@ -1782,8 +1784,8 @@ namespace NORI
                 documento.CalcularTotal();
                 txtTipoCambio.Text = documento.tipo_cambio.ToString("n4");
                 txtSubTotal.Text = documento.subtotal.ToString("c2");
-                txtPorcentajeDescuento.Text = documento.porcentaje_descuento.ToString("n2");
-                txtDescuento.Text = documento.descuento.ToString("c2");
+                //txtPorcentajeDescuento.Text = documento.porcentaje_descuento.ToString("n2");
+                //txtDescuento.Text = documento.descuento.ToString("c2");
                 txtImpuesto.Text = documento.impuesto.ToString("c2");
                 txtTotal.Text = documento.total.ToString("c2");
                 txtImporteAplicado.Text = documento.importe_aplicado.ToString("c2");
@@ -1814,8 +1816,8 @@ namespace NORI
               documento.CalcularTotal();
                 txtTipoCambio.Text = documento.tipo_cambio.ToString("n4");
                 txtSubTotal.Text = documento.subtotal.ToString("c2");
-                txtPorcentajeDescuento.Text = documento.porcentaje_descuento.ToString("n2");
-                txtDescuento.Text = documento.descuento.ToString("c2");
+                //txtPorcentajeDescuento.Text = documento.porcentaje_descuento.ToString("n2");
+                //txtDescuento.Text = documento.descuento.ToString("c2");
                 txtImpuesto.Text = documento.impuesto.ToString("c2");
                 txtTotal.Text = documento.total.ToString("c2");
                 txtImporteAplicado.Text = documento.importe_aplicado.ToString("c2");
@@ -2268,9 +2270,7 @@ namespace NORI
                             SincronizacionNetSuite();
                             return this.documento.Actualizar(actualizar_partidas: true);
                         }
-                        if (Autorizacion() && Permiso())
-                        {
-
+                       
                             if (this.documento.Agregar())
                             {
                                 if (this.documento.generar_documento_electronico)
@@ -2312,8 +2312,8 @@ namespace NORI
                         }
                         else
                         {
-                            MessageBox.Show("No fue posible autorizar este movimiento.");
-                        }
+                            //MessageBox.Show("No fue posible autorizar este movimiento.");
+                        
                     }
                     return false;
                 }
@@ -3564,7 +3564,7 @@ namespace NORI
         }
         private void bbiCancelar_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (documento.clase.Equals("FA"))
+            if (documento.clase.Equals("FA") || documento.clase.Equals("NC"))
             {
                 frmAutorizarVentaVencida frmAutorizarVentaVencida = new frmAutorizarVentaVencida();
                 frmAutorizarVentaVencida.Owner = this;

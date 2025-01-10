@@ -251,7 +251,7 @@ namespace NORI
         private BarButtonItem bbiParametrizacionesFormulario;
 
         private GridColumn gridColumnFolioFiscal;
-
+        public bool Autorizar { get; set; } = false;
         public frmPagos(int id = 0)
         {
             InitializeComponent();
@@ -1061,7 +1061,17 @@ namespace NORI
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            CancelarDocumentoElectronico();
+          
+                frmAutorizarPago frmAutorizarPago = new frmAutorizarPago();
+                frmAutorizarPago.Owner = this;
+                frmAutorizarPago.ShowDialog();
+                if (Autorizar == true)
+                {
+                    CancelarDocumentoElectronico();
+                }
+            
+            
+           
         }
 
         private void CancelarDocumentoElectronico()
@@ -1139,15 +1149,18 @@ namespace NORI
 
         private void bbiCancelar_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (MessageBox.Show("¿Estas seguro de cancelar este pago?", "Cancelar pago", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+
+
+            frmAutorizarPago frmAutorizarPago = new frmAutorizarPago();
+            frmAutorizarPago.Owner = this;
+            frmAutorizarPago.ShowDialog();
+            if (Autorizar == true)
             {
-                return;
-            }
+              
             if (!pago.cancelado)
             {
-                if (Permiso())
-                {
-                    pago.comentario = Interaction.InputBox("Ingresa un comentario sobre la cancelación", "Cancelación pago", pago.comentario);
+                
+                    //pago.comentario = Interaction.InputBox("Ingresa un comentario sobre la cancelación", "Cancelación pago", pago.comentario);
                     if (pago.Cancelar(agregar_sincronizacion: true))
                     {
                         RecargarPago();
@@ -1157,12 +1170,14 @@ namespace NORI
                     {
                         MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                     }
-                }
             }
+            
             else
             {
                 MessageBox.Show("Este pago ya ha sido cancelado.");
             }
+            }
+
         }
 
         public bool Permiso(bool cancelacion = false, bool cfdi = false)

@@ -146,7 +146,7 @@ namespace NORI
             this.btnAutenticar.TabIndex = 2;
             this.btnAutenticar.Text = "Autenticar";
             this.btnAutenticar.UseVisualStyleBackColor = false;
-            this.btnAutenticar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnAutenticar_Click);
+            this.btnAutenticar.Click += new System.EventHandler(this.btnAutenticar_Click);
             // 
             // lblDesbloquear
             // 

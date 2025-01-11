@@ -1638,7 +1638,7 @@ namespace NORI.PuntoVenta
                         Autorizacion autorizacion4 = new Autorizacion();
                         autorizacion4.codigo = "MOCPP";
                         autorizacion4.referencia = $"Modificar cantidad al artículo {documento.partidas[e.RowHandle].sku} de {((BaseView)gvPartidas).ActiveEditor.OldEditValue} a {((BaseView)gvPartidas).ActiveEditor.EditValue}";
-                        autorizacion4.comentario = Interaction.InputBox("Comentario modificar cantidad artículos (Opcional)");
+                        autorizacion4.comentario = Interaction.InputBox("Comentario modificar cantidad artículos (Opcional)", "DTM SOLUTIONS POS", "", -1, -1);
                         autorizacion4.Agregar(documento);
                         if (!autorizacion4.autorizado)
                         {
@@ -1714,7 +1714,7 @@ namespace NORI.PuntoVenta
                     Autorizacion autorizacion = new Autorizacion();
                     autorizacion.codigo = "EPART";
                     autorizacion.referencia = $"Eliminar partida del artículo {documento.partidas[((ColumnView)gvPartidas).GetSelectedRows()[0]].sku}";
-                    autorizacion.comentario = Interaction.InputBox("Comentario eliminar partida (Opcional)");
+                    autorizacion.comentario = Interaction.InputBox("Comentario eliminar partida (Opcional)", "DTM SOLUTIONS POS", "", -1, -1);
                     autorizacion.Agregar(documento);
                     if (!autorizacion.autorizado)
                     {

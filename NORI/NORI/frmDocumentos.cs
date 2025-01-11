@@ -25,6 +25,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Media.TextFormatting;
+using static NoriSDK.Documento;
 using DataTable = System.Data.DataTable;
 using Task = System.Threading.Tasks.Task;
 
@@ -259,8 +260,6 @@ namespace NORI
 
         private GridColumn gridColumnCodigoBarras;
 
-        private CheckEdit cbReserva;
-
         private BarButtonItem bbiPagar;
 
         private LabelControl lblCuentaPago;
@@ -325,13 +324,9 @@ namespace NORI
 
         private TextEdit txtNumeroDocumentoExterno;
 
-        private CheckEdit cbAnticipo;
-
         private Label lblSincronizacion;
 
         private GridColumn gridColumnUnidadMedida;
-
-        private CheckEdit cbCOD;
 
         private LabelControl lblActualizacion;
 
@@ -580,6 +575,7 @@ namespace NORI
                 decimal newValue;
                 if (decimal.TryParse(e.Value.ToString(), out newValue))
                 {
+
                     // Verificar si el valor es negativo
                     if (newValue < 0)
                     {
@@ -588,6 +584,10 @@ namespace NORI
 
                         // Mostrar mensaje de error
                         MessageBox.Show("El valor no puede ser negativo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    if (newValue != Math.Floor(newValue))
+                    {
+                        MessageBox.Show("No se permite coloca piezas en decimales", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -1037,10 +1037,10 @@ namespace NORI
                         //searchRibbonPageGroup.Visible = false;
                         break;
                 }
-                //if (!ParametrizacionFormulario.Parametrizaciones().Any((ParametrizacionFormulario x) => x.usuario_id == Program.Nori.UsuarioAutenticado.id || ((int?)x.rol == (int?)Program.Nori.UsuarioAutenticado.rol && x.formulario == Name && x.objeto == documento.clase)))
-                //{
-                //    return;
-                //}
+                if (!ParametrizacionFormulario.Parametrizaciones().Any((ParametrizacionFormulario x) => x.usuario_id == Program.Nori.UsuarioAutenticado.id || ((int?)x.rol == (int?)Program.Nori.UsuarioAutenticado.rol && x.formulario == Name && x.objeto == documento.clase)))
+                {
+                    return;
+                }
                 List<ParametrizacionFormulario> list = ParametrizacionFormulario.Obtener(base.Name, documento.clase);
                 foreach (ParametrizacionFormulario item in list)
                 {
@@ -1057,11 +1057,18 @@ namespace NORI
                         }
                         else
                         {
-                            gvPartidas.Columns.ColumnByName(item.control).Visible = !item.oculto;
-                            if (!item.oculto)
+                            try
                             {
-                                gvPartidas.Columns.ColumnByName(item.control).OptionsColumn.AllowEdit = !item.desactivado;
+                                gvPartidas.Columns.ColumnByName(item.control).Visible = !item.oculto;
+                                if (!item.oculto)
+                                {
+                                    gvPartidas.Columns.ColumnByName(item.control).OptionsColumn.AllowEdit = !item.desactivado;
+                                }
                             }
+                            catch (Exception ex)
+                            {
+                            }
+                          
                         }
                     }
                     catch (Exception ex)
@@ -1361,6 +1368,7 @@ namespace NORI
                 cbAnticipo.Checked = documento.anticipo;
                 txtCodigoSN.Text = socio.codigo;
                 lblSocio.Text = socio.nombre;
+                lblID.Text = socio.id.ToString();
                 lblRFC.Text = socio.rfc;
                 txtFechaCreacion.Text = documento.fecha_creacion.ToShortDateString();
                 cbMonedas.EditValue = documento.moneda_id;
@@ -1898,6 +1906,7 @@ namespace NORI
                         txtFactVencidas.Text = Convert.ToDecimal(data.Rows[0]["fact_vencidas"]).ToString("0.##");
                     }
                     lblSocio.Text = socio.nombre;
+                    lblID.Text = socio.id.ToString();
                     lblRFC.Text = socio.rfc;
                     cbVendedores.EditValue = documento.vendedor_id;
                     cbMetodosPago.EditValue = documento.metodo_pago_id;
@@ -2175,7 +2184,7 @@ namespace NORI
                                                select x.sku).FirstOrDefault();
 
                             autorizacion.referencia = $"Intento de venta de un artículo con una utilidad menor del 2.5% ({skuArticulo}).";
-                            autorizacion.comentario = Interaction.InputBox("Comentario venta artóculo utilidad menor (Opcional)");
+                            autorizacion.comentario = Interaction.InputBox("Comentario venta artóculo utilidad menor (Opcional)", "DTM SOLUTIONS POS", "", -1, -1);
                             autorizacion.Agregar(documento);
                             if (!autorizacion.autorizado)
                             {
@@ -2241,6 +2250,11 @@ namespace NORI
                             }
                         }
 
+                        if (this.documento.clase.Equals("FA") && this.documento.partidas.Any((Documento.Partida x) => x.documento_id == 0))
+                        {
+                            MessageBox.Show("No es posible guardar una factura sin documento base.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return false;
+                        }
                         if (this.documento.clase.Equals("FA") && !Program.Nori.Configuracion.factura_sin_entregas && this.documento.partidas.Any((Documento.Partida x) => x.id == 0))
                         {
                             MessageBox.Show("No es posible guardar una factura sin documento base.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -2252,7 +2266,7 @@ namespace NORI
                             Autorizacion autorizacion = new Autorizacion();
                             autorizacion.codigo = "VECDV";
                             autorizacion.referencia = $"Venta documento vencidos socio {socio.codigo}";
-                            autorizacion.comentario = Interaction.InputBox("Comentario venta documentos vencidos (Opcional)");
+                            autorizacion.comentario = Interaction.InputBox("Comentario venta documentos vencidos (Opcional)", "DTM SOLUTIONS POS", "", -1, -1);
                             autorizacion.Agregar(this.documento);
                             if (!autorizacion.autorizado)
                             {
@@ -2427,7 +2441,7 @@ namespace NORI
                             }
                             autorizacion.codigo = "VEACR";
                             autorizacion.referencia = $"{text2} a crédito por {documento.total:c2} al socio {socio.nombre} ({socio.codigo}), Límite de crédito excedido en {(socio.limite_credito - socio.Balance()) * -1m:c2} {text}";
-                            autorizacion.comentario = Interaction.InputBox("Comentario venta a crédito (Opcional)");
+                            autorizacion.comentario = Interaction.InputBox("Comentario venta a crédito (Opcional)", "DTM SOLUTIONS POS", "", -1, -1);
                             autorizacion.Agregar(documento);
                             if (!autorizacion.autorizado)
                             {
@@ -2467,7 +2481,7 @@ namespace NORI
                             autorizacion.codigo = (cfdi ? "CCFDI" : "CRUDO");
                             autorizacion.usuario_autorizacion_id = permiso.usuario_autorizacion_id;
                             autorizacion.referencia = string.Format("{0} del documento {1} al cliente {2} por {3}", text, documento.clase, socio.nombre, documento.total.ToString("c2"));
-                            autorizacion.comentario = Interaction.InputBox("CRUD (Opcional)");
+                            autorizacion.comentario = Interaction.InputBox("CRUD (Opcional)", "DTM SOLUTIONS POS", "", -1, -1);
                             autorizacion.Agregar();
                             if (!autorizacion.autorizado)
                             {
@@ -2700,7 +2714,7 @@ namespace NORI
                     Autorizacion autorizacion = new Autorizacion();
                     autorizacion.codigo = "MOTPP";
                     autorizacion.referencia = $"Modificación del total del artículo {documento.partidas[e.RowHandle].sku} de {gvPartidas.ActiveEditor.OldEditValue:c2} a {gvPartidas.ActiveEditor.EditValue:c2} al socio {socio.codigo}";
-                    autorizacion.comentario = Interaction.InputBox("Comentario modifiación de total (Opcional)");
+                    autorizacion.comentario = Interaction.InputBox("Comentario modifiación de total (Opcional)", "DTM SOLUTIONS POS", "", -1, -1);
                     autorizacion.Agregar(documento);
                     if (!autorizacion.autorizado)
                     {
@@ -2720,7 +2734,7 @@ namespace NORI
                     Autorizacion autorizacion2 = new Autorizacion();
                     autorizacion2.codigo = "DSCPP";
                     autorizacion2.referencia = $"Descuento al artículo {documento.partidas[e.RowHandle].sku} de {gvPartidas.ActiveEditor.EditValue:p2} al socio {socio.codigo}";
-                    autorizacion2.comentario = Interaction.InputBox("Comentario descuento artículo (Opcional)");
+                    autorizacion2.comentario = Interaction.InputBox("Comentario descuento artículo (Opcional)", "DTM SOLUTIONS POS", "", -1, -1);
                     autorizacion2.Agregar(documento);
                     if (!autorizacion2.autorizado)
                     {
@@ -2786,7 +2800,7 @@ namespace NORI
                         Autorizacion autorizacion3 = new Autorizacion();
                         autorizacion3.codigo = "MOTPP";
                         autorizacion3.referencia = $"Modificación de precio al artículo {documento.partidas[e.RowHandle].sku} de {gvPartidas.ActiveEditor.OldEditValue:c2} a {gvPartidas.ActiveEditor.EditValue:c2} al socio {socio.codigo}";
-                        autorizacion3.comentario = Interaction.InputBox("Comentario modificación de precio (Opcional)");
+                        autorizacion3.comentario = Interaction.InputBox("Comentario modificación de precio (Opcional)", "DTM SOLUTIONS POS", "", -1, -1);
                         autorizacion3.Agregar(documento);
                         if (!autorizacion3.autorizado)
                         {
@@ -2987,6 +3001,12 @@ namespace NORI
                     {
                         e.Appearance.BackColor = Color.GreenYellow;
                     }
+                    
+                        if ((Convert.ToDouble(gvPartidas.GetRowCellValue(e.RowHandle, gvPartidas.Columns["stock"])) - Convert.ToDouble(gvPartidas.GetRowCellValue(e.RowHandle, gvPartidas.Columns["cantidad"]))) <= 0)
+                        {
+                            e.Appearance.BackColor = Color.Red;
+                        }
+                    
                     e.Appearance.BackColor2 = Color.White;
                 }
             }
@@ -3596,7 +3616,7 @@ namespace NORI
                 if (!documento.cancelado && Permiso(cancelacion: true, cfdi: true))
                 {
                     string text = Interaction.InputBox("Motivo cancelación (01 - Comprobantes emitidos con errores con relación, 02 - Comprobantes emitidos con errores sin relación, 03 - No se llevó a cabo la operación, 04 - Operación nominativa relacionada en una factura global)", "Cancelar CFDI", "02");
-                    string folio_fiscal_sustitucion = (text.Equals("01") ? Interaction.InputBox("UUID Sustitución de comprobantes emitidos con errores con relación") : "");
+                    string folio_fiscal_sustitucion = (text.Equals("01") ? Interaction.InputBox("UUID Sustitución de comprobantes emitidos con errores con relación", "DTM SOLUTIONS POS", "", -1, -1) : "");
                     documentoElectronico.motivo = text;
                     documentoElectronico.folio_fiscal_sustitucion = folio_fiscal_sustitucion;
                     documentoElectronico.Actualizar();
@@ -3974,11 +3994,11 @@ namespace NORI
         {
             try
             {
-                string uuid = Interaction.InputBox("UUID");
-                string rfc_receptor = Interaction.InputBox("RFC Receptor");
-                double total = double.Parse(Interaction.InputBox("Total"));
+                string uuid = Interaction.InputBox("UUID", "DTM SOLUTIONS POS", "", -1, -1);
+                string rfc_receptor = Interaction.InputBox("RFC Receptor", "DTM SOLUTIONS POS", "", -1, -1);
+                double total = double.Parse(Interaction.InputBox("Total", "DTM SOLUTIONS POS", "", -1, -1));
                 string text = Interaction.InputBox("Motivo cancelación (01, 02, 03, 04)", "02");
-                string sustitucion = (text.Equals("01") ? Interaction.InputBox("UUID Sustitución") : "");
+                string sustitucion = (text.Equals("01") ? Interaction.InputBox("UUID Sustitución", "DTM SOLUTIONS POS", "", -1, -1) : "");
                 MessageBox.Show(Funciones.CancelarCFDi(uuid, rfc_receptor, total, text, sustitucion));
             }
             catch (Exception ex)
@@ -4131,10 +4151,10 @@ namespace NORI
                 {
                     ArticuloSolicitado articuloSolicitado = new ArticuloSolicitado();
                     articuloSolicitado.socio_id = documento.socio_id;
-                    articuloSolicitado.sku = Interaction.InputBox("Ingrese el código del artículo solicitado");
-                    articuloSolicitado.descripcion = Interaction.InputBox("Ingresa la descripción del artículo solicitado");
+                    articuloSolicitado.sku = Interaction.InputBox("Ingrese el código del artículo solicitado", "DTM SOLUTIONS POS", "", -1, -1);
+                    articuloSolicitado.descripcion = Interaction.InputBox("Ingresa la descripción del artículo solicitado", "DTM SOLUTIONS POS", "", -1, -1);
                     articuloSolicitado.cantidad = int.Parse(Interaction.InputBox("Ingresa la cantidad solicitada", "1"));
-                    articuloSolicitado.comentarios = Interaction.InputBox("Comentario sobre artículo solicitado (Opcional)");
+                    articuloSolicitado.comentarios = Interaction.InputBox("Comentario sobre artículo solicitado (Opcional)", "DTM SOLUTIONS POS", "", -1, -1);
                     articuloSolicitado.Agregar();
                 }
                 if (e.KeyCode == Keys.F1)
@@ -4199,7 +4219,8 @@ namespace NORI
         {
             try
             {
-                string archivo = Program.Nori.Configuracion.directorio_anexos + "\\" + lbAnexos.SelectedValue.ToString();
+                var anexoSinFecha = lbAnexos.SelectedValue.ToString().Split('-')[0].Trim();
+                string archivo = Program.Nori.Configuracion.directorio_anexos + "\\" + anexoSinFecha;
                 Funciones.AbrirArchivo(archivo);
             }
             catch
@@ -4646,7 +4667,26 @@ namespace NORI
             }
         }
 
+        private void lbAnexos_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                // Obtener el índice del ítem seleccionado
+                int selectedIndex = lbAnexos.SelectedIndex;
 
+                // Verificamos que haya un ítem seleccionado
+                if (selectedIndex >= 0)
+                {
+                    // Eliminamos el ítem seleccionado
+                    lbAnexos.Items.RemoveAt(selectedIndex);
+                    documento.anexos.RemoveAt(selectedIndex);
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione un ítem para eliminar.");
+                }
+            }
+        }
     }
 
 }

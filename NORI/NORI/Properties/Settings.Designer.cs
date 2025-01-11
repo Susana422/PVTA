@@ -25,19 +25,6 @@ namespace Settings {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-D5V63NE\\SQLEXPRESS;Initial Catalog=NORICUAITITLAN;Integrated " +
-            "Security=False;User ID=sa;Password=123")]
-        public string conexiones {
-            get {
-                return ((string)(this["conexiones"]));
-            }
-            set {
-                this["conexiones"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string RootDirectory {
             get {
@@ -105,6 +92,19 @@ namespace Settings {
             }
             set {
                 this["BD"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-D5V63NE\\SQLEXPRESS;Initial Catalog=DTMSOLUTIONS;Integrated Se" +
+            "curity=False;User ID=sa;Password=123")]
+        public string conexiones {
+            get {
+                return ((string)(this["conexiones"]));
+            }
+            set {
+                this["conexiones"] = value;
             }
         }
     }

@@ -2,9 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Settings" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="conexiones" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=DESKTOP-D5V63NE\SQLEXPRESS;Initial Catalog=NORICUAITITLAN;Integrated Security=False;User ID=sa;Password=123</Value>
-    </Setting>
     <Setting Name="RootDirectory" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
@@ -22,6 +19,9 @@
     </Setting>
     <Setting Name="BD" Type="System.String" Scope="User">
       <Value Profile="(Default)">NORICUAITITLAN</Value>
+    </Setting>
+    <Setting Name="conexiones" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=DESKTOP-D5V63NE\SQLEXPRESS;Initial Catalog=DTMSOLUTIONS;Integrated Security=False;User ID=sa;Password=123</Value>
     </Setting>
   </Settings>
 </SettingsFile>

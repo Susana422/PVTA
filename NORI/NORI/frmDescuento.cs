@@ -76,7 +76,7 @@ namespace NORI
                 Autorizacion autorizacion = new Autorizacion();
                 autorizacion.codigo = "DSCTO";
                 autorizacion.referencia = string.Format("Descuento global al documento de {0}% ({1}), Total del documento {2}", decimal.Parse(((BaseEdit)txtDescuento).EditValue.ToString()), descuento.ToString("c2"), total.ToString("c2"));
-                autorizacion.comentario = Interaction.InputBox("Comentario descuento global (Opcional)");
+                autorizacion.comentario = Interaction.InputBox("Comentario descuento global (Opcional)", "DTM SOLUTIONS POS", "", -1, -1);
                 autorizacion.Agregar();
                 if (!autorizacion.autorizado)
                 {

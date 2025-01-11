@@ -54,107 +54,128 @@ namespace NORI
         {
             InitializeComponent();
             this.MetodoDinamico();
+            lookUpEdit2.Properties.DataSource = Usuario.Rol.Roles();
+            lookUpEdit2.Properties.ValueMember = "rol";
+            lookUpEdit2.Properties.DisplayMember = "nombre";
+            lookUpEdit1.Properties.DataSource = CrearDataTableFormulario();
+            lookUpEdit1.Properties.ValueMember = "form";      // Columna para el valor
+            lookUpEdit1.Properties.DisplayMember = "nombre";  // Columna para el texto visible
+
             formulario = f;
             objeto = o;
-            CargarListas();
-            Cargar();
         }
 
-        private void CargarListas()
+        private DataTable CrearDataTableControles()
         {
-            //IL_0276: Unknown result type (might be due to invalid IL or missing references)
-            //IL_027d: Expected O, but got Unknown
-            var list = (from x in Usuario.Usuarios()
-                        where x.activo == true
-                        select new { x.id, x.usuario }).ToList();
-            list.Add(new
+            // Crear un DataTable con columnas para almacenar el nombre, tipo y valor de los controles
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ControlName", typeof(string));
+            dt.Columns.Add("ControlType", typeof(string));
+            dt.Columns.Add("ControlValue", typeof(string));
+
+            return dt;
+        }
+
+        // Método para buscar un formulario por su nombre y recorrer sus controles
+        private void BuscarFormularioYRecorrerControles()
+        {
+            System.Data.DataTable data = CrearDataTableControles();
+            string nombreFormulario = lookUpEdit1.EditValue.ToString();
+            Form otroForm = CrearFormularioPorNombre(nombreFormulario);
+            // Buscar el formulario por su nombre en los formularios abiertos
+            foreach (Form form in Application.OpenForms)
             {
-                id = 0,
-                usuario = "-- Ningún usuario --"
-            });
-            ((RepositoryItemLookUpEditBase)cbUsuarios).DataSource = list.OrderBy(x => x.id).ToList();
-            ((RepositoryItemLookUpEditBase)cbUsuarios).ValueMember = "id";
-            ((RepositoryItemLookUpEditBase)cbUsuarios).DisplayMember = "usuario";
-            ((RepositoryItemLookUpEditBase)cbRoles).DataSource = Usuario.Rol.Roles();
-            ((RepositoryItemLookUpEditBase)cbRoles).ValueMember = "rol";
-            ((RepositoryItemLookUpEditBase)cbRoles).DisplayMember = "nombre";
-            Dictionary<string, string> dictionary = new Dictionary<string, string>();
-            Form form = Application.OpenForms[formulario];
-            foreach (Control item in form.ObtenerControles().OfType<Control>())
-            {
-                dictionary.Add(item.Name, (item.Text.Length == 0) ? item.Name : item.Text);
-            }
-            try
-            {
-                string key = ((form.Name == "frmDocumentos") ? "gcPartidas" : ((form.Name == "frmSocios") ? "gcPersonasContacto" : "gcInventario"));
-                GridControl root = (GridControl)form.Controls.Find(key, searchAllChildren: true).First();
-                foreach (GridColumn item2 in root.ObtenerColumnas().OfType<GridColumn>())
+                if (form.Name == nombreFormulario)
                 {
-                    dictionary.Add(item2.Name, item2.Caption);
+                    RecorrerControlesRecursivamente(otroForm.Controls, data);
+                    break;
                 }
             }
-            catch
+        }
+        private Form CrearFormularioPorNombre(string nombreFormulario)
+        {
+            switch (nombreFormulario)
             {
+                case "frmAcceder":
+                    return new frmAcceder();  // Aquí creas el formulario deseado
+                case "frmDocumentos":
+                    return new frmDocumentos("OC", 0);    // Otro formulario que tengas
+                                                          // Agrega más casos según los formularios que tengas
+                default:
+                    return null;  // Si no existe el formulario, retornamos null
             }
-            ((RepositoryItemLookUpEditBase)cbControles).DataSource = dictionary;
-            ((RepositoryItemLookUpEditBase)cbControles).ValueMember = "Key";
-            ((RepositoryItemLookUpEditBase)cbControles).DisplayMember = "Value";
         }
-
-        private void Cargar()
+        private void RecorrerControlesRecursivamente(Control.ControlCollection controls, DataTable dt)
         {
-            gcPermisos.DataSource = Utilidades.EjecutarQuery($"SELECT * FROM parametrizaciones_formulario where formulario = '{formulario}' and objeto = '{objeto}'");
-            gcPermisos.RefreshDataSource();
-        }
-
-        private void gcPermisos_EmbeddedNavigator_ButtonClick(object sender, NavigatorButtonClickEventArgs e)
-        {
-            //IL_004c: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0053: Invalid comparison between Unknown and I4
-            //IL_0121: Unknown result type (might be due to invalid IL or missing references)
-            //IL_0127: Invalid comparison between Unknown and I4
-            try
+            foreach (Control ctrl in controls)
             {
-                DataRow dataRow = ((ColumnView)gvPermisos).GetDataRow(((ColumnView)gvPermisos).GetSelectedRows()[0]);
-                ((BaseView)gvPermisos).CloseEditor();
-                int.TryParse(dataRow["id"].ToString(), out var result);
-                ParametrizacionFormulario parametrizacionFormulario = ParametrizacionFormulario.Obtener(result);
-                if ((int)e.Button.ButtonType == 10)
+                // Guardamos el nombre, tipo y valor del control
+                dt.Rows.Add(ctrl.Name, ctrl.GetType().ToString(), ObtenerValorDelControl(ctrl));
+
+                // Si el control tiene hijos, llamamos recursivamente
+                if (ctrl.HasChildren)
                 {
-                    parametrizacionFormulario.usuario_id = (int)dataRow["usuario_id"];
-                    char.TryParse((string)dataRow["rol"], out var result2);
-                    parametrizacionFormulario.rol = result2;
-                    parametrizacionFormulario.objeto = objeto;
-                    parametrizacionFormulario.formulario = formulario;
-                    parametrizacionFormulario.control = (string)dataRow["control"];
-                    parametrizacionFormulario.oculto = (bool)dataRow["oculto"];
-                    parametrizacionFormulario.desactivado = (bool)dataRow["desactivado"];
-                    if (parametrizacionFormulario.id != 0)
-                    {
-                        parametrizacionFormulario.Actualizar();
-                    }
-                    else
-                    {
-                        parametrizacionFormulario.Agregar();
-                    }
-                }
-                else if ((int)e.Button.ButtonType == 8 && parametrizacionFormulario.id != 0)
-                {
-                    parametrizacionFormulario.Eliminar();
+                    RecorrerControlesRecursivamente(ctrl.Controls, dt);
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
-            }
         }
 
-        private void gvPermisos_InitNewRow(object sender, InitNewRowEventArgs e)
+        // Función para obtener el valor del control, sin especificar tipo
+        private string ObtenerValorDelControl(Control ctrl)
         {
-            ((ColumnView)gvPermisos).SetRowCellValue(e.RowHandle, "oculto", (object)0);
-            ((ColumnView)gvPermisos).SetRowCellValue(e.RowHandle, "desactivado", (object)1);
-        }
+            // Si el control tiene una propiedad 'Text', obtenemos el valor
+            var textProperty = ctrl.GetType().GetProperty("Text");
+            if (textProperty != null)
+            {
+                try
+                {
+                    var value = textProperty.GetValue(ctrl, null);
+                    return value?.ToString() ?? string.Empty;
+                }
+                catch (Exception)
+                {
+                }
 
+            }
+
+            // Si el control tiene una propiedad 'Checked' (como en CheckBox)
+            var checkedProperty = ctrl.GetType().GetProperty("Checked");
+            if (checkedProperty != null)
+            {
+                var value = checkedProperty.GetValue(ctrl, null);
+                return value?.ToString() ?? string.Empty;
+            }
+
+            // Si el control tiene una propiedad 'SelectedItem' (como en ComboBox)
+            var selectedItemProperty = ctrl.GetType().GetProperty("SelectedItem");
+            if (selectedItemProperty != null)
+            {
+                var value = selectedItemProperty.GetValue(ctrl, null);
+                return value?.ToString() ?? string.Empty;
+            }
+
+            // Si el control tiene alguna propiedad que devuelva algún valor, devuélvelo
+            return string.Empty; // Si no tiene ninguna propiedad relevante, devolver vacío
+        }
+        private DataTable CrearDataTableFormulario()
+        {
+            DataTable table = new DataTable();
+
+            // Crear columnas
+            table.Columns.Add("form", typeof(string));  // Columna para el valor
+            table.Columns.Add("nombre", typeof(string));  // Columna para el nombre a mostrar
+
+            // Poblar el DataTable con algunos datos
+            table.Rows.Add("frmDocumentos", "Documentos");
+            table.Rows.Add("frmArticulos", "Articulos");
+            table.Rows.Add("frmPagos", "Pagos");
+            table.Rows.Add("frmSocios", "Socios");
+            return table;
+        }
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            BuscarFormularioYRecorrerControles();
+        }
     }
 
 }

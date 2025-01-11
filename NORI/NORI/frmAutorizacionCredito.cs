@@ -48,7 +48,7 @@ namespace NORI
             Autorizacion autorizacion = new Autorizacion();
             autorizacion.codigo = "VEACR";
             autorizacion.referencia = $"Venta a crédito con firma no autorizada al socio {socio.codigo}";
-            autorizacion.comentario = Interaction.InputBox("Comentario venta a crédito (Opcional)");
+            autorizacion.comentario = Interaction.InputBox("Comentario venta a crédito (Opcional)","DTM SOLUTIONS POS","",-1,-1);
             autorizacion.Agregar();
             if (!autorizacion.autorizado)
             {

@@ -288,8 +288,10 @@ namespace NORI.PuntoVenta
             this.cbConceptos.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 26, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Concepto", 80, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.cbConceptos.Properties.NullText = "";
             this.cbConceptos.Size = new System.Drawing.Size(363, 24);
             this.cbConceptos.TabIndex = 0;
+            this.cbConceptos.EditValueChanged += new System.EventHandler(this.cbConceptos_EditValueChanged);
             // 
             // lblConceptos
             // 

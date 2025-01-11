@@ -111,8 +111,6 @@ namespace NORI
             this.lblUtilidad = new DevExpress.XtraEditors.LabelControl();
             this.deFechaVencimiento = new DevExpress.XtraEditors.DateEdit();
             this.deFechaContabilizacion = new DevExpress.XtraEditors.DateEdit();
-            this.cbCOD = new DevExpress.XtraEditors.CheckEdit();
-            this.cbAnticipo = new DevExpress.XtraEditors.CheckEdit();
             this.txtNumeroDocumentoExterno = new DevExpress.XtraEditors.TextEdit();
             this.lblArticulos = new DevExpress.XtraEditors.LabelControl();
             this.lblPartidas = new DevExpress.XtraEditors.LabelControl();
@@ -281,6 +279,8 @@ namespace NORI
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.cbCOD = new DevExpress.XtraEditors.CheckEdit();
+            this.cbAnticipo = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuDocumentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -299,8 +299,6 @@ namespace NORI
             ((System.ComponentModel.ISupportInitialize)(this.deFechaVencimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaContabilizacion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaContabilizacion.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbCOD.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbAnticipo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroDocumentoExterno.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReferencia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbReserva.Properties)).BeginInit();
@@ -368,6 +366,8 @@ namespace NORI
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbCOD.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbAnticipo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // mainRibbonControl
@@ -747,6 +747,8 @@ namespace NORI
             // 
             // xtraTabPageGeneral
             // 
+            this.xtraTabPageGeneral.Controls.Add(this.cbAnticipo);
+            this.xtraTabPageGeneral.Controls.Add(this.cbCOD);
             this.xtraTabPageGeneral.Controls.Add(this.lbMensajeC);
             this.xtraTabPageGeneral.Controls.Add(this.lbFact);
             this.xtraTabPageGeneral.Controls.Add(this.lbCredito);
@@ -769,8 +771,6 @@ namespace NORI
             this.xtraTabPageGeneral.Controls.Add(this.lblUtilidad);
             this.xtraTabPageGeneral.Controls.Add(this.deFechaVencimiento);
             this.xtraTabPageGeneral.Controls.Add(this.deFechaContabilizacion);
-            this.xtraTabPageGeneral.Controls.Add(this.cbCOD);
-            this.xtraTabPageGeneral.Controls.Add(this.cbAnticipo);
             this.xtraTabPageGeneral.Controls.Add(this.txtNumeroDocumentoExterno);
             this.xtraTabPageGeneral.Controls.Add(this.lblArticulos);
             this.xtraTabPageGeneral.Controls.Add(this.lblPartidas);
@@ -1081,28 +1081,6 @@ namespace NORI
             this.deFechaContabilizacion.Size = new System.Drawing.Size(142, 24);
             this.deFechaContabilizacion.TabIndex = 150;
             // 
-            // cbCOD
-            // 
-            this.cbCOD.Location = new System.Drawing.Point(272, 85);
-            this.cbCOD.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.cbCOD.MenuManager = this.mainRibbonControl;
-            this.cbCOD.Name = "cbCOD";
-            this.cbCOD.Properties.Caption = "COD";
-            this.cbCOD.Size = new System.Drawing.Size(101, 21);
-            this.cbCOD.TabIndex = 126;
-            this.cbCOD.TabStop = false;
-            // 
-            // cbAnticipo
-            // 
-            this.cbAnticipo.Location = new System.Drawing.Point(379, 85);
-            this.cbAnticipo.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.cbAnticipo.MenuManager = this.mainRibbonControl;
-            this.cbAnticipo.Name = "cbAnticipo";
-            this.cbAnticipo.Properties.Caption = "Anticipo";
-            this.cbAnticipo.Size = new System.Drawing.Size(101, 21);
-            this.cbAnticipo.TabIndex = 125;
-            this.cbAnticipo.TabStop = false;
-            // 
             // txtNumeroDocumentoExterno
             // 
             this.txtNumeroDocumentoExterno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1162,12 +1140,12 @@ namespace NORI
             // 
             // cbReserva
             // 
-            this.cbReserva.Location = new System.Drawing.Point(272, 85);
+            this.cbReserva.Location = new System.Drawing.Point(271, 84);
             this.cbReserva.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbReserva.MenuManager = this.mainRibbonControl;
             this.cbReserva.Name = "cbReserva";
             this.cbReserva.Properties.Caption = "Reserva";
-            this.cbReserva.Size = new System.Drawing.Size(101, 21);
+            this.cbReserva.Size = new System.Drawing.Size(72, 21);
             this.cbReserva.TabIndex = 0;
             this.cbReserva.TabStop = false;
             // 
@@ -3119,6 +3097,7 @@ namespace NORI
             this.lbAnexos.Name = "lbAnexos";
             this.lbAnexos.Size = new System.Drawing.Size(594, 252);
             this.lbAnexos.TabIndex = 89;
+            this.lbAnexos.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.lbAnexos_PreviewKeyDown);
             // 
             // layoutControlGroup1
             // 
@@ -3142,6 +3121,28 @@ namespace NORI
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // cbCOD
+            // 
+            this.cbCOD.Location = new System.Drawing.Point(353, 84);
+            this.cbCOD.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.cbCOD.MenuManager = this.mainRibbonControl;
+            this.cbCOD.Name = "cbCOD";
+            this.cbCOD.Properties.Caption = "COD";
+            this.cbCOD.Size = new System.Drawing.Size(101, 21);
+            this.cbCOD.TabIndex = 175;
+            this.cbCOD.TabStop = false;
+            // 
+            // cbAnticipo
+            // 
+            this.cbAnticipo.Location = new System.Drawing.Point(416, 84);
+            this.cbAnticipo.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.cbAnticipo.MenuManager = this.mainRibbonControl;
+            this.cbAnticipo.Name = "cbAnticipo";
+            this.cbAnticipo.Properties.Caption = "Anticipo";
+            this.cbAnticipo.Size = new System.Drawing.Size(101, 21);
+            this.cbAnticipo.TabIndex = 176;
+            this.cbAnticipo.TabStop = false;
             // 
             // frmDocumentos
             // 
@@ -3179,8 +3180,6 @@ namespace NORI
             ((System.ComponentModel.ISupportInitialize)(this.deFechaVencimiento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaContabilizacion.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deFechaContabilizacion.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbCOD.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbAnticipo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroDocumentoExterno.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReferencia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbReserva.Properties)).EndInit();
@@ -3251,6 +3250,8 @@ namespace NORI
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbCOD.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbAnticipo.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3268,5 +3269,8 @@ namespace NORI
         private TextEdit txtCreditoDisponible;
         private BarCodeControl bcID;
         private LabelControl lbMensajeC;
+        private CheckEdit cbReserva;
+        private CheckEdit cbCOD;
+        private CheckEdit cbAnticipo;
     }
 }

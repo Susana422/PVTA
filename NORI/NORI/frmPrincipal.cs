@@ -217,6 +217,7 @@ namespace NORI
                     accordionControlElementNotasCredito.Visible = false;
                     accordionControlElementInformes.Visible = false;
                     ribbonPageHerramientas.Visible = false;
+                    accordionControlElementCaja.Visible = false;
                     break;
                 case 'L':
                     ((AccordionControlElementBase)accordionControlElementGestion).Visible = false;
@@ -227,6 +228,7 @@ namespace NORI
                     accordionControlElementNotasCredito.Visible = false;
                     accordionControlElementInformes.Visible = false;
                     ribbonPageHerramientas.Visible = false;
+                    accordionControlElementCaja.Visible = false;
                     break;
                 case 'S':
                    

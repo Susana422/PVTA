@@ -100,12 +100,12 @@ namespace NORI.PuntoVenta
                 activo = 1
             };
             tipos = MetodoPago.Tipo.Tipos().ToList();
-            ((RepositoryItemLookUpEditBase)cbConceptos.Properties).DataSource = tipos;
-            ((RepositoryItemLookUpEditBase)cbConceptos.Properties).ValueMember = "id";
-            ((RepositoryItemLookUpEditBase)cbConceptos.Properties).DisplayMember = "nombre";
-            cbConceptos.EditValue = 1;
+            cbConceptos.Properties.DataSource = tipos;
+            cbConceptos.Properties.ValueMember = "id";
+            cbConceptos.Properties.DisplayMember = "nombre";
+            //cbConceptos.ItemIndex = 0;
             cbConceptos.Refresh();
-
+           // cbConceptos.EditValue = 0;
             foreach (MetodoPago.Tipo tipo in tipos)
             {
                 Acumulado acumulado = new Acumulado();
@@ -122,38 +122,38 @@ namespace NORI.PuntoVenta
         {
             try
             {
-                GridControl obj = gcPartidas;
+                GridControl gridControl = gcPartidas;
                 IEnumerable<Arqueo> dataSource;
-                if (!tipos.Where((MetodoPago.Tipo x) => x.id == (int)((BaseEdit)cbConceptos).EditValue).First().cambio)
+                if (!tipos.Where((MetodoPago.Tipo x) => x.id == (int)cbConceptos.EditValue).First().cambio)
                 {
-                    dataSource = arqueos.Where((Arqueo x) => x.tipo_metodo_pago_id == (int)((BaseEdit)cbConceptos).EditValue);
+                    dataSource = arqueos.Where((Arqueo x) => x.tipo_metodo_pago_id == (int)cbConceptos.EditValue);
                 }
                 else
                 {
                     IEnumerable<Arqueo> enumerable = from x in arqueos
-                                                     where x.tipo_metodo_pago_id == (int)((BaseEdit)cbConceptos).EditValue
+                                                     where x.tipo_metodo_pago_id == (int)cbConceptos.EditValue
                                                      orderby x.factor descending
                                                      select x;
                     dataSource = enumerable;
                 }
-                obj.DataSource = dataSource;
+                gridControl.DataSource = dataSource;
                 gcPartidas.RefreshDataSource();
                 foreach (MetodoPago.Tipo tipo in tipos)
                 {
-                    acumulados.Where((Acumulado x) => x.tipo_metodo_pago_id == tipo.id).First().total = arqueos.Where((Arqueo x) => x.tipo_metodo_pago_id == tipo.id).Sum((Arqueo x) => x.producto) * tipo.ObtenerTipoCambio();
+                    acumulados.Where((Acumulado x) => x.tipo_metodo_pago_id == tipo.id).First().total = arqueos.Where((Arqueo x) => x.tipo_metodo_pago_id == tipo.id).Sum((Arqueo x) => x.producto);
                 }
                 gcAcumulados.DataSource = acumulados;
                 gcAcumulados.RefreshDataSource();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
         private void AgregarArqueo(Arqueo arqueo)
         {
-            arqueo.tipo_metodo_pago_id = (int)((BaseEdit)cbConceptos).EditValue;
+            arqueo.tipo_metodo_pago_id = (int)cbConceptos.EditValue;
             if (arqueos.Any((Arqueo x) => x.tipo_metodo_pago_id == arqueo.tipo_metodo_pago_id && x.factor == arqueo.factor))
             {
                 Arqueo arqueo2 = arqueos.Where((Arqueo x) => x.tipo_metodo_pago_id == arqueo.tipo_metodo_pago_id && x.factor == arqueo.factor).First();
@@ -164,24 +164,24 @@ namespace NORI.PuntoVenta
             {
                 arqueos.Add(arqueo);
             }
-            ((Control)(object)txtCantidad).Text = string.Empty;
-            ((Control)(object)txtCantidad).Focus();
+            txtCantidad.Text = string.Empty;
+            txtCantidad.Focus();
             Calcular();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            ((Form)this).DialogResult = DialogResult.Cancel;
+            base.DialogResult = DialogResult.Cancel;
         }
 
         private void txtImporte_KeyDown(object sender, KeyEventArgs e)
         {
             try
             {
-                if (e.KeyCode == Keys.Return && ((Control)(object)txtCantidad).Text.Length > 0 && (int)((BaseEdit)cbConceptos).EditValue != 0)
+                if (e.KeyCode == Keys.Return && txtCantidad.Text.Length > 0 && (int)cbConceptos.EditValue != 0)
                 {
                     Arqueo arqueo = new Arqueo();
-                    if (arqueo.Validar(((Control)(object)txtCantidad).Text))
+                    if (arqueo.Validar(txtCantidad.Text))
                     {
                         AgregarArqueo(arqueo);
                     }
@@ -222,8 +222,8 @@ namespace NORI.PuntoVenta
                 {
                     if (arqueos.Count > 0)
                     {
-                        Arqueo item = (Arqueo)((BaseView)gvPartidas).GetRow(((ColumnView)gvPartidas).GetSelectedRows()[0]);
-                        ((BaseView)gvPartidas).CloseEditor();
+                        Arqueo item = (Arqueo)gvPartidas.GetRow(gvPartidas.GetSelectedRows()[0]);
+                        gvPartidas.CloseEditor();
                         arqueos.Remove(item);
                     }
                     Calcular();
@@ -231,13 +231,13 @@ namespace NORI.PuntoVenta
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
         private void btnRERET_Click(object sender, EventArgs e)
         {
-            ((BaseView)gvPartidas).CloseEditor();
+            gvPartidas.CloseEditor();
             decimal num = acumulados.Sum((Acumulado x) => x.total);
             if (!(num > 0m) || MessageBox.Show($"¿Estas seguro(a) de realizar un retiro por la cantidad de {num:c2}?", "Retiro", MessageBoxButtons.YesNo) != DialogResult.Yes)
             {
@@ -246,13 +246,13 @@ namespace NORI.PuntoVenta
             Autorizacion autorizacion = new Autorizacion();
             autorizacion.codigo = "RERET";
             autorizacion.referencia = $"Retiro por la cantidad de {num} al usuario {Program.Nori.UsuarioAutenticado.usuario} en la estación {Program.Nori.Estacion.nombre}";
-            autorizacion.comentario = Interaction.InputBox("Comentario retiro (Opcional)");
+            autorizacion.comentario = Interaction.InputBox("Comentario retiro (Opcional)", "", "", -1, -1);
             autorizacion.Agregar();
             if (!autorizacion.autorizado)
             {
                 frmSolicitarAutorizacion frmSolicitarAutorizacion = new frmSolicitarAutorizacion(autorizacion);
-                ((Form)(object)frmSolicitarAutorizacion).ShowDialog();
-                autorizacion.autorizado = ((Form)(object)frmSolicitarAutorizacion).DialogResult == DialogResult.OK;
+                frmSolicitarAutorizacion.ShowDialog();
+                autorizacion.autorizado = frmSolicitarAutorizacion.DialogResult == DialogResult.OK;
             }
             if (!autorizacion.autorizado)
             {
@@ -260,14 +260,14 @@ namespace NORI.PuntoVenta
             }
             Flujo flujo = new Flujo();
             flujo.codigo = "RERET";
-            flujo.comentario = Interaction.InputBox("Ingrese un comentario acerca del retiro (Opcional)");
+            flujo.comentario = Interaction.InputBox("Ingrese un comentario acerca del retiro (Opcional)", "", "", -1, -1);
             flujo.autorizacion_id = autorizacion.id;
             flujo.importe = num;
             try
             {
                 if (MessageBox.Show(string.Format("¿El retiro corresponde a una devolución de venta?", num), "Retiro", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    flujo.documento_id = int.Parse(Interaction.InputBox("Ingrese el ID del documento"));
+                    flujo.documento_id = int.Parse(Interaction.InputBox("Ingrese el ID del documento", "", "", -1, -1));
                     var anon = (from x in Documento.Documentos()
                                 where x.id == flujo.documento_id
                                 select new { x.clase, x.importe_aplicado, x.total }).First();
@@ -303,16 +303,16 @@ namespace NORI.PuntoVenta
                     {
                         Funciones.ImprimirInformePredeterminado("AR", flujo.id);
                     }
-                    ((Form)this).Close();
+                    Close();
                 }
                 else
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"));
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -322,26 +322,26 @@ namespace NORI.PuntoVenta
             {
                 if (NoriSDK.PuntoVenta.EstadoCaja().Equals('A'))
                 {
-                    ((BaseView)gvPartidas).CloseEditor();
+                    gvPartidas.CloseEditor();
                     Flujo flujo = NoriSDK.PuntoVenta.FondoInicial();
                     if (!NoriSDK.PuntoVenta.FondoInicialRetirado(flujo.id))
                     {
                         Autorizacion autorizacion = new Autorizacion();
                         autorizacion.codigo = "RERET";
                         autorizacion.referencia = $"Retiro del fondo inicial del usuario {Program.Nori.UsuarioAutenticado.usuario} en la estación {Program.Nori.Estacion.nombre}";
-                        autorizacion.comentario = Interaction.InputBox("Comentario retiro fondo inicial (Opcional)");
+                        autorizacion.comentario = Interaction.InputBox("Comentario retiro fondo inicial (Opcional)","","",-1,-1);
                         autorizacion.Agregar();
                         if (!autorizacion.autorizado)
                         {
                             frmSolicitarAutorizacion frmSolicitarAutorizacion = new frmSolicitarAutorizacion(autorizacion);
-                            ((Form)(object)frmSolicitarAutorizacion).ShowDialog();
-                            autorizacion.autorizado = ((Form)(object)frmSolicitarAutorizacion).DialogResult == DialogResult.OK;
+                            frmSolicitarAutorizacion.ShowDialog();
+                            autorizacion.autorizado = frmSolicitarAutorizacion.DialogResult == DialogResult.OK;
                         }
                         if (autorizacion.autorizado)
                         {
                             Flujo flujo2 = new Flujo();
                             flujo2.codigo = "REACA";
-                            flujo2.comentario = Interaction.InputBox("Ingrese un comentario acerca del retiro (Opcional)");
+                            flujo2.comentario = Interaction.InputBox("Ingrese un comentario acerca del retiro (Opcional)", "", "", -1, -1);
                             flujo2.autorizacion_id = autorizacion.id;
                             flujo2.tipo_cambio = flujo.tipo_cambio;
                             flujo2.importe = flujo.importe;
@@ -351,7 +351,7 @@ namespace NORI.PuntoVenta
                             }
                             else
                             {
-                                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
                             }
                         }
                     }
@@ -367,7 +367,7 @@ namespace NORI.PuntoVenta
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al retirar el fondo inicial: " + ex.Message.ToString().Replace("Nori", "DTM"));
+                MessageBox.Show("Error al retirar el fondo inicial: " + ex.Message);
             }
         }
 
@@ -375,7 +375,7 @@ namespace NORI.PuntoVenta
         {
             try
             {
-                ((BaseView)gvPartidas).CloseEditor();
+                gvPartidas.CloseEditor();
                 decimal importe = acumulados.Sum((Acumulado x) => x.total);
                 if (NoriSDK.PuntoVenta.EstadoCaja().Equals('A'))
                 {
@@ -383,25 +383,25 @@ namespace NORI.PuntoVenta
                     {
                         return;
                     }
-                    Autorizacion autorizacion = new Autorizacion();
-                    autorizacion.codigo = "RECCA";
-                    autorizacion.referencia = $"Cierre de caja del usuario {Program.Nori.UsuarioAutenticado.usuario} en la estación {Program.Nori.Estacion.nombre}";
-                    autorizacion.comentario = Interaction.InputBox("Comentario cierre de caja (Opcional)");
-                    autorizacion.Agregar();
-                    if (!autorizacion.autorizado)
-                    {
-                        frmSolicitarAutorizacion frmSolicitarAutorizacion = new frmSolicitarAutorizacion(autorizacion);
-                        ((Form)(object)frmSolicitarAutorizacion).ShowDialog();
-                        autorizacion.autorizado = ((Form)(object)frmSolicitarAutorizacion).DialogResult == DialogResult.OK;
-                    }
-                    if (!autorizacion.autorizado)
-                    {
-                        return;
-                    }
+                    //Autorizacion autorizacion = new Autorizacion();
+                    //autorizacion.codigo = "RECCA";
+                    //autorizacion.referencia = $"Cierre de caja del usuario {Program.Nori.UsuarioAutenticado.usuario} en la estación {Program.Nori.Estacion.nombre}";
+                    //autorizacion.comentario = Interaction.InputBox("Comentario cierre de caja (Opcional)","DTM SOLUTIONS POS","",-1,-1);
+                    //autorizacion.Agregar();
+                    //if (!autorizacion.autorizado)
+                    //{
+                    //    frmSolicitarAutorizacion frmSolicitarAutorizacion = new frmSolicitarAutorizacion(autorizacion);
+                    //    frmSolicitarAutorizacion.ShowDialog();
+                    //    autorizacion.autorizado = frmSolicitarAutorizacion.DialogResult == DialogResult.OK;
+                    //}
+                    //if (!autorizacion.autorizado)
+                    //{
+                    //    return;
+                    //}
                     Flujo flujo = new Flujo();
                     flujo.codigo = "RECCA";
-                    flujo.comentario = Interaction.InputBox("Ingrese un comentario acerca del cierre de caja (Opcional)");
-                    flujo.autorizacion_id = autorizacion.id;
+                    flujo.comentario = Interaction.InputBox("Ingrese un comentario acerca del cierre de caja (Opcional)", "DTM SOLUTIONS POS", "", -1, -1);
+                    flujo.autorizacion_id = 0;
                     flujo.importe = importe;
                     if (flujo.Agregar())
                     {
@@ -414,27 +414,27 @@ namespace NORI.PuntoVenta
                         {
                             x.Agregar();
                         });
-                        if (MessageBox.Show("¿Desea imprimir el Egreso?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        if (MessageBox.Show("¿Desea imprimir el Egreso?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             Funciones.ImprimirInformePredeterminado("IE", flujo.id);
                         }
-                        if (MessageBox.Show("¿Desea imprimir el Arqueo?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        if (MessageBox.Show("¿Desea imprimir el Arqueo?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             Funciones.ImprimirInformePredeterminado("AR", flujo.id);
                         }
-                        if (MessageBox.Show("¿Desea imprimir el corte Corte X?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        if (MessageBox.Show("¿Desea imprimir el corte Corte X?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             Funciones.ImprimirInformePredeterminado("CX", flujo.id);
                         }
-                        if (MessageBox.Show("¿Desea imprimir el corte Corte Z?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        if (MessageBox.Show("¿Desea imprimir el corte Corte Z?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             Funciones.ImprimirInformePredeterminado("CZ", flujo.id);
                         }
-                        ((Form)this).Close();
+                        Close();
                     }
                     else
                     {
-                        MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                        MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
                     }
                 }
                 else

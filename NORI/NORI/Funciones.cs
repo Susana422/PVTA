@@ -963,7 +963,7 @@ namespace NORI
             {
                 Process.Start(archivo);
             }
-            catch
+            catch (Exception ex)
             {
             }
         }

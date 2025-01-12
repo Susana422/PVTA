@@ -1462,6 +1462,9 @@
     <EmbeddedResource Include="PuntoVenta\frmArqueo.resx">
       <DependentUpon>frmArqueo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PuntoVenta\frmCanjes.resx">
+      <DependentUpon>frmCanjes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PuntoVenta\frmCortesCaja.resx">
       <DependentUpon>frmCortesCaja.cs</DependentUpon>
     </EmbeddedResource>
@@ -1547,6 +1550,9 @@
     <Content Include="Resources\login.jpg" />
     <None Include="Resources\logoDTM.ico" />
     <Content Include="Resources\logoDTM.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Parametrizacion\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.2903.40\build\Microsoft.Web.WebView2.targets')" />

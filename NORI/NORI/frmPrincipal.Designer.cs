@@ -81,6 +81,7 @@ namespace NORI
             this.accordionControlElementFacturas = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementNotasCredito = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementPagos = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementInventario = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementArticulos = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementSocios = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -111,6 +112,7 @@ namespace NORI
             this.bbiDiseñadorEscritorios = new DevExpress.XtraBars.BarButtonItem();
             this.bbiSucursales = new DevExpress.XtraBars.BarListItem();
             this.bbiParametrizacion = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageHerramientas = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupHerramientas = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -124,7 +126,6 @@ namespace NORI
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementZonas = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementDepartamentos = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanelMenuPrincipal.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
@@ -181,7 +182,7 @@ namespace NORI
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = global::componentResourceManager.Resources.profile;
-            this.pictureBox1.Image = global::componentResourceManager.Resources.profile11;
+            this.pictureBox1.Image = global::componentResourceManager.Resources.user;
             this.pictureBox1.InitialImage = global::componentResourceManager.Resources.profile;
             this.pictureBox1.Location = new System.Drawing.Point(10, 29);
             this.pictureBox1.Name = "pictureBox1";
@@ -302,7 +303,6 @@ namespace NORI
             // 
             this.accordionControlElementGestion.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElementDefiniciones});
-            this.accordionControlElementGestion.Expanded = true;
             this.accordionControlElementGestion.Name = "accordionControlElementGestion";
             this.accordionControlElementGestion.Text = "Gestión";
             // 
@@ -527,7 +527,8 @@ namespace NORI
             this.accordionControlElementEntregaMercancia,
             this.accordionControlElementFacturas,
             this.accordionControlElementNotasCredito,
-            this.accordionControlElementPagos});
+            this.accordionControlElementPagos,
+            this.accordionControlElement6});
             this.accordionControlElementVentas.Expanded = true;
             this.accordionControlElementVentas.Name = "accordionControlElementVentas";
             this.accordionControlElementVentas.Text = "Ventas";
@@ -585,6 +586,14 @@ namespace NORI
             this.accordionControlElementPagos.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementPagos.Text = "Pagos";
             this.accordionControlElementPagos.Click += new System.EventHandler(this.accordionControlElementPagos_Click);
+            // 
+            // accordionControlElement6
+            // 
+            this.accordionControlElement6.ImageOptions.Image = global::componentResourceManager.Resources.highlightfield_16x16;
+            this.accordionControlElement6.Name = "accordionControlElement6";
+            this.accordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement6.Text = "Ventas Negadas";
+            this.accordionControlElement6.Click += new System.EventHandler(this.accordionControlElement6_Click);
             // 
             // accordionControlElementInventario
             // 
@@ -880,6 +889,13 @@ namespace NORI
             this.bbiParametrizacion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bbiParametrizacion.ImageOptions.Image")));
             this.bbiParametrizacion.Name = "bbiParametrizacion";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Diseñador de Informes";
+            this.barButtonItem1.Id = 8;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiDiseñadorInformes_ItemClick);
+            // 
             // ribbonPageHerramientas
             // 
             this.ribbonPageHerramientas.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -965,13 +981,6 @@ namespace NORI
             this.accordionControlElementDepartamentos.Text = "Departamentos";
             this.accordionControlElementDepartamentos.Click += new System.EventHandler(this.accordionControlElementDepartamentos_Click);
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Diseñador de Informes";
-            this.barButtonItem1.Id = 8;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiDiseñadorInformes_ItemClick);
-            // 
             // frmPrincipal
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -987,7 +996,7 @@ namespace NORI
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar1;
-            this.Text = "CM";
+            this.Text = "Ventas Negadas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrincipal_FormClosed);
@@ -1025,5 +1034,6 @@ namespace NORI
         private AccordionControlElement accordionControlElementCortes;
         private AccordionControlElement accordionControlElementApertura;
         private BarButtonItem barButtonItem1;
+        private AccordionControlElement accordionControlElement6;
     }
 }

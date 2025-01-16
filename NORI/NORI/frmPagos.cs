@@ -224,8 +224,6 @@ namespace NORI
 
         private TextEdit txtSaldoPendiente;
 
-        private LabelControl lblIdentificadorExterno;
-
         private LabelControl lblTotal;
 
         private TextEdit txtTotal;
@@ -294,12 +292,29 @@ namespace NORI
                 }
                 else
                 {
+                    SetButtonVisibility(this.mainRibbonControl, item.control, item.oculto, item.desactivado);
                     ((ColumnView)gvPartidas).Columns.ColumnByName(item.control).Visible = !item.oculto;
                     ((ColumnView)gvPartidas).Columns.ColumnByName(item.control).OptionsColumn.AllowEdit = !item.desactivado;
                 }
             }
         }
+        public void SetButtonVisibility(RibbonControl ribbon, string buttonName, bool oculto, bool desactivado)
+        {
+            // Buscar el BarButtonItem por su nombre en los items del RibbonControl
+            foreach (var item in ribbon.Items)
+            {
+                // Verificar si el item es un BarButtonItem
+                if (item is DevExpress.XtraBars.BarButtonItem buttonItem && buttonItem.Name == buttonName)
+                {
+                    // Cambiar la visibilidad del botón
+                    buttonItem.Visibility = oculto ? BarItemVisibility.Never : BarItemVisibility.Always;
 
+                    // Cambiar el estado de habilitación
+                    buttonItem.Enabled = !desactivado;  // Si 'desactivado' es true, deshabilita el botón
+                    break;  // Detener la búsqueda después de encontrar el botón
+                }
+            }
+        }
         private void CargarInformes()
         {
             //IL_00fe: Unknown result type (might be due to invalid IL or missing references)
@@ -384,7 +399,8 @@ namespace NORI
             lblCancelado.Visible = pago.cancelado;
             ((BaseEdit)cbSeries).EditValue = pago.serie_id;
             ((Control)(object)txtNumeroDocumento).Text = pago.numero_documento.ToString();
-            ((Control)(object)txtNumeroDocumentoExterno).Visible = ((pago.identificador_externo != 0) ? true : false);
+            ((Control)(object)txtNumeroDocumentoExterno).Enabled = false;
+
             ((Control)(object)txtNumeroDocumentoExterno).Text = pago.numero_documento_externo.ToString();
             ((BaseEdit)cbMonedas).EditValue = pago.moneda_id;
             if (pago.socio_id != 0)
@@ -435,7 +451,7 @@ namespace NORI
                 ((BarItem)obj6).Enabled = enabled;
             }
             ((Control)(object)lblID).Text = pago.id.ToString();
-            ((Control)(object)lblIdentificadorExterno).Text = pago.identificador_externo.ToString();
+            //((Control)(object)lblIdentificadorExterno).Text = pago.identificador_externo.ToString();
             ((Control)(object)txtCodigoSN).Text = socio.codigo;
             ((Control)(object)lblSocio).Text = socio.nombre;
             deFechaContabilizacion.DateTime = pago.fecha_contabilizacion;
@@ -546,7 +562,12 @@ namespace NORI
 
         private void bbiGuardar_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (Guardar())
+            if (NoriSDK.PuntoVenta.EstadoCaja().Equals('C'))
+            {
+                MessageBox.Show("Para poder realizar este movimiento es necesario realizar una apertura de caja.");
+                return;
+            }
+                if (Guardar())
             {
                 pago = Pago.Obtener(pago.id);
                 Cargar();
@@ -559,6 +580,11 @@ namespace NORI
 
         private void bbiGuardarCerrar_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (NoriSDK.PuntoVenta.EstadoCaja().Equals('C'))
+            {
+                MessageBox.Show("Para poder realizar este movimiento es necesario realizar una apertura de caja.");
+                return;
+            }
             if (Guardar())
             {
                 ((Form)this).Close();
@@ -567,6 +593,11 @@ namespace NORI
 
         private void bbiGuardarNuevo_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (NoriSDK.PuntoVenta.EstadoCaja().Equals('C'))
+            {
+                MessageBox.Show("Para poder realizar este movimiento es necesario realizar una apertura de caja.");
+                return;
+            }
             if (Guardar())
             {
                 pago = new Pago();
@@ -1423,7 +1454,7 @@ namespace NORI
 
         private void bbiParametrizaciones_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmParametrizacionesFormulario frmParametrizacionesFormulario2 = new frmParametrizacionesFormulario(((Control)this).Name, "AR");
+            frmFormPagos frmParametrizacionesFormulario2 = new frmFormPagos();
             ((Form)(object)frmParametrizacionesFormulario2).ShowDialog();
             Permisos();
         }

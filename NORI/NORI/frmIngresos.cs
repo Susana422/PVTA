@@ -53,6 +53,17 @@ namespace NORI
         {
             try
             {
+                if (txtCantidad.Text== "")
+                {
+                    MessageBox.Show("Es necesario ingresar una cantidad");
+                    return;
+                }
+                if (Decimal.Parse(txtCantidad.Text) == 0) 
+                {
+                    MessageBox.Show("Es necesario ingresar una cantidad");
+                    return;
+                }
+
                 if (MessageBox.Show($"¿Estas seguro(a) de realizar un ingreso por la cantidad de {((Control)(object)txtCantidad).Text}?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) != DialogResult.Yes)
                 {
                     return;

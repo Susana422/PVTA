@@ -1,4 +1,6 @@
-﻿using DevExpress.XtraBars;
+﻿using DevExpress.DashboardWin.Forms.Export.Groups;
+using DevExpress.Utils.Controls;
+using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
@@ -487,7 +489,7 @@ namespace NORI
         private string mensaje = string.Empty;
         public bool Autorizar { get; set; } = false;
 
-        public frmDocumentos(string clase, int id = 0,bool autol =false)
+        public frmDocumentos(string clase, int id = 0, bool autol = false)
         {
             InitializeComponent();
             this.MetodoDinamico();
@@ -837,25 +839,25 @@ namespace NORI
             int fact = 0;
             try
             {
-                 fact = Int32.Parse(txtFactVencidas.Text);
+                fact = Int32.Parse(txtFactVencidas.Text);
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
             }
-          
-            if (fact > 2 && documento.clase =="PE")
+
+            if (fact > 2 && documento.clase == "PE")
             {
                 documento.condicion_pago_id = 19;
-                    if (Guardar())
-                    {
-                        RecargarDocumento();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
-                    }
-                
-              
+                if (Guardar())
+                {
+                    RecargarDocumento();
+                }
+                else
+                {
+                    MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
+                }
+
+
             }
             else {
                 if (Guardar())
@@ -867,7 +869,7 @@ namespace NORI
                     MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
                 }
             }
-            
+
         }
 
         private void bbiGuardarCerrar_ItemClick(object sender, ItemClickEventArgs e)
@@ -877,9 +879,9 @@ namespace NORI
             {
                 documento.condicion_pago_id = 19;
                 if (Guardar())
-                    {
-                        Close();
-                    }
+                {
+                    Close();
+                }
             }
             else
             {
@@ -938,6 +940,7 @@ namespace NORI
             {
                 Cargar();
             }
+            Permisos();
         }
 
         private void bbiAnterior_ItemClick(object sender, ItemClickEventArgs e)
@@ -957,6 +960,7 @@ namespace NORI
             {
                 Cargar();
             }
+            Permisos();
         }
 
         private void bbiSiguiente_ItemClick(object sender, ItemClickEventArgs e)
@@ -976,6 +980,7 @@ namespace NORI
             {
                 Cargar();
             }
+            Permisos();
         }
 
         private void bbiUltimo_ItemClick(object sender, ItemClickEventArgs e)
@@ -996,15 +1001,16 @@ namespace NORI
             {
                 Cargar();
             }
+            Permisos();
         }
 
         private int ObtenerSerieID()
         {
             try
             {
-                int zse= (cbSeries.EditValue.IsNullOrEmpty() || (int)cbSeries.EditValue == 0) ? (from x in Serie.Series()
-                                                                                                 where x.clase == documento.clase && x.predeterminado == true
-                                                                                                 select new { x.id }).First().id : ((int)cbSeries.EditValue);
+                int zse = (cbSeries.EditValue.IsNullOrEmpty() || (int)cbSeries.EditValue == 0) ? (from x in Serie.Series()
+                                                                                                  where x.clase == documento.clase && x.predeterminado == true
+                                                                                                  select new { x.id }).First().id : ((int)cbSeries.EditValue);
                 return zse;
             }
             catch
@@ -1037,10 +1043,10 @@ namespace NORI
                         //searchRibbonPageGroup.Visible = false;
                         break;
                 }
-                if (!ParametrizacionFormulario.Parametrizaciones().Any((ParametrizacionFormulario x) => x.usuario_id == Program.Nori.UsuarioAutenticado.id || ((int?)x.rol == (int?)Program.Nori.UsuarioAutenticado.rol && x.formulario == Name && x.objeto == documento.clase)))
-                {
-                    return;
-                }
+                //if (!ParametrizacionFormulario.Parametrizaciones().Any((ParametrizacionFormulario x) => x.usuario_id == Program.Nori.UsuarioAutenticado.id || ((int?)x.rol == (int?)Program.Nori.UsuarioAutenticado.rol && x.formulario == Name && x.objeto == documento.clase)))
+                //{
+                //    return;
+                //}
                 List<ParametrizacionFormulario> list = ParametrizacionFormulario.Obtener(base.Name, documento.clase);
                 foreach (ParametrizacionFormulario item in list)
                 {
@@ -1055,20 +1061,23 @@ namespace NORI
                                 control.Enabled = !item.desactivado;
                             }
                         }
+
+
                         else
                         {
                             try
                             {
-                                gvPartidas.Columns.ColumnByName(item.control).Visible = !item.oculto;
+                                SetButtonVisibility(this.mainRibbonControl, item.control, item.oculto, item.desactivado);
+                                gvPartidas.Columns.ColumnByFieldName(item.control).Visible = !item.oculto;
                                 if (!item.oculto)
                                 {
-                                    gvPartidas.Columns.ColumnByName(item.control).OptionsColumn.AllowEdit = !item.desactivado;
+                                    gvPartidas.Columns.ColumnByFieldName(item.control).OptionsColumn.AllowEdit = !item.desactivado;
                                 }
                             }
                             catch (Exception ex)
                             {
                             }
-                          
+
                         }
                     }
                     catch (Exception ex)
@@ -1083,7 +1092,23 @@ namespace NORI
                 MessageBox.Show(ex2.Message);
             }
         }
+        public void SetButtonVisibility(RibbonControl ribbon, string buttonName, bool oculto, bool desactivado)
+        {
+            // Buscar el BarButtonItem por su nombre en los items del RibbonControl
+            foreach (var item in ribbon.Items)
+            {
+                // Verificar si el item es un BarButtonItem
+                if (item is DevExpress.XtraBars.BarButtonItem buttonItem && buttonItem.Name == buttonName)
+                {
+                    // Cambiar la visibilidad del botón
+                    buttonItem.Visibility = oculto ? BarItemVisibility.Never : BarItemVisibility.Always;
 
+                    // Cambiar el estado de habilitación
+                    buttonItem.Enabled = !desactivado;  // Si 'desactivado' es true, deshabilita el botón
+                    break;  // Detener la búsqueda después de encontrar el botón
+                }
+            }
+        }
         private void Buscar()
         {
             try
@@ -1821,7 +1846,7 @@ namespace NORI
 
                 gcPartidas.DataSource = documento.partidas;
                 gcPartidas.RefreshDataSource();
-              documento.CalcularTotal();
+                documento.CalcularTotal();
                 txtTipoCambio.Text = documento.tipo_cambio.ToString("n4");
                 txtSubTotal.Text = documento.subtotal.ToString("c2");
                 //txtPorcentajeDescuento.Text = documento.porcentaje_descuento.ToString("n2");
@@ -1898,9 +1923,15 @@ namespace NORI
                     DataTable data = documento.limiteCredito(socio.codigo);
                     if (data.Rows.Count > 0)
                     {
-                        if (Convert.ToDecimal(data.Rows[0]["fact_vencidas"]) > 2 && documento.clase =="PE")
+                        if (Convert.ToDecimal(data.Rows[0]["fact_vencidas"]) > 2 && documento.clase == "PE")
                         {
                             lbMensajeC.Visible = true;
+                            lbMensajeC.Text = "La Venta debera ser de Contado tiene Facturas pendientes por Pagar";
+                        }
+                        if (Convert.ToDecimal(data.Rows[0]["credito disponible"]) < 0)
+                        {
+                            lbMensajeC.Visible = true;
+                            lbMensajeC.Text = "La Venta debera ser de Contado sobrepasa el limite de credito";
                         }
                         txtCreditoDisponible.Text = Convert.ToDecimal(data.Rows[0]["credito disponible"]).ToString("0.##");
                         txtFactVencidas.Text = Convert.ToDecimal(data.Rows[0]["fact_vencidas"]).ToString("0.##");
@@ -1922,10 +1953,10 @@ namespace NORI
                     CargarDirecciones();
                     CargarPersonasContacto();
                     Calcular();
-                    if (socio.id != Program.Nori.UsuarioAutenticado.socio_id && (documento.clase.Equals("FA") || documento.clase.Equals("EN")) && socio.Balance() > socio.limite_credito && MessageBox.Show($"{socio.codigo} - {socio.nombre} Límite de crédito excedido en {(socio.limite_credito - socio.Balance()) * -1m:c2}. ¿Desea Continuar?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
-                    {
-                        Close();
-                    }
+                    //if (socio.id != Program.Nori.UsuarioAutenticado.socio_id && (documento.clase.Equals("FA") || documento.clase.Equals("EN")) && socio.Balance() > socio.limite_credito && MessageBox.Show($"{socio.codigo} - {socio.nombre} Límite de crédito excedido en {(socio.limite_credito - socio.Balance()) * -1m:c2}. ¿Desea Continuar?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
+                    //{
+                    //    Close();
+                    //}
                     if (Program.Nori.Empresa.rfc.Equals("SFE191219K23") || Program.Nori.Empresa.rfc.Equals("QFS970203EJ6"))
                     {
                         CondicionesPago condicionesPago = CondicionesPago.Obtener(socio.condicion_pago_id);
@@ -1972,7 +2003,7 @@ namespace NORI
                 }
                 else
                 {
-                    MessageBox.Show("El número de la orden de compra no puede exceder los 15 caracteres.");
+                    MessageBox.Show("El número de la orden de compra no pu ede exceder los 15 caracteres.");
                 }
             }
             catch (Exception ex)
@@ -2284,50 +2315,50 @@ namespace NORI
                             SincronizacionNetSuite();
                             return this.documento.Actualizar(actualizar_partidas: true);
                         }
-                       
-                            if (this.documento.Agregar())
+
+                        if (this.documento.Agregar())
+                        {
+                            if (this.documento.generar_documento_electronico)
                             {
-                                if (this.documento.generar_documento_electronico)
-                                {
-                                    Funciones.TimbrarDocumento(this.documento);
-                                }
-                                if (this.documento.tipo.Equals('I'))
-                                {
-                                    Funciones.EnviarLogisticaAsync(this.documento.id);
-                                }
-                                SincronizacionNetSuite();
-                                if (this.documento.clase.Equals("IF") && MessageBox.Show("¿Desea realizar los ajustes de inventario correspondientes automáticamente?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
-                                {
-                                    Documento documento = new Documento("AE");
-                                    documento.CopiarDe(this.documento, "AE");
-                                    documento.partidas = this.documento.partidas.Where((Documento.Partida x) => x.diferencia > 0m).ToList();
-                                    documento.partidas.ForEach(delegate (Documento.Partida x)
-                                    {
-                                        x.cantidad = x.diferencia;
-                                    });
-                                    documento.Agregar();
-                                    Documento documento2 = new Documento("AS");
-                                    documento2.CopiarDe(this.documento, "AS");
-                                    documento2.partidas = this.documento.partidas.Where((Documento.Partida x) => x.diferencia < 0m).ToList();
-                                    documento2.partidas.ForEach(delegate (Documento.Partida x)
-                                    {
-                                        x.cantidad = x.diferencia * -1m;
-                                    });
-                                    documento2.Agregar();
-                                    MessageBox.Show("Operación realizada correctamente.", Text, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                                }
-                                return true;
+                                Funciones.TimbrarDocumento(this.documento);
                             }
-                            else
+                            if (this.documento.tipo.Equals('I'))
                             {
-                                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                                return false;
+                                Funciones.EnviarLogisticaAsync(this.documento.id);
                             }
+                            SincronizacionNetSuite();
+                            if (this.documento.clase.Equals("IF") && MessageBox.Show("¿Desea realizar los ajustes de inventario correspondientes automáticamente?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            {
+                                Documento documento = new Documento("AE");
+                                documento.CopiarDe(this.documento, "AE");
+                                documento.partidas = this.documento.partidas.Where((Documento.Partida x) => x.diferencia > 0m).ToList();
+                                documento.partidas.ForEach(delegate (Documento.Partida x)
+                                {
+                                    x.cantidad = x.diferencia;
+                                });
+                                documento.Agregar();
+                                Documento documento2 = new Documento("AS");
+                                documento2.CopiarDe(this.documento, "AS");
+                                documento2.partidas = this.documento.partidas.Where((Documento.Partida x) => x.diferencia < 0m).ToList();
+                                documento2.partidas.ForEach(delegate (Documento.Partida x)
+                                {
+                                    x.cantidad = x.diferencia * -1m;
+                                });
+                                documento2.Agregar();
+                                MessageBox.Show("Operación realizada correctamente.", Text, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            }
+                            return true;
                         }
                         else
                         {
-                            //MessageBox.Show("No fue posible autorizar este movimiento.");
-                        
+                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        //MessageBox.Show("No fue posible autorizar este movimiento.");
+
                     }
                     return false;
                 }
@@ -2580,7 +2611,7 @@ namespace NORI
                     }
                     else if (documento.flujo.Count > 0)
                     {
-                        if (documento.AgregarPagoFactura())
+                        if (documento.AgregarPagoFactura(documento))
                         {
                             RecargarDocumento();
                         }
@@ -3001,12 +3032,12 @@ namespace NORI
                     {
                         e.Appearance.BackColor = Color.GreenYellow;
                     }
-                    
-                        if ((Convert.ToDouble(gvPartidas.GetRowCellValue(e.RowHandle, gvPartidas.Columns["stock"])) - Convert.ToDouble(gvPartidas.GetRowCellValue(e.RowHandle, gvPartidas.Columns["cantidad"]))) <= 0)
-                        {
-                            e.Appearance.BackColor = Color.Red;
-                        }
-                    
+
+                    if ((Convert.ToDouble(gvPartidas.GetRowCellValue(e.RowHandle, gvPartidas.Columns["stock"])) - Convert.ToDouble(gvPartidas.GetRowCellValue(e.RowHandle, gvPartidas.Columns["cantidad"]))) <= 0)
+                    {
+                        e.Appearance.BackColor = Color.Red;
+                    }
+
                     e.Appearance.BackColor2 = Color.White;
                 }
             }
@@ -3537,11 +3568,11 @@ namespace NORI
                 }
             }
 
-             if (MessageBox.Show("¿Estas seguro de cancelar este documento?", "Cancelar documento", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
-             {
-                    return;
-             }
-            
+            if (MessageBox.Show("¿Estas seguro de cancelar este documento?", "Cancelar documento", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            {
+                return;
+            }
+
             if (!documento.cancelado)
             {
                 if (!Permiso(cancelacion: true))
@@ -3594,7 +3625,7 @@ namespace NORI
                     CancelarAnt();
                 }
             }
-            else 
+            else
             {
                 CancelarAnterior();
             }
@@ -3735,7 +3766,7 @@ namespace NORI
                 catch
                 {
                 }
-                frmCorreoElectronico2.ShowDialog();
+                //frmCorreoElectronico2.ShowDialog();
             }
             catch (Exception ex)
             {
@@ -4147,16 +4178,16 @@ namespace NORI
                 {
                     Guardar();
                 }
-                if (e.Alt && e.KeyCode == Keys.S)
-                {
-                    ArticuloSolicitado articuloSolicitado = new ArticuloSolicitado();
-                    articuloSolicitado.socio_id = documento.socio_id;
-                    articuloSolicitado.sku = Interaction.InputBox("Ingrese el código del artículo solicitado", "DTM SOLUTIONS POS", "", -1, -1);
-                    articuloSolicitado.descripcion = Interaction.InputBox("Ingresa la descripción del artículo solicitado", "DTM SOLUTIONS POS", "", -1, -1);
-                    articuloSolicitado.cantidad = int.Parse(Interaction.InputBox("Ingresa la cantidad solicitada", "1"));
-                    articuloSolicitado.comentarios = Interaction.InputBox("Comentario sobre artículo solicitado (Opcional)", "DTM SOLUTIONS POS", "", -1, -1);
-                    articuloSolicitado.Agregar();
-                }
+                //if (e.Alt && e.KeyCode == Keys.S)
+                //{
+                //    ArticuloSolicitado articuloSolicitado = new ArticuloSolicitado();
+                //    articuloSolicitado.socio_id = documento.socio_id;
+                //    articuloSolicitado.sku = Interaction.InputBox("Ingrese el código del artículo solicitado", "DTM SOLUTIONS POS", "", -1, -1);
+                //    articuloSolicitado.descripcion = Interaction.InputBox("Ingresa la descripción del artículo solicitado", "DTM SOLUTIONS POS", "", -1, -1);
+                //    articuloSolicitado.cantidad = int.Parse(Interaction.InputBox("Ingresa la cantidad solicitada", "1"));
+                //    articuloSolicitado.comentarios = Interaction.InputBox("Comentario sobre artículo solicitado (Opcional)", "DTM SOLUTIONS POS", "", -1, -1);
+                //    articuloSolicitado.Agregar();
+                //}
                 if (e.KeyCode == Keys.F1)
                 {
                     new frmDocumentos("CO").Show();
@@ -4165,14 +4196,7 @@ namespace NORI
                 {
                     new frmDocumentos("PE").Show();
                 }
-                if (e.KeyCode == Keys.F3)
-                {
-                    new frmDocumentos("EN").Show();
-                }
-                if (e.KeyCode == Keys.F4)
-                {
-                    new frmDocumentos("DV").Show();
-                }
+              
                 if (e.KeyCode == Keys.F5)
                 {
                     new frmDocumentos("FA").Show();
@@ -4181,14 +4205,14 @@ namespace NORI
                 {
                     new frmDocumentos("NC").Show();
                 }
-                if (e.KeyCode == Keys.F7)
-                {
-                    new frmDocumentos("TS").Show();
-                }
-                if (e.KeyCode == Keys.F8)
-                {
-                    new frmDocumentos("AE").Show();
-                }
+                //if (e.KeyCode == Keys.F7)
+                //{
+                //    new frmDocumentos("TS").Show();
+                //}
+                //if (e.KeyCode == Keys.F8)
+                //{
+                //    new frmDocumentos("AE").Show();
+                //}
             }
             catch
             {
@@ -4518,8 +4542,11 @@ namespace NORI
 
         private void bbiParametrizaciones_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmParametrizacionesFormulario frmParametrizacionesFormulario2 = new frmParametrizacionesFormulario(base.Name, documento.clase);
-            frmParametrizacionesFormulario2.Show();
+
+            btnBuscar frmForm = new btnBuscar();
+            frmForm.ShowDialog();
+            //frmParametrizacionesFormulario frmParametrizacionesFormulario2 = new frmParametrizacionesFormulario(base.Name, documento.clase);
+            //frmParametrizacionesFormulario2.Show();
         }
 
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
@@ -4687,6 +4714,15 @@ namespace NORI
                 }
             }
         }
+
+        private void gcPartidas_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                this.popupMenuDocumentos.ShowPopup(Control.MousePosition);
+            }
+        }
+    
     }
 
 }

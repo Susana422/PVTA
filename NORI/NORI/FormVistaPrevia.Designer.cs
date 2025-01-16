@@ -1,6 +1,6 @@
 ﻿namespace NORI
 {
-    partial class FormVistaPrevia
+    partial class frmVPram
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator3 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
+            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator1 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -2237,7 +2237,7 @@
             this.bcID.Name = "bcID";
             this.bcID.Padding = new System.Windows.Forms.Padding(19, 3, 19, 0);
             this.bcID.Size = new System.Drawing.Size(388, 102);
-            this.bcID.Symbology = code128Generator3;
+            this.bcID.Symbology = code128Generator1;
             this.bcID.TabIndex = 147;
             // 
             // cbRutas
@@ -3106,7 +3106,7 @@
             this.layoutControlItem1.TextVisible = false;
             this.layoutControlItem1.Click += new System.EventHandler(this.layoutControlItem1_Click_1);
             // 
-            // FormVistaPrevia
+            // frmVPram
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -3121,7 +3121,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FormVistaPrevia";
+            this.Name = "frmVPram";
             this.Ribbon = this.mainRibbonControl;
             this.Text = "Form1";
             this.Click += new System.EventHandler(this.FormVistaPrevia_Click);

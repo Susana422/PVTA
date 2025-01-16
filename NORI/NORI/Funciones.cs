@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -427,6 +428,81 @@ namespace NORI
             }
         }
 
+        public static bool ImprimirInforme2(int id, Dictionary<string, object> parametros)
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(Form.ActiveForm, typeof(DemoWaitForm), true, true, false);
+                SplashScreenManager.Default.SetWaitFormCaption("Por favor espere");
+                SplashScreenManager.Default.SetWaitFormDescription("Imprimiendo...");
+
+                Informe informe = Informe.Obtener(id);
+                XtraReport val = XtraReport.FromFile(Program.Nori.Configuracion.directorio_informes + "\\" + informe.informe, true);
+
+                // Establecer los parámetros en el informe
+                foreach (KeyValuePair<string, object> parametro in parametros)
+                {
+                    val.Parameters[parametro.Key].Value = parametro.Value;
+                    val.Parameters[parametro.Key].Visible = false;
+                }
+
+                val.ShowPrintMarginsWarning = false;
+
+                // Crear el ReportPrintTool
+                ReportPrintTool val2 = new ReportPrintTool((IReport)(object)val);
+
+                string impresora = null;
+
+                // Determinar la impresora a utilizar (tickets o documentos)
+                if (informe.tipo_informe.Equals('T'))
+                {
+                    impresora = Program.Nori.Estacion.impresora_tickets;
+                }
+                else
+                {
+                    impresora = Program.Nori.Estacion.impresora_documentos;
+                }
+
+                // Si hay una impresora definida en el informe, usarla
+                if (!informe.impresora.IsNullOrEmpty())
+                {
+                    impresora = informe.impresora;
+                }
+
+                // SI la impresora está definida, establecerla en el ReportPrintTool
+                if (!string.IsNullOrEmpty(impresora))
+                {
+                    val2.PrintingSystem.PageSettings.PrinterName = impresora;
+
+                    // Asegúrate de aplicar estos cambios antes de imprimir
+                    // Reiniciar la impresora predeterminada del sistema
+            
+                }
+
+                // Verificación adicional: mostrar la impresora seleccionada
+                MessageBox.Show("Impresora seleccionada: " + val2.PrintingSystem.PageSettings.PrinterName);
+
+                // Imprimir el informe
+                val2.Print();
+
+                // Si hay una secuencia de impresión, imprimir de nuevo
+                if (informe.informe_sequencia_id != 0)
+                {
+                    ImprimirInforme(informe.informe_sequencia_id, parametros);
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), "Impresión", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return false;
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
+        }
         public static string PDFInforme(int id, int parametro, string nombre_archivo = null)
         {
             try

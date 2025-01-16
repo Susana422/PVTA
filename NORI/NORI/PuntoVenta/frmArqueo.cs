@@ -78,9 +78,6 @@ namespace NORI.PuntoVenta
         private GridColumn gridColumn6;
 
         private Button btnRERET;
-
-        private Button btnREACA;
-
         public frmArqueo()
         {
             InitializeComponent();
@@ -105,7 +102,7 @@ namespace NORI.PuntoVenta
             cbConceptos.Properties.DisplayMember = "nombre";
             //cbConceptos.ItemIndex = 0;
             cbConceptos.Refresh();
-           // cbConceptos.EditValue = 0;
+            cbConceptos.EditValue = 0;
             foreach (MetodoPago.Tipo tipo in tipos)
             {
                 Acumulado acumulado = new Acumulado();
@@ -115,7 +112,7 @@ namespace NORI.PuntoVenta
                 acumulados.Add(acumulado);
             }
             gcAcumulados.DataSource = acumulados;
-            gcPartidas.DataSource = arqueos;
+           gcPartidas.DataSource = arqueos;
         }
 
         private void Calcular()
@@ -123,24 +120,38 @@ namespace NORI.PuntoVenta
             try
             {
                 GridControl gridControl = gcPartidas;
-                IEnumerable<Arqueo> dataSource;
-                if (!tipos.Where((MetodoPago.Tipo x) => x.id == (int)cbConceptos.EditValue).First().cambio)
+                IEnumerable<Arqueo> dataSource = null;
+                try
                 {
-                    dataSource = arqueos.Where((Arqueo x) => x.tipo_metodo_pago_id == (int)cbConceptos.EditValue);
+                    if (!tipos.Where((MetodoPago.Tipo x) => x.id == (int)cbConceptos.EditValue).First().cambio)
+                    {
+                        dataSource = arqueos.Where((Arqueo  x) => x.tipo_metodo_pago_id == (int)cbConceptos.EditValue);
+                    }
+                    else
+                    {
+                        IEnumerable<Arqueo> enumerable = from x in arqueos
+                                                         where x.tipo_metodo_pago_id == (int)cbConceptos.EditValue
+                                                         orderby x.factor descending
+                                                         select x;
+                        dataSource = enumerable;
+                    }
                 }
-                else
+                catch (Exception)
                 {
-                    IEnumerable<Arqueo> enumerable = from x in arqueos
-                                                     where x.tipo_metodo_pago_id == (int)cbConceptos.EditValue
-                                                     orderby x.factor descending
-                                                     select x;
-                    dataSource = enumerable;
                 }
-                gridControl.DataSource = dataSource;
+                if (dataSource != null)
+                {
+                    gridControl.DataSource = dataSource;
+                }
+   
                 gcPartidas.RefreshDataSource();
                 foreach (MetodoPago.Tipo tipo in tipos)
                 {
-                    acumulados.Where((Acumulado x) => x.tipo_metodo_pago_id == tipo.id).First().total = arqueos.Where((Arqueo x) => x.tipo_metodo_pago_id == tipo.id).Sum((Arqueo x) => x.producto);
+                    if (acumulados.Count > 0)
+                    {
+                        acumulados.Where((Acumulado x) => x.tipo_metodo_pago_id == tipo.id).First().total = arqueos.Where((Arqueo x) => x.tipo_metodo_pago_id == tipo.id).Sum((Arqueo x) => x.producto) * tipo.ObtenerTipoCambio();
+                    }
+              
                 }
                 gcAcumulados.DataSource = acumulados;
                 gcAcumulados.RefreshDataSource();
@@ -222,9 +233,9 @@ namespace NORI.PuntoVenta
                 {
                     if (arqueos.Count > 0)
                     {
-                        Arqueo item = (Arqueo)gvPartidas.GetRow(gvPartidas.GetSelectedRows()[0]);
-                        gvPartidas.CloseEditor();
-                        arqueos.Remove(item);
+                        //Arqueo item = (Arqueo)gvPartidas.GetRow(gvPartidas.GetSelectedRows()[0]);
+                        //gvPartidas.CloseEditor();
+                        //arqueos.Remove(item);
                     }
                     Calcular();
                 }
@@ -237,83 +248,7 @@ namespace NORI.PuntoVenta
 
         private void btnRERET_Click(object sender, EventArgs e)
         {
-            gvPartidas.CloseEditor();
-            decimal num = acumulados.Sum((Acumulado x) => x.total);
-            if (!(num > 0m) || MessageBox.Show($"¿Estas seguro(a) de realizar un retiro por la cantidad de {num:c2}?", "Retiro", MessageBoxButtons.YesNo) != DialogResult.Yes)
-            {
-                return;
-            }
-            Autorizacion autorizacion = new Autorizacion();
-            autorizacion.codigo = "RERET";
-            autorizacion.referencia = $"Retiro por la cantidad de {num} al usuario {Program.Nori.UsuarioAutenticado.usuario} en la estación {Program.Nori.Estacion.nombre}";
-            autorizacion.comentario = Interaction.InputBox("Comentario retiro (Opcional)", "", "", -1, -1);
-            autorizacion.Agregar();
-            if (!autorizacion.autorizado)
-            {
-                frmSolicitarAutorizacion frmSolicitarAutorizacion = new frmSolicitarAutorizacion(autorizacion);
-                frmSolicitarAutorizacion.ShowDialog();
-                autorizacion.autorizado = frmSolicitarAutorizacion.DialogResult == DialogResult.OK;
-            }
-            if (!autorizacion.autorizado)
-            {
-                return;
-            }
-            Flujo flujo = new Flujo();
-            flujo.codigo = "RERET";
-            flujo.comentario = Interaction.InputBox("Ingrese un comentario acerca del retiro (Opcional)", "", "", -1, -1);
-            flujo.autorizacion_id = autorizacion.id;
-            flujo.importe = num;
-            try
-            {
-                if (MessageBox.Show(string.Format("¿El retiro corresponde a una devolución de venta?", num), "Retiro", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    flujo.documento_id = int.Parse(Interaction.InputBox("Ingrese el ID del documento", "", "", -1, -1));
-                    var anon = (from x in Documento.Documentos()
-                                where x.id == flujo.documento_id
-                                select new { x.clase, x.importe_aplicado, x.total }).First();
-                    if (!anon.clase.Equals("FA") && !anon.clase.Equals("EN"))
-                    {
-                        MessageBox.Show("Solo es posible realizar devoluciones de entregas y facturas.");
-                        return;
-                    }
-                    if (num > anon.total)
-                    {
-                        MessageBox.Show("No es posible devolver un importe mayor que el importe total del documento referenciado.");
-                        return;
-                    }
-                    if (num > anon.importe_aplicado)
-                    {
-                        MessageBox.Show("No es posible devolver un importe mayor que el importe aplicado del documento referenciado.");
-                        return;
-                    }
-                }
-                if (flujo.Agregar())
-                {
-                    arqueos.All(delegate (Arqueo x)
-                    {
-                        x.flujo_id = flujo.id;
-                        return true;
-                    });
-                    arqueos.ForEach(delegate (Arqueo x)
-                    {
-                        x.Agregar();
-                    });
-                    Funciones.ImprimirInformePredeterminado("IE", flujo.id);
-                    if (MessageBox.Show("¿Deseas imprimir el arqueo de este retiro?", "Retiro", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        Funciones.ImprimirInformePredeterminado("AR", flujo.id);
-                    }
-                    Close();
-                }
-                else
-                {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
         }
 
         private void btnRetiroFondoInicial_Click(object sender, EventArgs e)
@@ -322,7 +257,7 @@ namespace NORI.PuntoVenta
             {
                 if (NoriSDK.PuntoVenta.EstadoCaja().Equals('A'))
                 {
-                    gvPartidas.CloseEditor();
+                    //gvPartidas.CloseEditor();
                     Flujo flujo = NoriSDK.PuntoVenta.FondoInicial();
                     if (!NoriSDK.PuntoVenta.FondoInicialRetirado(flujo.id))
                     {
@@ -373,80 +308,72 @@ namespace NORI.PuntoVenta
 
         private void btnRECCA_Click(object sender, EventArgs e)
         {
-            try
+
+        }
+
+        private void btnCorteZ_Click(object sender, EventArgs e)
+        {
+            decimal importe = acumulados.Sum((Acumulado x) => x.total);
+            if (NoriSDK.PuntoVenta.EstadoCaja().Equals('A'))
             {
-                gvPartidas.CloseEditor();
-                decimal importe = acumulados.Sum((Acumulado x) => x.total);
-                if (NoriSDK.PuntoVenta.EstadoCaja().Equals('A'))
+                if (MessageBox.Show("¿Estas seguro(a) de realizar el cierre de caja?", "Cierre de caja", MessageBoxButtons.YesNo) != DialogResult.Yes)
                 {
-                    if (MessageBox.Show("¿Estas seguro(a) de realizar el cierre de caja?", "Cierre de caja", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                    return;
+                }
+                Flujo flujo = new Flujo();
+                flujo.codigo = "RECCA";
+                flujo.comentario = Interaction.InputBox("Ingrese un comentario acerca del cierre de caja (Opcional)", "DTM SOLUTIONS POS", "", -1, -1);
+                flujo.autorizacion_id = 0;
+                flujo.importe = importe;
+                if (flujo.Agregar())
+                {
+                    arqueos.All(delegate (Arqueo x)
                     {
-                        return;
-                    }
-                    //Autorizacion autorizacion = new Autorizacion();
-                    //autorizacion.codigo = "RECCA";
-                    //autorizacion.referencia = $"Cierre de caja del usuario {Program.Nori.UsuarioAutenticado.usuario} en la estación {Program.Nori.Estacion.nombre}";
-                    //autorizacion.comentario = Interaction.InputBox("Comentario cierre de caja (Opcional)","DTM SOLUTIONS POS","",-1,-1);
-                    //autorizacion.Agregar();
-                    //if (!autorizacion.autorizado)
-                    //{
-                    //    frmSolicitarAutorizacion frmSolicitarAutorizacion = new frmSolicitarAutorizacion(autorizacion);
-                    //    frmSolicitarAutorizacion.ShowDialog();
-                    //    autorizacion.autorizado = frmSolicitarAutorizacion.DialogResult == DialogResult.OK;
-                    //}
-                    //if (!autorizacion.autorizado)
-                    //{
-                    //    return;
-                    //}
-                    Flujo flujo = new Flujo();
-                    flujo.codigo = "RECCA";
-                    flujo.comentario = Interaction.InputBox("Ingrese un comentario acerca del cierre de caja (Opcional)", "DTM SOLUTIONS POS", "", -1, -1);
-                    flujo.autorizacion_id = 0;
-                    flujo.importe = importe;
-                    if (flujo.Agregar())
+                        x.flujo_id = flujo.id;
+                        return true;
+                    });
+                    arqueos.ForEach(delegate (Arqueo x)
                     {
-                        arqueos.All(delegate (Arqueo x)
-                        {
-                            x.flujo_id = flujo.id;
-                            return true;
-                        });
-                        arqueos.ForEach(delegate (Arqueo x)
-                        {
-                            x.Agregar();
-                        });
-                        if (MessageBox.Show("¿Desea imprimir el Egreso?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
-                            Funciones.ImprimirInformePredeterminado("IE", flujo.id);
-                        }
-                        if (MessageBox.Show("¿Desea imprimir el Arqueo?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
-                            Funciones.ImprimirInformePredeterminado("AR", flujo.id);
-                        }
-                        if (MessageBox.Show("¿Desea imprimir el corte Corte X?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
-                            Funciones.ImprimirInformePredeterminado("CX", flujo.id);
-                        }
-                        if (MessageBox.Show("¿Desea imprimir el corte Corte Z?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
-                            Funciones.ImprimirInformePredeterminado("CZ", flujo.id);
-                        }
-                        Close();
-                    }
-                    else
+                        x.Agregar();
+                    });
+                    if (MessageBox.Show("¿Desea imprimir el corte Corte Z?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
+                        Funciones.ImprimirInformePredeterminado("CZ", flujo.id);
                     }
+                    Close();
                 }
                 else
                 {
-                    MessageBox.Show("La caja ya ha sido cerrada");
+                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
                 }
+
             }
-            catch
+            else
             {
-                MessageBox.Show("Error al realizar el Corte Z");
+                MessageBox.Show("La caja ya ha sido cerrada");
             }
         }
 
+        private void btnCorteX_Click(object sender, EventArgs e)
+        {
+            decimal importe = acumulados.Sum((Acumulado x) => x.total);
+            Flujo flujo = new Flujo();
+            flujo.codigo = "RECAX";
+            flujo.comentario = Interaction.InputBox("Ingrese un comentario acerca del cierre de caja (Opcional)", "DTM SOLUTIONS POS", "", -1, -1);
+            flujo.autorizacion_id = 0;
+            flujo.importe = importe;
+            if (flujo.Agregar())
+            {
+                if (MessageBox.Show("¿Desea imprimir el corte Corte X?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Funciones.ImprimirInformePredeterminado("CX", flujo.id);
+                }
+                Close();
+            }
+            else
+            {
+                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
+            }
+        }
     }
 }

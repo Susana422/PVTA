@@ -137,18 +137,6 @@ namespace NORI.PuntoVenta
                         Funciones.ImprimirInformePredeterminado("IE", (int)dataRow["ID"]);
                         continue;
                     }
-                    if (MessageBox.Show("¿Desea imprimir el Egreso?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        Funciones.ImprimirInformePredeterminado("IE", (int)dataRow["ID"]);
-                    }
-                    if (MessageBox.Show("¿Desea imprimir el Arqueo?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        Funciones.ImprimirInformePredeterminado("AR", (int)dataRow["ID"]);
-                    }
-                    if (MessageBox.Show("¿Desea imprimir el corte Corte X?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        Funciones.ImprimirInformePredeterminado("CX", (int)dataRow["ID"]);
-                    }
                     if (MessageBox.Show("¿Desea imprimir el corte Corte Z?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         Funciones.ImprimirInformePredeterminado("CZ", (int)dataRow["ID"]);

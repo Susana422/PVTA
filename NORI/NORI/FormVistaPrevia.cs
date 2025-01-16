@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace NORI
 {
-    public partial class FormVistaPrevia : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmVPram : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         private DataTable dtControles;  // DataTable para almacenar los detalles de los controles clickeados
 
-        public FormVistaPrevia()
+        public frmVPram()
         {
             InitializeComponent();
             InicializarDataTable();

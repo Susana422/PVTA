@@ -82,7 +82,7 @@ namespace NORI
                 Dictionary<string, object> dictionary = new Dictionary<string, object>();
                 dictionary.Add("fecha_inicial", deFechaInicial.DateTime);
                 dictionary.Add("fecha_final", deFechaFinal.DateTime);
-                Funciones.ImprimirInforme(informe.id, dictionary);
+                Funciones.ImprimirInforme2(informe.id, dictionary);
                 MessageBox.Show("Se realizó el cierre correctamente.");
                 ((Form)this).Close();
             }

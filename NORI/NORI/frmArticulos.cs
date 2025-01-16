@@ -442,14 +442,39 @@ namespace NORI
                     control.Enabled = !item.desactivado;
                     control.Visible = !item.oculto;
                 }
+                  
                 else
                 {
-                    ((ColumnView)gvInventario).Columns.ColumnByName(item.control).Visible = !item.oculto;
-                    ((ColumnView)gvInventario).Columns.ColumnByName(item.control).OptionsColumn.AllowEdit = !item.desactivado;
+                    try
+                    {
+                        SetButtonVisibility(this.mainRibbonControl, item.control, item.oculto, item.desactivado);
+                        ((ColumnView)gvInventario).Columns.ColumnByName(item.control).Visible = !item.oculto;
+                        ((ColumnView)gvInventario).Columns.ColumnByName(item.control).OptionsColumn.AllowEdit = !item.desactivado;
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+
                 }
             }
         }
+        public void SetButtonVisibility(RibbonControl ribbon, string buttonName, bool oculto, bool desactivado)
+        {
+            // Buscar el BarButtonItem por su nombre en los items del RibbonControl
+            foreach (var item in ribbon.Items)
+            {
+                // Verificar si el item es un BarButtonItem
+                if (item is DevExpress.XtraBars.BarButtonItem buttonItem && buttonItem.Name == buttonName)
+                {
+                    // Cambiar la visibilidad del botón
+                    buttonItem.Visibility = oculto ? BarItemVisibility.Never : BarItemVisibility.Always;
 
+                    // Cambiar el estado de habilitación
+                    buttonItem.Enabled = !desactivado;  // Si 'desactivado' es true, deshabilita el botón
+                    break;  // Detener la búsqueda después de encontrar el botón
+                }
+            }
+        }
         private void bbiGuardar_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (Guardar())
@@ -1418,8 +1443,9 @@ namespace NORI
 
         private void bbiParametrizacionesFormulario_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmParametrizacionesFormulario frmParametrizacionesFormulario2 = new frmParametrizacionesFormulario(((Control)this).Name, "AR");
-            ((Form)(object)frmParametrizacionesFormulario2).ShowDialog();
+            frmFormArt frmFormArt = new frmFormArt();
+            //frmParametrizacionesFormulario frmParametrizacionesFormulario2 = new frmParametrizacionesFormulario(((Control)this).Name, "AR");
+            ((Form)(object)frmFormArt).ShowDialog();
             Permisos();
         }
 

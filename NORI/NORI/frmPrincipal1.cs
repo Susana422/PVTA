@@ -816,14 +816,14 @@ namespace NORI
                 {
                     ((Control)(object)new frmDocumentos("PE")).Show();
                 }
-                if (e.KeyCode == Keys.F3)
-                {
-                    ((Control)(object)new frmDocumentos("EN")).Show();
-                }
-                if (e.KeyCode == Keys.F4)
-                {
-                    ((Control)(object)new frmDocumentos("DV")).Show();
-                }
+                //if (e.KeyCode == Keys.F3)
+                //{
+                //    ((Control)(object)new frmDocumentos("EN")).Show();
+                //}
+                //if (e.KeyCode == Keys.F4)
+                //{
+                //    ((Control)(object)new frmDocumentos("DV")).Show();
+                //}
                 if (e.KeyCode == Keys.F5)
                 {
                     ((Control)(object)new frmDocumentos("FA")).Show();
@@ -832,14 +832,14 @@ namespace NORI
                 {
                     ((Control)(object)new frmDocumentos("NC")).Show();
                 }
-                if (e.KeyCode == Keys.F7)
-                {
-                    ((Control)(object)new frmDocumentos("TS")).Show();
-                }
-                if (e.KeyCode == Keys.F8)
-                {
-                    ((Control)(object)new frmDocumentos("AE")).Show();
-                }
+                //if (e.KeyCode == Keys.F7)
+                //{
+                //    ((Control)(object)new frmDocumentos("TS")).Show();
+                //}
+                //if (e.KeyCode == Keys.F8)
+                //{
+                //    ((Control)(object)new frmDocumentos("AE")).Show();
+                //}
             }
             catch
             {

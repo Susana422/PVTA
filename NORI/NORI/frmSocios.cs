@@ -417,12 +417,37 @@ namespace NORI
                 }
                 else
                 {
-                    ((ColumnView)gvPersonasContacto).Columns.ColumnByName(item.control).Visible = !item.oculto;
-                    ((ColumnView)gvPersonasContacto).Columns.ColumnByName(item.control).OptionsColumn.AllowEdit = !item.desactivado;
+                    try
+                    {
+                        SetButtonVisibility(this.mainRibbonControl, item.control, item.oculto, item.desactivado);
+                        ((ColumnView)gvPersonasContacto).Columns.ColumnByName(item.control).Visible = !item.oculto;
+                        ((ColumnView)gvPersonasContacto).Columns.ColumnByName(item.control).OptionsColumn.AllowEdit = !item.desactivado;
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                   
                 }
             }
         }
+        public void SetButtonVisibility(RibbonControl ribbon, string buttonName, bool oculto, bool desactivado)
+        {
+            // Buscar el BarButtonItem por su nombre en los items del RibbonControl
+            foreach (var item in ribbon.Items)
+            {
+                // Verificar si el item es un BarButtonItem
+                if (item is DevExpress.XtraBars.BarButtonItem buttonItem && buttonItem.Name == buttonName)
+                {
+                    // Cambiar la visibilidad del botón
+                    buttonItem.Visibility = oculto ? BarItemVisibility.Never : BarItemVisibility.Always;
 
+                    // Cambiar el estado de habilitación
+                    buttonItem.Enabled = !desactivado;  // Si 'desactivado' es true, deshabilita el botón
+                    break;  // Detener la búsqueda después de encontrar el botón
+                }
+            }
+        }
         private void CargarInformes(string clase)
         {
             //IL_0120: Unknown result type (might be due to invalid IL or missing references)
@@ -1329,8 +1354,8 @@ namespace NORI
 
         private void bbiParametrizacionesFormulario_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmParametrizacionesFormulario frmParametrizacionesFormulario2 = new frmParametrizacionesFormulario(((Control)this).Name, "SN");
-            ((Form)(object)frmParametrizacionesFormulario2).ShowDialog();
+           frmFormSocios frmFormSocios = new frmFormSocios();
+            ((Form)(object)frmFormSocios).ShowDialog();
             Permisos();
         }
 

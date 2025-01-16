@@ -84,11 +84,9 @@ namespace NORI
 
         private void btnAutenticar_Click(object sender, EventArgs e)
         {
-            if (usuario.id == 0)
-            {
-                usuario = Usuario.Obtener(((Control)(object)txtUsuario).Text);
-            }
-            if (usuario.id != 0)
+            Usuario usuario2 = new Usuario();
+            usuario2 = Usuario.Obtener(((Control)(object)txtUsuario).Text);
+            if (usuario2.id != 0)
             {
                 if (usuario.ObtenerContraseña() == ((Control)(object)txtContraseña).Text)
                 {
@@ -99,6 +97,9 @@ namespace NORI
                 ((Control)(object)txtContraseña).Text = string.Empty;
                 ((Control)(object)txtContraseña).Focus();
                 MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+            }
+            else{
+                MessageBox.Show("Usuario o contraseña incorrectos");
             }
         }
     }

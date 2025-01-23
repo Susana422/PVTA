@@ -113,7 +113,7 @@ namespace DTM
 
         private void Permisos()
         {
-            char rol = Program.Nori.UsuarioAutenticado.rol;
+            char rol = Program.dtm.UsuarioAutenticado.rol;
             char c = rol;
             if (c == 'C')
             {
@@ -180,7 +180,7 @@ namespace DTM
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 return false;
             }
         }
@@ -193,7 +193,7 @@ namespace DTM
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
         }
 

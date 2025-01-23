@@ -167,7 +167,7 @@ namespace DTM
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
+                MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
             }
         }
 
@@ -186,7 +186,7 @@ namespace DTM
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
+                MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
             }
         }
 
@@ -210,9 +210,9 @@ namespace DTM
                         x.cantidad = 0;
                         x.fecha_actualizacion = DateTime.Now;
                     });
-                    if (Program.Nori.UsuarioAutenticado.almacen_id != 0 && MessageBox.Show("¿Cargar solo partidas del almacén predeterminado para este usuario?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (Program.dtm.UsuarioAutenticado.almacen_id != 0 && MessageBox.Show("¿Cargar solo partidas del almacén predeterminado para este usuario?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        documento.partidas.RemoveAll((Documento.Partida x) => x.almacen_id != Program.Nori.UsuarioAutenticado.almacen_id);
+                        documento.partidas.RemoveAll((Documento.Partida x) => x.almacen_id != Program.dtm.UsuarioAutenticado.almacen_id);
                     }
                     Cargar();
                 }
@@ -313,11 +313,11 @@ namespace DTM
         {
             try
             {
-                if ((documento.clase.Equals("EN") || documento.clase.Equals("FA") || documento.clase.Equals("TS") || (documento.clase.Equals("PE") && (Program.Nori.Empresa.rfc.Equals("CVR981030480") || Program.Nori.Empresa.rfc.Equals("JAIJ640806EF5")))) && documento.id == 0 && !Program.Nori.Configuracion.venta_articulo_stock_cero)
+                if ((documento.clase.Equals("EN") || documento.clase.Equals("FA") || documento.clase.Equals("TS") || (documento.clase.Equals("PE") && (Program.dtm.Empresa.rfc.Equals("CVR981030480") || Program.dtm.Empresa.rfc.Equals("JAIJ640806EF5")))) && documento.id == 0 && !Program.dtm.Configuracion.venta_articulo_stock_cero)
                 {
                     Funciones.Cargando("Verificando existencias", "Por favor espere...");
                     bool flag = false;
-                    if (Program.Nori.Configuracion.inventario_sap)
+                    if (Program.dtm.Configuracion.inventario_sap)
                     {
                         foreach (Documento.Partida partida in documento.partidas)
                         {
@@ -430,7 +430,7 @@ namespace DTM
             }
             catch (Exception ex)
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM") + " | Error: " + ex.Message.ToString().Replace("Nori", "DTM"), Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM") + " | Error: " + ex.Message.ToString().Replace("Nori", "DTM"), Text);
                 return false;
             }
         }
@@ -456,7 +456,7 @@ namespace DTM
             catch (Exception ex)
             {
 
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM") + " | Error: " + ex.Message.ToString().Replace("Nori", "DTM"), Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM") + " | Error: " + ex.Message.ToString().Replace("Nori", "DTM"), Text);
                 return sw;
             }
             return sw;
@@ -627,7 +627,7 @@ namespace DTM
                     Calcular();
                     break;
                 }
-                while (MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
+                while (MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
             }
             catch (Exception ex2)
             {
@@ -649,7 +649,7 @@ namespace DTM
                     return;
                 }
                 string text = txtArticulo.Text;
-                string query = "SELECT articulos.id, sku as sku_articulo, articulos.nombre, (SELECT TOP 1 inventario.stock FROM inventario WHERE inventario.articulo_id = articulo_id AND inventario.almacen_id = " + Program.Nori.UsuarioAutenticado.almacen_id + ") AS stock, (SELECT dbo.[PrecioNetoArticulo](articulo_id, " + documento.socio_id + ", " + documento.lista_precio_id + ")) AS precio, monedas.codigo as moneda FROM articulos JOIN precios ON precios.articulo_id = articulos.id JOIN monedas ON monedas.id = precios.moneda_id AND precios.lista_precio_id = " + Program.Nori.Configuracion.lista_precio_id + " WHERE (sku = '" + text + "' OR articulos.nombre LIKE '%" + text.Replace(" ", "%") + "%' OR codigo_barras LIKE '%" + text + "%') AND venta = 1 AND articulos.activo = 1";
+                string query = "SELECT articulos.id, sku as sku_articulo, articulos.nombre, (SELECT TOP 1 inventario.stock FROM inventario WHERE inventario.articulo_id = articulo_id AND inventario.almacen_id = " + Program.dtm.UsuarioAutenticado.almacen_id + ") AS stock, (SELECT dbo.[PrecioNetoArticulo](articulo_id, " + documento.socio_id + ", " + documento.lista_precio_id + ")) AS precio, monedas.codigo as moneda FROM articulos JOIN precios ON precios.articulo_id = articulos.id JOIN monedas ON monedas.id = precios.moneda_id AND precios.lista_precio_id = " + Program.dtm.Configuracion.lista_precio_id + " WHERE (sku = '" + text + "' OR articulos.nombre LIKE '%" + text.Replace(" ", "%") + "%' OR codigo_barras LIKE '%" + text + "%') AND venta = 1 AND articulos.activo = 1";
                 DataTable articulos = Utilidades.EjecutarQuery(query);
                 if (articulos.Rows.Count > 0)
                 {
@@ -719,7 +719,7 @@ namespace DTM
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
+                MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
             }
         }
     }

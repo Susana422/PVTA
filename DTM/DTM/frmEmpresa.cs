@@ -211,7 +211,7 @@ namespace DTM
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 return false;
             }
         }
@@ -228,7 +228,7 @@ namespace DTM
             openFileDialog.Title = "Por favor seleccione una imagen.";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string text = Program.Nori.Configuracion.directorio_imagenes + "\\" + openFileDialog.SafeFileName;
+                string text = Program.dtm.Configuracion.directorio_imagenes + "\\" + openFileDialog.SafeFileName;
                 File.Copy(openFileDialog.FileName, text, overwrite: true);
                 pbImagen.Image = new Bitmap(text);
                 empresa.logotipo = openFileDialog.SafeFileName;

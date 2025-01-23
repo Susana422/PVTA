@@ -54,7 +54,7 @@ namespace DTM
                 List<Usuario> list = Usuario.Usuarios().ToList();
                 foreach (Usuario item in list)
                 {
-                    if (NoriSDK.PuntoVenta.EstadoCaja(item.id).Equals('A'))
+                    if (SDK.PuntoVenta.EstadoCaja(item.id).Equals('A'))
                     {
                         result = true;
                         MessageBox.Show($"La caja del usuario {item.usuario} esta abierta, realice el corte de caja para continuar.");

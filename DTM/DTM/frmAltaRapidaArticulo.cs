@@ -76,7 +76,7 @@ namespace DTM
                 }
                 else
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                    MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 }
             }
             else
@@ -136,18 +136,18 @@ namespace DTM
                         precio.articulo_id = articulo.id;
                         precio.precio = decimal.Parse(((BaseEdit)txtPrecio).EditValue.ToString());
                         precio.Agregar();
-                        Articulo.Inventario inventario = Articulo.Inventario.Obtener(articulo.id, Program.Nori.UsuarioAutenticado.almacen_id);
+                        Articulo.Inventario inventario = Articulo.Inventario.Obtener(articulo.id, Program.dtm.UsuarioAutenticado.almacen_id);
                         if (inventario.id == 0)
                         {
                             inventario.articulo_id = articulo.id;
-                            inventario.almacen_id = Program.Nori.UsuarioAutenticado.almacen_id;
+                            inventario.almacen_id = Program.dtm.UsuarioAutenticado.almacen_id;
                             if (inventario.Agregar())
                             {
                                 MessageBox.Show("Se agregó la información correctamente.");
                             }
                             else
                             {
-                                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                             }
                         }
                         else
@@ -162,7 +162,7 @@ namespace DTM
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 return false;
             }
         }

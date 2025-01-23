@@ -98,7 +98,7 @@ namespace DTM
             deDesde.EditValue = DateTime.Now;
             deHasta.EditValue = DateTime.Now;
             CargarListas();
-            if (Program.Nori.Empresa.rfc == "DDI061212TX1")
+            if (Program.dtm.Empresa.rfc == "DDI061212TX1")
             {
                 ((Control)btnImprimir).Visible = false;
                 ((Control)btnFacturar).Visible = false;
@@ -158,7 +158,7 @@ namespace DTM
         {
             try
             {
-                string text = ((Program.Nori.Configuracion.seleccionar_sucursal && Program.Nori.UsuarioAutenticado.rol != 'A') ? $"AND documentos.serie_id in (select id from series where almacen_id = {Program.Nori.UsuarioAutenticado.almacen_id})" : string.Empty);
+                string text = ((Program.dtm.Configuracion.seleccionar_sucursal && Program.dtm.UsuarioAutenticado.rol != 'A') ? $"AND documentos.serie_id in (select id from series where almacen_id = {Program.dtm.UsuarioAutenticado.almacen_id})" : string.Empty);
                 string text2 = (cbWeb.Checked ? "AND documentos.web = 1" : string.Empty);
                 var xx = cbVendedores.EditValue;
                 string text3 = string.Empty;
@@ -283,9 +283,9 @@ namespace DTM
                         {
                             x.cantidad = 0m;
                         });
-                        if (Program.Nori.UsuarioAutenticado.almacen_id != 0 && MessageBox.Show("¿Cargar solo partidas del almacén predeterminado para este usuario?", ((Control)this).Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                        if (Program.dtm.UsuarioAutenticado.almacen_id != 0 && MessageBox.Show("¿Cargar solo partidas del almacén predeterminado para este usuario?", ((Control)this).Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                         {
-                            frmDocumentos2.documento.partidas.RemoveAll((Documento.Partida x) => x.almacen_id != Program.Nori.UsuarioAutenticado.almacen_id);
+                            frmDocumentos2.documento.partidas.RemoveAll((Documento.Partida x) => x.almacen_id != Program.dtm.UsuarioAutenticado.almacen_id);
                         }
                     }
                     try
@@ -367,7 +367,7 @@ namespace DTM
                            where x.id == socio_id
                            select x.socio_eventual_id).First();
                 documento.socio_id = ((num != 0) ? num : socio_id);
-                if (documento.socio_id == Program.Nori.UsuarioAutenticado.socio_id)
+                if (documento.socio_id == Program.dtm.UsuarioAutenticado.socio_id)
                 {
                     documento.comentario = "Factura global del día: " + DateTime.Today.ToShortDateString();
                 }
@@ -439,7 +439,7 @@ namespace DTM
         {
             try
             {
-                string text = string.Format("{0}\\{1}.xlsx", Program.Nori.Configuracion.directorio_documentos, "ListaPartidasAbiertas");
+                string text = string.Format("{0}\\{1}.xlsx", Program.dtm.Configuracion.directorio_documentos, "ListaPartidasAbiertas");
                 gcDocumentos.ExportToXlsx(text);
                 Funciones.AbrirArchivo(text);
             }
@@ -453,7 +453,7 @@ namespace DTM
         {
             try
             {
-                string text = string.Format("{0}\\{1}.pdf", Program.Nori.Configuracion.directorio_documentos, "ListaPartidasAbiertas");
+                string text = string.Format("{0}\\{1}.pdf", Program.dtm.Configuracion.directorio_documentos, "ListaPartidasAbiertas");
                 gcDocumentos.ExportToPdf(text);
                 Funciones.AbrirArchivo(text);
             }

@@ -296,7 +296,7 @@ namespace DTM
                     {
                         return usuario.Actualizar();
                     }
-                    if (!Program.Nori.Empresa.prueba)
+                    if (!Program.dtm.Empresa.prueba)
                     {
                         return usuario.Agregar();
                     }
@@ -307,7 +307,7 @@ namespace DTM
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 return false;
             }
         }
@@ -320,7 +320,7 @@ namespace DTM
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
         }
 
@@ -481,7 +481,7 @@ namespace DTM
 
         private void btnHuellaDigital_Click(object sender, EventArgs e)
         {
-            if (Program.Nori.Estacion.lector_huella)
+            if (Program.dtm.Estacion.lector_huella)
             {
                 //HuellaDigital.frmHuellaDigitalAgregar frmHuellaDigitalAgregar = new HuellaDigital.frmHuellaDigitalAgregar();
                 //DialogResult dialogResult = ((Form)(object)frmHuellaDigitalAgregar).ShowDialog();

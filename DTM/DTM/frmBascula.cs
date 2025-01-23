@@ -43,7 +43,7 @@ namespace DTM
             InitializeComponent();
             this.MetodoDinamico();
             ((Control)(object)txtPeso).Text = "0.00";
-            if (Program.Nori.Estacion.bascula && Program.Nori.Estacion.bascula_id != 0 && Program.Nori.Estacion.Bascula != null)
+            if (Program.dtm.Estacion.bascula && Program.dtm.Estacion.bascula_id != 0 && Program.dtm.Estacion.Bascula != null)
             {
                 timerObtenerPeso.Enabled = true;
             }
@@ -57,8 +57,8 @@ namespace DTM
         {
             try
             {
-                ((Control)(object)txtPeso).Text = Program.Nori.Estacion.Bascula.ObtenerPeso().ToString("n4");
-                if (Program.Nori.Estacion.Bascula.datos.Length == 0)
+                ((Control)(object)txtPeso).Text = Program.dtm.Estacion.Bascula.ObtenerPeso().ToString("n4");
+                if (Program.dtm.Estacion.Bascula.datos.Length == 0)
                 {
                     timerObtenerPeso.Enabled = false;
                     MessageBox.Show("Se alcanzó el tiempo máximo de ejecución. Revise la conexión a la báscula y trate nuevamente.");

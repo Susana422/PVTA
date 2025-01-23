@@ -382,7 +382,7 @@ namespace DTM
         private void Permisos()
         {
             ((BarItem)bbiParametrizacionesFormulario).Enabled = false;
-            switch (Program.Nori.UsuarioAutenticado.rol)
+            switch (Program.dtm.UsuarioAutenticado.rol)
             {
                 case 'A':
                     ((BarItem)bbiParametrizacionesFormulario).Enabled = true;
@@ -402,7 +402,7 @@ namespace DTM
                     ((Control)(object)cbCondicionesPago).Enabled = false;
                     break;
             }
-            if (!ParametrizacionFormulario.Parametrizaciones().Any((ParametrizacionFormulario x) => x.usuario_id == Program.Nori.UsuarioAutenticado.id || ((int?)x.rol == (int?)Program.Nori.UsuarioAutenticado.rol && x.formulario == ((Control)(object)this).Name)))
+            if (!ParametrizacionFormulario.Parametrizaciones().Any((ParametrizacionFormulario x) => x.usuario_id == Program.dtm.UsuarioAutenticado.id || ((int?)x.rol == (int?)Program.dtm.UsuarioAutenticado.rol && x.formulario == ((Control)(object)this).Name)))
             {
                 return;
             }
@@ -498,7 +498,7 @@ namespace DTM
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
         }
 
@@ -651,7 +651,7 @@ namespace DTM
             ((RepositoryItemLookUpEditBase)cbMonedas.Properties).DataSource = Utilidades.Busqueda("monedas", objeto, parametros);
             ((RepositoryItemLookUpEditBase)cbMonedas.Properties).ValueMember = "id";
             ((RepositoryItemLookUpEditBase)cbMonedas.Properties).DisplayMember = "nombre";
-            ((BaseEdit)cbMonedas).EditValue = Program.Nori.Configuracion.moneda_id;
+            ((BaseEdit)cbMonedas).EditValue = Program.dtm.Configuracion.moneda_id;
             ((RepositoryItemLookUpEditBase)cbVendedores.Properties).DataSource = (from x in Vendedor.Vendedores()
                                                                                   where x.activo == true
                                                                                   select new { x.id, x.nombre }).ToList();
@@ -681,7 +681,7 @@ namespace DTM
             ((RepositoryItemLookUpEditBase)cbListaPrecios.Properties).DataSource = Utilidades.Busqueda("listas_precios", objeto, parametros);
             ((RepositoryItemLookUpEditBase)cbListaPrecios.Properties).ValueMember = "id";
             ((RepositoryItemLookUpEditBase)cbListaPrecios.Properties).DisplayMember = "nombre";
-            ((BaseEdit)cbListaPrecios).EditValue = Program.Nori.Configuracion.lista_precio_id;
+            ((BaseEdit)cbListaPrecios).EditValue = Program.dtm.Configuracion.lista_precio_id;
             parametros = new
             {
                 fields = "id, tipo, codigo, nombre"
@@ -927,23 +927,23 @@ namespace DTM
                     if (socio.id != 0)
                     {
                         bool flag = socio.Actualizar();
-                        if (flag && Program.Nori.Configuracion.netsuite && socio.identificador_externo == 0)
+                        if (flag && Program.dtm.Configuracion.netsuite && socio.identificador_externo == 0)
                         {
                             CustomerHelper customerHelper = new CustomerHelper();
-                            customerHelper.CreateCustomer(socio);
+                            //customerHelper.CreateCustomer(socio);
                         }
-                        else if (flag && Program.Nori.Configuracion.netsuite && socio.identificador_externo != 0)
+                        else if (flag && Program.dtm.Configuracion.netsuite && socio.identificador_externo != 0)
                         {
                             CustomerHelper customerHelper2 = new CustomerHelper();
-                            customerHelper2.UpdateCustomer(socio);
+                            //customerHelper2.UpdateCustomer(socio);
                         }
                         return flag;
                     }
                     bool flag2 = socio.Agregar();
-                    if (flag2 && Program.Nori.Configuracion.netsuite)
+                    if (flag2 && Program.dtm.Configuracion.netsuite)
                     {
                         CustomerHelper customerHelper3 = new CustomerHelper();
-                        customerHelper3.CreateCustomer(socio);
+                        //customerHelper3.CreateCustomer(socio);
                     }
                     return flag2;
                 }
@@ -951,7 +951,7 @@ namespace DTM
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 return false;
             }
         }
@@ -1040,7 +1040,7 @@ namespace DTM
             openFileDialog.Filter = "Archivos de imagen(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string text = Program.Nori.Configuracion.directorio_imagenes + "\\" + openFileDialog.SafeFileName;
+                string text = Program.dtm.Configuracion.directorio_imagenes + "\\" + openFileDialog.SafeFileName;
                 File.Copy(openFileDialog.FileName, text, overwrite: true);
                 pbImagen.Image = new Bitmap(text);
                 socio.imagen = openFileDialog.FileName;
@@ -1164,7 +1164,7 @@ namespace DTM
                 personaContacto.correo = dataRow["correo"].ToString();
                 personaContacto.observaciones = dataRow["observaciones"].ToString();
                 personaContacto.activo = dataRow["activo"].IsNullOrEmpty() || (bool)dataRow["activo"];
-                if (Program.Nori.Estacion.lector_huella)
+                if (Program.dtm.Estacion.lector_huella)
                 {
                     string text = (personaContacto.huella_digital.IsNullOrEmpty() ? "¿Desea agregar una huella digital?" : "¿Desea actualizar la huella digital existente?");
                     if (MessageBox.Show(text, ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -1181,12 +1181,12 @@ namespace DTM
                 {
                     if (!personaContacto.Actualizar())
                     {
-                        MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                        MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                     }
                 }
                 else if (!personaContacto.Agregar())
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                    MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                 }
             }
             catch (Exception ex)
@@ -1316,7 +1316,7 @@ namespace DTM
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
             CargarDirecciones();
         }

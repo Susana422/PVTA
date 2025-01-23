@@ -52,8 +52,8 @@ namespace DTM
             btnAutorizar.Focus();
             autorizacion = _;
             concepto_autorizacion = Autorizacion.ConceptoAutorizacion.Obtener(autorizacion.codigo);
-            autorizacion.usuario_autorizacion_id = Program.Nori.UsuarioAutenticado.id;
-            autorizacion.estacion_autorizacion_id = Program.Nori.Estacion.id;
+            autorizacion.usuario_autorizacion_id = Program.dtm.UsuarioAutenticado.id;
+            autorizacion.estacion_autorizacion_id = Program.dtm.Estacion.id;
             Usuario usuario = Usuario.Obtener(autorizacion.usuario_creacion_id);
             Estacion estacion = Estacion.Obtener(autorizacion.estacion_id);
             ((Control)(object)this).Text += $" - {usuario.nombre} | {estacion.nombre}";
@@ -72,8 +72,8 @@ namespace DTM
                 return;
             }
             autorizacion.autorizado = Funciones.Autenticar();
-            autorizacion.usuario_autorizacion_id = Program.Nori.UsuarioAutenticado.id;
-            autorizacion.estacion_autorizacion_id = Program.Nori.Estacion.id;
+            autorizacion.usuario_autorizacion_id = Program.dtm.UsuarioAutenticado.id;
+            autorizacion.estacion_autorizacion_id = Program.dtm.Estacion.id;
             autorizacion.Actualizar();
             ((Form)this).Close();
         }
@@ -114,7 +114,7 @@ namespace DTM
                 string text = (from x in Autorizacion.Autorizaciones()
                                where x.id == autorizacion.id
                                select x.captura).FirstOrDefault();
-                string arguments = Program.Nori.Configuracion.directorio_imagenes + "\\autorizaciones\\" + text;
+                string arguments = Program.dtm.Configuracion.directorio_imagenes + "\\autorizaciones\\" + text;
                 Process.Start("explorer.exe", arguments);
             }
             catch

@@ -10,7 +10,7 @@ namespace DTM.API
     {
         private HttpClient client = new HttpClient();
 
-        private string path = Program.Nori.Configuracion.api_url + "socios";
+        private string path = Program.dtm.Configuracion.api_url + "socios";
 
         public async Task<List<Socio>> Obtener()
         {

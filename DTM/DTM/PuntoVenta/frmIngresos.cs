@@ -58,7 +58,7 @@ namespace DTM.PuntoVenta
                 {
                     text = "Depósito";
                 }
-                autorizacion.referencia = $"{text} de caja al usuario {Program.Nori.UsuarioAutenticado.usuario} en la estación {Program.Nori.Estacion.nombre} por la cantidad de {((Control)(object)txtCantidad).Text}";
+                autorizacion.referencia = $"{text} de caja al usuario {Program.dtm.UsuarioAutenticado.usuario} en la estación {Program.dtm.Estacion.nombre} por la cantidad de {((Control)(object)txtCantidad).Text}";
                 autorizacion.comentario = Interaction.InputBox("Comentario ingreso (Opcional)");
                 autorizacion.Agregar();
                 if (!autorizacion.autorizado)

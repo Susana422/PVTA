@@ -99,12 +99,12 @@ namespace DTM.Kiosco
                 ((RepositoryItemLookUpEditBase)lueUsoPrincipal.Properties).DataSource = Documento.UsoCFDI.UsosCFDI();
                 ((RepositoryItemLookUpEditBase)lueUsoPrincipal.Properties).ValueMember = "uso";
                 ((RepositoryItemLookUpEditBase)lueUsoPrincipal.Properties).ValueMember = "nombre";
-                ((Control)(object)txtCiudad).Text = Program.Nori.Empresa.ciudad;
-                ((Control)(object)txtMunicipio).Text = Program.Nori.Empresa.municipio;
+                ((Control)(object)txtCiudad).Text = Program.dtm.Empresa.ciudad;
+                ((Control)(object)txtMunicipio).Text = Program.dtm.Empresa.municipio;
                 try
                 {
                     var anon = (from x in Estado.Estados()
-                                where x.id == Program.Nori.UsuarioAutenticado.estado_id
+                                where x.id == Program.dtm.UsuarioAutenticado.estado_id
                                 select new { x.id, x.pais_id }).First();
                     ((BaseEdit)luePais).EditValue = anon.pais_id;
                     ((BaseEdit)lueEstado).EditValue = anon.id;
@@ -163,8 +163,8 @@ namespace DTM.Kiosco
             {
                 ((Control)(object)txtRFC).Text = string.Empty;
                 ((Control)(object)txtNombre).Text = string.Empty;
-                ((Control)(object)txtCiudad).Text = Program.Nori.Empresa.ciudad;
-                ((Control)(object)txtMunicipio).Text = Program.Nori.Empresa.municipio;
+                ((Control)(object)txtCiudad).Text = Program.dtm.Empresa.ciudad;
+                ((Control)(object)txtMunicipio).Text = Program.dtm.Empresa.municipio;
                 ((Control)(object)txtColonia).Text = string.Empty;
                 ((Control)(object)txtCalle).Text = string.Empty;
                 ((Control)(object)txtNumero).Text = string.Empty;
@@ -269,7 +269,7 @@ namespace DTM.Kiosco
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 return false;
             }
         }
@@ -302,7 +302,7 @@ namespace DTM.Kiosco
                 }
                 else
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                    MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 }
             }
             else

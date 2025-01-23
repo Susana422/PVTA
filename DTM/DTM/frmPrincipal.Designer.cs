@@ -814,7 +814,7 @@ namespace DTM
             this.bbiSincronizacion.Id = 12;
             this.bbiSincronizacion.ImageOptions.ImageUri.Uri = "Refresh";
             this.bbiSincronizacion.Name = "bbiSincronizacion";
-            this.bbiSincronizacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSincronizacion_ItemClick);
+           // this.bbiSincronizacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSincronizacion_ItemClick);
             // 
             // bbiEntradasAbiertas
             // 

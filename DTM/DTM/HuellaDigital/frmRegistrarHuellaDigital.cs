@@ -122,7 +122,7 @@ namespace DTM
                 Data.Templates[Finger - 1] = Template;
                 ExchangeData(true);
                 string templateBytes = SerializeTemplate(Template);
-                huellaDigital = new NoriSDK.HuellaDigital();
+                huellaDigital = new SDK.HuellaDigital();
                 huellaDigital.usuario_id = usuario.id;
                 huellaDigital.huella = templateBytes;
                 huellaDigital.EnrolledFingersMask = Finger - 1;
@@ -140,7 +140,7 @@ namespace DTM
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
             }
         }
         public void Eliminar(string id)
@@ -151,7 +151,7 @@ namespace DTM
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
             }
         }
 

@@ -359,7 +359,7 @@ namespace DTM
             this.MetodoDinamico();
             try
             {
-                Settings.Settings.Default.RootDirectory = Program.Nori.Configuracion.directorio_informes;
+                Settings.Settings.Default.RootDirectory = Program.dtm.Configuracion.directorio_informes;
             }
             catch
             {

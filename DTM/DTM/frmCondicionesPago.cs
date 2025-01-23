@@ -125,7 +125,7 @@ namespace DTM
 
         private void Permisos()
         {
-            switch (Program.Nori.UsuarioAutenticado.rol)
+            switch (Program.dtm.UsuarioAutenticado.rol)
             {
                 case 'C':
                     mainRibbonPageGroup.Visible = false;
@@ -194,7 +194,7 @@ namespace DTM
             ((RepositoryItemLookUpEditBase)cbListaPrecios.Properties).DataSource = Utilidades.Busqueda("listas_precios", objeto, parametros);
             ((RepositoryItemLookUpEditBase)cbListaPrecios.Properties).ValueMember = "id";
             ((RepositoryItemLookUpEditBase)cbListaPrecios.Properties).DisplayMember = "nombre";
-            ((BaseEdit)cbListaPrecios).EditValue = Program.Nori.Configuracion.lista_precio_id;
+            ((BaseEdit)cbListaPrecios).EditValue = Program.dtm.Configuracion.lista_precio_id;
         }
 
         private void Llenar()
@@ -232,7 +232,7 @@ namespace DTM
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 return false;
             }
         }
@@ -245,7 +245,7 @@ namespace DTM
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
         }
 

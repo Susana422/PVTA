@@ -178,7 +178,7 @@ namespace DTM
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
         }
 
@@ -197,7 +197,7 @@ namespace DTM
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
         }
 
@@ -213,9 +213,9 @@ namespace DTM
                     {
                         x.cantidad = 0m;
                     });
-                    if (Program.Nori.UsuarioAutenticado.almacen_id != 0 && MessageBox.Show("¿Cargar solo partidas del almacén predeterminado para este usuario?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (Program.dtm.UsuarioAutenticado.almacen_id != 0 && MessageBox.Show("¿Cargar solo partidas del almacén predeterminado para este usuario?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        documento.partidas.RemoveAll((Documento.Partida x) => x.almacen_id != Program.Nori.UsuarioAutenticado.almacen_id);
+                        documento.partidas.RemoveAll((Documento.Partida x) => x.almacen_id != Program.dtm.UsuarioAutenticado.almacen_id);
                     }
                     Cargar();
                 }
@@ -333,7 +333,7 @@ namespace DTM
             }
             catch (Exception ex)
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM") + " | Error: " + ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM") + " | Error: " + ex.Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 return false;
             }
         }
@@ -504,7 +504,7 @@ namespace DTM
                     Calcular();
                     break;
                 }
-                while (MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
+                while (MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
             }
             catch (Exception ex2)
             {
@@ -526,7 +526,7 @@ namespace DTM
                     return;
                 }
                 string text = ((Control)(object)txtArticulo).Text;
-                string query = "SELECT articulos.id, sku as sku_articulo, articulos.nombre, (SELECT TOP 1 inventario.stock FROM inventario WHERE inventario.articulo_id = articulo_id AND inventario.almacen_id = " + Program.Nori.UsuarioAutenticado.almacen_id + ") AS stock, (SELECT dbo.[PrecioNetoArticulo](articulo_id, " + documento.socio_id + ", " + documento.lista_precio_id + ")) AS precio, monedas.codigo as moneda FROM articulos JOIN precios ON precios.articulo_id = articulos.id JOIN monedas ON monedas.id = precios.moneda_id AND precios.lista_precio_id = " + Program.Nori.Configuracion.lista_precio_id + " WHERE (sku = '" + text + "' OR articulos.nombre LIKE '%" + text.Replace(" ", "%") + "%' OR codigo_barras LIKE '%" + text + "%') AND venta = 1 AND articulos.activo = 1";
+                string query = "SELECT articulos.id, sku as sku_articulo, articulos.nombre, (SELECT TOP 1 inventario.stock FROM inventario WHERE inventario.articulo_id = articulo_id AND inventario.almacen_id = " + Program.dtm.UsuarioAutenticado.almacen_id + ") AS stock, (SELECT dbo.[PrecioNetoArticulo](articulo_id, " + documento.socio_id + ", " + documento.lista_precio_id + ")) AS precio, monedas.codigo as moneda FROM articulos JOIN precios ON precios.articulo_id = articulos.id JOIN monedas ON monedas.id = precios.moneda_id AND precios.lista_precio_id = " + Program.dtm.Configuracion.lista_precio_id + " WHERE (sku = '" + text + "' OR articulos.nombre LIKE '%" + text.Replace(" ", "%") + "%' OR codigo_barras LIKE '%" + text + "%') AND venta = 1 AND articulos.activo = 1";
                 DataTable articulos = Utilidades.EjecutarQuery(query);
                 if (articulos.Rows.Count > 0)
                 {
@@ -596,7 +596,7 @@ namespace DTM
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
         }
 

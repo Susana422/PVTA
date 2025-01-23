@@ -31,7 +31,7 @@ namespace DTM
         {
             ConfigurationManager.RefreshSection("connectionStrings");
             conexiones = ConfigurationManager.ConnectionStrings;
-            Program.Nori.Conexion = new SqlConnectionStringBuilder(conexiones[0].ConnectionString);
+            Program.dtm.Conexion = new SqlConnectionStringBuilder(conexiones[0].ConnectionString);
 
         }
 
@@ -87,7 +87,7 @@ namespace DTM
                 Usuario usuario = new Usuario();
                 usuario = Usuario.Obtener(id);
                 usuario.huella_digital = "1";
-                acceder(Program.Nori.Autenticar(usuario));
+                acceder(Program.dtm.Autenticar(usuario));
             }
             catch (Exception ex)
             {
@@ -111,22 +111,22 @@ namespace DTM
             {
                 try
                 {
-                    if (Program.Nori.Configuracion.tema.Length > 0)
+                    if (Program.dtm.Configuracion.tema.Length > 0)
                     {
-                        //defaultLookAndFeel1.LookAndFeel.SkinMaskColor = Color.FromArgb(Convert.ToInt32(Program.Nori.Configuracion.tema));
+                        //defaultLookAndFeel1.LookAndFeel.SkinMaskColor = Color.FromArgb(Convert.ToInt32(Program.dtm.Configuracion.tema));
                     }
                 }
                 catch
                 {
                 }
-                if (Program.Nori.UsuarioAutenticado.rol == 'X')
+                if (Program.dtm.UsuarioAutenticado.rol == 'X')
                 {
                     frmSincronizacion frmSincronizacion2 = new frmSincronizacion();
                     ((Control)(object)frmSincronizacion2).Show();
                 }
                 else
                 {
-                    if (Program.dtm.Configuracion.seleccionar_sucursal || Program.Nori.UsuarioAutenticado.seleccionar_sucursal)
+                    if (Program.dtm.Configuracion.seleccionar_sucursal || Program.dtm.UsuarioAutenticado.seleccionar_sucursal)
                     {
                         //frmSeleccionarSucursal frmSeleccionarSucural2 = new frmSeleccionarSucursal();
                         //((Form)(object)frmSeleccionarSucural2).ShowDialog();
@@ -143,7 +143,7 @@ namespace DTM
             {
                 //((Control)(object)txtContraseña).Text = string.Empty;
                 //((Control)(object)txtContraseña).Focus();
-                MessageBox.Show(SDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM").ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM").ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
         }
     }

@@ -10,7 +10,7 @@ using DevExpress.XtraSplashScreen;
 using DevExpress.XtraWaitForm;
 using NetsuiteLibrary.SuiteTalk_Helpers;
 using DTM.Reportes;
-using CFDI;
+using NCFDI;
 using SAPB1SDK;
 using SDK;
 using System;
@@ -95,22 +95,22 @@ namespace DTM
             //IL_0630: Expected O, but got Unknown
             InitializeComponent();
             this.MetodoDinamico();
-            barEditItemAutorizaciones.EditValue = Program.Nori.UsuarioAutenticado.suscribir_autorizaciones;
-           // ((AccordionControlElementBase)accordionControlElementUsuario).Text = Program.Nori.UsuarioAutenticado.nombre;
-            ((BarItem)barHeaderItemEstacion).Caption = Program.Nori.Estacion.nombre + " | Conectado a: " + Program.Nori.Conexion.DataSource;
-            ((Control)(object)this).Text = "DTM SOLUTIONS POS";//Program.Nori.Empresa.nombre_fiscal;
-            ((Control)(object)lblEmpresa).Text = Program.Nori.Empresa.nombre_comercial;
-            if (Program.Nori.Empresa.prueba)
+            barEditItemAutorizaciones.EditValue = Program.dtm.UsuarioAutenticado.suscribir_autorizaciones;
+           // ((AccordionControlElementBase)accordionControlElementUsuario).Text = Program.dtm.UsuarioAutenticado.nombre;
+            ((BarItem)barHeaderItemEstacion).Caption = Program.dtm.Estacion.nombre + " | Conectado a: " + Program.dtm.Conexion.DataSource;
+            ((Control)(object)this).Text = "DTM SOLUTIONS POS";//Program.dtm.Empresa.nombre_fiscal;
+            ((Control)(object)lblEmpresa).Text = Program.dtm.Empresa.nombre_comercial;
+            if (Program.dtm.Empresa.prueba)
             {
                 ((Control)(object)this).Text += " - MODO DE PRUEBA";
                 ((Control)(object)lblEmpresa).Text += " - MODO DE PRUEBA";
-                Program.Nori.Configuracion.timbrado_modo_prueba = true;
+                Program.dtm.Configuracion.timbrado_modo_prueba = true;
             }
-            if (Program.Nori.UsuarioAutenticado.usuario == "admin")
+            if (Program.dtm.UsuarioAutenticado.usuario == "admin")
             {
                 //((AccordionControlElementBase)accordionControlElementRestaurante).Visible = true;
             }
-            switch (Program.Nori.UsuarioAutenticado.rol)
+            switch (Program.dtm.UsuarioAutenticado.rol)
             {
                 case 'C':
                     //((AccordionControlElementBase)accordionControlElementGestion).Visible = false;
@@ -134,7 +134,7 @@ namespace DTM
                     //ribbonPageGroupHerramientas.Visible = false;
                     ////((AccordionControlElementBase)accordionControlElementCompras).Visible = false;
                     ////((AccordionControlElementBase)accordionControlElementExtras).Visible = false;
-                    //if (Program.Nori.UsuarioAutenticado.VendedorForaneo())
+                    //if (Program.dtm.UsuarioAutenticado.VendedorForaneo())
                     //{
                     //    //((AccordionControlElementBase)accordionControlElementEntregas).Visible = false;
                     //    ((AccordionControlElementBase)accordionControlElementEntregaMercancia).Visible = false;
@@ -167,7 +167,7 @@ namespace DTM
                     //((AccordionControlElementBase)accordionControlElementExtras).Visible = false;
                     break;
             }
-            if (Program.Nori.Empresa.rfc == "DDI061212TX1")
+            if (Program.dtm.Empresa.rfc == "DDI061212TX1")
             {
                 //((AccordionControlElementBase)accordionControlElementCompras).Visible = false;
             }
@@ -181,7 +181,7 @@ namespace DTM
                                               where x.tipo == "US" || x.tipo == "SI"
                                               select x)
                 {
-                    if (!Program.Nori.UsuarioAutenticado.rol.Equals('A') && tipo.tipo == "SI")
+                    if (!Program.dtm.UsuarioAutenticado.rol.Equals('A') && tipo.tipo == "SI")
                     {
                         continue;
                     }
@@ -227,11 +227,11 @@ namespace DTM
             try
             {
                 Program.CFDI = await Task.Run(() => new CFDI());
-                if (Program.Nori.Configuracion.certificado_id == 0)
+                if (Program.dtm.Configuracion.certificado_id == 0)
                 {
                     return;
                 }
-                Certificado certificado = Certificado.Obtener(Program.Nori.Configuracion.certificado_id);
+                Certificado certificado = Certificado.Obtener(Program.dtm.Configuracion.certificado_id);
                 if (certificado.id != 0)
                 {
                     if (File.Exists(certificado.cer) && File.Exists(certificado.key))
@@ -251,8 +251,8 @@ namespace DTM
                         MessageBox.Show("No se pudieron cargar los archivos del certificado.");
                     }
                 }
-                Program.CFDI.usuario = Program.Nori.Configuracion.timbrado_usuario;
-                Program.CFDI.contraseña = Program.Nori.Configuracion.timbrado_contraseña;
+                Program.CFDI.usuario = Program.dtm.Configuracion.timbrado_usuario;
+                Program.CFDI.contraseña = Program.dtm.Configuracion.timbrado_contraseña;
             }
             catch (Exception ex2)
             {
@@ -268,21 +268,21 @@ namespace DTM
                // Control ctrl = (Control)(object)this;
                // this.Controls.Add(pictureBox1);
                 pictureBox1.BringToFront();
-                //ctrl.SetImage(await Funciones.CargarImagen(Program.Nori.Empresa.logotipo));
-                if (Program.Nori.Configuracion.sap)
+                //ctrl.SetImage(await Funciones.CargarImagen(Program.dtm.Empresa.logotipo));
+                if (Program.dtm.Configuracion.sap)
                 {
-                    Program.NoriSAP = new NoriSAPSQL(Configuracion.SAP.Obtener());
+                    Program.SAP = new NSAPSQL(Configuracion.SAP.Obtener());
                 }
                 CargarModuloFacturacion();
-                if (Program.Nori.Estacion.bascula && Program.Nori.Estacion.bascula_id != 0 && Program.Nori.Estacion.ObtenerBascula() && !Program.Nori.Estacion.Bascula.Inicializar())
+                if (Program.dtm.Estacion.bascula && Program.dtm.Estacion.bascula_id != 0 && Program.dtm.Estacion.ObtenerBascula() && !Program.dtm.Estacion.Bascula.Inicializar())
                 {
-                    Program.Nori.Estacion.Bascula = null;
-                    MessageBox.Show("Error al inicializar la báscula: " + NoriSDK.Nori.ObtenerUltimoError());
+                    Program.dtm.Estacion.Bascula = null;
+                    MessageBox.Show("Error al inicializar la báscula: " + SDK.DTM.ObtenerUltimoError());
                 }
                 Funciones.NoriDynamic();
-                if (Program.Nori.UsuarioAutenticado.escritorio.Length > 0)
+                if (Program.dtm.UsuarioAutenticado.escritorio.Length > 0)
                 {
-                    frmEscritorio escritorio = new frmEscritorio(Program.Nori.UsuarioAutenticado.escritorio);
+                    frmEscritorio escritorio = new frmEscritorio(Program.dtm.UsuarioAutenticado.escritorio);
                     AbrirFormulario((Form)(object)escritorio, dialog: false);
                 }
             }
@@ -330,7 +330,7 @@ namespace DTM
 
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Program.Nori.UsuarioAutenticado.Desconectar();
+            Program.dtm.UsuarioAutenticado.Desconectar();
         }
 
         private void accordionControlElementMonedas_Click(object sender, EventArgs e)
@@ -408,7 +408,7 @@ namespace DTM
         private void accordionControlElementPuntoVenta_Click(object sender, EventArgs e)
         {
             PuntoVenta.frmPuntoVenta frmPuntoVenta = new PuntoVenta.frmPuntoVenta();
-            if (Program.Nori.UsuarioAutenticado.rol == 'A')
+            if (Program.dtm.UsuarioAutenticado.rol == 'A')
             {
                 ((Form)(object)frmPuntoVenta).MaximizeBox = true;
                 ((Form)(object)frmPuntoVenta).MinimizeBox = true;
@@ -477,7 +477,7 @@ namespace DTM
 
         private void AbrirFormulario(Form form, bool dialog = true)
         {
-            bool flag = Program.Nori.Configuracion.formulario_panel;
+            bool flag = Program.dtm.Configuracion.formulario_panel;
             if (form.Name.Equals("frmEscritorio"))
             {
                 flag = true;
@@ -530,19 +530,19 @@ namespace DTM
 
         private void bbiSincronizacion_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (Program.Nori.UsuarioAutenticado.rol == 'A' && Program.Nori.Configuracion.sap)
+            if (Program.dtm.UsuarioAutenticado.rol == 'A' && Program.dtm.Configuracion.sap)
             {
                 timerAutorizaciones.Enabled = false;
                 frmSincronizacion frmSincronizacion2 = new frmSincronizacion();
                 ((Control)(object)frmSincronizacion2).Show();
             }
-            else if (Program.Nori.UsuarioAutenticado.rol == 'A' && Program.Nori.Configuracion.netsuite)
+            else if (Program.dtm.UsuarioAutenticado.rol == 'A' && Program.dtm.Configuracion.netsuite)
             {
                 SplashScreenManager.ShowForm(Form.ActiveForm, typeof(DemoWaitForm), true, true, false);
                 SplashScreenManager.Default.SetWaitFormCaption("Por favor espere");
                 SplashScreenManager.Default.SetWaitFormDescription("Sincronizando...");
                 NetsuiteLibrary.Sincronizacion sincronizacion = new NetsuiteLibrary.Sincronizacion();
-                sincronizacion.configuracion = Program.Nori.Configuracion;
+                //sincronizacion.configuracion = Program.dtm.Configuracion;
                 SplashScreenManager.Default.SetWaitFormDescription("Sincronizando documentos ↑...");
                 List<int> list = (from x in Documento.Documentos()
                                   where x.identificador_externo == 0 && x.cancelado == false && (x.clase == "PE" || x.clase == "FA")
@@ -556,16 +556,16 @@ namespace DTM
                         if (documento.clase.Equals("PE"))
                         {
                             SalesOrderHelper salesOrderHelper = new SalesOrderHelper();
-                            salesOrderHelper.CreateSalesOrder(documento);
+                            //.CreateSalesOrder(documento);
                         }
                         else if (documento.clase.Equals("FA"))
                         {
                             InvoiceHelper invoiceHelper = new InvoiceHelper();
-                            if (invoiceHelper.CreateInvoice(documento) && documento.importe_aplicado >= documento.total)
-                            {
-                                MetodoPago.Tipo tipo = MetodoPago.Tipo.Obtener(documento.flujo.First().tipo_metodo_pago_id);
-                                invoiceHelper.TransformToCustomerPayment(documento.identificador_externo.ToString(), tipo.cuenta_contable);
-                            }
+                            //if (invoiceHelper.CreateInvoice(documento) && documento.importe_aplicado >= documento.total)
+                            //{
+                            //    MetodoPago.Tipo tipo = MetodoPago.Tipo.Obtener(documento.flujo.First().tipo_metodo_pago_id);
+                            //    invoiceHelper.TransformToCustomerPayment(documento.identificador_externo.ToString(), tipo.cuenta_contable);
+                            //}
                         }
                     }
                     catch
@@ -668,7 +668,7 @@ namespace DTM
 
         private void bbiEntradasAbiertas_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (Program.Nori.UsuarioAutenticado.rol.Equals('A'))
+            if (Program.dtm.UsuarioAutenticado.rol.Equals('A'))
             {
                 Funciones.FacturarEntregas();
             }
@@ -729,7 +729,7 @@ namespace DTM
 
         private void bbiTransmitirRecibir_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (Program.Nori.UsuarioAutenticado.VendedorForaneo())
+            if (Program.dtm.UsuarioAutenticado.VendedorForaneo())
             {
                 ((BarItem)bbiTransmitirRecibir).Enabled = false;
                 Funciones.TransmitirRecibir();
@@ -795,7 +795,7 @@ namespace DTM
             {
                 if (Funciones.ConectarSucursal(bbiSucursales.Strings[e.Index]))
                 {
-                    ((BarItem)barHeaderItemEstacion).Caption = Program.Nori.Estacion.nombre + " | Conectado a: " + Program.Nori.Conexion.DataSource + " (" + bbiSucursales.Strings[e.Index] + ")";
+                    ((BarItem)barHeaderItemEstacion).Caption = Program.dtm.Estacion.nombre + " | Conectado a: " + Program.dtm.Conexion.DataSource + " (" + bbiSucursales.Strings[e.Index] + ")";
                 }
             }
             catch (Exception ex)

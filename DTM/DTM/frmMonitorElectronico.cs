@@ -65,7 +65,7 @@ namespace DTM
             {
                 Random random = new Random();
                 string numeroAleatorio = "Monitor_" +random.Next(1, 10000);
-                string text = $"{Program.Nori.Configuracion.directorio_documentos}\\{numeroAleatorio}.xlsx";
+                string text = $"{Program.dtm.Configuracion.directorio_documentos}\\{numeroAleatorio}.xlsx";
                 gvMonitor.ExportToXlsx(text);
                 Funciones.AbrirArchivo(text);
             }

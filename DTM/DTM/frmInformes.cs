@@ -144,7 +144,7 @@ namespace DTM
 
         private void Permisos()
         {
-            switch (Program.Nori.UsuarioAutenticado.rol)
+            switch (Program.dtm.UsuarioAutenticado.rol)
             {
                 case 'C':
                     mainRibbonPageGroup.Visible = false;
@@ -249,7 +249,7 @@ namespace DTM
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 return false;
             }
         }
@@ -262,7 +262,7 @@ namespace DTM
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
         }
 
@@ -420,7 +420,7 @@ namespace DTM
             if (((Control)(object)txtInforme).Text.Length > 0)
             {
                 frmDiseñadorInformes frmDiseñadorInformes2 = new frmDiseñadorInformes();
-                frmDiseñadorInformes2.AbrirInforme(Path.Combine(Program.Nori.Configuracion.directorio_informes, ((Control)(object)txtInforme).Text));
+                frmDiseñadorInformes2.AbrirInforme(Path.Combine(Program.dtm.Configuracion.directorio_informes, ((Control)(object)txtInforme).Text));
                 ((Control)(object)frmDiseñadorInformes2).Show();
             }
         }
@@ -428,7 +428,7 @@ namespace DTM
         private void btnInforme_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Program.Nori.Configuracion.directorio_informes;
+            openFileDialog.InitialDirectory = Program.dtm.Configuracion.directorio_informes;
             openFileDialog.Filter = "Archivos de informe (*.repx) | *.repx";
             openFileDialog.Title = "Por favor seleccione un informe.";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -449,13 +449,13 @@ namespace DTM
                     }
                     else
                     {
-                        MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                        MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                     }
                 }
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
         }
 

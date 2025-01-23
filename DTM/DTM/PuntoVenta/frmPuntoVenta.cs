@@ -193,13 +193,13 @@ namespace DTM.PuntoVenta
             gvPartidas.OptionsSelection.EnableAppearanceFocusedCell = false;
             gvPartidas.OptionsSelection.EnableAppearanceFocusedRow = false;
             gvPartidas.OptionsSelection.EnableAppearanceHideSelection = false;
-            if (Program.Nori.UsuarioAutenticado.rol.Equals('C'))
+            if (Program.dtm.UsuarioAutenticado.rol.Equals('C'))
             {
                 ((BarItem)bbiCortesCaja).Enabled = false;
             }
-            ((BarItem)lblEstacion).Caption = Program.Nori.Estacion.nombre;
-            ((BarItem)lblUsuario).Caption = Program.Nori.UsuarioAutenticado.nombre;
-            pbLogo.LoadImage(Program.Nori.Empresa.logotipo);
+            ((BarItem)lblEstacion).Caption = Program.dtm.Estacion.nombre;
+            ((BarItem)lblUsuario).Caption = Program.dtm.UsuarioAutenticado.nombre;
+            pbLogo.LoadImage(Program.dtm.Empresa.logotipo);
             CargarListas();
             CargarGruposArticulos();
             Inicializar();
@@ -208,7 +208,7 @@ namespace DTM.PuntoVenta
 
         public void Permisos()
         {
-            if (!ParametrizacionFormulario.Parametrizaciones().Any((ParametrizacionFormulario x) => x.usuario_id == Program.Nori.UsuarioAutenticado.id && x.formulario == ((Control)(object)this).Name))
+            if (!ParametrizacionFormulario.Parametrizaciones().Any((ParametrizacionFormulario x) => x.usuario_id == Program.dtm.UsuarioAutenticado.id && x.formulario == ((Control)(object)this).Name))
             {
                 return;
             }
@@ -280,7 +280,7 @@ namespace DTM.PuntoVenta
                 ((RepositoryItemLookUpEditBase)cbVendedores).DataSource = Utilidades.Busqueda("vendedores", objeto, parametros);
                 ((RepositoryItemLookUpEditBase)cbVendedores).ValueMember = "id";
                 ((RepositoryItemLookUpEditBase)cbVendedores).DisplayMember = "nombre";
-                lblVendedor.EditValue = Program.Nori.UsuarioAutenticado.vendedor_id;
+                lblVendedor.EditValue = Program.dtm.UsuarioAutenticado.vendedor_id;
                 ((RepositoryItemLookUpEditBase)cbVendedorAdicional).DataSource = Utilidades.Busqueda("vendedores", objeto, parametros);
                 ((RepositoryItemLookUpEditBase)cbVendedorAdicional).ValueMember = "id";
                 ((RepositoryItemLookUpEditBase)cbVendedorAdicional).DisplayMember = "nombre";
@@ -382,7 +382,7 @@ namespace DTM.PuntoVenta
                     ((Control)(object)txtArticulo).Text = string.Empty;
                     ((ColumnView)gvPartidas).MoveLast();
                     Documento.Partida partida = documento.partidas.Last();
-                    if (Program.Nori.Configuracion.seleccion_manual_lotes && Articulo.Articulos().Any((Articulo x) => x.id == partida.articulo_id && x.seguimiento == 'L'))
+                    if (Program.dtm.Configuracion.seleccion_manual_lotes && Articulo.Articulos().Any((Articulo x) => x.id == partida.articulo_id && x.seguimiento == 'L'))
                     {
                         frmSeleccionLotes f2 = new frmSeleccionLotes(partida);
                         f2.partida = partida;
@@ -603,7 +603,7 @@ namespace DTM.PuntoVenta
         {
             try
             {
-                if (NoriSDK.PuntoVenta.EstadoCaja().Equals('C'))
+                if (SDK.PuntoVenta.EstadoCaja().Equals('C'))
                 {
                     if (MessageBox.Show("¿Deseas realizar una apertura de caja?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
@@ -624,7 +624,7 @@ namespace DTM.PuntoVenta
                     bool @checked = (cbReserva.Checked = (generar_reserva ? true : false));
                     checkBox.Checked = @checked;
                     documento = new Documento();
-                    EstablecerSocio(Socio.Obtener(Program.Nori.UsuarioAutenticado.socio_id));
+                    EstablecerSocio(Socio.Obtener(Program.dtm.UsuarioAutenticado.socio_id));
                     Cargar();
                 }
             }
@@ -642,7 +642,7 @@ namespace DTM.PuntoVenta
                 {
                     if (socio.activo)
                     {
-                        if (socio.lista_precio_id != Program.Nori.Configuracion.lista_precio_id)
+                        if (socio.lista_precio_id != Program.dtm.Configuracion.lista_precio_id)
                         {
                             Autorizacion autorizacion = new Autorizacion();
                             autorizacion.codigo = "CALIP";
@@ -657,12 +657,12 @@ namespace DTM.PuntoVenta
                             }
                             if (!autorizacion.autorizado)
                             {
-                                socio.lista_precio_id = Program.Nori.Configuracion.lista_precio_id;
+                                socio.lista_precio_id = Program.dtm.Configuracion.lista_precio_id;
                             }
                         }
                         if (!documento.EstablecerSocio(socio))
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                            MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                             return;
                         }
                         Calcular();
@@ -715,7 +715,7 @@ namespace DTM.PuntoVenta
         {
             try
             {
-                if (Program.Nori.Estacion.impresion && MessageBox.Show("¿Desas imprimir el documento?", "Imprimir documento", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (Program.dtm.Estacion.impresion && MessageBox.Show("¿Desas imprimir el documento?", "Imprimir documento", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     if (documento.impreso && documento.id != 0)
                     {
@@ -742,9 +742,9 @@ namespace DTM.PuntoVenta
                         documento.Impreso();
                         try
                         {
-                            if (Program.Nori.Configuracion.tipo_metodo_pago_monedero_id != 0)
+                            if (Program.dtm.Configuracion.tipo_metodo_pago_monedero_id != 0)
                             {
-                                foreach (Flujo item in documento.flujo.Where((Flujo x) => x.tipo_metodo_pago_id == Program.Nori.Configuracion.tipo_metodo_pago_monedero_id).ToList())
+                                foreach (Flujo item in documento.flujo.Where((Flujo x) => x.tipo_metodo_pago_id == Program.dtm.Configuracion.tipo_metodo_pago_monedero_id).ToList())
                                 {
                                     if (item.id != 0)
                                     {
@@ -758,10 +758,10 @@ namespace DTM.PuntoVenta
                         }
                     }
                 }
-                if (Program.Nori.Estacion.envio_correo_automatico)
+                if (Program.dtm.Estacion.envio_correo_automatico)
                 {
                     string correo = null;
-                    if (Program.Nori.UsuarioAutenticado.socio_id == documento.socio_id)
+                    if (Program.dtm.UsuarioAutenticado.socio_id == documento.socio_id)
                     {
                         correo = Interaction.InputBox("Ingresa el correo(s) electrónico del cliente separados por ;", "Correo electrónico");
                     }
@@ -863,7 +863,7 @@ namespace DTM.PuntoVenta
                         }
                         else
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                            MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                         }
                         return;
                     }
@@ -901,7 +901,7 @@ namespace DTM.PuntoVenta
                         }
                         else
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                            MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                         }
                         return;
                     }
@@ -921,7 +921,7 @@ namespace DTM.PuntoVenta
                         }
                         else
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                            MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                         }
                     }
                     Inicializar();
@@ -941,36 +941,36 @@ namespace DTM.PuntoVenta
         {
             try
             {
-                if (Program.Nori.Configuracion.netsuite && documento.identificador_externo == 0)
+                if (Program.dtm.Configuracion.netsuite && documento.identificador_externo == 0)
                 {
                     if (documento.clase.Equals("PE"))
                     {
                         SalesOrderHelper salesOrderHelper = new SalesOrderHelper();
-                        if (!salesOrderHelper.CreateSalesOrder(documento))
-                        {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                        }
+                        //if (!salesOrderHelper.CreateSalesOrder(documento))
+                        //{
+                        //    MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        //}
                     }
                     else if (documento.clase.Equals("EN"))
                     {
                         CashSaleHelper cashSaleHelper = new CashSaleHelper();
-                        cashSaleHelper.CreateCashSale(documento);
+                        //cashSaleHelper.CreateCashSale(documento);
                     }
                     else if (documento.clase.Equals("FA"))
                     {
                         InvoiceHelper invoiceHelper = new InvoiceHelper();
-                        if (invoiceHelper.CreateInvoice(documento))
-                        {
-                            if (documento.importe_aplicado >= documento.total)
-                            {
-                                MetodoPago.Tipo tipo = MetodoPago.Tipo.Obtener(documento.flujo.First().tipo_metodo_pago_id);
-                                invoiceHelper.TransformToCustomerPayment(documento.identificador_externo.ToString(), tipo.cuenta_contable);
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                        }
+                        //if (invoiceHelper.CreateInvoice(documento))
+                        //{
+                        //    if (documento.importe_aplicado >= documento.total)
+                        //    {
+                        //        MetodoPago.Tipo tipo = MetodoPago.Tipo.Obtener(documento.flujo.First().tipo_metodo_pago_id);
+                        //        invoiceHelper.TransformToCustomerPayment(documento.identificador_externo.ToString(), tipo.cuenta_contable);
+                        //    }
+                        //}
+                        //else
+                        //{
+                        //    MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        //}
                     }
                     else if (documento.clase.Equals("NC"))
                     {
@@ -985,7 +985,7 @@ namespace DTM.PuntoVenta
                         else
                         {
                             CreditMemoHelper creditMemoHelper = new CreditMemoHelper();
-                            creditMemoHelper.CreateCreditMemo(documento);
+                            //creditMemoHelper.CreateCreditMemo(documento);
                         }
                     }
                 }
@@ -1002,11 +1002,11 @@ namespace DTM.PuntoVenta
         {
             try
             {
-                if ((documento.clase.Equals("EN") || documento.clase.Equals("FA") || documento.clase.Equals("TS") || (documento.clase.Equals("PE") && Program.Nori.Empresa.rfc.Equals("CVR981030480"))) && documento.id == 0 && !Program.Nori.Configuracion.venta_articulo_stock_cero)
+                if ((documento.clase.Equals("EN") || documento.clase.Equals("FA") || documento.clase.Equals("TS") || (documento.clase.Equals("PE") && Program.dtm.Empresa.rfc.Equals("CVR981030480"))) && documento.id == 0 && !Program.dtm.Configuracion.venta_articulo_stock_cero)
                 {
                     Funciones.Cargando("Verificando existencias", "Por favor espere...");
                     bool flag = false;
-                    if (Program.Nori.Configuracion.inventario_sap)
+                    if (Program.dtm.Configuracion.inventario_sap)
                     {
                         foreach (Documento.Partida partida in documento.partidas)
                         {
@@ -1443,7 +1443,7 @@ namespace DTM.PuntoVenta
                 {
                     frmArqueo frmArqueo2 = new frmArqueo();
                     ((Form)(object)frmArqueo2).ShowDialog();
-                    if (NoriSDK.PuntoVenta.EstadoCaja().Equals('C'))
+                    if (SDK.PuntoVenta.EstadoCaja().Equals('C'))
                     {
                         ((Form)this).FormClosing -= frmPuntoVenta_FormClosing;
                         ((Form)this).Close();
@@ -1529,9 +1529,9 @@ namespace DTM.PuntoVenta
             {
                 if (e.Column.FieldName == "total")
                 {
-                    if (Program.Nori.UsuarioAutenticado.lista_precio_minimo_id != 0)
+                    if (Program.dtm.UsuarioAutenticado.lista_precio_minimo_id != 0)
                     {
-                        Articulo.Precio precio = Articulo.Precio.Obtener(documento.partidas[e.RowHandle].articulo_id, Program.Nori.UsuarioAutenticado.lista_precio_minimo_id, documento.partidas[e.RowHandle].unidad_medida_id);
+                        Articulo.Precio precio = Articulo.Precio.Obtener(documento.partidas[e.RowHandle].articulo_id, Program.dtm.UsuarioAutenticado.lista_precio_minimo_id, documento.partidas[e.RowHandle].unidad_medida_id);
                         decimal num = (decimal)((BaseView)gvPartidas).ActiveEditor.EditValue;
                         decimal num2 = num / documento.partidas[e.RowHandle].cantidad - documento.partidas[e.RowHandle].impuesto;
                         if (num2 < precio.precio)
@@ -1560,9 +1560,9 @@ namespace DTM.PuntoVenta
                 }
                 else if (e.Column.Name == "gridColumnPrecio")
                 {
-                    if (Program.Nori.UsuarioAutenticado.lista_precio_minimo_id != 0)
+                    if (Program.dtm.UsuarioAutenticado.lista_precio_minimo_id != 0)
                     {
-                        Articulo.Precio precio2 = Articulo.Precio.Obtener(documento.partidas[e.RowHandle].articulo_id, Program.Nori.UsuarioAutenticado.lista_precio_minimo_id, documento.partidas[e.RowHandle].unidad_medida_id);
+                        Articulo.Precio precio2 = Articulo.Precio.Obtener(documento.partidas[e.RowHandle].articulo_id, Program.dtm.UsuarioAutenticado.lista_precio_minimo_id, documento.partidas[e.RowHandle].unidad_medida_id);
                         decimal num3 = (decimal)((BaseView)gvPartidas).ActiveEditor.EditValue;
                         if (num3 < precio2.precio)
                         {
@@ -1819,7 +1819,7 @@ namespace DTM.PuntoVenta
         {
             frmArqueo frmArqueo2 = new frmArqueo();
             ((Form)(object)frmArqueo2).ShowDialog();
-            if (NoriSDK.PuntoVenta.EstadoCaja().Equals('C'))
+            if (SDK.PuntoVenta.EstadoCaja().Equals('C'))
             {
                 ((Form)this).FormClosing -= frmPuntoVenta_FormClosing;
                 ((Form)this).Close();
@@ -1994,7 +1994,7 @@ namespace DTM.PuntoVenta
                 {
                     documento.moneda_id = (int)((BaseEdit)cbMoneda).EditValue;
                     ((BaseEdit)txtTipoCambio).EditValue = TipoCambio.Venta(documento.moneda_id);
-                    ((Control)(object)txtTipoCambio).Visible = ((Program.Nori.Configuracion.moneda_id != documento.moneda_id) ? true : false);
+                    ((Control)(object)txtTipoCambio).Visible = ((Program.dtm.Configuracion.moneda_id != documento.moneda_id) ? true : false);
                 }
             }
             catch

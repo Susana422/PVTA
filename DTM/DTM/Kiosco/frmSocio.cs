@@ -69,7 +69,7 @@ namespace DTM.Kiosco
             {
                 if (!documento.EstablecerSocio(socio))
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                    MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                     return;
                 }
                 socio.CopyProperties(socio_busqueda);

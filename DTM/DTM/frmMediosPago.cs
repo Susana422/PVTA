@@ -136,7 +136,7 @@ namespace DTM
         private void CargarListas()
         {
             List<int> usuario_tipos_metodos_pago = (from x in Usuario.TipoMetodoPago.TiposMetodosPago()
-                                                    where x.usuario_id == Program.Nori.UsuarioAutenticado.id
+                                                    where x.usuario_id == Program.dtm.UsuarioAutenticado.id
                                                     select x.tipo_metodo_pago_id).ToList();
             tipos_metodos_pago = ((usuario_tipos_metodos_pago.Count > 0) ? (from x in MetodoPago.Tipo.Tipos()
                                                                             where usuario_tipos_metodos_pago.Contains(x.id)
@@ -202,7 +202,7 @@ namespace DTM
                 }
                 else
                 {
-                    if (!(socio.limite_credito > 0m) || documento.flujo.Count != 0 || documento.socio_id == Program.Nori.UsuarioAutenticado.socio_id)
+                    if (!(socio.limite_credito > 0m) || documento.flujo.Count != 0 || documento.socio_id == Program.dtm.UsuarioAutenticado.socio_id)
                     {
                         return;
                     }
@@ -337,7 +337,7 @@ namespace DTM
                     {
                         documento.flujo[e.RowHandle].importe = TipoCambio.Convertir(documento.moneda_id, tipo.moneda_id, 'C', documento.total - documento.importe_aplicado);
                     }
-                    if (Program.Nori.Configuracion.tipo_metodo_pago_monedero_id == documento.flujo[e.RowHandle].tipo_metodo_pago_id)
+                    if (Program.dtm.Configuracion.tipo_metodo_pago_monedero_id == documento.flujo[e.RowHandle].tipo_metodo_pago_id)
                     {
                         PagoMonedero();
                         documento.flujo.Remove(documento.flujo[e.RowHandle]);
@@ -377,7 +377,7 @@ namespace DTM
             try
             {
                 DateTime fecha = new DateTime(1753, 1, 1);
-                if (socio.id == Program.Nori.UsuarioAutenticado.socio_id)
+                if (socio.id == Program.dtm.UsuarioAutenticado.socio_id)
                 {
                     fecha = DateTime.Today;
                 }
@@ -497,7 +497,7 @@ namespace DTM
         {
             try
             {
-                if (Program.Nori.Configuracion.tipo_metodo_pago_monedero_id != 0)
+                if (Program.dtm.Configuracion.tipo_metodo_pago_monedero_id != 0)
                 {
                     string text = Interaction.InputBox("Ingresa el folio del monedero electrónico", "Monedero electrónico");
                     Monedero monedero = Monedero.Obtener(text);
@@ -510,7 +510,7 @@ namespace DTM
                             {
                                 if (num <= Math.Round(documento.total, 2))
                                 {
-                                    documento.AgregarPago(Program.Nori.Configuracion.tipo_metodo_pago_monedero_id, num, text.ToString());
+                                    documento.AgregarPago(Program.dtm.Configuracion.tipo_metodo_pago_monedero_id, num, text.ToString());
                                     Calcular();
                                 }
                                 else
@@ -577,7 +577,7 @@ namespace DTM
         {
             try
             {
-                if (tipos_metodos_pago.Any((MetodoPago.Tipo x) => x.id == documento.flujo[((ColumnView)gvPagos).GetSelectedRows()[0]].tipo_metodo_pago_id && x.documento) || (documento.flujo[((ColumnView)gvPagos).GetSelectedRows()[0]].tipo_metodo_pago_id == Program.Nori.Configuracion.tipo_metodo_pago_monedero_id && Program.Nori.Configuracion.tipo_metodo_pago_monedero_id != 0))
+                if (tipos_metodos_pago.Any((MetodoPago.Tipo x) => x.id == documento.flujo[((ColumnView)gvPagos).GetSelectedRows()[0]].tipo_metodo_pago_id && x.documento) || (documento.flujo[((ColumnView)gvPagos).GetSelectedRows()[0]].tipo_metodo_pago_id == Program.dtm.Configuracion.tipo_metodo_pago_monedero_id && Program.dtm.Configuracion.tipo_metodo_pago_monedero_id != 0))
                 {
                     e.Cancel = true;
                 }

@@ -63,7 +63,7 @@ namespace DTM
         {
             try
             {
-                string text = $"{Program.Nori.Configuracion.directorio_documentos}\\ventasnegadas.xlsx";
+                string text = $"{Program.dtm.Configuracion.directorio_documentos}\\ventasnegadas.xlsx";
                 gridControl1.ExportToXlsx(text);
                 Funciones.AbrirArchivo(text);
             }

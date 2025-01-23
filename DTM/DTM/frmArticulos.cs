@@ -403,7 +403,7 @@ namespace DTM
         private void Permisos()
         {
             ((BarItem)bbiParametrizacionesFormulario).Enabled = false;
-            switch (Program.Nori.UsuarioAutenticado.rol)
+            switch (Program.dtm.UsuarioAutenticado.rol)
             {
                 case 'A':
                     ((BarItem)bbiParametrizacionesFormulario).Enabled = true;
@@ -429,7 +429,7 @@ namespace DTM
                     mainRibbonPageGroup.Visible = false;
                     break;
             }
-            if (!ParametrizacionFormulario.Parametrizaciones().Any((ParametrizacionFormulario x) => x.usuario_id == Program.Nori.UsuarioAutenticado.id || ((int?)x.rol == (int?)Program.Nori.UsuarioAutenticado.rol && x.formulario == ((Control)(object)this).Name)))
+            if (!ParametrizacionFormulario.Parametrizaciones().Any((ParametrizacionFormulario x) => x.usuario_id == Program.dtm.UsuarioAutenticado.id || ((int?)x.rol == (int?)Program.dtm.UsuarioAutenticado.rol && x.formulario == ((Control)(object)this).Name)))
             {
                 return;
             }
@@ -483,7 +483,7 @@ namespace DTM
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
         }
 
@@ -666,7 +666,7 @@ namespace DTM
                 ((RepositoryItemLookUpEditBase)cbMonedas.Properties).DataSource = Utilidades.Busqueda("monedas", objeto, parametros);
                 ((RepositoryItemLookUpEditBase)cbMonedas.Properties).ValueMember = "id";
                 ((RepositoryItemLookUpEditBase)cbMonedas.Properties).DisplayMember = "nombre";
-                ((BaseEdit)cbMonedas).EditValue = Program.Nori.Configuracion.moneda_id;
+                ((BaseEdit)cbMonedas).EditValue = Program.dtm.Configuracion.moneda_id;
                 RepositoryItemLookUpEdit properties7 = cbAlmacen.Properties;
                 dataSource = (((RepositoryItemLookUpEditBase)cbAlmacenes).DataSource = Utilidades.Busqueda("almacenes", objeto, parametros));
                 ((RepositoryItemLookUpEditBase)properties7).DataSource = dataSource;
@@ -705,7 +705,7 @@ namespace DTM
                 ((RepositoryItemLookUpEditBase)cbListasPrecios.Properties).DataSource = Utilidades.Busqueda("listas_precios", objeto, parametros);
                 ((RepositoryItemLookUpEditBase)cbListasPrecios.Properties).ValueMember = "id";
                 ((RepositoryItemLookUpEditBase)cbListasPrecios.Properties).DisplayMember = "nombre";
-                ((BaseEdit)cbListasPrecios).EditValue = Program.Nori.Configuracion.lista_precio_id;
+                ((BaseEdit)cbListasPrecios).EditValue = Program.dtm.Configuracion.lista_precio_id;
                 ((RepositoryItemLookUpEditBase)cbTiposEmpaques.Properties).DataSource = Utilidades.Busqueda("tipos_empaques", objeto, parametros);
                 ((RepositoryItemLookUpEditBase)cbTiposEmpaques.Properties).ValueMember = "id";
                 ((RepositoryItemLookUpEditBase)cbTiposEmpaques.Properties).DisplayMember = "nombre";
@@ -986,7 +986,7 @@ namespace DTM
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 return false;
             }
         }
@@ -1111,7 +1111,7 @@ namespace DTM
             openFileDialog.Filter = "Archivos de imagen(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string text = Program.Nori.Configuracion.directorio_imagenes + "\\" + openFileDialog.SafeFileName;
+                string text = Program.dtm.Configuracion.directorio_imagenes + "\\" + openFileDialog.SafeFileName;
                 File.Copy(openFileDialog.FileName, text, overwrite: true);
                 pbImagen.Image = new Bitmap(text);
                 articulo.imagen = openFileDialog.SafeFileName;
@@ -1252,12 +1252,12 @@ namespace DTM
                     {
                         if (!ubicacion.Actualizar())
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                            MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                         }
                     }
                     else if (!ubicacion.Agregar())
                     {
-                        MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                        MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                     }
                 }
                 else if ((int)e.Button.ButtonType == 8 && ubicacion.id != 0)
@@ -1295,7 +1295,7 @@ namespace DTM
                     inventario.ubicacion = dataRow["ubicacion"].ToString();
                     if (!inventario.Actualizar())
                     {
-                        MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                        MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                     }
                 }
             }
@@ -1354,7 +1354,7 @@ namespace DTM
                     }
                     else
                     {
-                        MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                        MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                     }
                 }
                 else
@@ -1398,7 +1398,7 @@ namespace DTM
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string destFileName = Program.Nori.Configuracion.directorio_imagenes + "\\" + openFileDialog.SafeFileName;
+                string destFileName = Program.dtm.Configuracion.directorio_imagenes + "\\" + openFileDialog.SafeFileName;
                 Articulo.Imagen imagen = new Articulo.Imagen();
                 imagen.archivo = openFileDialog.SafeFileName;
                 File.Copy(openFileDialog.FileName, destFileName, overwrite: true);
@@ -1433,7 +1433,7 @@ namespace DTM
         {
             try
             {
-                string archivo = Program.Nori.Configuracion.directorio_imagenes + "\\" + ((BaseListBoxControl)lbImagenes).SelectedValue.ToString();
+                string archivo = Program.dtm.Configuracion.directorio_imagenes + "\\" + ((BaseListBoxControl)lbImagenes).SelectedValue.ToString();
                 Funciones.AbrirArchivo(archivo);
             }
             catch

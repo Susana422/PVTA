@@ -53,7 +53,7 @@ namespace DTM
                 Graphics graphics = Graphics.FromImage(bitmap);
                 graphics.CopyFromScreen(0, 0, 0, 0, blockRegionSize);
                 string text = "autorizacion_" + autorizacion.id + ".png";
-                string filename = string.Format(Program.Nori.Configuracion.directorio_imagenes + "\\autorizaciones\\" + text);
+                string filename = string.Format(Program.dtm.Configuracion.directorio_imagenes + "\\autorizaciones\\" + text);
                 bitmap.Save(filename);
                 autorizacion.captura = text;
                 autorizacion.ActualizarCaptura();
@@ -123,7 +123,7 @@ namespace DTM
                 {
                     autorizacion.autorizado = true;
                     autorizacion.usuario_autorizacion_id = frmAutenticar2.usuario.id;
-                    autorizacion.estacion_autorizacion_id = Program.Nori.Estacion.id;
+                    autorizacion.estacion_autorizacion_id = Program.dtm.Estacion.id;
                     autorizacion.Actualizar();
                 }
             }

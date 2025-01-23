@@ -279,9 +279,9 @@ namespace DTM
                         {
                             x.cantidad = 0m;
                         });
-                        if (Program.Nori.UsuarioAutenticado.almacen_id != 0 && MessageBox.Show("¿Cargar solo partidas del almacén predeterminado para este usuario?", ((Control)(object)this).Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                        if (Program.dtm.UsuarioAutenticado.almacen_id != 0 && MessageBox.Show("¿Cargar solo partidas del almacén predeterminado para este usuario?", ((Control)(object)this).Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                         {
-                            frmDocumentos2.documento.partidas.RemoveAll((Documento.Partida x) => x.almacen_id != Program.Nori.UsuarioAutenticado.almacen_id);
+                            frmDocumentos2.documento.partidas.RemoveAll((Documento.Partida x) => x.almacen_id != Program.dtm.UsuarioAutenticado.almacen_id);
                         }
                     }
                     try
@@ -340,7 +340,7 @@ namespace DTM
         {
             try
             {
-                string text = string.Format("{0}\\{1}.xlsx", Program.Nori.Configuracion.directorio_documentos, "ListaPartidasAbiertas");
+                string text = string.Format("{0}\\{1}.xlsx", Program.dtm.Configuracion.directorio_documentos, "ListaPartidasAbiertas");
                 gcDocumentos.ExportToXlsx(text);
                 Funciones.AbrirArchivo(text);
             }
@@ -354,7 +354,7 @@ namespace DTM
         {
             try
             {
-                string text = string.Format("{0}\\{1}.pdf", Program.Nori.Configuracion.directorio_documentos, "ListaPartidasAbiertas");
+                string text = string.Format("{0}\\{1}.pdf", Program.dtm.Configuracion.directorio_documentos, "ListaPartidasAbiertas");
                 gcDocumentos.ExportToPdf(text);
                 Funciones.AbrirArchivo(text);
             }

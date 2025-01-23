@@ -889,7 +889,7 @@ namespace DTM
                 }
                 else
                 {
-                    MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
+                    MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
                 }
 
 
@@ -901,7 +901,7 @@ namespace DTM
                 }
                 else
                 {
-                    MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
+                    MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
                 }
             }
 
@@ -926,7 +926,7 @@ namespace DTM
                 }
                 else
                 {
-                    MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
+                    MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
                 }
             }
         }
@@ -943,7 +943,7 @@ namespace DTM
                 }
                 else
                 {
-                    MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
+                    MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
                 }
             }
             else {
@@ -953,7 +953,7 @@ namespace DTM
                 }
                 else
                 {
-                    MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
+                    MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
                 }
             }
         }
@@ -1822,7 +1822,7 @@ namespace DTM
                                                    select new { x.id, x.codigo, x.nombre }).ToList();
                 cbCanales.Properties.ValueMember = "id";
                 cbCanales.Properties.DisplayMember = "nombre";
-                cbRutas.Properties.DataSource = (from x in NoriSDK.Ruta.Rutas()
+                cbRutas.Properties.DataSource = (from x in SDK.Ruta.Rutas()
                                                  where x.activo == true
                                                  select new { x.id, x.codigo, x.nombre }).ToList();
                 cbRutas.Properties.ValueMember = "id";
@@ -2012,7 +2012,7 @@ namespace DTM
                 }
                 else
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                    MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                 }
                 Cursor = Cursors.Default;
             }
@@ -2386,7 +2386,7 @@ namespace DTM
                         }
                         else
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                            MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
                             return false;
                         }
                     }
@@ -2415,31 +2415,31 @@ namespace DTM
                     if (documento.clase.Equals("PE"))
                     {
                         SalesOrderHelper salesOrderHelper = new SalesOrderHelper();
-                        if (!salesOrderHelper.CreateSalesOrder(documento))
-                        {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                        }
+                        //if (!salesOrderHelper.CreateSalesOrder(documento))
+                        //{
+                        //    MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        //}
                     }
                     else if (documento.clase.Equals("EN"))
                     {
                         CashSaleHelper cashSaleHelper = new CashSaleHelper();
-                        cashSaleHelper.CreateCashSale(documento);
+                        //cashSaleHelper.CreateCashSale(documento);
                     }
                     else if (documento.clase.Equals("FA"))
                     {
                         InvoiceHelper invoiceHelper = new InvoiceHelper();
-                        if (invoiceHelper.CreateInvoice(documento))
-                        {
-                            if (documento.importe_aplicado >= documento.total)
-                            {
-                                MetodoPago.Tipo tipo = MetodoPago.Tipo.Obtener(documento.flujo.First().tipo_metodo_pago_id);
-                                invoiceHelper.TransformToCustomerPayment(documento.identificador_externo.ToString(), tipo.cuenta_contable);
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                        }
+                        //if (invoiceHelper.CreateInvoice(documento))
+                        //{
+                        //    if (documento.importe_aplicado >= documento.total)
+                        //    {
+                        //        MetodoPago.Tipo tipo = MetodoPago.Tipo.Obtener(documento.flujo.First().tipo_metodo_pago_id);
+                        //        invoiceHelper.TransformToCustomerPayment(documento.identificador_externo.ToString(), tipo.cuenta_contable);
+                        //    }
+                        //}
+                        //else
+                        //{
+                        //    MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        //}
                     }
                     else if (documento.clase.Equals("NC"))
                     {
@@ -2454,7 +2454,7 @@ namespace DTM
                         else
                         {
                             CreditMemoHelper creditMemoHelper = new CreditMemoHelper();
-                            creditMemoHelper.CreateCreditMemo(documento);
+                            //creditMemoHelper.CreateCreditMemo(documento);
                         }
                     }
                 }
@@ -2531,7 +2531,7 @@ namespace DTM
         {
             try
             {
-                Permiso permiso = NoriSDK.Permiso.Obtener(Program.dtm.UsuarioAutenticado.id, documento.clase, autorizacion: true);
+                Permiso permiso = SDK.Permiso.Obtener(Program.dtm.UsuarioAutenticado.id, documento.clase, autorizacion: true);
                 if (permiso.id != 0)
                 {
                     if (permiso.cancelar && cancelacion)
@@ -2619,7 +2619,7 @@ namespace DTM
                             }
                             else
                             {
-                                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                             }
                             return;
                         }
@@ -2641,7 +2641,7 @@ namespace DTM
                         }
                         else
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                            MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                         }
                     }
                     else if (documento.flujo.Count > 0)
@@ -3150,7 +3150,7 @@ namespace DTM
                         {
                             gvPartidas.MoveLast();
                         }
-                        if ((documento.clase.Equals("PE") || documento.clase.Equals("EN") || documento.clase.Equals("FA") || documento.clase.Equals("TS")) && !partida.VerificarExistencia() && Program.dtm.Configuracion.venta_articulo_stock_cero && MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM") + " ¿Desea continuar agregando este artículo?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                        if ((documento.clase.Equals("PE") || documento.clase.Equals("EN") || documento.clase.Equals("FA") || documento.clase.Equals("TS")) && !partida.VerificarExistencia() && Program.dtm.Configuracion.venta_articulo_stock_cero && MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM") + " ¿Desea continuar agregando este artículo?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                         {
                             documento.partidas.Remove(partida);
                         }
@@ -3161,7 +3161,7 @@ namespace DTM
                     CalcularExcel();
                     break;
                 }
-                while (MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
+                while (MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
             }
             catch (Exception ex2)
             {
@@ -3333,7 +3333,7 @@ namespace DTM
                 {
                     if (!(await Task.Run(() => documento.AgregarPartida(q))))
                     {
-                        if (NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM") == "El artículo no se puede vender.")
+                        if (SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM") == "El artículo no se puede vender.")
                         {
                             DialogResult result = MessageBox.Show("El artículo que buscas no está disponible, pero te ofrecemos algunas alternativas.", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (result == DialogResult.Yes)
@@ -3393,7 +3393,7 @@ namespace DTM
                         {
                             gvPartidas.MoveLast();
                         }
-                        if ((documento.clase.Equals("PE") || documento.clase.Equals("EN") || documento.clase.Equals("FA") || documento.clase.Equals("TS")) && !partida.VerificarExistencia() && Program.dtm.Configuracion.venta_articulo_stock_cero && MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM") + " ¿Desea continuar agregando este artículo?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                        if ((documento.clase.Equals("PE") || documento.clase.Equals("EN") || documento.clase.Equals("FA") || documento.clase.Equals("TS")) && !partida.VerificarExistencia() && Program.dtm.Configuracion.venta_articulo_stock_cero && MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM") + " ¿Desea continuar agregando este artículo?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                         {
                             documento.partidas.Remove(partida);
                         }
@@ -3404,7 +3404,7 @@ namespace DTM
                     Calcular();
                     break;
                 }
-                while (MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
+                while (MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
             }
             catch (Exception ex2)
             {
@@ -3647,7 +3647,7 @@ namespace DTM
                 }
                 else
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                    MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                 }
             }
             else
@@ -3704,7 +3704,7 @@ namespace DTM
                 }
                 else
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                    MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                 }
             }
             else
@@ -3761,7 +3761,7 @@ namespace DTM
                 }
                 else
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                    MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                 }
             }
             else
@@ -3938,7 +3938,7 @@ namespace DTM
             }
             else
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
 
@@ -4085,7 +4085,7 @@ namespace DTM
                     }
                     else
                     {
-                        MessageBox.Show($"Error al importar folio fiscal: {NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM")}", Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        MessageBox.Show($"Error al importar folio fiscal: {SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM")}", Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     }
                 }
             }
@@ -4120,7 +4120,7 @@ namespace DTM
                 }
                 else
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                    MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
             }
             catch (Exception ex)

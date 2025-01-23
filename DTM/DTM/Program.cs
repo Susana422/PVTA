@@ -1,4 +1,4 @@
-﻿using CFDIx;
+﻿using NCFDI;
 using SAPB1SDK;
 using SDK;
 using System;
@@ -17,7 +17,7 @@ namespace DTM
 
         public static NSAPSQL SAP;
 
-        public static CFDI_ CFDI;
+        public static CFDI CFDI;
 
         public static object ObjetoDinamico = null;
         /// <summary>

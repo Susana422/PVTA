@@ -122,7 +122,7 @@ namespace DTM
 
         private void Permisos()
         {
-            switch (Program.Nori.UsuarioAutenticado.rol)
+            switch (Program.dtm.UsuarioAutenticado.rol)
             {
                 case 'C':
                     mainRibbonPageGroup.Visible = false;
@@ -235,7 +235,7 @@ namespace DTM
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
                 return false;
             }
         }
@@ -248,7 +248,7 @@ namespace DTM
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
+                MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
             }
         }
 
@@ -421,7 +421,7 @@ namespace DTM
             openFileDialog.Title = "Por favor seleccione una imagen.";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string text = Program.Nori.Configuracion.directorio_imagenes + "\\" + openFileDialog.SafeFileName;
+                string text = Program.dtm.Configuracion.directorio_imagenes + "\\" + openFileDialog.SafeFileName;
                 File.Copy(openFileDialog.FileName, text, overwrite: true);
                 pbImagen.Image = new Bitmap(text);
                 almacen.logotipo = openFileDialog.SafeFileName;

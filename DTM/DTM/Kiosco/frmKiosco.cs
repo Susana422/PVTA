@@ -34,7 +34,7 @@ namespace DTM.Kiosco
         {
             InitializeComponent();
             this.MetodoDinamico();
-            ((Control)(object)lblTitulo).Text = Program.Nori.Empresa.nombre_comercial;
+            ((Control)(object)lblTitulo).Text = Program.dtm.Empresa.nombre_comercial;
             ((Control)(object)txtNumeroDocumento).Focus();
             CargarImagenFondo();
         }
@@ -42,7 +42,7 @@ namespace DTM.Kiosco
         private async void CargarImagenFondo()
         {
             Control ctrl = pbLogo;
-            ctrl.SetImage(await Funciones.CargarImagen(Program.Nori.Empresa.logotipo));
+            ctrl.SetImage(await Funciones.CargarImagen(Program.dtm.Empresa.logotipo));
         }
 
         private void txtNumeroDocumento_KeyDown(object sender, KeyEventArgs e)
@@ -135,7 +135,7 @@ namespace DTM.Kiosco
                         }
                         else
                         {
-                            MessageBox.Show("Ocurrió un error al tratar de hacer la factura: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            MessageBox.Show("Ocurrió un error al tratar de hacer la factura: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         }
                     }
                     else

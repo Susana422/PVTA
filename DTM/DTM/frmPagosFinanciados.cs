@@ -186,7 +186,7 @@ namespace DTM
         private void CargarListas()
         {
             List<int> usuario_tipos_metodos_pago = (from x in Usuario.TipoMetodoPago.TiposMetodosPago()
-                                                    where x.usuario_id == Program.Nori.UsuarioAutenticado.id
+                                                    where x.usuario_id == Program.dtm.UsuarioAutenticado.id
                                                     select x.tipo_metodo_pago_id).ToList();
             tipos_metodos_pago = ((usuario_tipos_metodos_pago.Count > 0) ? (from x in MetodoPago.Tipo.Tipos()
                                                                             where usuario_tipos_metodos_pago.Contains(x.id)
@@ -206,7 +206,7 @@ namespace DTM
             }
             else
             {
-                socio = Socio.Obtener(Program.Nori.UsuarioAutenticado.socio_id);
+                socio = Socio.Obtener(Program.dtm.UsuarioAutenticado.socio_id);
             }
             if (nuevo)
             {
@@ -238,7 +238,7 @@ namespace DTM
         {
             try
             {
-                if (NoriSDK.PuntoVenta.EstadoCaja().Equals('C'))
+                if (SDK.PuntoVenta.EstadoCaja().Equals('C'))
                 {
                     if (MessageBox.Show("¿Deseas realizar una apertura de caja?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
@@ -289,7 +289,7 @@ namespace DTM
                             documento.CalcularTotal();
                             if (!documento.Agregar())
                             {
-                                MessageBox.Show("No es posible agregar el pagaré de renovación: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                                MessageBox.Show("No es posible agregar el pagaré de renovación: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                                 return;
                             }
                             Funciones.ImprimirInformePredeterminado(documento.clase, documento.id);
@@ -341,7 +341,7 @@ namespace DTM
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
         }
 
@@ -647,7 +647,7 @@ namespace DTM
         {
             try
             {
-                Permiso permiso = NoriSDK.Permiso.Obtener(Program.Nori.UsuarioAutenticado.id, "PR", autorizacion: true);
+                Permiso permiso = SDK.Permiso.Obtener(Program.dtm.UsuarioAutenticado.id, "PR", autorizacion: true);
                 if (permiso.id != 0 && ((!permiso.agregar && pago.id == 0) || (!permiso.actualizar && pago.id != 0)))
                 {
                     Autorizacion autorizacion = new Autorizacion();

@@ -263,7 +263,7 @@ namespace DTM
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 return false;
             }
         }
@@ -307,7 +307,7 @@ namespace DTM
         {
             Funciones.Cargando("NetSuite", "Sincronizando por favor espere...");
             NetsuiteLibrary.Sincronizacion sincronizacion = new NetsuiteLibrary.Sincronizacion();
-            sincronizacion.configuracion = configuracion;
+            //sincronizacion.configuracion = configuracion;
             sincronizacion.Articulos();
             sincronizacion.Socios();
             Funciones.DescartarCargando();

@@ -30,7 +30,7 @@ namespace DTM.HuellaDigital
         {
             ConfigurationManager.RefreshSection("connectionStrings");
             conexiones = ConfigurationManager.ConnectionStrings;
-            Program.Nori.Conexion = new SqlConnectionStringBuilder(conexiones[0].ConnectionString);
+            Program.dtm.Conexion = new SqlConnectionStringBuilder(conexiones[0].ConnectionString);
 
         }
 
@@ -46,15 +46,15 @@ namespace DTM.HuellaDigital
 
         private void VerificationControl_OnComplete(object Control, DPFP.FeatureSet FeatureSet, ref DPFP.Gui.EventHandlerStatus EventHandlerStatus)
         {
-            if (!Program.Nori.Conectar())
+            if (!Program.dtm.Conectar())
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Application.ProductName);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Application.ProductName);
                 return;
             }
             DPFP.Verification.Verification ver = new DPFP.Verification.Verification();
             DPFP.Verification.Verification.Result res = new DPFP.Verification.Verification.Result();
 
-            var huellas = NoriSDK.HuellaDigital.HuellaDigitales();
+            var huellas = SDK.HuellaDigital.HuellaDigitales();
             foreach (var x in huellas)
             {
                 if (x.usuario_id == usuario.id)
@@ -93,7 +93,7 @@ namespace DTM.HuellaDigital
             {
                 Usuario usuario = new Usuario();
                 usuario = Usuario.Obtener(id);
-                acceder(Program.Nori.Autenticar(usuario));
+                acceder(Program.dtm.Autenticar(usuario));
 
             }
             catch (Exception ex)
@@ -118,26 +118,26 @@ namespace DTM.HuellaDigital
             {
                 try
                 {
-                    if (Program.Nori.Configuracion.tema.Length > 0)
+                    if (Program.dtm.Configuracion.tema.Length > 0)
                     {
-                        //defaultLookAndFeel1.LookAndFeel.SkinMaskColor = Color.FromArgb(Convert.ToInt32(Program.Nori.Configuracion.tema));
+                        //defaultLookAndFeel1.LookAndFeel.SkinMaskColor = Color.FromArgb(Convert.ToInt32(Program.dtm.Configuracion.tema));
                     }
                 }
                 catch
                 {
                 }
-                if (Program.Nori.UsuarioAutenticado.rol == 'X')
+                if (Program.dtm.UsuarioAutenticado.rol == 'X')
                 {
                     frmSincronizacion frmSincronizacion2 = new frmSincronizacion();
                     ((Control)(object)frmSincronizacion2).Show();
                 }
                 else
                 {
-                    if (Program.Nori.Configuracion.seleccionar_sucursal || Program.Nori.UsuarioAutenticado.seleccionar_sucursal)
+                    if (Program.dtm.Configuracion.seleccionar_sucursal || Program.dtm.UsuarioAutenticado.seleccionar_sucursal)
                     {
                         //frmSeleccionarSucursal frmSeleccionarSucural2 = new frmSeleccionarSucursal();
                         //((Form)(object)frmSeleccionarSucural2).ShowDialog();
-                        Program.Nori.UsuarioAutenticado.almacen_id = 2;
+                        Program.dtm.UsuarioAutenticado.almacen_id = 2;
                     }
                     frmPrincipal frmPrincipal2 = new frmPrincipal();
                     ((Control)(object)frmPrincipal2).Show();
@@ -150,7 +150,7 @@ namespace DTM.HuellaDigital
             {
                 //((Control)(object)txtContraseña).Text = string.Empty;
                 //((Control)(object)txtContraseña).Focus();
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM").ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM").ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
         }
     }

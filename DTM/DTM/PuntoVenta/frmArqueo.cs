@@ -255,15 +255,15 @@ namespace DTM.PuntoVenta
         {
             try
             {
-                if (NoriSDK.PuntoVenta.EstadoCaja().Equals('A'))
+                if (SDK.PuntoVenta.EstadoCaja().Equals('A'))
                 {
                     //gvPartidas.CloseEditor();
-                    Flujo flujo = NoriSDK.PuntoVenta.FondoInicial();
-                    if (!NoriSDK.PuntoVenta.FondoInicialRetirado(flujo.id))
+                    Flujo flujo = SDK.PuntoVenta.FondoInicial();
+                    if (!SDK.PuntoVenta.FondoInicialRetirado(flujo.id))
                     {
                         Autorizacion autorizacion = new Autorizacion();
                         autorizacion.codigo = "RERET";
-                        autorizacion.referencia = $"Retiro del fondo inicial del usuario {Program.Nori.UsuarioAutenticado.usuario} en la estación {Program.Nori.Estacion.nombre}";
+                        autorizacion.referencia = $"Retiro del fondo inicial del usuario {Program.dtm.UsuarioAutenticado.usuario} en la estación {Program.dtm.Estacion.nombre}";
                         autorizacion.comentario = Interaction.InputBox("Comentario retiro fondo inicial (Opcional)","","",-1,-1);
                         autorizacion.Agregar();
                         if (!autorizacion.autorizado)
@@ -286,7 +286,7 @@ namespace DTM.PuntoVenta
                             }
                             else
                             {
-                                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
+                                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message);
                             }
                         }
                     }
@@ -314,7 +314,7 @@ namespace DTM.PuntoVenta
         private void btnCorteZ_Click(object sender, EventArgs e)
         {
             decimal importe = acumulados.Sum((Acumulado x) => x.total);
-            if (NoriSDK.PuntoVenta.EstadoCaja().Equals('A'))
+            if (SDK.PuntoVenta.EstadoCaja().Equals('A'))
             {
                 if (MessageBox.Show("¿Estas seguro(a) de realizar el cierre de caja?", "Cierre de caja", MessageBoxButtons.YesNo) != DialogResult.Yes)
                 {
@@ -344,7 +344,7 @@ namespace DTM.PuntoVenta
                 }
                 else
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
+                    MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message);
                 }
 
             }
@@ -372,7 +372,7 @@ namespace DTM.PuntoVenta
             }
             else
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message);
             }
         }
     }

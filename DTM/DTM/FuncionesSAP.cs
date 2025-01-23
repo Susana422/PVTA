@@ -36,7 +36,7 @@ namespace DTM
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM") + NoriSAP.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM") + NSAP.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                 return 0m;
             }
         }
@@ -54,7 +54,7 @@ namespace DTM
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM") + NoriSAP.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM") + NSAP.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                 return false;
             }
         }

@@ -271,13 +271,13 @@ namespace DTM
         private void Permisos()
         {
             ((BarItem)bbiParametrizacionesFormulario).Enabled = false;
-            char rol = Program.Nori.UsuarioAutenticado.rol;
+            char rol = Program.dtm.UsuarioAutenticado.rol;
             char c = rol;
             if (c == 'A')
             {
                 ((BarItem)bbiParametrizacionesFormulario).Enabled = true;
             }
-            if (!ParametrizacionFormulario.Parametrizaciones().Any((ParametrizacionFormulario x) => x.usuario_id == Program.Nori.UsuarioAutenticado.id || ((int?)x.rol == (int?)Program.Nori.UsuarioAutenticado.rol && x.formulario == ((Control)(object)this).Name)))
+            if (!ParametrizacionFormulario.Parametrizaciones().Any((ParametrizacionFormulario x) => x.usuario_id == Program.dtm.UsuarioAutenticado.id || ((int?)x.rol == (int?)Program.dtm.UsuarioAutenticado.rol && x.formulario == ((Control)(object)this).Name)))
             {
                 return;
             }
@@ -360,10 +360,10 @@ namespace DTM
         private void CargarListas()
         {
             List<int> usuario_series = (from x in Usuario.Serie.Series()
-                                        where x.usuario_id == Program.Nori.UsuarioAutenticado.id
+                                        where x.usuario_id == Program.dtm.UsuarioAutenticado.id
                                         select x.serie_id).ToList();
-            ((RepositoryItemLookUpEditBase)cbSeries.Properties).DataSource = (((Program.Nori.Configuracion.seleccionar_sucursal || Program.Nori.UsuarioAutenticado.seleccionar_sucursal) && Program.Nori.UsuarioAutenticado.rol != 'A') ? (from x in Serie.Series()
-                                                                                                                                                                                                                                           where x.clase == "PR" && x.almacen_id == Program.Nori.UsuarioAutenticado.almacen_id && x.activo == true
+            ((RepositoryItemLookUpEditBase)cbSeries.Properties).DataSource = (((Program.dtm.Configuracion.seleccionar_sucursal || Program.dtm.UsuarioAutenticado.seleccionar_sucursal) && Program.dtm.UsuarioAutenticado.rol != 'A') ? (from x in Serie.Series()
+                                                                                                                                                                                                                                           where x.clase == "PR" && x.almacen_id == Program.dtm.UsuarioAutenticado.almacen_id && x.activo == true
                                                                                                                                                                                                                                            select new { x.id, x.nombre }).ToList() : ((usuario_series.Count > 0) ? (from x in Serie.Series()
                                                                                                                                                                                                                                                                                                                     where x.clase == "PR" && x.activo == true && usuario_series.Contains(x.id)
                                                                                                                                                                                                                                                                                                                     select new { x.id, x.nombre }).ToList() : (from x in Serie.Series()
@@ -372,7 +372,7 @@ namespace DTM
             ((RepositoryItemLookUpEditBase)cbSeries.Properties).ValueMember = "id";
             ((RepositoryItemLookUpEditBase)cbSeries.Properties).DisplayMember = "nombre";
             List<int> usuario_tipos_metodos_pago = (from x in Usuario.TipoMetodoPago.TiposMetodosPago()
-                                                    where x.usuario_id == Program.Nori.UsuarioAutenticado.id
+                                                    where x.usuario_id == Program.dtm.UsuarioAutenticado.id
                                                     select x.tipo_metodo_pago_id).ToList();
             tipos_metodos_pago = ((usuario_tipos_metodos_pago.Count > 0) ? (from x in MetodoPago.Tipo.Tipos()
                                                                             where usuario_tipos_metodos_pago.Contains(x.id)
@@ -409,7 +409,7 @@ namespace DTM
             }
             else
             {
-                socio = Socio.Obtener(Program.Nori.UsuarioAutenticado.socio_id);
+                socio = Socio.Obtener(Program.dtm.UsuarioAutenticado.socio_id);
             }
             if (nuevo)
             {
@@ -555,14 +555,14 @@ namespace DTM
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 return false;
             }
         }
 
         private void bbiGuardar_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (NoriSDK.PuntoVenta.EstadoCaja().Equals('C'))
+            if (SDK.PuntoVenta.EstadoCaja().Equals('C'))
             {
                 MessageBox.Show("Para poder realizar este movimiento es necesario realizar una apertura de caja.");
                 return;
@@ -574,13 +574,13 @@ namespace DTM
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
         }
 
         private void bbiGuardarCerrar_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (NoriSDK.PuntoVenta.EstadoCaja().Equals('C'))
+            if (SDK.PuntoVenta.EstadoCaja().Equals('C'))
             {
                 MessageBox.Show("Para poder realizar este movimiento es necesario realizar una apertura de caja.");
                 return;
@@ -593,7 +593,7 @@ namespace DTM
 
         private void bbiGuardarNuevo_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (NoriSDK.PuntoVenta.EstadoCaja().Equals('C'))
+            if (SDK.PuntoVenta.EstadoCaja().Equals('C'))
             {
                 MessageBox.Show("Para poder realizar este movimiento es necesario realizar una apertura de caja.");
                 return;
@@ -691,7 +691,7 @@ namespace DTM
                     return;
                 }
                 var source = from x in Pago.Pagos()
-                             where ((x.id == int.Parse(((Control)(object)txtNumeroDocumento).Text) || x.socio_id == pago.socio_id || x.numero_documento == int.Parse(((Control)(object)txtNumeroDocumento).Text)) && x.financiado == false) || x.numero_documento_externo == ((Program.Nori.Configuracion.sap && int.Parse(((Control)(object)txtNumeroDocumentoExterno).Text) != 0) ? int.Parse(((Control)(object)txtNumeroDocumentoExterno).Text) : 1)
+                             where ((x.id == int.Parse(((Control)(object)txtNumeroDocumento).Text) || x.socio_id == pago.socio_id || x.numero_documento == int.Parse(((Control)(object)txtNumeroDocumento).Text)) && x.financiado == false) || x.numero_documento_externo == ((Program.dtm.Configuracion.sap && int.Parse(((Control)(object)txtNumeroDocumentoExterno).Text) != 0) ? int.Parse(((Control)(object)txtNumeroDocumentoExterno).Text) : 1)
                              orderby x.fecha_creacion descending
                              select new
                              {
@@ -1083,7 +1083,7 @@ namespace DTM
             {
                 pago.moneda_id = (int)((BaseEdit)cbMonedas).EditValue;
                 ((BaseEdit)txtTipoCambio).EditValue = TipoCambio.Venta(pago.moneda_id);
-                ((Control)(object)txtTipoCambio).Visible = ((Program.Nori.Configuracion.moneda_id != pago.moneda_id) ? true : false);
+                ((Control)(object)txtTipoCambio).Visible = ((Program.dtm.Configuracion.moneda_id != pago.moneda_id) ? true : false);
             }
             catch
             {
@@ -1147,7 +1147,7 @@ namespace DTM
         {
             try
             {
-                if (pago.id == 0 || !Program.Nori.UsuarioAutenticado.rol.Equals('A'))
+                if (pago.id == 0 || !Program.dtm.UsuarioAutenticado.rol.Equals('A'))
                 {
                     return;
                 }
@@ -1164,7 +1164,7 @@ namespace DTM
                     }
                     else
                     {
-                        MessageBox.Show($"Error al importar folio fiscal: {NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM")}", ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        MessageBox.Show($"Error al importar folio fiscal: {SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM")}", ((Control)(object)this).Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     }
                 }
             }
@@ -1199,7 +1199,7 @@ namespace DTM
                     }
                     else
                     {
-                        MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                        MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                     }
             }
             
@@ -1215,7 +1215,7 @@ namespace DTM
         {
             try
             {
-                Permiso permiso = NoriSDK.Permiso.Obtener(Program.Nori.UsuarioAutenticado.id, "PR", autorizacion: true);
+                Permiso permiso = SDK.Permiso.Obtener(Program.dtm.UsuarioAutenticado.id, "PR", autorizacion: true);
                 if (permiso.id != 0 && ((!permiso.agregar && pago.id == 0) || (!permiso.actualizar && pago.id != 0)))
                 {
                     Autorizacion autorizacion = new Autorizacion();
@@ -1305,7 +1305,7 @@ namespace DTM
                     DocumentoElectronico documentoElectronico = pago.DocumentoElectronico();
                     if (documentoElectronico.id != 0 && documentoElectronico.estado.Equals('A'))
                     {
-                        frmCorreoElectronico2.anexos.Add($"{Program.Nori.Configuracion.directorio_xml}\\{documentoElectronico.folio_fiscal}.xml");
+                        frmCorreoElectronico2.anexos.Add($"{Program.dtm.Configuracion.directorio_xml}\\{documentoElectronico.folio_fiscal}.xml");
                     }
                 }
                 catch

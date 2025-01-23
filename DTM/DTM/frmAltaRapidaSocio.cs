@@ -141,7 +141,7 @@ namespace DTM
                 }
                 else
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                    MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 }
             }
             else
@@ -159,7 +159,7 @@ namespace DTM
             try
             {
                 var anon = (from x in Estado.Estados()
-                            where x.id == Program.Nori.UsuarioAutenticado.estado_id
+                            where x.id == Program.dtm.UsuarioAutenticado.estado_id
                             select new { x.id, x.pais_id }).First();
                 ((BaseEdit)cbPaises).EditValue = anon.pais_id;
                 ((BaseEdit)cbEstados).EditValue = anon.id;
@@ -172,7 +172,7 @@ namespace DTM
                                                                               select new { x.id, x.codigo, x.nombre }).ToList();
             ((RepositoryItemLookUpEditBase)cbSocios.Properties).ValueMember = "id";
             ((RepositoryItemLookUpEditBase)cbSocios.Properties).DisplayMember = "nombre";
-            ((BaseEdit)cbSocios).EditValue = Program.Nori.UsuarioAutenticado.socio_id;
+            ((BaseEdit)cbSocios).EditValue = Program.dtm.UsuarioAutenticado.socio_id;
             ((RepositoryItemLookUpEditBase)cbUsoPrincipal.Properties).DataSource = Documento.UsoCFDI.UsosCFDI();
             ((RepositoryItemLookUpEditBase)cbUsoPrincipal.Properties).ValueMember = "uso";
             ((RepositoryItemLookUpEditBase)cbUsoPrincipal.Properties).DisplayMember = "nombre";
@@ -201,7 +201,7 @@ namespace DTM
             ((Control)(object)txtTelefono2).Text = socio.telefono2;
             ((Control)(object)txtTelefonoCelular).Text = socio.celular;
             ((Control)(object)txtCorreo).Text = socio.correo;
-            if (Program.Nori.UsuarioAutenticado.rol.Equals('C'))
+            if (Program.dtm.UsuarioAutenticado.rol.Equals('C'))
             {
                 socio.eventual = true;
             }
@@ -244,7 +244,7 @@ namespace DTM
                 socio.rfc = ((Control)(object)txtRFC).Text;
                 socio.uso_principal = ((BaseEdit)cbUsoPrincipal).EditValue.ToString();
                 socio.regimen_fiscal = ((BaseEdit)cbRegimenFiscal).EditValue.ToString();
-                socio.vendedor_id = Program.Nori.UsuarioAutenticado.vendedor_id;
+                socio.vendedor_id = Program.dtm.UsuarioAutenticado.vendedor_id;
                 socio.eventual = cbEventual.Checked;
                 try
                 {
@@ -320,10 +320,10 @@ namespace DTM
                         persona_contacto.Agregar();
                         socio.persona_contacto_id = persona_contacto.id;
                         socio.Actualizar(agregar_sincronizacion: false);
-                        if (Program.Nori.Configuracion.netsuite)
+                        if (Program.dtm.Configuracion.netsuite)
                         {
                             CustomerHelper customerHelper = new CustomerHelper();
-                            customerHelper.CreateCustomer(socio);
+                            //customerHelper.CreateCustomer(socio);
                         }
                         return true;
                     }
@@ -332,7 +332,7 @@ namespace DTM
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 return false;
             }
         }
@@ -348,7 +348,7 @@ namespace DTM
 
         private void btnHuellaDigital_Click(object sender, EventArgs e)
         {
-            if (Program.Nori.Estacion.lector_huella && MessageBox.Show("¿Desea agregar una huella digital?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (Program.dtm.Estacion.lector_huella && MessageBox.Show("¿Desea agregar una huella digital?", ((Control)(object)this).Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 // NORI.HuellaDigital.frmHuellaDigitalAgregar frmHuellaDigitalAgregar = new NORI.HuellaDigital.frmHuellaDigitalAgregar();
                 //DialogResult dialogResult = ((Form)(object)frmHuellaDigitalAgregar).ShowDialog();

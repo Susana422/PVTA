@@ -72,7 +72,7 @@ namespace DTM
             try
             {
                 correos_electronicos = (from x in Usuario.CorreoElectronico.CorreosElectronicos()
-                                        where x.usuario_id == Program.Nori.UsuarioAutenticado.id && x.activo == true
+                                        where x.usuario_id == Program.dtm.UsuarioAutenticado.id && x.activo == true
                                         select x).ToList();
                 ((RepositoryItemLookUpEditBase)cbCorreoElectronico.Properties).DataSource = correos_electronicos;
                 ((RepositoryItemLookUpEditBase)cbCorreoElectronico.Properties).ValueMember = "id";

@@ -54,7 +54,7 @@ namespace DTM
             InitializeComponent();
             this.MetodoDinamico();
             Cargar();
-            ((BaseEdit)cbAlmacenes).EditValue = Program.Nori.UsuarioAutenticado.almacen_id;
+            ((BaseEdit)cbAlmacenes).EditValue = Program.dtm.UsuarioAutenticado.almacen_id;
         }
 
         private void Cargar()
@@ -79,7 +79,7 @@ namespace DTM
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Program.Nori.UsuarioAutenticado.almacen_id = (int)((BaseEdit)cbAlmacenes).EditValue;
+            Program.dtm.UsuarioAutenticado.almacen_id = (int)((BaseEdit)cbAlmacenes).EditValue;
             ((Control)this).Hide();
         }
     }

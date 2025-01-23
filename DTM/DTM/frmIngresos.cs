@@ -73,7 +73,7 @@ namespace DTM
                 {
                     text = "Depósito";
                 }
-                autorizacion.referencia = $"{text} de caja al usuario {Program.Nori.UsuarioAutenticado.usuario} en la estación {Program.Nori.Estacion.nombre} por la cantidad de {((Control)(object)txtCantidad).Text}";
+                autorizacion.referencia = $"{text} de caja al usuario {Program.dtm.UsuarioAutenticado.usuario} en la estación {Program.dtm.Estacion.nombre} por la cantidad de {((Control)(object)txtCantidad).Text}";
                 autorizacion.comentario = txtComentario.Text; // Interaction.InputBox("Comentario ingreso (Opcional)", "Comentario de ingreso", "", -1, -1);
                 autorizacion.Agregar();
                 if (!autorizacion.autorizado)

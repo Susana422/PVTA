@@ -86,7 +86,7 @@ namespace DTM
                 }
                 else
                 {
-                    MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                    MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 }
             }
             else
@@ -156,9 +156,9 @@ namespace DTM
                 socio.rfc = ((Control)(object)txtRFC).Text;
                 socio.uso_principal = ((BaseEdit)cbUsoPrincipal).EditValue.ToString();
                 socio.regimen_fiscal = ((BaseEdit)cbRegimenFiscal).EditValue.ToString();
-                socio.vendedor_id = Program.Nori.UsuarioAutenticado.vendedor_id;
+                socio.vendedor_id = Program.dtm.UsuarioAutenticado.vendedor_id;
                 socio.eventual = true;
-                socio.socio_eventual_id = Program.Nori.UsuarioAutenticado.socio_id;
+                socio.socio_eventual_id = Program.dtm.UsuarioAutenticado.socio_id;
                 socio.correo = ((Control)(object)txtCorreo).Text;
                 direccion.nombre = "Facturación";
                 direccion.calle = "";
@@ -167,7 +167,7 @@ namespace DTM
                 direccion.colonia = "";
                 direccion.ciudad = "";
                 direccion.municipio = "";
-                direccion.estado_id = Program.Nori.UsuarioAutenticado.estado_id;
+                direccion.estado_id = Program.dtm.UsuarioAutenticado.estado_id;
                 Estado estado = Estado.Obtener(direccion.estado_id);
                 direccion.pais_id = estado.pais_id;
                 try
@@ -212,10 +212,10 @@ namespace DTM
                     persona_contacto.Agregar();
                     socio.persona_contacto_id = persona_contacto.id;
                     socio.Actualizar(agregar_sincronizacion: false);
-                    if (Program.Nori.Configuracion.netsuite)
+                    if (Program.dtm.Configuracion.netsuite)
                     {
                         CustomerHelper customerHelper = new CustomerHelper();
-                        customerHelper.CreateCustomer(socio);
+                        //customerHelper.CreateCustomer(socio);
                     }
                     return true;
                 }
@@ -223,7 +223,7 @@ namespace DTM
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 return false;
             }
         }

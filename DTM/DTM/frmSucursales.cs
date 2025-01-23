@@ -114,7 +114,7 @@ namespace DTM
 
         private void Permisos()
         {
-            switch (Program.Nori.UsuarioAutenticado.rol)
+            switch (Program.dtm.UsuarioAutenticado.rol)
             {
                 case 'C':
                     mainRibbonPageGroup.Visible = false;
@@ -204,7 +204,7 @@ namespace DTM
             }
             catch
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
                 return false;
             }
         }
@@ -217,7 +217,7 @@ namespace DTM
             }
             else
             {
-                MessageBox.Show("Error al guardar: " + NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
         }
 
@@ -381,23 +381,23 @@ namespace DTM
 
         private void Conectar()
         {
-            SqlConnectionStringBuilder conexion = Program.Nori.Conexion;
-            Program.Nori.Conexion.DataSource = sucursal.servidor;
-            Program.Nori.Conexion.InitialCatalog = sucursal.bd;
+            SqlConnectionStringBuilder conexion = Program.dtm.Conexion;
+            Program.dtm.Conexion.DataSource = sucursal.servidor;
+            Program.dtm.Conexion.InitialCatalog = sucursal.bd;
             if (sucursal.contraseña.IsNullOrEmpty())
             {
-                Program.Nori.Conexion.IntegratedSecurity = false;
+                Program.dtm.Conexion.IntegratedSecurity = false;
             }
-            Program.Nori.Conexion.UserID = sucursal.usuario;
-            Program.Nori.Conexion.Password = sucursal.contraseña;
-            Program.Nori.Conexion.ConnectTimeout = 30;
-            if (Program.Nori.Conectar())
+            Program.dtm.Conexion.UserID = sucursal.usuario;
+            Program.dtm.Conexion.Password = sucursal.contraseña;
+            Program.dtm.Conexion.ConnectTimeout = 30;
+            if (Program.dtm.Conectar())
             {
                 MessageBox.Show("Conexión realizada correctamente");
                 return;
             }
-            Program.Nori.Conexion = conexion;
-            Program.Nori.Conectar();
+            Program.dtm.Conexion = conexion;
+            Program.dtm.Conectar();
             MessageBox.Show($"No fue posible establecer una conexión con la sucursal {sucursal.nombre}");
 
         }

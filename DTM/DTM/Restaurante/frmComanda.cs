@@ -122,7 +122,7 @@ namespace DTM.Restaurante
 
         private void Permisos()
         {
-            switch (Program.Nori.UsuarioAutenticado.rol)
+            switch (Program.dtm.UsuarioAutenticado.rol)
             {
                 case 'C':
                     mainRibbonPageGroup.Visible = false;
@@ -218,7 +218,7 @@ namespace DTM.Restaurante
             try
             {
                 documento = new Documento();
-                EstablecerSocio(Socio.Obtener(Program.Nori.UsuarioAutenticado.socio_id));
+                EstablecerSocio(Socio.Obtener(Program.dtm.UsuarioAutenticado.socio_id));
                 Cargar();
             }
             catch (Exception ex)
@@ -236,7 +236,7 @@ namespace DTM.Restaurante
             }
             else
             {
-                socio = Socio.Obtener(Program.Nori.UsuarioAutenticado.socio_id);
+                socio = Socio.Obtener(Program.dtm.UsuarioAutenticado.socio_id);
             }
             Calcular();
         }
@@ -254,7 +254,7 @@ namespace DTM.Restaurante
             ((RepositoryItemLookUpEditBase)cbVendedores.Properties).DataSource = Utilidades.Busqueda("vendedores", objeto, parametros);
             ((RepositoryItemLookUpEditBase)cbVendedores.Properties).ValueMember = "id";
             ((RepositoryItemLookUpEditBase)cbVendedores.Properties).DisplayMember = "nombre";
-            ((BaseEdit)cbVendedores).EditValue = Program.Nori.UsuarioAutenticado.vendedor_id;
+            ((BaseEdit)cbVendedores).EditValue = Program.dtm.UsuarioAutenticado.vendedor_id;
         }
 
         private void Calcular()
@@ -273,7 +273,7 @@ namespace DTM.Restaurante
                 {
                     if (socio.activo)
                     {
-                        if (socio.lista_precio_id != Program.Nori.Configuracion.lista_precio_id)
+                        if (socio.lista_precio_id != Program.dtm.Configuracion.lista_precio_id)
                         {
                             Autorizacion autorizacion = new Autorizacion();
                             autorizacion.codigo = "CALIP";
@@ -288,12 +288,12 @@ namespace DTM.Restaurante
                             }
                             if (!autorizacion.autorizado)
                             {
-                                socio.lista_precio_id = Program.Nori.Configuracion.lista_precio_id;
+                                socio.lista_precio_id = Program.dtm.Configuracion.lista_precio_id;
                             }
                         }
                         if (!documento.EstablecerSocio(socio))
                         {
-                            MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
+                            MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"));
                             return;
                         }
                         Calcular();
@@ -334,7 +334,7 @@ namespace DTM.Restaurante
                     break;
                 }
             }
-            while (MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
+            while (MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text, MessageBoxButtons.RetryCancel, MessageBoxIcon.Hand) == DialogResult.Retry);
             ((Control)(object)txtArticulo).Text = string.Empty;
             ((Control)(object)txtArticulo).Focus();
         }

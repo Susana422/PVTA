@@ -173,7 +173,7 @@ namespace DTM
         private void gvTiposCambio_InitNewRow(object sender, InitNewRowEventArgs e)
         {
             ((ColumnView)gvTiposCambio).SetRowCellValue(e.RowHandle, "fecha", (object)DateTime.Today);
-            ((ColumnView)gvTiposCambio).SetRowCellValue(e.RowHandle, "moneda_id", (object)Program.Nori.Configuracion.moneda_id);
+            ((ColumnView)gvTiposCambio).SetRowCellValue(e.RowHandle, "moneda_id", (object)Program.dtm.Configuracion.moneda_id);
             ((ColumnView)gvTiposCambio).SetRowCellValue(e.RowHandle, "compra", (object)1);
             ((ColumnView)gvTiposCambio).SetRowCellValue(e.RowHandle, "venta", (object)1);
         }

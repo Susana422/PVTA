@@ -39,9 +39,9 @@ namespace DTM
         {
             if (usuario.IsNullOrEmpty())
             {
-                usuario = Program.Nori.UsuarioAutenticado;
+                usuario = Program.dtm.UsuarioAutenticado;
             }
-            if (Program.Nori.Estacion.lector_huella)
+            if (Program.dtm.Estacion.lector_huella)
             {
                 //HuellaDigital.frmHuellaDigitalVerificar frmHuellaDigitalVerificar = new HuellaDigital.frmHuellaDigitalVerificar();
                 //frmHuellaDigitalVerificar.huella_digital = usuario.huella_digital;
@@ -76,7 +76,7 @@ namespace DTM
             if (huella == true)
             {
                 //HuellaDigital.frmHuellaDigitalVerificar frmHuellaDigitalVerificar = new HuellaDigital.frmHuellaDigitalVerificar();
-                //frmHuellaDigitalVerificar.huella_digital = Program.Nori.UsuarioAutenticado.huella_digital;
+                //frmHuellaDigitalVerificar.huella_digital = Program.dtm.UsuarioAutenticado.huella_digital;
                 //((Form)(object)frmHuellaDigitalVerificar).ShowInTaskbar = false;
                 //((Control)(object)frmHuellaDigitalVerificar).Width = 237;
                 //((Control)(object)frmHuellaDigitalVerificar).Text = "Desbloquear";
@@ -89,7 +89,7 @@ namespace DTM
                     Data.OnChange += delegate { ExchangeData(false); };
                 }
                 AutenticarHuellaDigital autenticarHuellaDigital = new AutenticarHuellaDigital(Data);
-                autenticarHuellaDigital.usuario = Program.Nori.UsuarioAutenticado;
+                autenticarHuellaDigital.usuario = Program.dtm.UsuarioAutenticado;
                 ((Form)(object)autenticarHuellaDigital).ShowDialog();
                 if (((Form)(object)autenticarHuellaDigital).DialogResult == DialogResult.OK)
                 {
@@ -102,7 +102,7 @@ namespace DTM
             if (cred == true)
             {
                 frmAutenticar frmAutenticar2 = new frmAutenticar();
-                frmAutenticar2.usuario = Program.Nori.UsuarioAutenticado;
+                frmAutenticar2.usuario = Program.dtm.UsuarioAutenticado;
                 ((Form)(object)frmAutenticar2).ShowDialog();
                 if (((Form)(object)frmAutenticar2).DialogResult == DialogResult.OK)
                 {
@@ -207,7 +207,7 @@ namespace DTM
                                    where x.tipo == tipo && x.activo == true && x.predeterminado == true
                                    select x).First();
                 copias *= informe.copias;
-                XtraReport val = XtraReport.FromFile(Program.Nori.Configuracion.directorio_informes + "\\" + informe.informe, true);
+                XtraReport val = XtraReport.FromFile(Program.dtm.Configuracion.directorio_informes + "\\" + informe.informe, true);
                 val.Parameters["id"].Value = parametro;
                 val.Parameters["id"].Visible = false;
                 if (tipo == "CX" || tipo == "CZ")
@@ -228,7 +228,7 @@ namespace DTM
                 val.ShowPrintMarginsWarning = false;
                 ReportPrintTool val2 = new ReportPrintTool((IReport)(object)val);
                 string text = null;
-                text = ((!informe.tipo_informe.Equals('T')) ? Program.Nori.Estacion.impresora_documentos : Program.Nori.Estacion.impresora_tickets);
+                text = ((!informe.tipo_informe.Equals('T')) ? Program.dtm.Estacion.impresora_documentos : Program.dtm.Estacion.impresora_tickets);
                 if (!informe.impresora.IsNullOrEmpty())
                 {
                     text = informe.impresora;
@@ -299,13 +299,13 @@ namespace DTM
                 SplashScreenManager.Default.SetWaitFormCaption("Por favor espere");
                 SplashScreenManager.Default.SetWaitFormDescription("Imprimiendo...");
                 Informe informe = Informe.Obtener(id);
-                XtraReport val = XtraReport.FromFile(Program.Nori.Configuracion.directorio_informes + "\\" + informe.informe, true);
+                XtraReport val = XtraReport.FromFile(Program.dtm.Configuracion.directorio_informes + "\\" + informe.informe, true);
                 val.Parameters["id"].Value = parametro;
                 val.Parameters["id"].Visible = false;
                 val.ShowPrintMarginsWarning = false;
                 ReportPrintTool val2 = new ReportPrintTool((IReport)(object)val);
                 string text = null;
-                text = ((!informe.tipo_informe.Equals('T')) ? Program.Nori.Estacion.impresora_documentos : Program.Nori.Estacion.impresora_tickets);
+                text = ((!informe.tipo_informe.Equals('T')) ? Program.dtm.Estacion.impresora_documentos : Program.dtm.Estacion.impresora_tickets);
                 if (!informe.impresora.IsNullOrEmpty())
                 {
                     text = informe.impresora;
@@ -363,7 +363,7 @@ namespace DTM
                 SplashScreenManager.ShowForm(Form.ActiveForm, typeof(DemoWaitForm), true, true, false);
                 SplashScreenManager.Default.SetWaitFormCaption("Por favor espere");
                 SplashScreenManager.Default.SetWaitFormDescription("Imprimiendo...");
-                XtraReport val = XtraReport.FromFile(Program.Nori.Configuracion.directorio_informes + "\\" + informe, true);
+                XtraReport val = XtraReport.FromFile(Program.dtm.Configuracion.directorio_informes + "\\" + informe, true);
                 val.Parameters["id"].Value = parametro;
                 val.Parameters["id"].Visible = false;
                 val.ShowPrintMarginsWarning = false;
@@ -389,7 +389,7 @@ namespace DTM
                 SplashScreenManager.Default.SetWaitFormCaption("Por favor espere");
                 SplashScreenManager.Default.SetWaitFormDescription("Imprimiendo...");
                 Informe informe = Informe.Obtener(id);
-                XtraReport val = XtraReport.FromFile(Program.Nori.Configuracion.directorio_informes + "\\" + informe.informe, true);
+                XtraReport val = XtraReport.FromFile(Program.dtm.Configuracion.directorio_informes + "\\" + informe.informe, true);
                 foreach (KeyValuePair<string, object> parametro in parametros)
                 {
                     val.Parameters[parametro.Key].Value = parametro.Value;
@@ -400,11 +400,11 @@ namespace DTM
                 string text = null;
                 if (informe.tipo_informe.Equals('T'))
                 {
-                    text = Program.Nori.Estacion.impresora_tickets;
+                    text = Program.dtm.Estacion.impresora_tickets;
                 }
                 else
                 {
-                    text = Program.Nori.Estacion.impresora_documentos;
+                    text = Program.dtm.Estacion.impresora_documentos;
                 }
                 if (!informe.impresora.IsNullOrEmpty())
                 {
@@ -437,7 +437,7 @@ namespace DTM
                 SplashScreenManager.Default.SetWaitFormDescription("Imprimiendo...");
 
                 Informe informe = Informe.Obtener(id);
-                XtraReport val = XtraReport.FromFile(Program.Nori.Configuracion.directorio_informes + "\\" + informe.informe, true);
+                XtraReport val = XtraReport.FromFile(Program.dtm.Configuracion.directorio_informes + "\\" + informe.informe, true);
 
                 // Establecer los parámetros en el informe
                 foreach (KeyValuePair<string, object> parametro in parametros)
@@ -456,11 +456,11 @@ namespace DTM
                 // Determinar la impresora a utilizar (tickets o documentos)
                 if (informe.tipo_informe.Equals('T'))
                 {
-                    impresora = Program.Nori.Estacion.impresora_tickets;
+                    impresora = Program.dtm.Estacion.impresora_tickets;
                 }
                 else
                 {
-                    impresora = Program.Nori.Estacion.impresora_documentos;
+                    impresora = Program.dtm.Estacion.impresora_documentos;
                 }
 
                 // Si hay una impresora definida en el informe, usarla
@@ -507,9 +507,9 @@ namespace DTM
         {
             try
             {
-                string text = Program.Nori.Configuracion.directorio_documentos + "\\" + (nombre_archivo.IsNullOrEmpty() ? Utilidades.CadenaAleatoria(10) : nombre_archivo) + ".pdf";
+                string text = Program.dtm.Configuracion.directorio_documentos + "\\" + (nombre_archivo.IsNullOrEmpty() ? Utilidades.CadenaAleatoria(10) : nombre_archivo) + ".pdf";
                 Informe informe = Informe.Obtener(id);
-                XtraReport val = XtraReport.FromFile(Program.Nori.Configuracion.directorio_informes + "\\" + informe.informe, true);
+                XtraReport val = XtraReport.FromFile(Program.dtm.Configuracion.directorio_informes + "\\" + informe.informe, true);
                 val.Parameters["id"].Value = parametro;
                 val.Parameters["id"].Visible = false;
                 PdfExportOptions pdf = val.ExportOptions.Pdf;
@@ -560,7 +560,7 @@ namespace DTM
         {
             try
             {
-                XtraReport val = XtraReport.FromFile(Program.Nori.Configuracion.directorio_informes + "\\" + informe, true);
+                XtraReport val = XtraReport.FromFile(Program.dtm.Configuracion.directorio_informes + "\\" + informe, true);
                 ReportPrintTool val2 = new ReportPrintTool((IReport)(object)val);
                 ((PrintTool)val2).ShowPreview();
                 return true;
@@ -578,27 +578,27 @@ namespace DTM
                 Sucursal sucursal = Program.sucursales.Where((Sucursal x) => x.codigo == codigo).First();
                 if (sucursal.id != 0)
                 {
-                    SqlConnectionStringBuilder conexion = Program.Nori.Conexion;
-                    Program.Nori.Conexion.DataSource = sucursal.servidor;
-                    Program.Nori.Conexion.InitialCatalog = sucursal.bd;
+                    SqlConnectionStringBuilder conexion = Program.dtm.Conexion;
+                    Program.dtm.Conexion.DataSource = sucursal.servidor;
+                    Program.dtm.Conexion.InitialCatalog = sucursal.bd;
                     if (sucursal.contraseña.IsNullOrEmpty())
                     {
-                        Program.Nori.Conexion.IntegratedSecurity = false;
+                        Program.dtm.Conexion.IntegratedSecurity = false;
                     }
-                    Program.Nori.Conexion.UserID = sucursal.usuario;
-                    Program.Nori.Conexion.Password = sucursal.contraseña;
-                    Program.Nori.Conexion.ConnectTimeout = 30;
-                    if (Program.Nori.Conectar())
+                    Program.dtm.Conexion.UserID = sucursal.usuario;
+                    Program.dtm.Conexion.Password = sucursal.contraseña;
+                    Program.dtm.Conexion.ConnectTimeout = 30;
+                    if (Program.dtm.Conectar())
                     {
-                        if (Program.Nori.Autenticar(Usuario.Obtener(Program.Nori.UsuarioAutenticado.usuario), api: true))
+                        if (Program.dtm.Autenticar(Usuario.Obtener(Program.dtm.UsuarioAutenticado.usuario), api: true))
                         {
                             MessageBox.Show("Conexión realizada correctamente.");
                             return true;
                         }
-                        MessageBox.Show($"El usuario ({Program.Nori.UsuarioAutenticado.usuario}) no existe en la sucursal seleccionada.");
+                        MessageBox.Show($"El usuario ({Program.dtm.UsuarioAutenticado.usuario}) no existe en la sucursal seleccionada.");
                     }
-                    Program.Nori.Conexion = conexion;
-                    Program.Nori.Conectar();
+                    Program.dtm.Conexion = conexion;
+                    Program.dtm.Conectar();
                     MessageBox.Show($"No fue posible establecer una conexión con la sucursal {sucursal.nombre}");
                     return false;
                 }
@@ -619,7 +619,7 @@ namespace DTM
                 {
                     try
                     {
-                        ruta = Program.Nori.Configuracion.directorio_imagenes + "\\" + ruta;
+                        ruta = Program.dtm.Configuracion.directorio_imagenes + "\\" + ruta;
                         FileWebRequest request = (FileWebRequest)WebRequest.Create(ruta);
                         FileWebResponse response = (FileWebResponse)(await request.GetResponseAsync());
                         Stream stream = response.GetResponseStream();
@@ -725,10 +725,10 @@ namespace DTM
                 SmtpClient cliente = new SmtpClient();
                 string[] destinatarios = socio.correo.Replace(" ", string.Empty).Split(';');
                 string mensajeCuerpo = string.IsNullOrEmpty(correo_electronico.mensaje)
-                    ? $"Te informamos que {Program.Nori.Empresa.nombre_fiscal} ha generado un Comprobante Fiscal Digital, el cual encontrarás adjunto en este correo en su formato XML y PDF"
+                    ? $"Te informamos que {Program.dtm.Empresa.nombre_fiscal} ha generado un Comprobante Fiscal Digital, el cual encontrarás adjunto en este correo en su formato XML y PDF"
                     : correo_electronico.mensaje;
 
-                string asunto = $"{Program.Nori.Empresa.nombre_fiscal} - Le ha enviado un comprobante fiscal digital ({Documento.Clase.Clases().First(x => x.clase == documento.clase).nombre})";
+                string asunto = $"{Program.dtm.Empresa.nombre_fiscal} - Le ha enviado un comprobante fiscal digital ({Documento.Clase.Clases().First(x => x.clase == documento.clase).nombre})";
 
                 // Crear el objeto MailMessage
                 MailMessage mensaje = new MailMessage();
@@ -764,7 +764,7 @@ namespace DTM
                     mensaje.Attachments.Add(new Attachment(PDFInforme((from x in Informe.Informes()
                                                                        where x.tipo == documento.clase && x.activo == true && x.predeterminado_correo_electronico == true
                                                                        select x.id).First(), documento.id, documento_electronico.folio_fiscal)));
-                    mensaje.Attachments.Add(new Attachment($"{Program.Nori.Configuracion.directorio_xml}\\{documento_electronico.folio_fiscal}.xml"));
+                    mensaje.Attachments.Add(new Attachment($"{Program.dtm.Configuracion.directorio_xml}\\{documento_electronico.folio_fiscal}.xml"));
                 }
                 if (mensaje.Attachments.Count >= 2)
                 {
@@ -795,7 +795,7 @@ namespace DTM
                              select new { x.nombre, x.rfc, x.correo }).First();
                 SmtpClient cliente = new SmtpClient();
                 string[] destinatarios = ((correo != null) ? correo.Replace(" ", string.Empty).Split(';') : socio.correo.Replace(" ", string.Empty).Split(';'));
-                MailMessage mensaje = new MailMessage(body: correo_electronico.mensaje.IsNullOrEmpty() ? string.Format("Número de documento: ", documento.numero_documento) : correo_electronico.mensaje, from: correo_electronico.usuario, to: destinatarios[0], subject: string.Format("Comprobante de tu transacción ({1}) realizada en {0}", Program.Nori.Empresa.nombre_fiscal, (from x in Documento.Clase.Clases()
+                MailMessage mensaje = new MailMessage(body: correo_electronico.mensaje.IsNullOrEmpty() ? string.Format("Número de documento: ", documento.numero_documento) : correo_electronico.mensaje, from: correo_electronico.usuario, to: destinatarios[0], subject: string.Format("Comprobante de tu transacción ({1}) realizada en {0}", Program.dtm.Empresa.nombre_fiscal, (from x in Documento.Clase.Clases()
                                                                                                                                                                                                                                                                                                                                                                                       where x.clase == documento.clase
                                                                                                                                                                                                                                                                                                                                                                                       select x).First().nombre));
                 cliente.Port = correo_electronico.puerto;
@@ -851,7 +851,7 @@ namespace DTM
                 html7 = html7.Replace("{estado_seguimiento}", estado_seguimiento);
                 html7 = html7.Replace("{nombre}", nombre);
                 html7 = html7.Replace("{rfc}", rfc);
-                MailMessage mensaje = new MailMessage(body: html7.Replace("{direccion_envio}", direccion_envio), from: correo_electronico.usuario, to: destinatarios[0], subject: $"{Program.Nori.Empresa.nombre_fiscal} - Actualización del estado de su pedido ({estado_seguimiento})");
+                MailMessage mensaje = new MailMessage(body: html7.Replace("{direccion_envio}", direccion_envio), from: correo_electronico.usuario, to: destinatarios[0], subject: $"{Program.dtm.Empresa.nombre_fiscal} - Actualización del estado de su pedido ({estado_seguimiento})");
                 cliente.Port = correo_electronico.puerto;
                 cliente.Host = correo_electronico.servidor;
                 cliente.EnableSsl = correo_electronico.ssl;
@@ -906,7 +906,7 @@ namespace DTM
                 string usuario = (from x in Usuario.Usuarios()
                                   where x.id == documento.usuario_creacion_id
                                   select x.nombre).First();
-                MailMessage mensaje = new MailMessage(body: string.Format("<strong>{0}:</strong> {1} {2} \n <strong>Fecha:</strong> {3} \n <strong>Almacénes:</strong> De {4} a {5} \n <strong>Usuario:</strong> {6} \n <strong>Total:</strong> {7} \n <strong>Comentarios:</strong> {8} ", clase, serie, documento.numero_documento, documento.fecha_creacion.ToShortDateString(), almacen_origen, almacen_destino, usuario, documento.total.ToString("c2"), documento.comentario), from: correo_electronico.usuario, to: destinatarios[0], subject: $"{Program.Nori.Empresa.nombre_fiscal} - Nueva actividad de logística detectada | {clase} ({serie} {documento.numero_documento})");
+                MailMessage mensaje = new MailMessage(body: string.Format("<strong>{0}:</strong> {1} {2} \n <strong>Fecha:</strong> {3} \n <strong>Almacénes:</strong> De {4} a {5} \n <strong>Usuario:</strong> {6} \n <strong>Total:</strong> {7} \n <strong>Comentarios:</strong> {8} ", clase, serie, documento.numero_documento, documento.fecha_creacion.ToShortDateString(), almacen_origen, almacen_destino, usuario, documento.total.ToString("c2"), documento.comentario), from: correo_electronico.usuario, to: destinatarios[0], subject: $"{Program.dtm.Empresa.nombre_fiscal} - Nueva actividad de logística detectada | {clase} ({serie} {documento.numero_documento})");
                 cliente.Port = correo_electronico.puerto;
                 cliente.Host = correo_electronico.servidor;
                 cliente.EnableSsl = correo_electronico.ssl;
@@ -996,7 +996,7 @@ namespace DTM
                                     where x.activo == true && x.facturar_automaticamente == true && x.serie_facturacion_id != 0 && x.clase == "EN"
                                     select x.id).ToList();
                 int num = (from x in Documento.Documentos()
-                           where x.socio_id != Program.Nori.UsuarioAutenticado.socio_id && x.clase == "EN" && x.estado == 'A' && x.cancelado == false && series.Contains(x.serie_id) && x.importe_aplicado == 0m
+                           where x.socio_id != Program.dtm.UsuarioAutenticado.socio_id && x.clase == "EN" && x.estado == 'A' && x.cancelado == false && series.Contains(x.serie_id) && x.importe_aplicado == 0m
                            select x.id).Count();
                 if (MessageBox.Show($"¿Actualmente hay {num} entregas a crédito pendientes de facturar, desea continuar?", "Facturar entregas", MessageBoxButtons.YesNo) != DialogResult.Yes)
                 {
@@ -1051,7 +1051,7 @@ namespace DTM
             SplashScreenManager.Default.SetWaitFormDescription("Transmitiendo...");
             try
             {
-                if (!Program.Nori.Configuracion.api_url.IsNullOrEmpty())
+                if (!Program.dtm.Configuracion.api_url.IsNullOrEmpty())
                 {
                     Transmitir transmitir = new Transmitir();
                     SplashScreenManager.Default.SetWaitFormDescription("Recibiendo...");

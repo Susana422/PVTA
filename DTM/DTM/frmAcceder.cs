@@ -104,20 +104,20 @@ namespace DTM
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
-            if (!Program.Nori.Conectar())
+            if (!Program.dtm.Conectar())
             {
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Application.ProductName);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Application.ProductName);
                 return;
             }
             Usuario usuario = new Usuario();
             usuario.usuario = ((Control)(object)txtUsuario).Text;
             usuario.contraseña = ((Control)(object)txtContraseña).Text;
-            Program.Nori.Empresa.prueba = false;
+            Program.dtm.Empresa.prueba = false;
             if (usuario.usuario.Length > 0 && usuario.contraseña.Length > 0)
             {
-                acceder(Program.Nori.Autenticar(usuario));
+                acceder(Program.dtm.Autenticar(usuario));
             }
-            else if (((Control)(object)txtUsuario).Text.Length > 0 && Program.Nori.Estacion.lector_huella)
+            else if (((Control)(object)txtUsuario).Text.Length > 0 && Program.dtm.Estacion.lector_huella)
             {
                 acceder(Funciones.AccederConHuella(usuario));
             }
@@ -133,26 +133,26 @@ namespace DTM
             {
                 try
                 {
-                    if (Program.Nori.Configuracion.tema.Length > 0)
+                    if (Program.dtm.Configuracion.tema.Length > 0)
                     {
-                        //defaultLookAndFeel1.LookAndFeel.SkinMaskColor = Color.FromArgb(Convert.ToInt32(Program.Nori.Configuracion.tema));
+                        //defaultLookAndFeel1.LookAndFeel.SkinMaskColor = Color.FromArgb(Convert.ToInt32(Program.dtm.Configuracion.tema));
                     }
                 }
                 catch
                 {
                 }
-                if (Program.Nori.UsuarioAutenticado.rol == 'X')
+                if (Program.dtm.UsuarioAutenticado.rol == 'X')
                 {
                     frmSincronizacion frmSincronizacion2 = new frmSincronizacion();
                     ((Control)(object)frmSincronizacion2).Show();
                 }
                 else
                 {
-                    if (Program.Nori.Configuracion.seleccionar_sucursal || Program.Nori.UsuarioAutenticado.seleccionar_sucursal)
+                    if (Program.dtm.Configuracion.seleccionar_sucursal || Program.dtm.UsuarioAutenticado.seleccionar_sucursal)
                     {
                         //frmSeleccionarSucursal frmSeleccionarSucural2 = new frmSeleccionarSucursal();
                         //((Form)(object)frmSeleccionarSucural2).ShowDialog();
-                        Program.Nori.UsuarioAutenticado.almacen_id = 2;
+                        Program.dtm.UsuarioAutenticado.almacen_id = 2;
                     }
                     frmPrincipal frmPrincipal2 = new frmPrincipal();
                     ((Control)(object)frmPrincipal2).Show();
@@ -165,7 +165,7 @@ namespace DTM
             {
                 ((Control)(object)txtContraseña).Text = string.Empty;
                 ((Control)(object)txtContraseña).Focus();
-                MessageBox.Show(NoriSDK.Nori.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM").ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM").ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
             }
         }
 
@@ -187,7 +187,7 @@ namespace DTM
                     ((Form)(object)frmAutenticar2).ShowDialog();
                     if (((Form)(object)frmAutenticar2).DialogResult == DialogResult.OK)
                     {
-                        Program.Nori.EstablecerUsuario(frmAutenticar2.usuario);
+                        Program.dtm.EstablecerUsuario(frmAutenticar2.usuario);
                         acceder(r: true);
                     }
                 }
@@ -212,7 +212,7 @@ namespace DTM
         private void cbConexiones_EditValueChanged(object sender, EventArgs e)
         {
             //string  xx = cbConexiones.EditValue.ToString();
-            Program.Nori.Conexion = new SqlConnectionStringBuilder(conexiones[cbConexiones.EditValue.ToString()].ConnectionString);
+            Program.dtm.Conexion = new SqlConnectionStringBuilder(conexiones[cbConexiones.EditValue.ToString()].ConnectionString);
         }
 
         private void frmAcceder_Load(object sender, EventArgs e)

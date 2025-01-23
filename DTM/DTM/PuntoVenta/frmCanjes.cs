@@ -80,7 +80,7 @@ namespace DTM.PuntoVenta
             ((RepositoryItemLookUpEditBase)cbEgreso.Properties).ValueMember = "id";
             ((RepositoryItemLookUpEditBase)cbEgreso.Properties).DisplayMember = "nombre";
             ((BaseEdit)cbEgreso).EditValue = (from x in MetodoPago.MetodosPago()
-                                              where x.id == Program.Nori.Configuracion.metodo_pago_id
+                                              where x.id == Program.dtm.Configuracion.metodo_pago_id
                                               select x).First().tipo_metodo_pago_id;
         }
 
@@ -109,7 +109,7 @@ namespace DTM.PuntoVenta
                     {
                         return;
                     }
-                    autorizacion.referencia = $"Canje del usuario {Program.Nori.UsuarioAutenticado.usuario} en la estación {Program.Nori.Estacion.nombre}";
+                    autorizacion.referencia = $"Canje del usuario {Program.dtm.UsuarioAutenticado.usuario} en la estación {Program.dtm.Estacion.nombre}";
                     autorizacion.comentario = Interaction.InputBox("Comentario canje (Opcional)");
                     autorizacion.Agregar();
                     if (!autorizacion.autorizado)

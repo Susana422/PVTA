@@ -37,8 +37,8 @@ namespace DTM.Restaurante
             InitializeComponent();
             this.MetodoDinamico();
             CargarAsync();
-            ((BarItem)lblEstacion).Caption = Program.Nori.Estacion.nombre;
-            ((BarItem)lblUsuario).Caption = Program.Nori.UsuarioAutenticado.nombre;
+            ((BarItem)lblEstacion).Caption = Program.dtm.Estacion.nombre;
+            ((BarItem)lblUsuario).Caption = Program.dtm.UsuarioAutenticado.nombre;
             CargarMesas();
             frmComanda frmComanda2 = new frmComanda();
             ((Control)(object)frmComanda2).Show();
@@ -49,7 +49,7 @@ namespace DTM.Restaurante
             try
             {
                 Control ctrl = panelMesas;
-                ctrl.SetImage(await Funciones.CargarImagen(Program.Nori.Empresa.logotipo));
+                ctrl.SetImage(await Funciones.CargarImagen(Program.dtm.Empresa.logotipo));
             }
             catch (Exception ex2)
             {

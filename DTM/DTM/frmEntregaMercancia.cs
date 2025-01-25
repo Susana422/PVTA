@@ -199,7 +199,7 @@ namespace DTM
                 {
                     pedido = Documento.ObtenerPorNumero("FA", int.Parse(txtNumeroDocumento.Text));
                 }
-                if (pedido.id != 0 && (pedido.estado.Equals('C')))
+                if (pedido.id != 0)
                 {
                     documento.CopiarDe(pedido, "EN",false,false,false);
                     documento.partidas = Documento.ObtenerPartidas(documento.id);

@@ -38,6 +38,7 @@ using Color = System.Drawing.Color;
 using DataTable = System.Data.DataTable;
 using LabelControl = DevExpress.XtraEditors.LabelControl;
 using Task = System.Threading.Tasks.Task;
+using System.Xml.Linq;
 
 
 namespace DTM
@@ -250,8 +251,6 @@ namespace DTM
 
         private SimpleButton btnGenerar;
 
-        private SimpleButton btnActualizar;
-
         private Label lblImpreso;
 
         private Label lblCancelado;
@@ -340,8 +339,6 @@ namespace DTM
 
         private LabelControl lblActualizacion;
 
-        private HyperlinkLabelControl lblImportarFolioFiscal;
-
         private SimpleButton btnSolicitarEtiquetas;
 
         private DateEdit deFechaContabilizacion;
@@ -383,8 +380,6 @@ namespace DTM
         private DateEdit deFechaVencimiento;
 
         private RepositoryItemCalcEdit repositoryItemCalcEdit1;
-
-        private LabelControl lblUtilidad;
 
         private LookUpEdit cbCausalidades;
 
@@ -436,8 +431,6 @@ namespace DTM
 
         private HyperlinkLabelControl lblClase;
 
-        private SimpleButton btnGenerarSustitucion;
-
         private SimpleButton btnEliminarDE;
 
         private CheckEdit cbGlobal;
@@ -453,12 +446,6 @@ namespace DTM
         private LabelControl lblDistancia;
 
         private TextEdit txtDistancia;
-
-        private SimpleButton btnEditarDireccionEnvio;
-
-        private SimpleButton btnEditarDireccionFacturacion;
-
-        private SimpleButton btnEditarDireccionOrigen;
 
         private SimpleButton btnAgregarDireccionOrigen;
 
@@ -518,6 +505,13 @@ namespace DTM
                 txtFactVencidas.Visible = false;
                 txtCreditoDisponible.Visible = false;
                 lbMensajeC.Visible = false;
+             
+            }
+            if (documento.clase.Equals("CO")) {
+                bbiXML.Visibility = BarItemVisibility.Never;
+            }
+            if (documento.clase.Equals("FA")) {
+                bbiXML.Visibility = BarItemVisibility.Always;
             }
             if (documento.clase.Equals("EN"))
             {
@@ -528,6 +522,7 @@ namespace DTM
                 lbCredito.Visible = false;
                 lbFact.Visible = false;
                 lbMensajeC.Visible = false;
+                bbiXML.Visibility = BarItemVisibility.Never;
             }
             if (documento.clase.Equals("PE"))
             {
@@ -538,6 +533,7 @@ namespace DTM
                 lbCredito.Visible = true;
                 lbFact.Visible = true;
                 lbMensajeC.Visible = false;
+                bbiXML.Visibility = BarItemVisibility.Never;
             }
             if (documento.tipo.Equals('I') || documento.clase.Equals("PE") || documento.clase.Equals("CC") || documento.clase.Equals("EM"))
             {
@@ -575,7 +571,9 @@ namespace DTM
             {
                 txtArticulo.Focus();
             }
+           
             Permisos();
+           
             lblCodigoSN.Visible = true;
             gvPartidas.ValidatingEditor += GvPartidas_ValidatingEditor;
         }
@@ -847,6 +845,17 @@ namespace DTM
                     else
                     {
                         documento.CopiarDe(Documento.Obtener(f.ids[0]), documento.clase);
+                        DataTable data = documento.limiteCredito(socio.codigo);
+                        if (data.Rows.Count > 0)
+                        {
+                            if (Convert.ToDecimal(data.Rows[0]["fact_vencidas"]) > 1 && documento.clase == "PE")
+                            {
+                                documento.condicion_pago_id = 19;
+                                documento.metodo_pago_id = 1;
+                                cbCondicionesPago.EditValue = 19;
+                                cbMetodosPago.EditValue = 1;
+                            }
+                        }
                         Documento obj3 = documento;
                         decimal descuento2 = (documento.porcentaje_descuento = default(decimal));
                         obj3.descuento = descuento2;
@@ -1027,9 +1036,11 @@ namespace DTM
                                                orderby x.numero_documento descending
                                                select new { x.id }).First().id);
                 Cargar();
+               
             }
             catch (Exception ex)
             {
+                Permisos();
                 MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             finally
@@ -1071,6 +1082,10 @@ namespace DTM
                 bbiParametrizaciones.Enabled = false;
                 switch (Program.dtm.UsuarioAutenticado.rol)
                 {
+                    case 'L':
+                        panelControl1.Visible = false;
+                        listBoxControl1.Visible = false;
+                        break;
                     case 'A':
                         bbiParametrizaciones.Enabled = true;
                         break;
@@ -1212,6 +1227,7 @@ namespace DTM
         {
             try
             {
+                
                 cbSeries.EditValue = documento.serie_id;
                 txtNumeroDocumento.Text = documento.numero_documento.ToString();
                 txtNumeroDocumentoExterno.Text = documento.numero_documento_externo.ToString();
@@ -1249,6 +1265,12 @@ namespace DTM
                     btnStat.BackColor = Color.White;
                     btnStat.ForeColor = Color.White;
                     mensaje = string.Empty;
+                    accordionControlVolumen.Elements.Clear();
+                    accordionControlMonto.Elements.Clear();
+                    accordionControlDescuentoDir.Elements.Clear();
+                    listBoxControl1.Visible = false;
+                    pictureBox1.Visible = false;
+                    picturesku.Visible = false;
                 }
                 lbReferencias.Visible = false;
                 if (documento.socio_id != 0)
@@ -1277,6 +1299,7 @@ namespace DTM
                     bool flag16 = (textEdit2.Enabled = flag14);
                     enabled = (textEdit.Enabled = flag16);
                     lookUpEdit.Enabled = enabled;
+
                 }
                 else
                 {
@@ -1298,7 +1321,7 @@ namespace DTM
                     bool flag14 = (textEdit6.Enabled = flag12);
                     bool flag16 = (textEdit5.Enabled = flag14);
                     enabled = (textEdit4.Enabled = flag16);
-                    lookUpEdit2.Enabled = enabled;
+                   // lookUpEdit2.Enabled = enabled;
                 }
                 if (bbiCopiar.Enabled)
                 {
@@ -1311,8 +1334,8 @@ namespace DTM
                     bool flag16 = (bbiImprimir.Enabled = false);
                     enabled = (barSubItem3.Enabled = flag16);
                     barButtonItem9.Enabled = enabled;
-                    CheckEdit checkEdit = cbAnticipo;
-                    CheckEdit checkEdit2 = cbReserva;
+                    //CheckEdit checkEdit = cbAnticipo;
+                    //CheckEdit checkEdit2 = cbReserva;
                     TextEdit textEdit7 = txtArticulo;
                     BarButtonItem barButtonItem10 = bbiGuardar;
                     BarButtonItem barButtonItem11 = bbiGuardarCerrar;
@@ -1322,8 +1345,8 @@ namespace DTM
                     bool flag12 = (barButtonItem11.Enabled = flag10);
                     bool flag14 = (barButtonItem10.Enabled = flag12);
                     flag16 = (textEdit7.Enabled = flag14);
-                    enabled = (checkEdit2.Enabled = flag16);
-                    checkEdit.Enabled = enabled;
+                    //enabled = (checkEdit2.Enabled = flag16);
+                    //checkEdit.Enabled = enabled;
                     if (documento.socio_id == 0 && !documento.tipo.Equals('C'))
                     {
                         socio = Socio.Obtener(Program.dtm.UsuarioAutenticado.socio_id);
@@ -1340,9 +1363,9 @@ namespace DTM
                 }
                 else
                 {
-                    CheckEdit checkEdit3 = cbAnticipo;
-                    enabled = (cbReserva.Enabled = false);
-                    checkEdit3.Enabled = enabled;
+                    //CheckEdit checkEdit3 = cbAnticipo;
+                    //enabled = (cbReserva.Enabled = false);
+                    //checkEdit3.Enabled = enabled;
                     if (busqueda)
                     {
                         TextEdit textEdit8 = txtArticulo;
@@ -1398,23 +1421,23 @@ namespace DTM
                 //lblIdentificadorExterno.Visible = ((documento.identificador_externo != 0) ? true : false);
                 if (documento.clase.Equals("PE"))
                 {
-                    cbCOD.Visible = true;
+                  //  cbCOD.Visible = true;
                 }
                 else
                 {
-                    cbCOD.Visible = false;
+                    //cbCOD.Visible = false;
                 }
                 if (documento.clase.Equals("FA"))
                 {
-                    CheckEdit checkEdit4 = cbAnticipo;
-                    enabled = (cbReserva.Visible = true);
-                    checkEdit4.Visible = enabled;
+                    //CheckEdit checkEdit4 = cbAnticipo;
+                    //enabled = (cbReserva.Visible = true);
+                    //checkEdit4.Visible = enabled;
                 }
                 else
                 {
-                    CheckEdit checkEdit5 = cbAnticipo;
-                    enabled = (cbReserva.Visible = false);
-                    checkEdit5.Visible = enabled;
+                    //CheckEdit checkEdit5 = cbAnticipo;
+                    //enabled = (cbReserva.Visible = false);
+                    //checkEdit5.Visible = enabled;
                 }
                 BarCodeControl barCodeControl = bcID;
                 string text2 = (lblID.Text = documento.id.ToString());
@@ -1423,9 +1446,9 @@ namespace DTM
                 lblCancelado.Visible = documento.cancelado;
                 lblImpreso.Visible = documento.impreso;
                 lblEnviado.Visible = documento.enviado;
-                cbCOD.Checked = documento.cod;
-                cbReserva.Checked = documento.reserva;
-                cbAnticipo.Checked = documento.anticipo;
+                //cbCOD.Checked = documento.cod;
+                //cbReserva.Checked = documento.reserva;
+                //cbAnticipo.Checked = documento.anticipo;
                 txtCodigoSN.Text = socio.codigo;
                 lblSocio.Text = socio.nombre;
                 lblID.Text = socio.id.ToString();
@@ -1435,7 +1458,7 @@ namespace DTM
                 deFechaContabilizacion.DateTime = documento.fecha_contabilizacion;
                 deFechaVencimiento.DateTime = documento.fecha_vencimiento;
                 txtFechaDocumento.Text = documento.fecha_documento.ToShortDateString();
-                cbVendedores.EditValue = documento.vendedor_id;
+           
                 txtReferencia.Text = documento.referencia;
                 txtComentario.Text = documento.comentario;
                 if (documento.socio_id != 0 || documento.id != 0)
@@ -1472,6 +1495,14 @@ namespace DTM
                 CargarDocumentoElectronico();
                 CargarReferencias();
                 CargarAnexos();
+                if (Program.dtm.UsuarioAutenticado.almacen_id != 0 && documento.id == 0)
+                {
+                    cbVendedores.Visible = true;
+                    cbVendedores.EditValue = Program.dtm.UsuarioAutenticado.vendedor_id;
+                }
+                else {
+                    cbVendedores.EditValue = documento.vendedor_id;
+                }
                 cbAlmacenOrigen.EditValue = documento.almacen_id;
                 cbAlmacenDestino.EditValue = documento.almacen_destino_id;
                 //cbMonederos.EditValue = documento.monedero_id;
@@ -1863,7 +1894,7 @@ namespace DTM
                     lblPartidas.Text = $"Partidas {documento.numero_partidas}";
                     lblArticulos.Text = $"Artículos {documento.cantidad_partidas}";
                     decimal num = Math.Round((documento.partidas.Sum((Documento.Partida x) => x.precio * x.tipo_cambio) - documento.partidas.Sum((Documento.Partida x) => x.costo)) / documento.partidas.Sum((Documento.Partida x) => x.costo) * 100m, 2);
-                    lblUtilidad.Text = $"Utilidad {num}%";
+                    //lblUtilidad.Text = $"Utilidad {num}%";
                 }
                 catch
                 {
@@ -1895,7 +1926,7 @@ namespace DTM
                     lblPartidas.Text = $"Partidas {documento.numero_partidas}";
                     lblArticulos.Text = $"Artículos {documento.cantidad_partidas}";
                     decimal num = Math.Round((documento.partidas.Sum((Documento.Partida x) => x.precio * x.tipo_cambio) - documento.partidas.Sum((Documento.Partida x) => x.costo)) / documento.partidas.Sum((Documento.Partida x) => x.costo) * 100m, 2);
-                    lblUtilidad.Text = $"Utilidad {num}%";
+                    //lblUtilidad.Text = $"Utilidad {num}%";
                 }
                 catch (Exception ex)
                 {
@@ -1955,13 +1986,27 @@ namespace DTM
                 if (documento.EstablecerSocio(socio))
                 {
                     txtCodigoSN.Text = socio.codigo;
+                 
+                    lblSocio.Text = socio.nombre;
+                    lblID.Text = socio.id.ToString();
+                    lblRFC.Text = socio.rfc;
+                    if (Program.dtm.UsuarioAutenticado.vendedor_id !=0) 
+                    {
+                        cbVendedores.EditValue = Program.dtm.UsuarioAutenticado.vendedor_id;
+                    }
+                   
+                    cbMetodosPago.EditValue = documento.metodo_pago_id;
+                    txtCuentaPago.Text = documento.cuenta_pago;
+                    cbCondicionesPago.EditValue = documento.condicion_pago_id;
                     DataTable data = documento.limiteCredito(socio.codigo);
                     if (data.Rows.Count > 0)
                     {
-                        if (Convert.ToDecimal(data.Rows[0]["fact_vencidas"]) > 2 && documento.clase == "PE")
+                        if (Convert.ToDecimal(data.Rows[0]["fact_vencidas"]) > 1 && documento.clase == "PE")
                         {
                             lbMensajeC.Visible = true;
                             lbMensajeC.Text = "La Venta debera ser de Contado tiene Facturas pendientes por Pagar";
+                            cbCondicionesPago.EditValue = 19;
+                            cbMetodosPago.EditValue = 1;
                         }
                         if (Convert.ToDecimal(data.Rows[0]["credito disponible"]) < 0)
                         {
@@ -1971,13 +2016,6 @@ namespace DTM
                         txtCreditoDisponible.Text = Convert.ToDecimal(data.Rows[0]["credito disponible"]).ToString("0.##");
                         txtFactVencidas.Text = Convert.ToDecimal(data.Rows[0]["fact_vencidas"]).ToString("0.##");
                     }
-                    lblSocio.Text = socio.nombre;
-                    lblID.Text = socio.id.ToString();
-                    lblRFC.Text = socio.rfc;
-                    cbVendedores.EditValue = documento.vendedor_id;
-                    cbMetodosPago.EditValue = documento.metodo_pago_id;
-                    txtCuentaPago.Text = documento.cuenta_pago;
-                    cbCondicionesPago.EditValue = documento.condicion_pago_id;
                     //cbMonederos.EditValue = documento.monedero_id;
                     cbUsoPrincipal.EditValue = documento.uso_principal;
                     if (documento.clase.Equals("CO") || documento.clase.Equals("PE"))
@@ -2056,9 +2094,9 @@ namespace DTM
         {
             try
             {
-                documento.cod = cbCOD.Checked;
-                documento.reserva = cbReserva.Checked;
-                documento.anticipo = cbAnticipo.Checked;
+                //documento.cod = cbCOD.Checked;
+                //documento.reserva = cbReserva.Checked;
+                //documento.anticipo = cbAnticipo.Checked;
                 Documento obj = documento;
                 DateTime fecha_documento = (documento.fecha_contabilizacion = deFechaContabilizacion.DateTime);
                 obj.fecha_documento = fecha_documento;
@@ -3098,7 +3136,10 @@ namespace DTM
         {
             try
             {
-                bool data = documento.AgregarPartidaExcel(q, 0, Decimal.Parse(cantidad));
+                if (q !="" && cantidad != "") {
+                    bool data = documento.AgregarPartidaExcel(q, 0, Decimal.Parse(cantidad));
+                }
+      
 
             }
             catch (Exception ex)
@@ -3365,11 +3406,15 @@ namespace DTM
                         headerRow["nombre"] = "Estos son los artículos sugeridos para el articulo: " +partida.sku +" "+partida.nombre; // Texto de encabezado
                         dt.Rows.InsertAt(headerRow, 0);
                         dt.Columns.Add("DisplayText", typeof(string), "sku + ' - ' + nombre");
-                        listBoxControl1.DataSource = dt;
-                        listBoxControl1.DisplayMember = "DisplayText";
-                        listBoxControl1.ValueMember = "id";
-                        listBoxControl1.Visible = true;
-                        pictureBox1.Visible = true;
+                        if (Program.dtm.UsuarioAutenticado.rol != 'L' && Program.dtm.UsuarioAutenticado.rol != 'C') 
+                        {
+                            listBoxControl1.DataSource = dt;
+                            listBoxControl1.DisplayMember = "DisplayText";
+                            listBoxControl1.ValueMember = "id";
+                            listBoxControl1.Visible = true;
+                            pictureBox1.Visible = true;
+                        }
+                       
                         string image = Articulo.ObtenerImagen(partida.articulo_id);
                         picturesku.LoadImage(image);
                         picturesku.Visible = true;
@@ -4887,22 +4932,25 @@ namespace DTM
                     {
                         int rowHandle = hitInfo.RowHandle;
                         //gcPartidas
-                        
-                        DataTable dt = ArticuloSugerido.ObtenerArt(documento.partidas[rowHandle].sku);
-                        DataRow headerRow = dt.NewRow();
-                        headerRow["id"] = 0;
-                        headerRow["sku"] = " ";
-                        headerRow["nombre"] = "Estos son los artículos sugeridos para el articulo: " + documento.partidas[0].sku + " " + documento.partidas[rowHandle].nombre; // Texto de encabezado
-                        dt.Rows.InsertAt(headerRow, 0);
-                        dt.Columns.Add("DisplayText", typeof(string), "sku + ' - ' + nombre");
-                        listBoxControl1.DataSource = dt;
-                        listBoxControl1.DisplayMember = "DisplayText";
-                        listBoxControl1.ValueMember = "id";
-                        listBoxControl1.Visible = true;
-                        var articulo = Articulo.Obtener(documento.partidas[rowHandle].articulo_id);
-                        picturesku.LoadImage(articulo.imagen);
-                        picturesku.Visible = true;
-                        AgregarPromociones(documento.codigo_sn,articulo.sku,documento.lista_precio_id,articulo.grupo_articulo_id);
+                        string rol = Program.dtm.UsuarioAutenticado.rol.ToString();
+                        if (rol !="L" && rol !="C")
+                        {
+                            DataTable dt = ArticuloSugerido.ObtenerArt(documento.partidas[rowHandle].sku);
+                            DataRow headerRow = dt.NewRow();
+                            headerRow["id"] = 0;
+                            headerRow["sku"] = " ";
+                            headerRow["nombre"] = "Estos son los artículos sugeridos para el articulo: " + documento.partidas[0].sku + " " + documento.partidas[rowHandle].nombre; // Texto de encabezado
+                            dt.Rows.InsertAt(headerRow, 0);
+                            dt.Columns.Add("DisplayText", typeof(string), "sku + ' - ' + nombre");
+                            listBoxControl1.DataSource = dt;
+                            listBoxControl1.DisplayMember = "DisplayText";
+                            listBoxControl1.ValueMember = "id";
+                            listBoxControl1.Visible = true;
+                            var articulo = Articulo.Obtener(documento.partidas[rowHandle].articulo_id);
+                            picturesku.LoadImage(articulo.imagen);
+                            picturesku.Visible = true;
+                            AgregarPromociones(documento.codigo_sn, articulo.sku, documento.lista_precio_id, articulo.grupo_articulo_id);
+                        }
                     }
                 }
             }
@@ -4954,6 +5002,39 @@ namespace DTM
 
             // Mostrar el formulario de zoom
             formZoom.Show();
+        }
+
+        private void bbiXML_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (documento.id == 0)
+            {
+                return;
+            }
+            try
+            {
+                   DocumentoElectronico documentoElectronico = documento.DocumentoElectronico();
+            if (documentoElectronico.id != 0)
+            {
+                string ruta = $"{Program.dtm.Configuracion.directorio_xml}\\{documentoElectronico.folio_fiscal}.xml";
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = ruta,
+                    UseShellExecute = true
+                });
+            }
+            }
+            catch (Exception)
+            {
+
+            }
+            
+         
+            
+        }
+
+        private void cbVendedores_EditValueChanged(object sender, EventArgs e)
+        {
+            var valor = cbVendedores.EditValue;
         }
     }
 

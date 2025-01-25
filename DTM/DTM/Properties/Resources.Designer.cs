@@ -203,6 +203,26 @@ namespace componentResourceManager {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap news_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("news_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap news_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("news_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap profile {
             get {
                 object obj = ResourceManager.GetObject("profile", resourceCulture);
@@ -236,6 +256,16 @@ namespace componentResourceManager {
         internal static System.Drawing.Bitmap reminder_16x16 {
             get {
                 object obj = ResourceManager.GetObject("reminder_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap show_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("show_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

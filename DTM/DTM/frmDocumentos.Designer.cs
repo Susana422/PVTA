@@ -38,17 +38,27 @@ namespace DTM
     {
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
+            try
             {
-                components.Dispose();
+                if (disposing && components != null)
+                {
+                    components.Dispose();
+                }
+                // Dispose(disposing);
             }
-            base.Dispose(disposing);
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                base.Dispose(disposing);
+            }
         }
 
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator4 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
+            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator2 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiGuardar = new DevExpress.XtraBars.BarButtonItem();
             this.bbiGuardarCerrar = new DevExpress.XtraBars.BarButtonItem();
@@ -80,6 +90,7 @@ namespace DTM
             this.bbiParametrizaciones = new DevExpress.XtraBars.BarButtonItem();
             this.bbiAbrir = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiXML = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.searchRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -100,8 +111,6 @@ namespace DTM
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.listBoxControl1 = new DevExpress.XtraEditors.ListBoxControl();
-            this.cbAnticipo = new DevExpress.XtraEditors.CheckEdit();
-            this.cbCOD = new DevExpress.XtraEditors.CheckEdit();
             this.lbMensajeC = new DevExpress.XtraEditors.LabelControl();
             this.lbFact = new DevExpress.XtraEditors.LabelControl();
             this.lbCredito = new DevExpress.XtraEditors.LabelControl();
@@ -121,7 +130,6 @@ namespace DTM
             this.lblClase = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.cbAlmacenDestino = new DevExpress.XtraEditors.LookUpEdit();
             this.cbAlmacenOrigen = new DevExpress.XtraEditors.LookUpEdit();
-            this.lblUtilidad = new DevExpress.XtraEditors.LabelControl();
             this.deFechaVencimiento = new DevExpress.XtraEditors.DateEdit();
             this.deFechaContabilizacion = new DevExpress.XtraEditors.DateEdit();
             this.txtNumeroDocumentoExterno = new DevExpress.XtraEditors.TextEdit();
@@ -129,7 +137,6 @@ namespace DTM
             this.lblPartidas = new DevExpress.XtraEditors.LabelControl();
             this.lblReferencia = new DevExpress.XtraEditors.LabelControl();
             this.txtReferencia = new DevExpress.XtraEditors.TextEdit();
-            this.cbReserva = new DevExpress.XtraEditors.CheckEdit();
             this.lblCodigoSN = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.lblID = new DevExpress.XtraEditors.LabelControl();
             this.lblImpreso = new System.Windows.Forms.Label();
@@ -200,13 +207,10 @@ namespace DTM
             this.gridColumnNumeroPedimento = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cbAlmacenesDestino = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.xtraTabPageLogistica = new DevExpress.XtraTab.XtraTabPage();
-            this.btnEditarDireccionOrigen = new DevExpress.XtraEditors.SimpleButton();
             this.btnAgregarDireccionOrigen = new DevExpress.XtraEditors.SimpleButton();
             this.txtDireccionOrigen = new DevExpress.XtraEditors.MemoEdit();
             this.cbDireccionesOrigen = new DevExpress.XtraEditors.LookUpEdit();
             this.lblDireccionOrigen = new DevExpress.XtraEditors.LabelControl();
-            this.btnEditarDireccionFacturacion = new DevExpress.XtraEditors.SimpleButton();
-            this.btnEditarDireccionEnvio = new DevExpress.XtraEditors.SimpleButton();
             this.lblDistancia = new DevExpress.XtraEditors.LabelControl();
             this.txtDistancia = new DevExpress.XtraEditors.TextEdit();
             this.cbRemolques = new DevExpress.XtraEditors.LookUpEdit();
@@ -259,7 +263,6 @@ namespace DTM
             this.lblCondicionesPago = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.xtraTabPageDocumentoElectronico = new DevExpress.XtraTab.XtraTabPage();
             this.cbGlobal = new DevExpress.XtraEditors.CheckEdit();
-            this.btnGenerarSustitucion = new DevExpress.XtraEditors.SimpleButton();
             this.btnEliminarDE = new DevExpress.XtraEditors.SimpleButton();
             this.lblRFC = new DevExpress.XtraEditors.LabelControl();
             this.btnGenerarRFCGenerico = new DevExpress.XtraEditors.SimpleButton();
@@ -270,11 +273,9 @@ namespace DTM
             this.txtUUIDPorCancelar = new System.Windows.Forms.RichTextBox();
             this.btnCancelacionMasiva = new System.Windows.Forms.Button();
             this.btnEstadoCFDI = new DevExpress.XtraEditors.SimpleButton();
-            this.lblImportarFolioFiscal = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.cbUsoPrincipal = new DevExpress.XtraEditors.LookUpEdit();
             this.lblUsoPrincipal = new DevExpress.XtraEditors.LabelControl();
-            this.btnActualizar = new DevExpress.XtraEditors.SimpleButton();
             this.btnGenerar = new DevExpress.XtraEditors.SimpleButton();
             this.txtSelloCFD = new DevExpress.XtraEditors.MemoEdit();
             this.lblSelloCFD = new DevExpress.XtraEditors.LabelControl();
@@ -306,8 +307,6 @@ namespace DTM
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbAnticipo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbCOD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFactVencidas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCreditoDisponible.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtArticulo.Properties)).BeginInit();
@@ -320,7 +319,6 @@ namespace DTM
             ((System.ComponentModel.ISupportInitialize)(this.deFechaContabilizacion.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroDocumentoExterno.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReferencia.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbReserva.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoCambio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMonedas.Properties)).BeginInit();
@@ -423,10 +421,11 @@ namespace DTM
             this.bbiCancelacionManualCFDI,
             this.bbiParametrizaciones,
             this.bbiAbrir,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.bbiXML});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
             this.mainRibbonControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.mainRibbonControl.MaxItemId = 26;
+            this.mainRibbonControl.MaxItemId = 27;
             this.mainRibbonControl.Name = "mainRibbonControl";
             this.mainRibbonControl.OptionsMenuMinWidth = 440;
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -434,7 +433,7 @@ namespace DTM
             this.ribbonPageHerramientas});
             this.mainRibbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.mainRibbonControl.Size = new System.Drawing.Size(1198, 90);
+            this.mainRibbonControl.Size = new System.Drawing.Size(1204, 94);
             this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bbiGuardar
@@ -672,6 +671,15 @@ namespace DTM
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
             // 
+            // bbiXML
+            // 
+            this.bbiXML.Caption = "XML";
+            this.bbiXML.Id = 26;
+            this.bbiXML.ImageOptions.Image = global::componentResourceManager.Resources.news_16x16;
+            this.bbiXML.ImageOptions.LargeImage = global::componentResourceManager.Resources.news_32x32;
+            this.bbiXML.Name = "bbiXML";
+            this.bbiXML.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiXML_ItemClick);
+            // 
             // mainRibbonPage
             // 
             this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -693,6 +701,7 @@ namespace DTM
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiPDF);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiImprimir);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiCopiar);
+            this.mainRibbonPageGroup.ItemLinks.Add(this.bbiXML);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
             this.mainRibbonPageGroup.Text = "Opciones";
             // 
@@ -747,11 +756,11 @@ namespace DTM
             // 
             this.layoutControl1.Controls.Add(this.xtraTabControl1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 90);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 94);
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1198, 769);
+            this.layoutControl1.Size = new System.Drawing.Size(1204, 768);
             this.layoutControl1.TabIndex = 59;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -761,7 +770,7 @@ namespace DTM
             this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPageGeneral;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1174, 745);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1180, 744);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageGeneral,
@@ -776,8 +785,6 @@ namespace DTM
             this.xtraTabPageGeneral.Controls.Add(this.panelControl1);
             this.xtraTabPageGeneral.Controls.Add(this.pictureBox1);
             this.xtraTabPageGeneral.Controls.Add(this.listBoxControl1);
-            this.xtraTabPageGeneral.Controls.Add(this.cbAnticipo);
-            this.xtraTabPageGeneral.Controls.Add(this.cbCOD);
             this.xtraTabPageGeneral.Controls.Add(this.lbMensajeC);
             this.xtraTabPageGeneral.Controls.Add(this.lbFact);
             this.xtraTabPageGeneral.Controls.Add(this.lbCredito);
@@ -797,7 +804,6 @@ namespace DTM
             this.xtraTabPageGeneral.Controls.Add(this.lblClase);
             this.xtraTabPageGeneral.Controls.Add(this.cbAlmacenDestino);
             this.xtraTabPageGeneral.Controls.Add(this.cbAlmacenOrigen);
-            this.xtraTabPageGeneral.Controls.Add(this.lblUtilidad);
             this.xtraTabPageGeneral.Controls.Add(this.deFechaVencimiento);
             this.xtraTabPageGeneral.Controls.Add(this.deFechaContabilizacion);
             this.xtraTabPageGeneral.Controls.Add(this.txtNumeroDocumentoExterno);
@@ -805,7 +811,6 @@ namespace DTM
             this.xtraTabPageGeneral.Controls.Add(this.lblPartidas);
             this.xtraTabPageGeneral.Controls.Add(this.lblReferencia);
             this.xtraTabPageGeneral.Controls.Add(this.txtReferencia);
-            this.xtraTabPageGeneral.Controls.Add(this.cbReserva);
             this.xtraTabPageGeneral.Controls.Add(this.lblCodigoSN);
             this.xtraTabPageGeneral.Controls.Add(this.lblID);
             this.xtraTabPageGeneral.Controls.Add(this.lblImpreso);
@@ -939,28 +944,6 @@ namespace DTM
             this.listBoxControl1.Size = new System.Drawing.Size(134, 178);
             this.listBoxControl1.TabIndex = 177;
             this.listBoxControl1.SelectedIndexChanged += new System.EventHandler(this.listBoxControl1_SelectedIndexChanged);
-            // 
-            // cbAnticipo
-            // 
-            this.cbAnticipo.Location = new System.Drawing.Point(406, 57);
-            this.cbAnticipo.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.cbAnticipo.MenuManager = this.mainRibbonControl;
-            this.cbAnticipo.Name = "cbAnticipo";
-            this.cbAnticipo.Properties.Caption = "Anticipo";
-            this.cbAnticipo.Size = new System.Drawing.Size(74, 21);
-            this.cbAnticipo.TabIndex = 176;
-            this.cbAnticipo.TabStop = false;
-            // 
-            // cbCOD
-            // 
-            this.cbCOD.Location = new System.Drawing.Point(342, 57);
-            this.cbCOD.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.cbCOD.MenuManager = this.mainRibbonControl;
-            this.cbCOD.Name = "cbCOD";
-            this.cbCOD.Properties.Caption = "COD";
-            this.cbCOD.Size = new System.Drawing.Size(101, 21);
-            this.cbCOD.TabIndex = 175;
-            this.cbCOD.TabStop = false;
             // 
             // lbMensajeC
             // 
@@ -1189,16 +1172,6 @@ namespace DTM
             this.cbAlmacenOrigen.TabIndex = 156;
             this.cbAlmacenOrigen.Visible = false;
             // 
-            // lblUtilidad
-            // 
-            this.lblUtilidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblUtilidad.Location = new System.Drawing.Point(426, 636);
-            this.lblUtilidad.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.lblUtilidad.Name = "lblUtilidad";
-            this.lblUtilidad.Size = new System.Drawing.Size(48, 17);
-            this.lblUtilidad.TabIndex = 154;
-            this.lblUtilidad.Text = "Utilidad";
-            // 
             // deFechaVencimiento
             // 
             this.deFechaVencimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1285,17 +1258,6 @@ namespace DTM
             this.txtReferencia.TabIndex = 0;
             this.txtReferencia.TabStop = false;
             this.txtReferencia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNumeroDocumento_KeyDown);
-            // 
-            // cbReserva
-            // 
-            this.cbReserva.Location = new System.Drawing.Point(272, 57);
-            this.cbReserva.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.cbReserva.MenuManager = this.mainRibbonControl;
-            this.cbReserva.Name = "cbReserva";
-            this.cbReserva.Properties.Caption = "Reserva";
-            this.cbReserva.Size = new System.Drawing.Size(72, 21);
-            this.cbReserva.TabIndex = 0;
-            this.cbReserva.TabStop = false;
             // 
             // lblCodigoSN
             // 
@@ -1539,6 +1501,7 @@ namespace DTM
             this.cbVendedores.Size = new System.Drawing.Size(264, 24);
             this.cbVendedores.TabIndex = 0;
             this.cbVendedores.TabStop = false;
+            this.cbVendedores.EditValueChanged += new System.EventHandler(this.cbVendedores_EditValueChanged);
             // 
             // lblVendedores
             // 
@@ -2198,13 +2161,10 @@ namespace DTM
             // 
             // xtraTabPageLogistica
             // 
-            this.xtraTabPageLogistica.Controls.Add(this.btnEditarDireccionOrigen);
             this.xtraTabPageLogistica.Controls.Add(this.btnAgregarDireccionOrigen);
             this.xtraTabPageLogistica.Controls.Add(this.txtDireccionOrigen);
             this.xtraTabPageLogistica.Controls.Add(this.cbDireccionesOrigen);
             this.xtraTabPageLogistica.Controls.Add(this.lblDireccionOrigen);
-            this.xtraTabPageLogistica.Controls.Add(this.btnEditarDireccionFacturacion);
-            this.xtraTabPageLogistica.Controls.Add(this.btnEditarDireccionEnvio);
             this.xtraTabPageLogistica.Controls.Add(this.lblDistancia);
             this.xtraTabPageLogistica.Controls.Add(this.txtDistancia);
             this.xtraTabPageLogistica.Controls.Add(this.cbRemolques);
@@ -2243,26 +2203,16 @@ namespace DTM
             this.xtraTabPageLogistica.Size = new System.Drawing.Size(1168, 715);
             this.xtraTabPageLogistica.Text = "Logística";
             // 
-            // btnEditarDireccionOrigen
-            // 
-            this.btnEditarDireccionOrigen.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnEditarDireccionOrigen.Location = new System.Drawing.Point(450, 389);
-            this.btnEditarDireccionOrigen.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnEditarDireccionOrigen.Name = "btnEditarDireccionOrigen";
-            this.btnEditarDireccionOrigen.Size = new System.Drawing.Size(32, 26);
-            this.btnEditarDireccionOrigen.TabIndex = 173;
-            this.btnEditarDireccionOrigen.TabStop = false;
-            this.btnEditarDireccionOrigen.Click += new System.EventHandler(this.btnEditarDireccionOrigen_Click);
-            // 
             // btnAgregarDireccionOrigen
             // 
             this.btnAgregarDireccionOrigen.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnAgregarDireccionOrigen.Location = new System.Drawing.Point(450, 354);
             this.btnAgregarDireccionOrigen.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnAgregarDireccionOrigen.Name = "btnAgregarDireccionOrigen";
-            this.btnAgregarDireccionOrigen.Size = new System.Drawing.Size(32, 26);
+            this.btnAgregarDireccionOrigen.Size = new System.Drawing.Size(82, 26);
             this.btnAgregarDireccionOrigen.TabIndex = 169;
             this.btnAgregarDireccionOrigen.TabStop = false;
+            this.btnAgregarDireccionOrigen.Text = "Agregar";
             this.btnAgregarDireccionOrigen.Click += new System.EventHandler(this.btnAgregarDireccionOrigen_Click);
             // 
             // txtDireccionOrigen
@@ -2300,28 +2250,6 @@ namespace DTM
             this.lblDireccionOrigen.Size = new System.Drawing.Size(99, 17);
             this.lblDireccionOrigen.TabIndex = 172;
             this.lblDireccionOrigen.Text = "Dirección origen";
-            // 
-            // btnEditarDireccionFacturacion
-            // 
-            this.btnEditarDireccionFacturacion.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnEditarDireccionFacturacion.Location = new System.Drawing.Point(450, 52);
-            this.btnEditarDireccionFacturacion.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnEditarDireccionFacturacion.Name = "btnEditarDireccionFacturacion";
-            this.btnEditarDireccionFacturacion.Size = new System.Drawing.Size(32, 26);
-            this.btnEditarDireccionFacturacion.TabIndex = 168;
-            this.btnEditarDireccionFacturacion.TabStop = false;
-            this.btnEditarDireccionFacturacion.Click += new System.EventHandler(this.btnEditarDireccionFacturacion_Click);
-            // 
-            // btnEditarDireccionEnvio
-            // 
-            this.btnEditarDireccionEnvio.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnEditarDireccionEnvio.Location = new System.Drawing.Point(450, 220);
-            this.btnEditarDireccionEnvio.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnEditarDireccionEnvio.Name = "btnEditarDireccionEnvio";
-            this.btnEditarDireccionEnvio.Size = new System.Drawing.Size(32, 26);
-            this.btnEditarDireccionEnvio.TabIndex = 167;
-            this.btnEditarDireccionEnvio.TabStop = false;
-            this.btnEditarDireccionEnvio.Click += new System.EventHandler(this.btnEditarDireccionEnvio_Click);
             // 
             // lblDistancia
             // 
@@ -2375,7 +2303,7 @@ namespace DTM
             this.bcID.Name = "bcID";
             this.bcID.Padding = new System.Windows.Forms.Padding(14, 2, 14, 0);
             this.bcID.Size = new System.Drawing.Size(291, 78);
-            this.bcID.Symbology = code128Generator4;
+            this.bcID.Symbology = code128Generator2;
             this.bcID.TabIndex = 147;
             // 
             // cbRutas
@@ -2567,6 +2495,7 @@ namespace DTM
             this.btnSolicitarEtiquetas.Size = new System.Drawing.Size(160, 26);
             this.btnSolicitarEtiquetas.TabIndex = 10;
             this.btnSolicitarEtiquetas.Text = "Solicitar etiquetas";
+            this.btnSolicitarEtiquetas.Visible = false;
             this.btnSolicitarEtiquetas.Click += new System.EventHandler(this.btnSolicitarEtiquetas_Click);
             // 
             // lblActualizacion
@@ -2656,9 +2585,10 @@ namespace DTM
             this.btnDireccionFacturacion.Location = new System.Drawing.Point(450, 17);
             this.btnDireccionFacturacion.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnDireccionFacturacion.Name = "btnDireccionFacturacion";
-            this.btnDireccionFacturacion.Size = new System.Drawing.Size(32, 26);
+            this.btnDireccionFacturacion.Size = new System.Drawing.Size(73, 26);
             this.btnDireccionFacturacion.TabIndex = 0;
             this.btnDireccionFacturacion.TabStop = false;
+            this.btnDireccionFacturacion.Text = "Agregar";
             this.btnDireccionFacturacion.Click += new System.EventHandler(this.btnDireccionFacturacion_Click);
             // 
             // btnAgregarDireccionEnvio
@@ -2667,9 +2597,10 @@ namespace DTM
             this.btnAgregarDireccionEnvio.Location = new System.Drawing.Point(450, 185);
             this.btnAgregarDireccionEnvio.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnAgregarDireccionEnvio.Name = "btnAgregarDireccionEnvio";
-            this.btnAgregarDireccionEnvio.Size = new System.Drawing.Size(32, 26);
+            this.btnAgregarDireccionEnvio.Size = new System.Drawing.Size(73, 26);
             this.btnAgregarDireccionEnvio.TabIndex = 0;
             this.btnAgregarDireccionEnvio.TabStop = false;
+            this.btnAgregarDireccionEnvio.Text = "Agregar";
             this.btnAgregarDireccionEnvio.Click += new System.EventHandler(this.btnAgregarDireccionEnvio_Click);
             // 
             // txtDireccionEnvio
@@ -2927,7 +2858,6 @@ namespace DTM
             // xtraTabPageDocumentoElectronico
             // 
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.cbGlobal);
-            this.xtraTabPageDocumentoElectronico.Controls.Add(this.btnGenerarSustitucion);
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.btnEliminarDE);
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.lblRFC);
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.btnGenerarRFCGenerico);
@@ -2938,11 +2868,9 @@ namespace DTM
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.txtUUIDPorCancelar);
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.btnCancelacionMasiva);
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.btnEstadoCFDI);
-            this.xtraTabPageDocumentoElectronico.Controls.Add(this.lblImportarFolioFiscal);
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.btnCancelar);
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.cbUsoPrincipal);
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.lblUsoPrincipal);
-            this.xtraTabPageDocumentoElectronico.Controls.Add(this.btnActualizar);
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.btnGenerar);
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.txtSelloCFD);
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.lblSelloCFD);
@@ -2965,18 +2893,7 @@ namespace DTM
             this.cbGlobal.Properties.Caption = "Factura global";
             this.cbGlobal.Size = new System.Drawing.Size(175, 21);
             this.cbGlobal.TabIndex = 109;
-            // 
-            // btnGenerarSustitucion
-            // 
-            this.btnGenerarSustitucion.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnGenerarSustitucion.Location = new System.Drawing.Point(15, 597);
-            this.btnGenerarSustitucion.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnGenerarSustitucion.Name = "btnGenerarSustitucion";
-            this.btnGenerarSustitucion.Size = new System.Drawing.Size(358, 31);
-            this.btnGenerarSustitucion.TabIndex = 108;
-            this.btnGenerarSustitucion.TabStop = false;
-            this.btnGenerarSustitucion.Text = "Generar sustitución";
-            this.btnGenerarSustitucion.Click += new System.EventHandler(this.btnGenerarSustitucion_Click);
+            this.cbGlobal.Visible = false;
             // 
             // btnEliminarDE
             // 
@@ -3004,10 +2921,10 @@ namespace DTM
             // btnGenerarRFCGenerico
             // 
             this.btnGenerarRFCGenerico.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnGenerarRFCGenerico.Location = new System.Drawing.Point(87, 519);
+            this.btnGenerarRFCGenerico.Location = new System.Drawing.Point(127, 519);
             this.btnGenerarRFCGenerico.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnGenerarRFCGenerico.Name = "btnGenerarRFCGenerico";
-            this.btnGenerarRFCGenerico.Size = new System.Drawing.Size(175, 31);
+            this.btnGenerarRFCGenerico.Size = new System.Drawing.Size(223, 31);
             this.btnGenerarRFCGenerico.TabIndex = 105;
             this.btnGenerarRFCGenerico.TabStop = false;
             this.btnGenerarRFCGenerico.Text = "Generar con RFC genérico";
@@ -3022,6 +2939,7 @@ namespace DTM
             this.lblCancelacionMasiva.Size = new System.Drawing.Size(120, 17);
             this.lblCancelacionMasiva.TabIndex = 104;
             this.lblCancelacionMasiva.Text = "Cancelación masiva";
+            this.lblCancelacionMasiva.Visible = false;
             this.lblCancelacionMasiva.Click += new System.EventHandler(this.lblCancelacionMasiva_Click);
             // 
             // lblUUIDErrorCancelacion
@@ -3090,17 +3008,6 @@ namespace DTM
             this.btnEstadoCFDI.Text = "Estado CFDI";
             this.btnEstadoCFDI.Click += new System.EventHandler(this.btnEstadoCFDI_Click);
             // 
-            // lblImportarFolioFiscal
-            // 
-            this.lblImportarFolioFiscal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblImportarFolioFiscal.Location = new System.Drawing.Point(15, 558);
-            this.lblImportarFolioFiscal.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.lblImportarFolioFiscal.Name = "lblImportarFolioFiscal";
-            this.lblImportarFolioFiscal.Size = new System.Drawing.Size(117, 17);
-            this.lblImportarFolioFiscal.TabIndex = 97;
-            this.lblImportarFolioFiscal.Text = "Importar folio fiscal";
-            this.lblImportarFolioFiscal.Click += new System.EventHandler(this.lblImportarFolioFiscal_Click);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
@@ -3111,6 +3018,7 @@ namespace DTM
             this.btnCancelar.TabIndex = 0;
             this.btnCancelar.TabStop = false;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Visible = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // cbUsoPrincipal
@@ -3137,25 +3045,13 @@ namespace DTM
             this.lblUsoPrincipal.TabIndex = 96;
             this.lblUsoPrincipal.Text = "Uso principal";
             // 
-            // btnActualizar
-            // 
-            this.btnActualizar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.btnActualizar.Location = new System.Drawing.Point(272, 519);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(78, 31);
-            this.btnActualizar.TabIndex = 0;
-            this.btnActualizar.TabStop = false;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
             // btnGenerar
             // 
             this.btnGenerar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
             this.btnGenerar.Location = new System.Drawing.Point(15, 519);
             this.btnGenerar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(62, 31);
+            this.btnGenerar.Size = new System.Drawing.Size(102, 31);
             this.btnGenerar.TabIndex = 0;
             this.btnGenerar.TabStop = false;
             this.btnGenerar.Text = "Generar";
@@ -3234,7 +3130,7 @@ namespace DTM
             this.xtraTabPageAnexos.Controls.Add(this.lbAnexos);
             this.xtraTabPageAnexos.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageAnexos.Name = "xtraTabPageAnexos";
-            this.xtraTabPageAnexos.Size = new System.Drawing.Size(1168, 715);
+            this.xtraTabPageAnexos.Size = new System.Drawing.Size(1178, 715);
             this.xtraTabPageAnexos.Text = "Anexos";
             // 
             // btnVisualizarAnexo
@@ -3275,7 +3171,7 @@ namespace DTM
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1198, 769);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1204, 768);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -3283,7 +3179,7 @@ namespace DTM
             this.layoutControlItem1.Control = this.xtraTabControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1178, 749);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1184, 748);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -3295,7 +3191,7 @@ namespace DTM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1198, 859);
+            this.ClientSize = new System.Drawing.Size(1204, 862);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.mainRibbonControl);
             this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
@@ -3323,8 +3219,6 @@ namespace DTM
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbAnticipo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbCOD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFactVencidas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCreditoDisponible.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtArticulo.Properties)).EndInit();
@@ -3337,7 +3231,6 @@ namespace DTM
             ((System.ComponentModel.ISupportInitialize)(this.deFechaContabilizacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroDocumentoExterno.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReferencia.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbReserva.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoCambio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMonedas.Properties)).EndInit();
@@ -3422,9 +3315,6 @@ namespace DTM
         private TextEdit txtCreditoDisponible;
         private BarCodeControl bcID;
         private LabelControl lbMensajeC;
-        private CheckEdit cbReserva;
-        private CheckEdit cbCOD;
-        private CheckEdit cbAnticipo;
         private BarButtonItem barButtonItem1;
         private ListBoxControl listBoxControl1;
         private PictureBox pictureBox1;
@@ -3436,5 +3326,6 @@ namespace DTM
         private LabelControl labelControl2;
         private PanelControl panelControl1;
         private PictureBox picturesku;
+        private BarButtonItem bbiXML;
     }
 }

@@ -56,14 +56,9 @@ namespace DTM
             this.ribbonPageHerramientas = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItemDescuentos = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiParametrizacionesFormulario = new DevExpress.XtraBars.BarButtonItem();
             this.bbiPaquetes = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.bbiNuevo = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiGuardar = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiGuardarCerrar = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiGuardarNuevo = new DevExpress.XtraBars.BarButtonItem();
             this.searchRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.bbiBuscar = new DevExpress.XtraBars.BarButtonItem();
             this.bbiPrimero = new DevExpress.XtraBars.BarButtonItem();
@@ -80,16 +75,16 @@ namespace DTM
             this.cbVIP = new DevExpress.XtraEditors.CheckEdit();
             this.ribbonControl2 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.backstageViewControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiGuardar = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiGuardarCerrar = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiGuardarNuevo = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiNuevo = new DevExpress.XtraBars.BarButtonItem();
             this.bbiDocumentosVencidos = new DevExpress.XtraBars.BarButtonItem();
             this.bbiMonedero = new DevExpress.XtraBars.BarButtonItem();
             this.bbiPDF = new DevExpress.XtraBars.BarSubItem();
@@ -477,7 +472,6 @@ namespace DTM
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItemDescuentos);
-            this.ribbonPageGroup1.ItemLinks.Add(this.bbiParametrizacionesFormulario);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiPaquetes);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "ribbonPageGroup1";
@@ -487,12 +481,7 @@ namespace DTM
             this.barButtonItemDescuentos.Caption = "Descuentos";
             this.barButtonItemDescuentos.Id = 1;
             this.barButtonItemDescuentos.Name = "barButtonItemDescuentos";
-            // 
-            // bbiParametrizacionesFormulario
-            // 
-            this.bbiParametrizacionesFormulario.Caption = "Parametrizaciones de formulario";
-            this.bbiParametrizacionesFormulario.Id = 57;
-            this.bbiParametrizacionesFormulario.Name = "bbiParametrizacionesFormulario";
+     
             // 
             // bbiPaquetes
             // 
@@ -513,40 +502,8 @@ namespace DTM
             // 
             this.mainRibbonPageGroup.AllowTextClipping = false;
             this.mainRibbonPageGroup.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.mainRibbonPageGroup.ItemLinks.Add(this.bbiNuevo);
-            this.mainRibbonPageGroup.ItemLinks.Add(this.bbiGuardar);
-            this.mainRibbonPageGroup.ItemLinks.Add(this.bbiGuardarCerrar);
-            this.mainRibbonPageGroup.ItemLinks.Add(this.bbiGuardarNuevo);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
             this.mainRibbonPageGroup.Text = "Opciones";
-            // 
-            // bbiNuevo
-            // 
-            this.bbiNuevo.Caption = "Nuevo";
-            this.bbiNuevo.Id = 1;
-            this.bbiNuevo.ImageOptions.ImageUri.Uri = "Add";
-            this.bbiNuevo.Name = "bbiNuevo";
-            // 
-            // bbiGuardar
-            // 
-            this.bbiGuardar.Caption = "Guardar";
-            this.bbiGuardar.Id = 2;
-            this.bbiGuardar.ImageOptions.ImageUri.Uri = "Save";
-            this.bbiGuardar.Name = "bbiGuardar";
-            // 
-            // bbiGuardarCerrar
-            // 
-            this.bbiGuardarCerrar.Caption = "Guardar y cerrar";
-            this.bbiGuardarCerrar.Id = 3;
-            this.bbiGuardarCerrar.ImageOptions.ImageUri.Uri = "SaveAndClose";
-            this.bbiGuardarCerrar.Name = "bbiGuardarCerrar";
-            // 
-            // bbiGuardarNuevo
-            // 
-            this.bbiGuardarNuevo.Caption = "Guardar y nuevo";
-            this.bbiGuardarNuevo.Id = 4;
-            this.bbiGuardarNuevo.ImageOptions.ImageUri.Uri = "SaveAndNew";
-            this.bbiGuardarNuevo.Name = "bbiGuardarNuevo";
             // 
             // searchRibbonPageGroup
             // 
@@ -621,18 +578,13 @@ namespace DTM
             this.mainRibbonControl.ExpandCollapseItem.Id = 0;
             this.mainRibbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.mainRibbonControl.ExpandCollapseItem,
-            this.bbiGuardar,
-            this.bbiGuardarCerrar,
-            this.bbiGuardarNuevo,
             this.bbiEliminar,
             this.bbiBuscar,
             this.bbiPrimero,
             this.bbiAnterior,
             this.bbiUltimo,
             this.bbiSiguiente,
-            this.bbiNuevo,
             this.barButtonItemDescuentos,
-            this.bbiParametrizacionesFormulario,
             this.bbiPartidasAbiertas,
             this.bbiPaquetes});
             this.mainRibbonControl.Location = new System.Drawing.Point(2, 2);
@@ -769,16 +721,16 @@ namespace DTM
             this.ribbonControl2.ExpandCollapseItem.Id = 0;
             this.ribbonControl2.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl2.ExpandCollapseItem,
-            this.barButtonItem1,
-            this.barButtonItem2,
-            this.barButtonItem3,
+            this.bbiGuardar,
+            this.bbiGuardarCerrar,
+            this.bbiGuardarNuevo,
             this.barButtonItem4,
             this.barButtonItem5,
             this.barButtonItem6,
             this.barButtonItem7,
             this.barButtonItem8,
             this.barButtonItem9,
-            this.barButtonItem10,
+            this.bbiNuevo,
             this.bbiDocumentosVencidos,
             this.bbiMonedero,
             this.bbiPDF,
@@ -805,26 +757,26 @@ namespace DTM
             this.backstageViewControl1.TabIndex = 5;
             this.backstageViewControl1.VisibleInDesignTime = true;
             // 
-            // barButtonItem1
+            // bbiGuardar
             // 
-            this.barButtonItem1.Caption = "Guardar";
-            this.barButtonItem1.Id = 2;
-            this.barButtonItem1.ImageOptions.ImageUri.Uri = "Save";
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.bbiGuardar.Caption = "Guardar";
+            this.bbiGuardar.Id = 2;
+            this.bbiGuardar.ImageOptions.ImageUri.Uri = "Save";
+            this.bbiGuardar.Name = "bbiGuardar";
             // 
-            // barButtonItem2
+            // bbiGuardarCerrar
             // 
-            this.barButtonItem2.Caption = "Guardar y cerrar";
-            this.barButtonItem2.Id = 3;
-            this.barButtonItem2.ImageOptions.ImageUri.Uri = "SaveAndClose";
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.bbiGuardarCerrar.Caption = "Guardar y cerrar";
+            this.bbiGuardarCerrar.Id = 3;
+            this.bbiGuardarCerrar.ImageOptions.ImageUri.Uri = "SaveAndClose";
+            this.bbiGuardarCerrar.Name = "bbiGuardarCerrar";
             // 
-            // barButtonItem3
+            // bbiGuardarNuevo
             // 
-            this.barButtonItem3.Caption = "Guardar y nuevo";
-            this.barButtonItem3.Id = 4;
-            this.barButtonItem3.ImageOptions.ImageUri.Uri = "SaveAndNew";
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.bbiGuardarNuevo.Caption = "Guardar y nuevo";
+            this.bbiGuardarNuevo.Id = 4;
+            this.bbiGuardarNuevo.ImageOptions.ImageUri.Uri = "SaveAndNew";
+            this.bbiGuardarNuevo.Name = "bbiGuardarNuevo";
             // 
             // barButtonItem4
             // 
@@ -874,12 +826,12 @@ namespace DTM
             this.barButtonItem9.Name = "barButtonItem9";
             this.barButtonItem9.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
             // 
-            // barButtonItem10
+            // bbiNuevo
             // 
-            this.barButtonItem10.Caption = "Nuevo";
-            this.barButtonItem10.Id = 1;
-            this.barButtonItem10.ImageOptions.ImageUri.Uri = "Add";
-            this.barButtonItem10.Name = "barButtonItem10";
+            this.bbiNuevo.Caption = "Nuevo";
+            this.bbiNuevo.Id = 1;
+            this.bbiNuevo.ImageOptions.ImageUri.Uri = "Add";
+            this.bbiNuevo.Name = "bbiNuevo";
             // 
             // bbiDocumentosVencidos
             // 
@@ -928,10 +880,10 @@ namespace DTM
             // 
             this.ribbonPageGroup2.AllowTextClipping = false;
             this.ribbonPageGroup2.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem10);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup2.ItemLinks.Add(this.bbiNuevo);
+            this.ribbonPageGroup2.ItemLinks.Add(this.bbiGuardar);
+            this.ribbonPageGroup2.ItemLinks.Add(this.bbiGuardarCerrar);
+            this.ribbonPageGroup2.ItemLinks.Add(this.bbiGuardarNuevo);
             this.ribbonPageGroup2.ItemLinks.Add(this.bbiPDF);
             this.ribbonPageGroup2.ItemLinks.Add(this.bbiImprimir);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
@@ -2565,14 +2517,10 @@ namespace DTM
         private RibbonPage ribbonPageHerramientas;
         private RibbonPageGroup ribbonPageGroup1;
         private BarButtonItem barButtonItemDescuentos;
-        private BarButtonItem bbiParametrizacionesFormulario;
         private BarButtonItem bbiPaquetes;
         private RibbonPage mainRibbonPage;
         private RibbonPageGroup mainRibbonPageGroup;
-        private BarButtonItem bbiNuevo;
-        private BarButtonItem bbiGuardar;
-        private BarButtonItem bbiGuardarCerrar;
-        private BarButtonItem bbiGuardarNuevo;
+     
         private RibbonPageGroup searchRibbonPageGroup;
         private BarButtonItem bbiBuscar;
         private BarButtonItem bbiPrimero;
@@ -2588,16 +2536,16 @@ namespace DTM
         private CheckEdit cbVIP;
         private RibbonControl ribbonControl2;
         private BackstageViewControl backstageViewControl1;
-        private BarButtonItem barButtonItem1;
-        private BarButtonItem barButtonItem2;
-        private BarButtonItem barButtonItem3;
+        private BarButtonItem bbiGuardar;
+        private BarButtonItem bbiGuardarCerrar;
+        private BarButtonItem bbiGuardarNuevo;
         private BarButtonItem barButtonItem4;
         private BarButtonItem barButtonItem5;
         private BarButtonItem barButtonItem6;
         private BarButtonItem barButtonItem7;
         private BarButtonItem barButtonItem8;
         private BarButtonItem barButtonItem9;
-        private BarButtonItem barButtonItem10;
+        private BarButtonItem bbiNuevo;
         private BarButtonItem bbiDocumentosVencidos;
         private BarButtonItem bbiMonedero;
         private BarSubItem bbiPDF;

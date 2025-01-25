@@ -1583,6 +1583,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\show_16x16.png" />
+    <None Include="Resources\news_32x32.png" />
+    <None Include="Resources\news_16x16.png" />
     <None Include="Resources\reminder_16x16.png" />
     <None Include="Resources\user.png" />
     <None Include="Resources\morefunctions_16x16.png" />

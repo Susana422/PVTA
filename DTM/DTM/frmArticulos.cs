@@ -36,8 +36,6 @@ namespace DTM
 
         private RibbonPage mainRibbonPage;
 
-        private RibbonPageGroup mainRibbonPageGroup;
-
         private BarButtonItem bbiGuardar;
 
         private BarButtonItem bbiGuardarCerrar;
@@ -413,20 +411,20 @@ namespace DTM
                     ((Control)(object)lblListaPrecios).Enabled = false;
                     ((Control)(object)lblMonedas).Enabled = false;
                     ((Control)(object)lblFabricantes).Enabled = false;
-                    mainRibbonPageGroup.Visible = false;
+                    //mainRibbonPageGroup.Visible = false;
                     break;
                 case 'V':
                     ((Control)(object)lblGrupoArticulos).Enabled = false;
                     ((Control)(object)lblListaPrecios).Enabled = false;
                     ((Control)(object)lblMonedas).Enabled = false;
                     ((Control)(object)lblFabricantes).Enabled = false;
-                    mainRibbonPageGroup.Visible = false;
+                    //mainRibbonPageGroup.Visible = false;
                     break;
                 case 'S':
                     ((Control)(object)lblListaPrecios).Enabled = false;
                     ((Control)(object)lblMonedas).Enabled = false;
                     ((Control)(object)lblFabricantes).Enabled = false;
-                    mainRibbonPageGroup.Visible = false;
+                    //mainRibbonPageGroup.Visible = false;
                     break;
             }
             if (!ParametrizacionFormulario.Parametrizaciones().Any((ParametrizacionFormulario x) => x.usuario_id == Program.dtm.UsuarioAutenticado.id || ((int?)x.rol == (int?)Program.dtm.UsuarioAutenticado.rol && x.formulario == ((Control)(object)this).Name)))

@@ -22,7 +22,6 @@ namespace DTM
                 {
                     components.Dispose();
                 }
-                // Dispose(disposing);
             }
             catch (Exception ex)
             {

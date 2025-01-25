@@ -204,7 +204,7 @@ namespace DTM
                     ((AccordionControlElementBase)accordionControlElementCotizaciones).Visible = false;
                     ((AccordionControlElementBase)accordionControlElementEntregaMercancia).Visible = false;
                     //((AccordionControlElementBase)accordionControlElementNotasDebito).Visible = false;
-                    ((AccordionControlElementBase)accordionControlElementInventario).Visible = false;
+                    //((AccordionControlElementBase)accordionControlElementInventario).Visible = false;
                     accordionControlElementInformes.Visible = false;
                     ribbonPageHerramientas.Visible = false;
                     accordionControlElement6.Visible = false;

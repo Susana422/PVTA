@@ -34,11 +34,21 @@ namespace DTM
     {
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
+            try
             {
                 components.Dispose();
+                if (disposing && components != null)
+                {
+                    components.Dispose();
+                }
             }
-            base.Dispose(disposing);
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                base.Dispose(disposing);
+            }
         }
 
         private void InitializeComponent()
@@ -61,7 +71,6 @@ namespace DTM
             this.bbiPartidasAbiertas = new DevExpress.XtraBars.BarButtonItem();
             this.bbiPaquetes = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.searchRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageHerramientas = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -469,22 +478,10 @@ namespace DTM
             // mainRibbonPage
             // 
             this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.mainRibbonPageGroup,
             this.searchRibbonPageGroup});
             this.mainRibbonPage.MergeOrder = 0;
             this.mainRibbonPage.Name = "mainRibbonPage";
             this.mainRibbonPage.Text = "ARCHIVO";
-            // 
-            // mainRibbonPageGroup
-            // 
-            this.mainRibbonPageGroup.AllowTextClipping = false;
-            this.mainRibbonPageGroup.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.mainRibbonPageGroup.ItemLinks.Add(this.bbiNuevo);
-            this.mainRibbonPageGroup.ItemLinks.Add(this.bbiGuardar);
-            this.mainRibbonPageGroup.ItemLinks.Add(this.bbiGuardarCerrar);
-            this.mainRibbonPageGroup.ItemLinks.Add(this.bbiGuardarNuevo);
-            this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
-            this.mainRibbonPageGroup.Text = "Opciones";
             // 
             // searchRibbonPageGroup
             // 
@@ -507,9 +504,7 @@ namespace DTM
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItemDescuentos);
             this.ribbonPageGroup1.ItemLinks.Add(this.bbiParametrizacionesFormulario);
-            this.ribbonPageGroup1.ItemLinks.Add(this.bbiPaquetes);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
@@ -524,11 +519,11 @@ namespace DTM
             this.xtraTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.xtraTabControl1.Location = new System.Drawing.Point(13, 12);
+            this.xtraTabControl1.Location = new System.Drawing.Point(12, 12);
             this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPageGeneral;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1088, 780);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1090, 780);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageGeneral,
@@ -539,6 +534,7 @@ namespace DTM
             this.xtraTabPageUbicaciones,
             this.xtraTabPageWeb,
             this.xtraTabPage1});
+            this.xtraTabControl1.Visible = false;
             // 
             // xtraTabPageGeneral
             // 
@@ -597,7 +593,7 @@ namespace DTM
             this.xtraTabPageGeneral.Controls.Add(this.txtSKU);
             this.xtraTabPageGeneral.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageGeneral.Name = "xtraTabPageGeneral";
-            this.xtraTabPageGeneral.Size = new System.Drawing.Size(1082, 750);
+            this.xtraTabPageGeneral.Size = new System.Drawing.Size(1084, 750);
             this.xtraTabPageGeneral.Text = "General";
             // 
             // btnVisualizarImagen
@@ -971,6 +967,7 @@ namespace DTM
             this.btnImagen.Size = new System.Drawing.Size(257, 35);
             this.btnImagen.TabIndex = 12;
             this.btnImagen.Text = "Seleccionar imagen";
+            this.btnImagen.Visible = false;
             this.btnImagen.Click += new System.EventHandler(this.btnImagen_Click);
             // 
             // lblID
@@ -1274,7 +1271,7 @@ namespace DTM
             this.xtraTabPageDatosCompras.Controls.Add(this.cbUnidadesMedidaCompra);
             this.xtraTabPageDatosCompras.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageDatosCompras.Name = "xtraTabPageDatosCompras";
-            this.xtraTabPageDatosCompras.Size = new System.Drawing.Size(1082, 735);
+            this.xtraTabPageDatosCompras.Size = new System.Drawing.Size(1084, 750);
             this.xtraTabPageDatosCompras.Text = "Datos de compras";
             // 
             // lblUnidadMedidaCompra
@@ -1452,7 +1449,7 @@ namespace DTM
             this.xtraTabPageDatosVentas.Controls.Add(this.lblUnidadMedidaVenta);
             this.xtraTabPageDatosVentas.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageDatosVentas.Name = "xtraTabPageDatosVentas";
-            this.xtraTabPageDatosVentas.Size = new System.Drawing.Size(1082, 735);
+            this.xtraTabPageDatosVentas.Size = new System.Drawing.Size(1084, 750);
             this.xtraTabPageDatosVentas.Text = "Datos de ventas";
             // 
             // labelControl6
@@ -1873,7 +1870,7 @@ namespace DTM
             this.xtraTabPageDatosInventario.Controls.Add(this.gcInventario);
             this.xtraTabPageDatosInventario.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageDatosInventario.Name = "xtraTabPageDatosInventario";
-            this.xtraTabPageDatosInventario.Size = new System.Drawing.Size(1082, 735);
+            this.xtraTabPageDatosInventario.Size = new System.Drawing.Size(1084, 750);
             this.xtraTabPageDatosInventario.Text = "Datos de inventario";
             // 
             // gcInventario
@@ -1889,7 +1886,7 @@ namespace DTM
             this.gcInventario.MenuManager = this.mainRibbonControl;
             this.gcInventario.Name = "gcInventario";
             this.gcInventario.ShowOnlyPredefinedDetails = true;
-            this.gcInventario.Size = new System.Drawing.Size(1082, 735);
+            this.gcInventario.Size = new System.Drawing.Size(1084, 750);
             this.gcInventario.TabIndex = 0;
             this.gcInventario.UseEmbeddedNavigator = true;
             this.gcInventario.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -2110,7 +2107,7 @@ namespace DTM
             this.xtraTabPagePropiedades.Controls.Add(this.cbPropiedades);
             this.xtraTabPagePropiedades.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPagePropiedades.Name = "xtraTabPagePropiedades";
-            this.xtraTabPagePropiedades.Size = new System.Drawing.Size(1082, 735);
+            this.xtraTabPagePropiedades.Size = new System.Drawing.Size(1084, 750);
             this.xtraTabPagePropiedades.Text = "Propiedades";
             // 
             // cbPropiedades
@@ -2120,7 +2117,7 @@ namespace DTM
             this.cbPropiedades.Location = new System.Drawing.Point(0, 0);
             this.cbPropiedades.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbPropiedades.Name = "cbPropiedades";
-            this.cbPropiedades.Size = new System.Drawing.Size(1082, 735);
+            this.cbPropiedades.Size = new System.Drawing.Size(1084, 750);
             this.cbPropiedades.TabIndex = 1;
             // 
             // xtraTabPageUbicaciones
@@ -2128,7 +2125,7 @@ namespace DTM
             this.xtraTabPageUbicaciones.Controls.Add(this.gcUbicaciones);
             this.xtraTabPageUbicaciones.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageUbicaciones.Name = "xtraTabPageUbicaciones";
-            this.xtraTabPageUbicaciones.Size = new System.Drawing.Size(1082, 735);
+            this.xtraTabPageUbicaciones.Size = new System.Drawing.Size(1084, 750);
             this.xtraTabPageUbicaciones.Text = "Ubicaciones";
             // 
             // gcUbicaciones
@@ -2146,7 +2143,7 @@ namespace DTM
             this.gcUbicaciones.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cbAlmacenes});
             this.gcUbicaciones.ShowOnlyPredefinedDetails = true;
-            this.gcUbicaciones.Size = new System.Drawing.Size(1082, 735);
+            this.gcUbicaciones.Size = new System.Drawing.Size(1084, 750);
             this.gcUbicaciones.TabIndex = 1;
             this.gcUbicaciones.UseEmbeddedNavigator = true;
             this.gcUbicaciones.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -2247,7 +2244,7 @@ namespace DTM
             this.xtraTabPageWeb.Controls.Add(this.labelControl1);
             this.xtraTabPageWeb.Margin = new System.Windows.Forms.Padding(2);
             this.xtraTabPageWeb.Name = "xtraTabPageWeb";
-            this.xtraTabPageWeb.Size = new System.Drawing.Size(1082, 735);
+            this.xtraTabPageWeb.Size = new System.Drawing.Size(1084, 750);
             this.xtraTabPageWeb.Text = "Web";
             // 
             // txtDescripcionWeb
@@ -2379,7 +2376,7 @@ namespace DTM
             // 
             this.xtraTabPage1.Controls.Add(this.dtgrvArticulosAlternativos);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1082, 735);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1084, 750);
             this.xtraTabPage1.Text = "Articulos Alternativos";
             // 
             // dtgrvArticulosAlternativos
@@ -2410,7 +2407,7 @@ namespace DTM
             this.layoutControlItem1.Control = this.xtraTabControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1092, 784);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1094, 784);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 

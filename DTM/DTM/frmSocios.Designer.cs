@@ -33,17 +33,30 @@ namespace DTM
 {
     partial class frmSocios
     {
+
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
+            try
             {
                 components.Dispose();
+                if (disposing && components != null)
+                {
+                    components.Dispose();
+                }
+                // Dispose(disposing);
             }
-            base.Dispose(disposing);
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                base.Dispose(disposing);
+            }
         }
 
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.backstageViewControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
             this.bbiGuardar = new DevExpress.XtraBars.BarButtonItem();
@@ -130,10 +143,6 @@ namespace DTM
             this.xtraTabPageCondicionesPago = new DevExpress.XtraTab.XtraTabPage();
             this.lblDiasExtra = new DevExpress.XtraEditors.LabelControl();
             this.txtDiasExtra = new DevExpress.XtraEditors.TextEdit();
-            this.lblCuentaPago = new DevExpress.XtraEditors.LabelControl();
-            this.txtCuentaPago = new DevExpress.XtraEditors.TextEdit();
-            this.lblPorcentajeDescuento = new DevExpress.XtraEditors.LabelControl();
-            this.txtPorcentajeDescuento = new DevExpress.XtraEditors.TextEdit();
             this.cbMetodosPago = new DevExpress.XtraEditors.LookUpEdit();
             this.lblMetodosPago = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.lblPorcentajeInteresRetraso = new DevExpress.XtraEditors.LabelControl();
@@ -197,12 +206,6 @@ namespace DTM
             this.lblRuta = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.cbRutas = new DevExpress.XtraEditors.LookUpEdit();
             this.txtOrdenRuta = new DevExpress.XtraEditors.TextEdit();
-            this.lblLatitud = new DevExpress.XtraEditors.LabelControl();
-            this.cbFrecuencia = new DevExpress.XtraEditors.LookUpEdit();
-            this.lblLongitud = new DevExpress.XtraEditors.LabelControl();
-            this.lblFrecuencia = new DevExpress.XtraEditors.LabelControl();
-            this.txtLatitud = new DevExpress.XtraEditors.TextEdit();
-            this.txtLongitud = new DevExpress.XtraEditors.TextEdit();
             this.xtraTabPagePropiedades = new DevExpress.XtraTab.XtraTabPage();
             this.cbPropiedades = new DevExpress.XtraEditors.CheckedListBoxControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -246,8 +249,6 @@ namespace DTM
             ((System.ComponentModel.ISupportInitialize)(this.txtCodigo.Properties)).BeginInit();
             this.xtraTabPageCondicionesPago.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiasExtra.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCuentaPago.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPorcentajeDescuento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMetodosPago.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPorcentajeInteresRetraso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbListaPrecios.Properties)).BeginInit();
@@ -275,9 +276,6 @@ namespace DTM
             this.xtraTabPageLogistica.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbRutas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOrdenRuta.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbFrecuencia.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLatitud.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLongitud.Properties)).BeginInit();
             this.xtraTabPagePropiedades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbPropiedades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -421,6 +419,7 @@ namespace DTM
             this.bbiDocumentosVencidos.Id = 1;
             this.bbiDocumentosVencidos.ImageOptions.ImageUri.Uri = "SwitchTimeScalesTo";
             this.bbiDocumentosVencidos.Name = "bbiDocumentosVencidos";
+            this.bbiDocumentosVencidos.VisibleInSearchMenu = false;
             this.bbiDocumentosVencidos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiDocumentosVencidos_ItemClick);
             // 
             // bbiMonedero
@@ -495,7 +494,6 @@ namespace DTM
             // 
             // ribbonPageGroupHerramientas
             // 
-            this.ribbonPageGroupHerramientas.ItemLinks.Add(this.bbiDocumentosVencidos);
             this.ribbonPageGroupHerramientas.ItemLinks.Add(this.bbiParametrizacionesFormulario);
             this.ribbonPageGroupHerramientas.Name = "ribbonPageGroupHerramientas";
             this.ribbonPageGroupHerramientas.Text = "Herramientas";
@@ -667,6 +665,7 @@ namespace DTM
             this.cbMonedero.Size = new System.Drawing.Size(240, 24);
             this.cbMonedero.TabIndex = 89;
             this.cbMonedero.TabStop = false;
+            this.cbMonedero.Visible = false;
             // 
             // lblMonedero
             // 
@@ -675,6 +674,7 @@ namespace DTM
             this.lblMonedero.Size = new System.Drawing.Size(63, 17);
             this.lblMonedero.TabIndex = 90;
             this.lblMonedero.Text = "Monedero";
+            this.lblMonedero.Visible = false;
             // 
             // cbUsoPrincipal
             // 
@@ -703,6 +703,7 @@ namespace DTM
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cbSocios.Size = new System.Drawing.Size(240, 24);
             this.cbSocios.TabIndex = 87;
+            this.cbSocios.Visible = false;
             // 
             // cbEventual
             // 
@@ -712,6 +713,7 @@ namespace DTM
             this.cbEventual.Properties.Caption = "Eventual";
             this.cbEventual.Size = new System.Drawing.Size(88, 21);
             this.cbEventual.TabIndex = 18;
+            this.cbEventual.Visible = false;
             // 
             // lblUsoPrincipal
             // 
@@ -760,6 +762,7 @@ namespace DTM
             this.lblMultiplicador.Size = new System.Drawing.Size(80, 17);
             this.lblMultiplicador.TabIndex = 78;
             this.lblMultiplicador.Text = "Multiplicador";
+            this.lblMultiplicador.Visible = false;
             // 
             // txtMultiplicador
             // 
@@ -772,6 +775,7 @@ namespace DTM
             this.txtMultiplicador.Properties.NullValuePrompt = "CURP";
             this.txtMultiplicador.Size = new System.Drawing.Size(240, 24);
             this.txtMultiplicador.TabIndex = 15;
+            this.txtMultiplicador.Visible = false;
             // 
             // cbPersonasContacto
             // 
@@ -1198,10 +1202,6 @@ namespace DTM
             // 
             this.xtraTabPageCondicionesPago.Controls.Add(this.lblDiasExtra);
             this.xtraTabPageCondicionesPago.Controls.Add(this.txtDiasExtra);
-            this.xtraTabPageCondicionesPago.Controls.Add(this.lblCuentaPago);
-            this.xtraTabPageCondicionesPago.Controls.Add(this.txtCuentaPago);
-            this.xtraTabPageCondicionesPago.Controls.Add(this.lblPorcentajeDescuento);
-            this.xtraTabPageCondicionesPago.Controls.Add(this.txtPorcentajeDescuento);
             this.xtraTabPageCondicionesPago.Controls.Add(this.cbMetodosPago);
             this.xtraTabPageCondicionesPago.Controls.Add(this.lblMetodosPago);
             this.xtraTabPageCondicionesPago.Controls.Add(this.lblPorcentajeInteresRetraso);
@@ -1218,7 +1218,7 @@ namespace DTM
             // 
             // lblDiasExtra
             // 
-            this.lblDiasExtra.Location = new System.Drawing.Point(22, 258);
+            this.lblDiasExtra.Location = new System.Drawing.Point(64, 242);
             this.lblDiasExtra.Name = "lblDiasExtra";
             this.lblDiasExtra.Size = new System.Drawing.Size(61, 17);
             this.lblDiasExtra.TabIndex = 82;
@@ -1226,53 +1226,13 @@ namespace DTM
             // 
             // txtDiasExtra
             // 
-            this.txtDiasExtra.Location = new System.Drawing.Point(158, 254);
+            this.txtDiasExtra.Location = new System.Drawing.Point(158, 235);
             this.txtDiasExtra.MenuManager = this.mainRibbonControl;
             this.txtDiasExtra.Name = "txtDiasExtra";
             this.txtDiasExtra.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.txtDiasExtra.Properties.MaxLength = 18;
             this.txtDiasExtra.Size = new System.Drawing.Size(94, 24);
             this.txtDiasExtra.TabIndex = 81;
-            // 
-            // lblCuentaPago
-            // 
-            this.lblCuentaPago.Location = new System.Drawing.Point(22, 227);
-            this.lblCuentaPago.Name = "lblCuentaPago";
-            this.lblCuentaPago.Size = new System.Drawing.Size(100, 17);
-            this.lblCuentaPago.TabIndex = 80;
-            this.lblCuentaPago.Text = "Cuenta de pago";
-            // 
-            // txtCuentaPago
-            // 
-            this.txtCuentaPago.Location = new System.Drawing.Point(158, 222);
-            this.txtCuentaPago.MenuManager = this.mainRibbonControl;
-            this.txtCuentaPago.Name = "txtCuentaPago";
-            this.txtCuentaPago.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.txtCuentaPago.Properties.MaxLength = 18;
-            this.txtCuentaPago.Size = new System.Drawing.Size(291, 24);
-            this.txtCuentaPago.TabIndex = 6;
-            // 
-            // lblPorcentajeDescuento
-            // 
-            this.lblPorcentajeDescuento.Location = new System.Drawing.Point(23, 125);
-            this.lblPorcentajeDescuento.Name = "lblPorcentajeDescuento";
-            this.lblPorcentajeDescuento.Size = new System.Drawing.Size(78, 17);
-            this.lblPorcentajeDescuento.TabIndex = 0;
-            this.lblPorcentajeDescuento.Text = "% Descuento";
-            // 
-            // txtPorcentajeDescuento
-            // 
-            this.txtPorcentajeDescuento.Location = new System.Drawing.Point(158, 120);
-            this.txtPorcentajeDescuento.MenuManager = this.mainRibbonControl;
-            this.txtPorcentajeDescuento.Name = "txtPorcentajeDescuento";
-            this.txtPorcentajeDescuento.Properties.DisplayFormat.FormatString = "P2";
-            this.txtPorcentajeDescuento.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.txtPorcentajeDescuento.Properties.EditFormat.FormatString = "P2";
-            this.txtPorcentajeDescuento.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.txtPorcentajeDescuento.Properties.Mask.EditMask = "P2";
-            this.txtPorcentajeDescuento.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPorcentajeDescuento.Size = new System.Drawing.Size(291, 24);
-            this.txtPorcentajeDescuento.TabIndex = 3;
             // 
             // cbMetodosPago
             // 
@@ -1398,6 +1358,9 @@ namespace DTM
             // 
             this.gcPersonasContacto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcPersonasContacto.EmbeddedNavigator.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.gridControl1_EmbeddedNavigator_ButtonClick);
+            gridLevelNode1.RelationName = "Level1";
+            this.gcPersonasContacto.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.gcPersonasContacto.Location = new System.Drawing.Point(0, 0);
             this.gcPersonasContacto.MainView = this.gvPersonasContacto;
             this.gcPersonasContacto.Name = "gcPersonasContacto";
@@ -1434,6 +1397,7 @@ namespace DTM
             this.gvPersonasContacto.OptionsEditForm.PopupEditFormWidth = 711;
             this.gvPersonasContacto.OptionsNavigation.AutoFocusNewRow = true;
             this.gvPersonasContacto.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
+            this.gvPersonasContacto.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumnID
             // 
@@ -1945,12 +1909,6 @@ namespace DTM
             this.xtraTabPageLogistica.Controls.Add(this.lblRuta);
             this.xtraTabPageLogistica.Controls.Add(this.cbRutas);
             this.xtraTabPageLogistica.Controls.Add(this.txtOrdenRuta);
-            this.xtraTabPageLogistica.Controls.Add(this.lblLatitud);
-            this.xtraTabPageLogistica.Controls.Add(this.cbFrecuencia);
-            this.xtraTabPageLogistica.Controls.Add(this.lblLongitud);
-            this.xtraTabPageLogistica.Controls.Add(this.lblFrecuencia);
-            this.xtraTabPageLogistica.Controls.Add(this.txtLatitud);
-            this.xtraTabPageLogistica.Controls.Add(this.txtLongitud);
             this.xtraTabPageLogistica.Name = "xtraTabPageLogistica";
             this.xtraTabPageLogistica.Size = new System.Drawing.Size(1128, 671);
             this.xtraTabPageLogistica.Text = "Logística";
@@ -1958,7 +1916,7 @@ namespace DTM
             // lblRuta
             // 
             this.lblRuta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblRuta.Location = new System.Drawing.Point(22, 125);
+            this.lblRuta.Location = new System.Drawing.Point(53, 33);
             this.lblRuta.Name = "lblRuta";
             this.lblRuta.Size = new System.Drawing.Size(30, 17);
             this.lblRuta.TabIndex = 148;
@@ -1967,7 +1925,7 @@ namespace DTM
             // 
             // cbRutas
             // 
-            this.cbRutas.Location = new System.Drawing.Point(98, 120);
+            this.cbRutas.Location = new System.Drawing.Point(108, 20);
             this.cbRutas.MenuManager = this.mainRibbonControl;
             this.cbRutas.Name = "cbRutas";
             this.cbRutas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -1980,64 +1938,11 @@ namespace DTM
             // 
             // txtOrdenRuta
             // 
-            this.txtOrdenRuta.Location = new System.Drawing.Point(281, 120);
+            this.txtOrdenRuta.Location = new System.Drawing.Point(302, 20);
             this.txtOrdenRuta.MenuManager = this.mainRibbonControl;
             this.txtOrdenRuta.Name = "txtOrdenRuta";
             this.txtOrdenRuta.Size = new System.Drawing.Size(77, 24);
             this.txtOrdenRuta.TabIndex = 101;
-            // 
-            // lblLatitud
-            // 
-            this.lblLatitud.Location = new System.Drawing.Point(22, 23);
-            this.lblLatitud.Name = "lblLatitud";
-            this.lblLatitud.Size = new System.Drawing.Size(45, 17);
-            this.lblLatitud.TabIndex = 94;
-            this.lblLatitud.Text = "Latitud";
-            // 
-            // cbFrecuencia
-            // 
-            this.cbFrecuencia.Location = new System.Drawing.Point(98, 86);
-            this.cbFrecuencia.MenuManager = this.mainRibbonControl;
-            this.cbFrecuencia.Name = "cbFrecuencia";
-            this.cbFrecuencia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbFrecuencia.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("frecuencia", "Frecuencia", 18, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 18, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbFrecuencia.Size = new System.Drawing.Size(258, 24);
-            this.cbFrecuencia.TabIndex = 94;
-            // 
-            // lblLongitud
-            // 
-            this.lblLongitud.Location = new System.Drawing.Point(22, 57);
-            this.lblLongitud.Name = "lblLongitud";
-            this.lblLongitud.Size = new System.Drawing.Size(56, 17);
-            this.lblLongitud.TabIndex = 95;
-            this.lblLongitud.Text = "Longitud";
-            // 
-            // lblFrecuencia
-            // 
-            this.lblFrecuencia.Location = new System.Drawing.Point(22, 91);
-            this.lblFrecuencia.Name = "lblFrecuencia";
-            this.lblFrecuencia.Size = new System.Drawing.Size(66, 17);
-            this.lblFrecuencia.TabIndex = 98;
-            this.lblFrecuencia.Text = "Frecuencia";
-            // 
-            // txtLatitud
-            // 
-            this.txtLatitud.Location = new System.Drawing.Point(98, 18);
-            this.txtLatitud.MenuManager = this.mainRibbonControl;
-            this.txtLatitud.Name = "txtLatitud";
-            this.txtLatitud.Size = new System.Drawing.Size(258, 24);
-            this.txtLatitud.TabIndex = 96;
-            // 
-            // txtLongitud
-            // 
-            this.txtLongitud.Location = new System.Drawing.Point(98, 52);
-            this.txtLongitud.MenuManager = this.mainRibbonControl;
-            this.txtLongitud.Name = "txtLongitud";
-            this.txtLongitud.Size = new System.Drawing.Size(258, 24);
-            this.txtLongitud.TabIndex = 97;
             // 
             // xtraTabPagePropiedades
             // 
@@ -2142,8 +2047,6 @@ namespace DTM
             this.xtraTabPageCondicionesPago.ResumeLayout(false);
             this.xtraTabPageCondicionesPago.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiasExtra.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCuentaPago.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPorcentajeDescuento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMetodosPago.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPorcentajeInteresRetraso.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbListaPrecios.Properties)).EndInit();
@@ -2173,9 +2076,6 @@ namespace DTM
             this.xtraTabPageLogistica.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbRutas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOrdenRuta.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbFrecuencia.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLatitud.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLongitud.Properties)).EndInit();
             this.xtraTabPagePropiedades.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbPropiedades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();

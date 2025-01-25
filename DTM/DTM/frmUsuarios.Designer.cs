@@ -22,15 +22,26 @@ namespace DTM
 {
     partial class frmUsuarios
     {
+
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
+            try
             {
                 components.Dispose();
+                if (disposing && components != null)
+                {
+                    components.Dispose();
+                }
+                // Dispose(disposing);
             }
-           this.Dispose(disposing);
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                base.Dispose(disposing);
+            }
         }
-
         private void InitializeComponent()
         {
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
@@ -72,7 +83,6 @@ namespace DTM
             this.lblClaseExpedicion = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.txtNormaReparto = new DevExpress.XtraEditors.TextEdit();
             this.lblNormaReparto = new DevExpress.XtraEditors.LabelControl();
-            this.btnLiberarSesion = new DevExpress.XtraEditors.SimpleButton();
             this.cbSuscribirAutorizaciones = new DevExpress.XtraEditors.CheckEdit();
             this.cbEstados = new DevExpress.XtraEditors.LookUpEdit();
             this.lblEstado = new DevExpress.XtraEditors.HyperlinkLabelControl();
@@ -161,7 +171,6 @@ namespace DTM
             this.panel1.Controls.Add(this.lblClaseExpedicion);
             this.panel1.Controls.Add(this.txtNormaReparto);
             this.panel1.Controls.Add(this.lblNormaReparto);
-            this.panel1.Controls.Add(this.btnLiberarSesion);
             this.panel1.Controls.Add(this.cbSuscribirAutorizaciones);
             this.panel1.Controls.Add(this.cbEstados);
             this.panel1.Controls.Add(this.lblEstado);
@@ -402,8 +411,6 @@ namespace DTM
             // HerramientasRibbonPageGroup
             // 
             this.HerramientasRibbonPageGroup.ItemLinks.Add(this.bbiCorreosElectronicos);
-            this.HerramientasRibbonPageGroup.ItemLinks.Add(this.bbiConceptosAutorizaciones);
-            this.HerramientasRibbonPageGroup.ItemLinks.Add(this.bbiPermisos);
             this.HerramientasRibbonPageGroup.Name = "HerramientasRibbonPageGroup";
             this.HerramientasRibbonPageGroup.Text = "Correos electrónicos";
             // 
@@ -577,17 +584,6 @@ namespace DTM
             this.lblNormaReparto.TabIndex = 81;
             this.lblNormaReparto.Text = "Norma de reparto";
             // 
-            // btnLiberarSesion
-            // 
-            this.btnLiberarSesion.Location = new System.Drawing.Point(418, 357);
-            this.btnLiberarSesion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnLiberarSesion.Name = "btnLiberarSesion";
-            this.btnLiberarSesion.Size = new System.Drawing.Size(130, 30);
-            this.btnLiberarSesion.TabIndex = 0;
-            this.btnLiberarSesion.TabStop = false;
-            this.btnLiberarSesion.Text = "Liberar sesión";
-            this.btnLiberarSesion.Click += new System.EventHandler(this.btnLiberarSesion_Click);
-            // 
             // cbSuscribirAutorizaciones
             // 
             this.cbSuscribirAutorizaciones.Location = new System.Drawing.Point(152, 392);
@@ -722,6 +718,7 @@ namespace DTM
             // 
             // cbMostrarContraseña
             // 
+            this.cbMostrarContraseña.ImageOptions.Image = global::componentResourceManager.Resources.show_16x16;
             this.cbMostrarContraseña.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.cbMostrarContraseña.Location = new System.Drawing.Point(688, 289);
             this.cbMostrarContraseña.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

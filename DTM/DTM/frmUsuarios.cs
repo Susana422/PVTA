@@ -108,8 +108,6 @@ namespace DTM
 
         private CheckEdit cbSuscribirAutorizaciones;
 
-        private SimpleButton btnLiberarSesion;
-
         private TextEdit txtNormaReparto;
 
         private LabelControl lblNormaReparto;

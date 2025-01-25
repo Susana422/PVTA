@@ -226,17 +226,9 @@ namespace DTM
 
         private BarButtonItem bbiMonedero;
 
-        private LabelControl lblPorcentajeDescuento;
-
-        private TextEdit txtPorcentajeDescuento;
-
         private LookUpEdit cbVendedores;
 
         private HyperlinkLabelControl lblVendedores;
-
-        private LabelControl lblCuentaPago;
-
-        private TextEdit txtCuentaPago;
 
         private LabelControl lblUsoPrincipal;
 
@@ -328,18 +320,6 @@ namespace DTM
 
         private TextEdit txtOrdenRuta;
 
-        private LabelControl lblLatitud;
-
-        private LookUpEdit cbFrecuencia;
-
-        private LabelControl lblLongitud;
-
-        private LabelControl lblFrecuencia;
-
-        private TextEdit txtLatitud;
-
-        private TextEdit txtLongitud;
-
         private LookUpEdit cbPropietarios;
 
         private HyperlinkLabelControl lblPropietarios;
@@ -391,7 +371,7 @@ namespace DTM
                     ((Control)(object)lblGrupoSocios).Enabled = false;
                     ((Control)(object)lblCondicionesPago).Enabled = false;
                     ((Control)(object)lblMonedas).Enabled = false;
-                    mainRibbonPageGroup.Visible = false;
+                   // mainRibbonPageGroup.Visible = false;
                     break;
                 case 'V':
                     ((Control)(object)txtLimiteCredito).Enabled = false;
@@ -545,10 +525,10 @@ namespace DTM
                 pbImagen.LoadImage(socio.imagen);
                 ((Control)(object)txtBalance).Text = socio.Balance().ToString();
                 ((Control)(object)txtPorcentajeInteresRetraso).Text = socio.porcentaje_interes_retraso.ToString();
-                ((Control)(object)txtPorcentajeDescuento).Text = socio.porcentaje_descuento.ToString();
+               // ((Control)(object)txtPorcentajeDescuento).Text = socio.porcentaje_descuento.ToString();
                 ((Control)(object)txtLimiteCredito).Text = socio.limite_credito.ToString();
                 ((Control)(object)txtCuenta).Text = socio.cuenta;
-                ((Control)(object)txtCuentaPago).Text = socio.cuenta_pago;
+                //((Control)(object)txtCuentaPago).Text = socio.cuenta_pago;
                 cbOrdenCompra.Checked = socio.orden_compra;
                 ((Control)(object)txtMultiplicador).Text = socio.multiplicador_puntos.ToString();
                 ((BaseEdit)cbUsoPrincipal).EditValue = socio.uso_principal;
@@ -556,9 +536,9 @@ namespace DTM
                 cbEventual.Checked = socio.eventual;
                 ((BaseEdit)cbSocios).EditValue = socio.socio_eventual_id;
                 ((BaseEdit)cbMonedero).EditValue = socio.monedero_id;
-                ((BaseEdit)txtLatitud).EditValue = socio.latitud;
-                ((BaseEdit)txtLongitud).EditValue = socio.longitud;
-                ((BaseEdit)cbFrecuencia).EditValue = socio.frecuencia;
+                //((BaseEdit)txtLatitud).EditValue = socio.latitud;
+                //((BaseEdit)txtLongitud).EditValue = socio.longitud;
+                //((BaseEdit)cbFrecuencia).EditValue = socio.frecuencia;
                 ((BaseEdit)cbRutas).EditValue = socio.ruta_id;
                 ((BaseEdit)txtOrdenRuta).EditValue = socio.orden_ruta;
                 cbAPI.Checked = socio.api;
@@ -566,7 +546,7 @@ namespace DTM
                 ((BaseEdit)txtDiasExtra).EditValue = socio.dias_extra_vigencia;
                 cbActivo.Checked = socio.activo;
                 ((Control)(object)lblFechaActualizacion).Text = socio.fecha_actualizacion.ToShortDateString();
-                ((Control)(object)cbListaPrecios).Enabled = socio.lista_precio_id >= 0;
+                //((Control)(object)cbListaPrecios).Enabled = socio.lista_precio_id >= 0;
                 CargarDirecciones();
                 CargarPersonasContacto();
                 CargarPropiedades();
@@ -696,9 +676,9 @@ namespace DTM
             ((RepositoryItemLookUpEditBase)cbTipoDireccion.Properties).DataSource = Socio.Direccion.Tipo.Tipos();
             ((RepositoryItemLookUpEditBase)cbTipoDireccion.Properties).ValueMember = "tipo";
             ((RepositoryItemLookUpEditBase)cbTipoDireccion.Properties).DisplayMember = "nombre";
-            ((RepositoryItemLookUpEditBase)cbFrecuencia.Properties).DataSource = Socio.Frecuencia.Frequencias();
-            ((RepositoryItemLookUpEditBase)cbFrecuencia.Properties).ValueMember = "frecuencia";
-            ((RepositoryItemLookUpEditBase)cbFrecuencia.Properties).DisplayMember = "nombre";
+            //((RepositoryItemLookUpEditBase)cbFrecuencia.Properties).DataSource = Socio.Frecuencia.Frequencias();
+            //((RepositoryItemLookUpEditBase)cbFrecuencia.Properties).ValueMember = "frecuencia";
+            //((RepositoryItemLookUpEditBase)cbFrecuencia.Properties).DisplayMember = "nombre";
             ((RepositoryItemLookUpEditBase)cbGenero).DataSource = Socio.PersonaContacto.Genero.Generos();
             ((RepositoryItemLookUpEditBase)cbGenero).ValueMember = "genero";
             ((RepositoryItemLookUpEditBase)cbGenero).DisplayMember = "nombre";
@@ -850,10 +830,10 @@ namespace DTM
                 socio.correo = ((Control)(object)txtCorreo).Text;
                 socio.sitio_web = ((Control)(object)txtSitioWeb).Text;
                 socio.porcentaje_interes_retraso = decimal.Parse(((BaseEdit)txtPorcentajeInteresRetraso).EditValue.ToString());
-                socio.porcentaje_descuento = decimal.Parse(((BaseEdit)txtPorcentajeDescuento).EditValue.ToString());
+               // socio.porcentaje_descuento = decimal.Parse(((BaseEdit)txtPorcentajeDescuento).EditValue.ToString());
                 socio.limite_credito = decimal.Parse(((BaseEdit)txtLimiteCredito).EditValue.ToString());
                 socio.cuenta = ((Control)(object)txtCuenta).Text;
-                socio.cuenta_pago = ((Control)(object)txtCuentaPago).Text;
+               // socio.cuenta_pago = ((Control)(object)txtCuentaPago).Text;
                 socio.orden_compra = cbOrdenCompra.Checked;
                 socio.multiplicador_puntos = decimal.Parse(((BaseEdit)txtMultiplicador).EditValue.ToString());
                 socio.uso_principal = ((BaseEdit)cbUsoPrincipal).EditValue.ToString();
@@ -864,9 +844,9 @@ namespace DTM
                 socio.api = cbAPI.Checked;
                 socio.vip = cbVIP.Checked;
                 socio.dias_extra_vigencia = int.Parse(((Control)(object)txtDiasExtra).Text);
-                socio.latitud = decimal.Parse(((Control)(object)txtLatitud).Text);
-                socio.longitud = decimal.Parse(((Control)(object)txtLongitud).Text);
-                socio.frecuencia = (char)((BaseEdit)cbFrecuencia).EditValue;
+                //socio.latitud = decimal.Parse(((Control)(object)txtLatitud).Text);
+                //socio.longitud = decimal.Parse(((Control)(object)txtLongitud).Text);
+                //socio.frecuencia = (char)((BaseEdit)cbFrecuencia).EditValue;
                 socio.ruta_id = ((!((BaseEdit)cbRutas).EditValue.IsNullOrEmpty()) ? ((int)((BaseEdit)cbRutas).EditValue) : 0);
                 socio.orden_ruta = int.Parse(((Control)(object)txtOrdenRuta).Text);
                 socio.activo = cbActivo.Checked;

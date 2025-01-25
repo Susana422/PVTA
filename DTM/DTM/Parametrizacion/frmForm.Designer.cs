@@ -48,7 +48,6 @@ namespace DTM
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageGeneral = new DevExpress.XtraTab.XtraTabPage();
-            this.cbAnticipo = new DevExpress.XtraEditors.CheckEdit();
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiGuardar = new DevExpress.XtraBars.BarButtonItem();
             this.bbiGuardarCerrar = new DevExpress.XtraBars.BarButtonItem();
@@ -84,7 +83,6 @@ namespace DTM
             this.searchRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageHerramientas = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupHerramientas = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.cbCOD = new DevExpress.XtraEditors.CheckEdit();
             this.lbMensajeC = new DevExpress.XtraEditors.LabelControl();
             this.lbFact = new DevExpress.XtraEditors.LabelControl();
             this.lbCredito = new DevExpress.XtraEditors.LabelControl();
@@ -111,7 +109,6 @@ namespace DTM
             this.lblPartidas = new DevExpress.XtraEditors.LabelControl();
             this.lblReferencia = new DevExpress.XtraEditors.LabelControl();
             this.txtReferencia = new DevExpress.XtraEditors.TextEdit();
-            this.cbReserva = new DevExpress.XtraEditors.CheckEdit();
             this.lblCodigoSN = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.lblID = new DevExpress.XtraEditors.LabelControl();
             this.lblImpreso = new System.Windows.Forms.Label();
@@ -288,9 +285,7 @@ namespace DTM
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPageGeneral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbAnticipo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbCOD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFactVencidas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCreditoDisponible.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtArticulo.Properties)).BeginInit();
@@ -303,7 +298,6 @@ namespace DTM
             ((System.ComponentModel.ISupportInitialize)(this.deFechaContabilizacion.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroDocumentoExterno.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReferencia.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbReserva.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoCambio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMonedas.Properties)).BeginInit();
@@ -481,8 +475,6 @@ namespace DTM
             // 
             // xtraTabPageGeneral
             // 
-            this.xtraTabPageGeneral.Controls.Add(this.cbAnticipo);
-            this.xtraTabPageGeneral.Controls.Add(this.cbCOD);
             this.xtraTabPageGeneral.Controls.Add(this.lbMensajeC);
             this.xtraTabPageGeneral.Controls.Add(this.lbFact);
             this.xtraTabPageGeneral.Controls.Add(this.lbCredito);
@@ -509,7 +501,6 @@ namespace DTM
             this.xtraTabPageGeneral.Controls.Add(this.lblPartidas);
             this.xtraTabPageGeneral.Controls.Add(this.lblReferencia);
             this.xtraTabPageGeneral.Controls.Add(this.txtReferencia);
-            this.xtraTabPageGeneral.Controls.Add(this.cbReserva);
             this.xtraTabPageGeneral.Controls.Add(this.lblCodigoSN);
             this.xtraTabPageGeneral.Controls.Add(this.lblID);
             this.xtraTabPageGeneral.Controls.Add(this.lblImpreso);
@@ -546,17 +537,6 @@ namespace DTM
             this.xtraTabPageGeneral.Name = "xtraTabPageGeneral";
             this.xtraTabPageGeneral.Size = new System.Drawing.Size(937, 642);
             this.xtraTabPageGeneral.Text = "General";
-            // 
-            // cbAnticipo
-            // 
-            this.cbAnticipo.Location = new System.Drawing.Point(403, 83);
-            this.cbAnticipo.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.cbAnticipo.MenuManager = this.mainRibbonControl;
-            this.cbAnticipo.Name = "cbAnticipo";
-            this.cbAnticipo.Properties.Caption = "Anticipo";
-            this.cbAnticipo.Size = new System.Drawing.Size(73, 21);
-            this.cbAnticipo.TabIndex = 176;
-            this.cbAnticipo.TabStop = false;
             // 
             // mainRibbonControl
             // 
@@ -865,17 +845,6 @@ namespace DTM
             this.ribbonPageGroupHerramientas.Name = "ribbonPageGroupHerramientas";
             this.ribbonPageGroupHerramientas.Text = "Herramientas";
             // 
-            // cbCOD
-            // 
-            this.cbCOD.Location = new System.Drawing.Point(343, 84);
-            this.cbCOD.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.cbCOD.MenuManager = this.mainRibbonControl;
-            this.cbCOD.Name = "cbCOD";
-            this.cbCOD.Properties.Caption = "COD";
-            this.cbCOD.Size = new System.Drawing.Size(50, 21);
-            this.cbCOD.TabIndex = 175;
-            this.cbCOD.TabStop = false;
-            // 
             // lbMensajeC
             // 
             this.lbMensajeC.Appearance.Font = new System.Drawing.Font("Berlin Sans FB Demi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1178,17 +1147,6 @@ namespace DTM
             this.txtReferencia.Size = new System.Drawing.Size(264, 24);
             this.txtReferencia.TabIndex = 0;
             this.txtReferencia.TabStop = false;
-            // 
-            // cbReserva
-            // 
-            this.cbReserva.Location = new System.Drawing.Point(271, 84);
-            this.cbReserva.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.cbReserva.MenuManager = this.mainRibbonControl;
-            this.cbReserva.Name = "cbReserva";
-            this.cbReserva.Properties.Caption = "Reserva";
-            this.cbReserva.Size = new System.Drawing.Size(72, 21);
-            this.cbReserva.TabIndex = 0;
-            this.cbReserva.TabStop = false;
             // 
             // lblCodigoSN
             // 
@@ -3233,9 +3191,7 @@ namespace DTM
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPageGeneral.ResumeLayout(false);
             this.xtraTabPageGeneral.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbAnticipo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbCOD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFactVencidas.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCreditoDisponible.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtArticulo.Properties)).EndInit();
@@ -3248,7 +3204,6 @@ namespace DTM
             ((System.ComponentModel.ISupportInitialize)(this.deFechaContabilizacion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroDocumentoExterno.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtReferencia.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbReserva.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoCambio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMonedas.Properties)).EndInit();
@@ -3332,7 +3287,6 @@ namespace DTM
         private LayoutControl layoutControl1;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageGeneral;
-        private CheckEdit cbAnticipo;
         private RibbonControl mainRibbonControl;
         private BarButtonItem bbiGuardar;
         private BarButtonItem bbiGuardarCerrar;
@@ -3368,7 +3322,6 @@ namespace DTM
         private RibbonPageGroup searchRibbonPageGroup;
         private RibbonPage ribbonPageHerramientas;
         private RibbonPageGroup ribbonPageGroupHerramientas;
-        private CheckEdit cbCOD;
         private LabelControl lbMensajeC;
         private LabelControl lbFact;
         private LabelControl lbCredito;
@@ -3395,7 +3348,6 @@ namespace DTM
         private LabelControl lblPartidas;
         private LabelControl lblReferencia;
         private TextEdit txtReferencia;
-        private CheckEdit cbReserva;
         private HyperlinkLabelControl lblCodigoSN;
         private LabelControl lblID;
         private Label lblImpreso;

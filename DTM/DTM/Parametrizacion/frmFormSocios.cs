@@ -210,7 +210,7 @@ namespace DTM
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             char.TryParse(cbRoles.EditValue.ToString(), out var result2);
-            List<ParametrizacionFormulario> parametrizacionForm = ParametrizacionFormulario.ObtenerRol("frmSocios", "SO", result2);
+            List<ParametrizacionFormulario> parametrizacionForm = ParametrizacionFormulario.ObtenerRol("frmSocios", "SN", result2);
             parametrizacionForm2 = new BindingList<ParametroGrid>(parametrizacionForm.Select(p => new ParametroGrid { id = p.id, Nombre = p.control, Descripcion = p.nombre, Oculto = p.oculto, Desactivado = p.desactivado }).ToList());
             dataGridView1.DataSource = parametrizacionForm2;
         }

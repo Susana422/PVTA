@@ -20,13 +20,25 @@ namespace DTM
 {
     partial class frmResultadosBusquedaArticulos
     {
+
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
+            try
             {
                 components.Dispose();
+                if (disposing && components != null)
+                {
+                    components.Dispose();
+                }
+                // Dispose(disposing);
             }
-            base.Dispose(disposing);
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                base.Dispose(disposing);
+            }
         }
 
         private void InitializeComponent()

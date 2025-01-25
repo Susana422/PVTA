@@ -198,8 +198,6 @@ namespace DTM
 
         private SimpleButton btnReferencias;
 
-        private HyperlinkLabelControl lblImportarFolioFiscal;
-
         private SimpleButton btnCancelar;
 
         private SimpleButton btnGenerar;

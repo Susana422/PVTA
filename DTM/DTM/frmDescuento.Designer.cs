@@ -22,7 +22,6 @@ namespace DTM
         {
             try
             {
-                components.Dispose();
                 if (disposing && components != null)
                 {
                     components.Dispose();

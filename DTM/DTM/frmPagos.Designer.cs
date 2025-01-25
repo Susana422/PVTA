@@ -84,6 +84,7 @@ namespace DTM
             this.popupMenuPagos = new DevExpress.XtraBars.PopupMenu(this.components);
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtNumeroDocumentoExterno = new DevExpress.XtraEditors.TextEdit();
             this.lblImporteAplicado = new DevExpress.XtraEditors.LabelControl();
             this.txtImporteAplicado = new DevExpress.XtraEditors.TextEdit();
@@ -147,7 +148,6 @@ namespace DTM
             this.xtraTabPageDocumentoElectronico = new DevExpress.XtraTab.XtraTabPage();
             this.lbReferencias = new DevExpress.XtraEditors.ListBoxControl();
             this.btnReferencias = new DevExpress.XtraEditors.SimpleButton();
-            this.lblImportarFolioFiscal = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.cbMetodoPago = new DevExpress.XtraEditors.LookUpEdit();
             this.lblMetodosPago = new DevExpress.XtraEditors.HyperlinkLabelControl();
@@ -159,7 +159,6 @@ namespace DTM
             this.txtFolioFiscal = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuPagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -498,6 +497,16 @@ namespace DTM
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1174, 785);
             this.panelControl1.TabIndex = 4;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Location = new System.Drawing.Point(830, 8);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(6);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(167, 17);
+            this.labelControl1.TabIndex = 200;
+            this.labelControl1.Text = "No. de Documento en SAP";
             // 
             // txtNumeroDocumentoExterno
             // 
@@ -1240,7 +1249,6 @@ namespace DTM
             // 
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.lbReferencias);
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.btnReferencias);
-            this.xtraTabPageDocumentoElectronico.Controls.Add(this.lblImportarFolioFiscal);
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.btnCancelar);
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.cbMetodoPago);
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.lblMetodosPago);
@@ -1276,18 +1284,6 @@ namespace DTM
             this.btnReferencias.Text = "Referencias";
             this.btnReferencias.Click += new System.EventHandler(this.btnReferencias_Click);
             // 
-            // lblImportarFolioFiscal
-            // 
-            this.lblImportarFolioFiscal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblImportarFolioFiscal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblImportarFolioFiscal.Location = new System.Drawing.Point(1007, 359);
-            this.lblImportarFolioFiscal.Margin = new System.Windows.Forms.Padding(6);
-            this.lblImportarFolioFiscal.Name = "lblImportarFolioFiscal";
-            this.lblImportarFolioFiscal.Size = new System.Drawing.Size(117, 17);
-            this.lblImportarFolioFiscal.TabIndex = 109;
-            this.lblImportarFolioFiscal.Text = "Importar folio fiscal";
-            this.lblImportarFolioFiscal.Click += new System.EventHandler(this.lblImportarFolioFiscal_Click);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
@@ -1298,6 +1294,7 @@ namespace DTM
             this.btnCancelar.TabIndex = 108;
             this.btnCancelar.TabStop = false;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Visible = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // cbMetodoPago
@@ -1346,6 +1343,7 @@ namespace DTM
             this.btnGenerarSustitucion.TabIndex = 105;
             this.btnGenerarSustitucion.TabStop = false;
             this.btnGenerarSustitucion.Text = "Generar sustitución";
+            this.btnGenerarSustitucion.Visible = false;
             this.btnGenerarSustitucion.Click += new System.EventHandler(this.btnGenerarSustitucion_Click);
             // 
             // txtCadenaOriginal
@@ -1403,16 +1401,6 @@ namespace DTM
             this.layoutControlItem1.Size = new System.Drawing.Size(1178, 789);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(830, 8);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(6);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(167, 17);
-            this.labelControl1.TabIndex = 200;
-            this.labelControl1.Text = "No. de Documento en SAP";
             // 
             // frmPagos
             // 

@@ -163,7 +163,8 @@ namespace DTM
         {
             if (EnviarCorreo())
             {
-                MessageBox.Show("Mensaje enviado");
+                MessageBox.Show("El correo electronico fue enviado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ///MessageBox.Show("Mensaje enviado",);
                 ((Form)this).Close();
             }
         }

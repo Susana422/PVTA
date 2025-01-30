@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraBars;
+﻿using DevExpress.Office.Utils;
+using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraDataLayout;
 using DevExpress.XtraEditors;
@@ -219,9 +220,31 @@ namespace DTM
         {
             try
             {
+               
                 if (((Control)(object)txtCodigo).Text.Length == 0 || ((Control)(object)txtRFC).Text.Length == 0 || ((Control)(object)txtNombre).Text.Length == 0 || ((Control)(object)txtCalle).Text.Length == 0 || ((Control)(object)txtNumeroExterior).Text.Length == 0 || ((Control)(object)txtCiudad).Text.Length == 0 || ((Control)(object)txtCP).Text.Length == 0 || ((Control)(object)txtColonia).Text.Length == 0 || ((Control)(object)txtTelefono).Text.Length == 0 || ((Control)(object)txtCorreo).Text.Length == 0 || (int)((BaseEdit)cbPaises).EditValue == 0 || (int)((BaseEdit)cbEstados).EditValue == 0)
                 {
                     return false;
+                }
+                System.Collections.Generic.List<string> condicionesRegimenPersonasFisicas = new System.Collections.Generic.List<string> { "605", "606", "607", "608", "610", "611", "612", "614", "615", "616", "621", "622", "625", "626" };
+                System.Collections.Generic.List<string> condicionesRegimenPersonasMorales = new System.Collections.Generic.List<string> { "601", "603", "620", "623", "624", "628", "629", "630" };
+                if (condicionesRegimenPersonasFisicas.Contains(socio.regimen_fiscal))
+                {
+                    // Validación para persona física: el RFC debe tener 13 caracteres
+                    if (((Control)(object)txtRFC).Text.Trim().Length != 13)
+                    {
+                        MessageBox.Show("Un RFC de 13 caracteres es necesario para una persona física", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
+
+                if (condicionesRegimenPersonasMorales.Contains(socio.regimen_fiscal))
+                {
+                    // Validación para persona moral: el RFC debe tener 12 caracteres
+                    if (((Control)(object)txtRFC).Text.Trim().Length != 12)
+                    {
+                        MessageBox.Show("Un RFC de 12 caracteres es necesario para una persona moral", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
                 }
                 return true;
             }

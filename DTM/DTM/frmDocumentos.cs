@@ -39,6 +39,10 @@ using DataTable = System.Data.DataTable;
 using LabelControl = DevExpress.XtraEditors.LabelControl;
 using Task = System.Threading.Tasks.Task;
 using System.Xml.Linq;
+using DevExpress.XtraRichEdit.Layout.Export;
+using DevExpress.XtraReports.UI;
+using DevExpress.XtraCharts.Design;
+using DevExpress.XtraRichEdit.Model.History;
 
 
 namespace DTM
@@ -101,24 +105,6 @@ namespace DTM
 
         private LayoutControlItem layoutControlItem1;
 
-        private GridControl gcPartidas;
-
-        private GridView gvPartidas;
-
-        private GridColumn gridColumnCantidad;
-
-        private GridColumn gridColumnSKU;
-
-        private GridColumn gridColumnArticulo;
-
-        private GridColumn gridColumnPrecio;
-
-        private GridColumn gridColumnPorcentajeDescuento;
-
-        private GridColumn gridColumnDescuento;
-
-        private GridColumn gridColumnSubTotal;
-
         private TextEdit txtCodigoSN;
 
         private LabelControl lblSocio;
@@ -167,8 +153,6 @@ namespace DTM
 
         private RibbonPageGroup ribbonPageGroupHerramientas;
 
-        private GridColumn gridColumnAlmacen;
-
         private LookUpEdit cbDireccionesEnvio;
 
         private LabelControl lblDireccionEnvio;
@@ -180,8 +164,6 @@ namespace DTM
         private MemoEdit txtDireccionEnvio;
 
         private MemoEdit txtDireccionFacturacion;
-
-        private GridColumn gridColumnComentario;
 
         private LookUpEdit cbMetodosPago;
 
@@ -219,11 +201,7 @@ namespace DTM
 
         private LabelControl lblFechaCreacion;
 
-        private RepositoryItemLookUpEdit cbAlmacenes;
-
         private BarSubItem bbiCopiar;
-
-        private GridColumn gridColumnTotal;
 
         private BarButtonItem barButtonItemMapaRelaciones;
 
@@ -232,10 +210,6 @@ namespace DTM
         private LookUpEdit cbMonedas;
 
         private HyperlinkLabelControl lblMonedas;
-
-        private GridColumn gridColumnImpuesto;
-
-        private GridColumn gridColumnPrecioNeto;
 
         private SeparatorControl separatorControl1;
 
@@ -263,11 +237,7 @@ namespace DTM
 
         private LabelControl lblID;
 
-        private GridColumn gridColumnCantidadPendiente;
-
         private HyperlinkLabelControl lblCodigoSN;
-
-        private GridColumn gridColumnCodigoBarras;
 
         private BarButtonItem bbiPagar;
 
@@ -278,16 +248,6 @@ namespace DTM
         private LabelControl lblReferencia;
 
         private TextEdit txtReferencia;
-
-        private GridColumn gridColumnPrecioPieza;
-
-        private GridColumn gridColumnCantidadPaquete;
-
-        private GridColumn gridColumnCantidadEmpaque;
-
-        private GridColumn gridColumnTipoEmpaque;
-
-        private RepositoryItemLookUpEdit cbTiposEmpaques;
 
         private LabelControl lblPartidas;
 
@@ -303,13 +263,9 @@ namespace DTM
 
         private LabelControl lblCreacion;
 
-        private GridColumn gridColumnStock;
-
         private LookUpEdit cbClasesExpedicion;
 
         private HyperlinkLabelControl lblClaseExpedicion;
-
-        private GridColumn gridColumnAlmacenDestino;
 
         private LookUpEdit cbUsoPrincipal;
 
@@ -323,23 +279,13 @@ namespace DTM
 
         private SimpleButton btnCancelar;
 
-        private GridColumn gridColumnNo;
-
-        private GridColumn gridColumnListaPrecio;
-
-        private RepositoryItemLookUpEdit cbListasPrecios;
-
         private BarButtonItem bbiAjustarColumnas;
 
         private TextEdit txtNumeroDocumentoExterno;
 
         private Label lblSincronizacion;
 
-        private GridColumn gridColumnUnidadMedida;
-
         private LabelControl lblActualizacion;
-
-        private SimpleButton btnSolicitarEtiquetas;
 
         private DateEdit deFechaContabilizacion;
 
@@ -355,43 +301,17 @@ namespace DTM
 
         private HyperlinkLabelControl lblChofer;
 
-        private CheckEdit cbForaneo;
-
-        private LookUpEdit cbSupervisores;
-
-        private HyperlinkLabelControl lblSupervisores;
-
         private LookUpEdit cbCanales;
 
         private HyperlinkLabelControl lblCanal;
 
         private SimpleButton btnEstadoCFDI;
 
-        private GridColumn gridColumnUbicacion;
-
-        private GridColumn gridColumnUbicacionDestino;
-
-        private RepositoryItemLookUpEdit cbUbicaciones;
-
         private BarButtonItem bbiCancelacionManualCFDI;
 
         private Button btnCancelacionMasiva;
 
         private DateEdit deFechaVencimiento;
-
-        private RepositoryItemCalcEdit repositoryItemCalcEdit1;
-
-        private LookUpEdit cbCausalidades;
-
-        private HyperlinkLabelControl lblCausalidades;
-
-        private XtraTabPage xtraTabPageAnexos;
-
-        private SimpleButton btnAnexos;
-
-        private ListBoxControl lbAnexos;
-
-        private SimpleButton btnVisualizarAnexo;
 
         private LabelControl lblUUIDErrorCancelacion;
 
@@ -403,17 +323,9 @@ namespace DTM
 
         private HyperlinkLabelControl lblCancelacionMasiva;
 
-        private RepositoryItemLookUpEdit cbUnidadesMedida;
-
         private LookUpEdit cbAlmacenDestino;
 
         private LookUpEdit cbAlmacenOrigen;
-
-        private GroupControl gcSeguimiento;
-
-        private ComboBoxEdit cbEstadoSeguimiento;
-
-        private CheckEdit cbSeguimiento;
 
         private LookUpEdit cbRutas;
 
@@ -421,13 +333,7 @@ namespace DTM
 
         private SimpleButton btnGenerarRFCGenerico;
 
-        private GridColumn gridColumnDiferencia;
-
         private LabelControl lblRFC;
-
-        private RepositoryItemLookUpEdit cbAlmacenesDestino;
-
-        private GridColumn gridColumnNumeroPedimento;
 
         private HyperlinkLabelControl lblClase;
 
@@ -438,10 +344,6 @@ namespace DTM
         private LabelControl lblAlmacenDestino;
 
         private LabelControl lblAlmacenOrigen;
-
-        private LookUpEdit cbRemolques;
-
-        private HyperlinkLabelControl lblRemolque;
 
         private LabelControl lblDistancia;
 
@@ -469,13 +371,9 @@ namespace DTM
 
         private LabelControl lblFechaVigencia;
 
-        private GridColumn gridColumnDescuentoEspecial;
-
         private BarButtonItem bbiAbrir;
 
         private SimpleButton btnDescuentosEspeciales;
-
-        private GridColumn gridColumnPeso;
 
         public Documento documento { get; set; } = new Documento();
 
@@ -576,6 +474,13 @@ namespace DTM
            
             lblCodigoSN.Visible = true;
             gvPartidas.ValidatingEditor += GvPartidas_ValidatingEditor;
+            bloquearGrid();
+            // Forzar un reajuste de las columnas después de agregarlas
+            gvPartidas.BestFitColumns();
+
+            // O actualizar el GridControl y GridView
+            gcPartidas.Refresh();
+            gvPartidas.RefreshData();
         }
 
         private void GvPartidas_ValidatingEditor(object sender, BaseContainerValidateEditorEventArgs e)
@@ -599,6 +504,7 @@ namespace DTM
                     }
                     if (newValue != Math.Floor(newValue))
                     {
+                        e.Valid = false;
                         MessageBox.Show("No se permite coloca piezas en decimales", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
@@ -607,6 +513,24 @@ namespace DTM
                     // Si el valor no es válido, cancelar la edición
                     e.Valid = false;
                     MessageBox.Show("El valor ingresado no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            if (gvPartidas.FocusedColumn.FieldName == "porcentaje_descuento")
+            {
+                decimal newValue;
+                if (decimal.TryParse(e.Value.ToString(), out newValue))
+                {
+                    e.Valid = false;
+                    MessageBox.Show("El valor no puede ser negativo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            if (gvPartidas.FocusedColumn.FieldName == "descuento")
+            {
+                decimal newValue;
+                if (decimal.TryParse(e.Value.ToString(), out newValue))
+                {
+                    e.Valid = false;
+                    MessageBox.Show("El valor no puede ser negativo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -877,9 +801,50 @@ namespace DTM
                 MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
-
+        
         private void bbiGuardar_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (chckCartaPorte.Checked == true)
+            {
+                documento.causalidad_id = 1;
+            }
+            else 
+            {
+                documento.causalidad_id = 0;
+            }
+            if (documento.estado == 'C') 
+            {
+                MessageBox.Show("Este documento no es posible modificarlo por que ya se encuentra cerrado", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (documento.clase == "FA") 
+            {
+                List<int> condicionesPagoPermitidasPPD = new List<int> { 1, 2, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
+                List<int> condicionesPagoPermitidasPUE = new List<int> { 3, 19,20, 22 };
+                if (condicionesPagoPermitidasPPD.Contains(documento.condicion_pago_id)) 
+                {
+                    if (documento.metodo_pago_id != 17 || documento.metodo_pago_id !=  10) 
+                    {
+                        MessageBox.Show("La condición PPD debe tener una Forma de pago-Por definir", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+             
+                }
+                if (condicionesPagoPermitidasPUE.Contains(documento.condicion_pago_id))
+                {
+                    if (documento.metodo_pago_id == 17 || documento.metodo_pago_id == 10)
+                    {
+                        MessageBox.Show("La condición PUE \"NO\" puede tener una Forma de pago-Por definir", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+               
+            }
+            if (documento.total == 0) 
+            {
+                MessageBox.Show("No puede haber un documento con el total en cero", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             int fact = 0;
             try
             {
@@ -889,7 +854,7 @@ namespace DTM
             {
             }
 
-            if (fact > 2 && documento.clase == "PE")
+            if (fact > 1 && documento.clase == "PE")
             {
                 documento.condicion_pago_id = 19;
                 if (Guardar())
@@ -918,6 +883,47 @@ namespace DTM
 
         private void bbiGuardarCerrar_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (chckCartaPorte.Checked == true)
+            {
+                documento.causalidad_id = 1;
+            }
+            else
+            {
+                documento.causalidad_id = 0;
+            }
+            if (documento.estado == 'C')
+            {
+                MessageBox.Show("Este documento no es posible modificarlo por que ya se encuentra cerrado", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (documento.clase == "FA")
+            {
+                List<int> condicionesPagoPermitidasPPD = new List<int> { 1, 2, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
+                List<int> condicionesPagoPermitidasPUE = new List<int> { 3, 19, 20, 22 };
+                if (condicionesPagoPermitidasPPD.Contains(documento.condicion_pago_id))
+                {
+                    if (documento.metodo_pago_id != 17 || documento.metodo_pago_id != 10)
+                    {
+                        MessageBox.Show("La condición PPD debe tener una Forma de pago-Por definir", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                }
+                if (condicionesPagoPermitidasPUE.Contains(documento.condicion_pago_id))
+                {
+                    if (documento.metodo_pago_id == 17 || documento.metodo_pago_id == 10)
+                    {
+                        MessageBox.Show("La condición PUE \"NO\" puede tener una Forma de pago-Por definir", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+
+            }
+            if (documento.total == 0)
+            {
+                MessageBox.Show("No puede haber un documento con el total en cero", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             int fact = Int32.Parse(txtFactVencidas.Text);
             if (fact > 2 && documento.clase == "PE")
             {
@@ -942,6 +948,47 @@ namespace DTM
 
         private void bbiGuardarNuevo_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (chckCartaPorte.Checked == true)
+            {
+                documento.causalidad_id = 1;
+            }
+            else
+            {
+                documento.causalidad_id = 0;
+            }
+            if (documento.estado == 'C')
+            {
+                MessageBox.Show("Este documento no es posible modificarlo por que ya se encuentra cerrado", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (documento.clase == "FA")
+            {
+                List<int> condicionesPagoPermitidasPPD = new List<int> { 1, 2, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
+                List<int> condicionesPagoPermitidasPUE = new List<int> { 3, 19, 20, 22 };
+                if (condicionesPagoPermitidasPPD.Contains(documento.condicion_pago_id))
+                {
+                    if (documento.metodo_pago_id != 17 || documento.metodo_pago_id != 10)
+                    {
+                        MessageBox.Show("La condición PPD debe tener una Forma de pago-Por definir", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                }
+                if (condicionesPagoPermitidasPUE.Contains(documento.condicion_pago_id))
+                {
+                    if (documento.metodo_pago_id == 17 || documento.metodo_pago_id == 10)
+                    {
+                        MessageBox.Show("La condición PUE \"NO\" puede tener una Forma de pago-Por definir", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+
+            }
+            if (documento.total == 0)
+            {
+                MessageBox.Show("No puede haber un documento con el total en cero", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             int fact = Int32.Parse(txtFactVencidas.Text);
             if (fact > 2 && documento.clase == "PE")
             {
@@ -1090,6 +1137,8 @@ namespace DTM
                         bbiParametrizaciones.Enabled = true;
                         break;
                     case 'C':
+                        panelControl1.Visible = false;
+                        listBoxControl1.Visible = false;
                         //searchRibbonPageGroup.Visible = false;
                         break;
                 }
@@ -1111,7 +1160,7 @@ namespace DTM
                                 control.Enabled = !item.desactivado;
                             }
                         }
-
+                  
 
                         else
                         {
@@ -1136,11 +1185,136 @@ namespace DTM
                         MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"));
                     }
                 }
+                txtSubTotal.Enabled = false;
+                txtImpuesto.Enabled = false;
+                txtTotal.Enabled = false;
+                txtImporteAplicado.Enabled = false;
+                txtFechaDocumento.Enabled = false;
+                txtFechaVigencia.Enabled = false;
+                cbVendedores.Enabled = false;
+                txtFechaCreacion.Enabled = false;
+              
+                if (Program.dtm.UsuarioAutenticado.rol == 'C')
+                {
+                    btnGenerarCartaPorte.Visible = true;
+                    cbClasesExpedicion.Visible = true;
+                    cbChoferes.Visible = true;
+                    cbVehiculos.Visible = true;
+                    cbRutas.Visible = true;
+                    dtFechaSalida.Visible = true;
+                    dtHoraSalida.Visible = true;
+                    dtFechaLlegada.Visible = true;
+                    dtHoraLlegada.Visible = true;
+                    lblClaseExpedicion.Visible = true;
+                    lblChofer.Visible = true;
+                    lblVehiculo.Visible = true;
+                    lblRuta.Visible = true;
+                    labelControl3.Visible = true;
+                    labelControl4.Visible = true;
+                    labelControl5.Visible = true;
+                    labelControl6.Visible = true;
+                    barButtonItem2.Visibility = BarItemVisibility.Always;
+                    lblVendedores.Enabled = false;
+                    btnEstatusCartaPorte.Visible = true;
+                }
+                if (Program.dtm.UsuarioAutenticado.rol == 'A')
+                {
+                    btnGenerarCartaPorte.Visible = true;
+                    cbClasesExpedicion.Visible = true;
+                    cbChoferes.Visible = true;
+                    cbVehiculos.Visible = true;
+                    cbRutas.Visible = true;
+                    dtFechaSalida.Visible = true;
+                    dtHoraSalida.Visible = true;
+                    dtFechaLlegada.Visible = true;
+                    dtHoraLlegada.Visible = true;
+                    lblClaseExpedicion.Visible = true;
+                    lblChofer.Visible = true;
+                    lblVehiculo.Visible = true;
+                    lblRuta.Visible = true;
+                    labelControl3.Visible = true;
+                    labelControl4.Visible = true;
+                    labelControl5.Visible = true;
+                    labelControl6.Visible = true;
+                    barButtonItem2.Visibility = BarItemVisibility.Always;
+                    lblVendedores.Enabled = true;
+                    btnEstatusCartaPorte.Visible = true;
+                }
+                if (Program.dtm.UsuarioAutenticado.rol == 'S')
+                {
+                    btnGenerarCartaPorte.Visible = true;
+                    cbClasesExpedicion.Visible = true;
+                    cbChoferes.Visible = true;
+                    cbVehiculos.Visible = true;
+                    cbRutas.Visible = true;
+                    dtFechaSalida.Visible = true;
+                    dtHoraSalida.Visible = true;
+                    dtFechaLlegada.Visible = true;
+                    dtHoraLlegada.Visible = true;
+                    lblClaseExpedicion.Visible = true;
+                    lblChofer.Visible = true;
+                    lblVehiculo.Visible = true;
+                    lblRuta.Visible = true;
+                    labelControl3.Visible = true;
+                    labelControl4.Visible = true;
+                    labelControl5.Visible = true;
+                    labelControl6.Visible = true;
+                    barButtonItem2.Visibility = BarItemVisibility.Always;
+                    lblVendedores.Enabled = true;
+                    btnEstatusCartaPorte.Visible = false;
+                }
+                if (Program.dtm.UsuarioAutenticado.rol == 'V' ) 
+                {
+                    btnGenerarCartaPorte.Visible = false;
+                cbClasesExpedicion.Visible = false;
+                    cbChoferes.Visible = false;
+                    cbVehiculos.Visible = false;
+                    cbRutas.Visible = false;
+                    dtFechaSalida.Visible = false;
+                    dtHoraSalida.Visible = false;
+                    dtFechaLlegada.Visible = false;
+                    dtHoraLlegada.Visible = false;
+                    lblClaseExpedicion.Visible = false;
+                    lblChofer.Visible = false;
+                    lblVehiculo.Visible = false;
+                    lblRuta.Visible = false;
+                    labelControl3.Visible = false;
+                    labelControl4.Visible = false;
+                    labelControl5.Visible = false;
+                    labelControl6.Visible = false;
+                    barButtonItem2.Visibility = BarItemVisibility.Never;
+                    lblVendedores.Enabled = false;
+                    btnEstatusCartaPorte.Visible = false;
+                }
+                if (Program.dtm.UsuarioAutenticado.rol == 'L')
+                {
+                    btnGenerarCartaPorte.Visible = false;
+                    cbClasesExpedicion.Visible = false;
+                    cbChoferes.Visible = false;
+                    cbVehiculos.Visible = false;
+                    cbRutas.Visible = false;
+                    dtFechaSalida.Visible = false;
+                    dtHoraSalida.Visible = false;
+                    dtFechaLlegada.Visible = false;
+                    dtHoraLlegada.Visible = false;
+                    lblClaseExpedicion.Visible = false;
+                    lblChofer.Visible = false;
+                    lblVehiculo.Visible = false;
+                    lblRuta.Visible = false;
+                    labelControl3.Visible = false;
+                    labelControl4.Visible = false;
+                    labelControl5.Visible = false;
+                    labelControl6.Visible = false;
+                    barButtonItem2.Visibility = BarItemVisibility.Never;
+                    lblVendedores.Enabled = false;
+                    btnEstatusCartaPorte.Visible = false;
+                }
             }
             catch (Exception ex2)
             {
                 MessageBox.Show(ex2.Message);
             }
+
         }
         public void SetButtonVisibility(RibbonControl ribbon, string buttonName, bool oculto, bool desactivado)
         {
@@ -1163,6 +1337,7 @@ namespace DTM
         {
             try
             {
+                txtNumeroDocumento.Enabled = true;
                 if (documento.id != 0)
                 {
                     string clase = documento.clase;
@@ -1220,9 +1395,58 @@ namespace DTM
         {
             string clase = documento.clase;
             documento = new Documento(clase);
+            txtNumeroDocumento.Enabled = false;
             Cargar(nuevo: true);
         }
-
+        private void HacerTodosLosControlesSoloLectura(XtraTabPage xtraTabPage,bool valor)
+        {
+            foreach (Control control in xtraTabPage.Controls)
+            {
+                if (control is DevExpress.XtraEditors.HyperlinkLabelControl link)
+                {
+                    link.Enabled = !valor; // Evita que el enlace sea clickeable
+                    link.Appearance.ForeColor = System.Drawing.Color.Gray; // Cambia el color del texto para que no parezca un enlace
+                }
+                // Verificamos el tipo de cada control y lo establecemos en solo lectura
+                if (control is TextEdit textEdit)
+                {
+                    textEdit.Properties.ReadOnly = valor;
+                }
+                else if (control is ComboBoxEdit comboBoxEdit)
+                {
+                    comboBoxEdit.Properties.ReadOnly = valor;
+                }
+                else if (control is ButtonEdit buttonEdit)
+                {
+                    buttonEdit.Properties.ReadOnly = valor;
+                }
+                else if (control is LookUpEdit lookUpEdit)
+                {
+                    lookUpEdit.Properties.ReadOnly = valor;
+                }
+                else if (control is DateEdit dateEdit)
+                {
+                    dateEdit.Properties.ReadOnly = valor;
+                }
+                else if (control is SpinEdit spinEdit)
+                {
+                    spinEdit.Properties.ReadOnly = valor;
+                }
+                else if (control is MemoEdit memoEdit)
+                {
+                    memoEdit.Properties.ReadOnly = valor;
+                }
+                else if (control is CheckEdit checkEdit)
+                {
+                    checkEdit.Properties.ReadOnly = valor;
+                }
+                else if (control is SimpleButton simpleButton)
+                {
+                    simpleButton.Enabled = !valor; // No editable, pero si quieres mantenerlo visible
+                }
+                // Si tienes otros controles, puedes agregar más verificaciones similares.
+            }
+        }
         internal void Cargar(bool nuevo = false, bool busqueda = false)
         {
             try
@@ -1280,32 +1504,45 @@ namespace DTM
                 bool enabled;
                 if (documento.estado.Equals('C'))
                 {
-                    LookUpEdit lookUpEdit = cbMonedas;
-                    TextEdit textEdit = txtCodigoSN;
-                    TextEdit textEdit2 = txtTipoCambio;
-                    TextEdit textEdit3 = txtArticulo;
-                    BarSubItem barSubItem = bbiCopiar;
-                    BarButtonItem barButtonItem = bbiGuardar;
-                    BarButtonItem barButtonItem2 = bbiGuardarNuevo;
-                    BarButtonItem barButtonItem3 = bbiGuardarCerrar;
-                    BarButtonItem barButtonItem4 = bbiPagar;
-                    bool flag2 = (gvPartidas.OptionsBehavior.Editable = false);
-                    bool flag4 = (barButtonItem4.Enabled = flag2);
-                    bool flag6 = (barButtonItem3.Enabled = flag4);
-                    bool flag8 = (barButtonItem2.Enabled = flag6);
-                    bool flag10 = (barButtonItem.Enabled = flag8);
-                    bool flag12 = (barSubItem.Enabled = flag10);
-                    bool flag14 = (textEdit3.Enabled = flag12);
-                    bool flag16 = (textEdit2.Enabled = flag14);
-                    enabled = (textEdit.Enabled = flag16);
-                    lookUpEdit.Enabled = enabled;
+                    HacerTodosLosControlesSoloLectura(xtraTabPageGeneral,true);
+                    HacerTodosLosControlesSoloLectura(xtraTabPageLogistica, true);
+                    HacerTodosLosControlesSoloLectura(xtraTabPageFinanzas, true);
+                    HacerTodosLosControlesSoloLectura(xtraTabPageDocumentoElectronico, true);
+                   // HacerTodosLosControlesSoloLectura(xtraTabPageAnexos, true);
+                    Permisos();
+                    // xtraTabPageGeneral.only = false;
+                    //LookUpEdit lookUpEdit = cbMonedas;
+                    //TextEdit textEdit = txtCodigoSN;
+                    //TextEdit textEdit2 = txtTipoCambio;
+                    //TextEdit textEdit3 = txtArticulo;
+                    //BarSubItem barSubItem = bbiCopiar;
+                    //BarButtonItem barButtonItem = bbiGuardar;
+                    //BarButtonItem barButtonItem2 = bbiGuardarNuevo;
+                    //BarButtonItem barButtonItem3 = bbiGuardarCerrar;
+                    //BarButtonItem barButtonItem4 = bbiPagar;
+                    //bool flag2 = (gvPartidas.OptionsBehavior.Editable = false);
+                    //bool flag4 = (barButtonItem4.Enabled = flag2);
+                    //bool flag6 = (barButtonItem3.Enabled = flag4);
+                    //bool flag8 = (barButtonItem2.Enabled = flag6);
+                    //bool flag10 = (barButtonItem.Enabled = flag8);
+                    //bool flag12 = (barSubItem.Enabled = flag10);
+                    //bool flag14 = (textEdit3.Enabled = flag12);
+                    //bool flag16 = (textEdit2.Enabled = flag14);
+                    //enabled = (textEdit.Enabled = flag16);
+                    //lookUpEdit.Enabled = enabled;
 
                 }
                 else
                 {
+                    HacerTodosLosControlesSoloLectura(xtraTabPageGeneral,false);
+                    HacerTodosLosControlesSoloLectura(xtraTabPageLogistica, false);
+                    HacerTodosLosControlesSoloLectura(xtraTabPageFinanzas, false);
+                    HacerTodosLosControlesSoloLectura(xtraTabPageDocumentoElectronico, false);
+                    //HacerTodosLosControlesSoloLectura(xtraTabPageAnexos, false);
+                    Permisos();
                     LookUpEdit lookUpEdit2 = cbMonedas;
                     TextEdit textEdit4 = txtCodigoSN;
-                    TextEdit textEdit5 = txtTipoCambio;
+                    //TextEdit textEdit5 = txtTipoCambio;
                     TextEdit textEdit6 = txtArticulo;
                     BarSubItem barSubItem2 = bbiCopiar;
                     BarButtonItem barButtonItem5 = bbiGuardar;
@@ -1319,7 +1556,8 @@ namespace DTM
                     bool flag10 = (barButtonItem5.Enabled = flag8);
                     bool flag12 = (barSubItem2.Enabled = flag10);
                     bool flag14 = (textEdit6.Enabled = flag12);
-                    bool flag16 = (textEdit5.Enabled = flag14);
+                    bool flag16 = (textEdit6.Enabled = flag12);
+                    //bool flag16 = (textEdit5.Enabled = flag14);
                     enabled = (textEdit4.Enabled = flag16);
                    // lookUpEdit2.Enabled = enabled;
                 }
@@ -1439,9 +1677,9 @@ namespace DTM
                     //enabled = (cbReserva.Visible = false);
                     //checkEdit5.Visible = enabled;
                 }
-                BarCodeControl barCodeControl = bcID;
+                //BarCodeControl barCodeControl = //bcID;
                 string text2 = (lblID.Text = documento.id.ToString());
-                barCodeControl.Text = text2;
+               // barCodeControl.Text = text2;
                 //lblIdentificadorExterno.Text = documento.identificador_externo.ToString();
                 lblCancelado.Visible = documento.cancelado;
                 lblImpreso.Visible = documento.impreso;
@@ -1458,7 +1696,7 @@ namespace DTM
                 deFechaContabilizacion.DateTime = documento.fecha_contabilizacion;
                 deFechaVencimiento.DateTime = documento.fecha_vencimiento;
                 txtFechaDocumento.Text = documento.fecha_documento.ToShortDateString();
-           
+                chckCartaPorte.Checked = documento.causalidad_id == 1 ? true : false;
                 txtReferencia.Text = documento.referencia;
                 txtComentario.Text = documento.comentario;
                 if (documento.socio_id != 0 || documento.id != 0)
@@ -1470,14 +1708,15 @@ namespace DTM
                 cbClasesExpedicion.EditValue = documento.clase_expedicion_id;
                 cbChoferes.EditValue = documento.chofer_id;
                 cbVehiculos.EditValue = documento.vehiculo_id;
-                cbRemolques.EditValue = documento.remolque_id;
-                cbRutas.EditValue = documento.ruta_id;
-                cbForaneo.Checked = documento.foraneo;
-                cbSupervisores.EditValue = documento.supervisor_id;
-                cbCausalidades.EditValue = documento.causalidad_id;
+                //cbRemolques.EditValue = documento.remolque_id;
+                cbRutas.EditValue = socio.ruta_id;
+                txtDistancia.EditValue = socio.orden_ruta;
+                //cbForaneo.Checked = documento.foraneo;
+                //cbSupervisores.EditValue = documento.supervisor_id;
+                //cbCausalidades.EditValue = documento.causalidad_id;
                 lblWeb.Visible = documento.web;
-                cbSeguimiento.Checked = documento.seguimiento;
-                cbEstadoSeguimiento.SelectedIndex = documento.estado_seguimiento;
+                //cbSeguimiento.Checked = documento.seguimiento;
+                //cbEstadoSeguimiento.SelectedIndex = documento.estado_seguimiento;
                 cbCondicionesPago.EditValue = documento.condicion_pago_id;
                 cbMetodosPago.EditValue = documento.metodo_pago_id;
                 cbProyectos.EditValue = documento.proyecto_id;
@@ -1717,9 +1956,9 @@ namespace DTM
                 memoEdit2.Text = await Task.Run(() => Socio.Direccion.Obtener((int)cbDireccionesEnvio.EditValue).Bloque());
                 MemoEdit memoEdit3 = txtDireccionOrigen;
                 memoEdit3.Text = await Task.Run(() => Socio.Direccion.Obtener((int)cbDireccionesOrigen.EditValue).Bloque());
-                txtDistancia.Text = (from x in Socio.Direccion.Direcciones()
-                                     where x.id == (int)cbDireccionesEnvio.EditValue
-                                     select x.distancia).FirstOrDefault().ToString();
+                //txtDistancia.Text = (from x in Socio.Direccion.Direcciones()
+                //                     where x.id == (int)cbDireccionesEnvio.EditValue
+                //                     select x.distancia).FirstOrDefault().ToString();
             }
             catch
             {
@@ -1833,24 +2072,24 @@ namespace DTM
                                                      select new { x.id, x.codigo, x.nombre }).ToList();
                 cbVehiculos.Properties.ValueMember = "id";
                 cbVehiculos.Properties.DisplayMember = "nombre";
-                cbRemolques.Properties.DataSource = (from x in Remolque.Remolques()
-                                                     where x.activo == true
-                                                     select new { x.id, x.codigo, x.nombre }).ToList();
-                cbRemolques.Properties.ValueMember = "id";
-                cbRemolques.Properties.DisplayMember = "nombre";
-                cbSupervisores.Properties.DataSource = (from x in Supervisor.Supervisores()
-                                                        where x.activo == true
-                                                        select new { x.id, x.codigo, x.nombre }).ToList();
-                cbSupervisores.Properties.ValueMember = "id";
-                cbSupervisores.Properties.DisplayMember = "nombre";
-                cbCausalidades.Properties.DataSource = (from x in Causalidad.Causalidades()
-                                                        where x.activo == true
-                                                        select new { x.id, x.codigo, x.nombre }).ToList();
-                cbCausalidades.Properties.ValueMember = "id";
-                cbCausalidades.Properties.DisplayMember = "nombre";
-                cbCanales.Properties.DataSource = (from x in Canal.Canales()
-                                                   where x.activo == true
-                                                   select new { x.id, x.codigo, x.nombre }).ToList();
+                //cbRemolques.Properties.DataSource = (from x in Remolque.Remolques()
+                //                                     where x.activo == true
+                //                                     select new { x.id, x.codigo, x.nombre }).ToList();
+                //cbRemolques.Properties.ValueMember = "id";
+                //cbRemolques.Properties.DisplayMember = "nombre";
+                //cbSupervisores.Properties.DataSource = (from x in Supervisor.Supervisores()
+                //                                        where x.activo == true
+                //                                        select new { x.id, x.codigo, x.nombre }).ToList();
+                //cbSupervisores.Properties.ValueMember = "id";
+                //cbSupervisores.Properties.DisplayMember = "nombre";
+                //cbCausalidades.Properties.DataSource = (from x in Causalidad.Causalidades()
+                //                                        where x.activo == true
+                //                                        select new { x.id, x.codigo, x.nombre }).ToList();
+                //cbCausalidades.Properties.ValueMember = "id";
+                //cbCausalidades.Properties.DisplayMember = "nombre";
+                //cbCanales.Properties.DataSource = (from x in Canal.Canales()
+                //                                   where x.activo == true
+                //                                   select new { x.id, x.codigo, x.nombre }).ToList();
                 cbCanales.Properties.ValueMember = "id";
                 cbCanales.Properties.DisplayMember = "nombre";
                 cbRutas.Properties.DataSource = (from x in SDK.Ruta.Rutas()
@@ -1890,7 +2129,7 @@ namespace DTM
                 txtImporteAplicado.Text = documento.importe_aplicado.ToString("c2");
                 try
                 {
-                    btnDescuentosEspeciales.Visible = true;
+                    //btnDescuentosEspeciales.Visible = true;
                     lblPartidas.Text = $"Partidas {documento.numero_partidas}";
                     lblArticulos.Text = $"Artículos {documento.cantidad_partidas}";
                     decimal num = Math.Round((documento.partidas.Sum((Documento.Partida x) => x.precio * x.tipo_cambio) - documento.partidas.Sum((Documento.Partida x) => x.costo)) / documento.partidas.Sum((Documento.Partida x) => x.costo) * 100m, 2);
@@ -1922,7 +2161,7 @@ namespace DTM
                 txtImporteAplicado.Text = documento.importe_aplicado.ToString("c2");
                 try
                 {
-                    btnDescuentosEspeciales.Visible = true;
+                   // btnDescuentosEspeciales.Visible = true;
                     lblPartidas.Text = $"Partidas {documento.numero_partidas}";
                     lblArticulos.Text = $"Artículos {documento.cantidad_partidas}";
                     decimal num = Math.Round((documento.partidas.Sum((Documento.Partida x) => x.precio * x.tipo_cambio) - documento.partidas.Sum((Documento.Partida x) => x.costo)) / documento.partidas.Sum((Documento.Partida x) => x.costo) * 100m, 2);
@@ -1999,6 +2238,7 @@ namespace DTM
                     txtCuentaPago.Text = documento.cuenta_pago;
                     cbCondicionesPago.EditValue = documento.condicion_pago_id;
                     DataTable data = documento.limiteCredito(socio.codigo);
+                    
                     if (data.Rows.Count > 0)
                     {
                         if (Convert.ToDecimal(data.Rows[0]["fact_vencidas"]) > 1 && documento.clase == "PE")
@@ -2008,13 +2248,31 @@ namespace DTM
                             cbCondicionesPago.EditValue = 19;
                             cbMetodosPago.EditValue = 1;
                         }
-                        if (Convert.ToDecimal(data.Rows[0]["credito disponible"]) < 0)
+                        if (socio.id != Program.dtm.UsuarioAutenticado.socio_id && (documento.clase.Equals("FA") || documento.clase.Equals("PE")) && socio.Balance() > socio.limite_credito)
                         {
                             lbMensajeC.Visible = true;
                             lbMensajeC.Text = "La Venta debera ser de Contado sobrepasa el limite de credito";
+                            cbCondicionesPago.EditValue = 19;
+                            cbMetodosPago.EditValue = 1;
+                        }
+                        if (Convert.ToDecimal(data.Rows[0]["credito disponible"]) < 0)
+                        {
+                           
                         }
                         txtCreditoDisponible.Text = Convert.ToDecimal(data.Rows[0]["credito disponible"]).ToString("0.##");
                         txtFactVencidas.Text = Convert.ToDecimal(data.Rows[0]["fact_vencidas"]).ToString("0.##");
+                    }
+                    if (documento.clase =="NC") 
+                    {
+                        if (documento.estado == 'A')
+                        {
+                            cbCondicionesPago.EditValue = 3;
+                            cbMetodosPago.EditValue = 13;
+                            documento.condicion_pago_id = 3;
+                            documento.metodo_pago_id = 13;
+                            //2 pago inmediato
+                            //13 condonacion
+                        }
                     }
                     //cbMonederos.EditValue = documento.monedero_id;
                     cbUsoPrincipal.EditValue = documento.uso_principal;
@@ -2118,13 +2376,13 @@ namespace DTM
                 documento.clase_expedicion_id = ((!cbClasesExpedicion.EditValue.IsNullOrEmpty()) ? ((int)cbClasesExpedicion.EditValue) : 0);
                 documento.chofer_id = ((!cbChoferes.EditValue.IsNullOrEmpty()) ? ((int)cbChoferes.EditValue) : 0);
                 documento.vehiculo_id = ((!cbVehiculos.EditValue.IsNullOrEmpty()) ? ((int)cbVehiculos.EditValue) : 0);
-                documento.remolque_id = ((!cbRemolques.EditValue.IsNullOrEmpty()) ? ((int)cbRemolques.EditValue) : 0);
+                //documento.remolque_id = ((!cbRemolques.EditValue.IsNullOrEmpty()) ? ((int)cbRemolques.EditValue) : 0);
                 documento.ruta_id = ((!cbRutas.EditValue.IsNullOrEmpty()) ? ((int)cbRutas.EditValue) : 0);
-                documento.foraneo = cbForaneo.Checked;
-                documento.supervisor_id = ((!cbSupervisores.EditValue.IsNullOrEmpty()) ? ((int)cbSupervisores.EditValue) : 0);
-                documento.causalidad_id = ((!cbCausalidades.EditValue.IsNullOrEmpty()) ? ((int)cbCausalidades.EditValue) : 0);
-                documento.seguimiento = cbSeguimiento.Checked;
-                documento.estado_seguimiento = cbEstadoSeguimiento.SelectedIndex;
+                //documento.foraneo = cbForaneo.Checked;
+                //documento.supervisor_id = ((!cbSupervisores.EditValue.IsNullOrEmpty()) ? ((int)cbSupervisores.EditValue) : 0);
+                //documento.causalidad_id = ((!cbCausalidades.EditValue.IsNullOrEmpty()) ? ((int)cbCausalidades.EditValue) : 0);
+                //documento.seguimiento = cbSeguimiento.Checked;
+                //documento.estado_seguimiento = cbEstadoSeguimiento.SelectedIndex;
                 documento.canal_id = ((!cbCanales.EditValue.IsNullOrEmpty()) ? ((int)cbCanales.EditValue) : 0);
                 documento.orden_compra = txtOrdenCompra.Text;
                 documento.referencia = txtReferencia.Text;
@@ -2138,16 +2396,73 @@ namespace DTM
                 {
                     return false;
                 }
-                if (Usuario.Almacen.Almacenes().Any((Usuario.Almacen x) => x.usuario_id == Program.dtm.UsuarioAutenticado.id))
+                try
                 {
-                    List<int> almacenes = (from x in Usuario.Almacen.Almacenes()
-                                           where x.usuario_id == Program.dtm.UsuarioAutenticado.id
-                                           select x.almacen_id).ToList();
-                    if (documento.partidas.Any((Documento.Partida x) => !almacenes.Contains(x.almacen_id)))
+                    foreach (var partida in documento.partidas)
                     {
-                        MessageBox.Show("No puedes utilizar uno o más almacenes de los establecidos en las partidas.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        return false;
+                        var alamcen = (from x in Almacen.Almacenes()
+                                       where x.id == partida.almacen_id
+                                       select x.nombre).First();
+                        if (alamcen.ToString().Substring(0, 2) == "TR")
+                        {
+                            MessageBox.Show("No puedes utilizar almacenes en Transito para generar este documento", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return false;
+                        }
+
                     }
+                }
+                catch (Exception ex)
+                {
+                }
+               
+
+                //if (documento.partidas.Any(x => x.almacen_id.ToString().Substring(0, 2) == "TR"))
+                //{
+             
+                //}
+                //    if (Usuario.Almacen.Almacenes().Any((Usuario.Almacen x) => x.usuario_id == Program.dtm.UsuarioAutenticado.id))
+                //{
+
+                //    List<int> almacenes = (from x in Usuario.Almacen.Almacenes()
+                //                           where x.usuario_id == Program.dtm.UsuarioAutenticado.id
+                //                           select x.almacen_id).ToList();
+                //    if (documento.partidas.Any(x => almacenes.Contains(x.almacen_id.ToString().Substring(0, 2))))
+                //    {
+                //        MessageBox.Show("No puedes utilizar uno o más almacenes de los establecidos en las partidas.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //        return false;
+                //    }
+                //}
+
+
+                //if (Usuario.Almacen.Almacenes().Any((Usuario.Almacen x) => x.usuario_id == Program.dtm.UsuarioAutenticado.id))
+                //{
+                //    List<int> almacenes = (from x in Usuario.Almacen.Almacenes()
+                //                           where x.usuario_id == Program.dtm.UsuarioAutenticado.id
+                //                           select x.almacen_id).ToList();
+                //    if (documento.partidas.Any((Documento.Partida x) => !almacenes.Contains(x.almacen_id)))
+                //    {
+                //        MessageBox.Show("No puedes utilizar uno o más almacenes de los establecidos en las partidas.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //        return false;
+                //    }
+                //}
+                try
+                {
+                    int almacen_id = documento.partidas.FirstOrDefault().almacen_id;
+                    var serie = (from x in Serie.Series()
+                                 where x.almacen_id == almacen_id
+                                 select new { x.id, x.nombre }).FirstOrDefault();
+                    if (serie != null) 
+                    {
+                        if (serie.id != documento.serie_id)
+                        {
+                            MessageBox.Show("Solo es posible utilizar esta serie "+ serie.nombre+" para el almacen seleccionado", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return false;
+                        }
+                    }
+                 
+                }
+                catch 
+                { 
                 }
                 try
                 {
@@ -2326,13 +2641,47 @@ namespace DTM
                 Funciones.DescartarCargando();
             }
         }
-
+      
         private bool Guardar()
         {
             try
             {
+             
                 gvPartidas.CloseEditor();
                 txtArticulo.Focus();
+                bool isAlmacenValido2 = true;
+                string referenciaAlmacen2 = gvPartidas.GetRowCellDisplayText(0, "almacen_id").ToString();
+                for (int i = 0; i < gvPartidas.RowCount; i++)
+                {
+                    string almacenIdFila = gvPartidas.GetRowCellDisplayText(i, "almacen_id").ToString();
+                    if (almacenIdFila != referenciaAlmacen2)
+                    {
+                        isAlmacenValido2 = false;  // Si ALAMACEN es diferente, marcar como inválido
+                        break;  // Salir del bucle, ya no es necesario seguir iterando
+                    }
+                }
+                if (!isAlmacenValido2)
+                {
+                    MessageBox.Show("El almacen es diferente en algunas partidas, debería ser el mismo en todas.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+                bool isAlmacenValido = true; // Bandera que se establece en false si hay alguna discrepancia
+                    string referenciaAlmacen = documento.partidas.FirstOrDefault().almacen_id.ToString(); // Obtener el valor de ALAMACEN de la primera partida (si existe)
+
+                    documento.partidas.ForEach(delegate (Documento.Partida x)
+                    {
+                        if (x.almacen_id.ToString() != referenciaAlmacen)
+                        {
+                            isAlmacenValido = false; // Si ALAMACEN es diferente, se marca como falso
+                            return; // Se sale de la iteración sin continuar comparando
+                        }
+                    });
+                    if (!isAlmacenValido)
+                    {
+                        MessageBox.Show("El almacen es diferente en algunas partidas,deberia ser el mismo.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                
                 if (MessageBox.Show("¿Desea guardar los cambios?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     if (Llenar())
@@ -2353,7 +2702,16 @@ namespace DTM
                                 this.documento.estado = 'A';
                             }
                         }
+                        if (this.documento.partidas.Any((Documento.Partida x) => x.documento_id != 0)) 
+                        { 
 
+                            var doc = Documento.Obtener(this.documento.partidas.FirstOrDefault().documento_id);
+                            if (doc.socio_id != this.documento.socio_id) 
+                            {
+                                MessageBox.Show("El socio de negocio debera ser el mismo que el documento base", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                return false;
+                            }
+                        }
                         if (this.documento.clase.Equals("FA") && this.documento.partidas.Any((Documento.Partida x) => x.documento_id == 0))
                         {
                             MessageBox.Show("No es posible guardar una factura sin documento base.", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -3101,6 +3459,11 @@ namespace DTM
         {
             try
             {
+                if (!gvPartidas.IsValidRowHandle(e.RowHandle))
+                {
+                    // Si la fila no es válida, no cambiar el estilo
+                    return;
+                }
                 if (e.RowHandle >= 0)
                 {
                     if (Convert.ToDouble(gvPartidas.GetRowCellValue(e.RowHandle, gvPartidas.Columns["cantidad_pendiente"])) == 0.0 && documento.id != 0)
@@ -3967,7 +4330,7 @@ namespace DTM
                 catch
                 {
                 }
-                //frmCorreoElectronico2.ShowDialog();
+                frmCorreoElectronico2.ShowDialog();
             }
             catch (Exception ex)
             {
@@ -4067,10 +4430,10 @@ namespace DTM
         {
             try
             {
-                lbAnexos.Items.Clear();
+                //lbAnexos.Items.Clear();
                 foreach (Documento.Anexo anexo in documento.anexos)
                 {
-                    lbAnexos.Items.Add($"{anexo.anexo} - {anexo.fecha_creacion.ToShortDateString()}");
+                    //lbAnexos.Items.Add($"{anexo.anexo} - {anexo.fecha_creacion.ToShortDateString()}");
                 }
             }
             catch
@@ -4179,17 +4542,24 @@ namespace DTM
             try
             {
                 List<Documento.Partida> partidas = documento.partidas;
+ 
                 partidas.All(delegate (Documento.Partida x)
                 {
                     x.documento_id = 0;
                     x.id = 0;
+                    x.descuento = 0;
+                    x.descuento_especial_id = 0;
+                    x.porcentaje_descuento = 0;
+                    
                     return true;
                 });
                 string clase = documento.clase;
                 documento = new Documento();
                 documento.clase = clase;
                 documento.partidas = partidas;
+                documento.RecalcularTotalPartidas();
                 Cargar(nuevo: true);
+                Calcular();
             }
             catch (Exception ex)
             {
@@ -4273,8 +4643,8 @@ namespace DTM
 
         private void lblSupervisores_Click(object sender, EventArgs e)
         {
-            frmSupervisores frmSupervisores2 = new frmSupervisores((int)cbSupervisores.EditValue);
-            frmSupervisores2.ShowDialog();
+            //frmSupervisores frmSupervisores2 = new frmSupervisores((int)cbSupervisores.EditValue);
+            //frmSupervisores2.ShowDialog();
         }
 
         private void cbSeries_EditValueChanged(object sender, EventArgs e)
@@ -4318,15 +4688,15 @@ namespace DTM
                 {
                     Buscar();
                 }
-                if (e.Alt && e.KeyCode == Keys.B)
-                {
-                    frmBascula frmBascula2 = new frmBascula();
-                    frmBascula2.ShowDialog();
-                }
-                if (e.Alt && e.KeyCode == Keys.O)
-                {
-                    OrdenCompra();
-                }
+                //if (e.Alt && e.KeyCode == Keys.B)
+                //{
+                //    frmBascula frmBascula2 = new frmBascula();
+                //    frmBascula2.ShowDialog();
+                //}
+                //if (e.Alt && e.KeyCode == Keys.O)
+                //{
+                //    OrdenCompra();
+                //}
                 if (e.Shift && e.KeyCode == Keys.V)
                 {
                     cbVendedores.Focus();
@@ -4335,10 +4705,10 @@ namespace DTM
                 {
                     VerificarExistencias();
                 }
-                if (e.Control && e.KeyCode == Keys.M)
-                {
-                    CargarMonedero();
-                }
+                //if (e.Control && e.KeyCode == Keys.M)
+                //{
+                //    CargarMonedero();
+                //}
                 if (e.Control && e.KeyCode == Keys.P)
                 {
                     Imprimir(documento, 1);
@@ -4422,8 +4792,8 @@ namespace DTM
 
         private void lblCausalidades_Click(object sender, EventArgs e)
         {
-            frmCausalidades frmCausalidades2 = new frmCausalidades((int)cbCausalidades.EditValue);
-            frmCausalidades2.ShowDialog();
+            //frmCausalidades frmCausalidades2 = new frmCausalidades((int)cbCausalidades.EditValue);
+            //frmCausalidades2.ShowDialog();
         }
 
         private void btnAnexos_Click(object sender, EventArgs e)
@@ -4444,9 +4814,9 @@ namespace DTM
         {
             try
             {
-                var anexoSinFecha = lbAnexos.SelectedValue.ToString().Split('-')[0].Trim();
-                string archivo = Program.dtm.Configuracion.directorio_anexos + "\\" + anexoSinFecha;
-                Funciones.AbrirArchivo(archivo);
+                //var anexoSinFecha = lbAnexos.SelectedValue.ToString().Split('-')[0].Trim();
+                //string archivo = Program.dtm.Configuracion.directorio_anexos + "\\" + anexoSinFecha;
+                //Funciones.AbrirArchivo(archivo);
             }
             catch
             {
@@ -4504,12 +4874,12 @@ namespace DTM
                     string id = documento.id.ToString();
                     string numero_documento = documento.numero_documento.ToString();
                     string total = documento.total.ToString("c2");
-                    string selectedText = cbEstadoSeguimiento.SelectedText;
+                    //string selectedText = cbEstadoSeguimiento.SelectedText;
                     string nombre = socio.nombre;
                     string rfc = socio.rfc;
                     string direccion_envio = txtDireccionEnvio.Text;
                     string correo = socio.correo;
-                    Funciones.EnviarSeguimientoAsync(id, numero_documento, total, selectedText, nombre, rfc, direccion_envio, correo);
+                    Funciones.EnviarSeguimientoAsync(id, numero_documento, total, null, nombre, rfc, direccion_envio, correo);
                     MessageBox.Show("Se actualizó y notificó el seguimiento correctamente.");
                 }
             }
@@ -4900,20 +5270,20 @@ namespace DTM
         {
             if (e.KeyCode == Keys.Delete)
             {
-                // Obtener el índice del ítem seleccionado
-                int selectedIndex = lbAnexos.SelectedIndex;
+                //// Obtener el índice del ítem seleccionado
+                ////int selectedIndex = lbAnexos.SelectedIndex;
 
-                // Verificamos que haya un ítem seleccionado
-                if (selectedIndex >= 0)
-                {
-                    // Eliminamos el ítem seleccionado
-                    lbAnexos.Items.RemoveAt(selectedIndex);
-                    documento.anexos.RemoveAt(selectedIndex);
-                }
-                else
-                {
-                    MessageBox.Show("Por favor, seleccione un ítem para eliminar.");
-                }
+                //// Verificamos que haya un ítem seleccionado
+                //if (selectedIndex >= 0)
+                //{
+                //    // Eliminamos el ítem seleccionado
+                //    //lbAnexos.Items.RemoveAt(selectedIndex);
+                //    documento.anexos.RemoveAt(selectedIndex);
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Por favor, seleccione un ítem para eliminar.");
+                //}
             }
         }
 
@@ -4990,18 +5360,21 @@ namespace DTM
 
         private void picturesku_DoubleClick(object sender, EventArgs e)
         {
-            frmResaltarImagen formZoom = new frmResaltarImagen(picturesku.Image);
-
-            // Mostrar el formulario de zoom
-            formZoom.Show();
+            if (picturesku.Image != null)
+            {
+                frmResaltarImagen formZoom = new frmResaltarImagen(picturesku.Image);
+                formZoom.Show();
+            }
         }
 
         private void pictureBox1_DoubleClick(object sender, EventArgs e)
         {
-            frmResaltarImagen formZoom = new frmResaltarImagen(pictureBox1.Image);
+            if (pictureBox1.Image !=null) 
+            {
+                frmResaltarImagen formZoom = new frmResaltarImagen(pictureBox1.Image);
+                formZoom.Show();
+            }
 
-            // Mostrar el formulario de zoom
-            formZoom.Show();
         }
 
         private void bbiXML_ItemClick(object sender, ItemClickEventArgs e)
@@ -5035,6 +5408,112 @@ namespace DTM
         private void cbVendedores_EditValueChanged(object sender, EventArgs e)
         {
             var valor = cbVendedores.EditValue;
+        }
+
+        private void bloquearGrid()
+        {
+            if (Program.dtm.UsuarioAutenticado.rol != 'S' && Program.dtm.UsuarioAutenticado.rol != 'A') {
+                var gridView = gcPartidas.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
+
+                if (gridView != null)
+                {
+                    // Deshabilitar todas las columnas
+                    foreach (DevExpress.XtraGrid.Columns.GridColumn column in gridView.Columns)
+                    {
+                        column.OptionsColumn.ReadOnly = true;
+                    }
+
+                    // Habilitar una columna específica (por ejemplo, la columna con el nombre "ColumnaEdit")
+                    gridView.Columns["cantidad"].OptionsColumn.ReadOnly = false;
+                }
+
+            }
+
+        }
+
+        private void btnGenerarCartaPorte_Click(object sender, EventArgs e)
+        {
+            if (cbRutas.Text =="" && cbRutas.Text == null) 
+            {
+                MessageBox.Show("No se puede generar la carta porte, no tiene ruta");
+                return;
+            }
+            if (documento.numero_documento ==0) 
+            {
+                MessageBox.Show("El documento debe estar creado antes de crear la Carta Porte");
+                return;
+            }
+            documento.clase = "EN";
+            string fechaOrigen = DateTime.Parse(dtFechaSalida.Text).ToString("yyyy-MM-dd") + "T" + dtHoraSalida.Text;
+            string fechaDestino = DateTime.Parse(dtFechaLlegada.Text).ToString("yyyy-MM-dd") + "T" + dtHoraLlegada.Text;
+
+            // string rfc = null, int documento_electronico_sustitucion_id = 0, string fechaOrigen = null, string fechaDestino = null, string distancia = null
+            bool sw = Program.CFDI.TimbrarCartaPorte(documento, null, 0, fechaOrigen, fechaDestino, "0");
+            if (sw == false) 
+            {
+                MessageBox.Show("Error al crear la carta porte -"+ SDK.DTM.ObtenerUltimoError().Message.ToString());
+                return;
+            }
+        }
+
+        private void checkEdit1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Program.dtm.UsuarioAutenticado.rol == 'C') 
+            {
+                if (chckCartaPorte.Checked)
+                {
+                    dtFechaSalida.Visible = true;
+                    dtFechaLlegada.Visible = true;
+                    dtHoraSalida.Visible = true;
+                    dtHoraLlegada.Visible = true;
+                }
+                else
+                {
+                    dtFechaSalida.Visible = false;
+                    dtFechaLlegada.Visible = false;
+                    dtHoraSalida.Visible = false;
+                    dtHoraLlegada.Visible = false;
+                }
+            }
+            if (Program.dtm.UsuarioAutenticado.rol == 'A')
+            {
+                if (chckCartaPorte.Checked)
+                {
+                    dtFechaSalida.Visible = true;
+                    dtFechaLlegada.Visible = true;
+                    dtHoraSalida.Visible = true;
+                    dtHoraLlegada.Visible = true;
+                }
+                else
+                {
+                    dtFechaSalida.Visible = false;
+                    dtFechaLlegada.Visible = false;
+                    dtHoraSalida.Visible = false;
+                    dtHoraLlegada.Visible = false;
+                }
+            }
+            if (Program.dtm.UsuarioAutenticado.rol == 'S')
+            {
+                if (chckCartaPorte.Checked)
+                {
+                    dtFechaSalida.Visible = true;
+                    dtFechaLlegada.Visible = true;
+                    dtHoraSalida.Visible = true;
+                    dtHoraLlegada.Visible = true;
+                }
+                else
+                {
+                    dtFechaSalida.Visible = false;
+                    dtFechaLlegada.Visible = false;
+                    dtHoraSalida.Visible = false;
+                    dtHoraLlegada.Visible = false;
+                }
+            }
+        }
+
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 

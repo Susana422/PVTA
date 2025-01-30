@@ -70,6 +70,8 @@ namespace DTM
             this.bbiParametrizacionesFormulario = new DevExpress.XtraBars.BarButtonItem();
             this.bbiPartidasAbiertas = new DevExpress.XtraBars.BarButtonItem();
             this.bbiPaquetes = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.Actualizar = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.searchRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageHerramientas = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -77,6 +79,7 @@ namespace DTM
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageGeneral = new DevExpress.XtraTab.XtraTabPage();
+            this.btnEntiquetas = new DevExpress.XtraEditors.SimpleButton();
             this.btnVisualizarImagen = new DevExpress.XtraEditors.SimpleButton();
             this.btnAnexarImagen = new DevExpress.XtraEditors.SimpleButton();
             this.lbImagenes = new DevExpress.XtraEditors.ListBoxControl();
@@ -337,16 +340,17 @@ namespace DTM
             this.barButtonItemDescuentos,
             this.bbiParametrizacionesFormulario,
             this.bbiPartidasAbiertas,
-            this.bbiPaquetes});
+            this.bbiPaquetes,
+            this.barButtonItem1,
+            this.Actualizar});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
             this.mainRibbonControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.mainRibbonControl.MaxItemId = 60;
+            this.mainRibbonControl.MaxItemId = 62;
             this.mainRibbonControl.Name = "mainRibbonControl";
             this.mainRibbonControl.OptionsMenuMinWidth = 440;
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.mainRibbonPage,
             this.ribbonPageHerramientas});
-            this.mainRibbonControl.SetPopupContextMenu(this.mainRibbonControl, this.popupMenu1);
             this.mainRibbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.mainRibbonControl.Size = new System.Drawing.Size(1114, 90);
@@ -475,6 +479,21 @@ namespace DTM
             this.bbiPaquetes.Name = "bbiPaquetes";
             this.bbiPaquetes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPaquetes_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 60;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // Actualizar
+            // 
+            this.Actualizar.Caption = "Actualizar";
+            this.Actualizar.Id = 61;
+            this.Actualizar.ImageOptions.Image = global::componentResourceManager.Resources.sort_16x16;
+            this.Actualizar.ImageOptions.LargeImage = global::componentResourceManager.Resources.sort_32x32;
+            this.Actualizar.Name = "Actualizar";
+            this.Actualizar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Actualizar_ItemClick);
+            // 
             // mainRibbonPage
             // 
             this.mainRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -492,6 +511,7 @@ namespace DTM
             this.searchRibbonPageGroup.ItemLinks.Add(this.bbiAnterior);
             this.searchRibbonPageGroup.ItemLinks.Add(this.bbiSiguiente);
             this.searchRibbonPageGroup.ItemLinks.Add(this.bbiUltimo);
+            this.searchRibbonPageGroup.ItemLinks.Add(this.Actualizar);
             this.searchRibbonPageGroup.Name = "searchRibbonPageGroup";
             this.searchRibbonPageGroup.Text = "Navegación";
             // 
@@ -538,6 +558,7 @@ namespace DTM
             // 
             // xtraTabPageGeneral
             // 
+            this.xtraTabPageGeneral.Controls.Add(this.btnEntiquetas);
             this.xtraTabPageGeneral.Controls.Add(this.btnVisualizarImagen);
             this.xtraTabPageGeneral.Controls.Add(this.btnAnexarImagen);
             this.xtraTabPageGeneral.Controls.Add(this.lbImagenes);
@@ -595,6 +616,15 @@ namespace DTM
             this.xtraTabPageGeneral.Name = "xtraTabPageGeneral";
             this.xtraTabPageGeneral.Size = new System.Drawing.Size(1084, 750);
             this.xtraTabPageGeneral.Text = "General";
+            // 
+            // btnEntiquetas
+            // 
+            this.btnEntiquetas.Location = new System.Drawing.Point(637, 484);
+            this.btnEntiquetas.Name = "btnEntiquetas";
+            this.btnEntiquetas.Size = new System.Drawing.Size(156, 32);
+            this.btnEntiquetas.TabIndex = 145;
+            this.btnEntiquetas.Text = "Solicitar Etiquetas";
+            this.btnEntiquetas.Click += new System.EventHandler(this.btnEntiquetas_Click);
             // 
             // btnVisualizarImagen
             // 
@@ -2537,5 +2567,8 @@ namespace DTM
         private XtraTabPage xtraTabPage1;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private DataGridView dtgrvArticulosAlternativos;
+        private SimpleButton btnEntiquetas;
+        private BarButtonItem barButtonItem1;
+        private BarButtonItem Actualizar;
     }
 }

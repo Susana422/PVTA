@@ -1583,6 +1583,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\withtextwrapping_bottomcenter_32x32.png" />
+    <None Include="Resources\withtextwrapping_bottomcenter_16x16.png" />
+    <None Include="Resources\sort_32x32.png" />
+    <None Include="Resources\sort_16x16.png" />
+    <None Include="Resources\outbox_32x32.png" />
+    <None Include="Resources\outbox_16x16.png" />
     <None Include="Resources\show_16x16.png" />
     <None Include="Resources\news_32x32.png" />
     <None Include="Resources\news_16x16.png" />
@@ -1600,6 +1606,8 @@
     <None Include="Resources\autosum_16x16.png" />
     <Content Include="Resources\icon.ico" />
     <None Include="Resources\iconosol.ico" />
+    <None Include="Resources\loadtheme_16x16.png" />
+    <None Include="Resources\loadtheme_32x32.png" />
     <Content Include="Resources\login.jpg" />
     <None Include="Resources\logoDTM.ico" />
     <Content Include="Resources\logoDTM.jpeg" />

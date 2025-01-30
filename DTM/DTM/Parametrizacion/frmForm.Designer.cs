@@ -36,7 +36,7 @@ namespace DTM
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(btnBuscar));
-            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator1 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
+            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator9 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
             this.tabFormDefaultManager1 = new DevExpress.XtraBars.TabFormDefaultManager();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -48,6 +48,10 @@ namespace DTM
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageGeneral = new DevExpress.XtraTab.XtraTabPage();
+            this.lbMensajeC = new DevExpress.XtraEditors.LabelControl();
+            this.lbFact = new DevExpress.XtraEditors.LabelControl();
+            this.lbCredito = new DevExpress.XtraEditors.LabelControl();
+            this.txtFactVencidas = new DevExpress.XtraEditors.TextEdit();
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiGuardar = new DevExpress.XtraBars.BarButtonItem();
             this.bbiGuardarCerrar = new DevExpress.XtraBars.BarButtonItem();
@@ -83,10 +87,6 @@ namespace DTM
             this.searchRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageHerramientas = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupHerramientas = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.lbMensajeC = new DevExpress.XtraEditors.LabelControl();
-            this.lbFact = new DevExpress.XtraEditors.LabelControl();
-            this.lbCredito = new DevExpress.XtraEditors.LabelControl();
-            this.txtFactVencidas = new DevExpress.XtraEditors.TextEdit();
             this.txtCreditoDisponible = new DevExpress.XtraEditors.TextEdit();
             this.btnStat = new System.Windows.Forms.Button();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -276,6 +276,16 @@ namespace DTM
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.cbDocumentos = new DevExpress.XtraEditors.LookUpEdit();
             this.Formulario = new DevExpress.XtraEditors.LabelControl();
+            this.btnGenerarCartaPorte = new DevExpress.XtraEditors.SimpleButton();
+            this.chckCartaPorte = new DevExpress.XtraEditors.CheckEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.dtFechaSalida = new DevExpress.XtraEditors.DateEdit();
+            this.dtFechaLlegada = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.dtHoraSalida = new DevExpress.XtraEditors.DateEdit();
+            this.dtHoraLlegada = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tabFormDefaultManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -285,8 +295,8 @@ namespace DTM
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPageGeneral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFactVencidas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCreditoDisponible.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtArticulo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFechaVigencia.Properties)).BeginInit();
@@ -366,6 +376,15 @@ namespace DTM
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDocumentos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chckCartaPorte.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaSalida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaSalida.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaLlegada.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaLlegada.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHoraSalida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHoraSalida.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHoraLlegada.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHoraLlegada.Properties.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // tabFormDefaultManager1
@@ -537,6 +556,50 @@ namespace DTM
             this.xtraTabPageGeneral.Name = "xtraTabPageGeneral";
             this.xtraTabPageGeneral.Size = new System.Drawing.Size(937, 642);
             this.xtraTabPageGeneral.Text = "General";
+            // 
+            // lbMensajeC
+            // 
+            this.lbMensajeC.Appearance.Font = new System.Drawing.Font("Berlin Sans FB Demi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMensajeC.Appearance.ForeColor = System.Drawing.Color.IndianRed;
+            this.lbMensajeC.Appearance.Options.UseFont = true;
+            this.lbMensajeC.Appearance.Options.UseForeColor = true;
+            this.lbMensajeC.Location = new System.Drawing.Point(42, 244);
+            this.lbMensajeC.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.lbMensajeC.Name = "lbMensajeC";
+            this.lbMensajeC.Size = new System.Drawing.Size(492, 18);
+            this.lbMensajeC.TabIndex = 174;
+            this.lbMensajeC.Text = "La Venta debera ser de Contado tiene Facturas pendientes por Pagar";
+            this.lbMensajeC.Visible = false;
+            // 
+            // lbFact
+            // 
+            this.lbFact.Location = new System.Drawing.Point(18, 221);
+            this.lbFact.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.lbFact.Name = "lbFact";
+            this.lbFact.Size = new System.Drawing.Size(109, 17);
+            this.lbFact.TabIndex = 173;
+            this.lbFact.Text = "Facturas Vencidas";
+            this.lbFact.Visible = false;
+            // 
+            // lbCredito
+            // 
+            this.lbCredito.Location = new System.Drawing.Point(18, 187);
+            this.lbCredito.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.lbCredito.Name = "lbCredito";
+            this.lbCredito.Size = new System.Drawing.Size(111, 17);
+            this.lbCredito.TabIndex = 172;
+            this.lbCredito.Text = "Credito Disponible";
+            this.lbCredito.Visible = false;
+            // 
+            // txtFactVencidas
+            // 
+            this.txtFactVencidas.Enabled = false;
+            this.txtFactVencidas.Location = new System.Drawing.Point(149, 214);
+            this.txtFactVencidas.MenuManager = this.mainRibbonControl;
+            this.txtFactVencidas.Name = "txtFactVencidas";
+            this.txtFactVencidas.Size = new System.Drawing.Size(223, 24);
+            this.txtFactVencidas.TabIndex = 171;
+            this.txtFactVencidas.Visible = false;
             // 
             // mainRibbonControl
             // 
@@ -844,50 +907,6 @@ namespace DTM
             this.ribbonPageGroupHerramientas.ItemLinks.Add(this.bbiParametrizaciones);
             this.ribbonPageGroupHerramientas.Name = "ribbonPageGroupHerramientas";
             this.ribbonPageGroupHerramientas.Text = "Herramientas";
-            // 
-            // lbMensajeC
-            // 
-            this.lbMensajeC.Appearance.Font = new System.Drawing.Font("Berlin Sans FB Demi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMensajeC.Appearance.ForeColor = System.Drawing.Color.IndianRed;
-            this.lbMensajeC.Appearance.Options.UseFont = true;
-            this.lbMensajeC.Appearance.Options.UseForeColor = true;
-            this.lbMensajeC.Location = new System.Drawing.Point(42, 244);
-            this.lbMensajeC.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.lbMensajeC.Name = "lbMensajeC";
-            this.lbMensajeC.Size = new System.Drawing.Size(492, 18);
-            this.lbMensajeC.TabIndex = 174;
-            this.lbMensajeC.Text = "La Venta debera ser de Contado tiene Facturas pendientes por Pagar";
-            this.lbMensajeC.Visible = false;
-            // 
-            // lbFact
-            // 
-            this.lbFact.Location = new System.Drawing.Point(18, 221);
-            this.lbFact.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.lbFact.Name = "lbFact";
-            this.lbFact.Size = new System.Drawing.Size(109, 17);
-            this.lbFact.TabIndex = 173;
-            this.lbFact.Text = "Facturas Vencidas";
-            this.lbFact.Visible = false;
-            // 
-            // lbCredito
-            // 
-            this.lbCredito.Location = new System.Drawing.Point(18, 187);
-            this.lbCredito.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.lbCredito.Name = "lbCredito";
-            this.lbCredito.Size = new System.Drawing.Size(111, 17);
-            this.lbCredito.TabIndex = 172;
-            this.lbCredito.Text = "Credito Disponible";
-            this.lbCredito.Visible = false;
-            // 
-            // txtFactVencidas
-            // 
-            this.txtFactVencidas.Enabled = false;
-            this.txtFactVencidas.Location = new System.Drawing.Point(149, 214);
-            this.txtFactVencidas.MenuManager = this.mainRibbonControl;
-            this.txtFactVencidas.Name = "txtFactVencidas";
-            this.txtFactVencidas.Size = new System.Drawing.Size(223, 24);
-            this.txtFactVencidas.TabIndex = 171;
-            this.txtFactVencidas.Visible = false;
             // 
             // txtCreditoDisponible
             // 
@@ -2029,6 +2048,16 @@ namespace DTM
             // 
             // xtraTabPageLogistica
             // 
+            this.xtraTabPageLogistica.Controls.Add(this.dtHoraLlegada);
+            this.xtraTabPageLogistica.Controls.Add(this.dtHoraSalida);
+            this.xtraTabPageLogistica.Controls.Add(this.labelControl6);
+            this.xtraTabPageLogistica.Controls.Add(this.labelControl5);
+            this.xtraTabPageLogistica.Controls.Add(this.dtFechaLlegada);
+            this.xtraTabPageLogistica.Controls.Add(this.dtFechaSalida);
+            this.xtraTabPageLogistica.Controls.Add(this.labelControl4);
+            this.xtraTabPageLogistica.Controls.Add(this.labelControl3);
+            this.xtraTabPageLogistica.Controls.Add(this.chckCartaPorte);
+            this.xtraTabPageLogistica.Controls.Add(this.btnGenerarCartaPorte);
             this.xtraTabPageLogistica.Controls.Add(this.btnEditarDireccionOrigen);
             this.xtraTabPageLogistica.Controls.Add(this.btnAgregarDireccionOrigen);
             this.xtraTabPageLogistica.Controls.Add(this.txtDireccionOrigen);
@@ -2168,7 +2197,7 @@ namespace DTM
             // 
             // cbRemolques
             // 
-            this.cbRemolques.Location = new System.Drawing.Point(678, 117);
+            this.cbRemolques.Location = new System.Drawing.Point(678, 179);
             this.cbRemolques.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbRemolques.MenuManager = this.mainRibbonControl;
             this.cbRemolques.Name = "cbRemolques";
@@ -2183,7 +2212,7 @@ namespace DTM
             // lblRemolque
             // 
             this.lblRemolque.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblRemolque.Location = new System.Drawing.Point(542, 118);
+            this.lblRemolque.Location = new System.Drawing.Point(546, 186);
             this.lblRemolque.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblRemolque.Name = "lblRemolque";
             this.lblRemolque.Size = new System.Drawing.Size(63, 17);
@@ -2193,17 +2222,17 @@ namespace DTM
             // bcID
             // 
             this.bcID.AutoModule = true;
-            this.bcID.Location = new System.Drawing.Point(678, 389);
+            this.bcID.Location = new System.Drawing.Point(669, 557);
             this.bcID.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.bcID.Name = "bcID";
             this.bcID.Padding = new System.Windows.Forms.Padding(14, 2, 14, 0);
             this.bcID.Size = new System.Drawing.Size(239, 59);
-            this.bcID.Symbology = code128Generator1;
+            this.bcID.Symbology = code128Generator9;
             this.bcID.TabIndex = 147;
             // 
             // cbRutas
             // 
-            this.cbRutas.Location = new System.Drawing.Point(678, 152);
+            this.cbRutas.Location = new System.Drawing.Point(678, 213);
             this.cbRutas.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbRutas.MenuManager = this.mainRibbonControl;
             this.cbRutas.Name = "cbRutas";
@@ -2218,7 +2247,7 @@ namespace DTM
             // lblRuta
             // 
             this.lblRuta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblRuta.Location = new System.Drawing.Point(542, 152);
+            this.lblRuta.Location = new System.Drawing.Point(544, 220);
             this.lblRuta.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblRuta.Name = "lblRuta";
             this.lblRuta.Size = new System.Drawing.Size(30, 17);
@@ -2229,7 +2258,7 @@ namespace DTM
             // 
             this.gcSeguimiento.Controls.Add(this.cbEstadoSeguimiento);
             this.gcSeguimiento.Controls.Add(this.cbSeguimiento);
-            this.gcSeguimiento.Location = new System.Drawing.Point(542, 296);
+            this.gcSeguimiento.Location = new System.Drawing.Point(513, 469);
             this.gcSeguimiento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.gcSeguimiento.Name = "gcSeguimiento";
             this.gcSeguimiento.Size = new System.Drawing.Size(395, 82);
@@ -2266,7 +2295,7 @@ namespace DTM
             // 
             // cbCausalidades
             // 
-            this.cbCausalidades.Location = new System.Drawing.Point(678, 219);
+            this.cbCausalidades.Location = new System.Drawing.Point(678, 303);
             this.cbCausalidades.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbCausalidades.MenuManager = this.mainRibbonControl;
             this.cbCausalidades.Name = "cbCausalidades";
@@ -2281,7 +2310,7 @@ namespace DTM
             // lblCausalidades
             // 
             this.lblCausalidades.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCausalidades.Location = new System.Drawing.Point(542, 220);
+            this.lblCausalidades.Location = new System.Drawing.Point(542, 310);
             this.lblCausalidades.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblCausalidades.Name = "lblCausalidades";
             this.lblCausalidades.Size = new System.Drawing.Size(67, 17);
@@ -2290,7 +2319,7 @@ namespace DTM
             // 
             // cbSupervisores
             // 
-            this.cbSupervisores.Location = new System.Drawing.Point(678, 185);
+            this.cbSupervisores.Location = new System.Drawing.Point(678, 256);
             this.cbSupervisores.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbSupervisores.MenuManager = this.mainRibbonControl;
             this.cbSupervisores.Name = "cbSupervisores";
@@ -2305,7 +2334,7 @@ namespace DTM
             // lblSupervisores
             // 
             this.lblSupervisores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSupervisores.Location = new System.Drawing.Point(542, 186);
+            this.lblSupervisores.Location = new System.Drawing.Point(544, 263);
             this.lblSupervisores.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblSupervisores.Name = "lblSupervisores";
             this.lblSupervisores.Size = new System.Drawing.Size(61, 17);
@@ -2324,7 +2353,7 @@ namespace DTM
             // 
             // cbVehiculos
             // 
-            this.cbVehiculos.Location = new System.Drawing.Point(678, 84);
+            this.cbVehiculos.Location = new System.Drawing.Point(678, 145);
             this.cbVehiculos.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbVehiculos.MenuManager = this.mainRibbonControl;
             this.cbVehiculos.Name = "cbVehiculos";
@@ -2339,7 +2368,7 @@ namespace DTM
             // lblVehiculo
             // 
             this.lblVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblVehiculo.Location = new System.Drawing.Point(542, 85);
+            this.lblVehiculo.Location = new System.Drawing.Point(546, 151);
             this.lblVehiculo.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblVehiculo.Name = "lblVehiculo";
             this.lblVehiculo.Size = new System.Drawing.Size(52, 17);
@@ -2348,7 +2377,7 @@ namespace DTM
             // 
             // cbChoferes
             // 
-            this.cbChoferes.Location = new System.Drawing.Point(678, 50);
+            this.cbChoferes.Location = new System.Drawing.Point(678, 111);
             this.cbChoferes.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbChoferes.MenuManager = this.mainRibbonControl;
             this.cbChoferes.Name = "cbChoferes";
@@ -2363,7 +2392,7 @@ namespace DTM
             // lblChofer
             // 
             this.lblChofer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblChofer.Location = new System.Drawing.Point(542, 51);
+            this.lblChofer.Location = new System.Drawing.Point(546, 118);
             this.lblChofer.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblChofer.Name = "lblChofer";
             this.lblChofer.Size = new System.Drawing.Size(41, 17);
@@ -2373,7 +2402,7 @@ namespace DTM
             // btnSolicitarEtiquetas
             // 
             this.btnSolicitarEtiquetas.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnSolicitarEtiquetas.Location = new System.Drawing.Point(809, 253);
+            this.btnSolicitarEtiquetas.Location = new System.Drawing.Point(785, 345);
             this.btnSolicitarEtiquetas.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnSolicitarEtiquetas.Name = "btnSolicitarEtiquetas";
             this.btnSolicitarEtiquetas.Size = new System.Drawing.Size(123, 26);
@@ -2394,7 +2423,7 @@ namespace DTM
             // 
             this.lblSincronizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSincronizacion.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSincronizacion.Location = new System.Drawing.Point(755, 532);
+            this.lblSincronizacion.Location = new System.Drawing.Point(795, 619);
             this.lblSincronizacion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblSincronizacion.Name = "lblSincronizacion";
             this.lblSincronizacion.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -2427,7 +2456,7 @@ namespace DTM
             // 
             // cbClasesExpedicion
             // 
-            this.cbClasesExpedicion.Location = new System.Drawing.Point(678, 16);
+            this.cbClasesExpedicion.Location = new System.Drawing.Point(678, 78);
             this.cbClasesExpedicion.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbClasesExpedicion.MenuManager = this.mainRibbonControl;
             this.cbClasesExpedicion.Name = "cbClasesExpedicion";
@@ -2442,7 +2471,7 @@ namespace DTM
             // lblClaseExpedicion
             // 
             this.lblClaseExpedicion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblClaseExpedicion.Location = new System.Drawing.Point(542, 17);
+            this.lblClaseExpedicion.Location = new System.Drawing.Point(542, 85);
             this.lblClaseExpedicion.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblClaseExpedicion.Name = "lblClaseExpedicion";
             this.lblClaseExpedicion.Size = new System.Drawing.Size(100, 17);
@@ -3150,6 +3179,108 @@ namespace DTM
             this.Formulario.TabIndex = 92;
             this.Formulario.Text = "Formulario";
             // 
+            // btnGenerarCartaPorte
+            // 
+            this.btnGenerarCartaPorte.Location = new System.Drawing.Point(778, 20);
+            this.btnGenerarCartaPorte.Name = "btnGenerarCartaPorte";
+            this.btnGenerarCartaPorte.Size = new System.Drawing.Size(130, 34);
+            this.btnGenerarCartaPorte.TabIndex = 175;
+            this.btnGenerarCartaPorte.Text = "Generar ";
+            // 
+            // chckCartaPorte
+            // 
+            this.chckCartaPorte.Location = new System.Drawing.Point(599, 33);
+            this.chckCartaPorte.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.chckCartaPorte.MenuManager = this.mainRibbonControl;
+            this.chckCartaPorte.Name = "chckCartaPorte";
+            this.chckCartaPorte.Properties.Caption = "Generar Carta Porte";
+            this.chckCartaPorte.Size = new System.Drawing.Size(162, 21);
+            this.chckCartaPorte.TabIndex = 176;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(542, 377);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(97, 17);
+            this.labelControl3.TabIndex = 178;
+            this.labelControl3.Text = "Fecha de Salida";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(540, 414);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(110, 17);
+            this.labelControl4.TabIndex = 179;
+            this.labelControl4.Text = "Fecha de Llegada";
+            // 
+            // dtFechaSalida
+            // 
+            this.dtFechaSalida.EditValue = null;
+            this.dtFechaSalida.Location = new System.Drawing.Point(657, 374);
+            this.dtFechaSalida.MenuManager = this.mainRibbonControl;
+            this.dtFechaSalida.Name = "dtFechaSalida";
+            this.dtFechaSalida.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaSalida.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaSalida.Size = new System.Drawing.Size(104, 24);
+            this.dtFechaSalida.TabIndex = 180;
+            // 
+            // dtFechaLlegada
+            // 
+            this.dtFechaLlegada.EditValue = null;
+            this.dtFechaLlegada.Location = new System.Drawing.Point(657, 411);
+            this.dtFechaLlegada.MenuManager = this.mainRibbonControl;
+            this.dtFechaLlegada.Name = "dtFechaLlegada";
+            this.dtFechaLlegada.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaLlegada.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaLlegada.Size = new System.Drawing.Size(104, 24);
+            this.dtFechaLlegada.TabIndex = 181;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(785, 381);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(32, 17);
+            this.labelControl5.TabIndex = 182;
+            this.labelControl5.Text = "Hora";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(785, 418);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(32, 17);
+            this.labelControl6.TabIndex = 183;
+            this.labelControl6.Text = "Hora";
+            // 
+            // dtHoraSalida
+            // 
+            this.dtHoraSalida.EditValue = null;
+            this.dtHoraSalida.Location = new System.Drawing.Point(826, 378);
+            this.dtHoraSalida.MenuManager = this.mainRibbonControl;
+            this.dtHoraSalida.Name = "dtHoraSalida";
+            this.dtHoraSalida.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtHoraSalida.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtHoraSalida.Size = new System.Drawing.Size(82, 24);
+            this.dtHoraSalida.TabIndex = 184;
+            // 
+            // dtHoraLlegada
+            // 
+            this.dtHoraLlegada.EditValue = null;
+            this.dtHoraLlegada.Location = new System.Drawing.Point(826, 415);
+            this.dtHoraLlegada.MenuManager = this.mainRibbonControl;
+            this.dtHoraLlegada.Name = "dtHoraLlegada";
+            this.dtHoraLlegada.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtHoraLlegada.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtHoraLlegada.Size = new System.Drawing.Size(82, 24);
+            this.dtHoraLlegada.TabIndex = 185;
+            // 
             // btnBuscar
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -3191,8 +3322,8 @@ namespace DTM
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPageGeneral.ResumeLayout(false);
             this.xtraTabPageGeneral.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFactVencidas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCreditoDisponible.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtArticulo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFechaVigencia.Properties)).EndInit();
@@ -3275,6 +3406,15 @@ namespace DTM
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDocumentos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chckCartaPorte.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaSalida.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaSalida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaLlegada.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaLlegada.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHoraSalida.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHoraSalida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHoraLlegada.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtHoraLlegada.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3512,5 +3652,15 @@ namespace DTM
         private SimpleButton simpleButton1;
         private LookUpEdit cbDocumentos;
         private LabelControl Formulario;
+        private SimpleButton btnGenerarCartaPorte;
+        private CheckEdit chckCartaPorte;
+        private LabelControl labelControl3;
+        private LabelControl labelControl4;
+        private DateEdit dtFechaSalida;
+        private DateEdit dtFechaLlegada;
+        private LabelControl labelControl5;
+        private LabelControl labelControl6;
+        private DateEdit dtHoraSalida;
+        private DateEdit dtHoraLlegada;
     }
 }

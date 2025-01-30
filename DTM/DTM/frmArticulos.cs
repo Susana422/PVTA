@@ -10,13 +10,18 @@ using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraLayout;
 using DevExpress.XtraRichEdit;
+using DevExpress.XtraSplashScreen;
 using DevExpress.XtraTab;
+using DevExpress.XtraWaitForm;
+using SAPB1SDK;
 using SDK;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -1127,6 +1132,12 @@ namespace DTM
         {
             try
             {
+                if (txtSKU.Text =="" || txtNombre.Text =="") 
+                {
+                    return;
+                }
+                txtSKU.Enabled = true;
+                txtNombre.Enabled = true;
                 if (articulo.id != 0)
                 {
                     articulo = new Articulo();
@@ -1532,6 +1543,79 @@ namespace DTM
 
             // Mostrar el formulario de zoom
             formZoom.Show();
+        }
+
+        private void btnEntiquetas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (articulo.id != 0) 
+                {
+                    Etiqueta etiqueta = new Etiqueta();
+                    etiqueta.almacen_id = Program.dtm.UsuarioAutenticado.almacen_id;
+                    Etiqueta.Partida partida = new Etiqueta.Partida();
+                    partida.cantidad = 0;
+                    partida.articulo_id = articulo.id;
+                    etiqueta.partidas.Add(partida);
+                    if (etiqueta.Agregar())
+                    {
+                        MessageBox.Show("Solicitud creada correctamente.");
+                        frmEtiquetas frmEtiquetas2 = new frmEtiquetas(etiqueta.id);
+                        frmEtiquetas2.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show(SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                    }
+
+                }
+              
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"));
+            }
+        }
+
+        private void Actualizar_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(Form.ActiveForm, typeof(DemoWaitForm), true, true, false);
+                SplashScreenManager.Default.SetWaitFormCaption("Por favor espere");
+                SplashScreenManager.Default.SetWaitFormDescription("Sincronizando...");
+                string codigoArt = txtSKU.Text;
+                if (codigoArt != "")
+                {
+                    ConfigurationManager.RefreshSection("connectionStrings");
+                    ConnectionStringSettingsCollection conexiones;
+                    SDK.DTM dtm = new SDK.DTM();
+                    NSAP NSAP;
+                    conexiones = ConfigurationManager.ConnectionStrings;
+                    dtm.Conexion = new SqlConnectionStringBuilder(conexiones["LOCAL"].ConnectionString);
+                    if (dtm.Conectar())
+                    {
+                        NSAP = new NSAP(Configuracion.SAP.Obtener(), false);
+
+                        SAPB1SDK.Articulos.SincronizarSQLT(codigoArt);
+                        SplashScreenManager.CloseForm(false);
+                        MessageBox.Show("Articulo se ha sincronizado correctamente", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                MessageBox.Show("Ha ocrrido un error al intentar sincronizar el articulo", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            finally 
+            {
+                SplashScreenManager.CloseForm(false);
+            }
+
+
         }
     }
 

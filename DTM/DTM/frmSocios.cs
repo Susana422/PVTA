@@ -1,4 +1,6 @@
-﻿using DevExpress.XtraBars;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraDataLayout;
 using DevExpress.XtraEditors;
@@ -9,7 +11,10 @@ using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraLayout;
+using DevExpress.XtraSplashScreen;
 using DevExpress.XtraTab;
+using DevExpress.XtraWaitForm;
+using DTM.Reportes;
 using NetsuiteLibrary.SuiteTalk_Helpers;
 using SDK;
 using System;
@@ -334,12 +339,11 @@ namespace DTM
 
         private CheckEdit cbVIP;
 
-        private LabelControl lblDiasExtra;
+    //    private LabelControl lblDiasExtra;
 
-        private TextEdit txtDiasExtra;
+     //   private TextEdit txtDiasExtra;
 
         private BarButtonItem bbiParametrizacionesFormulario;
-
         public frmSocios(int id = 0)
         {
             InitializeComponent();
@@ -357,6 +361,7 @@ namespace DTM
             Permisos();
             CargarInformes("SN");
             EventoControl.SuscribirEventos((Form)(object)this);
+            gvPersonasContacto.InitNewRow += gvPersonasContacto_InitNewRow;
         }
 
         private void Permisos()
@@ -410,6 +415,7 @@ namespace DTM
                    
                 }
             }
+           
         }
         public void SetButtonVisibility(RibbonControl ribbon, string buttonName, bool oculto, bool desactivado)
         {
@@ -470,35 +476,77 @@ namespace DTM
             }
         }
 
+        private bool validar() 
+        {
+            System.Collections.Generic.List<string> condicionesRegimenPersonasFisicas = new System.Collections.Generic.List<string> { "605", "606", "607", "608", "610", "611", "612", "614", "615", "616", "621", "622", "625", "626" };
+            System.Collections.Generic.List<string> condicionesRegimenPersonasMorales = new System.Collections.Generic.List<string> { "601", "603", "620", "623", "624", "628", "629", "630" };
+            if (condicionesRegimenPersonasFisicas.Contains(socio.regimen_fiscal))
+            {
+                // Validación para persona física: el RFC debe tener 13 caracteres
+                if (((Control)(object)txtRFC).Text.Trim().Length != 13)
+                {
+                    MessageBox.Show("Un RFC de 13 caracteres es necesario para una persona física", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+
+            if (condicionesRegimenPersonasMorales.Contains(socio.regimen_fiscal))
+            {
+                // Validación para persona moral: el RFC debe tener 12 caracteres
+                if (((Control)(object)txtRFC).Text.Trim().Length != 12)
+                {
+                    MessageBox.Show("Un RFC de 12 caracteres es necesario para una persona moral", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            return true;
+        }
         private void bbiGuardar_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (Guardar())
+            if (validar()) 
             {
-                Cargar();
-            }
-            else
-            {
-                MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                if (Guardar())
+                {
+                    Cargar();
+                }
+                else
+                {
+                    MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), ((Control)(object)this).Text);
+                }
             }
         }
 
         private void bbiGuardarCerrar_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (Guardar())
+            if (validar())
             {
-                ((Form)this).Close();
+                if (Guardar())
+                {
+                    ((Form)this).Close();
+                }
             }
         }
-
+        private void gvPersonasContacto_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
+        {
+            // Verifica si el valor de 'id' de la nueva fila ya existe
+            var id = gvPersonasContacto.GetRowCellValue(e.RowHandle, "id").ToString();
+            //if (IdYaExiste(id))
+            //{
+            //    MessageBox.Show("Este ID ya existe. No se puede agregar.");
+            //    gvPersonasContacto.DeleteRow(e.RowHandle);  // Eliminar la fila vacía si es un duplicado
+            //}
+        }
         private void bbiGuardarNuevo_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (Guardar())
+            if (validar())
             {
-                socio = new Socio();
-                Cargar();
+                if (Guardar())
+                {
+                    socio = new Socio();
+                    Cargar();
+                }
             }
         }
-
         private void Cargar(bool nuevo = false, bool busqueda = false)
         {
             try
@@ -543,7 +591,12 @@ namespace DTM
                 ((BaseEdit)txtOrdenRuta).EditValue = socio.orden_ruta;
                 cbAPI.Checked = socio.api;
                 cbVIP.Checked = socio.vip;
-                ((BaseEdit)txtDiasExtra).EditValue = socio.dias_extra_vigencia;
+                if (socio.vip == true)
+                {
+                    txtDiasExtra.Enabled = true;
+                    ((BaseEdit)txtDiasExtra).EditValue = socio.dias_extra_vigencia;
+                }
+              
                 cbActivo.Checked = socio.activo;
                 ((Control)(object)lblFechaActualizacion).Text = socio.fecha_actualizacion.ToShortDateString();
                 //((Control)(object)cbListaPrecios).Enabled = socio.lista_precio_id >= 0;
@@ -1031,6 +1084,8 @@ namespace DTM
         {
             try
             {
+                txtCodigo.Enabled = true;
+                txtNombre.Enabled = true;
                 if (socio.id != 0)
                 {
                     socio = new Socio();
@@ -1131,7 +1186,7 @@ namespace DTM
                 {
                     personaContacto = Socio.PersonaContacto.Obtener(result);
                 }
-                personaContacto.codigo = Socio.PersonaContacto.ObtenerSiguienteCodigo();
+                personaContacto.codigo = Socio.PersonaContacto.ObtenerSiguienteCodigoXCodigo();
                 personaContacto.genero = char.Parse(dataRow["genero"].ToString());
                 personaContacto.socio_id = socio.id;
                 personaContacto.nombre = socio.codigo;
@@ -1351,6 +1406,87 @@ namespace DTM
             frmVendedores frmVendedores = new frmVendedores();
             ((Form)(object)frmVendedores).ShowDialog();
             CargarListas();
+        }
+
+        private void cbVIP_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbVIP.Checked)
+            {
+                txtDiasExtra.Enabled = true;
+            }
+            else 
+            {
+                txtDiasExtra.Enabled = false;
+                txtDiasExtra.Text = "0";
+            }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(Form.ActiveForm, typeof(DemoWaitForm), true, true, false);
+                SplashScreenManager.Default.SetWaitFormCaption("Por favor espere");
+                SplashScreenManager.Default.SetWaitFormDescription("Sincronizando información para el reporte...");
+                string ruta = Settings.Settings.Default.rutaReportes.ToString() + "EstadodeCuentaXCliente.rpt";
+                this.Hide();
+                    string AttachPDF = addFileTemp();
+                    if (AttachPDF != "")
+                    {
+
+                        ReportDocument cryReportDocument = new ReportDocument();
+                        cryReportDocument.Load(ruta);
+                        cryReportDocument.SetDatabaseLogon("sa", "SAPB1Admin", "DTMSAP", "DTM_PRODUCTIVA");
+                        cryReportDocument.Refresh();
+                        cryReportDocument.SetParameterValue("DocKey@", socio.codigo);
+                        cryReportDocument.ExportToDisk(ExportFormatType.PortableDocFormat, AttachPDF);
+                        cryReportDocument.Dispose();
+                        this.Hide();
+                        frmVisualizadorReportes frmVisual = new frmVisualizadorReportes(AttachPDF);
+                        frmVisual.Show();
+                        SplashScreenManager.CloseForm(false);
+                    }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No fue posible abrir este archivo");
+                SplashScreenManager.CloseForm(false);
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
+        }
+        public string addFileTemp()
+        {
+            string ruta = string.Empty;
+            try
+            {
+                string tempDirectory = Path.GetTempPath();
+                string tempFilePath = GetUniqueTempFilePath(tempDirectory, "archivo_temp", ".pdf");
+                ruta = tempFilePath;
+                CreateEmptyPdf(tempFilePath);
+            }
+            catch (Exception ex)
+            {
+                ruta = string.Empty;
+            }
+            return ruta;
+        }
+        public static string GetUniqueTempFilePath(string directory, string prefix, string extension)
+        {
+            string tempFileName = Path.Combine(directory, prefix + "_" + Guid.NewGuid().ToString() + extension);
+            if (File.Exists(tempFileName))
+            {
+                return GetUniqueTempFilePath(directory, prefix, extension);
+            }
+            return tempFileName;
+        }
+        public static void CreateEmptyPdf(string filePath)
+        {
+            PdfSharp.Pdf.PdfDocument document = new PdfSharp.Pdf.PdfDocument();
+            document.AddPage();
+            document.Save(filePath);
         }
     }
 

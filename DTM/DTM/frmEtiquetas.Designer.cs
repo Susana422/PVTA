@@ -144,7 +144,7 @@ namespace DTM
             this.bbiSiguiente,
             this.bbiNuevo});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbonControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mainRibbonControl.Margin = new System.Windows.Forms.Padding(4);
             this.mainRibbonControl.MaxItemId = 2;
             this.mainRibbonControl.Name = "mainRibbonControl";
             this.mainRibbonControl.OptionsMenuMinWidth = 440;
@@ -282,7 +282,7 @@ namespace DTM
             this.layoutControl1.Controls.Add(this.xtraTabControl1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 90);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(92, 301, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
@@ -292,11 +292,11 @@ namespace DTM
             // 
             // xtraTabControl1
             // 
-            this.xtraTabControl1.Location = new System.Drawing.Point(16, 16);
-            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.xtraTabControl1.Location = new System.Drawing.Point(12, 12);
+            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(747, 537);
+            this.xtraTabControl1.Size = new System.Drawing.Size(755, 545);
             this.xtraTabControl1.TabIndex = 5;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -318,16 +318,16 @@ namespace DTM
             this.xtraTabPage1.Controls.Add(this.lblTipo);
             this.xtraTabPage1.Controls.Add(this.cbAlmacenes);
             this.xtraTabPage1.Controls.Add(this.lblAlmacenes);
-            this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(741, 507);
+            this.xtraTabPage1.Size = new System.Drawing.Size(749, 515);
             this.xtraTabPage1.Text = "General";
             // 
             // lblID
             // 
             this.lblID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblID.Location = new System.Drawing.Point(467, 12);
-            this.lblID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblID.Margin = new System.Windows.Forms.Padding(4);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(9, 17);
             this.lblID.TabIndex = 0;
@@ -338,7 +338,7 @@ namespace DTM
             this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnImprimir.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnImprimir.Location = new System.Drawing.Point(589, 75);
-            this.btnImprimir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(4);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(135, 30);
             this.btnImprimir.TabIndex = 132;
@@ -349,7 +349,7 @@ namespace DTM
             // 
             this.cbUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbUsuarios.Location = new System.Drawing.Point(160, 78);
-            this.cbUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.cbUsuarios.MenuManager = this.mainRibbonControl;
             this.cbUsuarios.Name = "cbUsuarios";
             this.cbUsuarios.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -365,7 +365,7 @@ namespace DTM
             // 
             this.lblUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblUsuario.Location = new System.Drawing.Point(17, 80);
-            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(46, 17);
             this.lblUsuario.TabIndex = 120;
@@ -375,7 +375,7 @@ namespace DTM
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Location = new System.Drawing.Point(15, 109);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -387,7 +387,7 @@ namespace DTM
             this.txtArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtArticulo.Location = new System.Drawing.Point(55, 112);
-            this.txtArticulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtArticulo.Margin = new System.Windows.Forms.Padding(4);
             this.txtArticulo.Name = "txtArticulo";
             this.txtArticulo.Size = new System.Drawing.Size(669, 24);
             this.txtArticulo.TabIndex = 124;
@@ -398,10 +398,10 @@ namespace DTM
             this.gcPartidas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcPartidas.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcPartidas.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcPartidas.Location = new System.Drawing.Point(17, 148);
             this.gcPartidas.MainView = this.gvPartidas;
-            this.gcPartidas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcPartidas.Margin = new System.Windows.Forms.Padding(4);
             this.gcPartidas.Name = "gcPartidas";
             this.gcPartidas.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cbGenero,
@@ -457,8 +457,6 @@ namespace DTM
             this.gridColumnCantidad.MaxWidth = 107;
             this.gridColumnCantidad.MinWidth = 107;
             this.gridColumnCantidad.Name = "gridColumnCantidad";
-            this.gridColumnCantidad.Visible = true;
-            this.gridColumnCantidad.VisibleIndex = 0;
             this.gridColumnCantidad.Width = 107;
             // 
             // gridColumnUnidadMedida
@@ -468,8 +466,6 @@ namespace DTM
             this.gridColumnUnidadMedida.FieldName = "unidad_medida_id";
             this.gridColumnUnidadMedida.MinWidth = 27;
             this.gridColumnUnidadMedida.Name = "gridColumnUnidadMedida";
-            this.gridColumnUnidadMedida.Visible = true;
-            this.gridColumnUnidadMedida.VisibleIndex = 1;
             this.gridColumnUnidadMedida.Width = 100;
             // 
             // cbUnidadesMedida
@@ -489,7 +485,7 @@ namespace DTM
             this.gridColumnSKU.MinWidth = 160;
             this.gridColumnSKU.Name = "gridColumnSKU";
             this.gridColumnSKU.Visible = true;
-            this.gridColumnSKU.VisibleIndex = 2;
+            this.gridColumnSKU.VisibleIndex = 0;
             this.gridColumnSKU.Width = 160;
             // 
             // gridColumnNombre
@@ -499,7 +495,7 @@ namespace DTM
             this.gridColumnNombre.MinWidth = 347;
             this.gridColumnNombre.Name = "gridColumnNombre";
             this.gridColumnNombre.Visible = true;
-            this.gridColumnNombre.VisibleIndex = 3;
+            this.gridColumnNombre.VisibleIndex = 1;
             this.gridColumnNombre.Width = 347;
             // 
             // cbGenero
@@ -516,7 +512,7 @@ namespace DTM
             // 
             this.lblFechaActualizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFechaActualizacion.Location = new System.Drawing.Point(649, 468);
-            this.lblFechaActualizacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblFechaActualizacion.Margin = new System.Windows.Forms.Padding(4);
             this.lblFechaActualizacion.Name = "lblFechaActualizacion";
             this.lblFechaActualizacion.Size = new System.Drawing.Size(65, 17);
             this.lblFechaActualizacion.TabIndex = 129;
@@ -526,7 +522,7 @@ namespace DTM
             // 
             this.lblUltimaActualizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUltimaActualizacion.Location = new System.Drawing.Point(467, 468);
-            this.lblUltimaActualizacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblUltimaActualizacion.Margin = new System.Windows.Forms.Padding(4);
             this.lblUltimaActualizacion.Name = "lblUltimaActualizacion";
             this.lblUltimaActualizacion.Size = new System.Drawing.Size(128, 17);
             this.lblUltimaActualizacion.TabIndex = 128;
@@ -536,7 +532,7 @@ namespace DTM
             // 
             this.cbImpreso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cbImpreso.Location = new System.Drawing.Point(20, 464);
-            this.cbImpreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbImpreso.Margin = new System.Windows.Forms.Padding(4);
             this.cbImpreso.MenuManager = this.mainRibbonControl;
             this.cbImpreso.Name = "cbImpreso";
             this.cbImpreso.Properties.Caption = "Impreso";
@@ -547,7 +543,7 @@ namespace DTM
             // 
             this.cbTipos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbTipos.Location = new System.Drawing.Point(160, 44);
-            this.cbTipos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbTipos.Margin = new System.Windows.Forms.Padding(4);
             this.cbTipos.MenuManager = this.mainRibbonControl;
             this.cbTipos.Name = "cbTipos";
             this.cbTipos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -562,7 +558,7 @@ namespace DTM
             // 
             this.lblTipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblTipo.Location = new System.Drawing.Point(17, 46);
-            this.lblTipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblTipo.Margin = new System.Windows.Forms.Padding(4);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(101, 17);
             this.lblTipo.TabIndex = 127;
@@ -573,7 +569,7 @@ namespace DTM
             // 
             this.cbAlmacenes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbAlmacenes.Location = new System.Drawing.Point(160, 10);
-            this.cbAlmacenes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbAlmacenes.Margin = new System.Windows.Forms.Padding(4);
             this.cbAlmacenes.MenuManager = this.mainRibbonControl;
             this.cbAlmacenes.Name = "cbAlmacenes";
             this.cbAlmacenes.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -589,7 +585,7 @@ namespace DTM
             // 
             this.lblAlmacenes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblAlmacenes.Location = new System.Drawing.Point(17, 12);
-            this.lblAlmacenes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblAlmacenes.Margin = new System.Windows.Forms.Padding(4);
             this.lblAlmacenes.Name = "lblAlmacenes";
             this.lblAlmacenes.Size = new System.Drawing.Size(55, 17);
             this.lblAlmacenes.TabIndex = 126;
@@ -605,15 +601,15 @@ namespace DTM
             this.xtraTabPage2.Controls.Add(this.btnImportar);
             this.xtraTabPage2.Controls.Add(this.deHasta);
             this.xtraTabPage2.Controls.Add(this.deDesde);
-            this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(741, 494);
+            this.xtraTabPage2.Size = new System.Drawing.Size(749, 515);
             this.xtraTabPage2.Text = "Importar";
             // 
             // lblOpciones
             // 
             this.lblOpciones.Location = new System.Drawing.Point(20, 20);
-            this.lblOpciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblOpciones.Margin = new System.Windows.Forms.Padding(4);
             this.lblOpciones.Name = "lblOpciones";
             this.lblOpciones.Size = new System.Drawing.Size(55, 17);
             this.lblOpciones.TabIndex = 140;
@@ -622,7 +618,7 @@ namespace DTM
             // rgOpciones
             // 
             this.rgOpciones.Location = new System.Drawing.Point(163, 20);
-            this.rgOpciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rgOpciones.Margin = new System.Windows.Forms.Padding(4);
             this.rgOpciones.MenuManager = this.mainRibbonControl;
             this.rgOpciones.Name = "rgOpciones";
             this.rgOpciones.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
@@ -634,7 +630,7 @@ namespace DTM
             // lblHasta
             // 
             this.lblHasta.Location = new System.Drawing.Point(20, 139);
-            this.lblHasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblHasta.Margin = new System.Windows.Forms.Padding(4);
             this.lblHasta.Name = "lblHasta";
             this.lblHasta.Size = new System.Drawing.Size(36, 17);
             this.lblHasta.TabIndex = 134;
@@ -643,7 +639,7 @@ namespace DTM
             // lblDesde
             // 
             this.lblDesde.Location = new System.Drawing.Point(20, 105);
-            this.lblDesde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblDesde.Margin = new System.Windows.Forms.Padding(4);
             this.lblDesde.Name = "lblDesde";
             this.lblDesde.Size = new System.Drawing.Size(36, 17);
             this.lblDesde.TabIndex = 135;
@@ -653,7 +649,7 @@ namespace DTM
             // 
             this.btnImportar.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnImportar.Location = new System.Drawing.Point(163, 169);
-            this.btnImportar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImportar.Margin = new System.Windows.Forms.Padding(4);
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(167, 30);
             this.btnImportar.TabIndex = 136;
@@ -665,7 +661,7 @@ namespace DTM
             // 
             this.deHasta.EditValue = null;
             this.deHasta.Location = new System.Drawing.Point(163, 135);
-            this.deHasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deHasta.Margin = new System.Windows.Forms.Padding(4);
             this.deHasta.MenuManager = this.mainRibbonControl;
             this.deHasta.Name = "deHasta";
             this.deHasta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -681,7 +677,7 @@ namespace DTM
             // 
             this.deDesde.EditValue = null;
             this.deDesde.Location = new System.Drawing.Point(163, 101);
-            this.deDesde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deDesde.Margin = new System.Windows.Forms.Padding(4);
             this.deDesde.MenuManager = this.mainRibbonControl;
             this.deDesde.Name = "deDesde";
             this.deDesde.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -708,7 +704,7 @@ namespace DTM
             this.layoutControlItem2.Control = this.xtraTabControl1;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(753, 543);
+            this.layoutControlItem2.Size = new System.Drawing.Size(759, 549);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -721,7 +717,7 @@ namespace DTM
             this.Controls.Add(this.mainRibbonControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmEtiquetas";
             this.Ribbon = this.mainRibbonControl;

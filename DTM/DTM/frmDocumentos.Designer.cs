@@ -58,7 +58,6 @@ namespace DTM
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator2 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
             this.mainRibbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiGuardar = new DevExpress.XtraBars.BarButtonItem();
             this.bbiGuardarCerrar = new DevExpress.XtraBars.BarButtonItem();
@@ -91,6 +90,7 @@ namespace DTM
             this.bbiAbrir = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.bbiXML = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.searchRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -175,7 +175,6 @@ namespace DTM
             this.repositoryItemCalcEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.gridColumnPeso = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnStock = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnDiferencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnUnidadMedida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cbUnidadesMedida = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.gridColumnCantidadEmpaque = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -186,15 +185,14 @@ namespace DTM
             this.gridColumnSKU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnArticulo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnCodigoBarras = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnPrecioPieza = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnListaPrecio = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cbListasPrecios = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.gridColumnPrecio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnSubTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnImpuesto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnPorcentajeDescuento = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnDescuento = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnPrecioNeto = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnSubTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnAlmacen = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cbAlmacenes = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -206,31 +204,31 @@ namespace DTM
             this.gridColumnDescuentoEspecial = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnNumeroPedimento = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cbAlmacenesDestino = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPageLogistica = new DevExpress.XtraTab.XtraTabPage();
+            this.btnEstatusCartaPorte = new System.Windows.Forms.Button();
+            this.dtHoraLlegada = new System.Windows.Forms.DateTimePicker();
+            this.dtHoraSalida = new System.Windows.Forms.DateTimePicker();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.dtFechaSalida = new DevExpress.XtraEditors.DateEdit();
+            this.dtFechaLlegada = new DevExpress.XtraEditors.DateEdit();
+            this.btnGenerarCartaPorte = new DevExpress.XtraEditors.SimpleButton();
+            this.chckCartaPorte = new DevExpress.XtraEditors.CheckEdit();
             this.btnAgregarDireccionOrigen = new DevExpress.XtraEditors.SimpleButton();
             this.txtDireccionOrigen = new DevExpress.XtraEditors.MemoEdit();
             this.cbDireccionesOrigen = new DevExpress.XtraEditors.LookUpEdit();
             this.lblDireccionOrigen = new DevExpress.XtraEditors.LabelControl();
             this.lblDistancia = new DevExpress.XtraEditors.LabelControl();
             this.txtDistancia = new DevExpress.XtraEditors.TextEdit();
-            this.cbRemolques = new DevExpress.XtraEditors.LookUpEdit();
-            this.lblRemolque = new DevExpress.XtraEditors.HyperlinkLabelControl();
-            this.bcID = new DevExpress.XtraEditors.BarCodeControl();
             this.cbRutas = new DevExpress.XtraEditors.LookUpEdit();
             this.lblRuta = new DevExpress.XtraEditors.HyperlinkLabelControl();
-            this.gcSeguimiento = new DevExpress.XtraEditors.GroupControl();
-            this.cbEstadoSeguimiento = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.cbSeguimiento = new DevExpress.XtraEditors.CheckEdit();
-            this.cbCausalidades = new DevExpress.XtraEditors.LookUpEdit();
-            this.lblCausalidades = new DevExpress.XtraEditors.HyperlinkLabelControl();
-            this.cbSupervisores = new DevExpress.XtraEditors.LookUpEdit();
-            this.lblSupervisores = new DevExpress.XtraEditors.HyperlinkLabelControl();
-            this.cbForaneo = new DevExpress.XtraEditors.CheckEdit();
             this.cbVehiculos = new DevExpress.XtraEditors.LookUpEdit();
             this.lblVehiculo = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.cbChoferes = new DevExpress.XtraEditors.LookUpEdit();
             this.lblChofer = new DevExpress.XtraEditors.HyperlinkLabelControl();
-            this.btnSolicitarEtiquetas = new DevExpress.XtraEditors.SimpleButton();
             this.lblActualizacion = new DevExpress.XtraEditors.LabelControl();
             this.lblSincronizacion = new System.Windows.Forms.Label();
             this.cbPersonasContacto = new DevExpress.XtraEditors.LookUpEdit();
@@ -284,10 +282,6 @@ namespace DTM
             this.lblFolioFiscal = new DevExpress.XtraEditors.LabelControl();
             this.txtFolioFiscal = new DevExpress.XtraEditors.TextEdit();
             this.cbGenerarDocumentoElectronico = new DevExpress.XtraEditors.CheckEdit();
-            this.xtraTabPageAnexos = new DevExpress.XtraTab.XtraTabPage();
-            this.btnVisualizarAnexo = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAnexos = new DevExpress.XtraEditors.SimpleButton();
-            this.lbAnexos = new DevExpress.XtraEditors.ListBoxControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -342,19 +336,17 @@ namespace DTM
             ((System.ComponentModel.ISupportInitialize)(this.cbAlmacenes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbUbicaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbAlmacenesDestino)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.xtraTabPageLogistica.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaSalida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaSalida.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaLlegada.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaLlegada.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chckCartaPorte.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDireccionOrigen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDireccionesOrigen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDistancia.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbRemolques.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbRutas.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcSeguimiento)).BeginInit();
-            this.gcSeguimiento.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbEstadoSeguimiento.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbSeguimiento.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbCausalidades.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbSupervisores.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbForaneo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbVehiculos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbChoferes.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbPersonasContacto.Properties)).BeginInit();
@@ -378,8 +370,6 @@ namespace DTM
             ((System.ComponentModel.ISupportInitialize)(this.txtCadenaOriginal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFolioFiscal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbGenerarDocumentoElectronico.Properties)).BeginInit();
-            this.xtraTabPageAnexos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lbAnexos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
@@ -422,10 +412,11 @@ namespace DTM
             this.bbiParametrizaciones,
             this.bbiAbrir,
             this.barButtonItem1,
-            this.bbiXML});
+            this.bbiXML,
+            this.barButtonItem2});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
             this.mainRibbonControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.mainRibbonControl.MaxItemId = 27;
+            this.mainRibbonControl.MaxItemId = 28;
             this.mainRibbonControl.Name = "mainRibbonControl";
             this.mainRibbonControl.OptionsMenuMinWidth = 440;
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -433,7 +424,7 @@ namespace DTM
             this.ribbonPageHerramientas});
             this.mainRibbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.mainRibbonControl.Size = new System.Drawing.Size(1204, 94);
+            this.mainRibbonControl.Size = new System.Drawing.Size(1204, 90);
             this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bbiGuardar
@@ -570,7 +561,9 @@ namespace DTM
             // 
             this.bbiEnviar.Caption = "Enviar";
             this.bbiEnviar.Id = 11;
+            this.bbiEnviar.ImageOptions.Image = global::componentResourceManager.Resources.outbox_16x16;
             this.bbiEnviar.ImageOptions.ImageUri.Uri = "Mail";
+            this.bbiEnviar.ImageOptions.LargeImage = global::componentResourceManager.Resources.outbox_32x32;
             this.bbiEnviar.Name = "bbiEnviar";
             this.bbiEnviar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiEnviar_ItemClick);
             // 
@@ -661,6 +654,8 @@ namespace DTM
             // 
             this.bbiAbrir.Caption = "Abrir";
             this.bbiAbrir.Id = 23;
+            this.bbiAbrir.ImageOptions.Image = global::componentResourceManager.Resources.loadtheme_16x16;
+            this.bbiAbrir.ImageOptions.LargeImage = global::componentResourceManager.Resources.loadtheme_32x32;
             this.bbiAbrir.Name = "bbiAbrir";
             this.bbiAbrir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
@@ -679,6 +674,15 @@ namespace DTM
             this.bbiXML.ImageOptions.LargeImage = global::componentResourceManager.Resources.news_32x32;
             this.bbiXML.Name = "bbiXML";
             this.bbiXML.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiXML_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Ver Carta Porte";
+            this.barButtonItem2.Id = 27;
+            this.barButtonItem2.ImageOptions.Image = global::componentResourceManager.Resources.withtextwrapping_bottomcenter_16x16;
+            this.barButtonItem2.ImageOptions.LargeImage = global::componentResourceManager.Resources.withtextwrapping_bottomcenter_32x32;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // mainRibbonPage
             // 
@@ -702,6 +706,7 @@ namespace DTM
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiImprimir);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiCopiar);
             this.mainRibbonPageGroup.ItemLinks.Add(this.bbiXML);
+            this.mainRibbonPageGroup.ItemLinks.Add(this.barButtonItem2);
             this.mainRibbonPageGroup.Name = "mainRibbonPageGroup";
             this.mainRibbonPageGroup.Text = "Opciones";
             // 
@@ -756,11 +761,11 @@ namespace DTM
             // 
             this.layoutControl1.Controls.Add(this.xtraTabControl1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 94);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 90);
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1204, 768);
+            this.layoutControl1.Size = new System.Drawing.Size(1204, 772);
             this.layoutControl1.TabIndex = 59;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -770,17 +775,18 @@ namespace DTM
             this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPageGeneral;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1180, 744);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1180, 748);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageGeneral,
             this.xtraTabPageLogistica,
             this.xtraTabPageFinanzas,
-            this.xtraTabPageDocumentoElectronico,
-            this.xtraTabPageAnexos});
+            this.xtraTabPageDocumentoElectronico});
+            this.xtraTabControl1.Visible = false;
             // 
             // xtraTabPageGeneral
             // 
+            this.xtraTabPageGeneral.AutoScroll = true;
             this.xtraTabPageGeneral.Controls.Add(this.picturesku);
             this.xtraTabPageGeneral.Controls.Add(this.panelControl1);
             this.xtraTabPageGeneral.Controls.Add(this.pictureBox1);
@@ -845,7 +851,7 @@ namespace DTM
             this.xtraTabPageGeneral.Controls.Add(this.gcPartidas);
             this.xtraTabPageGeneral.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageGeneral.Name = "xtraTabPageGeneral";
-            this.xtraTabPageGeneral.Size = new System.Drawing.Size(1168, 715);
+            this.xtraTabPageGeneral.Size = new System.Drawing.Size(1174, 718);
             this.xtraTabPageGeneral.Text = "General";
             // 
             // picturesku
@@ -869,7 +875,7 @@ namespace DTM
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Location = new System.Drawing.Point(982, 347);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(172, 216);
+            this.panelControl1.Size = new System.Drawing.Size(172, 220);
             this.panelControl1.TabIndex = 181;
             // 
             // accordionControl1
@@ -883,7 +889,7 @@ namespace DTM
             this.accordionControlElement4});
             this.accordionControl1.Location = new System.Drawing.Point(4, 41);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.Size = new System.Drawing.Size(163, 160);
+            this.accordionControl1.Size = new System.Drawing.Size(163, 164);
             this.accordionControl1.TabIndex = 179;
             // 
             // accordionControlVolumen
@@ -1220,7 +1226,7 @@ namespace DTM
             // lblArticulos
             // 
             this.lblArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblArticulos.Location = new System.Drawing.Point(426, 665);
+            this.lblArticulos.Location = new System.Drawing.Point(426, 669);
             this.lblArticulos.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblArticulos.Name = "lblArticulos";
             this.lblArticulos.Size = new System.Drawing.Size(65, 17);
@@ -1230,7 +1236,7 @@ namespace DTM
             // lblPartidas
             // 
             this.lblPartidas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblPartidas.Location = new System.Drawing.Point(426, 691);
+            this.lblPartidas.Location = new System.Drawing.Point(426, 695);
             this.lblPartidas.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblPartidas.Name = "lblPartidas";
             this.lblPartidas.Size = new System.Drawing.Size(63, 17);
@@ -1240,7 +1246,7 @@ namespace DTM
             // lblReferencia
             // 
             this.lblReferencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblReferencia.Location = new System.Drawing.Point(28, 606);
+            this.lblReferencia.Location = new System.Drawing.Point(28, 610);
             this.lblReferencia.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblReferencia.Name = "lblReferencia";
             this.lblReferencia.Size = new System.Drawing.Size(64, 17);
@@ -1250,7 +1256,7 @@ namespace DTM
             // txtReferencia
             // 
             this.txtReferencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtReferencia.Location = new System.Drawing.Point(150, 599);
+            this.txtReferencia.Location = new System.Drawing.Point(150, 603);
             this.txtReferencia.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.Properties.MaxLength = 100;
@@ -1468,7 +1474,7 @@ namespace DTM
             // txtComentario
             // 
             this.txtComentario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtComentario.Location = new System.Drawing.Point(149, 632);
+            this.txtComentario.Location = new System.Drawing.Point(149, 636);
             this.txtComentario.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtComentario.MenuManager = this.mainRibbonControl;
             this.txtComentario.Name = "txtComentario";
@@ -1479,7 +1485,7 @@ namespace DTM
             // lblComentario
             // 
             this.lblComentario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblComentario.Location = new System.Drawing.Point(18, 634);
+            this.lblComentario.Location = new System.Drawing.Point(18, 638);
             this.lblComentario.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblComentario.Name = "lblComentario";
             this.lblComentario.Size = new System.Drawing.Size(74, 17);
@@ -1489,7 +1495,7 @@ namespace DTM
             // cbVendedores
             // 
             this.cbVendedores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbVendedores.Location = new System.Drawing.Point(149, 569);
+            this.cbVendedores.Location = new System.Drawing.Point(149, 573);
             this.cbVendedores.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbVendedores.MenuManager = this.mainRibbonControl;
             this.cbVendedores.Name = "cbVendedores";
@@ -1507,7 +1513,7 @@ namespace DTM
             // 
             this.lblVendedores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblVendedores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblVendedores.Location = new System.Drawing.Point(33, 576);
+            this.lblVendedores.Location = new System.Drawing.Point(33, 580);
             this.lblVendedores.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblVendedores.Name = "lblVendedores";
             this.lblVendedores.Size = new System.Drawing.Size(60, 17);
@@ -1517,7 +1523,7 @@ namespace DTM
             // lblImporteAplicado
             // 
             this.lblImporteAplicado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblImporteAplicado.Location = new System.Drawing.Point(858, 691);
+            this.lblImporteAplicado.Location = new System.Drawing.Point(858, 695);
             this.lblImporteAplicado.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblImporteAplicado.Name = "lblImporteAplicado";
             this.lblImporteAplicado.Size = new System.Drawing.Size(105, 17);
@@ -1527,7 +1533,7 @@ namespace DTM
             // txtImporteAplicado
             // 
             this.txtImporteAplicado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtImporteAplicado.Location = new System.Drawing.Point(974, 688);
+            this.txtImporteAplicado.Location = new System.Drawing.Point(974, 692);
             this.txtImporteAplicado.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtImporteAplicado.MenuManager = this.mainRibbonControl;
             this.txtImporteAplicado.Name = "txtImporteAplicado";
@@ -1545,7 +1551,7 @@ namespace DTM
             // lblTotal
             // 
             this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTotal.Location = new System.Drawing.Point(834, 665);
+            this.lblTotal.Location = new System.Drawing.Point(834, 669);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(129, 17);
@@ -1555,7 +1561,7 @@ namespace DTM
             // txtTotal
             // 
             this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotal.Location = new System.Drawing.Point(973, 662);
+            this.txtTotal.Location = new System.Drawing.Point(973, 666);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtTotal.MenuManager = this.mainRibbonControl;
             this.txtTotal.Name = "txtTotal";
@@ -1575,7 +1581,7 @@ namespace DTM
             // lblImpuesto
             // 
             this.lblImpuesto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblImpuesto.Location = new System.Drawing.Point(907, 636);
+            this.lblImpuesto.Location = new System.Drawing.Point(907, 640);
             this.lblImpuesto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblImpuesto.Name = "lblImpuesto";
             this.lblImpuesto.Size = new System.Drawing.Size(56, 17);
@@ -1585,7 +1591,7 @@ namespace DTM
             // txtImpuesto
             // 
             this.txtImpuesto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtImpuesto.Location = new System.Drawing.Point(973, 629);
+            this.txtImpuesto.Location = new System.Drawing.Point(973, 633);
             this.txtImpuesto.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtImpuesto.MenuManager = this.mainRibbonControl;
             this.txtImpuesto.Name = "txtImpuesto";
@@ -1603,7 +1609,7 @@ namespace DTM
             // lblSubTotal
             // 
             this.lblSubTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSubTotal.Location = new System.Drawing.Point(907, 602);
+            this.lblSubTotal.Location = new System.Drawing.Point(907, 606);
             this.lblSubTotal.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblSubTotal.Name = "lblSubTotal";
             this.lblSubTotal.Size = new System.Drawing.Size(55, 17);
@@ -1613,7 +1619,7 @@ namespace DTM
             // txtSubTotal
             // 
             this.txtSubTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSubTotal.Location = new System.Drawing.Point(973, 593);
+            this.txtSubTotal.Location = new System.Drawing.Point(973, 597);
             this.txtSubTotal.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtSubTotal.MenuManager = this.mainRibbonControl;
             this.txtSubTotal.Name = "txtSubTotal";
@@ -1657,6 +1663,7 @@ namespace DTM
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcPartidas.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.gcPartidas.Font = new System.Drawing.Font("Berlin Sans FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gcPartidas.Location = new System.Drawing.Point(16, 291);
             this.gcPartidas.MainView = this.gvPartidas;
             this.gcPartidas.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
@@ -1669,11 +1676,12 @@ namespace DTM
             this.repositoryItemCalcEdit1,
             this.cbUnidadesMedida,
             this.cbAlmacenesDestino});
-            this.gcPartidas.Size = new System.Drawing.Size(958, 272);
+            this.gcPartidas.Size = new System.Drawing.Size(962, 276);
             this.gcPartidas.TabIndex = 1;
             this.gcPartidas.TabStop = false;
             this.gcPartidas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvPartidas});
+            this.gvPartidas,
+            this.gridView2});
             this.gcPartidas.FocusedViewChanged += new DevExpress.XtraGrid.ViewFocusEventHandler(this.gcPartidas_FocusedViewChanged);
             this.gcPartidas.Click += new System.EventHandler(this.gcPartidas_Click);
             this.gcPartidas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gcPartidas_MouseDoubleClick);
@@ -1687,7 +1695,6 @@ namespace DTM
             this.gridColumnCantidad,
             this.gridColumnPeso,
             this.gridColumnStock,
-            this.gridColumnDiferencia,
             this.gridColumnUnidadMedida,
             this.gridColumnCantidadEmpaque,
             this.gridColumnTipoEmpaque,
@@ -1696,14 +1703,13 @@ namespace DTM
             this.gridColumnSKU,
             this.gridColumnArticulo,
             this.gridColumnCodigoBarras,
-            this.gridColumnPrecioPieza,
             this.gridColumnListaPrecio,
             this.gridColumnPrecio,
+            this.gridColumnSubTotal,
             this.gridColumnImpuesto,
             this.gridColumnPorcentajeDescuento,
             this.gridColumnDescuento,
             this.gridColumnPrecioNeto,
-            this.gridColumnSubTotal,
             this.gridColumnTotal,
             this.gridColumnAlmacen,
             this.gridColumnUbicacion,
@@ -1714,9 +1720,12 @@ namespace DTM
             this.gridColumnNumeroPedimento});
             this.gvPartidas.DetailHeight = 458;
             this.gvPartidas.GridControl = this.gcPartidas;
+            this.gvPartidas.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gvPartidas.Name = "gvPartidas";
             this.gvPartidas.OptionsCustomization.AllowSort = false;
             this.gvPartidas.OptionsEditForm.PopupEditFormWidth = 1066;
+            this.gvPartidas.OptionsPrint.AutoWidth = false;
+            this.gvPartidas.OptionsView.RowAutoHeight = true;
             this.gvPartidas.OptionsView.ShowGroupPanel = false;
             this.gvPartidas.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gvPartidas.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gvPartidas_RowStyle);
@@ -1746,11 +1755,10 @@ namespace DTM
             // 
             // gridColumnCantidad
             // 
-            this.gridColumnCantidad.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.gridColumnCantidad.AppearanceCell.Options.UseFont = true;
+            this.gridColumnCantidad.AppearanceHeader.Options.UseFont = true;
             this.gridColumnCantidad.Caption = "Cantidad";
             this.gridColumnCantidad.ColumnEdit = this.repositoryItemCalcEdit1;
-            this.gridColumnCantidad.DisplayFormat.FormatString = "n3";
             this.gridColumnCantidad.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumnCantidad.FieldName = "cantidad";
             this.gridColumnCantidad.MaxWidth = 174;
@@ -1770,20 +1778,21 @@ namespace DTM
             // 
             // gridColumnPeso
             // 
+            this.gridColumnPeso.AppearanceHeader.Options.UseFont = true;
             this.gridColumnPeso.Caption = "Peso";
-            this.gridColumnPeso.DisplayFormat.FormatString = "n2";
             this.gridColumnPeso.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumnPeso.FieldName = "peso";
             this.gridColumnPeso.MinWidth = 26;
             this.gridColumnPeso.Name = "gridColumnPeso";
+            this.gridColumnPeso.OptionsColumn.FixedWidth = true;
             this.gridColumnPeso.Visible = true;
             this.gridColumnPeso.VisibleIndex = 2;
-            this.gridColumnPeso.Width = 29;
+            this.gridColumnPeso.Width = 59;
             // 
             // gridColumnStock
             // 
+            this.gridColumnStock.AppearanceHeader.Options.UseFont = true;
             this.gridColumnStock.Caption = "Stock";
-            this.gridColumnStock.DisplayFormat.FormatString = "n3";
             this.gridColumnStock.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumnStock.FieldName = "stock";
             this.gridColumnStock.MinWidth = 26;
@@ -1791,18 +1800,7 @@ namespace DTM
             this.gridColumnStock.OptionsColumn.AllowEdit = false;
             this.gridColumnStock.Visible = true;
             this.gridColumnStock.VisibleIndex = 3;
-            this.gridColumnStock.Width = 26;
-            // 
-            // gridColumnDiferencia
-            // 
-            this.gridColumnDiferencia.Caption = "Diferencia";
-            this.gridColumnDiferencia.DisplayFormat.FormatString = "n3";
-            this.gridColumnDiferencia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumnDiferencia.FieldName = "diferencia";
-            this.gridColumnDiferencia.MinWidth = 26;
-            this.gridColumnDiferencia.Name = "gridColumnDiferencia";
-            this.gridColumnDiferencia.OptionsColumn.AllowEdit = false;
-            this.gridColumnDiferencia.Width = 38;
+            this.gridColumnStock.Width = 77;
             // 
             // gridColumnUnidadMedida
             // 
@@ -1811,8 +1809,6 @@ namespace DTM
             this.gridColumnUnidadMedida.FieldName = "unidad_medida_id";
             this.gridColumnUnidadMedida.MinWidth = 26;
             this.gridColumnUnidadMedida.Name = "gridColumnUnidadMedida";
-            this.gridColumnUnidadMedida.Visible = true;
-            this.gridColumnUnidadMedida.VisibleIndex = 4;
             this.gridColumnUnidadMedida.Width = 26;
             // 
             // cbUnidadesMedida
@@ -1828,7 +1824,6 @@ namespace DTM
             // gridColumnCantidadEmpaque
             // 
             this.gridColumnCantidadEmpaque.Caption = "C/E";
-            this.gridColumnCantidadEmpaque.DisplayFormat.FormatString = "n2";
             this.gridColumnCantidadEmpaque.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumnCantidadEmpaque.FieldName = "cantidad_empaque";
             this.gridColumnCantidadEmpaque.MinWidth = 26;
@@ -1858,7 +1853,6 @@ namespace DTM
             this.gridColumnCantidadPendiente.AppearanceCell.BackColor = System.Drawing.Color.WhiteSmoke;
             this.gridColumnCantidadPendiente.AppearanceCell.Options.UseBackColor = true;
             this.gridColumnCantidadPendiente.Caption = "Pendiente";
-            this.gridColumnCantidadPendiente.DisplayFormat.FormatString = "n3";
             this.gridColumnCantidadPendiente.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumnCantidadPendiente.FieldName = "cantidad_pendiente";
             this.gridColumnCantidadPendiente.MaxWidth = 174;
@@ -1871,19 +1865,17 @@ namespace DTM
             // gridColumnCantidadPaquete
             // 
             this.gridColumnCantidadPaquete.Caption = "Cant/Paq";
-            this.gridColumnCantidadPaquete.DisplayFormat.FormatString = "n2";
             this.gridColumnCantidadPaquete.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumnCantidadPaquete.FieldName = "cantidad_paquete";
             this.gridColumnCantidadPaquete.MaxWidth = 80;
             this.gridColumnCantidadPaquete.MinWidth = 47;
             this.gridColumnCantidadPaquete.Name = "gridColumnCantidadPaquete";
             this.gridColumnCantidadPaquete.OptionsColumn.AllowEdit = false;
-            this.gridColumnCantidadPaquete.Visible = true;
-            this.gridColumnCantidadPaquete.VisibleIndex = 5;
             this.gridColumnCantidadPaquete.Width = 47;
             // 
             // gridColumnSKU
             // 
+            this.gridColumnSKU.AppearanceHeader.Options.UseFont = true;
             this.gridColumnSKU.Caption = "SKU";
             this.gridColumnSKU.FieldName = "sku";
             this.gridColumnSKU.MaxWidth = 134;
@@ -1891,49 +1883,38 @@ namespace DTM
             this.gridColumnSKU.Name = "gridColumnSKU";
             this.gridColumnSKU.OptionsColumn.AllowEdit = false;
             this.gridColumnSKU.Visible = true;
-            this.gridColumnSKU.VisibleIndex = 6;
-            this.gridColumnSKU.Width = 26;
+            this.gridColumnSKU.VisibleIndex = 4;
+            this.gridColumnSKU.Width = 53;
             // 
             // gridColumnArticulo
             // 
+            this.gridColumnArticulo.AppearanceHeader.Options.UseFont = true;
             this.gridColumnArticulo.Caption = "Artículo";
             this.gridColumnArticulo.FieldName = "nombre";
             this.gridColumnArticulo.MinWidth = 134;
             this.gridColumnArticulo.Name = "gridColumnArticulo";
             this.gridColumnArticulo.Visible = true;
-            this.gridColumnArticulo.VisibleIndex = 7;
-            this.gridColumnArticulo.Width = 138;
+            this.gridColumnArticulo.VisibleIndex = 5;
+            this.gridColumnArticulo.Width = 134;
             // 
             // gridColumnCodigoBarras
             // 
+            this.gridColumnCodigoBarras.AppearanceCell.Options.UseFont = true;
+            this.gridColumnCodigoBarras.AppearanceHeader.Options.UseFont = true;
             this.gridColumnCodigoBarras.Caption = "Código de barras";
             this.gridColumnCodigoBarras.FieldName = "codigo_barras";
-            this.gridColumnCodigoBarras.MaxWidth = 113;
+            this.gridColumnCodigoBarras.MaxWidth = 125;
             this.gridColumnCodigoBarras.MinWidth = 66;
             this.gridColumnCodigoBarras.Name = "gridColumnCodigoBarras";
             this.gridColumnCodigoBarras.OptionsColumn.AllowEdit = false;
+            this.gridColumnCodigoBarras.OptionsColumn.FixedWidth = true;
             this.gridColumnCodigoBarras.Visible = true;
-            this.gridColumnCodigoBarras.VisibleIndex = 8;
-            this.gridColumnCodigoBarras.Width = 70;
-            // 
-            // gridColumnPrecioPieza
-            // 
-            this.gridColumnPrecioPieza.Caption = "P/Pza";
-            this.gridColumnPrecioPieza.DisplayFormat.FormatString = "c2";
-            this.gridColumnPrecioPieza.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumnPrecioPieza.FieldName = "gridColumnPrecioPieza";
-            this.gridColumnPrecioPieza.MaxWidth = 160;
-            this.gridColumnPrecioPieza.MinWidth = 26;
-            this.gridColumnPrecioPieza.Name = "gridColumnPrecioPieza";
-            this.gridColumnPrecioPieza.OptionsColumn.AllowEdit = false;
-            this.gridColumnPrecioPieza.UnboundExpression = "(precio_pieza * tipo_cambio)  + (impuesto / cantidad_paquete)";
-            this.gridColumnPrecioPieza.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.gridColumnPrecioPieza.Visible = true;
-            this.gridColumnPrecioPieza.VisibleIndex = 9;
-            this.gridColumnPrecioPieza.Width = 26;
+            this.gridColumnCodigoBarras.VisibleIndex = 6;
+            this.gridColumnCodigoBarras.Width = 125;
             // 
             // gridColumnListaPrecio
             // 
+            this.gridColumnListaPrecio.AppearanceHeader.Options.UseFont = true;
             this.gridColumnListaPrecio.Caption = "Lista de precio";
             this.gridColumnListaPrecio.ColumnEdit = this.cbListasPrecios;
             this.gridColumnListaPrecio.FieldName = "lista_precio_id";
@@ -1941,8 +1922,8 @@ namespace DTM
             this.gridColumnListaPrecio.MinWidth = 26;
             this.gridColumnListaPrecio.Name = "gridColumnListaPrecio";
             this.gridColumnListaPrecio.Visible = true;
-            this.gridColumnListaPrecio.VisibleIndex = 10;
-            this.gridColumnListaPrecio.Width = 34;
+            this.gridColumnListaPrecio.VisibleIndex = 7;
+            this.gridColumnListaPrecio.Width = 26;
             // 
             // cbListasPrecios
             // 
@@ -1957,7 +1938,6 @@ namespace DTM
             // 
             this.gridColumnPrecio.Caption = "Precio";
             this.gridColumnPrecio.ColumnEdit = this.repositoryItemCalcEdit1;
-            this.gridColumnPrecio.DisplayFormat.FormatString = "c2";
             this.gridColumnPrecio.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumnPrecio.FieldName = "gridColumnPrecio";
             this.gridColumnPrecio.MaxWidth = 160;
@@ -1965,25 +1945,38 @@ namespace DTM
             this.gridColumnPrecio.Name = "gridColumnPrecio";
             this.gridColumnPrecio.UnboundExpression = "precio * tipo_cambio";
             this.gridColumnPrecio.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.gridColumnPrecio.Visible = true;
-            this.gridColumnPrecio.VisibleIndex = 11;
             this.gridColumnPrecio.Width = 27;
+            // 
+            // gridColumnSubTotal
+            // 
+            this.gridColumnSubTotal.AppearanceHeader.Options.UseFont = true;
+            this.gridColumnSubTotal.Caption = "SubTotal";
+            this.gridColumnSubTotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumnSubTotal.FieldName = "subtotal";
+            this.gridColumnSubTotal.MaxWidth = 134;
+            this.gridColumnSubTotal.MinWidth = 26;
+            this.gridColumnSubTotal.Name = "gridColumnSubTotal";
+            this.gridColumnSubTotal.OptionsColumn.AllowEdit = false;
+            this.gridColumnSubTotal.Visible = true;
+            this.gridColumnSubTotal.VisibleIndex = 10;
+            this.gridColumnSubTotal.Width = 26;
             // 
             // gridColumnImpuesto
             // 
+            this.gridColumnImpuesto.AppearanceHeader.Options.UseFont = true;
             this.gridColumnImpuesto.Caption = "Impuesto";
-            this.gridColumnImpuesto.DisplayFormat.FormatString = "C";
             this.gridColumnImpuesto.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumnImpuesto.FieldName = "impuesto";
             this.gridColumnImpuesto.MinWidth = 26;
             this.gridColumnImpuesto.Name = "gridColumnImpuesto";
             this.gridColumnImpuesto.OptionsColumn.AllowEdit = false;
             this.gridColumnImpuesto.Visible = true;
-            this.gridColumnImpuesto.VisibleIndex = 12;
-            this.gridColumnImpuesto.Width = 26;
+            this.gridColumnImpuesto.VisibleIndex = 11;
+            this.gridColumnImpuesto.Width = 59;
             // 
             // gridColumnPorcentajeDescuento
             // 
+            this.gridColumnPorcentajeDescuento.AppearanceHeader.Options.UseFont = true;
             this.gridColumnPorcentajeDescuento.Caption = "% Dscto";
             this.gridColumnPorcentajeDescuento.DisplayFormat.FormatString = "0.##";
             this.gridColumnPorcentajeDescuento.FieldName = "porcentaje_descuento";
@@ -1992,13 +1985,13 @@ namespace DTM
             this.gridColumnPorcentajeDescuento.Name = "gridColumnPorcentajeDescuento";
             this.gridColumnPorcentajeDescuento.OptionsColumn.FixedWidth = true;
             this.gridColumnPorcentajeDescuento.Visible = true;
-            this.gridColumnPorcentajeDescuento.VisibleIndex = 13;
+            this.gridColumnPorcentajeDescuento.VisibleIndex = 8;
             this.gridColumnPorcentajeDescuento.Width = 66;
             // 
             // gridColumnDescuento
             // 
+            this.gridColumnDescuento.AppearanceHeader.Options.UseFont = true;
             this.gridColumnDescuento.Caption = "Descuento";
-            this.gridColumnDescuento.DisplayFormat.FormatString = "C";
             this.gridColumnDescuento.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumnDescuento.FieldName = "descuento";
             this.gridColumnDescuento.MaxWidth = 160;
@@ -2006,15 +1999,15 @@ namespace DTM
             this.gridColumnDescuento.Name = "gridColumnDescuento";
             this.gridColumnDescuento.OptionsColumn.AllowEdit = false;
             this.gridColumnDescuento.Visible = true;
-            this.gridColumnDescuento.VisibleIndex = 14;
+            this.gridColumnDescuento.VisibleIndex = 9;
             this.gridColumnDescuento.Width = 26;
             // 
             // gridColumnPrecioNeto
             // 
             this.gridColumnPrecioNeto.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.gridColumnPrecioNeto.AppearanceCell.Options.UseFont = true;
+            this.gridColumnPrecioNeto.AppearanceHeader.Options.UseFont = true;
             this.gridColumnPrecioNeto.Caption = "P. Neto";
-            this.gridColumnPrecioNeto.DisplayFormat.FormatString = "c2";
             this.gridColumnPrecioNeto.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumnPrecioNeto.FieldName = "gridColumnPrecioNeto";
             this.gridColumnPrecioNeto.MaxWidth = 160;
@@ -2023,48 +2016,33 @@ namespace DTM
             this.gridColumnPrecioNeto.OptionsColumn.AllowEdit = false;
             this.gridColumnPrecioNeto.UnboundExpression = "((precio * tipo_cambio) + impuesto) - descuento";
             this.gridColumnPrecioNeto.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.gridColumnPrecioNeto.Visible = true;
-            this.gridColumnPrecioNeto.VisibleIndex = 15;
             this.gridColumnPrecioNeto.Width = 26;
-            // 
-            // gridColumnSubTotal
-            // 
-            this.gridColumnSubTotal.Caption = "SubTotal";
-            this.gridColumnSubTotal.DisplayFormat.FormatString = "C";
-            this.gridColumnSubTotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumnSubTotal.FieldName = "subtotal";
-            this.gridColumnSubTotal.MaxWidth = 134;
-            this.gridColumnSubTotal.MinWidth = 26;
-            this.gridColumnSubTotal.Name = "gridColumnSubTotal";
-            this.gridColumnSubTotal.OptionsColumn.AllowEdit = false;
-            this.gridColumnSubTotal.Visible = true;
-            this.gridColumnSubTotal.VisibleIndex = 16;
-            this.gridColumnSubTotal.Width = 27;
             // 
             // gridColumnTotal
             // 
             this.gridColumnTotal.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.gridColumnTotal.AppearanceCell.Options.UseFont = true;
+            this.gridColumnTotal.AppearanceHeader.Options.UseFont = true;
             this.gridColumnTotal.Caption = "Total";
-            this.gridColumnTotal.DisplayFormat.FormatString = "c2";
             this.gridColumnTotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumnTotal.FieldName = "total";
             this.gridColumnTotal.MinWidth = 59;
             this.gridColumnTotal.Name = "gridColumnTotal";
             this.gridColumnTotal.Visible = true;
-            this.gridColumnTotal.VisibleIndex = 17;
-            this.gridColumnTotal.Width = 63;
+            this.gridColumnTotal.VisibleIndex = 12;
+            this.gridColumnTotal.Width = 59;
             // 
             // gridColumnAlmacen
             // 
+            this.gridColumnAlmacen.AppearanceHeader.Options.UseFont = true;
             this.gridColumnAlmacen.Caption = "Almacén";
             this.gridColumnAlmacen.ColumnEdit = this.cbAlmacenes;
             this.gridColumnAlmacen.FieldName = "almacen_id";
             this.gridColumnAlmacen.MinWidth = 26;
             this.gridColumnAlmacen.Name = "gridColumnAlmacen";
             this.gridColumnAlmacen.Visible = true;
-            this.gridColumnAlmacen.VisibleIndex = 18;
-            this.gridColumnAlmacen.Width = 27;
+            this.gridColumnAlmacen.VisibleIndex = 13;
+            this.gridColumnAlmacen.Width = 26;
             // 
             // cbAlmacenes
             // 
@@ -2078,14 +2056,15 @@ namespace DTM
             // 
             // gridColumnUbicacion
             // 
+            this.gridColumnUbicacion.AppearanceHeader.Options.UseFont = true;
             this.gridColumnUbicacion.Caption = "Ubicación";
             this.gridColumnUbicacion.ColumnEdit = this.cbUbicaciones;
             this.gridColumnUbicacion.FieldName = "ubicacion_id";
             this.gridColumnUbicacion.MinWidth = 26;
             this.gridColumnUbicacion.Name = "gridColumnUbicacion";
             this.gridColumnUbicacion.Visible = true;
-            this.gridColumnUbicacion.VisibleIndex = 19;
-            this.gridColumnUbicacion.Width = 54;
+            this.gridColumnUbicacion.VisibleIndex = 14;
+            this.gridColumnUbicacion.Width = 26;
             // 
             // cbUbicaciones
             // 
@@ -2099,25 +2078,27 @@ namespace DTM
             // 
             // gridColumnAlmacenDestino
             // 
+            this.gridColumnAlmacenDestino.AppearanceHeader.Options.UseFont = true;
             this.gridColumnAlmacenDestino.Caption = "Almacén destino";
             this.gridColumnAlmacenDestino.ColumnEdit = this.cbAlmacenes;
             this.gridColumnAlmacenDestino.FieldName = "almacen_destino_id";
             this.gridColumnAlmacenDestino.MinWidth = 26;
             this.gridColumnAlmacenDestino.Name = "gridColumnAlmacenDestino";
             this.gridColumnAlmacenDestino.Visible = true;
-            this.gridColumnAlmacenDestino.VisibleIndex = 20;
-            this.gridColumnAlmacenDestino.Width = 44;
+            this.gridColumnAlmacenDestino.VisibleIndex = 15;
+            this.gridColumnAlmacenDestino.Width = 26;
             // 
             // gridColumnUbicacionDestino
             // 
+            this.gridColumnUbicacionDestino.AppearanceHeader.Options.UseFont = true;
             this.gridColumnUbicacionDestino.Caption = "Ubicación destino";
             this.gridColumnUbicacionDestino.ColumnEdit = this.cbUbicaciones;
             this.gridColumnUbicacionDestino.FieldName = "ubicacion_destino_id";
             this.gridColumnUbicacionDestino.MinWidth = 26;
             this.gridColumnUbicacionDestino.Name = "gridColumnUbicacionDestino";
             this.gridColumnUbicacionDestino.Visible = true;
-            this.gridColumnUbicacionDestino.VisibleIndex = 21;
-            this.gridColumnUbicacionDestino.Width = 44;
+            this.gridColumnUbicacionDestino.VisibleIndex = 16;
+            this.gridColumnUbicacionDestino.Width = 26;
             // 
             // gridColumnComentario
             // 
@@ -2125,20 +2106,19 @@ namespace DTM
             this.gridColumnComentario.FieldName = "comentario";
             this.gridColumnComentario.MinWidth = 26;
             this.gridColumnComentario.Name = "gridColumnComentario";
-            this.gridColumnComentario.Visible = true;
-            this.gridColumnComentario.VisibleIndex = 22;
             this.gridColumnComentario.Width = 35;
             // 
             // gridColumnDescuentoEspecial
             // 
+            this.gridColumnDescuentoEspecial.AppearanceHeader.Options.UseFont = true;
             this.gridColumnDescuentoEspecial.Caption = "DE";
             this.gridColumnDescuentoEspecial.FieldName = "descuento_especial_id";
             this.gridColumnDescuentoEspecial.MaxWidth = 26;
             this.gridColumnDescuentoEspecial.MinWidth = 17;
             this.gridColumnDescuentoEspecial.Name = "gridColumnDescuentoEspecial";
             this.gridColumnDescuentoEspecial.Visible = true;
-            this.gridColumnDescuentoEspecial.VisibleIndex = 23;
-            this.gridColumnDescuentoEspecial.Width = 26;
+            this.gridColumnDescuentoEspecial.VisibleIndex = 17;
+            this.gridColumnDescuentoEspecial.Width = 17;
             // 
             // gridColumnNumeroPedimento
             // 
@@ -2159,30 +2139,36 @@ namespace DTM
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 80, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cbAlmacenesDestino.Name = "cbAlmacenesDestino";
             // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.gcPartidas;
+            this.gridView2.Name = "gridView2";
+            // 
             // xtraTabPageLogistica
             // 
+            this.xtraTabPageLogistica.Controls.Add(this.btnEstatusCartaPorte);
+            this.xtraTabPageLogistica.Controls.Add(this.dtHoraLlegada);
+            this.xtraTabPageLogistica.Controls.Add(this.dtHoraSalida);
+            this.xtraTabPageLogistica.Controls.Add(this.labelControl6);
+            this.xtraTabPageLogistica.Controls.Add(this.labelControl5);
+            this.xtraTabPageLogistica.Controls.Add(this.labelControl4);
+            this.xtraTabPageLogistica.Controls.Add(this.labelControl3);
+            this.xtraTabPageLogistica.Controls.Add(this.dtFechaSalida);
+            this.xtraTabPageLogistica.Controls.Add(this.dtFechaLlegada);
+            this.xtraTabPageLogistica.Controls.Add(this.btnGenerarCartaPorte);
+            this.xtraTabPageLogistica.Controls.Add(this.chckCartaPorte);
             this.xtraTabPageLogistica.Controls.Add(this.btnAgregarDireccionOrigen);
             this.xtraTabPageLogistica.Controls.Add(this.txtDireccionOrigen);
             this.xtraTabPageLogistica.Controls.Add(this.cbDireccionesOrigen);
             this.xtraTabPageLogistica.Controls.Add(this.lblDireccionOrigen);
             this.xtraTabPageLogistica.Controls.Add(this.lblDistancia);
             this.xtraTabPageLogistica.Controls.Add(this.txtDistancia);
-            this.xtraTabPageLogistica.Controls.Add(this.cbRemolques);
-            this.xtraTabPageLogistica.Controls.Add(this.lblRemolque);
-            this.xtraTabPageLogistica.Controls.Add(this.bcID);
             this.xtraTabPageLogistica.Controls.Add(this.cbRutas);
             this.xtraTabPageLogistica.Controls.Add(this.lblRuta);
-            this.xtraTabPageLogistica.Controls.Add(this.gcSeguimiento);
-            this.xtraTabPageLogistica.Controls.Add(this.cbCausalidades);
-            this.xtraTabPageLogistica.Controls.Add(this.lblCausalidades);
-            this.xtraTabPageLogistica.Controls.Add(this.cbSupervisores);
-            this.xtraTabPageLogistica.Controls.Add(this.lblSupervisores);
-            this.xtraTabPageLogistica.Controls.Add(this.cbForaneo);
             this.xtraTabPageLogistica.Controls.Add(this.cbVehiculos);
             this.xtraTabPageLogistica.Controls.Add(this.lblVehiculo);
             this.xtraTabPageLogistica.Controls.Add(this.cbChoferes);
             this.xtraTabPageLogistica.Controls.Add(this.lblChofer);
-            this.xtraTabPageLogistica.Controls.Add(this.btnSolicitarEtiquetas);
             this.xtraTabPageLogistica.Controls.Add(this.lblActualizacion);
             this.xtraTabPageLogistica.Controls.Add(this.lblSincronizacion);
             this.xtraTabPageLogistica.Controls.Add(this.cbPersonasContacto);
@@ -2200,8 +2186,115 @@ namespace DTM
             this.xtraTabPageLogistica.Controls.Add(this.lblDireccionFacturacion);
             this.xtraTabPageLogistica.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageLogistica.Name = "xtraTabPageLogistica";
-            this.xtraTabPageLogistica.Size = new System.Drawing.Size(1168, 715);
+            this.xtraTabPageLogistica.Size = new System.Drawing.Size(1174, 718);
             this.xtraTabPageLogistica.Text = "Logística";
+            // 
+            // btnEstatusCartaPorte
+            // 
+            this.btnEstatusCartaPorte.BackColor = System.Drawing.Color.Transparent;
+            this.btnEstatusCartaPorte.Location = new System.Drawing.Point(975, 14);
+            this.btnEstatusCartaPorte.Name = "btnEstatusCartaPorte";
+            this.btnEstatusCartaPorte.Size = new System.Drawing.Size(35, 29);
+            this.btnEstatusCartaPorte.TabIndex = 183;
+            this.btnEstatusCartaPorte.UseVisualStyleBackColor = false;
+            // 
+            // dtHoraLlegada
+            // 
+            this.dtHoraLlegada.CustomFormat = "HH:mm:ss";
+            this.dtHoraLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtHoraLlegada.Location = new System.Drawing.Point(903, 259);
+            this.dtHoraLlegada.Name = "dtHoraLlegada";
+            this.dtHoraLlegada.ShowUpDown = true;
+            this.dtHoraLlegada.Size = new System.Drawing.Size(108, 24);
+            this.dtHoraLlegada.TabIndex = 182;
+            // 
+            // dtHoraSalida
+            // 
+            this.dtHoraSalida.CustomFormat = "HH:mm:ss";
+            this.dtHoraSalida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtHoraSalida.Location = new System.Drawing.Point(903, 218);
+            this.dtHoraSalida.Name = "dtHoraSalida";
+            this.dtHoraSalida.ShowUpDown = true;
+            this.dtHoraSalida.Size = new System.Drawing.Size(108, 24);
+            this.dtHoraSalida.TabIndex = 181;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(849, 269);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(32, 17);
+            this.labelControl6.TabIndex = 180;
+            this.labelControl6.Text = "Hora";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(849, 225);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(32, 17);
+            this.labelControl5.TabIndex = 179;
+            this.labelControl5.Text = "Hora";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(546, 269);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(110, 17);
+            this.labelControl4.TabIndex = 178;
+            this.labelControl4.Text = "Fecha de Llegada";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(546, 227);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(97, 17);
+            this.labelControl3.TabIndex = 177;
+            this.labelControl3.Text = "Fecha de Salida";
+            // 
+            // dtFechaSalida
+            // 
+            this.dtFechaSalida.EditValue = null;
+            this.dtFechaSalida.Location = new System.Drawing.Point(678, 218);
+            this.dtFechaSalida.MenuManager = this.mainRibbonControl;
+            this.dtFechaSalida.Name = "dtFechaSalida";
+            this.dtFechaSalida.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaSalida.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaSalida.Size = new System.Drawing.Size(165, 24);
+            this.dtFechaSalida.TabIndex = 176;
+            // 
+            // dtFechaLlegada
+            // 
+            this.dtFechaLlegada.EditValue = null;
+            this.dtFechaLlegada.Location = new System.Drawing.Point(678, 262);
+            this.dtFechaLlegada.MenuManager = this.mainRibbonControl;
+            this.dtFechaLlegada.Name = "dtFechaLlegada";
+            this.dtFechaLlegada.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaLlegada.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtFechaLlegada.Size = new System.Drawing.Size(165, 24);
+            this.dtFechaLlegada.TabIndex = 175;
+            // 
+            // btnGenerarCartaPorte
+            // 
+            this.btnGenerarCartaPorte.Location = new System.Drawing.Point(839, 8);
+            this.btnGenerarCartaPorte.Name = "btnGenerarCartaPorte";
+            this.btnGenerarCartaPorte.Size = new System.Drawing.Size(130, 34);
+            this.btnGenerarCartaPorte.TabIndex = 174;
+            this.btnGenerarCartaPorte.Text = "Generar ";
+            this.btnGenerarCartaPorte.Click += new System.EventHandler(this.btnGenerarCartaPorte_Click);
+            // 
+            // chckCartaPorte
+            // 
+            this.chckCartaPorte.Location = new System.Drawing.Point(669, 16);
+            this.chckCartaPorte.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.chckCartaPorte.MenuManager = this.mainRibbonControl;
+            this.chckCartaPorte.Name = "chckCartaPorte";
+            this.chckCartaPorte.Properties.Caption = "Generar Carta Porte";
+            this.chckCartaPorte.Size = new System.Drawing.Size(162, 21);
+            this.chckCartaPorte.TabIndex = 173;
+            this.chckCartaPorte.CheckedChanged += new System.EventHandler(this.checkEdit1_CheckedChanged);
             // 
             // btnAgregarDireccionOrigen
             // 
@@ -2262,6 +2355,7 @@ namespace DTM
             // 
             // txtDistancia
             // 
+            this.txtDistancia.Enabled = false;
             this.txtDistancia.Location = new System.Drawing.Point(151, 482);
             this.txtDistancia.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtDistancia.Name = "txtDistancia";
@@ -2269,46 +2363,10 @@ namespace DTM
             this.txtDistancia.Size = new System.Drawing.Size(291, 24);
             this.txtDistancia.TabIndex = 165;
             // 
-            // cbRemolques
-            // 
-            this.cbRemolques.Location = new System.Drawing.Point(678, 117);
-            this.cbRemolques.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.cbRemolques.MenuManager = this.mainRibbonControl;
-            this.cbRemolques.Name = "cbRemolques";
-            this.cbRemolques.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbRemolques.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Codigo", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbRemolques.Properties.NullText = "";
-            this.cbRemolques.Size = new System.Drawing.Size(291, 24);
-            this.cbRemolques.TabIndex = 163;
-            // 
-            // lblRemolque
-            // 
-            this.lblRemolque.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblRemolque.Location = new System.Drawing.Point(542, 118);
-            this.lblRemolque.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.lblRemolque.Name = "lblRemolque";
-            this.lblRemolque.Size = new System.Drawing.Size(63, 17);
-            this.lblRemolque.TabIndex = 164;
-            this.lblRemolque.Text = "Remolque";
-            this.lblRemolque.Click += new System.EventHandler(this.lblRemolque_Click);
-            // 
-            // bcID
-            // 
-            this.bcID.AutoModule = true;
-            this.bcID.Location = new System.Drawing.Point(678, 389);
-            this.bcID.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.bcID.Name = "bcID";
-            this.bcID.Padding = new System.Windows.Forms.Padding(14, 2, 14, 0);
-            this.bcID.Size = new System.Drawing.Size(291, 78);
-            this.bcID.Symbology = code128Generator2;
-            this.bcID.TabIndex = 147;
-            // 
             // cbRutas
             // 
-            this.cbRutas.Location = new System.Drawing.Point(678, 152);
+            this.cbRutas.Enabled = false;
+            this.cbRutas.Location = new System.Drawing.Point(678, 181);
             this.cbRutas.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbRutas.MenuManager = this.mainRibbonControl;
             this.cbRutas.Name = "cbRutas";
@@ -2318,13 +2376,13 @@ namespace DTM
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Codigo", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cbRutas.Properties.NullText = "";
-            this.cbRutas.Size = new System.Drawing.Size(291, 24);
+            this.cbRutas.Size = new System.Drawing.Size(333, 24);
             this.cbRutas.TabIndex = 145;
             // 
             // lblRuta
             // 
             this.lblRuta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblRuta.Location = new System.Drawing.Point(542, 152);
+            this.lblRuta.Location = new System.Drawing.Point(546, 188);
             this.lblRuta.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblRuta.Name = "lblRuta";
             this.lblRuta.Size = new System.Drawing.Size(30, 17);
@@ -2332,111 +2390,9 @@ namespace DTM
             this.lblRuta.Text = "Ruta";
             this.lblRuta.Click += new System.EventHandler(this.lblRuta_Click);
             // 
-            // gcSeguimiento
-            // 
-            this.gcSeguimiento.Controls.Add(this.cbEstadoSeguimiento);
-            this.gcSeguimiento.Controls.Add(this.cbSeguimiento);
-            this.gcSeguimiento.Location = new System.Drawing.Point(542, 296);
-            this.gcSeguimiento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.gcSeguimiento.Name = "gcSeguimiento";
-            this.gcSeguimiento.Size = new System.Drawing.Size(427, 82);
-            this.gcSeguimiento.TabIndex = 144;
-            this.gcSeguimiento.Text = "Seguimiento";
-            // 
-            // cbEstadoSeguimiento
-            // 
-            this.cbEstadoSeguimiento.Location = new System.Drawing.Point(145, 40);
-            this.cbEstadoSeguimiento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.cbEstadoSeguimiento.MenuManager = this.mainRibbonControl;
-            this.cbEstadoSeguimiento.Name = "cbEstadoSeguimiento";
-            this.cbEstadoSeguimiento.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbEstadoSeguimiento.Properties.Items.AddRange(new object[] {
-            "Recibido",
-            "Pagado",
-            "Preparado",
-            "Enviado",
-            "Entregado",
-            "Cancelado"});
-            this.cbEstadoSeguimiento.Size = new System.Drawing.Size(258, 24);
-            this.cbEstadoSeguimiento.TabIndex = 145;
-            this.cbEstadoSeguimiento.SelectedIndexChanged += new System.EventHandler(this.cbEstadoSeguimiento_SelectedIndexChanged);
-            // 
-            // cbSeguimiento
-            // 
-            this.cbSeguimiento.Location = new System.Drawing.Point(17, 40);
-            this.cbSeguimiento.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.cbSeguimiento.MenuManager = this.mainRibbonControl;
-            this.cbSeguimiento.Name = "cbSeguimiento";
-            this.cbSeguimiento.Properties.Caption = "Seguimiento";
-            this.cbSeguimiento.Size = new System.Drawing.Size(120, 21);
-            this.cbSeguimiento.TabIndex = 0;
-            // 
-            // cbCausalidades
-            // 
-            this.cbCausalidades.Location = new System.Drawing.Point(678, 219);
-            this.cbCausalidades.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.cbCausalidades.MenuManager = this.mainRibbonControl;
-            this.cbCausalidades.Name = "cbCausalidades";
-            this.cbCausalidades.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbCausalidades.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Codigo", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbCausalidades.Properties.NullText = "";
-            this.cbCausalidades.Size = new System.Drawing.Size(291, 24);
-            this.cbCausalidades.TabIndex = 10;
-            // 
-            // lblCausalidades
-            // 
-            this.lblCausalidades.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCausalidades.Location = new System.Drawing.Point(542, 220);
-            this.lblCausalidades.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.lblCausalidades.Name = "lblCausalidades";
-            this.lblCausalidades.Size = new System.Drawing.Size(67, 17);
-            this.lblCausalidades.TabIndex = 143;
-            this.lblCausalidades.Text = "Causalidad";
-            this.lblCausalidades.Click += new System.EventHandler(this.lblCausalidades_Click);
-            // 
-            // cbSupervisores
-            // 
-            this.cbSupervisores.Location = new System.Drawing.Point(678, 185);
-            this.cbSupervisores.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.cbSupervisores.MenuManager = this.mainRibbonControl;
-            this.cbSupervisores.Name = "cbSupervisores";
-            this.cbSupervisores.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbSupervisores.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Codigo", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbSupervisores.Properties.NullText = "";
-            this.cbSupervisores.Size = new System.Drawing.Size(291, 24);
-            this.cbSupervisores.TabIndex = 9;
-            // 
-            // lblSupervisores
-            // 
-            this.lblSupervisores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSupervisores.Location = new System.Drawing.Point(542, 186);
-            this.lblSupervisores.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.lblSupervisores.Name = "lblSupervisores";
-            this.lblSupervisores.Size = new System.Drawing.Size(61, 17);
-            this.lblSupervisores.TabIndex = 140;
-            this.lblSupervisores.Text = "Supervisor";
-            this.lblSupervisores.Click += new System.EventHandler(this.lblSupervisores_Click);
-            // 
-            // cbForaneo
-            // 
-            this.cbForaneo.Location = new System.Drawing.Point(981, 152);
-            this.cbForaneo.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.cbForaneo.MenuManager = this.mainRibbonControl;
-            this.cbForaneo.Name = "cbForaneo";
-            this.cbForaneo.Properties.Caption = "Foráneo";
-            this.cbForaneo.Size = new System.Drawing.Size(80, 21);
-            this.cbForaneo.TabIndex = 8;
-            // 
             // cbVehiculos
             // 
-            this.cbVehiculos.Location = new System.Drawing.Point(678, 84);
+            this.cbVehiculos.Location = new System.Drawing.Point(678, 135);
             this.cbVehiculos.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbVehiculos.MenuManager = this.mainRibbonControl;
             this.cbVehiculos.Name = "cbVehiculos";
@@ -2446,13 +2402,13 @@ namespace DTM
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Codigo", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cbVehiculos.Properties.NullText = "";
-            this.cbVehiculos.Size = new System.Drawing.Size(291, 24);
+            this.cbVehiculos.Size = new System.Drawing.Size(333, 24);
             this.cbVehiculos.TabIndex = 6;
             // 
             // lblVehiculo
             // 
             this.lblVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblVehiculo.Location = new System.Drawing.Point(542, 85);
+            this.lblVehiculo.Location = new System.Drawing.Point(546, 142);
             this.lblVehiculo.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblVehiculo.Name = "lblVehiculo";
             this.lblVehiculo.Size = new System.Drawing.Size(52, 17);
@@ -2462,7 +2418,7 @@ namespace DTM
             // 
             // cbChoferes
             // 
-            this.cbChoferes.Location = new System.Drawing.Point(678, 50);
+            this.cbChoferes.Location = new System.Drawing.Point(678, 95);
             this.cbChoferes.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbChoferes.MenuManager = this.mainRibbonControl;
             this.cbChoferes.Name = "cbChoferes";
@@ -2472,31 +2428,19 @@ namespace DTM
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Codigo", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cbChoferes.Properties.NullText = "";
-            this.cbChoferes.Size = new System.Drawing.Size(291, 24);
+            this.cbChoferes.Size = new System.Drawing.Size(333, 24);
             this.cbChoferes.TabIndex = 5;
             // 
             // lblChofer
             // 
             this.lblChofer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblChofer.Location = new System.Drawing.Point(542, 51);
+            this.lblChofer.Location = new System.Drawing.Point(546, 102);
             this.lblChofer.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblChofer.Name = "lblChofer";
             this.lblChofer.Size = new System.Drawing.Size(41, 17);
             this.lblChofer.TabIndex = 133;
             this.lblChofer.Text = "Chofer";
             this.lblChofer.Click += new System.EventHandler(this.lblChofer_Click);
-            // 
-            // btnSolicitarEtiquetas
-            // 
-            this.btnSolicitarEtiquetas.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnSolicitarEtiquetas.Location = new System.Drawing.Point(809, 253);
-            this.btnSolicitarEtiquetas.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnSolicitarEtiquetas.Name = "btnSolicitarEtiquetas";
-            this.btnSolicitarEtiquetas.Size = new System.Drawing.Size(160, 26);
-            this.btnSolicitarEtiquetas.TabIndex = 10;
-            this.btnSolicitarEtiquetas.Text = "Solicitar etiquetas";
-            this.btnSolicitarEtiquetas.Visible = false;
-            this.btnSolicitarEtiquetas.Click += new System.EventHandler(this.btnSolicitarEtiquetas_Click);
             // 
             // lblActualizacion
             // 
@@ -2546,7 +2490,7 @@ namespace DTM
             // 
             // cbClasesExpedicion
             // 
-            this.cbClasesExpedicion.Location = new System.Drawing.Point(678, 16);
+            this.cbClasesExpedicion.Location = new System.Drawing.Point(678, 50);
             this.cbClasesExpedicion.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbClasesExpedicion.MenuManager = this.mainRibbonControl;
             this.cbClasesExpedicion.Name = "cbClasesExpedicion";
@@ -2556,13 +2500,13 @@ namespace DTM
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Codigo", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cbClasesExpedicion.Properties.NullText = "";
-            this.cbClasesExpedicion.Size = new System.Drawing.Size(291, 24);
+            this.cbClasesExpedicion.Size = new System.Drawing.Size(333, 24);
             this.cbClasesExpedicion.TabIndex = 4;
             // 
             // lblClaseExpedicion
             // 
             this.lblClaseExpedicion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblClaseExpedicion.Location = new System.Drawing.Point(542, 17);
+            this.lblClaseExpedicion.Location = new System.Drawing.Point(546, 50);
             this.lblClaseExpedicion.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblClaseExpedicion.Name = "lblClaseExpedicion";
             this.lblClaseExpedicion.Size = new System.Drawing.Size(100, 17);
@@ -2693,7 +2637,7 @@ namespace DTM
             this.xtraTabPageFinanzas.Controls.Add(this.lblCondicionesPago);
             this.xtraTabPageFinanzas.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageFinanzas.Name = "xtraTabPageFinanzas";
-            this.xtraTabPageFinanzas.Size = new System.Drawing.Size(1168, 715);
+            this.xtraTabPageFinanzas.Size = new System.Drawing.Size(1174, 718);
             this.xtraTabPageFinanzas.Text = "Finanzas";
             // 
             // cbProyectos
@@ -2881,7 +2825,7 @@ namespace DTM
             this.xtraTabPageDocumentoElectronico.Controls.Add(this.cbGenerarDocumentoElectronico);
             this.xtraTabPageDocumentoElectronico.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.xtraTabPageDocumentoElectronico.Name = "xtraTabPageDocumentoElectronico";
-            this.xtraTabPageDocumentoElectronico.Size = new System.Drawing.Size(1168, 715);
+            this.xtraTabPageDocumentoElectronico.Size = new System.Drawing.Size(1174, 718);
             this.xtraTabPageDocumentoElectronico.Text = "Documento electrónico";
             // 
             // cbGlobal
@@ -3123,47 +3067,6 @@ namespace DTM
             this.cbGenerarDocumentoElectronico.Size = new System.Drawing.Size(242, 21);
             this.cbGenerarDocumentoElectronico.TabIndex = 0;
             // 
-            // xtraTabPageAnexos
-            // 
-            this.xtraTabPageAnexos.Controls.Add(this.btnVisualizarAnexo);
-            this.xtraTabPageAnexos.Controls.Add(this.btnAnexos);
-            this.xtraTabPageAnexos.Controls.Add(this.lbAnexos);
-            this.xtraTabPageAnexos.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.xtraTabPageAnexos.Name = "xtraTabPageAnexos";
-            this.xtraTabPageAnexos.Size = new System.Drawing.Size(1178, 715);
-            this.xtraTabPageAnexos.Text = "Anexos";
-            // 
-            // btnVisualizarAnexo
-            // 
-            this.btnVisualizarAnexo.Location = new System.Drawing.Point(343, 280);
-            this.btnVisualizarAnexo.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnVisualizarAnexo.Name = "btnVisualizarAnexo";
-            this.btnVisualizarAnexo.Size = new System.Drawing.Size(129, 31);
-            this.btnVisualizarAnexo.TabIndex = 91;
-            this.btnVisualizarAnexo.TabStop = false;
-            this.btnVisualizarAnexo.Text = "Visualizar";
-            this.btnVisualizarAnexo.Click += new System.EventHandler(this.btnVisualizarAnexo_Click);
-            // 
-            // btnAnexos
-            // 
-            this.btnAnexos.Location = new System.Drawing.Point(480, 280);
-            this.btnAnexos.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnAnexos.Name = "btnAnexos";
-            this.btnAnexos.Size = new System.Drawing.Size(129, 31);
-            this.btnAnexos.TabIndex = 90;
-            this.btnAnexos.TabStop = false;
-            this.btnAnexos.Text = "Anexos";
-            this.btnAnexos.Click += new System.EventHandler(this.btnAnexos_Click);
-            // 
-            // lbAnexos
-            // 
-            this.lbAnexos.Location = new System.Drawing.Point(15, 20);
-            this.lbAnexos.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.lbAnexos.Name = "lbAnexos";
-            this.lbAnexos.Size = new System.Drawing.Size(594, 252);
-            this.lbAnexos.TabIndex = 89;
-            this.lbAnexos.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.lbAnexos_PreviewKeyDown);
-            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -3171,7 +3074,7 @@ namespace DTM
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1204, 768);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1204, 772);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -3179,7 +3082,7 @@ namespace DTM
             this.layoutControlItem1.Control = this.xtraTabControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1184, 748);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1184, 752);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -3254,20 +3157,18 @@ namespace DTM
             ((System.ComponentModel.ISupportInitialize)(this.cbAlmacenes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbUbicaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbAlmacenesDestino)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.xtraTabPageLogistica.ResumeLayout(false);
             this.xtraTabPageLogistica.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaSalida.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaSalida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaLlegada.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFechaLlegada.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chckCartaPorte.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDireccionOrigen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDireccionesOrigen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDistancia.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbRemolques.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbRutas.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcSeguimiento)).EndInit();
-            this.gcSeguimiento.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbEstadoSeguimiento.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbSeguimiento.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbCausalidades.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbSupervisores.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbForaneo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbVehiculos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbChoferes.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbPersonasContacto.Properties)).EndInit();
@@ -3293,8 +3194,6 @@ namespace DTM
             ((System.ComponentModel.ISupportInitialize)(this.txtCadenaOriginal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFolioFiscal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbGenerarDocumentoElectronico.Properties)).EndInit();
-            this.xtraTabPageAnexos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lbAnexos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
@@ -3313,7 +3212,6 @@ namespace DTM
         private LabelControl lbCredito;
         private TextEdit txtFactVencidas;
         private TextEdit txtCreditoDisponible;
-        private BarCodeControl bcID;
         private LabelControl lbMensajeC;
         private BarButtonItem barButtonItem1;
         private ListBoxControl listBoxControl1;
@@ -3327,5 +3225,54 @@ namespace DTM
         private PanelControl panelControl1;
         private PictureBox picturesku;
         private BarButtonItem bbiXML;
+        private CheckEdit chckCartaPorte;
+        private SimpleButton btnGenerarCartaPorte;
+        private LabelControl labelControl6;
+        private LabelControl labelControl5;
+        private LabelControl labelControl4;
+        private LabelControl labelControl3;
+        private DateEdit dtFechaSalida;
+        private DateEdit dtFechaLlegada;
+        private GridControl gcPartidas;
+        private GridView gvPartidas;
+        private GridColumn gridColumnNo;
+        private GridColumn gridColumnCantidad;
+        private RepositoryItemCalcEdit repositoryItemCalcEdit1;
+        private GridColumn gridColumnPeso;
+        private GridColumn gridColumnStock;
+        private GridColumn gridColumnUnidadMedida;
+        private RepositoryItemLookUpEdit cbUnidadesMedida;
+        private GridColumn gridColumnCantidadEmpaque;
+        private GridColumn gridColumnTipoEmpaque;
+        private RepositoryItemLookUpEdit cbTiposEmpaques;
+        private GridColumn gridColumnCantidadPendiente;
+        private GridColumn gridColumnCantidadPaquete;
+        private GridColumn gridColumnSKU;
+        private GridColumn gridColumnArticulo;
+        private GridColumn gridColumnCodigoBarras;
+        private GridColumn gridColumnListaPrecio;
+        private RepositoryItemLookUpEdit cbListasPrecios;
+        private GridColumn gridColumnPrecio;
+        private GridColumn gridColumnSubTotal;
+        private GridColumn gridColumnImpuesto;
+        private GridColumn gridColumnPorcentajeDescuento;
+        private GridColumn gridColumnDescuento;
+        private GridColumn gridColumnPrecioNeto;
+        private GridColumn gridColumnTotal;
+        private GridColumn gridColumnAlmacen;
+        private RepositoryItemLookUpEdit cbAlmacenes;
+        private GridColumn gridColumnUbicacion;
+        private RepositoryItemLookUpEdit cbUbicaciones;
+        private GridColumn gridColumnAlmacenDestino;
+        private GridColumn gridColumnUbicacionDestino;
+        private GridColumn gridColumnComentario;
+        private GridColumn gridColumnDescuentoEspecial;
+        private GridColumn gridColumnNumeroPedimento;
+        private RepositoryItemLookUpEdit cbAlmacenesDestino;
+        private GridView gridView2;
+        private BarButtonItem barButtonItem2;
+        private DateTimePicker dtHoraSalida;
+        private DateTimePicker dtHoraLlegada;
+        private Button btnEstatusCartaPorte;
     }
 }

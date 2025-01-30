@@ -131,7 +131,7 @@ namespace DTM
             this.ribbonPageHerramientas});
             this.mainRibbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
             this.mainRibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.mainRibbonControl.Size = new System.Drawing.Size(1014, 106);
+            this.mainRibbonControl.Size = new System.Drawing.Size(1014, 90);
             this.mainRibbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // bbiGuardar
@@ -302,7 +302,7 @@ namespace DTM
             this.txtNombre.MenuManager = this.mainRibbonControl;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Properties.MaxLength = 100;
-            this.txtNombre.Size = new System.Drawing.Size(561, 26);
+            this.txtNombre.Size = new System.Drawing.Size(561, 24);
             this.txtNombre.TabIndex = 1;
             this.txtNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
             // 
@@ -322,7 +322,7 @@ namespace DTM
             this.txtCodigo.MenuManager = this.mainRibbonControl;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Properties.MaxLength = 8;
-            this.txtCodigo.Size = new System.Drawing.Size(291, 26);
+            this.txtCodigo.Size = new System.Drawing.Size(291, 24);
             this.txtCodigo.TabIndex = 0;
             this.txtCodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_KeyDown);
             // 
@@ -417,7 +417,7 @@ namespace DTM
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 26, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("nombre", "Nombre", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbAlmacenes.Size = new System.Drawing.Size(258, 26);
+            this.cbAlmacenes.Size = new System.Drawing.Size(258, 24);
             this.cbAlmacenes.TabIndex = 66;
             // 
             // lblAlmacenes
@@ -464,7 +464,7 @@ namespace DTM
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "ID", 26, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("codigo", "Código", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ubicacion", "Ubicación", 26, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.cbUbicacion.Size = new System.Drawing.Size(291, 26);
+            this.cbUbicacion.Size = new System.Drawing.Size(291, 24);
             this.cbUbicacion.TabIndex = 5;
             // 
             // cbUbicaciones
@@ -494,7 +494,7 @@ namespace DTM
             this.txtNumeroCuentaAjusteInventario.Name = "txtNumeroCuentaAjusteInventario";
             this.txtNumeroCuentaAjusteInventario.Properties.MaxLength = 15;
             this.txtNumeroCuentaAjusteInventario.Properties.NullValuePrompt = "Cuenta ajustes de inventario";
-            this.txtNumeroCuentaAjusteInventario.Size = new System.Drawing.Size(291, 26);
+            this.txtNumeroCuentaAjusteInventario.Size = new System.Drawing.Size(291, 24);
             this.txtNumeroCuentaAjusteInventario.TabIndex = 3;
             // 
             // cbImpresoras
@@ -505,7 +505,8 @@ namespace DTM
             this.cbImpresoras.Name = "cbImpresoras";
             this.cbImpresoras.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbImpresoras.Size = new System.Drawing.Size(291, 26);
+            this.cbImpresoras.Properties.NullText = "";
+            this.cbImpresoras.Size = new System.Drawing.Size(291, 24);
             this.cbImpresoras.TabIndex = 2;
             // 
             // lblImpresora
@@ -521,12 +522,12 @@ namespace DTM
             // 
             this.layoutControl1.Controls.Add(this.panel1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 106);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 90);
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(92, 301, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1014, 295);
+            this.layoutControl1.Size = new System.Drawing.Size(1014, 311);
             this.layoutControl1.TabIndex = 57;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -535,7 +536,7 @@ namespace DTM
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1014, 295);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1014, 311);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // frmAlmacenes

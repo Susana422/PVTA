@@ -1233,12 +1233,13 @@ namespace DTM
                     lblVehiculo.Visible = true;
                     lblRuta.Visible = true;
                     labelControl3.Visible = true;
-                    labelControl4.Visible = true;
+                    labelControl4.Visible = true;n
                     labelControl5.Visible = true;
                     labelControl6.Visible = true;
                     barButtonItem2.Visibility = BarItemVisibility.Always;
                     lblVendedores.Enabled = true;
                     btnEstatusCartaPorte.Visible = true;
+                    bbiNuevo.Enabled = true;
                 }
                 if (Program.dtm.UsuarioAutenticado.rol == 'S')
                 {

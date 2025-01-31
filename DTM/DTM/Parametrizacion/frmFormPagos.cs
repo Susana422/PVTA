@@ -198,7 +198,7 @@ namespace DTM
                         parametrizacionFormulario.rol = result2;
 
                         // Obtener el valor seleccionado del ComboBox 'cbDocumentos'
-                        parametrizacionFormulario.objeto = "AR";  // Usamos SelectedItem para obtener el texto seleccionado
+                        parametrizacionFormulario.objeto = "PR";  // Usamos SelectedItem para obtener el texto seleccionado
 
                         parametrizacionFormulario.formulario = "frmPagos";
 

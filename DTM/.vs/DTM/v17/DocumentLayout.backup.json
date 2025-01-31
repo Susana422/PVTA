@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\DTM\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|DTM\\DTM.csproj|c:\\users\\programador\\documents\\github\\dtm\\pvta\\dtm\\dtm\\frmdocumentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|DTM\\DTM.csproj|solutionrelative:dtm\\frmdocumentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|DTM\\DTM.csproj|c:\\users\\programador\\documents\\github\\dtm\\pvta\\dtm\\dtm\\frmdocumentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|DTM\\DTM.csproj|solutionrelative:dtm\\frmdocumentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|DTM\\DTM.csproj|c:\\users\\programador\\documents\\github\\dtm\\pvta\\dtm\\dtm\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3B831C37-BAED-46E5-9181-A501D9F1A797}|DTM\\DTM.csproj|solutionrelative:dtm\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -303,27 +299,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmDocumentos.cs",
-              "DocumentMoniker": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\DTM\\DTM\\frmDocumentos.cs",
-              "RelativeDocumentMoniker": "DTM\\frmDocumentos.cs",
-              "ToolTip": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\DTM\\DTM\\frmDocumentos.cs",
-              "RelativeToolTip": "DTM\\frmDocumentos.cs",
-              "ViewState": "AgIAAAIEAAAAAAAAAAAnwAkEAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T01:10:49.23Z",
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\DTM\\DTM\\App.config",
+              "RelativeDocumentMoniker": "DTM\\App.config",
+              "ToolTip": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\DTM\\DTM\\App.config",
+              "RelativeToolTip": "DTM\\App.config",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-01-30T18:24:29.837Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmDocumentos.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\DTM\\DTM\\frmDocumentos.cs",
-              "RelativeDocumentMoniker": "DTM\\frmDocumentos.cs",
-              "ToolTip": "C:\\Users\\Programador\\Documents\\GitHub\\DTM\\PVTA\\DTM\\DTM\\frmDocumentos.cs [Dise\u00F1o]",
-              "RelativeToolTip": "DTM\\frmDocumentos.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-25T01:10:26.89Z",
-              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

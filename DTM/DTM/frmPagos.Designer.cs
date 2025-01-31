@@ -1413,7 +1413,6 @@ namespace DTM
             this.IconOptions.Image = global::componentResourceManager.Resources.iconosol;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPagos";
-            this.mainRibbonControl.SetPopupContextMenu(this, this.popupMenuPagos);
             this.Ribbon = this.mainRibbonControl;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pagos";

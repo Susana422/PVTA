@@ -176,7 +176,7 @@ namespace DTM
             this.dockPanelMenuPrincipal.Name = "dockPanelMenuPrincipal";
             this.dockPanelMenuPrincipal.Options.ShowCloseButton = false;
             this.dockPanelMenuPrincipal.OriginalSize = new System.Drawing.Size(324, 200);
-            this.dockPanelMenuPrincipal.Size = new System.Drawing.Size(324, 686);
+            this.dockPanelMenuPrincipal.Size = new System.Drawing.Size(324, 713);
             this.dockPanelMenuPrincipal.Text = "Menú principal";
             // 
             // dockPanel1_Container
@@ -187,7 +187,7 @@ namespace DTM
             this.dockPanel1_Container.Controls.Add(this.lblEmpresa);
             this.dockPanel1_Container.Location = new System.Drawing.Point(4, 26);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(315, 656);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(315, 683);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // pictureBox1
@@ -232,7 +232,7 @@ namespace DTM
             this.accordionControlElement5});
             this.accordionControl1.Location = new System.Drawing.Point(7, 80);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.Size = new System.Drawing.Size(273, 630);
+            this.accordionControl1.Size = new System.Drawing.Size(273, 657);
             this.accordionControl1.TabIndex = 0;
             // 
             // accordionControlElementUsuario
@@ -779,7 +779,7 @@ namespace DTM
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemToggleSwitch1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
-            this.ribbonControl1.Size = new System.Drawing.Size(1136, 90);
+            this.ribbonControl1.Size = new System.Drawing.Size(1168, 90);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.ApplicationButtonClick += new System.EventHandler(this.ribbonControl1_ApplicationButtonClick);
             // 
@@ -914,10 +914,10 @@ namespace DTM
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barHeaderItemEstacion);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 776);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 803);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1136, 29);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1168, 29);
             // 
             // documentManager1
             // 
@@ -987,7 +987,7 @@ namespace DTM
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1136, 805);
+            this.ClientSize = new System.Drawing.Size(1168, 832);
             this.Controls.Add(this.dockPanelMenuPrincipal);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);

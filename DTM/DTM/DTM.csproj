@@ -106,13 +106,11 @@
       <HintPath>..\..\..\..\..\..\Program Files\DevExpress 24.1\Components\Bin\Framework\DevExpress.Dashboard.v24.1.Win.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Data.Desktop.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.Desktop.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v24.1.UI, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Diagram.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Drawing.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Drawing.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.ExpressApp.Dashboards.Win.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files\DevExpress 24.1\Components\Bin\Framework\DevExpress.ExpressApp.Dashboards.Win.v24.1.dll</HintPath>
@@ -128,7 +126,6 @@
     <Reference Include="DevExpress.RichEdit.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.RichEdit.v24.1.Export, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Sparkline.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files\DevExpress 24.1\Components\Bin\Framework\DevExpress.Utils.v24.1.dll</HintPath>
@@ -378,6 +375,12 @@
     <Compile Include="FormVistaPrevia.Designer.cs">
       <DependentUpon>FormVistaPrevia.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmExistenciasArt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExistenciasArt.Designer.cs">
+      <DependentUpon>frmExistenciasArt.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAutorizarPago.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -571,6 +574,12 @@
     </Compile>
     <Compile Include="frmDiseñadorInformes.Designer.cs">
       <DependentUpon>frmDiseñadorInformes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOV.Designer.cs">
+      <DependentUpon>frmOV.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDocumentos.cs">
       <SubType>Form</SubType>
@@ -1203,6 +1212,9 @@
     <EmbeddedResource Include="frmAutorizacionCredito.resx">
       <DependentUpon>frmAutorizacionCredito.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmExistenciasArt.resx">
+      <DependentUpon>frmExistenciasArt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAutorizarPago.resx">
       <DependentUpon>frmAutorizarPago.cs</DependentUpon>
     </EmbeddedResource>
@@ -1265,6 +1277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDiseñadorInformes.resx">
       <DependentUpon>frmDiseñadorInformes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOV.resx">
+      <DependentUpon>frmOV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDocumentos.resx">
       <DependentUpon>frmDocumentos.cs</DependentUpon>
@@ -1604,6 +1619,7 @@
     <None Include="Resources\login1.jpg" />
     <None Include="Resources\huelladigital.jpg" />
     <None Include="Resources\autosum_16x16.png" />
+    <None Include="Resources\bonote_16x16.png" />
     <Content Include="Resources\icon.ico" />
     <None Include="Resources\iconosol.ico" />
     <None Include="Resources\loadtheme_16x16.png" />

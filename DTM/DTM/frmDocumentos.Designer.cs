@@ -101,6 +101,11 @@ namespace DTM
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageGeneral = new DevExpress.XtraTab.XtraTabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.txtCodigoSN = new System.Windows.Forms.TextBox();
             this.picturesku = new System.Windows.Forms.PictureBox();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
@@ -166,10 +171,10 @@ namespace DTM
             this.txtImpuesto = new DevExpress.XtraEditors.TextEdit();
             this.lblSubTotal = new DevExpress.XtraEditors.LabelControl();
             this.txtSubTotal = new DevExpress.XtraEditors.TextEdit();
-            this.txtCodigoSN = new DevExpress.XtraEditors.TextEdit();
             this.lblSocio = new DevExpress.XtraEditors.LabelControl();
             this.gcPartidas = new DevExpress.XtraGrid.GridControl();
             this.gvPartidas = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Option = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnCantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCalcEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
@@ -326,7 +331,6 @@ namespace DTM
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtImpuesto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSubTotal.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCodigoSN.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcPartidas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPartidas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).BeginInit();
@@ -787,6 +791,11 @@ namespace DTM
             // xtraTabPageGeneral
             // 
             this.xtraTabPageGeneral.AutoScroll = true;
+            this.xtraTabPageGeneral.Controls.Add(this.button1);
+            this.xtraTabPageGeneral.Controls.Add(this.listBox2);
+            this.xtraTabPageGeneral.Controls.Add(this.labelControl7);
+            this.xtraTabPageGeneral.Controls.Add(this.listBox1);
+            this.xtraTabPageGeneral.Controls.Add(this.txtCodigoSN);
             this.xtraTabPageGeneral.Controls.Add(this.picturesku);
             this.xtraTabPageGeneral.Controls.Add(this.panelControl1);
             this.xtraTabPageGeneral.Controls.Add(this.pictureBox1);
@@ -846,7 +855,6 @@ namespace DTM
             this.xtraTabPageGeneral.Controls.Add(this.txtImpuesto);
             this.xtraTabPageGeneral.Controls.Add(this.lblSubTotal);
             this.xtraTabPageGeneral.Controls.Add(this.txtSubTotal);
-            this.xtraTabPageGeneral.Controls.Add(this.txtCodigoSN);
             this.xtraTabPageGeneral.Controls.Add(this.lblSocio);
             this.xtraTabPageGeneral.Controls.Add(this.gcPartidas);
             this.xtraTabPageGeneral.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
@@ -854,12 +862,70 @@ namespace DTM
             this.xtraTabPageGeneral.Size = new System.Drawing.Size(1174, 718);
             this.xtraTabPageGeneral.Text = "General";
             // 
+            // button1
+            // 
+            this.button1.Image = global::componentResourceManager.Resources.withtextwrapping_bottomcenter_16x16;
+            this.button1.Location = new System.Drawing.Point(18, 295);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 26);
+            this.button1.TabIndex = 187;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // listBox2
+            // 
+            this.listBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 17;
+            this.listBox2.Location = new System.Drawing.Point(44, 327);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(930, 174);
+            this.listBox2.TabIndex = 186;
+            this.listBox2.Visible = false;
+            this.listBox2.Click += new System.EventHandler(this.listBox2_Click);
+            this.listBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBox2_KeyDown);
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(18, 272);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(48, 17);
+            this.labelControl7.TabIndex = 185;
+            this.labelControl7.Text = "Articulo";
+            this.labelControl7.Visible = false;
+            // 
+            // listBox1
+            // 
+            this.listBox1.Font = new System.Drawing.Font("Berlin Sans FB", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(149, 35);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(358, 139);
+            this.listBox1.TabIndex = 184;
+            this.listBox1.Visible = false;
+            this.listBox1.Click += new System.EventHandler(this.listBox1_Click);
+            this.listBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBox1_KeyDown);
+            // 
+            // txtCodigoSN
+            // 
+            this.txtCodigoSN.Location = new System.Drawing.Point(149, 11);
+            this.txtCodigoSN.Name = "txtCodigoSN";
+            this.txtCodigoSN.Size = new System.Drawing.Size(358, 24);
+            this.txtCodigoSN.TabIndex = 183;
+            this.txtCodigoSN.TextChanged += new System.EventHandler(this.txtCodigoSN_TextChanged);
+            this.txtCodigoSN.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigoSN_KeyDown);
+            this.txtCodigoSN.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCodigoSN_KeyUp);
+            this.txtCodigoSN.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtCodigoSN_PreviewKeyDown);
+            // 
             // picturesku
             // 
             this.picturesku.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picturesku.Location = new System.Drawing.Point(982, 241);
+            this.picturesku.Location = new System.Drawing.Point(981, 216);
             this.picturesku.Name = "picturesku";
-            this.picturesku.Size = new System.Drawing.Size(173, 100);
+            this.picturesku.Size = new System.Drawing.Size(173, 25);
             this.picturesku.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picturesku.TabIndex = 182;
             this.picturesku.TabStop = false;
@@ -873,9 +939,9 @@ namespace DTM
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.Controls.Add(this.accordionControl1);
             this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Location = new System.Drawing.Point(982, 347);
+            this.panelControl1.Location = new System.Drawing.Point(982, 247);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(172, 220);
+            this.panelControl1.Size = new System.Drawing.Size(172, 337);
             this.panelControl1.TabIndex = 181;
             // 
             // accordionControl1
@@ -889,29 +955,37 @@ namespace DTM
             this.accordionControlElement4});
             this.accordionControl1.Location = new System.Drawing.Point(4, 41);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.Size = new System.Drawing.Size(163, 164);
+            this.accordionControl1.Size = new System.Drawing.Size(163, 281);
             this.accordionControl1.TabIndex = 179;
             // 
             // accordionControlVolumen
             // 
+            this.accordionControlVolumen.Appearance.Default.Font = new System.Drawing.Font("Berlin Sans FB Demi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlVolumen.Appearance.Default.Options.UseFont = true;
             this.accordionControlVolumen.Expanded = true;
             this.accordionControlVolumen.Name = "accordionControlVolumen";
             this.accordionControlVolumen.Text = "X VOLUMEN";
             // 
             // accordionControlMonto
             // 
+            this.accordionControlMonto.Appearance.Default.Font = new System.Drawing.Font("Berlin Sans FB Demi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlMonto.Appearance.Default.Options.UseFont = true;
             this.accordionControlMonto.Expanded = true;
             this.accordionControlMonto.Name = "accordionControlMonto";
             this.accordionControlMonto.Text = "X MONTO";
             // 
             // accordionControlDescuentoDir
             // 
+            this.accordionControlDescuentoDir.Appearance.Default.Font = new System.Drawing.Font("Berlin Sans FB Demi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlDescuentoDir.Appearance.Default.Options.UseFont = true;
             this.accordionControlDescuentoDir.Expanded = true;
             this.accordionControlDescuentoDir.Name = "accordionControlDescuentoDir";
             this.accordionControlDescuentoDir.Text = "X DTO DIRECTO";
             // 
             // accordionControlElement4
             // 
+            this.accordionControlElement4.Appearance.Default.Font = new System.Drawing.Font("Berlin Sans FB Demi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElement4.Appearance.Default.Options.UseFont = true;
             this.accordionControlElement4.Name = "accordionControlElement4";
             this.accordionControlElement4.Text = "X POLITICA DE VENTA";
             // 
@@ -1051,12 +1125,14 @@ namespace DTM
             // 
             this.txtArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtArticulo.Location = new System.Drawing.Point(18, 261);
+            this.txtArticulo.Location = new System.Drawing.Point(59, 297);
             this.txtArticulo.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtArticulo.Name = "txtArticulo";
-            this.txtArticulo.Size = new System.Drawing.Size(956, 24);
+            this.txtArticulo.Size = new System.Drawing.Size(915, 24);
             this.txtArticulo.TabIndex = 1;
+            this.txtArticulo.TextChanged += new System.EventHandler(this.txtArticulo_TextChanged);
             this.txtArticulo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtArticulo_KeyDown);
+            this.txtArticulo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtArticulo_KeyUp);
             this.txtArticulo.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtArticulo_PreviewKeyDown);
             // 
             // txtFechaVigencia
@@ -1105,7 +1181,7 @@ namespace DTM
             this.lblEnviado.AutoSize = true;
             this.lblEnviado.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblEnviado.ForeColor = System.Drawing.Color.Orange;
-            this.lblEnviado.Location = new System.Drawing.Point(757, 24);
+            this.lblEnviado.Location = new System.Drawing.Point(779, 24);
             this.lblEnviado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblEnviado.Name = "lblEnviado";
             this.lblEnviado.Size = new System.Drawing.Size(51, 13);
@@ -1133,12 +1209,12 @@ namespace DTM
             // 
             // lblClase
             // 
-            this.lblClase.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClase.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClase.Appearance.Options.UseFont = true;
-            this.lblClase.Location = new System.Drawing.Point(322, 5);
+            this.lblClase.Location = new System.Drawing.Point(578, 5);
             this.lblClase.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblClase.Name = "lblClase";
-            this.lblClase.Size = new System.Drawing.Size(51, 23);
+            this.lblClase.Size = new System.Drawing.Size(44, 19);
             this.lblClase.TabIndex = 158;
             this.lblClase.Text = "Clase";
             // 
@@ -1246,7 +1322,7 @@ namespace DTM
             // lblReferencia
             // 
             this.lblReferencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblReferencia.Location = new System.Drawing.Point(28, 610);
+            this.lblReferencia.Location = new System.Drawing.Point(29, 625);
             this.lblReferencia.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblReferencia.Name = "lblReferencia";
             this.lblReferencia.Size = new System.Drawing.Size(64, 17);
@@ -1256,7 +1332,7 @@ namespace DTM
             // txtReferencia
             // 
             this.txtReferencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtReferencia.Location = new System.Drawing.Point(150, 603);
+            this.txtReferencia.Location = new System.Drawing.Point(149, 622);
             this.txtReferencia.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.Properties.MaxLength = 100;
@@ -1278,7 +1354,7 @@ namespace DTM
             // 
             // lblID
             // 
-            this.lblID.Location = new System.Drawing.Point(272, 8);
+            this.lblID.Location = new System.Drawing.Point(537, 11);
             this.lblID.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(9, 17);
@@ -1291,7 +1367,7 @@ namespace DTM
             this.lblImpreso.AutoSize = true;
             this.lblImpreso.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblImpreso.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblImpreso.Location = new System.Drawing.Point(677, 23);
+            this.lblImpreso.Location = new System.Drawing.Point(714, 24);
             this.lblImpreso.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblImpreso.Name = "lblImpreso";
             this.lblImpreso.Size = new System.Drawing.Size(55, 13);
@@ -1305,7 +1381,7 @@ namespace DTM
             this.lblCancelado.AutoSize = true;
             this.lblCancelado.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblCancelado.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblCancelado.Location = new System.Drawing.Point(583, 23);
+            this.lblCancelado.Location = new System.Drawing.Point(639, 24);
             this.lblCancelado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblCancelado.Name = "lblCancelado";
             this.lblCancelado.Size = new System.Drawing.Size(65, 13);
@@ -1474,18 +1550,18 @@ namespace DTM
             // txtComentario
             // 
             this.txtComentario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtComentario.Location = new System.Drawing.Point(149, 636);
+            this.txtComentario.Location = new System.Drawing.Point(149, 652);
             this.txtComentario.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.txtComentario.MenuManager = this.mainRibbonControl;
             this.txtComentario.Name = "txtComentario";
-            this.txtComentario.Size = new System.Drawing.Size(264, 76);
+            this.txtComentario.Size = new System.Drawing.Size(264, 60);
             this.txtComentario.TabIndex = 0;
             this.txtComentario.TabStop = false;
             // 
             // lblComentario
             // 
             this.lblComentario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblComentario.Location = new System.Drawing.Point(18, 638);
+            this.lblComentario.Location = new System.Drawing.Point(19, 653);
             this.lblComentario.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblComentario.Name = "lblComentario";
             this.lblComentario.Size = new System.Drawing.Size(74, 17);
@@ -1495,7 +1571,7 @@ namespace DTM
             // cbVendedores
             // 
             this.cbVendedores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbVendedores.Location = new System.Drawing.Point(149, 573);
+            this.cbVendedores.Location = new System.Drawing.Point(149, 590);
             this.cbVendedores.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cbVendedores.MenuManager = this.mainRibbonControl;
             this.cbVendedores.Name = "cbVendedores";
@@ -1513,7 +1589,7 @@ namespace DTM
             // 
             this.lblVendedores.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblVendedores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblVendedores.Location = new System.Drawing.Point(33, 580);
+            this.lblVendedores.Location = new System.Drawing.Point(33, 597);
             this.lblVendedores.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.lblVendedores.Name = "lblVendedores";
             this.lblVendedores.Size = new System.Drawing.Size(60, 17);
@@ -1636,16 +1712,6 @@ namespace DTM
             this.txtSubTotal.TabIndex = 0;
             this.txtSubTotal.TabStop = false;
             // 
-            // txtCodigoSN
-            // 
-            this.txtCodigoSN.Location = new System.Drawing.Point(150, 5);
-            this.txtCodigoSN.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.txtCodigoSN.Name = "txtCodigoSN";
-            this.txtCodigoSN.Size = new System.Drawing.Size(112, 24);
-            this.txtCodigoSN.TabIndex = 0;
-            this.txtCodigoSN.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCodigoSN_KeyDown);
-            this.txtCodigoSN.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtCodigoSN_PreviewKeyDown);
-            // 
             // lblSocio
             // 
             this.lblSocio.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -1664,7 +1730,7 @@ namespace DTM
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcPartidas.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.gcPartidas.Font = new System.Drawing.Font("Berlin Sans FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gcPartidas.Location = new System.Drawing.Point(16, 291);
+            this.gcPartidas.Location = new System.Drawing.Point(16, 327);
             this.gcPartidas.MainView = this.gvPartidas;
             this.gcPartidas.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.gcPartidas.Name = "gcPartidas";
@@ -1676,7 +1742,7 @@ namespace DTM
             this.repositoryItemCalcEdit1,
             this.cbUnidadesMedida,
             this.cbAlmacenesDestino});
-            this.gcPartidas.Size = new System.Drawing.Size(962, 276);
+            this.gcPartidas.Size = new System.Drawing.Size(962, 257);
             this.gcPartidas.TabIndex = 1;
             this.gcPartidas.TabStop = false;
             this.gcPartidas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1691,6 +1757,7 @@ namespace DTM
             // 
             this.gvPartidas.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.gvPartidas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Option,
             this.gridColumnNo,
             this.gridColumnCantidad,
             this.gridColumnPeso,
@@ -1735,6 +1802,14 @@ namespace DTM
             this.gvPartidas.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.gvPartidas_CustomUnboundColumnData);
             this.gvPartidas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gvPartidas_KeyDown);
             // 
+            // Option
+            // 
+            this.Option.Caption = "Opcion";
+            this.Option.ImageOptions.Image = global::componentResourceManager.Resources.bonote_16x16;
+            this.Option.Name = "Option";
+            this.Option.Visible = true;
+            this.Option.VisibleIndex = 0;
+            // 
             // gridColumnNo
             // 
             this.gridColumnNo.AppearanceCell.Options.UseTextOptions = true;
@@ -1750,7 +1825,7 @@ namespace DTM
             this.gridColumnNo.OptionsColumn.ReadOnly = true;
             this.gridColumnNo.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.gridColumnNo.Visible = true;
-            this.gridColumnNo.VisibleIndex = 0;
+            this.gridColumnNo.VisibleIndex = 1;
             this.gridColumnNo.Width = 26;
             // 
             // gridColumnCantidad
@@ -1766,7 +1841,7 @@ namespace DTM
             this.gridColumnCantidad.Name = "gridColumnCantidad";
             this.gridColumnCantidad.OptionsColumn.FixedWidth = true;
             this.gridColumnCantidad.Visible = true;
-            this.gridColumnCantidad.VisibleIndex = 1;
+            this.gridColumnCantidad.VisibleIndex = 2;
             this.gridColumnCantidad.Width = 80;
             // 
             // repositoryItemCalcEdit1
@@ -1786,7 +1861,7 @@ namespace DTM
             this.gridColumnPeso.Name = "gridColumnPeso";
             this.gridColumnPeso.OptionsColumn.FixedWidth = true;
             this.gridColumnPeso.Visible = true;
-            this.gridColumnPeso.VisibleIndex = 2;
+            this.gridColumnPeso.VisibleIndex = 3;
             this.gridColumnPeso.Width = 59;
             // 
             // gridColumnStock
@@ -1799,7 +1874,7 @@ namespace DTM
             this.gridColumnStock.Name = "gridColumnStock";
             this.gridColumnStock.OptionsColumn.AllowEdit = false;
             this.gridColumnStock.Visible = true;
-            this.gridColumnStock.VisibleIndex = 3;
+            this.gridColumnStock.VisibleIndex = 4;
             this.gridColumnStock.Width = 77;
             // 
             // gridColumnUnidadMedida
@@ -1883,7 +1958,7 @@ namespace DTM
             this.gridColumnSKU.Name = "gridColumnSKU";
             this.gridColumnSKU.OptionsColumn.AllowEdit = false;
             this.gridColumnSKU.Visible = true;
-            this.gridColumnSKU.VisibleIndex = 4;
+            this.gridColumnSKU.VisibleIndex = 5;
             this.gridColumnSKU.Width = 53;
             // 
             // gridColumnArticulo
@@ -1894,7 +1969,7 @@ namespace DTM
             this.gridColumnArticulo.MinWidth = 134;
             this.gridColumnArticulo.Name = "gridColumnArticulo";
             this.gridColumnArticulo.Visible = true;
-            this.gridColumnArticulo.VisibleIndex = 5;
+            this.gridColumnArticulo.VisibleIndex = 6;
             this.gridColumnArticulo.Width = 134;
             // 
             // gridColumnCodigoBarras
@@ -1909,7 +1984,7 @@ namespace DTM
             this.gridColumnCodigoBarras.OptionsColumn.AllowEdit = false;
             this.gridColumnCodigoBarras.OptionsColumn.FixedWidth = true;
             this.gridColumnCodigoBarras.Visible = true;
-            this.gridColumnCodigoBarras.VisibleIndex = 6;
+            this.gridColumnCodigoBarras.VisibleIndex = 7;
             this.gridColumnCodigoBarras.Width = 125;
             // 
             // gridColumnListaPrecio
@@ -1922,7 +1997,7 @@ namespace DTM
             this.gridColumnListaPrecio.MinWidth = 26;
             this.gridColumnListaPrecio.Name = "gridColumnListaPrecio";
             this.gridColumnListaPrecio.Visible = true;
-            this.gridColumnListaPrecio.VisibleIndex = 7;
+            this.gridColumnListaPrecio.VisibleIndex = 8;
             this.gridColumnListaPrecio.Width = 26;
             // 
             // cbListasPrecios
@@ -1958,7 +2033,7 @@ namespace DTM
             this.gridColumnSubTotal.Name = "gridColumnSubTotal";
             this.gridColumnSubTotal.OptionsColumn.AllowEdit = false;
             this.gridColumnSubTotal.Visible = true;
-            this.gridColumnSubTotal.VisibleIndex = 10;
+            this.gridColumnSubTotal.VisibleIndex = 11;
             this.gridColumnSubTotal.Width = 26;
             // 
             // gridColumnImpuesto
@@ -1971,7 +2046,7 @@ namespace DTM
             this.gridColumnImpuesto.Name = "gridColumnImpuesto";
             this.gridColumnImpuesto.OptionsColumn.AllowEdit = false;
             this.gridColumnImpuesto.Visible = true;
-            this.gridColumnImpuesto.VisibleIndex = 11;
+            this.gridColumnImpuesto.VisibleIndex = 12;
             this.gridColumnImpuesto.Width = 59;
             // 
             // gridColumnPorcentajeDescuento
@@ -1985,7 +2060,7 @@ namespace DTM
             this.gridColumnPorcentajeDescuento.Name = "gridColumnPorcentajeDescuento";
             this.gridColumnPorcentajeDescuento.OptionsColumn.FixedWidth = true;
             this.gridColumnPorcentajeDescuento.Visible = true;
-            this.gridColumnPorcentajeDescuento.VisibleIndex = 8;
+            this.gridColumnPorcentajeDescuento.VisibleIndex = 9;
             this.gridColumnPorcentajeDescuento.Width = 66;
             // 
             // gridColumnDescuento
@@ -1999,7 +2074,7 @@ namespace DTM
             this.gridColumnDescuento.Name = "gridColumnDescuento";
             this.gridColumnDescuento.OptionsColumn.AllowEdit = false;
             this.gridColumnDescuento.Visible = true;
-            this.gridColumnDescuento.VisibleIndex = 9;
+            this.gridColumnDescuento.VisibleIndex = 10;
             this.gridColumnDescuento.Width = 26;
             // 
             // gridColumnPrecioNeto
@@ -2029,7 +2104,7 @@ namespace DTM
             this.gridColumnTotal.MinWidth = 59;
             this.gridColumnTotal.Name = "gridColumnTotal";
             this.gridColumnTotal.Visible = true;
-            this.gridColumnTotal.VisibleIndex = 12;
+            this.gridColumnTotal.VisibleIndex = 13;
             this.gridColumnTotal.Width = 59;
             // 
             // gridColumnAlmacen
@@ -2041,7 +2116,7 @@ namespace DTM
             this.gridColumnAlmacen.MinWidth = 26;
             this.gridColumnAlmacen.Name = "gridColumnAlmacen";
             this.gridColumnAlmacen.Visible = true;
-            this.gridColumnAlmacen.VisibleIndex = 13;
+            this.gridColumnAlmacen.VisibleIndex = 14;
             this.gridColumnAlmacen.Width = 26;
             // 
             // cbAlmacenes
@@ -2063,7 +2138,7 @@ namespace DTM
             this.gridColumnUbicacion.MinWidth = 26;
             this.gridColumnUbicacion.Name = "gridColumnUbicacion";
             this.gridColumnUbicacion.Visible = true;
-            this.gridColumnUbicacion.VisibleIndex = 14;
+            this.gridColumnUbicacion.VisibleIndex = 15;
             this.gridColumnUbicacion.Width = 26;
             // 
             // cbUbicaciones
@@ -2085,7 +2160,7 @@ namespace DTM
             this.gridColumnAlmacenDestino.MinWidth = 26;
             this.gridColumnAlmacenDestino.Name = "gridColumnAlmacenDestino";
             this.gridColumnAlmacenDestino.Visible = true;
-            this.gridColumnAlmacenDestino.VisibleIndex = 15;
+            this.gridColumnAlmacenDestino.VisibleIndex = 16;
             this.gridColumnAlmacenDestino.Width = 26;
             // 
             // gridColumnUbicacionDestino
@@ -2097,7 +2172,7 @@ namespace DTM
             this.gridColumnUbicacionDestino.MinWidth = 26;
             this.gridColumnUbicacionDestino.Name = "gridColumnUbicacionDestino";
             this.gridColumnUbicacionDestino.Visible = true;
-            this.gridColumnUbicacionDestino.VisibleIndex = 16;
+            this.gridColumnUbicacionDestino.VisibleIndex = 17;
             this.gridColumnUbicacionDestino.Width = 26;
             // 
             // gridColumnComentario
@@ -2117,7 +2192,7 @@ namespace DTM
             this.gridColumnDescuentoEspecial.MinWidth = 17;
             this.gridColumnDescuentoEspecial.Name = "gridColumnDescuentoEspecial";
             this.gridColumnDescuentoEspecial.Visible = true;
-            this.gridColumnDescuentoEspecial.VisibleIndex = 17;
+            this.gridColumnDescuentoEspecial.VisibleIndex = 18;
             this.gridColumnDescuentoEspecial.Width = 17;
             // 
             // gridColumnNumeroPedimento
@@ -3147,7 +3222,6 @@ namespace DTM
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtImpuesto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSubTotal.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCodigoSN.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcPartidas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPartidas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).EndInit();
@@ -3274,5 +3348,11 @@ namespace DTM
         private DateTimePicker dtHoraSalida;
         private DateTimePicker dtHoraLlegada;
         private Button btnEstatusCartaPorte;
+        private TextBox txtCodigoSN;
+        private ListBox listBox1;
+        private LabelControl labelControl7;
+        private ListBox listBox2;
+        private Button button1;
+        private GridColumn Option;
     }
 }

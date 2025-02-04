@@ -105,8 +105,6 @@ namespace DTM
 
         private LayoutControlItem layoutControlItem1;
 
-        private TextEdit txtCodigoSN;
-
         private LabelControl lblSocio;
 
         private XtraTabPage xtraTabPageFinanzas;
@@ -382,8 +380,10 @@ namespace DTM
         private string mensaje = string.Empty;
         public bool Autorizar { get; set; } = false;
 
-        public frmDocumentos(string clase, int id = 0, bool autol = false)
+        public frmDocumentos(string clase, int id = 0, bool autol = false,string articulo="")
         {
+          
+
             InitializeComponent();
             this.MetodoDinamico();
             this.Autorizar = autol;
@@ -403,12 +403,14 @@ namespace DTM
                 txtFactVencidas.Visible = false;
                 txtCreditoDisponible.Visible = false;
                 lbMensajeC.Visible = false;
-             
+
             }
-            if (documento.clase.Equals("CO")) {
+            if (documento.clase.Equals("CO"))
+            {
                 bbiXML.Visibility = BarItemVisibility.Never;
             }
-            if (documento.clase.Equals("FA")) {
+            if (documento.clase.Equals("FA"))
+            {
                 bbiXML.Visibility = BarItemVisibility.Always;
             }
             if (documento.clase.Equals("EN"))
@@ -469,9 +471,9 @@ namespace DTM
             {
                 txtArticulo.Focus();
             }
-           
+
             Permisos();
-           
+
             lblCodigoSN.Visible = true;
             gvPartidas.ValidatingEditor += GvPartidas_ValidatingEditor;
             bloquearGrid();
@@ -481,6 +483,14 @@ namespace DTM
             // O actualizar el GridControl y GridView
             gcPartidas.Refresh();
             gvPartidas.RefreshData();
+          
+        }
+        public void ActualizarDatos(object sender,string codigo)
+        {
+            // Aquí actualizas cualquier control que necesite recibir el nuevo valor
+            txtArticulo.Text = codigo; // o cualquier control que necesite mostrar el código
+            KeyEventArgs keyEventArgs = new KeyEventArgs(Keys.Enter);
+            txtArticulo_KeyDown(sender, keyEventArgs);
         }
 
         private void GvPartidas_ValidatingEditor(object sender, BaseContainerValidateEditorEventArgs e)
@@ -677,7 +687,8 @@ namespace DTM
             try
             {
                 DataTable dataTable = new DataTable();
-                if (clase.clase !="NC") {
+                if (clase.clase != "NC")
+                {
                     var source = from x in Documento.Documentos()
                                  where x.socio_id == documento.socio_id && x.clase == clase.clase && x.tipo == clase.tipo && x.cancelado == false
                                  && x.estado == 'A'
@@ -693,7 +704,8 @@ namespace DTM
                                  };
                     dataTable = source.ToList().ToDataTable();
                 }
-                else {
+                else
+                {
                     var source = from x in Documento.Documentos()
                                  where x.socio_id == documento.socio_id && x.clase == clase.clase && x.tipo == clase.tipo && x.cancelado == false
                                  || x.estado == 'A'
@@ -710,8 +722,8 @@ namespace DTM
                                  };
                     dataTable = source.ToList().ToDataTable();
                 }
-                
-     
+
+
                 if (dataTable.Rows.Count > 0)
                 {
                     frmResultadosBusqueda f = new frmResultadosBusqueda(dataTable, seleccion_multiple: true);
@@ -801,34 +813,34 @@ namespace DTM
                 MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"), Text, MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
-        
+
         private void bbiGuardar_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (chckCartaPorte.Checked == true)
             {
                 documento.causalidad_id = 1;
             }
-            else 
+            else
             {
                 documento.causalidad_id = 0;
             }
-            if (documento.estado == 'C') 
+            if (documento.estado == 'C')
             {
                 MessageBox.Show("Este documento no es posible modificarlo por que ya se encuentra cerrado", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (documento.clase == "FA") 
+            if (documento.clase == "FA")
             {
                 List<int> condicionesPagoPermitidasPPD = new List<int> { 1, 2, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 };
-                List<int> condicionesPagoPermitidasPUE = new List<int> { 3, 19,20, 22 };
-                if (condicionesPagoPermitidasPPD.Contains(documento.condicion_pago_id)) 
+                List<int> condicionesPagoPermitidasPUE = new List<int> { 3, 19, 20, 22 };
+                if (condicionesPagoPermitidasPPD.Contains(documento.condicion_pago_id))
                 {
-                    if (documento.metodo_pago_id != 17 || documento.metodo_pago_id !=  10) 
+                    if (documento.metodo_pago_id != 17 || documento.metodo_pago_id != 10)
                     {
                         MessageBox.Show("La condición PPD debe tener una Forma de pago-Por definir", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-             
+
                 }
                 if (condicionesPagoPermitidasPUE.Contains(documento.condicion_pago_id))
                 {
@@ -838,9 +850,9 @@ namespace DTM
                         return;
                     }
                 }
-               
+
             }
-            if (documento.total == 0) 
+            if (documento.total == 0)
             {
                 MessageBox.Show("No puede haber un documento con el total en cero", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -868,7 +880,8 @@ namespace DTM
 
 
             }
-            else {
+            else
+            {
                 if (Guardar())
                 {
                     RecargarDocumento();
@@ -1002,7 +1015,8 @@ namespace DTM
                     MessageBox.Show("Error al guardar: " + SDK.DTM.ObtenerUltimoError().Message.ToString().Replace("Nori", "DTM"), Text);
                 }
             }
-            else {
+            else
+            {
                 if (Guardar())
                 {
                     Nuevo();
@@ -1083,7 +1097,7 @@ namespace DTM
                                                orderby x.numero_documento descending
                                                select new { x.id }).First().id);
                 Cargar();
-               
+
             }
             catch (Exception ex)
             {
@@ -1139,6 +1153,7 @@ namespace DTM
                     case 'C':
                         panelControl1.Visible = false;
                         listBoxControl1.Visible = false;
+                        listBox1.Visible = false;
                         //searchRibbonPageGroup.Visible = false;
                         break;
                 }
@@ -1160,7 +1175,7 @@ namespace DTM
                                 control.Enabled = !item.desactivado;
                             }
                         }
-                  
+
 
                         else
                         {
@@ -1193,7 +1208,7 @@ namespace DTM
                 txtFechaVigencia.Enabled = false;
                 cbVendedores.Enabled = false;
                 txtFechaCreacion.Enabled = false;
-              
+
                 if (Program.dtm.UsuarioAutenticado.rol == 'C')
                 {
                     btnGenerarCartaPorte.Visible = true;
@@ -1233,7 +1248,7 @@ namespace DTM
                     lblVehiculo.Visible = true;
                     lblRuta.Visible = true;
                     labelControl3.Visible = true;
-                    labelControl4.Visible = true;n
+                    labelControl4.Visible = true;
                     labelControl5.Visible = true;
                     labelControl6.Visible = true;
                     barButtonItem2.Visibility = BarItemVisibility.Always;
@@ -1264,10 +1279,10 @@ namespace DTM
                     lblVendedores.Enabled = true;
                     btnEstatusCartaPorte.Visible = false;
                 }
-                if (Program.dtm.UsuarioAutenticado.rol == 'V' ) 
+                if (Program.dtm.UsuarioAutenticado.rol == 'V')
                 {
                     btnGenerarCartaPorte.Visible = false;
-                cbClasesExpedicion.Visible = false;
+                    cbClasesExpedicion.Visible = false;
                     cbChoferes.Visible = false;
                     cbVehiculos.Visible = false;
                     cbRutas.Visible = false;
@@ -1397,9 +1412,10 @@ namespace DTM
             string clase = documento.clase;
             documento = new Documento(clase);
             txtNumeroDocumento.Enabled = false;
+            txtCodigoSN.Enabled = true;
             Cargar(nuevo: true);
         }
-        private void HacerTodosLosControlesSoloLectura(XtraTabPage xtraTabPage,bool valor)
+        private void HacerTodosLosControlesSoloLectura(XtraTabPage xtraTabPage, bool valor)
         {
             foreach (Control control in xtraTabPage.Controls)
             {
@@ -1452,7 +1468,7 @@ namespace DTM
         {
             try
             {
-                
+
                 cbSeries.EditValue = documento.serie_id;
                 txtNumeroDocumento.Text = documento.numero_documento.ToString();
                 txtNumeroDocumentoExterno.Text = documento.numero_documento_externo.ToString();
@@ -1505,11 +1521,11 @@ namespace DTM
                 bool enabled;
                 if (documento.estado.Equals('C'))
                 {
-                    HacerTodosLosControlesSoloLectura(xtraTabPageGeneral,true);
+                    HacerTodosLosControlesSoloLectura(xtraTabPageGeneral, true);
                     HacerTodosLosControlesSoloLectura(xtraTabPageLogistica, true);
                     HacerTodosLosControlesSoloLectura(xtraTabPageFinanzas, true);
                     HacerTodosLosControlesSoloLectura(xtraTabPageDocumentoElectronico, true);
-                   // HacerTodosLosControlesSoloLectura(xtraTabPageAnexos, true);
+                    // HacerTodosLosControlesSoloLectura(xtraTabPageAnexos, true);
                     Permisos();
                     // xtraTabPageGeneral.only = false;
                     //LookUpEdit lookUpEdit = cbMonedas;
@@ -1535,14 +1551,14 @@ namespace DTM
                 }
                 else
                 {
-                    HacerTodosLosControlesSoloLectura(xtraTabPageGeneral,false);
+                    HacerTodosLosControlesSoloLectura(xtraTabPageGeneral, false);
                     HacerTodosLosControlesSoloLectura(xtraTabPageLogistica, false);
                     HacerTodosLosControlesSoloLectura(xtraTabPageFinanzas, false);
                     HacerTodosLosControlesSoloLectura(xtraTabPageDocumentoElectronico, false);
                     //HacerTodosLosControlesSoloLectura(xtraTabPageAnexos, false);
                     Permisos();
                     LookUpEdit lookUpEdit2 = cbMonedas;
-                    TextEdit textEdit4 = txtCodigoSN;
+                    //TextEdit textEdit4 = txtCodigoSN;
                     //TextEdit textEdit5 = txtTipoCambio;
                     TextEdit textEdit6 = txtArticulo;
                     BarSubItem barSubItem2 = bbiCopiar;
@@ -1559,8 +1575,8 @@ namespace DTM
                     bool flag14 = (textEdit6.Enabled = flag12);
                     bool flag16 = (textEdit6.Enabled = flag12);
                     //bool flag16 = (textEdit5.Enabled = flag14);
-                    enabled = (textEdit4.Enabled = flag16);
-                   // lookUpEdit2.Enabled = enabled;
+                    //enabled = (textEdit4.Enabled = flag16);
+                    // lookUpEdit2.Enabled = enabled;
                 }
                 if (bbiCopiar.Enabled)
                 {
@@ -1622,11 +1638,11 @@ namespace DTM
                         bool flag16 = (barButtonItem14.Enabled = flag14);
                         enabled = (barButtonItem13.Enabled = flag16);
                         textEdit8.Enabled = enabled;
-                        TextEdit textEdit9 = txtCodigoSN;
+                        // TextEdit textEdit9 = txtCodigoSN;
                         TextEdit textEdit10 = txtNumeroDocumentoExterno;
                         flag16 = (bbiNuevo.Enabled = true);
                         enabled = (textEdit10.Visible = flag16);
-                        textEdit9.Enabled = enabled;
+                        //textEdit9.Enabled = enabled;
                     }
                     else
                     {
@@ -1660,7 +1676,7 @@ namespace DTM
                 //lblIdentificadorExterno.Visible = ((documento.identificador_externo != 0) ? true : false);
                 if (documento.clase.Equals("PE"))
                 {
-                  //  cbCOD.Visible = true;
+                    //  cbCOD.Visible = true;
                 }
                 else
                 {
@@ -1680,7 +1696,7 @@ namespace DTM
                 }
                 //BarCodeControl barCodeControl = //bcID;
                 string text2 = (lblID.Text = documento.id.ToString());
-               // barCodeControl.Text = text2;
+                // barCodeControl.Text = text2;
                 //lblIdentificadorExterno.Text = documento.identificador_externo.ToString();
                 lblCancelado.Visible = documento.cancelado;
                 lblImpreso.Visible = documento.impreso;
@@ -1740,7 +1756,8 @@ namespace DTM
                     cbVendedores.Visible = true;
                     cbVendedores.EditValue = Program.dtm.UsuarioAutenticado.vendedor_id;
                 }
-                else {
+                else
+                {
                     cbVendedores.EditValue = documento.vendedor_id;
                 }
                 cbAlmacenOrigen.EditValue = documento.almacen_id;
@@ -1975,12 +1992,12 @@ namespace DTM
                                             where x.usuario_id == Program.dtm.UsuarioAutenticado.id
                                             select x.serie_id).ToList();
                 cbSeries.Properties.DataSource = (((Program.dtm.Configuracion.seleccionar_sucursal || Program.dtm.UsuarioAutenticado.seleccionar_sucursal) && Program.dtm.UsuarioAutenticado.rol != 'A') ? (from x in Serie.Series()
-                                                                                                                                                                                                               where x.clase == clase && x.almacen_id == Program.dtm.UsuarioAutenticado.almacen_id && x.activo == true
-                                                                                                                                                                                                               select new { x.id, x.nombre }).ToList() : ((usuario_series.Count > 0) ? (from x in Serie.Series()
-                                                                                                                                                                                                                                                                                        where x.clase == clase && x.activo == true && usuario_series.Contains(x.id)
-                                                                                                                                                                                                                                                                                        select new { x.id, x.nombre }).ToList() : (from x in Serie.Series()
-                                                                                                                                                                                                                                                                                                                                   where x.clase == clase && x.activo == true
-                                                                                                                                                                                                                                                                                                                                   select new { x.id, x.nombre }).ToList()));
+                                                                                                                                                                                                            where x.clase == clase && x.almacen_id == Program.dtm.UsuarioAutenticado.almacen_id && x.activo == true
+                                                                                                                                                                                                            select new { x.id, x.nombre }).ToList() : ((usuario_series.Count > 0) ? (from x in Serie.Series()
+                                                                                                                                                                                                                                                                                     where x.clase == clase && x.activo == true && usuario_series.Contains(x.id)
+                                                                                                                                                                                                                                                                                     select new { x.id, x.nombre }).ToList() : (from x in Serie.Series()
+                                                                                                                                                                                                                                                                                                                                where x.clase == clase && x.activo == true
+                                                                                                                                                                                                                                                                                                                                select new { x.id, x.nombre }).ToList()));
                 cbSeries.Properties.ValueMember = "id";
                 cbSeries.Properties.DisplayMember = "nombre";
                 cbVendedores.Properties.DataSource = (from x in Vendedor.Vendedores()
@@ -2153,6 +2170,10 @@ namespace DTM
                 gcPartidas.DataSource = documento.partidas;
                 gcPartidas.RefreshDataSource();
                 documento.CalcularTotal();
+                if (gvPartidas.RowCount > 0)
+                {
+                    gvPartidas.SetRowCellValue(gvPartidas.GetVisibleRowHandle(0),"ss", "Accion");
+                }
                 txtTipoCambio.Text = documento.tipo_cambio.ToString("n4");
                 txtSubTotal.Text = documento.subtotal.ToString("c2");
                 //txtPorcentajeDescuento.Text = documento.porcentaje_descuento.ToString("n2");
@@ -2162,7 +2183,7 @@ namespace DTM
                 txtImporteAplicado.Text = documento.importe_aplicado.ToString("c2");
                 try
                 {
-                   // btnDescuentosEspeciales.Visible = true;
+                    // btnDescuentosEspeciales.Visible = true;
                     lblPartidas.Text = $"Partidas {documento.numero_partidas}";
                     lblArticulos.Text = $"Artículos {documento.cantidad_partidas}";
                     decimal num = Math.Round((documento.partidas.Sum((Documento.Partida x) => x.precio * x.tipo_cambio) - documento.partidas.Sum((Documento.Partida x) => x.costo)) / documento.partidas.Sum((Documento.Partida x) => x.costo) * 100m, 2);
@@ -2226,20 +2247,20 @@ namespace DTM
                 if (documento.EstablecerSocio(socio))
                 {
                     txtCodigoSN.Text = socio.codigo;
-                 
+
                     lblSocio.Text = socio.nombre;
                     lblID.Text = socio.id.ToString();
                     lblRFC.Text = socio.rfc;
-                    if (Program.dtm.UsuarioAutenticado.vendedor_id !=0) 
+                    if (Program.dtm.UsuarioAutenticado.vendedor_id != 0)
                     {
                         cbVendedores.EditValue = Program.dtm.UsuarioAutenticado.vendedor_id;
                     }
-                   
+
                     cbMetodosPago.EditValue = documento.metodo_pago_id;
                     txtCuentaPago.Text = documento.cuenta_pago;
                     cbCondicionesPago.EditValue = documento.condicion_pago_id;
                     DataTable data = documento.limiteCredito(socio.codigo);
-                    
+
                     if (data.Rows.Count > 0)
                     {
                         if (Convert.ToDecimal(data.Rows[0]["fact_vencidas"]) > 1 && documento.clase == "PE")
@@ -2258,12 +2279,12 @@ namespace DTM
                         }
                         if (Convert.ToDecimal(data.Rows[0]["credito disponible"]) < 0)
                         {
-                           
+
                         }
                         txtCreditoDisponible.Text = Convert.ToDecimal(data.Rows[0]["credito disponible"]).ToString("0.##");
                         txtFactVencidas.Text = Convert.ToDecimal(data.Rows[0]["fact_vencidas"]).ToString("0.##");
                     }
-                    if (documento.clase =="NC") 
+                    if (documento.clase == "NC")
                     {
                         if (documento.estado == 'A')
                         {
@@ -2415,11 +2436,11 @@ namespace DTM
                 catch (Exception ex)
                 {
                 }
-               
+
 
                 //if (documento.partidas.Any(x => x.almacen_id.ToString().Substring(0, 2) == "TR"))
                 //{
-             
+
                 //}
                 //    if (Usuario.Almacen.Almacenes().Any((Usuario.Almacen x) => x.usuario_id == Program.dtm.UsuarioAutenticado.id))
                 //{
@@ -2452,18 +2473,18 @@ namespace DTM
                     var serie = (from x in Serie.Series()
                                  where x.almacen_id == almacen_id
                                  select new { x.id, x.nombre }).FirstOrDefault();
-                    if (serie != null) 
+                    if (serie != null)
                     {
                         if (serie.id != documento.serie_id)
                         {
-                            MessageBox.Show("Solo es posible utilizar esta serie "+ serie.nombre+" para el almacen seleccionado", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show("Solo es posible utilizar esta serie " + serie.nombre + " para el almacen seleccionado", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return false;
                         }
                     }
-                 
+
                 }
-                catch 
-                { 
+                catch
+                {
                 }
                 try
                 {
@@ -2642,12 +2663,12 @@ namespace DTM
                 Funciones.DescartarCargando();
             }
         }
-      
+
         private bool Guardar()
         {
             try
             {
-             
+
                 gvPartidas.CloseEditor();
                 txtArticulo.Focus();
                 bool isAlmacenValido2 = true;
@@ -2667,22 +2688,22 @@ namespace DTM
                     return false;
                 }
                 bool isAlmacenValido = true; // Bandera que se establece en false si hay alguna discrepancia
-                    string referenciaAlmacen = documento.partidas.FirstOrDefault().almacen_id.ToString(); // Obtener el valor de ALAMACEN de la primera partida (si existe)
+                string referenciaAlmacen = documento.partidas.FirstOrDefault().almacen_id.ToString(); // Obtener el valor de ALAMACEN de la primera partida (si existe)
 
-                    documento.partidas.ForEach(delegate (Documento.Partida x)
+                documento.partidas.ForEach(delegate (Documento.Partida x)
+                {
+                    if (x.almacen_id.ToString() != referenciaAlmacen)
                     {
-                        if (x.almacen_id.ToString() != referenciaAlmacen)
-                        {
-                            isAlmacenValido = false; // Si ALAMACEN es diferente, se marca como falso
-                            return; // Se sale de la iteración sin continuar comparando
-                        }
-                    });
-                    if (!isAlmacenValido)
-                    {
-                        MessageBox.Show("El almacen es diferente en algunas partidas,deberia ser el mismo.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return false;
+                        isAlmacenValido = false; // Si ALAMACEN es diferente, se marca como falso
+                        return; // Se sale de la iteración sin continuar comparando
                     }
-                
+                });
+                if (!isAlmacenValido)
+                {
+                    MessageBox.Show("El almacen es diferente en algunas partidas,deberia ser el mismo.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
                 if (MessageBox.Show("¿Desea guardar los cambios?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     if (Llenar())
@@ -2703,11 +2724,11 @@ namespace DTM
                                 this.documento.estado = 'A';
                             }
                         }
-                        if (this.documento.partidas.Any((Documento.Partida x) => x.documento_id != 0)) 
-                        { 
+                        if (this.documento.partidas.Any((Documento.Partida x) => x.documento_id != 0))
+                        {
 
                             var doc = Documento.Obtener(this.documento.partidas.FirstOrDefault().documento_id);
-                            if (doc.socio_id != this.documento.socio_id) 
+                            if (doc.socio_id != this.documento.socio_id)
                             {
                                 MessageBox.Show("El socio de negocio debera ser el mismo que el documento base", Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 return false;
@@ -3114,8 +3135,33 @@ namespace DTM
         {
             try
             {
-                if (e.KeyCode == Keys.Return && txtCodigoSN.Text.Length > 0)
+                if (e.KeyCode == Keys.Down && listBox1.Items.Count > 0)
                 {
+                    // Verificar si el ListBox tiene elementos
+                    if (listBox1.Items.Count > 0)
+                    {
+                        // Hacer que el ListBox tome el foco
+                        listBox1.Focus();
+
+                        // Seleccionar el primer elemento del ListBox
+                        listBox1.SelectedIndex = 0;
+                    }
+                }
+                // Detectar si se presiona BACKSPACE o DELETE
+                if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete)
+                {
+                    isDeleteOrBackspacePressed = true; // Activamos la bandera
+                }
+                if (e.KeyCode == Keys.Enter)
+                {
+                    // Al presionar Enter, asignamos el valor del TextBox (o lo que desees hacer con el valor)
+                    if (!string.IsNullOrEmpty(txtCodigoSN.Text))
+                    {
+                        string textoSeleccionado = txtCodigoSN.Text;
+                        if (e.KeyCode == Keys.Return && txtCodigoSN.Text.Length > 0)
+                        {
+                        }
+                    }
                     try
                     {
                         socio = (from x in Socio.Socios()
@@ -3500,10 +3546,11 @@ namespace DTM
         {
             try
             {
-                if (q !="" && cantidad != "") {
+                if (q != "" && cantidad != "")
+                {
                     bool data = documento.AgregarPartidaExcel(q, 0, Decimal.Parse(cantidad));
                 }
-      
+
 
             }
             catch (Exception ex)
@@ -3634,10 +3681,10 @@ namespace DTM
             }
 
         }
-        private string ConvertDataTableToText(DataTable dt,string articulo)
+        private string ConvertDataTableToText(DataTable dt, string articulo)
         {
             string text = string.Empty;
-            text += "Articulos Sugeridos en la compra de: '"+articulo+"'";
+            text += "Articulos Sugeridos en la compra de: '" + articulo + "'";
             text += Environment.NewLine;
             text += Environment.NewLine;
             // Agregar los valores de las filas
@@ -3652,7 +3699,7 @@ namespace DTM
 
             return text;
         }
-        private void AgregarPromociones(string codigoSN,string codigoArt,int idLP,int idGArt) 
+        private void AgregarPromociones(string codigoSN, string codigoArt, int idLP, int idGArt)
         {
             try
             {
@@ -3662,7 +3709,7 @@ namespace DTM
                 GrupoArticulo _grupoArt = GrupoArticulo.Obtener(idGArt);
                 Socio socio = Socio.Obtener(codigoSN);
                 string vip = socio.vip == true ? "Y" : "N";
-                dataTable = promociones.promocionesXArticulo(codigoSN,codigoArt, _lista.codigo.ToString(), _grupoArt.codigo.ToString(), vip);
+                dataTable = promociones.promocionesXArticulo(codigoSN, codigoArt, _lista.codigo.ToString(), _grupoArt.codigo.ToString(), vip);
                 accordionControlVolumen.Elements.Clear();
                 accordionControlMonto.Elements.Clear();
                 accordionControlDescuentoDir.Elements.Clear();
@@ -3675,7 +3722,7 @@ namespace DTM
                         double resultPorcentaje = Math.Truncate(value * 10) / 10;
                         AccordionControlElement element = new AccordionControlElement
                         {
-                            Text = "A partir de " +  Math.Round(Convert.ToDouble(row["U_Quantity"].ToString())) + " obten un descuento del " + resultPorcentaje + "%",    // Título del item
+                            Text = "A partir de " + Math.Round(Convert.ToDouble(row["U_Quantity"].ToString())) + " obten un descuento del " + resultPorcentaje + "%",    // Título del item
                             Tag = row["U_Percentage"].ToString(),   // Datos adicionales, puedes usar para almacenar detalles u otros valores
                             Style = ElementStyle.Item           // Estilo de cada item
                         };
@@ -3710,7 +3757,7 @@ namespace DTM
 
                         AccordionControlElement element = new AccordionControlElement
                         {
-                            Text = "Obtiene un descuento del "+ resultPorcentaje + "% en su compra",    // Título del item
+                            Text = "Obtiene un descuento del " + resultPorcentaje + "% en su compra",    // Título del item
                             Tag = row["U_Percentage"].ToString(),   // Datos adicionales, puedes usar para almacenar detalles u otros valores
                             Style = ElementStyle.Item           // Estilo de cada item
                         };
@@ -3725,7 +3772,7 @@ namespace DTM
             catch (Exception ex)
             {
             }
-        
+
         }
         private async void AgregarPartida(string q)
         {
@@ -3757,7 +3804,7 @@ namespace DTM
 
                     }
 
-                   
+
                     txtArticulo.Text = string.Empty;
                     try
                     {
@@ -3767,10 +3814,10 @@ namespace DTM
                         DataRow headerRow = dt.NewRow();
                         headerRow["id"] = 0;
                         headerRow["sku"] = " ";
-                        headerRow["nombre"] = "Estos son los artículos sugeridos para el articulo: " +partida.sku +" "+partida.nombre; // Texto de encabezado
+                        headerRow["nombre"] = "Estos son los artículos sugeridos para el articulo: " + partida.sku + " " + partida.nombre; // Texto de encabezado
                         dt.Rows.InsertAt(headerRow, 0);
                         dt.Columns.Add("DisplayText", typeof(string), "sku + ' - ' + nombre");
-                        if (Program.dtm.UsuarioAutenticado.rol != 'L' && Program.dtm.UsuarioAutenticado.rol != 'C') 
+                        if (Program.dtm.UsuarioAutenticado.rol != 'L' && Program.dtm.UsuarioAutenticado.rol != 'C')
                         {
                             listBoxControl1.DataSource = dt;
                             listBoxControl1.DisplayMember = "DisplayText";
@@ -3778,11 +3825,11 @@ namespace DTM
                             listBoxControl1.Visible = true;
                             pictureBox1.Visible = true;
                         }
-                       
+
                         string image = Articulo.ObtenerImagen(partida.articulo_id);
                         picturesku.LoadImage(image);
                         picturesku.Visible = true;
-                        AgregarPromociones(documento.codigo_sn,partida.sku.ToString(),documento.lista_precio_id, partida.grupo_articulo_id);
+                        AgregarPromociones(documento.codigo_sn, partida.sku.ToString(), documento.lista_precio_id, partida.grupo_articulo_id);
                         //memoSugeridos.Text = ConvertDataTableToText(ArticuloSugerido.ObtenerArt(partida.sku),(partida.sku +" "+ partida.nombre));
                         if (Program.dtm.Configuracion.seleccion_manual_lotes && Articulo.Articulos().Any((Articulo x) => x.id == partida.articulo_id && x.seguimiento == 'L'))
                         {
@@ -3836,54 +3883,54 @@ namespace DTM
         {
             try
             {
-                if (e.KeyCode != Keys.Tab || txtArticulo.Text.Length <= 0)
-                {
-                    return;
-                }
-                string text = txtArticulo.Text;
-                decimal cantidad = 1m;
-                if (text.Contains("*"))
-                {
-                    cantidad = decimal.Parse(text.Split('*')[0]);
-                    text = text.Split('*')[1];
-                }
-                ConsultaPersonalizada consultaPersonalizada = ConsultaPersonalizada.Obtener("txtArticulo");
-                if (consultaPersonalizada.query.IsNullOrEmpty())
-                {
-                    consultaPersonalizada.query = "SELECT articulos.id, sku as sku_articulo, articulos.nombre, (SELECT SUM(stock) FROM inventario WHERE articulo_id = articulos.id) stock, precios.precio, monedas.codigo as moneda FROM articulos JOIN precios ON precios.articulo_id = articulos.id JOIN monedas ON monedas.id = precios.moneda_id AND precios.lista_precio_id = {lista_precio_id} WHERE (sku = '{q}' OR articulos.nombre LIKE '%{q}%' OR codigo_barras LIKE '%{q}%') AND venta = 1 AND articulos.activo = 1";
-                }
-                //consultaPersonalizada.query = consultaPersonalizada.query.Replace("{q}", text.Replace(" ", "%"));
-                consultaPersonalizada.query = consultaPersonalizada.query.Replace("{q}", text);
-                consultaPersonalizada.query = consultaPersonalizada.query.Replace("{socio_id}", documento.socio_id.ToString());
-                consultaPersonalizada.query = consultaPersonalizada.query.Replace("{lista_precio_id}", documento.lista_precio_id.ToString());
-                consultaPersonalizada.query = consultaPersonalizada.query.Replace("{condicion_pago_id}", documento.condicion_pago_id.ToString());
-                consultaPersonalizada.query = consultaPersonalizada.query.Replace("{metodo_pago_id}", documento.metodo_pago_id.ToString());
-                consultaPersonalizada.query = consultaPersonalizada.query.Replace("{moneda_id}", documento.moneda_id.ToString());
-                DataTable articulos = consultaPersonalizada.Ejecutar();
-                if (articulos.Rows.Count > 0)
-                {
-                    if (articulos.Rows.Count == 1)
-                    {
-                        AgregarPartida($"{cantidad}*{articulos.Rows[0][1].ToString()}");
-                        return;
-                    }
-                    frmResultadosBusquedaArticulos frmResultadosBusquedaArticulos2 = new frmResultadosBusquedaArticulos(articulos, seleccion_multiple: true);
-                    DialogResult dialogResult = frmResultadosBusquedaArticulos2.ShowDialog();
-                    if (dialogResult == DialogResult.OK)
-                    {
-                        Cursor = Cursors.WaitCursor;
-                        frmResultadosBusquedaArticulos2.filas.ForEach(delegate (int x)
-                        {
-                            AgregarPartida($"{cantidad}*{articulos.Rows[x][1].ToString()}");
-                        });
-                        Calcular();
-                        Cursor = Cursors.Default;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show($"No se encontraron resultados para {text}", Text);
-                }
+                //if (e.KeyCode != Keys.Tab || txtArticulo.Text.Length <= 0)
+                //{
+                //    return;
+                //}
+                //string text = txtArticulo.Text;
+                //decimal cantidad = 1m;
+                //if (text.Contains("*"))
+                //{
+                //    cantidad = decimal.Parse(text.Split('*')[0]);
+                //    text = text.Split('*')[1];
+                //}
+                //ConsultaPersonalizada consultaPersonalizada = ConsultaPersonalizada.Obtener("txtArticulo");
+                //if (consultaPersonalizada.query.IsNullOrEmpty())
+                //{
+                //    consultaPersonalizada.query = "SELECT articulos.id, sku as sku_articulo, articulos.nombre, (SELECT SUM(stock) FROM inventario WHERE articulo_id = articulos.id) stock, precios.precio, monedas.codigo as moneda FROM articulos JOIN precios ON precios.articulo_id = articulos.id JOIN monedas ON monedas.id = precios.moneda_id AND precios.lista_precio_id = {lista_precio_id} WHERE (sku = '{q}' OR articulos.nombre LIKE '%{q}%' OR codigo_barras LIKE '%{q}%') AND venta = 1 AND articulos.activo = 1";
+                //}
+                ////consultaPersonalizada.query = consultaPersonalizada.query.Replace("{q}", text.Replace(" ", "%"));
+                //consultaPersonalizada.query = consultaPersonalizada.query.Replace("{q}", text);
+                //consultaPersonalizada.query = consultaPersonalizada.query.Replace("{socio_id}", documento.socio_id.ToString());
+                //consultaPersonalizada.query = consultaPersonalizada.query.Replace("{lista_precio_id}", documento.lista_precio_id.ToString());
+                //consultaPersonalizada.query = consultaPersonalizada.query.Replace("{condicion_pago_id}", documento.condicion_pago_id.ToString());
+                //consultaPersonalizada.query = consultaPersonalizada.query.Replace("{metodo_pago_id}", documento.metodo_pago_id.ToString());
+                //consultaPersonalizada.query = consultaPersonalizada.query.Replace("{moneda_id}", documento.moneda_id.ToString());
+                //DataTable articulos = consultaPersonalizada.Ejecutar();
+                //if (articulos.Rows.Count > 0)
+                //{
+                //    if (articulos.Rows.Count == 1)
+                //    {
+                //        AgregarPartida($"{cantidad}*{articulos.Rows[0][1].ToString()}");
+                //        return;
+                //    }
+                //    frmResultadosBusquedaArticulos frmResultadosBusquedaArticulos2 = new frmResultadosBusquedaArticulos(articulos, seleccion_multiple: true);
+                //    DialogResult dialogResult = frmResultadosBusquedaArticulos2.ShowDialog();
+                //    if (dialogResult == DialogResult.OK)
+                //    {
+                //        Cursor = Cursors.WaitCursor;
+                //        frmResultadosBusquedaArticulos2.filas.ForEach(delegate (int x)
+                //        {
+                //            AgregarPartida($"{cantidad}*{articulos.Rows[x][1].ToString()}");
+                //        });
+                //        Calcular();
+                //        Cursor = Cursors.Default;
+                //    }
+                //}
+                //else
+                //{
+                //    MessageBox.Show($"No se encontraron resultados para {text}", Text);
+                //}
             }
             catch (Exception ex)
             {
@@ -3891,13 +3938,33 @@ namespace DTM
             }
         }
 
-        private void txtArticulo_KeyDown(object sender, KeyEventArgs e)
+         public  void txtArticulo_KeyDown(object sender, KeyEventArgs e)
         {
             try
             {
-                if (e.KeyCode == Keys.Return && txtArticulo.Text.Length > 0)
+                if (e.KeyCode == Keys.Down && listBox2.Items.Count > 0)
+                {
+                    // Verificar si el ListBox tiene elementos
+                    if (listBox2.Items.Count > 0)
+                    {
+                        // Hacer que el ListBox tome el foco
+                        listBox2.Focus();
+
+                        // Seleccionar el primer elemento del ListBox
+                        listBox2.SelectedIndex = 0;
+                    }
+                }
+                // Detectar si se presiona BACKSPACE o DELETE
+                if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete)
+                {
+                    isDeleteOrBackspacePressedArt = true; // Activamos la bandera
+                }
+
+                if (e.KeyCode == Keys.Enter && txtArticulo.Text.Length > 0)
                 {
                     txtArticulo.Enabled = false;
+                    listBox2.Items.Clear();
+                    listBox2.Visible = false;
                     AgregarPartida(txtArticulo.Text);
                 }
             }
@@ -4543,7 +4610,7 @@ namespace DTM
             try
             {
                 List<Documento.Partida> partidas = documento.partidas;
- 
+
                 partidas.All(delegate (Documento.Partida x)
                 {
                     x.documento_id = 0;
@@ -4551,7 +4618,7 @@ namespace DTM
                     x.descuento = 0;
                     x.descuento_especial_id = 0;
                     x.porcentaje_descuento = 0;
-                    
+
                     return true;
                 });
                 string clase = documento.clase;
@@ -4768,7 +4835,7 @@ namespace DTM
                 {
                     new frmDocumentos("PE").Show();
                 }
-              
+
                 if (e.KeyCode == Keys.F5)
                 {
                     new frmDocumentos("FA").Show();
@@ -5304,7 +5371,7 @@ namespace DTM
                         int rowHandle = hitInfo.RowHandle;
                         //gcPartidas
                         string rol = Program.dtm.UsuarioAutenticado.rol.ToString();
-                        if (rol !="L" && rol !="C")
+                        if (rol != "L" && rol != "C")
                         {
                             DataTable dt = ArticuloSugerido.ObtenerArt(documento.partidas[rowHandle].sku);
                             DataRow headerRow = dt.NewRow();
@@ -5340,7 +5407,7 @@ namespace DTM
             if (listBoxControl1.SelectedItem is DataRowView rowView)
             {
                 string id = rowView["id"].ToString();
-                if (id != " ") 
+                if (id != " ")
                 {
                     var articulo = Articulo.Obtener(Int32.Parse(id));
                     pictureBox1.LoadImage(articulo.imagen);
@@ -5370,7 +5437,7 @@ namespace DTM
 
         private void pictureBox1_DoubleClick(object sender, EventArgs e)
         {
-            if (pictureBox1.Image !=null) 
+            if (pictureBox1.Image != null)
             {
                 frmResaltarImagen formZoom = new frmResaltarImagen(pictureBox1.Image);
                 formZoom.Show();
@@ -5386,24 +5453,24 @@ namespace DTM
             }
             try
             {
-                   DocumentoElectronico documentoElectronico = documento.DocumentoElectronico();
-            if (documentoElectronico.id != 0)
-            {
-                string ruta = $"{Program.dtm.Configuracion.directorio_xml}\\{documentoElectronico.folio_fiscal}.xml";
-                Process.Start(new ProcessStartInfo
+                DocumentoElectronico documentoElectronico = documento.DocumentoElectronico();
+                if (documentoElectronico.id != 0)
                 {
-                    FileName = ruta,
-                    UseShellExecute = true
-                });
-            }
+                    string ruta = $"{Program.dtm.Configuracion.directorio_xml}\\{documentoElectronico.folio_fiscal}.xml";
+                    Process.Start(new ProcessStartInfo
+                    {
+                        FileName = ruta,
+                        UseShellExecute = true
+                    });
+                }
             }
             catch (Exception)
             {
 
             }
-            
-         
-            
+
+
+
         }
 
         private void cbVendedores_EditValueChanged(object sender, EventArgs e)
@@ -5413,7 +5480,8 @@ namespace DTM
 
         private void bloquearGrid()
         {
-            if (Program.dtm.UsuarioAutenticado.rol != 'S' && Program.dtm.UsuarioAutenticado.rol != 'A') {
+            if (Program.dtm.UsuarioAutenticado.rol != 'A')
+            {
                 var gridView = gcPartidas.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
 
                 if (gridView != null)
@@ -5434,12 +5502,12 @@ namespace DTM
 
         private void btnGenerarCartaPorte_Click(object sender, EventArgs e)
         {
-            if (cbRutas.Text =="" && cbRutas.Text == null) 
+            if (cbRutas.Text == "" && cbRutas.Text == null)
             {
                 MessageBox.Show("No se puede generar la carta porte, no tiene ruta");
                 return;
             }
-            if (documento.numero_documento ==0) 
+            if (documento.numero_documento == 0)
             {
                 MessageBox.Show("El documento debe estar creado antes de crear la Carta Porte");
                 return;
@@ -5450,16 +5518,16 @@ namespace DTM
 
             // string rfc = null, int documento_electronico_sustitucion_id = 0, string fechaOrigen = null, string fechaDestino = null, string distancia = null
             bool sw = Program.CFDI.TimbrarCartaPorte(documento, null, 0, fechaOrigen, fechaDestino, "0");
-            if (sw == false) 
+            if (sw == false)
             {
-                MessageBox.Show("Error al crear la carta porte -"+ SDK.DTM.ObtenerUltimoError().Message.ToString());
+                MessageBox.Show("Error al crear la carta porte -" + SDK.DTM.ObtenerUltimoError().Message.ToString());
                 return;
             }
         }
 
         private void checkEdit1_CheckedChanged(object sender, EventArgs e)
         {
-            if (Program.dtm.UsuarioAutenticado.rol == 'C') 
+            if (Program.dtm.UsuarioAutenticado.rol == 'C')
             {
                 if (chckCartaPorte.Checked)
                 {
@@ -5515,6 +5583,246 @@ namespace DTM
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
 
+        }
+
+        private string previousText = string.Empty;
+
+        private bool isDeleteOrBackspacePressed = false;
+
+        private string previousTextArt = string.Empty;
+
+        private bool isDeleteOrBackspacePressedArt = false;
+        private void txtCodigoSN_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCodigoSN.Text == "C0000")
+            {
+                return;
+            }
+            // Si se presionó una tecla de borrado, no realizar búsqueda
+            if (isDeleteOrBackspacePressed || txtCodigoSN.Text == previousText || txtCodigoSN.Text.Length < 3)
+            {
+                listBox1.Visible = false;
+                return;
+            }
+
+            previousText = txtCodigoSN.Text; // Guardamos el texto actual
+
+            try
+            {
+                if (documento.estado.Equals('C'))
+                {
+                    listBox1.Visible = false;
+                    return;
+                }
+                // Aquí se realiza la consulta a la base de datos para obtener las coincidencias
+                string texto = txtCodigoSN.Text;
+                DB dB = new DB();
+                string query = "select * from socios where nombre like '%" + texto + "%' or codigo like '%" + texto + "%'";
+                DataTable filtrados = dB.ExecuteQuery(query);
+
+                if (filtrados.Rows.Count > 0)
+                {
+                    listBox1.Visible = true;
+                    AutoCompleteStringCollection autoCompleteData = new AutoCompleteStringCollection();
+                    // Agregar los resultados al AutoCompleteStringCollection
+                    listBox1.Items.Clear();
+                    foreach (DataRow row in filtrados.Rows)
+                    {
+                        string nombre = row["nombre"].ToString();
+                        string codigo = row["codigo"].ToString();
+                        string socioCompleto = $"{codigo} - {nombre}";
+                        listBox1.Items.Add(socioCompleto);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void txtCodigoSN_KeyUp(object sender, KeyEventArgs e)
+        {
+            // Cuando se deja de presionar cualquier tecla, restablecemos la bandera
+            if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete)
+            {
+                isDeleteOrBackspacePressed = false; // Desactivamos la bandera
+            }
+        }
+
+        private void listBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Si se presiona Enter
+            if (e.KeyCode == Keys.Enter && listBox1.SelectedItem != null)
+            {
+                string seleccionado = listBox1.SelectedItem.ToString();
+                string[] partes = seleccionado.Split('-');
+                string codigo = partes.Length > 1 ? partes[0].Trim() : string.Empty;
+                txtCodigoSN.Text = codigo;
+                txtCodigoSN.Focus();
+                listBox1.Visible = false;
+                listBox1.ClearSelected();
+                KeyEventArgs keyEventArgs = new KeyEventArgs(Keys.Enter);
+                txtCodigoSN_KeyDown(sender, keyEventArgs); // Llamar al evento KeyDown del TextBox
+            
+
+            }
+        }
+
+        private void txtArticulo_TextChanged(object sender, EventArgs e)
+        {
+
+            if (txtArticulo.Text == "")
+            {
+                return;
+            }
+            // Si se presionó una tecla de borrado, no realizar búsqueda
+            if (isDeleteOrBackspacePressedArt || txtArticulo.Text == previousTextArt || txtArticulo.Text.Length < 3)
+            {
+                listBox2.Visible = false;
+                return;
+            }
+            previousTextArt = txtArticulo.Text; // Guardamos el texto actual
+
+            try
+            {
+                // Aquí se realiza la consulta a la base de datos para obtener las coincidencias
+                string texto = txtArticulo.Text;
+                DB dB = new DB();
+                string query = "select * from articulos where nombre like '%" + texto + "%' or sku like '%" + texto + "%'";
+                DataTable filtrados = dB.ExecuteQuery(query);
+
+                if (filtrados.Rows.Count > 0)
+                {
+                    listBox2.Visible = true;
+                    AutoCompleteStringCollection autoCompleteData = new AutoCompleteStringCollection();
+                    // Agregar los resultados al AutoCompleteStringCollection
+                    listBox2.Items.Clear();
+                    foreach (DataRow row in filtrados.Rows)
+                    {
+                        string nombre = row["nombre"].ToString();
+                        string codigo = row["sku"].ToString();
+                        string socioCompleto = $"{codigo} | {nombre}";
+                         listBox2.Items.Add(socioCompleto);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void txtArticulo_KeyUp(object sender, KeyEventArgs e)
+        {
+            // Cuando se deja de presionar cualquier tecla, restablecemos la bandera
+            if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete)
+            {
+                isDeleteOrBackspacePressedArt = false; // Desactivamos la bandera
+            }
+        }
+
+        private void listBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            try
+            {
+                // Si se presiona Enter
+                if (e.KeyCode == Keys.Enter && listBox2.SelectedItem != null)
+                {
+                    string seleccionado = listBox2.SelectedItem.ToString();
+                    string[] partes = seleccionado.Split('|');
+                    string codigo = partes.Length > 1 ? partes[0].Trim() : string.Empty;
+                    txtArticulo.Text = codigo;
+                    txtArticulo.Focus();
+                    listBox2.Visible = false;
+                    listBox2.ClearSelected();
+                    KeyEventArgs keyEventArgs = new KeyEventArgs(Keys.Enter);
+                    txtArticulo_KeyDown(sender, keyEventArgs); // Llamar al evento KeyDown del TextBox
+
+
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+           
+        }
+
+        private void listBox2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Si se presiona Enter
+                if (listBox2.SelectedItem != null)
+                {
+                    string seleccionado = listBox2.SelectedItem.ToString();
+                    string[] partes = seleccionado.Split('|');
+                    string codigo = partes.Length > 1 ? partes[0].Trim() : string.Empty;
+                    txtArticulo.Text = codigo;
+                    txtArticulo.Focus();
+                    listBox2.Visible = false;
+                    listBox2.ClearSelected();
+                    KeyEventArgs keyEventArgs = new KeyEventArgs(Keys.Enter);
+                    txtArticulo_KeyDown(sender, keyEventArgs); // Llamar al evento KeyDown del TextBox
+
+
+                }
+            }
+            catch (Exception)
+            {
+
+      
+            }
+         
+        }
+
+        private void listBox1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Si se presiona Enter
+                if (listBox1.SelectedItem != null)
+                {
+                    string seleccionado = listBox1.SelectedItem.ToString();
+                    string[] partes = seleccionado.Split('-');
+                    string codigo = partes.Length > 1 ? partes[0].Trim() : string.Empty;
+                    txtCodigoSN.Text = codigo;
+                    txtCodigoSN.Focus();
+                    listBox1.Visible = false;
+                    listBox1.ClearSelected();
+                    KeyEventArgs keyEventArgs = new KeyEventArgs(Keys.Enter);
+                    txtCodigoSN_KeyDown(sender, keyEventArgs); // Llamar al evento KeyDown del TextBox
+
+
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                listBox2.Visible = false;
+                listBox1.Visible = false;
+                string articulo = txtArticulo.Text;
+                string codigoSN = txtCodigoSN.Text;
+                frmExistenciasArt frmExistenciasArt = new frmExistenciasArt(articulo,codigoSN,Program.dtm.UsuarioAutenticado.almacen_id.ToString());
+                frmExistenciasArt.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+            }
+        
         }
     }
 

@@ -816,6 +816,7 @@ namespace DTM
 
         private void bbiGuardar_ItemClick(object sender, ItemClickEventArgs e)
         {
+
             if (chckCartaPorte.Checked == true)
             {
                 documento.causalidad_id = 1;
@@ -835,7 +836,7 @@ namespace DTM
                 List<int> condicionesPagoPermitidasPUE = new List<int> { 3, 19, 20, 22 };
                 if (condicionesPagoPermitidasPPD.Contains(documento.condicion_pago_id))
                 {
-                    if (documento.metodo_pago_id != 17 || documento.metodo_pago_id != 10)
+                    if (documento.metodo_pago_id != 17 && documento.metodo_pago_id != 10)
                     {
                         MessageBox.Show("La condición PPD debe tener una Forma de pago-Por definir", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -844,7 +845,7 @@ namespace DTM
                 }
                 if (condicionesPagoPermitidasPUE.Contains(documento.condicion_pago_id))
                 {
-                    if (documento.metodo_pago_id == 17 || documento.metodo_pago_id == 10)
+                    if (documento.metodo_pago_id == 17 && documento.metodo_pago_id == 10)
                     {
                         MessageBox.Show("La condición PUE \"NO\" puede tener una Forma de pago-Por definir", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -1200,14 +1201,19 @@ namespace DTM
                         MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"));
                     }
                 }
-                txtSubTotal.Enabled = false;
-                txtImpuesto.Enabled = false;
-                txtTotal.Enabled = false;
-                txtImporteAplicado.Enabled = false;
-                txtFechaDocumento.Enabled = false;
-                txtFechaVigencia.Enabled = false;
-                cbVendedores.Enabled = false;
-                txtFechaCreacion.Enabled = false;
+                txtSubTotal.ReadOnly = true;
+                txtImpuesto.ReadOnly = true;
+                txtTotal.ReadOnly = true;
+                txtImporteAplicado.ReadOnly = true;
+                txtFechaDocumento.ReadOnly = true;
+                txtFechaVigencia.ReadOnly = true;
+                cbVendedores.ReadOnly = true;
+                if (Program.dtm.UsuarioAutenticado.rol == 'A') 
+                {
+                    cbVendedores.ReadOnly = false;
+                }
+
+                txtFechaCreacion.ReadOnly = true;
 
                 if (Program.dtm.UsuarioAutenticado.rol == 'C')
                 {
@@ -1751,7 +1757,7 @@ namespace DTM
                 CargarDocumentoElectronico();
                 CargarReferencias();
                 CargarAnexos();
-                if (Program.dtm.UsuarioAutenticado.almacen_id != 0 && documento.id == 0)
+                if (Program.dtm.UsuarioAutenticado.almacen_id != 0 && documento.id == 0 && documento.vendedor_id == 0)
                 {
                     cbVendedores.Visible = true;
                     cbVendedores.EditValue = Program.dtm.UsuarioAutenticado.vendedor_id;
@@ -2162,6 +2168,25 @@ namespace DTM
                 MessageBox.Show(ex.Message.ToString().Replace("Nori", "DTM"));
             }
         }
+        private void Button_Click(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e) 
+        {
+            try
+            {
+                // Obtener la fila actual donde se hizo clic
+                int rowHandle = gvPartidas.FocusedRowHandle;
+
+                // Obtener el valor de la columna "ss" de la fila actual (si es necesario)
+                var cellValue = gvPartidas.GetRowCellValue(rowHandle, "sku");
+                var art = Articulo.Obtener(cellValue.ToString());
+                frmArticulos frmArticulos2 = new frmArticulos(art.id);
+                frmArticulos2.Show();
+                //MessageBox.Show("Botón presionado en la fila con valor: " +);
+            }
+            catch (Exception)
+            {
+
+            }
+        }
         private void Calcular()
         {
             try
@@ -2172,7 +2197,17 @@ namespace DTM
                 documento.CalcularTotal();
                 if (gvPartidas.RowCount > 0)
                 {
-                    gvPartidas.SetRowCellValue(gvPartidas.GetVisibleRowHandle(0),"ss", "Accion");
+                    // Crear un nuevo RepositoryItemButtonEdit
+                    RepositoryItemButtonEdit buttonEdit = new RepositoryItemButtonEdit();
+
+                    // Configurar el botón (opcional)
+                    buttonEdit.Buttons[0].Caption = "Ver";  // El texto del botón
+                    buttonEdit.Buttons[0].Kind = DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph;  // Estilo del botón (puede cambiarse a "Push" si se quiere un botón más simple)
+                    buttonEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor; // Para ocultar el texto editor y solo mostrar el botón
+                    buttonEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(Button_Click);
+                    // Asignar el RepositoryItemButtonEdit a la columna "ss"
+                    gvPartidas.Columns[0].ColumnEdit = buttonEdit;
+
                 }
                 txtTipoCambio.Text = documento.tipo_cambio.ToString("n4");
                 txtSubTotal.Text = documento.subtotal.ToString("c2");
@@ -2259,6 +2294,22 @@ namespace DTM
                     cbMetodosPago.EditValue = documento.metodo_pago_id;
                     txtCuentaPago.Text = documento.cuenta_pago;
                     cbCondicionesPago.EditValue = documento.condicion_pago_id;
+                    if (documento.condicion_pago_id != 0)
+                    {
+                        var condicionesSeleccionadas = (from x in CondicionesPago.CondicionesPagos()
+                                                        where x.activo == true && (x.id == documento.condicion_pago_id || x.id == 19)  // Suponiendo que quieres los elementos con id 1 y 2
+                                                        select x).ToList();
+                        if (condicionesSeleccionadas.Count > 0)
+                        {
+                            cbCondicionesPago.Properties.DataSource = condicionesSeleccionadas;
+                            cbCondicionesPago.Enabled = true;
+                            // Para preseleccionar las opciones en el ComboBox, puedes recorrer las opciones
+                            // (En este caso, solo mostramos las primeras dos opciones que coinciden con el id 1 y 2)
+                            cbCondicionesPago.EditValue = condicionesSeleccionadas.First().id;
+                            // Si deseas mostrar ambas opciones en la UI, puedes hacer algo similar, pero con una lógica de visualización personalizada
+                        }
+                    }
+         
                     DataTable data = documento.limiteCredito(socio.codigo);
 
                     if (data.Rows.Count > 0)
@@ -2386,6 +2437,7 @@ namespace DTM
                 documento.moneda_id = (int)cbMonedas.EditValue;
                 documento.tipo_cambio = decimal.Parse(txtTipoCambio.EditValue.ToString());
                 documento.metodo_pago_id = (int)cbMetodosPago.EditValue;
+                documento.condicion_pago_id = (int)cbCondicionesPago.EditValue;
                 documento.proyecto_id = ((!cbProyectos.EditValue.IsNullOrEmpty()) ? ((int)cbProyectos.EditValue) : 0);
                 documento.cuenta_pago = txtCuentaPago.Text;
                 documento.vendedor_id = (int)cbVendedores.EditValue;
@@ -3154,6 +3206,7 @@ namespace DTM
                 }
                 if (e.KeyCode == Keys.Enter)
                 {
+                    listBox1.Visible = false;
                     // Al presionar Enter, asignamos el valor del TextBox (o lo que desees hacer con el valor)
                     if (!string.IsNullOrEmpty(txtCodigoSN.Text))
                     {
@@ -3522,7 +3575,7 @@ namespace DTM
                         e.Appearance.BackColor = Color.GreenYellow;
                     }
 
-                    if ((Convert.ToDouble(gvPartidas.GetRowCellValue(e.RowHandle, gvPartidas.Columns["stock"])) - Convert.ToDouble(gvPartidas.GetRowCellValue(e.RowHandle, gvPartidas.Columns["cantidad"]))) <= 0)
+                    if ((Convert.ToDouble(gvPartidas.GetRowCellValue(e.RowHandle, gvPartidas.Columns["disponible"])) - Convert.ToDouble(gvPartidas.GetRowCellValue(e.RowHandle, gvPartidas.Columns["cantidad"]))) < 0)
                     {
                         e.Appearance.BackColor = Color.Red;
                     }
@@ -5594,6 +5647,10 @@ namespace DTM
         private bool isDeleteOrBackspacePressedArt = false;
         private void txtCodigoSN_TextChanged(object sender, EventArgs e)
         {
+            if (documento.socio_id !=0) 
+            {
+                return;
+            }
             if (txtCodigoSN.Text == "C0000")
             {
                 return;
@@ -5609,6 +5666,11 @@ namespace DTM
 
             try
             {
+                if (documento.id != 0)
+                {
+                    listBox1.Visible = false;
+                    return;
+                }
                 if (documento.estado.Equals('C'))
                 {
                     listBox1.Visible = false;

@@ -197,31 +197,23 @@
     <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
       <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.2.0\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="DPFPCtlXTypeLibNET">
-      <HintPath>..\..\..\..\..\..\Desktop\Librerias\DPFPCtlXTypeLibNET.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
     <Reference Include="DPFPCtlXWrapperNET">
-      <HintPath>..\..\..\..\..\..\Desktop\Librerias\DPFPCtlXWrapperNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\DPFPCtlXWrapperNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPDevNET">
-      <HintPath>..\..\..\..\..\..\Desktop\Librerias\DPFPDevNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\DPFPDevNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPEngNET">
-      <HintPath>..\..\..\..\..\..\Desktop\Librerias\DPFPEngNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\DPFPEngNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPGuiNET">
-      <HintPath>..\..\..\..\..\..\Desktop\Librerias\DPFPGuiNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\DPFPGuiNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPShrNET">
-      <HintPath>..\..\..\..\..\..\Desktop\Librerias\DPFPShrNET.dll</HintPath>
-    </Reference>
-    <Reference Include="DPFPShrXTypeLibNET">
-      <HintPath>..\..\..\..\..\..\Desktop\Librerias\DPFPShrXTypeLibNET.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\Downloads\DPFPShrNET.dll</HintPath>
     </Reference>
     <Reference Include="DPFPVerNET">
-      <HintPath>..\..\..\..\..\..\Desktop\Librerias\DPFPVerNET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\DPFPVerNET.dll</HintPath>
     </Reference>
     <Reference Include="EPPlus, Version=7.5.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.7.5.2\lib\net462\EPPlus.dll</HintPath>
@@ -268,7 +260,7 @@
       <HintPath>..\..\..\CFDI\NCFDI\bin\x64\Debug\NCFDI.dll</HintPath>
     </Reference>
     <Reference Include="NetsuiteLibrary">
-      <HintPath>..\..\..\..\..\..\Desktop\NetsuiteLibrary.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\NetsuiteLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -297,10 +289,10 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="SAPB1SDK">
-      <HintPath>..\..\..\CONSOLA\SAPB1SDK\bin\x64\Debug\SAPB1SDK.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\SAPB1SDK.dll</HintPath>
     </Reference>
     <Reference Include="SDK">
-      <HintPath>..\..\..\CONSOLA\SDK\bin\x64\Debug\SDK.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\SDK.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>

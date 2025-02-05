@@ -1132,7 +1132,7 @@ namespace DTM
         {
             try
             {
-                if (txtSKU.Text =="" || txtNombre.Text =="") 
+                if (txtSKU.Text =="" && txtNombre.Text =="") 
                 {
                     return;
                 }

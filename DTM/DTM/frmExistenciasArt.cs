@@ -24,10 +24,10 @@ namespace DTM
             try
             {
                 InitializeComponent();
-
-                DataTable dataTable = new DataTable();
+                DataTable dataTable2 = new DataTable();
                 DB dB = new DB();
-                string query = "select distinct T1.id,T1.sku as 'Codigo',T1.nombre as 'Nombre',CONVERT(INT,T3.stock) as 'Stock',T1.comentario as 'Aplicacion',T2.nombre as 'Marca',t4.nombre as 'Familia'," +
+                DataTable dataTable = new DataTable();
+                string query = "select distinct top 100 T1.id,T1.sku as 'Codigo',T1.nombre as 'Nombre',CONVERT(INT,T3.stock) as 'Stock',T1.comentario as 'Aplicacion',T2.nombre as 'Marca',t4.nombre as 'Familia'," +
                     "isnull((select TOP 1 FORMAT(T5.precio,'C','En-Us') from precios T5 inner join listas_precios T6 ON T5.lista_precio_id = T6.id inner join socios T7 on T6.id= T7.lista_precio_id where T7.codigo='" + codigoSN + "' AND T5.articulo_id =T1.id)," +
                     " (select  TOP 1 FORMAT(T5.precio,'C','En-Us') from precios T5 inner join listas_precios T6 ON T5.lista_precio_id = T6.id where T6.id='2' AND T5.articulo_id =T1.id)) AS 'precio' " +
                     " from articulos T1 left join fabricantes T2 ON T1.fabricante_id = T2.id left join inventario T3 ON T3.articulo_id = T1.id and t3.almacen_id='"+ almacen + "' left join grupos_articulos T4 ON T4.id = t1.grupo_articulo_id where" +

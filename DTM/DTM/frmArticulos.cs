@@ -1593,21 +1593,28 @@ namespace DTM
                     NSAP NSAP;
                     conexiones = ConfigurationManager.ConnectionStrings;
                     dtm.Conexion = new SqlConnectionStringBuilder(conexiones["LOCAL"].ConnectionString);
-                    if (dtm.Conectar())
-                    {
-                        NSAP = new NSAP(Configuracion.SAP.Obtener(), false);
+                    DB dB = new DB();
+                    string query = "select servidor,bd,usuario_bd,contraseña_bd from sap";
+                    DataTable data =dB.ExecuteQuery(query);
+                    SAPB1SDK.NDTMSQL nDTMSQL = new NDTMSQL(data.Rows[0]["servidor"].ToString(), data.Rows[0]["usuario_bd"].ToString(), data.Rows[0]["contraseña_bd"].ToString(), data.Rows[0]["bd"].ToString());
 
-                        SAPB1SDK.Articulos.SincronizarSQLT(codigoArt);
+
+                        SAPB1SDK.NDTMSQL.SincronizarSQLT(codigoArt);
+                        txtSKU.Text = codigoArt;
+                        txtNombre.Text = "";
+                        articulo.id = 0;
+                        Buscar();
                         SplashScreenManager.CloseForm(false);
+
                         MessageBox.Show("Articulo se ha sincronizado correctamente", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    }
+                    
                 }
             }
             catch (Exception ex)
             {
                 SplashScreenManager.CloseForm(false);
-                MessageBox.Show("Ha ocrrido un error al intentar sincronizar el articulo", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ha ocrrido un error al intentar sincronizar el articulo"+ex.StackTrace, "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             finally 

@@ -73,8 +73,10 @@ namespace DTM
             this.bbiDocumentosVencidos = new DevExpress.XtraBars.BarButtonItem();
             this.bbiMonedero = new DevExpress.XtraBars.BarButtonItem();
             this.bbiPDF = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.bbiImprimir = new DevExpress.XtraBars.BarSubItem();
             this.bbiParametrizacionesFormulario = new DevExpress.XtraBars.BarButtonItem();
+            this.Actualizar = new DevExpress.XtraBars.BarButtonItem();
             this.mainRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.mainRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.searchRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -214,7 +216,6 @@ namespace DTM
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.mainRibbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -312,9 +313,10 @@ namespace DTM
             this.bbiPDF,
             this.bbiImprimir,
             this.bbiParametrizacionesFormulario,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.Actualizar});
             this.mainRibbonControl.Location = new System.Drawing.Point(0, 0);
-            this.mainRibbonControl.MaxItemId = 9;
+            this.mainRibbonControl.MaxItemId = 10;
             this.mainRibbonControl.Name = "mainRibbonControl";
             this.mainRibbonControl.OptionsMenuMinWidth = 294;
             this.mainRibbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -445,6 +447,13 @@ namespace DTM
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
             this.bbiPDF.Name = "bbiPDF";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Estado de Cuenta";
+            this.barButtonItem1.Id = 8;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // bbiImprimir
             // 
             this.bbiImprimir.Caption = "Imprimir";
@@ -458,6 +467,15 @@ namespace DTM
             this.bbiParametrizacionesFormulario.Id = 7;
             this.bbiParametrizacionesFormulario.Name = "bbiParametrizacionesFormulario";
             this.bbiParametrizacionesFormulario.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiParametrizacionesFormulario_ItemClick);
+            // 
+            // Actualizar
+            // 
+            this.Actualizar.Caption = "Actualizar";
+            this.Actualizar.Id = 9;
+            this.Actualizar.ImageOptions.Image = global::componentResourceManager.Resources.convert_16x16;
+            this.Actualizar.ImageOptions.LargeImage = global::componentResourceManager.Resources.convert_32x32;
+            this.Actualizar.Name = "Actualizar";
+            this.Actualizar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Actualizar_ItemClick);
             // 
             // mainRibbonPage
             // 
@@ -502,6 +520,7 @@ namespace DTM
             // ribbonPageGroupHerramientas
             // 
             this.ribbonPageGroupHerramientas.ItemLinks.Add(this.bbiParametrizacionesFormulario);
+            this.ribbonPageGroupHerramientas.ItemLinks.Add(this.Actualizar);
             this.ribbonPageGroupHerramientas.Name = "ribbonPageGroupHerramientas";
             this.ribbonPageGroupHerramientas.Text = "Herramientas";
             // 
@@ -2011,13 +2030,6 @@ namespace DTM
             this.dataLayoutControl1.Size = new System.Drawing.Size(1158, 725);
             this.dataLayoutControl1.TabIndex = 0;
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Estado de Cuenta";
-            this.barButtonItem1.Id = 8;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
-            // 
             // frmSocios
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -2120,5 +2132,6 @@ namespace DTM
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private LabelControl labelControl1;
         private BarButtonItem barButtonItem1;
+        private BarButtonItem Actualizar;
     }
 }

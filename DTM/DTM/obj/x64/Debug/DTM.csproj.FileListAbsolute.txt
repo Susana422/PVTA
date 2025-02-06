@@ -207,7 +207,6 @@ C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\Microsoft.W
 C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\Microsoft.Web.WebView2.WinForms.dll
 C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\Microsoft.Web.WebView2.Wpf.dll
 C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\NCFDI.dll
-C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\NetsuiteLibrary.dll
 C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\Newtonsoft.Json.Bson.dll
 C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\Newtonsoft.Json.dll
 C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\PdfSharp.Charting.dll
@@ -216,8 +215,6 @@ C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\PdfSharp.Qu
 C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\PdfSharp.Snippets.dll
 C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\PdfSharp.System.dll
 C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\PdfSharp.WPFonts.dll
-C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\SAPB1SDK.dll
-C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\SDK.dll
 C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\System.Buffers.dll
 C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\System.ComponentModel.Annotations.dll
 C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\System.Diagnostics.DiagnosticSource.dll
@@ -715,3 +712,16 @@ C:\Users\Anonimo\OneDrive\Documentos\GitHub\PVTA\DTM\DTM\obj\x64\Debug\DTM.cspro
 C:\Users\Anonimo\OneDrive\Documentos\GitHub\PVTA\DTM\DTM\obj\x64\Debug\DTM.csproj.CopyComplete
 C:\Users\Anonimo\OneDrive\Documentos\GitHub\PVTA\DTM\DTM\obj\x64\Debug\DTM_SOLUTIONS.exe
 C:\Users\Anonimo\OneDrive\Documentos\GitHub\PVTA\DTM\DTM\obj\x64\Debug\DTM_SOLUTIONS.pdb
+C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\VSLangProj.dll
+C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll
+C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\Microsoft.VisualStudio.Shell.Interop.11.0.dll
+C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
+C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\Microsoft.VisualStudio.Shell.Interop.10.0.dll
+C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\DPFPCtlXTypeLibNET.dll
+C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\DPFPShrXTypeLibNET.dll
+C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\Microsoft.MSXML.dll
+C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
+C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\SDK.dll
+C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\SAPB1SDK.dll

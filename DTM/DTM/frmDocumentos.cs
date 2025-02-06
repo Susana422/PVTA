@@ -816,6 +816,11 @@ namespace DTM
 
         private void bbiGuardar_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (txtImpuesto.Text =="$0.00")
+            {
+                MessageBox.Show("No se puede procesar tu factura,el impuesto es igual a 0", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             if (chckCartaPorte.Checked == true)
             {
@@ -897,6 +902,11 @@ namespace DTM
 
         private void bbiGuardarCerrar_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (txtImpuesto.Text == "$0.00")
+            {
+                MessageBox.Show("No se puede procesar tu factura,el impuesto es igual a 0", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (chckCartaPorte.Checked == true)
             {
                 documento.causalidad_id = 1;
@@ -962,6 +972,11 @@ namespace DTM
 
         private void bbiGuardarNuevo_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (txtImpuesto.Text == "$0.00")
+            {
+                MessageBox.Show("No se puede procesar tu factura,el impuesto es igual a 0", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (chckCartaPorte.Checked == true)
             {
                 documento.causalidad_id = 1;
@@ -1183,10 +1198,16 @@ namespace DTM
                             try
                             {
                                 SetButtonVisibility(this.mainRibbonControl, item.control, item.oculto, item.desactivado);
-                                gvPartidas.Columns.ColumnByFieldName(item.control).Visible = !item.oculto;
+                                // gvPartidas.Columns.ColumnByFieldName(item.control).Visible = !item.oculto;
+                                var columna = gvPartidas.Columns.ColumnByFieldName(item.control);
+                                if (columna != null)
+                                {
+                                    columna.Visible = !item.oculto;
+                                }
                                 if (!item.oculto)
                                 {
                                     gvPartidas.Columns.ColumnByFieldName(item.control).OptionsColumn.AllowEdit = !item.desactivado;
+
                                 }
                             }
                             catch (Exception ex)
@@ -1834,11 +1855,11 @@ namespace DTM
                 }
                 if (documento.id != 0)
                 {
-                    GridColumn gridColumn = gvPartidas.Columns.Where((GridColumn x) => x.Name == "gridColumnStock").First();
-                    GridColumn gridColumn2 = gvPartidas.Columns.Where((GridColumn x) => x.Name == "gridColumnPrecioPieza").First();
-                    flag6 = (gvPartidas.Columns.Where((GridColumn x) => x.Name == "gridColumnListaPrecio").First().Visible = false);
-                    visible = (gridColumn2.Visible = flag6);
-                    gridColumn.Visible = visible;
+                    //GridColumn gridColumn = gvPartidas.Columns.Where((GridColumn x) => x.Name == "gridColumnStock").First();
+                    //GridColumn gridColumn2 = gvPartidas.Columns.Where((GridColumn x) => x.Name == "gridColumnPrecioPieza").First();
+                    //flag6 = (gvPartidas.Columns.Where((GridColumn x) => x.Name == "gridColumnListaPrecio").First().Visible = false);
+                    //visible = (gridColumn2.Visible = flag6);
+                    //gridColumn.Visible = visible;
                     Sincronizacion sincronizacion = Sincronizacion.Obtener("documentos", documento.id);
                     lblSincronizacion.Text = ((sincronizacion.id == 0) ? string.Empty : sincronizacion.error);
                     if (documento.EsDocumentoElectronico())
@@ -1868,11 +1889,11 @@ namespace DTM
                 }
                 else
                 {
-                    GridColumn gridColumn3 = gvPartidas.Columns.Where((GridColumn x) => x.Name == "gridColumnStock").First();
-                    GridColumn gridColumn4 = gvPartidas.Columns.Where((GridColumn x) => x.Name == "gridColumnPrecioPieza").First();
-                    flag6 = (gvPartidas.Columns.Where((GridColumn x) => x.Name == "gridColumnListaPrecio").First().Visible = true);
-                    visible = (gridColumn4.Visible = flag6);
-                    gridColumn3.Visible = visible;
+                    //GridColumn gridColumn3 = gvPartidas.Columns.Where((GridColumn x) => x.Name == "gridColumnStock").First();
+                    ////GridColumn gridColumn4 = gvPartidas.Columns.Where((GridColumn x) => x.Name == "gridColumnPrecioPieza").First();
+                    //flag6 = (gvPartidas.Columns.Where((GridColumn x) => x.Name == "gridColumnListaPrecio").First().Visible = true);
+                    //visible = (gridColumn4.Visible = flag6);
+                    //gridColumn3.Visible = visible;
                 }
                 SimpleButton simpleButton3 = btnGenerar;
                 visible = (btnGenerarRFCGenerico.Enabled = false);
@@ -2720,6 +2741,7 @@ namespace DTM
         {
             try
             {
+                
 
                 gvPartidas.CloseEditor();
                 txtArticulo.Focus();
@@ -2758,6 +2780,7 @@ namespace DTM
 
                 if (MessageBox.Show("¿Desea guardar los cambios?", Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
+                 
                     if (Llenar())
                     {
                         if (CondicionesPago.CondicionesPagos().Any((CondicionesPago x) => x.id == this.documento.condicion_pago_id && x.pago_requerido == true) && this.documento.id == 0 && this.documento.clase.Equals("FA"))
@@ -3775,7 +3798,7 @@ namespace DTM
                         double resultPorcentaje = Math.Truncate(value * 10) / 10;
                         AccordionControlElement element = new AccordionControlElement
                         {
-                            Text = "A partir de " + Math.Round(Convert.ToDouble(row["U_Quantity"].ToString())) + " obten un descuento del " + resultPorcentaje + "%",    // Título del item
+                            Text = "No." + row["DocEntry"].ToString() + " de Promo " + " A partir de " + Math.Round(Convert.ToDouble(row["U_Quantity"].ToString())) + " obten un descuento del " + resultPorcentaje + "%",    // Título del item
                             Tag = row["U_Percentage"].ToString(),   // Datos adicionales, puedes usar para almacenar detalles u otros valores
                             Style = ElementStyle.Item           // Estilo de cada item
                         };
@@ -3792,7 +3815,7 @@ namespace DTM
 
                         AccordionControlElement element = new AccordionControlElement
                         {
-                            Text = "A partir de " + Math.Round(Convert.ToDouble(row["U_Sum"].ToString())).ToString("C2") + " obten un descuento del " + resultPorcentaje + "%",    // Título del item
+                            Text = "No." + row["DocEntry"].ToString() +" de Promo "  + " A partir de " + Math.Round(Convert.ToDouble(row["U_Sum"].ToString())).ToString("C2") + " obten un descuento del " + resultPorcentaje + "%",    // Título del item
                             Tag = row["U_Percentage"].ToString(),   // Datos adicionales, puedes usar para almacenar detalles u otros valores
                             Style = ElementStyle.Item           // Estilo de cada item
                         };
@@ -3810,7 +3833,7 @@ namespace DTM
 
                         AccordionControlElement element = new AccordionControlElement
                         {
-                            Text = "Obtiene un descuento del " + resultPorcentaje + "% en su compra",    // Título del item
+                            Text = "No." + row["DocEntry"].ToString() + " de Promo " + " Obtiene un descuento del " + resultPorcentaje + "% en su compra",    // Título del item
                             Tag = row["U_Percentage"].ToString(),   // Datos adicionales, puedes usar para almacenar detalles u otros valores
                             Style = ElementStyle.Item           // Estilo de cada item
                         };
@@ -5476,7 +5499,36 @@ namespace DTM
 
         private void gcPartidas_Click(object sender, EventArgs e)
         {
+            try
+            {
+                SplashScreenManager.ShowForm(Form.ActiveForm, typeof(DemoWaitForm), true, true, false);
+                SplashScreenManager.Default.SetWaitFormCaption("Por favor espere");
+                SplashScreenManager.Default.SetWaitFormDescription("Cargando información...");
+                // Obtener la fila actual donde se hizo clic
+                int rowHandle = gvPartidas.FocusedRowHandle;
+                int columnHandle = gvPartidas.FocusedColumn.VisibleIndex;
+                if (columnHandle == 0)
+                {
 
+
+                    // Obtener el valor de la columna "ss" de la fila actual (si es necesario)
+                    var cellValue = gvPartidas.GetRowCellValue(rowHandle, "sku");
+                    var art = Articulo.Obtener(cellValue.ToString());
+                    frmArticulos frmArticulos2 = new frmArticulos(art.id);
+                    frmArticulos2.Show();
+                    //MessageBox.Show("Botón presionado en la fila con valor: " +);
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
         }
 
         private void picturesku_DoubleClick(object sender, EventArgs e)
@@ -5871,12 +5923,17 @@ namespace DTM
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+           
             try
             {
                 listBox2.Visible = false;
                 listBox1.Visible = false;
                 string articulo = txtArticulo.Text;
                 string codigoSN = txtCodigoSN.Text;
+                if (articulo =="")
+                {
+                    return;
+                }
                 frmExistenciasArt frmExistenciasArt = new frmExistenciasArt(articulo,codigoSN,Program.dtm.UsuarioAutenticado.almacen_id.ToString());
                 frmExistenciasArt.ShowDialog();
             }

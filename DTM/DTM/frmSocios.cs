@@ -16,11 +16,14 @@ using DevExpress.XtraTab;
 using DevExpress.XtraWaitForm;
 using DTM.Reportes;
 using NetsuiteLibrary.SuiteTalk_Helpers;
+using SAPB1SDK;
 using SDK;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -1487,6 +1490,52 @@ namespace DTM
             PdfSharp.Pdf.PdfDocument document = new PdfSharp.Pdf.PdfDocument();
             document.AddPage();
             document.Save(filePath);
+        }
+
+        private void Actualizar_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                SplashScreenManager.ShowForm(Form.ActiveForm, typeof(DemoWaitForm), true, true, false);
+                SplashScreenManager.Default.SetWaitFormCaption("Por favor espere");
+                SplashScreenManager.Default.SetWaitFormDescription("Sincronizando...");
+                string codigoArt = txtCodigo.Text;
+                if (codigoArt != "")
+                {
+                    ConfigurationManager.RefreshSection("connectionStrings");
+                    ConnectionStringSettingsCollection conexiones;
+                    SDK.DTM dtm = new SDK.DTM();
+                    NSAP NSAP;
+                    conexiones = ConfigurationManager.ConnectionStrings;
+                    dtm.Conexion = new SqlConnectionStringBuilder(conexiones["LOCAL"].ConnectionString);
+                    DB dB = new DB();
+                    string query = "select servidor,bd,usuario_bd,contraseña_bd from sap";
+                    DataTable data = dB.ExecuteQuery(query);
+                    SAPB1SDK.NDTMSQL nDTMSQL = new NDTMSQL(data.Rows[0]["servidor"].ToString(), data.Rows[0]["usuario_bd"].ToString(), data.Rows[0]["contraseña_bd"].ToString(), data.Rows[0]["bd"].ToString());
+
+
+                    SAPB1SDK.NDTMSQL.SincronizarSQLSocio(codigoArt);
+                    txtCodigo.Text = codigoArt;
+                    txtNombre.Text = "";
+                    socio.id = 0;
+                    Buscar();
+                    SplashScreenManager.CloseForm(false);
+
+                    MessageBox.Show("Socio se ha sincronizado correctamente", "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                SplashScreenManager.CloseForm(false);
+                MessageBox.Show("Ha ocrrido un error al intentar sincronizar el Socio" + ex.StackTrace, "Mensaje de Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            finally
+            {
+                SplashScreenManager.CloseForm(false);
+            }
         }
     }
 

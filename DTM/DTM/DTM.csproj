@@ -288,11 +288,13 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="SAPB1SDK">
-      <HintPath>..\..\..\..\..\..\Downloads\SAPB1SDK.dll</HintPath>
+    <Reference Include="SAPB1SDK, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CONSOLA\SAPB1SDK\bin\x64\Debug\SAPB1SDK.dll</HintPath>
     </Reference>
-    <Reference Include="SDK">
-      <HintPath>..\..\..\..\..\..\Downloads\SDK.dll</HintPath>
+    <Reference Include="SDK, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CONSOLA\SDK\bin\x64\Debug\SDK.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
@@ -1612,6 +1614,8 @@
     <None Include="Resources\huelladigital.jpg" />
     <None Include="Resources\autosum_16x16.png" />
     <None Include="Resources\bonote_16x16.png" />
+    <None Include="Resources\convert_16x16.png" />
+    <None Include="Resources\convert_32x32.png" />
     <Content Include="Resources\icon.ico" />
     <None Include="Resources\iconosol.ico" />
     <None Include="Resources\loadtheme_16x16.png" />

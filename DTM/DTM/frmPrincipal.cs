@@ -206,7 +206,8 @@ namespace DTM
                     //((AccordionControlElementBase)accordionControlElementNotasDebito).Visible = false;
                     //((AccordionControlElementBase)accordionControlElementInventario).Visible = false;
                     accordionControlElementInformes.Visible = false;
-                    ribbonPageHerramientas.Visible = false;
+                    ribbonPageHerramientas.Visible = true;
+                    barButtonItem1.Visibility = BarItemVisibility.Never;
                     accordionControlElement6.Visible = false;
                     break;
                 case 'V':

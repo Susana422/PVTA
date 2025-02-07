@@ -1,4 +1,5 @@
 ﻿using OfficeOpenXml;
+using System;
 using System.Data;
 using System.IO;
 
@@ -8,32 +9,45 @@ namespace DTM.Excel
     {
         public DataTable LeerExcelEnDataTable(string rutaArchivo)
         {
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // Para evitar advertencias de licencia
-
-            using (var paquete = new ExcelPackage(new FileInfo(rutaArchivo)))
+            DataTable dt = new DataTable();
+            try
             {
-                var hoja = paquete.Workbook.Worksheets[0]; // Accede a la primera hoja
-                DataTable dt = new DataTable();
+                ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // Para evitar advertencias de licencia
 
-                // Leer encabezados
-                foreach (var celda in hoja.Cells[1, 1, 1, hoja.Dimension.End.Column])
+                using (var paquete = new ExcelPackage(new FileInfo(rutaArchivo)))
                 {
-                    dt.Columns.Add(celda.Text);
-                }
+                    var hoja = paquete.Workbook.Worksheets[0]; // Accede a la primera hoja
 
-                // Leer filas
-                for (int fila = 2; fila <= hoja.Dimension.End.Row; fila++)
-                {
-                    DataRow nuevaFila = dt.NewRow();
-                    for (int col = 1; col <= hoja.Dimension.End.Column; col++)
+                    // Leer encabezados (primer fila)
+                    dt.Columns.Add("Articulo"); // Columna 1: Articulo
+                    dt.Columns.Add("Cantidad"); // Columna 2: Cantidad
+
+                    // Leer filas a partir de la segunda (las filas de datos)
+                    for (int fila = 2; fila <= hoja.Dimension.End.Row; fila++) // Empezamos desde la fila 2
                     {
-                        nuevaFila[col - 1] = hoja.Cells[fila, col].Text;
-                    }
-                    dt.Rows.Add(nuevaFila);
-                }
+                        DataRow nuevaFila = dt.NewRow();
 
-                return dt;
+                        // Accedemos a las celdas y verificamos su contenido
+                        var articulo = hoja.Cells[fila, 1].Value?.ToString();
+                        var cantidad = hoja.Cells[fila, 2].Value?.ToString();
+
+                        // Si el valor es nulo o vacío, se asigna null, de lo contrario, se asigna el valor de la celda
+                        nuevaFila["Articulo"] = string.IsNullOrEmpty(articulo) ? null : articulo;
+                        nuevaFila["Cantidad"] = string.IsNullOrEmpty(cantidad) ? null : cantidad;
+
+                        dt.Rows.Add(nuevaFila);
+                    }
+                }
             }
+            catch (Exception ex)
+            {
+                // Aquí puedes manejar la excepción y registrar el error, si es necesario
+                Console.WriteLine("Error: " + ex.Message);
+            }
+
+            return dt;
         }
+
+
     }
 }

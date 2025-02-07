@@ -1206,8 +1206,12 @@ namespace DTM
                                 }
                                 if (!item.oculto)
                                 {
-                                    gvPartidas.Columns.ColumnByFieldName(item.control).OptionsColumn.AllowEdit = !item.desactivado;
-
+                                    //gvPartidas.Columns.ColumnByFieldName(item.control).OptionsColumn.AllowEdit = !item.desactivado;
+                                    var column = gvPartidas.Columns.ColumnByFieldName(item.control);
+                                    if (column != null && column.OptionsColumn != null)
+                                    {
+                                        column.OptionsColumn.AllowEdit = !item.desactivado;
+                                    }
                                 }
                             }
                             catch (Exception ex)
@@ -1761,8 +1765,16 @@ namespace DTM
                 lblWeb.Visible = documento.web;
                 //cbSeguimiento.Checked = documento.seguimiento;
                 //cbEstadoSeguimiento.SelectedIndex = documento.estado_seguimiento;
-                cbCondicionesPago.EditValue = documento.condicion_pago_id;
-                cbMetodosPago.EditValue = documento.metodo_pago_id;
+                cbCondicionesPago.Properties.DataSource = null;
+                cbCondicionesPago.Properties.DataSource = (from x in CondicionesPago.CondicionesPagos()
+                                                           where x.activo == true
+                                                           select new { x.id, x.nombre }).ToList();
+                cbCondicionesPago.Properties.ValueMember = "id";
+                cbCondicionesPago.Properties.DisplayMember = "nombre";
+                cbCondicionesPago.EditValue = Convert.ToInt32(documento.condicion_pago_id);
+                cbMetodosPago.EditValue = Convert.ToInt32(documento.metodo_pago_id);
+                cbCondicionesPago.Refresh();
+                cbMetodosPago.Refresh();
                 cbProyectos.EditValue = documento.proyecto_id;
                 cbCanales.EditValue = documento.canal_id;
                 txtCuentaPago.Text = documento.cuenta_pago;
@@ -1778,7 +1790,7 @@ namespace DTM
                 CargarDocumentoElectronico();
                 CargarReferencias();
                 CargarAnexos();
-                if (Program.dtm.UsuarioAutenticado.almacen_id != 0 && documento.id == 0 && documento.vendedor_id == 0)
+                if (documento.vendedor_id == 0)
                 {
                     cbVendedores.Visible = true;
                     cbVendedores.EditValue = Program.dtm.UsuarioAutenticado.vendedor_id;
@@ -2165,13 +2177,39 @@ namespace DTM
                 gcPartidas.RefreshDataSource();
                 //documento.CalcularTotal(true);
                 documento.CalcularTotal();
-                txtTipoCambio.Text = documento.tipo_cambio.ToString("n4");
-                txtSubTotal.Text = documento.subtotal.ToString("c2");
-                //txtPorcentajeDescuento.Text = documento.porcentaje_descuento.ToString("n2");
-                //txtDescuento.Text = documento.descuento.ToString("c2");
-                txtImpuesto.Text = documento.impuesto.ToString("c2");
-                txtTotal.Text = documento.total.ToString("c2");
-                txtImporteAplicado.Text = documento.importe_aplicado.ToString("c2");
+                if (gvPartidas.RowCount > 0)
+                {
+                    // Crear un nuevo RepositoryItemButtonEdit
+                    RepositoryItemButtonEdit buttonEdit = new RepositoryItemButtonEdit();
+
+                    // Configurar el botón (opcional)
+                    buttonEdit.Buttons[0].Caption = "Ver";  // El texto del botón
+                    buttonEdit.Buttons[0].Kind = DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph;  // Estilo del botón (puede cambiarse a "Push" si se quiere un botón más simple)
+                    buttonEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor; // Para ocultar el texto editor y solo mostrar el botón
+                    buttonEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(Button_Click);
+                    // Asignar el RepositoryItemButtonEdit a la columna "ss"
+                    gvPartidas.Columns[0].ColumnEdit = buttonEdit;
+
+                }
+                if (gvPartidas.RowCount == 0)
+                {
+                    txtTipoCambio.Text = documento.tipo_cambio.ToString("n4");
+                    txtSubTotal.Text = Decimal.Parse("0").ToString("c2");
+                    txtImpuesto.Text = Decimal.Parse("0").ToString("c2");
+                    txtTotal.Text = Decimal.Parse("0").ToString("c2");
+                    txtImporteAplicado.Text = Decimal.Parse("0").ToString("c2");
+                }
+                else
+                {
+                    txtTipoCambio.Text = documento.tipo_cambio.ToString("n4");
+                    txtSubTotal.Text = documento.subtotal.ToString("c2");
+                    //txtPorcentajeDescuento.Text = documento.porcentaje_descuento.ToString("n2");
+                    //txtDescuento.Text = documento.descuento.ToString("c2");
+                    txtImpuesto.Text = documento.impuesto.ToString("c2");
+                    txtTotal.Text = documento.total.ToString("c2");
+                    txtImporteAplicado.Text = documento.importe_aplicado.ToString("c2");
+                }
+
                 try
                 {
                     //btnDescuentosEspeciales.Visible = true;
@@ -2230,13 +2268,24 @@ namespace DTM
                     gvPartidas.Columns[0].ColumnEdit = buttonEdit;
 
                 }
-                txtTipoCambio.Text = documento.tipo_cambio.ToString("n4");
-                txtSubTotal.Text = documento.subtotal.ToString("c2");
-                //txtPorcentajeDescuento.Text = documento.porcentaje_descuento.ToString("n2");
-                //txtDescuento.Text = documento.descuento.ToString("c2");
-                txtImpuesto.Text = documento.impuesto.ToString("c2");
-                txtTotal.Text = documento.total.ToString("c2");
-                txtImporteAplicado.Text = documento.importe_aplicado.ToString("c2");
+                if (gvPartidas.RowCount == 0)
+                {
+                    txtTipoCambio.Text = documento.tipo_cambio.ToString("n4");
+                    txtSubTotal.Text = Decimal.Parse("0").ToString("c2");
+                    txtImpuesto.Text = Decimal.Parse("0").ToString("c2");
+                    txtTotal.Text = Decimal.Parse("0").ToString("c2");
+                    txtImporteAplicado.Text = Decimal.Parse("0").ToString("c2");
+                }
+                else {
+                    txtTipoCambio.Text = documento.tipo_cambio.ToString("n4");
+                    txtSubTotal.Text = documento.subtotal.ToString("c2");
+                    //txtPorcentajeDescuento.Text = documento.porcentaje_descuento.ToString("n2");
+                    //txtDescuento.Text = documento.descuento.ToString("c2");
+                    txtImpuesto.Text = documento.impuesto.ToString("c2");
+                    txtTotal.Text = documento.total.ToString("c2");
+                    txtImporteAplicado.Text = documento.importe_aplicado.ToString("c2");
+                }
+        
                 try
                 {
                     // btnDescuentosEspeciales.Visible = true;
@@ -3598,7 +3647,7 @@ namespace DTM
                         e.Appearance.BackColor = Color.GreenYellow;
                     }
 
-                    if ((Convert.ToDouble(gvPartidas.GetRowCellValue(e.RowHandle, gvPartidas.Columns["disponible"])) - Convert.ToDouble(gvPartidas.GetRowCellValue(e.RowHandle, gvPartidas.Columns["cantidad"]))) < 0)
+                    if ((Convert.ToDouble(gvPartidas.GetRowCellValue(e.RowHandle, gvPartidas.Columns["stock"])) - Convert.ToDouble(gvPartidas.GetRowCellValue(e.RowHandle, gvPartidas.Columns["cantidad"]))) < 0)
                     {
                         e.Appearance.BackColor = Color.Red;
                     }
@@ -5340,7 +5389,7 @@ namespace DTM
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No fue posible leer tu archivo excel");
+                    MessageBox.Show("No fue posible leer tu archivo excel" +ex.StackTrace);
                 }
                 finally
                 {
@@ -5699,7 +5748,7 @@ namespace DTM
         private bool isDeleteOrBackspacePressedArt = false;
         private void txtCodigoSN_TextChanged(object sender, EventArgs e)
         {
-            if (documento.socio_id !=0) 
+            if (documento.socio_id != 0 && documento.socio_id !=1) 
             {
                 return;
             }
@@ -5707,14 +5756,15 @@ namespace DTM
             {
                 return;
             }
+    
             // Si se presionó una tecla de borrado, no realizar búsqueda
-            if (isDeleteOrBackspacePressed || txtCodigoSN.Text == previousText || txtCodigoSN.Text.Length < 3)
+            if (isDeleteOrBackspacePressed  || txtCodigoSN.Text.Length < 3)
             {
                 listBox1.Visible = false;
                 return;
             }
-
             previousText = txtCodigoSN.Text; // Guardamos el texto actual
+
 
             try
             {

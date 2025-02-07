@@ -90,6 +90,9 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>iconosol.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <HintPath>..\packages\CrystalDecisions.CrystalReports.Engine.1.0.0\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
@@ -1616,6 +1619,7 @@
     <None Include="Resources\bonote_16x16.png" />
     <None Include="Resources\convert_16x16.png" />
     <None Include="Resources\convert_32x32.png" />
+    <Content Include="iconosol.ico" />
     <Content Include="Resources\icon.ico" />
     <None Include="Resources\iconosol.ico" />
     <None Include="Resources\loadtheme_16x16.png" />

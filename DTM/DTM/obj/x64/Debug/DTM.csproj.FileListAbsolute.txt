@@ -714,3 +714,4 @@ C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\obj\x64\Debug\DTM.csproj.
 C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\obj\x64\Debug\DTM.csproj.Up2Date
 C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\obj\x64\Debug\DTM_SOLUTIONS.exe
 C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\obj\x64\Debug\DTM_SOLUTIONS.pdb
+C:\Users\Programador\Documents\GitHub\DTM\PVTA\DTM\DTM\bin\x64\Debug\SDK.dll

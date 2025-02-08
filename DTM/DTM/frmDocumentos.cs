@@ -1794,10 +1794,35 @@ namespace DTM
                 {
                     cbVendedores.Visible = true;
                     cbVendedores.EditValue = Program.dtm.UsuarioAutenticado.vendedor_id;
+                    cbVendedores.Refresh();
                 }
                 else
                 {
-                    cbVendedores.EditValue = documento.vendedor_id;
+                    DataTable datas = new DataTable();
+                    try
+                    {
+                      
+                        int documentBase = documento.partidas.FirstOrDefault().documento_id;
+                        datas = dB.ExecuteQuery("select TOP 1 T2.vendedor_id from partidas T1 inner join documentos T2 ON T1.documento_id=T2.id where T2.id='" + documentBase + "'");
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                    if (documento.vendedor_id == 2)
+                    {
+                        if (datas.Rows.Count >0) {
+                            cbVendedores.EditValue = Int32.Parse(datas.Rows[0]["vendedor_id"].ToString());
+                            cbVendedores.Refresh();
+                        }
+               
+                    }
+                    else
+                    {
+                        cbVendedores.EditValue = documento.vendedor_id;
+                        cbVendedores.Refresh();
+                    }
+                
                 }
                 cbAlmacenOrigen.EditValue = documento.almacen_id;
                 cbAlmacenDestino.EditValue = documento.almacen_destino_id;

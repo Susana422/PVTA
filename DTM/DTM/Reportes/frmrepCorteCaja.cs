@@ -78,7 +78,7 @@ namespace DTM.Reportes
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No fue posible abrir este archivo");
+                MessageBox.Show("No fue posible abrir este archivo" +ex.StackTrace);
             }
             finally 
             {
